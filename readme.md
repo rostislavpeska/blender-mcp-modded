@@ -34,14 +34,16 @@ Read the documentation at [blender.org/lab/mcp-server](https://www.blender.org/l
 
 ### Config (only for `generate_3d` / `wait_for_3d_job`)
 
-These two tools call gated n8n webhooks and read config from the environment:
+These two tools are thin HTTP clients for two n8n webhooks that **you host on your
+own n8n**. This MCP is instance-agnostic - it ships **no** default host. Import the
+workflows in [`n8n/`](n8n/) (see `n8n/README.md`), then set:
 
-| Variable | Required | Default |
+| Variable | Required | Notes |
 |---|---|---|
-| `THREED_WEBHOOK_API_KEY` | yes | - |
-| `THREED_WEBHOOK_BASE` | no | `https://n8n.aifounders.cz` |
+| `THREED_WEBHOOK_BASE` | yes | base URL of *your* n8n, e.g. `https://n8n.example.com` |
+| `THREED_WEBHOOK_API_KEY` | yes | the `X-API-Key` gate secret you set in both workflows |
 
-For local dev, copy `mcp/.env.example` -> `mcp/.env` and fill in the key (`.env` is
+For local dev, copy `mcp/.env.example` -> `mcp/.env` and fill these in (`.env` is
 gitignored). In production, inject real environment variables instead - `load_dotenv`
 runs with `override=False`, so real env always wins and the `.env` is ignored. Every
 other tool (cameras, import, and all upstream tools) needs **no** configuration.

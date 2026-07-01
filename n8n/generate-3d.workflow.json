@@ -1,0 +1,160 @@
+{
+  "name": "3D Model Generator - Text to Image to Trellis",
+  "nodes": [
+    {
+      "id": "f1e2d3c4-1a2b-4c3d-8e4f-a1b2c3d4e5f1",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [0, 0],
+      "onError": "continueRegularOutput",
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "generate-3d",
+        "responseMode": "responseNode",
+        "options": {}
+      }
+    },
+    {
+      "id": "dddd1111-2222-4333-8444-000000000001",
+      "name": "Check API Key",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [180, 60],
+      "parameters": {
+        "conditions": {
+          "options": { "caseSensitive": true, "leftValue": "", "typeValidation": "strict" },
+          "combinator": "and",
+          "conditions": [
+            {
+              "id": "apikey-check",
+              "leftValue": "={{ $json.headers['x-api-key'] }}",
+              "rightValue": "REPLACE_WITH_YOUR_WEBHOOK_API_KEY",
+              "operator": { "type": "string", "operation": "equals" }
+            }
+          ]
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "dddd1111-2222-4333-8444-000000000002",
+      "name": "Reject",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5,
+      "position": [380, 200],
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={ \"error\": \"unauthorized\" }",
+        "options": { "responseCode": 401 }
+      }
+    },
+    {
+      "id": "bbbb1111-2222-4333-8444-c0de00000001",
+      "name": "Compose Prompt",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [140, -170],
+      "parameters": {
+        "jsCode": "const body = $input.first().json.body || {};\nconst object = String(body.prompt || body.object || '').trim() || 'a single object';\nconst FIXED_PREFIX = 'Product shot of {OBJ}. One single object only, centered and fully in frame, isolated on a flat monochromatic light-grey background, soft even studio lighting, no shadows, no floor or ground plane, no other objects or props, no text.';\nconst final_prompt = FIXED_PREFIX.replace('{OBJ}', object);\nreturn [{ json: { final_prompt, image_model: body.image_model || 'google/gemini-2.5-flash-image', object } }];"
+      }
+    },
+    {
+      "id": "f1e2d3c4-1a2b-4c3d-8e4f-a1b2c3d4e5f2",
+      "name": "OpenRouter - Text to Image",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [400, -80],
+      "retryOnFail": true,
+      "maxTries": 2,
+      "waitBetweenTries": 2000,
+      "notes": "Attach an 'OpenRouter' credential (predefined credential type: openRouterApi).",
+      "parameters": {
+        "method": "POST",
+        "url": "https://openrouter.ai/api/v1/images",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "openRouterApi",
+        "sendBody": true,
+        "contentType": "json",
+        "specifyBody": "keypair",
+        "bodyParameters": {
+          "parameters": [
+            { "name": "model", "value": "={{ $json.image_model }}" },
+            { "name": "prompt", "value": "={{ $json.final_prompt }}" }
+          ]
+        },
+        "options": { "timeout": 120000 }
+      }
+    },
+    {
+      "id": "f1e2d3c4-1a2b-4c3d-8e4f-a1b2c3d4e5f3",
+      "name": "Build Image Data URI",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [640, -80],
+      "parameters": {
+        "mode": "manual",
+        "assignments": {
+          "assignments": [
+            {
+              "id": "a1a1a1a1-0001-4001-8001-000000000001",
+              "name": "image_data_uri",
+              "type": "string",
+              "value": "={{ 'data:image/png;base64,' + $json.data[0].b64_json }}"
+            }
+          ]
+        },
+        "includeOtherFields": false,
+        "options": {}
+      }
+    },
+    {
+      "id": "f1e2d3c4-1a2b-4c3d-8e4f-a1b2c3d4e5f4",
+      "name": "fal.ai - Trellis Image to 3D",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [880, -80],
+      "notes": "Attach a 'Header Auth' credential: Name=Authorization, Value=Key <YOUR_FAL_KEY>.",
+      "parameters": {
+        "method": "POST",
+        "url": "https://queue.fal.run/fal-ai/trellis",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "contentType": "json",
+        "specifyBody": "keypair",
+        "bodyParameters": {
+          "parameters": [
+            { "name": "image_url", "value": "={{ $json.image_data_uri }}" }
+          ]
+        },
+        "options": { "timeout": 30000 }
+      }
+    },
+    {
+      "id": "f1e2d3c4-1a2b-4c3d-8e4f-a1b2c3d4e5f5",
+      "name": "Respond Job Handles",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5,
+      "position": [1120, -80],
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ { \"job_id\": $json.request_id, \"status_url\": $json.status_url, \"response_url\": $json.response_url, \"status\": \"queued\" } }}"
+      }
+    }
+  ],
+  "connections": {
+    "Webhook": { "main": [[{ "node": "Check API Key", "type": "main", "index": 0 }]] },
+    "Check API Key": {
+      "main": [
+        [{ "node": "Compose Prompt", "type": "main", "index": 0 }],
+        [{ "node": "Reject", "type": "main", "index": 0 }]
+      ]
+    },
+    "Compose Prompt": { "main": [[{ "node": "OpenRouter - Text to Image", "type": "main", "index": 0 }]] },
+    "OpenRouter - Text to Image": { "main": [[{ "node": "Build Image Data URI", "type": "main", "index": 0 }]] },
+    "Build Image Data URI": { "main": [[{ "node": "fal.ai - Trellis Image to 3D", "type": "main", "index": 0 }]] },
+    "fal.ai - Trellis Image to 3D": { "main": [[{ "node": "Respond Job Handles", "type": "main", "index": 0 }]] }
+  },
+  "settings": { "executionOrder": "v1" }
+}

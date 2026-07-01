@@ -10,10 +10,10 @@ These tools do NOT touch Blender; they call the n8n pipeline over HTTP:
 Then feed the resulting glb_url to ``import_canonical_model`` to bring the model
 into the Blender scene.
 
-Config (environment variables on the MCP server):
-  * THREED_WEBHOOK_BASE     default "https://n8n.aifounders.cz"
-  * THREED_WEBHOOK_API_KEY  sent as the "X-API-Key" header (gate); optional
-                            until the n8n webhook gate is enabled.
+Config (environment variables on the MCP server; see mcp/.env.example and the
+importable workflows in ../../n8n/). This MCP ships no default host:
+  * THREED_WEBHOOK_BASE     base URL of YOUR n8n instance (required, no default).
+  * THREED_WEBHOOK_API_KEY  sent as the "X-API-Key" header (the gate secret).
 """
 
 __all__ = (
@@ -40,7 +40,9 @@ _FAILED_STATES = ("failed", "error", "cancelled")
 
 
 def _config() -> tuple[str, str]:
-    base = os.environ.get("THREED_WEBHOOK_BASE", "https://n8n.aifounders.cz").rstrip("/")
+    # No default host: this MCP is instance-agnostic. Point THREED_WEBHOOK_BASE
+    # at YOUR n8n (importing the workflows in ../n8n/). See mcp/.env.example.
+    base = os.environ.get("THREED_WEBHOOK_BASE", "").rstrip("/")
     key = os.environ.get("THREED_WEBHOOK_API_KEY", "")
     return base, key
 
@@ -79,6 +81,8 @@ def register(mcp: FastMCP) -> None:
         The isolation/background instructions are added server-side.
         """
         base, key = _config()
+        if not base:
+            return {"error": True, "message": "THREED_WEBHOOK_BASE is not set - point it at your n8n instance (see mcp/.env.example)."}
         return _post(base + "/webhook/generate-3d",
                      {"prompt": prompt, "image_model": image_model}, key, timeout=120.0)
 
@@ -99,6 +103,8 @@ def register(mcp: FastMCP) -> None:
         ``failed`` status otherwise.
         """
         base, key = _config()
+        if not base:
+            return {"status": "error", "message": "THREED_WEBHOOK_BASE is not set - point it at your n8n instance (see mcp/.env.example)."}
         url = base + "/webhook/3d-job-status"
         deadline = time.monotonic() + float(timeout_seconds)
         last: dict = {}
