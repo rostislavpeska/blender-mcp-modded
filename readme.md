@@ -9,6 +9,43 @@ and understand complex setups.
 
 Read the documentation at [blender.org/lab/mcp-server](https://www.blender.org/lab/mcp-server/)
 
+> **This is a modded fork** of the official [`blender_mcp`](https://projects.blender.org/lab/blender_mcp)
+> (kept as the `upstream` remote). It adds a standardized-camera framing rig, a
+> canonical model importer, and an async text-to-3D pipeline. Everything from
+> upstream is unchanged and needs no configuration.
+
+## Modded additions
+
+### Extra tools (`mcp/blmcp/tools/`)
+
+- **`place_standard_cameras`** - drop 4 bounds-fit cameras (front/right/back/left)
+  aimed at the scene centre, in a hidden collection. `target_collection` /
+  `ignore_object_names` control what gets framed (e.g. exclude a huge ground plane).
+- **`read_standard_views`** - render all standard cameras into a single 2x2
+  contact-sheet image, so a scene can be understood from every angle in one call.
+- **`import_canonical_model`** - import a `.glb/.gltf/.obj/.fbx` (URL or local path)
+  and canonicalize it: joined to one mesh, transforms applied, uniformly scaled so
+  its largest dimension = `target_size`, origin set to `center` or `bottom`, and
+  placed at the world origin.
+- **`generate_3d` / `wait_for_3d_job`** - async text-to-3D. `generate_3d(prompt)`
+  kicks off an n8n pipeline (text -> image -> [TRELLIS](https://github.com/microsoft/TRELLIS))
+  and returns job handles; `wait_for_3d_job(...)` polls until the `.glb` is ready.
+  Pair with `import_canonical_model` for a full **prompt -> object-in-scene** loop.
+
+### Config (only for `generate_3d` / `wait_for_3d_job`)
+
+These two tools call gated n8n webhooks and read config from the environment:
+
+| Variable | Required | Default |
+|---|---|---|
+| `THREED_WEBHOOK_API_KEY` | yes | - |
+| `THREED_WEBHOOK_BASE` | no | `https://n8n.aifounders.cz` |
+
+For local dev, copy `mcp/.env.example` -> `mcp/.env` and fill in the key (`.env` is
+gitignored). In production, inject real environment variables instead - `load_dotenv`
+runs with `override=False`, so real env always wins and the `.env` is ignored. Every
+other tool (cameras, import, and all upstream tools) needs **no** configuration.
+
 ----
 
 The project is deliberately small, maintainable, and does no more than
