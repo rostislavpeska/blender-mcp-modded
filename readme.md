@@ -48,6 +48,44 @@ gitignored). In production, inject real environment variables instead - `load_do
 runs with `override=False`, so real env always wins and the `.env` is ignored. Every
 other tool (cameras, import, and all upstream tools) needs **no** configuration.
 
+## Design notes, technical debt & contributing
+
+**Why a separate repo (not a clean upstream fork).** These features were built as
+a pragmatic, *additive* extension for a specific "text -> 3D -> into a Blender
+scene" workflow, not as a maintained fork. The new tools live as **isolated
+modules** under `mcp/blmcp/tools/`, following upstream's own tool-pair convention,
+so they don't entangle with upstream code. The only upstream files touched are one
+additive guidance block in `prompts.yml` and one line in `mcp/pyproject.toml`
+(the `python-dotenv` dep). Keeping the surface tiny is deliberate - it makes
+rebasing on upstream, or contributing individual pieces back, straightforward.
+
+**Known technical debt (honest list):**
+
+- **No upstream git lineage.** This began as a `--depth 1` shallow clone, which
+  can't be pushed to a new remote; it was re-committed as a single fresh root
+  commit. So the history does **not** preserve the official commit lineage
+  (upstream is kept as the `upstream` remote for reference, but there is no clean
+  merge base). A proper fork would retain history.
+- **n8n coupling for `generate_3d` / `wait_for_3d_job`.** These call an external
+  n8n instance (fal Trellis + OpenRouter, via webhooks). It was the fastest path
+  on top of an existing n8n stack, but it is infrastructure-heavy for others. The
+  cleaner design - direct in-Python OpenRouter + fal calls, keys in env, no n8n -
+  is deferred (see the note in `n8n/README.md`).
+- **`.env` as a host workaround.** The local secret lives in `mcp/.env` (dotenv)
+  chiefly because the Windows/MSIX Claude Desktop build does not reliably pass a
+  config `env` block to the spawned server process. On a normal host the env is
+  passed directly and the `.env` is unnecessary.
+- **The `prompts.yml` edit** is the one non-additive change; a cleaner version
+  would make that guidance opt-in rather than editing the shared prompt.
+
+**We are open to collaborating.** The camera-framing tools
+(`place_standard_cameras` / `read_standard_views`) and `import_canonical_model`
+are pure-Blender, have no external dependencies, and are the kind of thing that
+could reasonably live upstream - we would be glad to contribute them to the
+official [`blender_mcp`](https://projects.blender.org/lab/blender_mcp). The
+text-to-3D pipeline would want the in-Python rework first. Issues, PRs, and ideas
+are welcome; if you are building similar things, please reach out.
+
 ----
 
 The project is deliberately small, maintainable, and does no more than
