@@ -112,6 +112,25 @@ the MCP tools to work.
 The add-on provides a preferences panel for configuring the host, port,
 and an optional auto-start setting.
 
+### Several Blender instances (one port per session)
+
+Each Blender binds its own port: the ``BLENDER_MCP_PORT`` environment variable (set by a
+launcher) wins over the Port preference, so the normal launch stays on 9876 while a
+review Blender started with ``BLENDER_MCP_PORT=9877`` sits beside it. On Windows the
+port is bound with ``SO_EXCLUSIVEADDRUSE``: a second Blender asking for a taken port
+fails with "already in use" (shown in the preferences, the console and a popup)
+instead of silently taking the port over.
+
+After binding, the add-on writes ``%LOCALAPPDATA%\blender-mcp\instances\<pid>.json``
+(``$XDG_STATE_HOME/blender-mcp/instances`` elsewhere, ``BLENDER_MCP_REGISTRY_DIR`` to
+override) with its pid, port, blend file, start time and the ``BLENDER_MCP_SESSION``
+label, refreshes the file name on load/save and removes the record on exit.
+
+The MCP server uses ``BLENDER_MCP_PORT`` as an explicit pin. Without it, it talks to the
+only registered instance (and keeps it for the session), refuses with the list when
+several run, and never falls back to 9876 silently. ``list_blender_instances`` and
+``select_blender_instance(pid|port)`` choose per MCP server process, i.e. per session.
+
 ### Functionality Overview
 
 Note that this is intended to be a fairly minimal add-on.

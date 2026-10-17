@@ -14,10 +14,12 @@ Blender's main thread.
 __all__ = (
     "DEFAULT_HOST",
     "DEFAULT_PORT",
+    "ENV_PORT",
     "TIMER_INTERVAL_ACTIVE",
     "is_running",
     "poll",
     "poll_blocking",
+    "port_from_env",
     "start",
     "stop",
     "timer_idle_interval",
@@ -26,8 +28,10 @@ __all__ = (
     "use_log",
 )
 
+import errno
 import json
 import math
+import os
 import select
 import socket
 import sys
@@ -37,6 +41,12 @@ from typing import NamedTuple
 
 DEFAULT_HOST = "localhost"
 DEFAULT_PORT = 9876
+
+# A launcher sets this to give one Blender its own port; it wins over the preference.
+# The MCP server reads the same variable as an explicit pin (see `blmcp/tools_helpers/connection.py`).
+ENV_PORT = "BLENDER_MCP_PORT"
+_PORT_MIN = 1024
+_PORT_MAX = 65535
 
 # Seconds between main-thread timer ticks.
 TIMER_INTERVAL_ACTIVE = 0.05
@@ -554,6 +564,60 @@ def poll_blocking(timeout: float = _POLL_BLOCKING_TIMEOUT) -> bool:
 # ---------------------------------------------------------------------------
 # Public API.
 
+def port_from_env() -> int | None:
+    """
+    Return the port named by ``BLENDER_MCP_PORT``, or ``None`` when it is unset.
+
+    Raise ``ValueError`` for a value that is not a port number, so a launcher mistake is shown
+    instead of silently falling back to the preference (which may be another Blender's port).
+    """
+    value = os.environ.get(ENV_PORT, "").strip()
+    if not value:
+        return None
+    try:
+        port = int(value)
+    except ValueError:
+        port = -1
+    if not _PORT_MIN <= port <= _PORT_MAX:
+        raise ValueError("{:s}={!r} is not a port number in {:d}-{:d}".format(ENV_PORT, value, _PORT_MIN, _PORT_MAX))
+    return port
+
+
+def _bind_listening_socket(host: str, port: int) -> socket.socket:
+    """
+    Return a non-blocking socket listening on *host*:*port* that no other process can share.
+
+    On Windows ``SO_REUSEADDR`` lets a second process bind a port that a first one is still
+    listening on and take its connections, so two Blender instances would silently share 9876.
+    ``SO_EXCLUSIVEADDRUSE`` makes the second bind fail instead.
+    Elsewhere ``SO_REUSEADDR`` only allows rebinding over ``TIME_WAIT`` and never two listeners.
+    """
+    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    try:
+        if sys.platform == "win32":
+            # `~SO_REUSEADDR` in the Windows headers, for Python builds without the constant.
+            sock.setsockopt(socket.SOL_SOCKET, getattr(socket, "SO_EXCLUSIVEADDRUSE", -5), 1)
+        else:
+            sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+        sock.setblocking(False)
+        sock.bind((host, port))
+        sock.listen(_LISTEN_BACKLOG)
+    except OSError as ex:
+        sock.close()
+        # 10048 = WSAEADDRINUSE, 10013 = WSAEACCES (the holder bound it exclusively).
+        if ex.errno in (errno.EADDRINUSE, errno.EACCES) or getattr(ex, "winerror", None) in (10048, 10013):
+            raise OSError(
+                ex.errno,
+                (
+                    "Port {:d} on {:s} is already in use, most likely by another Blender with the MCP add-on. "
+                    "This Blender's MCP server did not start. Close the other instance, or give this one "
+                    "its own port with the {:s} environment variable or the add-on's Port preference"
+                ).format(port, host, ENV_PORT),
+            ) from ex
+        raise
+    return sock
+
+
 def start(host: str, port: int) -> None:
     """
     Bind the listening socket and begin accepting connections.
@@ -571,17 +635,7 @@ def start(host: str, port: int) -> None:
     if is_running():
         raise RuntimeError("Server is already running")
 
-    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    try:
-        sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-        sock.setblocking(False)
-        sock.bind((host, port))
-        sock.listen(_LISTEN_BACKLOG)
-    except OSError:
-        sock.close()
-        raise
-
-    _state.sock = sock
+    _state.sock = _bind_listening_socket(host, port)
 
 
 def stop() -> None:

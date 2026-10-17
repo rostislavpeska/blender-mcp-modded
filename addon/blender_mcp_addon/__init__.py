@@ -11,7 +11,11 @@ __all__ = (
     "unregister",
 )
 
+import atexit
+import sys
+
 import bpy  # pylint: disable=import-error
+from bpy.app.handlers import persistent  # pylint: disable=import-error
 from bpy.props import (
     BoolProperty,
     FloatProperty,
@@ -19,6 +23,7 @@ from bpy.props import (
     StringProperty,
 )  # pylint: disable=import-error
 
+from . import instance_registry
 from . import mcp_to_blender_server
 
 _PORT_MIN = 1024
@@ -46,6 +51,9 @@ class _State:
     # Communicate to the user if there is a problem.
     # Displayed in the preferences UI when non-empty.
     autostart_error: str = ""
+
+    # The registry clean-up is registered with `atexit` once per session.
+    atexit_registered: bool = False
 
     @classmethod
     def startup_info_set(cls, error: str) -> None:
@@ -84,6 +92,81 @@ class _State:
             print("Error: {:s}".format(_state_offline_error_message))
             print("  Use --online-mode to enable online access from the command line")
         return False
+
+
+def _port_resolve(prefs_port: int) -> int:
+    """
+    Return the port to bind: ``BLENDER_MCP_PORT`` (set by a launcher) before the preference.
+
+    The owner's normal launch has no such variable, so it keeps the preference (9876 by default).
+    Raise ``ValueError`` for an invalid variable rather than falling back to the preference.
+    """
+    port = mcp_to_blender_server.port_from_env()
+    return prefs_port if port is None else port
+
+
+def _server_start(host: str, port: int) -> None:
+    """
+    Bind the bridge server and register this instance, so the MCP server can find it by port.
+    """
+    mcp_to_blender_server.start(host, port)
+    try:
+        path = instance_registry.write_for_this_blender(host, port)
+    except OSError as ex:
+        # The server runs, but an MCP server that relies on the registry will not find it.
+        print("Blender MCP: could not write the instance record: {:s}".format(str(ex)), file=sys.stderr)
+    else:
+        print("Blender MCP: listening on {:s}:{:d}, registered in {:s}".format(host, port, path), file=sys.stderr)
+    if not _State.atexit_registered:
+        # A crash skips this; readers then skip the record because its process is gone.
+        atexit.register(instance_registry.remove)
+        _State.atexit_registered = True
+
+
+def _server_stop() -> None:
+    mcp_to_blender_server.stop()
+    try:
+        instance_registry.remove()
+    except OSError:
+        pass
+
+
+def _server_start_error_show(ex: Exception) -> None:
+    """
+    Make a failed auto-start loud: preferences label, console and (with a UI) a popup.
+    """
+    _State.startup_info_set_from_exception(ex)
+    print("Blender MCP server not started: {:s}".format(str(ex)), file=sys.stderr)
+    if bpy.app.background:
+        return
+
+    def draw(menu: bpy.types.UIPopupMenu, _context: bpy.types.Context) -> None:
+        menu.layout.label(text=str(ex), icon="ERROR")
+
+    try:
+        bpy.context.window_manager.popup_menu(draw, title="Blender MCP server not started", icon="ERROR")
+    except Exception:  # pylint: disable=broad-exception-caught
+        # No window yet; the console and the preferences still show it.
+        pass
+
+
+@persistent  # type: ignore[untyped-decorator]
+def _registry_filepath_refresh(*_args: object) -> None:
+    """
+    Keep the registered blend file current after load and save.
+    """
+    if not mcp_to_blender_server.is_running():
+        return
+    try:
+        instance_registry.refresh_filepath(bpy.data.filepath)
+    except OSError as ex:
+        print("Blender MCP: could not update the instance record: {:s}".format(str(ex)), file=sys.stderr)
+
+
+_registry_handlers = (
+    bpy.app.handlers.load_post,
+    bpy.app.handlers.save_post,
+)
 
 
 class _BlenderMCPPreferences(bpy.types.AddonPreferences):  # type: ignore[misc]
@@ -188,6 +271,16 @@ class _BlenderMCPPreferences(bpy.types.AddonPreferences):  # type: ignore[misc]
         layout = self.layout
         layout.prop(self, "host")
         layout.prop(self, "port")
+        try:
+            env_port = mcp_to_blender_server.port_from_env()
+        except ValueError as ex:
+            layout.label(text=str(ex), icon="ERROR")
+        else:
+            if env_port is not None:
+                layout.label(
+                    text="{:s}={:d} overrides the Port preference".format(mcp_to_blender_server.ENV_PORT, env_port),
+                    icon="INFO",
+                )
         layout.prop(self, "use_autostart")
         layout.prop(self, "autostart_delay")
         layout.prop(self, "timer_interval_active")
@@ -232,7 +325,8 @@ class _BLMCP_OT_server_start(bpy.types.Operator):  # type: ignore[misc]
         )
         mcp_to_blender_server.use_log = prefs.use_log
         try:
-            mcp_to_blender_server.start(prefs.host, prefs.port)
+            port = _port_resolve(prefs.port)
+            _server_start(prefs.host, port)
         except Exception as ex:  # pylint: disable=broad-exception-caught
             _State.startup_info_set_from_exception(ex)
             self.report({"ERROR"}, str(ex))
@@ -241,7 +335,7 @@ class _BLMCP_OT_server_start(bpy.types.Operator):  # type: ignore[misc]
             execute_interactive.run,
             first_interval=mcp_to_blender_server.TIMER_INTERVAL_ACTIVE,
             persistent=True)
-        self.report({"INFO"}, "MCP server started on {:s}:{:d}".format(prefs.host, prefs.port))
+        self.report({"INFO"}, "MCP server started on {:s}:{:d}".format(prefs.host, port))
         return {"FINISHED"}
 
 
@@ -256,7 +350,7 @@ class _BLMCP_OT_server_stop(bpy.types.Operator):  # type: ignore[misc]
 
         # Clear any stale auto-start error so it does not persist in the UI.
         _State.startup_info_clear()
-        mcp_to_blender_server.stop()
+        _server_stop()
         if bpy.app.timers.is_registered(execute_interactive.run):
             bpy.app.timers.unregister(execute_interactive.run)
         self.report({"INFO"}, "MCP bridge server stopped")
@@ -289,9 +383,9 @@ def _autostart_timer() -> None:
         return
 
     try:
-        mcp_to_blender_server.start(prefs.host, prefs.port)
+        _server_start(prefs.host, _port_resolve(prefs.port))
     except Exception as ex:  # pylint: disable=broad-exception-caught
-        _State.startup_info_set_from_exception(ex)
+        _server_start_error_show(ex)
         return
 
     bpy.app.timers.register(
@@ -320,6 +414,9 @@ _classes = (
 def register() -> None:
     for cls in _classes:
         bpy.utils.register_class(cls)
+    for handlers in _registry_handlers:
+        if _registry_filepath_refresh not in handlers:
+            handlers.append(_registry_filepath_refresh)
     _cli_commands.append(bpy.utils.register_cli_command("blender_mcp", _cli_execute_handler))
 
     # Defer auto-start so the server does not slow down Blender's startup.
@@ -346,7 +443,11 @@ def unregister() -> None:
     if bpy.app.timers.is_registered(_autostart_timer):
         bpy.app.timers.unregister(_autostart_timer)
 
-    mcp_to_blender_server.stop()
+    for handlers in _registry_handlers:
+        if _registry_filepath_refresh in handlers:
+            handlers.remove(_registry_filepath_refresh)
+
+    _server_stop()
     if bpy.app.timers.is_registered(execute_interactive.run):
         bpy.app.timers.unregister(execute_interactive.run)
     for cls in reversed(_classes):

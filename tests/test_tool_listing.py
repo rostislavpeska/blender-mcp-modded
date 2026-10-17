@@ -26,6 +26,56 @@ _REPO_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # BEGIN: EXPECTED_TOOLS
 EXPECTED_TOOLS = [
     {
+        "name": "list_blender_instances",
+        "description": "\n"
+        "List the running Blender instances that registered an MCP server, and which one this session uses.\n"
+        "\n"
+        "Each instance has its own port. When several run, the other tools refuse to guess:\n"
+        "choose one with ``select_blender_instance``.\n"
+        "With *probe*, each instance is asked (read-only) for its open file and unsaved state.\n",
+        "inputSchema": {
+            "properties": {
+                "probe": {
+                    "default": True,
+                    "title": "Probe",
+                    "type": "boolean"
+                }
+            },
+            "title": "list_blender_instancesArguments",
+            "type": "object"
+        }
+    },
+    {
+        "name": "select_blender_instance",
+        "description": "\n"
+        "Choose which running Blender this MCP session talks to, by process id or port.\n"
+        "\n"
+        "The choice holds for this session only, so two sessions can drive two Blender instances.\n"
+        "Call with neither argument to clear it. A ``BLENDER_MCP_PORT`` pin of the MCP server wins over it.\n",
+        "inputSchema": {
+            "properties": {
+                "pid": {
+                    "anyOf": [
+                        {"type": "integer"},
+                        {"type": "null"}
+                    ],
+                    "default": None,
+                    "title": "Pid"
+                },
+                "port": {
+                    "anyOf": [
+                        {"type": "integer"},
+                        {"type": "null"}
+                    ],
+                    "default": None,
+                    "title": "Port"
+                }
+            },
+            "title": "select_blender_instanceArguments",
+            "type": "object"
+        }
+    },
+    {
         "name": "execute_blender_code",
         "description": "\n"
         "Execute Python code in the connected Blender instance.\n"
@@ -397,6 +447,48 @@ EXPECTED_TOOLS = [
         }
     },
     {
+        "name": "import_canonical_model",
+        "description": "\n"
+        "Import a 3D model and canonicalize it in one step.\n"
+        "\n"
+        "*source* is an http(s) URL (e.g. a generated .glb) or a local file path\n"
+        "(.glb/.gltf/.obj/.fbx). The model is joined into a single mesh, its\n"
+        "transforms are applied, it is uniformly scaled so its largest bounding-box\n"
+        "dimension equals *target_size*, its origin is set to *pivot* (\"center\" =\n"
+        "bounding-box centre, \"bottom\" = base centre), and it is placed at the\n"
+        "world origin. Pass *collection_name* to link it into a specific collection.\n"
+        "\n"
+        "Returns the object name and its final bounding box.\n",
+        "inputSchema": {
+            "properties": {
+                "source": {
+                    "title": "Source",
+                    "type": "string"
+                },
+                "pivot": {
+                    "default": "center",
+                    "title": "Pivot",
+                    "type": "string"
+                },
+                "target_size": {
+                    "default": 1.0,
+                    "title": "Target Size",
+                    "type": "number"
+                },
+                "collection_name": {
+                    "default": "",
+                    "title": "Collection Name",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "source"
+            ],
+            "title": "import_canonical_modelArguments",
+            "type": "object"
+        }
+    },
+    {
         "name": "jump_to_tab_by_name",
         "description": "\n"
         "Switch the active workspace tab to *name*.\n",
@@ -489,6 +581,88 @@ EXPECTED_TOOLS = [
                 "name"
             ],
             "title": "jump_to_view3d_object_data_by_nameArguments",
+            "type": "object"
+        }
+    },
+    {
+        "name": "place_standard_cameras",
+        "description": "\n"
+        "Place four standardized framing cameras (front, right, back, left) around\n"
+        "the scene, fitted to the bounds of the framed meshes and aimed at their\n"
+        "centre. The cameras live in a hidden collection (excluded from the\n"
+        "viewport, still renderable).\n"
+        "\n"
+        "By default every mesh in the scene is framed. Pass *target_collection* to\n"
+        "frame only the meshes inside one collection, and/or *ignore_object_names*\n"
+        "to drop objects (e.g. a large ground or water plane) that would otherwise\n"
+        "dominate the fit.\n"
+        "\n"
+        "To read the views afterwards, call ``read_standard_views`` (or set one\n"
+        "camera active and use ``render_viewport_to_path``).\n",
+        "inputSchema": {
+            "properties": {
+                "distance_multiplier": {
+                    "default": 2.5,
+                    "title": "Distance Multiplier",
+                    "type": "number"
+                },
+                "collection_name": {
+                    "default": "_mcp_standard_cameras",
+                    "title": "Collection Name",
+                    "type": "string"
+                },
+                "target_collection": {
+                    "anyOf": [
+                        {"type": "string"},
+                        {"type": "null"}
+                    ],
+                    "default": None,
+                    "title": "Target Collection"
+                },
+                "ignore_object_names": {
+                    "anyOf": [
+                        {
+                            "items": {"type": "string"},
+                            "type": "array"
+                        },
+                        {"type": "null"}
+                    ],
+                    "default": None,
+                    "title": "Ignore Object Names"
+                }
+            },
+            "title": "place_standard_camerasArguments",
+            "type": "object"
+        }
+    },
+    {
+        "name": "read_standard_views",
+        "description": "\n"
+        "Render every standardized camera (placed by ``place_standard_cameras``)\n"
+        "and return a single 2x2 contact-sheet image (front / right / back / left)\n"
+        "so the scene can be understood from all angles in one step. Render\n"
+        "settings and the active camera are restored afterwards.\n"
+        "\n"
+        "Call ``place_standard_cameras`` first if the rig does not exist yet.\n",
+        "inputSchema": {
+            "properties": {
+                "collection_name": {
+                    "default": "_mcp_standard_cameras",
+                    "title": "Collection Name",
+                    "type": "string"
+                },
+                "resolution": {
+                    "default": 640,
+                    "title": "Resolution",
+                    "type": "integer"
+                },
+                "samples": {
+                    "default": 16,
+                    "title": "Samples",
+                    "type": "integer"
+                }
+            },
+            "title": "read_standard_viewsArguments",
             "type": "object"
         }
     },
@@ -647,6 +821,74 @@ EXPECTED_TOOLS = [
                 "query"
             ],
             "title": "search_manual_docsArguments",
+            "type": "object"
+        }
+    },
+    {
+        "name": "generate_3d",
+        "description": "\n"
+        "Start text-to-3D generation via the n8n pipeline (async).\n"
+        "\n"
+        "Returns immediately with ``job_id``, ``status_url`` and ``response_url``.\n"
+        "Pass ``status_url`` + ``response_url`` to ``wait_for_3d_job`` to get the\n"
+        "finished ``glb_url``, then ``import_canonical_model(glb_url)`` to bring it\n"
+        "into the scene.\n"
+        "\n"
+        "*prompt* should describe ONLY the object (e.g. \"a rusty iron lantern\").\n"
+        "The isolation/background instructions are added server-side.\n",
+        "inputSchema": {
+            "properties": {
+                "prompt": {
+                    "title": "Prompt",
+                    "type": "string"
+                },
+                "image_model": {
+                    "default": "",
+                    "title": "Image Model",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "prompt"
+            ],
+            "title": "generate_3dArguments",
+            "type": "object"
+        }
+    },
+    {
+        "name": "wait_for_3d_job",
+        "description": "\n"
+        "Poll a 3D generation job (from ``generate_3d``) until the model is ready.\n"
+        "\n"
+        "Returns ``{\"status\": \"completed\", \"glb_url\": ...}`` on success \u2014 feed the\n"
+        "``glb_url`` to ``import_canonical_model``. Returns a ``timeout`` or\n"
+        "``failed`` status otherwise.\n",
+        "inputSchema": {
+            "properties": {
+                "status_url": {
+                    "title": "Status Url",
+                    "type": "string"
+                },
+                "response_url": {
+                    "title": "Response Url",
+                    "type": "string"
+                },
+                "timeout_seconds": {
+                    "default": 300,
+                    "title": "Timeout Seconds",
+                    "type": "integer"
+                },
+                "poll_interval": {
+                    "default": 6.0,
+                    "title": "Poll Interval",
+                    "type": "number"
+                }
+            },
+            "required": [
+                "status_url",
+                "response_url"
+            ],
+            "title": "wait_for_3d_jobArguments",
             "type": "object"
         }
     }
