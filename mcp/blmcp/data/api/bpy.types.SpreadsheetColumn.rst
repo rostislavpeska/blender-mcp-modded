@@ -5,6 +5,7 @@ SpreadsheetColumn(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: SpreadsheetColumn(bpy_struct)
 
    Persistent data associated with a spreadsheet column

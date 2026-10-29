@@ -5,6 +5,7 @@ NodesModifierDataBlock(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: NodesModifierDataBlock(bpy_struct)
 
 

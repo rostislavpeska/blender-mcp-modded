@@ -5,6 +5,7 @@ NodeGeometryViewerItem(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: NodeGeometryViewerItem(bpy_struct)
 
 

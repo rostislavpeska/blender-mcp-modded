@@ -5,6 +5,7 @@ UVProjector(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: UVProjector(bpy_struct)
 
    UV projector used by the UV project modifier

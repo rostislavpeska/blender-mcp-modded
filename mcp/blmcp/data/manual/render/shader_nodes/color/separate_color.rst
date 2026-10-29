@@ -1,4 +1,36 @@
 .. _bpy.types.ShaderNodeSeparateColor:
-.. DO NOT EDIT FILE. This is simply a stub which copies everything from the link below.
-.. include:: /modeling/geometry_nodes/color/separate_color.rst
-   :start-after: .. --- copy below this line ---
+
+*******************
+Separate Color Node
+*******************
+
+.. figure:: /images/node-types_ShaderNodeSeparateColor.webp
+   :align: right
+   :alt: Separate Color Node.
+
+Splits a color into its channels,
+based on a particular :term:`Color Model`.
+
+
+Inputs
+======
+
+Color
+   Standard color input.
+
+
+Properties
+==========
+
+Mode
+   The color model to output.
+
+   :RGB: Red, Green, Blue.
+   :HSV: Hue, Saturation, Value.
+   :HSL: Hue, Saturation, Lightness.
+
+
+Outputs
+=======
+
+The outputs of this node depend on the Mode property (see above).

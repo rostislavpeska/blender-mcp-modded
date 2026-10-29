@@ -5,6 +5,7 @@ LineStyleThicknessModifier_Calligraphy(LineStyleThicknessModifier)
 
 base classes --- :class:`bpy_struct`, :class:`LineStyleModifier`, :class:`LineStyleThicknessModifier`
 
+
 .. class:: LineStyleThicknessModifier_Calligraphy(LineStyleThicknessModifier)
 
    Change line thickness so that stroke looks like made with a calligraphic pen

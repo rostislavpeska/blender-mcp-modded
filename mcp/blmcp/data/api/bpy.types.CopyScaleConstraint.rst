@@ -5,6 +5,7 @@ CopyScaleConstraint(Constraint)
 
 base classes --- :class:`bpy_struct`, :class:`Constraint`
 
+
 .. class:: CopyScaleConstraint(Constraint)
 
    Copy the scale of the target

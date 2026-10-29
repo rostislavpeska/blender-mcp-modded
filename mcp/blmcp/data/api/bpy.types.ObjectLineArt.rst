@@ -5,6 +5,7 @@ ObjectLineArt(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: ObjectLineArt(bpy_struct)
 
    Object Line Art settings

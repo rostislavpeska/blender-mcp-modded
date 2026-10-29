@@ -16,10 +16,10 @@ Custom properties are a way to store your own data in Blender's data-blocks. It 
 where it's common to define new settings not available in Blender. It is also possible to access
 custom properties from materials via the :doc:`Attribute Node </render/shader_nodes/input/attribute>`.
 
-Only certain data supports custom properties:
+Only certain data supports custom properties such as:
 
 - All :ref:`data-blocks types <data-system-datablock-types>`.
-- Bones and pose bones.
+- Bones, pose bones, and edit bones.
 - Sequence strips.
 
 To add a custom property, search for the *Custom Properties* panel,

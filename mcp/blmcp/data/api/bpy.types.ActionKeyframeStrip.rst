@@ -5,6 +5,7 @@ ActionKeyframeStrip(ActionStrip)
 
 base classes --- :class:`bpy_struct`, :class:`ActionStrip`
 
+
 .. class:: ActionKeyframeStrip(ActionStrip)
 
    Strip with a set of F-Curves for each action slot

@@ -13,6 +13,7 @@
    bone_roll.rst
    extrude.rst
    duplicate.rst
+   duplicate_rename.rst
    fill_between_joints.rst
    split.rst
    separate_bones.rst

@@ -5,6 +5,7 @@ MeshNormalValue(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: MeshNormalValue(bpy_struct)
 
    Vector in a mesh normal array

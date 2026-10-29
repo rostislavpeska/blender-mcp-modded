@@ -5,6 +5,7 @@ NodeTreeInterfaceSocketMask(NodeTreeInterfaceSocket)
 
 base classes --- :class:`bpy_struct`, :class:`NodeTreeInterfaceItem`, :class:`NodeTreeInterfaceSocket`
 
+
 .. class:: NodeTreeInterfaceSocketMask(NodeTreeInterfaceSocket)
 
    Mask socket of a node

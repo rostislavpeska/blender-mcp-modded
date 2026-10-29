@@ -5,6 +5,7 @@ ColorRampElement(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: ColorRampElement(bpy_struct)
 
    Element defining a color at a position in the color ramp

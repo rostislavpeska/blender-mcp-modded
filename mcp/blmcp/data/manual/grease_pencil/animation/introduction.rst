@@ -64,7 +64,7 @@ Onion Skinning
 --------------
 
 One key element in traditional animation is the use of onion skinning.
-Grease Pencil offer a lot of flexibility and options for this tool.
+Grease Pencil offers a lot of flexibility and options for this tool.
 See :doc:`Onion Skinning </grease_pencil/properties/onion_skinning>` for more information.
 
 

@@ -27,7 +27,11 @@ Nodes for modifying vector quantities.
 .. toctree::
    :maxdepth: 1
 
+   3d_to_screen_space.rst
    combine_cylindrical.rst
    combine_spherical.rst
+   project_with_depth.rst
+   screen_space_to_3d.rst
    separate_cylindrical.rst
    separate_spherical.rst
+   transform_and_project.rst

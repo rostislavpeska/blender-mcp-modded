@@ -5,6 +5,7 @@ ThemeTopBar(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: ThemeTopBar(bpy_struct)
 
    Theme settings for the Top Bar

@@ -5,6 +5,7 @@ ShaderNodeTexGradient(ShaderNode)
 
 base classes --- :class:`bpy_struct`, :class:`Node`, :class:`NodeInternal`, :class:`ShaderNode`
 
+
 .. class:: ShaderNodeTexGradient(ShaderNode)
 
    Generate interpolated color and intensity values based on the input vector
@@ -104,6 +105,7 @@ Inherited Properties
    - :class:`Node.label`
    - :class:`Node.inputs`
    - :class:`Node.outputs`
+   - :class:`Node.panel_states`
    - :class:`Node.internal_links`
    - :class:`Node.parent`
    - :class:`Node.warning_propagation`

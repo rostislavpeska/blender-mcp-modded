@@ -85,7 +85,7 @@ Bake Type
    :Normal:
       Bakes normals to an RGB image.
    :UV:
-      Mapped UV coordinates, used to represent where on a mesh a texture gets mapped too.
+      Mapped UV coordinates, used to represent where on a mesh a texture gets mapped to.
       This is represented through the red and green channels of the image,
       the blue channel is encoded with a constant value of 1 but does not hold any information.
    :Roughness:

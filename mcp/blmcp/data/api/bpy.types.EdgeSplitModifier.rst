@@ -5,6 +5,7 @@ EdgeSplitModifier(Modifier)
 
 base classes --- :class:`bpy_struct`, :class:`Modifier`
 
+
 .. class:: EdgeSplitModifier(Modifier)
 
    Edge splitting modifier to create sharp edges

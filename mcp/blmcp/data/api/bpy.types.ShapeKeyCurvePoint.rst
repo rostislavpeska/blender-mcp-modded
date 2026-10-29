@@ -5,6 +5,7 @@ ShapeKeyCurvePoint(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: ShapeKeyCurvePoint(bpy_struct)
 
    Point in a shape key for curves

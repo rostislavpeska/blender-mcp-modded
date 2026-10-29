@@ -5,6 +5,7 @@ Stereo3dDisplay(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: Stereo3dDisplay(bpy_struct)
 
    Settings for stereo 3D display

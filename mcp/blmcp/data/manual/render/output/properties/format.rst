@@ -16,6 +16,13 @@ for TVs and screens can be selected in the panel header.
 Resolution X, Y
    The number of pixels horizontally and vertically in the image.
 
+   .. _bpy.ops.render.swap_dimensions:
+
+   .. tip::
+
+      The image can be quickly switched between landscape and portrait orientation
+      by right-clicking the resolution fields and choosing *Swap Dimensions*.
+
 .. _bpy.types.RenderSettings.resolution_percentage:
 
 Percentage

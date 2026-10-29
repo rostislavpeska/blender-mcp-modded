@@ -5,8 +5,11 @@ StripColorBalanceData(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
-subclasses --- 
-:class:`StripColorBalance`
+.. toctree::
+   :caption: Subclasses
+   :maxdepth: 1
+
+   bpy.types.StripColorBalance.rst
 
 .. class:: StripColorBalanceData(bpy_struct)
 

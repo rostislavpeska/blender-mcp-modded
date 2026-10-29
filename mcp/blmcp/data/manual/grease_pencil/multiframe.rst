@@ -28,7 +28,7 @@ Usage
 #. Once activated you can:
 
    - Select the points in all the selected keyframes and make your edits.
-   - Start sculpting. The sculpt brushes will affects all the strokes in the selected keyframes.
+   - Start sculpting. The sculpt brushes will affect all the strokes in the selected keyframes.
    - Start weight painting. The weight paint brush will affect all the strokes in the selected keyframes.
    - Start Drawing. The new strokes will be added in all the selected keyframes.
      If you are using the Fill tool then it will be applied in all the selected keyframes.

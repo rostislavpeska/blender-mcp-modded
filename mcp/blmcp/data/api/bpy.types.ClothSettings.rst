@@ -5,6 +5,7 @@ ClothSettings(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: ClothSettings(bpy_struct)
 
    Cloth simulation settings for an object

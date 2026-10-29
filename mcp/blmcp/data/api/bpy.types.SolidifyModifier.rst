@@ -5,6 +5,7 @@ SolidifyModifier(Modifier)
 
 base classes --- :class:`bpy_struct`, :class:`Modifier`
 
+
 .. class:: SolidifyModifier(Modifier)
 
    Create a solid skin, compensating for sharp angles

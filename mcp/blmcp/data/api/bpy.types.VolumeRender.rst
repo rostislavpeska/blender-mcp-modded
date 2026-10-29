@@ -5,6 +5,7 @@ VolumeRender(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: VolumeRender(bpy_struct)
 
    Volume object render settings

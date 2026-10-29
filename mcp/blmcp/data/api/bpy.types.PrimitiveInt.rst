@@ -5,6 +5,7 @@ PrimitiveInt(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: PrimitiveInt(bpy_struct)
 
    RNA wrapped int

@@ -5,6 +5,7 @@ WindowManager(ID)
 
 base classes --- :class:`bpy_struct`, :class:`ID`
 
+
 .. class:: WindowManager(ID)
 
    Window manager data-block defining open windows and other user interface data
@@ -105,6 +106,12 @@ base classes --- :class:`bpy_struct`, :class:`ID`
 
       :type: int
 
+   .. data:: is_event_handling_break
+
+      Remaining events in the queue are delayed until the next main loop iteration (default False, readonly)
+
+      :type: bool
+
    .. data:: is_interface_locked
 
       If true, the interface is currently locked by a running job and data should not be modified from application timers. Otherwise, the running job might conflict with the handler causing unexpected results or even crashes. (default False, readonly)
@@ -132,6 +139,12 @@ base classes --- :class:`bpy_struct`, :class:`ID`
       Name for new preset (default "New Preset", never None)
 
       :type: str
+
+   .. data:: reports
+
+      Collection of reports (default None, readonly)
+
+      :type: :class:`bpy_prop_collection`\ [:class:`Report`]
 
    .. data:: windows
 
@@ -421,9 +434,123 @@ base classes --- :class:`bpy_struct`, :class:`ID`
       Tag for refreshing the interface after scripts have been reloaded
 
 
+   .. classmethod:: asset_library_status_begin_loading(library_url, *, timeout=0.3)
+
+      Inform the asset system that the asset library at the given URL is being loaded.
+
+      :param library_url: URL, The URL identifying the asset library being loaded (never None)
+      :type library_url: str
+      :param timeout: Timeout, Maximum time in seconds after which the asset library loading will be considered cancelled, if no further status reporting is done (e.g. by repeated calls to `asset_library_status_ping_still_loading()`). (in [0, inf], optional)
+      :type timeout: float
+
+   .. classmethod:: asset_library_status_ping_still_loading(library_url)
+
+      Inform the asset system that the loading is still ongoing. Call this regularly to prevent the loading status to timeout.
+
+      :param library_url: URL, The URL identifying the asset library being loaded (never None)
+      :type library_url: str
+
+   .. classmethod:: asset_library_status_ping_metafiles_in_place(library_url)
+
+      Inform the asset system that the asset meta files (_asset-library-meta.json, asset-listing.json, blender_assets.cats.txt) are in place and ready to be loaded
+
+      :param library_url: URL, The URL identifying the asset library being loaded (never None)
+      :type library_url: str
+
+   .. classmethod:: asset_library_status_ping_loaded_new_pages(library_url)
+
+      Inform the asset system that new content
+
+      :param library_url: URL, The URL identifying the asset library being loaded (never None)
+      :type library_url: str
+
+   .. classmethod:: asset_library_status_ping_loaded_new_preview(preview_full_path)
+
+      Inform the asset system that a new preview is available and ready for display
+
+      :param preview_full_path: URL, The full path (not URL!) pointing to the the asset preview that should be available now (never None)
+      :type preview_full_path: str
+
+   .. classmethod:: asset_library_status_ping_asset_file_progress(absolute_file_url, size_written)
+
+      Inform the asset system about the current progress of an asset file.
+
+      :param absolute_file_url: URL, The absolute URL this file was downloaded from (never None)
+      :type absolute_file_url: str
+      :param size_written: Size Written to Disk, The number of bytes written to disk after uncompressing the download data, if needed (in [0, inf])
+      :type size_written: int
+
+   .. classmethod:: asset_library_status_ping_asset_file_succeeded(library_url, absolute_file_url, local_file_abspath)
+
+      Inform the asset system that a single asset file download has finished successfully.
+
+      :param library_url: URL, The URL identifying the asset library being loaded (never None)
+      :type library_url: str
+      :param absolute_file_url: URL, The absolute URL this file was downloaded from (never None)
+      :type absolute_file_url: str
+      :param local_file_abspath: Local Path, The absolute path this file was downloaded to (never None)
+      :type local_file_abspath: str
+
+   .. classmethod:: asset_library_status_ping_asset_file_failed(library_url, absolute_file_url, local_file_abspath)
+
+      Inform the asset system that a single asset file download has stopped because of some failure.
+
+      :param library_url: URL, The URL identifying the asset library being loaded (never None)
+      :type library_url: str
+      :param absolute_file_url: URL, The absolute URL this file was downloaded from (never None)
+      :type absolute_file_url: str
+      :param local_file_abspath: Local Path, The absolute path this file was supposed to be downloaded to (never None)
+      :type local_file_abspath: str
+
+   .. classmethod:: asset_library_status_ping_finished_download_queue()
+
+      Inform the asset system that there are no more pending asset file downloads for any asset library.
+
+
+   .. classmethod:: asset_library_status_finished_loading(library_url)
+
+      Inform the asset system that the asset library at the given URL has successfully finished loading.
+
+      :param library_url: URL, The URL identifying the asset library being loaded (never None)
+      :type library_url: str
+
+   .. classmethod:: asset_library_status_failed_loading(library_url, *, message="")
+
+      Inform the asset system that the asset library at the given URL failed loading, and should be aborted.
+
+      :param library_url: URL, The URL identifying the asset library being loaded (never None)
+      :type library_url: str
+      :param message: Message, An error message to show to users (optional, never None)
+      :type message: str
+
+   .. classmethod:: register_node_group_operators()
+
+      Trigger manual re-registration of node group operators. Useful in background mode where this doesn't happen automatically.
+
+
    .. method:: popover(draw_func, *, ui_units_x=0, keymap=None, from_active_button=False)
 
+      Display a popover populated by *draw_func*.
+      
+      :param draw_func: Function to populate the popover layout.
+      :type draw_func: Callable[[:class:`UIPopover`, :class:`Context`], None]
+      :param ui_units_x: Width of the popover in UI units (0 for the default).
+      :type ui_units_x: int
+      :param keymap: Optional keymap to attach to the popover.
+      :type keymap: :class:`KeyMap` | None
+      :param from_active_button: Anchor the popover to the active button.
+      :type from_active_button: bool
+
    .. method:: popup_menu(draw_func, *, title='', icon='NONE')
+
+      Display a popup menu populated by *draw_func*.
+      
+      :param draw_func: Function to populate the menu layout.
+      :type draw_func: Callable[[:class:`UIPopupMenu`, :class:`Context`], None]
+      :param title: Title shown above the menu.
+      :type title: str
+      :param icon: Icon shown next to the title.
+      :type icon: str
 
 
       Popup menus can be useful for creating menus without having to register menu classes.
@@ -434,6 +561,17 @@ base classes --- :class:`bpy_struct`, :class:`ID`
          :lines: 7-
 
    .. method:: popup_menu_pie(event, draw_func, *, title='', icon='NONE')
+
+      Display a pie menu populated by *draw_func* at the location of *event*.
+      
+      :param event: Event used to position the pie menu.
+      :type event: :class:`Event`
+      :param draw_func: Function to populate the pie menu layout.
+      :type draw_func: Callable[[:class:`UIPieMenu`, :class:`Context`], None]
+      :param title: Title shown at the center of the pie.
+      :type title: str
+      :param icon: Icon shown next to the title.
+      :type icon: str
 
    .. classmethod:: bl_rna_get_subclass(id, default=None, /)
    

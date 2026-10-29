@@ -5,6 +5,7 @@ GreasePencilDashModifierSegment(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: GreasePencilDashModifierSegment(bpy_struct)
 
    Configuration for a single dash segment
@@ -29,7 +30,7 @@ base class --- :class:`bpy_struct`
 
    .. attribute:: name
 
-      Name of the dash segment (default "", never None)
+      Name of the dash segment (default "Segment", never None)
 
       :type: str
 

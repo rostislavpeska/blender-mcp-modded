@@ -9,7 +9,7 @@ Box Tool
    :Mode:      Draw Mode
    :Tool:      :menuselection:`Toolbar --> Box`
 
-The Box tool create rectangular shapes.
+The Box tool creates rectangular shapes.
 
 
 Tool Settings

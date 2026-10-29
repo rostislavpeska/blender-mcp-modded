@@ -5,6 +5,7 @@ Material(ID)
 
 base classes --- :class:`bpy_struct`, :class:`ID`
 
+
 .. class:: Material(ID)
 
    Material data-block to define the appearance of geometric objects for rendering
@@ -293,7 +294,7 @@ base classes --- :class:`bpy_struct`, :class:`ID`
       to remove nested groups, repeat zones and more.
       
       :return: The inlined shader nodes.
-      :rtype: :class:`bpy.types.InlineShaderNodes`
+      :rtype: :class:`InlineShaderNodes`
 
    .. classmethod:: bl_rna_get_subclass(id, default=None, /)
    

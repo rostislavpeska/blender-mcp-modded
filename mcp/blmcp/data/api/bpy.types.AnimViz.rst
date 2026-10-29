@@ -5,6 +5,7 @@ AnimViz(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: AnimViz(bpy_struct)
 
    Settings for the visualization of motion

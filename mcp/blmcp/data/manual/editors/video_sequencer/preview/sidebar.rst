@@ -179,6 +179,40 @@ Shows guides indicating the video area where content can be seen across all scre
    :ref:`Camera Safe Areas <bpy.types.DisplaySafeAreas>`.
 
 
+.. _sequencer-preview-compositions_guides:
+
+Composition Guides
+------------------
+
+*Composition Guides* enable overlays onto the preview display that can help when framing a shot.
+
+Thirds
+   Adds lines dividing the frame in thirds vertically and horizontally.
+
+Center -- Center
+      Adds lines dividing the frame in half vertically and horizontally.
+Center -- Diagonal
+      Adds lines connecting opposite corners.
+
+Golden -- Ratio
+   Divides the width and height into golden proportions (about 0.618 of the size from all sides of the frame).
+Golden -- Triangle A
+   Displays a diagonal line from the lower left to upper right corners,
+   then adds perpendicular lines that pass through the top left and bottom right corners.
+Golden -- Triangle B
+   Same as A, but with the opposite corners.
+
+Harmony -- Triangle A
+   Displays a diagonal line from the lower left to upper right corners,
+   then lines from the top left and bottom right corners to 0.618 the lengths of the opposite side.
+Harmony -- Triangle B
+   Same as A, but with the opposite corners.
+
+Color
+   Sets the display color and opacity (alpha) used for all composition guide overlays.
+   Useful for adjusting visibility depending on the brightness or contrast of the underlying shot.
+
+
 Scene Strip Display
 -------------------
 

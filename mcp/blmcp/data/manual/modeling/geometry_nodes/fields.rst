@@ -23,34 +23,14 @@ a vector using a single instruction.
 Field Visualization
 ===================
 
-Socket shapes are used to convey which sockets are fields and which are regular data.
-There are three possible socket shapes, each visualizing its "field status":
-
-:Circle:
-   The socket requires a single value, it cannot accept a field input.
-   For output sockets, this means the node always outputs a single value.
-:Diamond:
-   The socket can accept a field input, or it outputs a field. A constant single
-   value can be connected to these sockets, but then the output will often not
-   vary per element.
-:Diamond with Dot:
-   The socket can be a field, but it is currently a single value. This is helpful
-   because it allows tracking where single values are calculated, instead of a field
-   with many different results. It also means that :ref:`socket-inspection` will show
-   the value instead of field input names.
-
-.. figure:: /images/modeling_geometry-nodes_fields_constant.png
+.. figure:: /images/modeling_geometry-nodes_fields_visualization.webp
    :align: center
 
-   The socket shape is a diamond with a dot, meaning the field has the same value
-   for every element. Every point will be moved up by 5 m.
+If a node connection is coming from a field socket, it will be drawn as a dashed line.
+Otherwise, it will be drawn as a solid line instead.
 
-.. figure:: /images/modeling_geometry-nodes_fields_varying.png
-   :align: center
-
-   The socket shape is a diamond and the field input now has a varying input. In other words,
-   the value can be different for every element. In this case, the position will be doubled,
-   since the offset for every point is the point's position.
+If you make the mistake of connecting a non-field socket to a field socket,
+the connection will be drawn as a solid red line indicating that there is an error.
 
 .. tip::
 
@@ -59,12 +39,6 @@ There are three possible socket shapes, each visualizing its "field status":
    the :doc:`/modeling/geometry_nodes/geometry/sample/sample_index` or the
    :doc:`/modeling/geometry_nodes/attribute/attribute_statistic` can
    be used to retrieve a single value from a field evaluated on a geometry.
-
-When a connection is made between two node sockets that support
-fields the node connection will be drawn as a dashed line.
-If you make the mistake of connecting a non-field socket to a field socket,
-the connection will be drawn as a solid red line indicating that there is an error.
-
 
 .. _field-node-types:
 

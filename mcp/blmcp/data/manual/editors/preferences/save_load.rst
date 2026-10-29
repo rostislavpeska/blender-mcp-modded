@@ -18,6 +18,35 @@ Save -- Save Prompt
    Asks for confirmation before closing or opening a new blend-file
    if the current file has unsaved changes.
 
+.. _bpy.types.PreferencesFilePaths.save_modified_images:
+
+Save Modified Images
+   Controls how modified images are handled when saving the blend-file.
+
+   This affects images edited within Blender, such as painted textures,
+   generated images, Render Results, and Compositor Viewer node results
+   that have unsaved changes.
+
+   :Ask Every Time:
+      Displays a confirmation dialog when saving the blend-file, allowing
+      modified images to be saved individually.
+   :Always Save:
+      Automatically saves all modified images when saving the blend-file.
+   :Never Save:
+      Never saves modified images automatically when saving the blend-file.
+
+      Unsaved image changes remain in memory until they are manually saved or discarded.
+
+   .. warning::
+
+      Failing to manually save modified images will result in the changes being lost.
+
+      Render Result images and Compositor Viewer node results are temporary
+      and will be lost when rendering again, loading a new blend-file,
+      or closing Blender unless manually saved.
+
+      See :ref:`Saving Modified Images <files-images-saving-modified>`.
+
 .. _bpy.types.PreferencesFilePaths.save_version:
 
 Save Versions

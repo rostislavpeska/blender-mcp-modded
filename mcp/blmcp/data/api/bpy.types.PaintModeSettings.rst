@@ -5,6 +5,7 @@ PaintModeSettings(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: PaintModeSettings(bpy_struct)
 
    Properties of paint mode

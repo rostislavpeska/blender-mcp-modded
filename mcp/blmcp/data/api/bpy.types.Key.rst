@@ -5,6 +5,7 @@ Key(ID)
 
 base classes --- :class:`bpy_struct`, :class:`ID`
 
+
 .. class:: Key(ID)
 
    Shape keys data-block containing different shapes of geometric data-blocks

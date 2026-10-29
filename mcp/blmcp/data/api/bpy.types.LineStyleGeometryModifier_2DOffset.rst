@@ -5,6 +5,7 @@ LineStyleGeometryModifier_2DOffset(LineStyleGeometryModifier)
 
 base classes --- :class:`bpy_struct`, :class:`LineStyleModifier`, :class:`LineStyleGeometryModifier`
 
+
 .. class:: LineStyleGeometryModifier_2DOffset(LineStyleGeometryModifier)
 
    Add two-dimensional offsets to stroke backbone geometry

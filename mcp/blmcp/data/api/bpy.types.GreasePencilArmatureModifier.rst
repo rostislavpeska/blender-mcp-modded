@@ -5,6 +5,7 @@ GreasePencilArmatureModifier(Modifier)
 
 base classes --- :class:`bpy_struct`, :class:`Modifier`
 
+
 .. class:: GreasePencilArmatureModifier(Modifier)
 
    Deform stroke points using armature object

@@ -5,6 +5,7 @@ DynamicPaintModifier(Modifier)
 
 base classes --- :class:`bpy_struct`, :class:`Modifier`
 
+
 .. class:: DynamicPaintModifier(Modifier)
 
    Dynamic Paint modifier

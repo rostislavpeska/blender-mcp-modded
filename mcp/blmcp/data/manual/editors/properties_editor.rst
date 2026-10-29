@@ -118,7 +118,7 @@ Strips
 
 Tabs related to video editing strips. Shown only when relevant.
 
-- :doc:`Strip Modifiers </video_editing/edit/montage/strip_modifiers>`
+- :doc:`Strip Modifiers </video_editing/edit/montage/modifiers/index>`
 - :doc:`Strip Properties </video_editing/edit/montage/strips/strip_properties>`
 
 

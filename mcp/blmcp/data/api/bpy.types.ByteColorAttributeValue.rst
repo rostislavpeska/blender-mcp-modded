@@ -5,6 +5,7 @@ ByteColorAttributeValue(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: ByteColorAttributeValue(bpy_struct)
 
    Color value in geometry attribute

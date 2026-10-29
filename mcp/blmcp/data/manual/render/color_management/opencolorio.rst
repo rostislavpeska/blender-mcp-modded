@@ -64,17 +64,17 @@ These guidelines help ensure a configuration works well:
 
 * Use OpenColorIO v2 ``display_colorspaces`` and ``view_transforms`` with ``cie_xyz_d65_interchange``
   intermediate display linear space. This is used to emulate the chosen display on the actual display.
-  In older configs without this, display emulation will be disabled and wide gamut and HDR display will
+  In older configurations without this, display emulation will be disabled and wide gamut and HDR display will
   not work well. Saving colorspace metadata for images and video also depends on this.
 * For every display, include a view transform without tone mapping. Blender will look for a view
   transform named ``Standard`` or ``Un-tone-mapped`` or the config wide ``default_view_transform``.
   If not found, the first view transform of the display will be used. This is more important
-  for OpenColorIO v1 configs without ``display_colorspaces``, to determine the color space of an image
+  for OpenColorIO v1 configurations without ``display_colorspaces``, to determine the color space of an image
   after applying a view transform.
 * Include the interop ID from the `Color Interop Forum <https://github.com/AcademySoftwareFoundation/ColorInterop>`__
   for every color space and display color space that you can. This helps save image and video
   with correct colorspace information. Add the interop ID as an alias of the colorspace. For
-  OpenColor 2.5 configs, additionally set the native ``interop_id`` attribute where possible.
+  OpenColor 2.5 configurations, additionally set the native ``interop_id`` attribute where possible.
 * The ``icc_profile_name`` interchange attribute is supported, to embed ICC profiles when saving images.
 * Mark HDR displays by setting ``encoding: hdr-video`` on the corresponding colorspace.
 * For HDR view transforms, use ``HDR 500 nits``, ``HDR 1000 nits``, ``HDR 2000 nits`` or ``HDR 4000 nits``

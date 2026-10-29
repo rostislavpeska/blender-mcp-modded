@@ -5,6 +5,7 @@ DisplaySafeAreas(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: DisplaySafeAreas(bpy_struct)
 
    Safe areas used in 3D view and the sequencer

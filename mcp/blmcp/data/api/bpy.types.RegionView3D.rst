@@ -5,6 +5,7 @@ RegionView3D(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: RegionView3D(bpy_struct)
 
    3D View region data
@@ -13,7 +14,7 @@ base class --- :class:`bpy_struct`
 
       (multi-dimensional array of 6 * 4 items, in [-inf, inf], default ((0.0, 0.0, 0.0, 0.0), (0.0, 0.0, 0.0, 0.0), (0.0, 0.0, 0.0, 0.0), (0.0, 0.0, 0.0, 0.0), (0.0, 0.0, 0.0, 0.0), (0.0, 0.0, 0.0, 0.0)))
 
-      :type: :class:`bpy_prop_array`\ [float]
+      :type: :class:`bpy_prop_array`\ [:class:`bpy_prop_array`\ [float]]
 
    .. attribute:: is_orthographic_side_view
 

@@ -163,7 +163,7 @@ Two handlers you are likely to use are:
 - ``bpy.app.handlers.load_factory_startup_post``
 
 These allow you to define your own "factory settings", which the user may change,
-just as Blender has it's own defaults when first launched.
+just as Blender has its own defaults when first launched.
 
 This is an example ``__init__.py`` file which defines defaults for an app template to use.
 

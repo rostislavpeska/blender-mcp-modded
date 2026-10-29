@@ -5,6 +5,7 @@ MaskSpline(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: MaskSpline(bpy_struct)
 
    Single spline used for defining mask shape

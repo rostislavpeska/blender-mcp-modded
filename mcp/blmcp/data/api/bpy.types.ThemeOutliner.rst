@@ -5,6 +5,7 @@ ThemeOutliner(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: ThemeOutliner(bpy_struct)
 
    Theme settings for the Outliner

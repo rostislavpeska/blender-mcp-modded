@@ -145,7 +145,7 @@ Limits
    The upper limit cannot be lower than the lower one. These limits are mapped on the Deform axis.
 
 Lock (Twist, Taper and Stretch modes only)
-   These controls whether the coordinates along the two other axes are allowed to change or not.
+   This controls whether the coordinates along the two other axes are allowed to change or not.
    E.g. if you *Stretch* your object along its Z axis,
    it is possible to squash along the X axis only, by locking the Y one.
 

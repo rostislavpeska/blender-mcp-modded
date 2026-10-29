@@ -54,10 +54,43 @@ Adding a Modifier
 
    Modifiers panel.
 
-Modifiers can be managed on the *Modifiers* tab of the Sidebar.
-Select an F-Curve (in the channel region or by selecting one of its keyframes),
-then click the *Add Modifier* dropdown and choose the modifier to add.
+F-Curve Modifiers can be added in several ways.  Via the Channel Menu in the Graph Editor,
+the channel region context menu (right click in the channel region),
+plus they can be added and managed in the *Modifiers* tab of the Sidebar.
 
+To add a modifier, first select an F-Curve (in the channel region or by selecting one of its keyframes),
+then chose *Add F-Curve Modifer* from one of the menus or by clicking the *Add Modifier* dropdown in the Sidebar.
+This will let you choose which type of the modifier to add to the selected F-Curves.
+
+Deleting F-Curve Modifiers
+==========================
+
+Just like adding an F-Curve Modifier, there are several ways you can remove them.
+Single modifiers can be removed by clicking the *X* icon next to the modifier in the Sidebar.
+Multiple modifiers can be removed at once with the *Delete F-Curve Modifiers* operator.
+
+This can be found in the Channel Menu, or the Channel Region context menu (right click in the channel region).
+After chosing this menu option, you can open the :ref:`redo panel <bpy.ops.screen.redo_last>` to adjust the settings if needed.
+
+
+.. figure::  /images/editors_graph-editor_fcurves_delete-f-mods-redo-panel.png
+
+   Redo Panel
+
+Mode
+   Method used to remove F-Curve Modifiers from the selected curves.
+
+   :Remove All:
+      This will delete all the F-Curve Modifiers from the selected curves (default option).
+
+   :Remove Type:
+      Only remove the specific type of modifier from the selected curves, leaving the others untouched.
+
+   :Remove First:
+      Remove the modifier that is at the top stack on each of the selected curves.
+
+Type
+   Specify which type of modifier to remove (this option will only be visible when the Mode is set to 'Remove Type').
 
 Types of Modifiers
 ==================
@@ -80,9 +113,9 @@ and other more complex curves, depending on the values used.
 Mode
    Method used to represent the equation.
 
-   Expanded Polynomial
+   :Expanded Polynomial:
       Equation in the form :math:`y = A + Bx^1 + Cx^2 + ... + Dx^n`.
-   Factorized Polynomial
+   :Factorized Polynomial:
       Equation in the form :math:`y = (Ax + B)(Cx + D)`.
 
 Additive
@@ -91,7 +124,7 @@ Additive
 Order
    The highest power of ``x`` for this polynomial.
 
-Coefficient
+Constant
    The constants A, B, C... in the equation.
 
 
@@ -271,7 +304,7 @@ End Frame
    The frame where to stop applying the effect.
 
 Smooth (Gaussian) Modifier
----------------------------
+--------------------------
 
 Uses Gaussian smoothing to reduce detail and noise in the curve.
 It performs the same smoothing as the :ref:`Smoothing Operator <bpy.ops.graph.gaussian_smooth>`.

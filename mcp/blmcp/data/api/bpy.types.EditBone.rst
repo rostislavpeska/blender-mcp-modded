@@ -5,6 +5,7 @@ EditBone(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: EditBone(bpy_struct)
 
    Edit mode bone in an armature data-block
@@ -136,13 +137,13 @@ base class --- :class:`bpy_struct`
 
    .. attribute:: bbone_scalein
 
-      Scale factors for the start of the B-Bone, adjusts thickness (for tapering effects) (array of 3 items, in [-inf, inf], default (0.0, 0.0, 0.0))
+      Scale factors for the start of the B-Bone, adjusts thickness (for tapering effects) (array of 3 items, in [-inf, inf], default (1.0, 1.0, 1.0))
 
       :type: :class:`mathutils.Vector`
 
    .. attribute:: bbone_scaleout
 
-      Scale factors for the end of the B-Bone, adjusts thickness (for tapering effects) (array of 3 items, in [-inf, inf], default (0.0, 0.0, 0.0))
+      Scale factors for the end of the B-Bone, adjusts thickness (for tapering effects) (array of 3 items, in [-inf, inf], default (1.0, 1.0, 1.0))
 
       :type: :class:`mathutils.Vector`
 
@@ -466,11 +467,19 @@ base class --- :class:`bpy_struct`
 
       Align this bone to another by moving its tail and settings its roll
       the length of the other bone is not used.
+      
+      :param other: Bone to copy orientation from.
+      :type other: Self
 
    .. method:: parent_index(parent_test)
 
       The same as 'bone in other_bone.parent_recursive'
       but saved generating a list.
+      
+      :param parent_test: Bone to search for among this bone's ancestors.
+      :type parent_test: Self
+      :return: 1-based depth of *parent_test* in the parent chain, or 0 if not found.
+      :rtype: int
 
    .. method:: transform(matrix, *, scale=True, roll=True)
 
@@ -491,6 +500,9 @@ base class --- :class:`bpy_struct`
    .. method:: translate(vec)
 
       Utility function to add *vec* to the head and tail of this bone.
+      
+      :param vec: Translation vector.
+      :type vec: :class:`mathutils.Vector`
 
    .. classmethod:: bl_rna_get_subclass(id, default=None, /)
    

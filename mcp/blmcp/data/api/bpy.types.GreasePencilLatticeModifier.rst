@@ -5,6 +5,7 @@ GreasePencilLatticeModifier(Modifier)
 
 base classes --- :class:`bpy_struct`, :class:`Modifier`
 
+
 .. class:: GreasePencilLatticeModifier(Modifier)
 
    Deform strokes using a lattice object

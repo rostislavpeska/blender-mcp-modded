@@ -49,7 +49,7 @@ Next, you can unwrap the neck using :ref:`bpy.ops.uv.cylinder_project`.
    to map all three parts in one go.
 
 Once everything is unwrapped, you can select the whole mesh in the 3D Viewport to
-see to the full UV map. Most likely, the different UV parts or "islands" will be
+see the full UV map. Most likely, the different UV parts or "islands" will be
 overlapping; you can fix this in the following ways:
 
 - For each island, select a vertex and press :kbd:`Ctrl-L` to select all the vertices

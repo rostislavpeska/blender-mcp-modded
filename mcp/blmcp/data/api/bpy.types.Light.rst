@@ -5,8 +5,14 @@ Light(ID)
 
 base classes --- :class:`bpy_struct`, :class:`ID`
 
-subclasses --- 
-:class:`AreaLight`, :class:`PointLight`, :class:`SpotLight`, :class:`SunLight`
+.. toctree::
+   :caption: Subclasses
+   :maxdepth: 1
+
+   bpy.types.AreaLight.rst
+   bpy.types.PointLight.rst
+   bpy.types.SpotLight.rst
+   bpy.types.SunLight.rst
 
 .. class:: Light(ID)
 
@@ -133,7 +139,7 @@ subclasses ---
       to remove nested groups, repeat zones and more.
       
       :return: The inlined shader nodes.
-      :rtype: :class:`bpy.types.InlineShaderNodes`
+      :rtype: :class:`InlineShaderNodes`
 
    .. classmethod:: bl_rna_get_subclass(id, default=None, /)
    

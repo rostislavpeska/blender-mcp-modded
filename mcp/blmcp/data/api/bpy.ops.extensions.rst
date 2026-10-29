@@ -9,7 +9,7 @@ Extensions Operators
 
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `addons_core/bl_pkg/bl_extension_ops.py\:3592 <https://projects.blender.org/blender/blender/src/branch/main/scripts/addons_core/bl_pkg/bl_extension_ops.py#L3592>`__
+   :File: `addons_core/bl_pkg/bl_extension_ops.py\:3593 <https://projects.blender.org/blender/blender/src/branch/main/scripts/addons_core/bl_pkg/bl_extension_ops.py#L3593>`__
 
 .. function:: package_install(*, repo_directory="", repo_index=-1, pkg_id="", enable_on_install=True, url="", do_legacy_replace=False)
 
@@ -29,7 +29,7 @@ Extensions Operators
    :type do_legacy_replace: bool
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `addons_core/bl_pkg/bl_extension_ops.py\:1501 <https://projects.blender.org/blender/blender/src/branch/main/scripts/addons_core/bl_pkg/bl_extension_ops.py#L1501>`__
+   :File: `addons_core/bl_pkg/bl_extension_ops.py\:1502 <https://projects.blender.org/blender/blender/src/branch/main/scripts/addons_core/bl_pkg/bl_extension_ops.py#L1502>`__
 
 
 .. function:: package_install_files(*, filter_glob="*.zip;*.py", directory="", files=None, filepath="", repo='', enable_on_install=True, target='', overwrite=True, url="")
@@ -56,7 +56,7 @@ Extensions Operators
    :type url: str
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `addons_core/bl_pkg/bl_extension_ops.py\:1501 <https://projects.blender.org/blender/blender/src/branch/main/scripts/addons_core/bl_pkg/bl_extension_ops.py#L1501>`__
+   :File: `addons_core/bl_pkg/bl_extension_ops.py\:1502 <https://projects.blender.org/blender/blender/src/branch/main/scripts/addons_core/bl_pkg/bl_extension_ops.py#L1502>`__
 
 
 .. function:: package_install_marked(*, enable_on_install=True)
@@ -67,7 +67,7 @@ Extensions Operators
    :type enable_on_install: bool
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `addons_core/bl_pkg/bl_extension_ops.py\:1501 <https://projects.blender.org/blender/blender/src/branch/main/scripts/addons_core/bl_pkg/bl_extension_ops.py#L1501>`__
+   :File: `addons_core/bl_pkg/bl_extension_ops.py\:1502 <https://projects.blender.org/blender/blender/src/branch/main/scripts/addons_core/bl_pkg/bl_extension_ops.py#L1502>`__
 
 
 .. function:: package_mark_clear(*, pkg_id="", repo_index=-1)
@@ -80,7 +80,7 @@ Extensions Operators
    :type repo_index: int
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `addons_core/bl_pkg/bl_extension_ops.py\:3679 <https://projects.blender.org/blender/blender/src/branch/main/scripts/addons_core/bl_pkg/bl_extension_ops.py#L3679>`__
+   :File: `addons_core/bl_pkg/bl_extension_ops.py\:3680 <https://projects.blender.org/blender/blender/src/branch/main/scripts/addons_core/bl_pkg/bl_extension_ops.py#L3680>`__
 
 
 .. function:: package_mark_clear_all()
@@ -89,7 +89,7 @@ Extensions Operators
 
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `addons_core/bl_pkg/bl_extension_ops.py\:3726 <https://projects.blender.org/blender/blender/src/branch/main/scripts/addons_core/bl_pkg/bl_extension_ops.py#L3726>`__
+   :File: `addons_core/bl_pkg/bl_extension_ops.py\:3727 <https://projects.blender.org/blender/blender/src/branch/main/scripts/addons_core/bl_pkg/bl_extension_ops.py#L3727>`__
 
 .. function:: package_mark_set(*, pkg_id="", repo_index=-1)
 
@@ -101,7 +101,7 @@ Extensions Operators
    :type repo_index: int
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `addons_core/bl_pkg/bl_extension_ops.py\:3665 <https://projects.blender.org/blender/blender/src/branch/main/scripts/addons_core/bl_pkg/bl_extension_ops.py#L3665>`__
+   :File: `addons_core/bl_pkg/bl_extension_ops.py\:3666 <https://projects.blender.org/blender/blender/src/branch/main/scripts/addons_core/bl_pkg/bl_extension_ops.py#L3666>`__
 
 
 .. function:: package_mark_set_all()
@@ -110,7 +110,7 @@ Extensions Operators
 
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `addons_core/bl_pkg/bl_extension_ops.py\:3690 <https://projects.blender.org/blender/blender/src/branch/main/scripts/addons_core/bl_pkg/bl_extension_ops.py#L3690>`__
+   :File: `addons_core/bl_pkg/bl_extension_ops.py\:3691 <https://projects.blender.org/blender/blender/src/branch/main/scripts/addons_core/bl_pkg/bl_extension_ops.py#L3691>`__
 
 .. function:: package_obsolete_marked()
 
@@ -118,7 +118,7 @@ Extensions Operators
 
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `addons_core/bl_pkg/bl_extension_ops.py\:3783 <https://projects.blender.org/blender/blender/src/branch/main/scripts/addons_core/bl_pkg/bl_extension_ops.py#L3783>`__
+   :File: `addons_core/bl_pkg/bl_extension_ops.py\:3784 <https://projects.blender.org/blender/blender/src/branch/main/scripts/addons_core/bl_pkg/bl_extension_ops.py#L3784>`__
 
 .. function:: package_show_clear(*, pkg_id="", repo_index=-1)
 
@@ -130,7 +130,7 @@ Extensions Operators
    :type repo_index: int
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `addons_core/bl_pkg/bl_extension_ops.py\:3752 <https://projects.blender.org/blender/blender/src/branch/main/scripts/addons_core/bl_pkg/bl_extension_ops.py#L3752>`__
+   :File: `addons_core/bl_pkg/bl_extension_ops.py\:3753 <https://projects.blender.org/blender/blender/src/branch/main/scripts/addons_core/bl_pkg/bl_extension_ops.py#L3753>`__
 
 
 .. function:: package_show_set(*, pkg_id="", repo_index=-1)
@@ -143,7 +143,7 @@ Extensions Operators
    :type repo_index: int
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `addons_core/bl_pkg/bl_extension_ops.py\:3738 <https://projects.blender.org/blender/blender/src/branch/main/scripts/addons_core/bl_pkg/bl_extension_ops.py#L3738>`__
+   :File: `addons_core/bl_pkg/bl_extension_ops.py\:3739 <https://projects.blender.org/blender/blender/src/branch/main/scripts/addons_core/bl_pkg/bl_extension_ops.py#L3739>`__
 
 
 .. function:: package_show_settings(*, pkg_id="", repo_index=-1)
@@ -156,7 +156,7 @@ Extensions Operators
    :type repo_index: int
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `addons_core/bl_pkg/bl_extension_ops.py\:3766 <https://projects.blender.org/blender/blender/src/branch/main/scripts/addons_core/bl_pkg/bl_extension_ops.py#L3766>`__
+   :File: `addons_core/bl_pkg/bl_extension_ops.py\:3767 <https://projects.blender.org/blender/blender/src/branch/main/scripts/addons_core/bl_pkg/bl_extension_ops.py#L3767>`__
 
 
 .. function:: package_theme_disable(*, pkg_id="", repo_index=-1)
@@ -169,7 +169,7 @@ Extensions Operators
    :type repo_index: int
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `addons_core/bl_pkg/bl_extension_ops.py\:3620 <https://projects.blender.org/blender/blender/src/branch/main/scripts/addons_core/bl_pkg/bl_extension_ops.py#L3620>`__
+   :File: `addons_core/bl_pkg/bl_extension_ops.py\:3621 <https://projects.blender.org/blender/blender/src/branch/main/scripts/addons_core/bl_pkg/bl_extension_ops.py#L3621>`__
 
 
 .. function:: package_theme_enable(*, pkg_id="", repo_index=-1)
@@ -182,7 +182,7 @@ Extensions Operators
    :type repo_index: int
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `addons_core/bl_pkg/bl_extension_ops.py\:3606 <https://projects.blender.org/blender/blender/src/branch/main/scripts/addons_core/bl_pkg/bl_extension_ops.py#L3606>`__
+   :File: `addons_core/bl_pkg/bl_extension_ops.py\:3607 <https://projects.blender.org/blender/blender/src/branch/main/scripts/addons_core/bl_pkg/bl_extension_ops.py#L3607>`__
 
 
 .. function:: package_uninstall(*, repo_directory="", repo_index=-1, pkg_id="")
@@ -197,7 +197,7 @@ Extensions Operators
    :type pkg_id: str
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `addons_core/bl_pkg/bl_extension_ops.py\:1501 <https://projects.blender.org/blender/blender/src/branch/main/scripts/addons_core/bl_pkg/bl_extension_ops.py#L1501>`__
+   :File: `addons_core/bl_pkg/bl_extension_ops.py\:1502 <https://projects.blender.org/blender/blender/src/branch/main/scripts/addons_core/bl_pkg/bl_extension_ops.py#L1502>`__
 
 
 .. function:: package_uninstall_marked()
@@ -206,7 +206,7 @@ Extensions Operators
 
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `addons_core/bl_pkg/bl_extension_ops.py\:1501 <https://projects.blender.org/blender/blender/src/branch/main/scripts/addons_core/bl_pkg/bl_extension_ops.py#L1501>`__
+   :File: `addons_core/bl_pkg/bl_extension_ops.py\:1502 <https://projects.blender.org/blender/blender/src/branch/main/scripts/addons_core/bl_pkg/bl_extension_ops.py#L1502>`__
 
 .. function:: package_uninstall_system()
 
@@ -214,7 +214,7 @@ Extensions Operators
 
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `addons_core/bl_pkg/bl_extension_ops.py\:3583 <https://projects.blender.org/blender/blender/src/branch/main/scripts/addons_core/bl_pkg/bl_extension_ops.py#L3583>`__
+   :File: `addons_core/bl_pkg/bl_extension_ops.py\:3584 <https://projects.blender.org/blender/blender/src/branch/main/scripts/addons_core/bl_pkg/bl_extension_ops.py#L3584>`__
 
 .. function:: package_upgrade_all(*, use_active_only=False)
 
@@ -224,7 +224,7 @@ Extensions Operators
    :type use_active_only: bool
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `addons_core/bl_pkg/bl_extension_ops.py\:1501 <https://projects.blender.org/blender/blender/src/branch/main/scripts/addons_core/bl_pkg/bl_extension_ops.py#L1501>`__
+   :File: `addons_core/bl_pkg/bl_extension_ops.py\:1502 <https://projects.blender.org/blender/blender/src/branch/main/scripts/addons_core/bl_pkg/bl_extension_ops.py#L1502>`__
 
 
 .. function:: repo_enable_from_drop(*, repo_index=-1)
@@ -235,7 +235,7 @@ Extensions Operators
    :type repo_index: int
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `addons_core/bl_pkg/bl_extension_ops.py\:1834 <https://projects.blender.org/blender/blender/src/branch/main/scripts/addons_core/bl_pkg/bl_extension_ops.py#L1834>`__
+   :File: `addons_core/bl_pkg/bl_extension_ops.py\:1835 <https://projects.blender.org/blender/blender/src/branch/main/scripts/addons_core/bl_pkg/bl_extension_ops.py#L1835>`__
 
 
 .. function:: repo_lock_all()
@@ -244,7 +244,7 @@ Extensions Operators
 
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `addons_core/bl_pkg/bl_extension_ops.py\:3852 <https://projects.blender.org/blender/blender/src/branch/main/scripts/addons_core/bl_pkg/bl_extension_ops.py#L3852>`__
+   :File: `addons_core/bl_pkg/bl_extension_ops.py\:3853 <https://projects.blender.org/blender/blender/src/branch/main/scripts/addons_core/bl_pkg/bl_extension_ops.py#L3853>`__
 
 .. function:: repo_refresh_all(*, use_active_only=False)
 
@@ -254,7 +254,7 @@ Extensions Operators
    :type use_active_only: bool
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `addons_core/bl_pkg/bl_extension_ops.py\:1743 <https://projects.blender.org/blender/blender/src/branch/main/scripts/addons_core/bl_pkg/bl_extension_ops.py#L1743>`__
+   :File: `addons_core/bl_pkg/bl_extension_ops.py\:1744 <https://projects.blender.org/blender/blender/src/branch/main/scripts/addons_core/bl_pkg/bl_extension_ops.py#L1744>`__
 
 
 .. function:: repo_sync(*, repo_directory="", repo_index=-1)
@@ -267,7 +267,7 @@ Extensions Operators
    :type repo_index: int
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `addons_core/bl_pkg/bl_extension_ops.py\:1501 <https://projects.blender.org/blender/blender/src/branch/main/scripts/addons_core/bl_pkg/bl_extension_ops.py#L1501>`__
+   :File: `addons_core/bl_pkg/bl_extension_ops.py\:1502 <https://projects.blender.org/blender/blender/src/branch/main/scripts/addons_core/bl_pkg/bl_extension_ops.py#L1502>`__
 
 
 .. function:: repo_sync_all(*, use_active_only=False)
@@ -278,7 +278,7 @@ Extensions Operators
    :type use_active_only: bool
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `addons_core/bl_pkg/bl_extension_ops.py\:1501 <https://projects.blender.org/blender/blender/src/branch/main/scripts/addons_core/bl_pkg/bl_extension_ops.py#L1501>`__
+   :File: `addons_core/bl_pkg/bl_extension_ops.py\:1502 <https://projects.blender.org/blender/blender/src/branch/main/scripts/addons_core/bl_pkg/bl_extension_ops.py#L1502>`__
 
 
 .. function:: repo_unlock()
@@ -287,7 +287,7 @@ Extensions Operators
 
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `addons_core/bl_pkg/bl_extension_ops.py\:1921 <https://projects.blender.org/blender/blender/src/branch/main/scripts/addons_core/bl_pkg/bl_extension_ops.py#L1921>`__
+   :File: `addons_core/bl_pkg/bl_extension_ops.py\:1922 <https://projects.blender.org/blender/blender/src/branch/main/scripts/addons_core/bl_pkg/bl_extension_ops.py#L1922>`__
 
 .. function:: repo_unlock_all()
 
@@ -295,7 +295,7 @@ Extensions Operators
 
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `addons_core/bl_pkg/bl_extension_ops.py\:3878 <https://projects.blender.org/blender/blender/src/branch/main/scripts/addons_core/bl_pkg/bl_extension_ops.py#L3878>`__
+   :File: `addons_core/bl_pkg/bl_extension_ops.py\:3879 <https://projects.blender.org/blender/blender/src/branch/main/scripts/addons_core/bl_pkg/bl_extension_ops.py#L3879>`__
 
 .. function:: status_clear()
 
@@ -303,7 +303,7 @@ Extensions Operators
 
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `addons_core/bl_pkg/bl_extension_ops.py\:3651 <https://projects.blender.org/blender/blender/src/branch/main/scripts/addons_core/bl_pkg/bl_extension_ops.py#L3651>`__
+   :File: `addons_core/bl_pkg/bl_extension_ops.py\:3652 <https://projects.blender.org/blender/blender/src/branch/main/scripts/addons_core/bl_pkg/bl_extension_ops.py#L3652>`__
 
 .. function:: status_clear_errors()
 
@@ -311,23 +311,23 @@ Extensions Operators
 
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `addons_core/bl_pkg/bl_extension_ops.py\:3640 <https://projects.blender.org/blender/blender/src/branch/main/scripts/addons_core/bl_pkg/bl_extension_ops.py#L3640>`__
+   :File: `addons_core/bl_pkg/bl_extension_ops.py\:3641 <https://projects.blender.org/blender/blender/src/branch/main/scripts/addons_core/bl_pkg/bl_extension_ops.py#L3641>`__
 
 .. function:: userpref_allow_online()
 
-   Allow internet access. Blender may access configured online extension repositories. Installed third party add-ons may access the internet for their own functionality
+   Allow Blender to access the internet. Add-ons that follow this setting will only connect to the internet if enabled. However, Blender cannot prevent third-party add-ons from violating this rule.
 
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `addons_core/bl_pkg/bl_extension_ops.py\:4003 <https://projects.blender.org/blender/blender/src/branch/main/scripts/addons_core/bl_pkg/bl_extension_ops.py#L4003>`__
+   :File: `addons_core/bl_pkg/bl_extension_ops.py\:4005 <https://projects.blender.org/blender/blender/src/branch/main/scripts/addons_core/bl_pkg/bl_extension_ops.py#L4005>`__
 
 .. function:: userpref_allow_online_popup()
 
-   Allow internet access. Blender may access configured online extension repositories. Installed third party add-ons may access the internet for their own functionality
+   Allow Blender to access the internet. Add-ons that follow this setting will only connect to the internet if enabled. However, Blender cannot prevent third-party add-ons from violating this rule.
 
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `addons_core/bl_pkg/bl_extension_ops.py\:4017 <https://projects.blender.org/blender/blender/src/branch/main/scripts/addons_core/bl_pkg/bl_extension_ops.py#L4017>`__
+   :File: `addons_core/bl_pkg/bl_extension_ops.py\:4020 <https://projects.blender.org/blender/blender/src/branch/main/scripts/addons_core/bl_pkg/bl_extension_ops.py#L4020>`__
 
 .. function:: userpref_show_for_update()
 
@@ -335,7 +335,7 @@ Extensions Operators
 
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `addons_core/bl_pkg/bl_extension_ops.py\:3943 <https://projects.blender.org/blender/blender/src/branch/main/scripts/addons_core/bl_pkg/bl_extension_ops.py#L3943>`__
+   :File: `addons_core/bl_pkg/bl_extension_ops.py\:3944 <https://projects.blender.org/blender/blender/src/branch/main/scripts/addons_core/bl_pkg/bl_extension_ops.py#L3944>`__
 
 .. function:: userpref_show_online()
 
@@ -343,7 +343,7 @@ Extensions Operators
 
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `addons_core/bl_pkg/bl_extension_ops.py\:3983 <https://projects.blender.org/blender/blender/src/branch/main/scripts/addons_core/bl_pkg/bl_extension_ops.py#L3983>`__
+   :File: `addons_core/bl_pkg/bl_extension_ops.py\:3984 <https://projects.blender.org/blender/blender/src/branch/main/scripts/addons_core/bl_pkg/bl_extension_ops.py#L3984>`__
 
 .. function:: userpref_tags_set(*, value=False, data_path="")
 
@@ -355,6 +355,6 @@ Extensions Operators
    :type data_path: str
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `addons_core/bl_pkg/bl_extension_ops.py\:3912 <https://projects.blender.org/blender/blender/src/branch/main/scripts/addons_core/bl_pkg/bl_extension_ops.py#L3912>`__
+   :File: `addons_core/bl_pkg/bl_extension_ops.py\:3913 <https://projects.blender.org/blender/blender/src/branch/main/scripts/addons_core/bl_pkg/bl_extension_ops.py#L3913>`__
 
 

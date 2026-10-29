@@ -5,6 +5,7 @@ SceneDisplay(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: SceneDisplay(bpy_struct)
 
    Scene display settings for 3D viewport

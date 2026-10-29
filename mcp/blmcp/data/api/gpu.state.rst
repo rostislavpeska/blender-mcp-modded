@@ -128,15 +128,24 @@ This module provides access to the gpu state.
 
    Specify the diameter of rasterized points.
 
+   When ``program_point_size_set(False)`` is set, this sets the ``size``
+   uniform of point shaders. Any value set by ``uniform_float("size", ...)``
+   on a point shader will be overwritten by this function. Use
+   ``program_point_size_set(True)`` to disable this override and control
+   point size via ``gl_PointSize`` in the vertex shader.
+
    :param size: New diameter.
    :type size: float
 
 
 .. function:: program_point_size_set(enable)
 
-   If enabled, the derived point size is taken from the (potentially clipped) shader builtin gl_PointSize.
+   When enabled (True), point size is taken from the shader builtin
+   ``gl_PointSize``. When disabled (False), the global state value can
+   be applied to the shader ``size`` uniform, overwriting any user-set
+   value.
 
-   :param enable: True for shader builtin gl_PointSize.
+   :param enable: True to use shader ``gl_PointSize``, False for global state.
    :type enable: bool
 
 

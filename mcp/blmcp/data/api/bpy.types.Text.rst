@@ -5,6 +5,7 @@ Text(ID)
 
 base classes --- :class:`bpy_struct`, :class:`ID`
 
+
 .. class:: Text(ID)
 
    Text data-block referencing an external or packed text file
@@ -149,6 +150,11 @@ base classes --- :class:`bpy_struct`, :class:`ID`
       :type select: bool
 
    .. method:: as_module()
+
+      Compile and execute this text block as a Python module.
+      
+      :return: A new module containing the text block's executed contents.
+      :rtype: ModuleType
 
    .. classmethod:: bl_rna_get_subclass(id, default=None, /)
    

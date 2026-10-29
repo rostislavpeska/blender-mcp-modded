@@ -5,6 +5,7 @@ MaskModifier(Modifier)
 
 base classes --- :class:`bpy_struct`, :class:`Modifier`
 
+
 .. class:: MaskModifier(Modifier)
 
    Mask modifier to hide parts of the mesh

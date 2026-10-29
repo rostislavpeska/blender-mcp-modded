@@ -5,6 +5,7 @@ NodesModifier(Modifier)
 
 base classes --- :class:`bpy_struct`, :class:`Modifier`
 
+
 .. class:: NodesModifier(Modifier)
 
 
@@ -27,7 +28,7 @@ base classes --- :class:`bpy_struct`, :class:`Modifier`
 
    .. data:: bakes
 
-      (default None, readonly)
+      All potential bakes, as defined by the assigned Geometry Nodes (default None, readonly)
 
       :type: :class:`NodesModifierBakes`\ [:class:`NodesModifierBake`]
 
@@ -85,6 +86,12 @@ base classes --- :class:`bpy_struct`, :class:`Modifier`
 
       :type: :class:`NodesModifierPanels`\ [:class:`NodesModifierPanel`]
 
+   .. data:: properties
+
+      (readonly)
+
+      :type: :class:`NodesModifierProperties` | None
+
    .. attribute:: show_group_selector
 
       (default False)
@@ -97,14 +104,23 @@ base classes --- :class:`bpy_struct`, :class:`Modifier`
 
       :type: bool
 
-   .. method:: bl_system_properties_get(*, do_create=False)
+   .. method:: is_input_visible(identifier)
 
-      DEBUG ONLY. Internal access to runtime-defined RNA data storage, intended solely for testing and debugging purposes. Do not access it in regular scripting work, and in particular, do not assume that it contains writable data
+      Check whether an input is currently visible based on modifier settings.
 
-      :param do_create: Ensure that system properties are created if they do not exist yet (optional)
-      :type do_create: bool
-      :return: The system properties root container, or None if there are no system properties stored in this data yet, and its creation was not requested
-      :rtype: :class:`PropertyGroup`
+      :param identifier: The identifier of the input (never None)
+      :type identifier: str
+      :return: Result
+      :rtype: bool
+
+   .. method:: is_input_used(identifier)
+
+      Check whether an input is currently used based on modifier settings.
+
+      :param identifier: The identifier of the input (never None)
+      :type identifier: str
+      :return: Result
+      :rtype: bool
 
    .. classmethod:: bl_rna_get_subclass(id, default=None, /)
    

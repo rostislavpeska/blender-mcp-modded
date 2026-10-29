@@ -5,6 +5,7 @@ ThemeNodeEditor(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: ThemeNodeEditor(bpy_struct)
 
    Theme settings for the Node Editor

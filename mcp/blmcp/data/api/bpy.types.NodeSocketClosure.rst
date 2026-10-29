@@ -5,6 +5,7 @@ NodeSocketClosure(NodeSocketStandard)
 
 base classes --- :class:`bpy_struct`, :class:`NodeSocket`, :class:`NodeSocketStandard`
 
+
 .. class:: NodeSocketClosure(NodeSocketStandard)
 
    Closure socket of a node

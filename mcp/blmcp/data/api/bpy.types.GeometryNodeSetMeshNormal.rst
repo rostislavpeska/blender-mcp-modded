@@ -5,6 +5,7 @@ GeometryNodeSetMeshNormal(GeometryNode)
 
 base classes --- :class:`bpy_struct`, :class:`Node`, :class:`NodeInternal`, :class:`GeometryNode`
 
+
 .. class:: GeometryNodeSetMeshNormal(GeometryNode)
 
    Store a normal vector for each mesh element
@@ -90,6 +91,7 @@ Inherited Properties
    - :class:`Node.label`
    - :class:`Node.inputs`
    - :class:`Node.outputs`
+   - :class:`Node.panel_states`
    - :class:`Node.internal_links`
    - :class:`Node.parent`
    - :class:`Node.warning_propagation`

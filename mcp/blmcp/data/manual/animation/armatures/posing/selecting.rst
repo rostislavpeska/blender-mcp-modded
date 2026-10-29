@@ -126,7 +126,7 @@ Select Grouped
 You can select bones, based on various properties, through the *Select Grouped* pop-up menu :kbd:`Shift-G`:
 
 Collection
-   Selects all bones that are share at least one bone collection with the active bone.
+   Selects all bones that share at least one bone collection with the active bone.
 Color
    Selects all bones that have the same color as the active bone.
 Keying Set

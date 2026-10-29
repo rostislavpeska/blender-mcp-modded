@@ -5,6 +5,7 @@ StretchToConstraint(Constraint)
 
 base classes --- :class:`bpy_struct`, :class:`Constraint`
 
+
 .. class:: StretchToConstraint(Constraint)
 
    Stretch to meet the target object

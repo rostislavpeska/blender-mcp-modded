@@ -5,6 +5,7 @@ ThemeClipEditor(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: ThemeClipEditor(bpy_struct)
 
    Theme settings for the Movie Clip Editor

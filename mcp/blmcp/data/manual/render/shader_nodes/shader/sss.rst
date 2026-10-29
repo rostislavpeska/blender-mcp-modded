@@ -34,7 +34,10 @@ Radius
 IOR :guilabel:`Cycles Only`
    Index of refraction for *Subsurface Scattering*.
 Anisotropy :guilabel:`Cycles Only`
-   Directionality of subsurface scattering. Higher anisotropy scatters deeper into the object.
+   Directionality of volume scattering within the subsurface medium. Zero scatters uniformly
+   in all directions, positive values scatter deeper into the object, and negative
+   values scatter more backwards.
+   For example, skin has been measured to have an anisotropy of 0.8.
 Roughness :guilabel:`Cycles Only`
    Roughness of the glossy surface surrounding the subsurface volume.
 Normal
@@ -45,24 +48,27 @@ Properties
 ==========
 
 Subsurface Method
-   Rendering method to simulate subsurface scattering.
-
-   .. note:: EEVEE does not support the *Random Walk* methods.
+   Rendering method to simulate :term:`Subsurface scattering`.
 
    :Christensen-Burley:
       An approximation to physically-based volume scattering.
       This method is less accurate than *Random Walk* however,
       in some situations this method will resolve noise faster.
-   :Random Walk (Fixed Radius):
+   :Random Walk: :guilabel:`Cycles Only`
       Provides accurate results for thin and curved objects.
       Random Walk uses true volumetric scattering inside the mesh,
       which means that it works best for closed meshes.
       Overlapping faces and holes in the mesh can cause problems.
-   :Random Walk:
-      Behaves similarly to *Random Walk (Fixed Radius)* but modulates
-      the *Radius* based on the *Color*, *Anisotropy*, and *IOR*.
-      This method thereby attempts to retain greater surface detail and color
-      than *Random Walk (Fixed Radius)*.
+   :Random Walk (Skin): :guilabel:`Cycles Only`
+      Random walk method optimized for skin rendering. The radius
+      is automatically adjusted based on the color texture, and
+      the subsurface entry direction uses a mix of diffuse and
+      specular transmission with custom :term:`IOR`. This tends to retain
+      greater surface detail and color and matches measured skin
+      more closely.
+   :Random Walk (Legacy): :guilabel:`Cycles Only`
+      The same as Random Walk, but uses a different mapping from albedo to
+      scattering parameters. Will be deleted in the future.
 
 
 Outputs

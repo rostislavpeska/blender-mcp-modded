@@ -5,6 +5,7 @@ Lightgroup(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: Lightgroup(bpy_struct)
 
 

@@ -5,6 +5,7 @@ MovieReconstructedCamera(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: MovieReconstructedCamera(bpy_struct)
 
    Match-moving reconstructed camera data from tracker

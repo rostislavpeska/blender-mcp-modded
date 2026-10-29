@@ -5,6 +5,7 @@ LineStyleThicknessModifier_Noise(LineStyleThicknessModifier)
 
 base classes --- :class:`bpy_struct`, :class:`LineStyleModifier`, :class:`LineStyleThicknessModifier`
 
+
 .. class:: LineStyleThicknessModifier_Noise(LineStyleThicknessModifier)
 
    Line thickness based on random noise

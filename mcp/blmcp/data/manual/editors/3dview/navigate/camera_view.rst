@@ -110,39 +110,44 @@ objects will be in the rendered image/animation.
 Camera Positioning
 ==================
 
-There are several different ways to position the camera in your scene.
-Some of them are explained below.
+There are several ways to position a camera in a scene. These tools allow
+aligning the camera to the viewport, navigating the scene while controlling
+the camera, or performing traditional cinematography-style camera moves.
 
 .. hint::
 
-   The active "camera" might be any kind of object,
-   meaning these actions can also be used to position and aim a light for example.
+   The active "camera" can be any object used as the scene camera.
+   These techniques can also be used to position and aim other objects,
+   such as lights.
 
-
-.. _bpy.ops.view3d.camera_to_view:
 
 Align Active Camera to View
 ---------------------------
 
-.. reference::
+See :ref:`bpy.ops.view3d.camera_to_view`.
 
-   :Mode:      Object Mode
-   :Menu:      :menuselection:`View --> Align View --> Align Active Camera to View`
-   :Shortcut:  :kbd:`Ctrl-Alt-Numpad0`
-
-Moves and rotates the camera so it perfectly matches your current viewport view.
+This operator aligns the active camera to match the current 3D View.
+It is useful when you have framed a composition in the viewport and want
+to place the camera exactly at that viewpoint.
 
 
 Camera Navigation
 -----------------
 
-By enabling :ref:`Lock Camera to View <bpy.types.SpaceView3D.lock_camera>` in
-:menuselection:`Sidebar --> View` and switching to camera view or toggle the lock navigation gizmo button
-when in camera view, the camera will become "glued" to the view and follow it around as you navigate.
+Enable :ref:`Lock Camera to View <bpy.types.SpaceView3D.lock_camera>` and switch
+to camera view (:kbd:`Numpad0`). When this option is enabled, navigating the
+viewport will move the camera instead of the view.
+
+Alternatively, the lock can be toggled using the navigation gizmo while in
+camera view.
+
+This allows positioning the camera interactively using the standard viewport
+navigation controls.
 
 .. seealso::
 
-   :ref:`Fly/Walk Navigation <3dview-fly-walk>` for first person navigation that moves the active camera too.
+   :ref:`Fly/Walk Navigation <3dview-fly-walk>` can be used for first-person
+   navigation that also moves the active camera.
 
 
 Roll, Pan, Dolly, and Track

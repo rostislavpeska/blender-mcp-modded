@@ -5,6 +5,7 @@ WeldModifier(Modifier)
 
 base classes --- :class:`bpy_struct`, :class:`Modifier`
 
+
 .. class:: WeldModifier(Modifier)
 
    Weld modifier

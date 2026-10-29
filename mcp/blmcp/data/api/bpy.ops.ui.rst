@@ -254,6 +254,30 @@ Ui Operators
 
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
+.. function:: view_item_focus()
+
+   Bring active item into focus by scrolling the view
+
+   :return: Result of the operator call.
+   :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
+.. function:: view_item_navigate(*, direction='UP')
+
+   Walk and select view items in given direction
+
+   :param direction: Navigation Direction, Direction in which to navigate and select next element. (optional)
+
+      - ``UP``
+        Up -- Select item above the active.
+      - ``DOWN``
+        Down -- Select item below the active.
+      - ``LEFT``
+        Left -- Collapse or walk towards left of the active item.
+      - ``RIGHT``
+        Right -- Uncollapse or walk towards right of the active item.
+   :type direction: Literal['UP', 'DOWN', 'LEFT', 'RIGHT']
+   :return: Result of the operator call.
+   :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
+
 .. function:: view_item_rename()
 
    Rename the active item in the data-set view

@@ -1,5 +1,4 @@
 .. index:: Compositor Nodes; Tune Image
-.. _bpy.types.CompositorNodeTuneImage:
 
 ***************
 Tune Image Node
@@ -9,10 +8,14 @@ Tune Image Node
    :align: right
    :alt: Tune Image Node.
 
-The *Tune Image* node provides a quick and intuitive way to enhance an image's overall appearance
+.. --- modifier-intro-start ---
+
+*Tune Image* provides a quick and intuitive way to enhance an image's overall appearance
 by adjusting key visual parameters such as contrast, clarity, and sharpness.
 It is designed as a compact, all-in-one correction tool for fine-tuning rendered or composited images
 without requiring multiple separate nodes.
+
+.. --- modifier-intro-end ---
 
 
 Inputs
@@ -20,6 +23,8 @@ Inputs
 
 Image
    Standard color input image.
+
+.. --- modifier-options-start ---
 
 Contrast
    Adjusts the difference between light and dark areas.
@@ -45,6 +50,8 @@ Sharpen
 Preserve Colors
    Maintains natural color balance when applying tonal adjustments.
    When disabled, contrast and clarity may shift the color hue or saturation.
+
+.. --- modifier-options-end ---
 
 
 Outputs

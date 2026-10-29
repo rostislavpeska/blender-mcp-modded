@@ -3,7 +3,8 @@ CollectionExports(bpy_prop_collection)
 
 .. currentmodule:: bpy.types
 
-base classes --- :class:`bpy_prop`, :class:`bpy_prop_collection`
+base class --- :class:`bpy_prop_collection`
+
 
 .. class:: CollectionExports(bpy_prop_collection)
 
@@ -14,7 +15,7 @@ base classes --- :class:`bpy_prop`, :class:`bpy_prop_collection`
       Add an export handler to the collection
 
       :param type: Type, The type of export handler to add
-      :type type: Literal['IO_FH_gltf2']
+      :type type: Literal['IO_FH_obj', 'IO_FH_gltf2']
       :param name: Name, Name of the new export handler (optional, never None)
       :type name: str
       :return: Newly created export handler

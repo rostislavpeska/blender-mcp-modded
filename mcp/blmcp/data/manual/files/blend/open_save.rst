@@ -146,11 +146,18 @@ Saving Files
    :Menu:      :menuselection:`File --> Save`
    :Shortcut:  :kbd:`Ctrl-S`
 
-Save current blend-file over itself (if it was not saved yet, this will automatically switch to *Save As...*).
+Saves the current blend-file.
+
+If the blend-file has not been saved before, Blender automatically opens
+the :ref:`Save As <bpy.ops.wm.save_as_mainfile>` file browser.
 
 .. figure:: /images/files_blend_open-save_file-browser-save.png
 
    The File Browser in save configuration.
+
+When saving a blend-file, Blender may also save modified external images
+depending on the :ref:`Save Modified Images <bpy.types.PreferencesFilePaths.save_modified_images>`
+preference. See :ref:`Saving Modified Images <files-images-saving-modified>`.
 
 
 Save Incremental

@@ -5,8 +5,14 @@ LineStyleModifier(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
-subclasses --- 
-:class:`LineStyleAlphaModifier`, :class:`LineStyleColorModifier`, :class:`LineStyleGeometryModifier`, :class:`LineStyleThicknessModifier`
+.. toctree::
+   :caption: Subclasses
+   :maxdepth: 1
+
+   bpy.types.LineStyleAlphaModifier.rst
+   bpy.types.LineStyleColorModifier.rst
+   bpy.types.LineStyleGeometryModifier.rst
+   bpy.types.LineStyleThicknessModifier.rst
 
 .. class:: LineStyleModifier(bpy_struct)
 

@@ -5,6 +5,7 @@ LineStyleThicknessModifier_Curvature_3D(LineStyleThicknessModifier)
 
 base classes --- :class:`bpy_struct`, :class:`LineStyleModifier`, :class:`LineStyleThicknessModifier`
 
+
 .. class:: LineStyleThicknessModifier_Curvature_3D(LineStyleThicknessModifier)
 
    Line thickness based on the radial curvature of 3D mesh surfaces

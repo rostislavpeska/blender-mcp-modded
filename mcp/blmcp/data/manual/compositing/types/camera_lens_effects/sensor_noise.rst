@@ -8,9 +8,13 @@ Sensor Noise Node
    :align: right
    :alt: Sensor Noise Node.
 
-The *Sensor Noise* node simulates the random noise patterns produced by digital camera sensors.
+.. --- modifier-intro-start ---
+
+The *Sensor Noise* simulates the random noise patterns produced by digital camera sensors.
 This can be used to match real footage, add realism to rendered images, or stylistically mimic
 the imperfections of digital imaging systems.
+
+.. --- modifier-intro-end ---
 
 
 Inputs
@@ -18,6 +22,8 @@ Inputs
 
 Image
    Standard color input image.
+
+.. --- modifier-options-start ---
 
 Luminance Noise
    Controls the amount of brightness variation (value noise) applied to the image.
@@ -30,6 +36,8 @@ Chroma Noise
 Animated
    When enabled, generates a new noise pattern on each frame, mimicking real sensor noise.
    When disabled, the noise remains static across frames.
+
+.. --- modifier-options-end ---
 
 
 Outputs

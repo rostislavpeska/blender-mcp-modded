@@ -5,6 +5,7 @@ ViewerPath(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: ViewerPath(bpy_struct)
 
    Path to data that is viewed

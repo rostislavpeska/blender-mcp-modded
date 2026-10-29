@@ -5,6 +5,7 @@ ChildParticle(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: ChildParticle(bpy_struct)
 
    Child particle interpolated from simulated or edited particles

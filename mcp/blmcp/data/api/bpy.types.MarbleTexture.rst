@@ -5,6 +5,7 @@ MarbleTexture(Texture)
 
 base classes --- :class:`bpy_struct`, :class:`ID`, :class:`Texture`
 
+
 .. class:: MarbleTexture(Texture)
 
    Procedural noise texture

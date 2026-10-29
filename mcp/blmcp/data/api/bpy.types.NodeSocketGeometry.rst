@@ -5,6 +5,7 @@ NodeSocketGeometry(NodeSocketStandard)
 
 base classes --- :class:`bpy_struct`, :class:`NodeSocket`, :class:`NodeSocketStandard`
 
+
 .. class:: NodeSocketGeometry(NodeSocketStandard)
 
    Geometry socket of a node

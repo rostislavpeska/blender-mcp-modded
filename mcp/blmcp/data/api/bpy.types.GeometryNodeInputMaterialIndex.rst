@@ -5,6 +5,7 @@ GeometryNodeInputMaterialIndex(GeometryNode)
 
 base classes --- :class:`bpy_struct`, :class:`Node`, :class:`NodeInternal`, :class:`GeometryNode`
 
+
 .. class:: GeometryNodeInputMaterialIndex(GeometryNode)
 
    Retrieve the index of the material used for each element in the geometry's list of materials
@@ -71,6 +72,7 @@ Inherited Properties
    - :class:`Node.label`
    - :class:`Node.inputs`
    - :class:`Node.outputs`
+   - :class:`Node.panel_states`
    - :class:`Node.internal_links`
    - :class:`Node.parent`
    - :class:`Node.warning_propagation`

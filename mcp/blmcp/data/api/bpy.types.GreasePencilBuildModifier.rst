@@ -5,6 +5,7 @@ GreasePencilBuildModifier(Modifier)
 
 base classes --- :class:`bpy_struct`, :class:`Modifier`
 
+
 .. class:: GreasePencilBuildModifier(Modifier)
 
    Animate strokes appearing and disappearing

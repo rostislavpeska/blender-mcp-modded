@@ -27,6 +27,7 @@ Click the menu item or press the keyboard shortcut, then move the mouse right or
 (or type a number between 0 and 1) to make the selection more or less spherical.
 Finally, press :kbd:`LMB` or :kbd:`Return` to confirm, or :kbd:`RMB` or :kbd:`Esc` to cancel.
 
+
 Options
 =======
 
@@ -40,6 +41,7 @@ Mirror Editing
 
 Proportional Editing
    See :doc:`/editors/3dview/controls/proportional_editing`.
+
 
 Examples
 ========

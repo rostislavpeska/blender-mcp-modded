@@ -5,6 +5,7 @@ NodeEnumItem(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: NodeEnumItem(bpy_struct)
 
 

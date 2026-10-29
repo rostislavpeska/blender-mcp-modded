@@ -5,6 +5,7 @@ Annotation(ID)
 
 base classes --- :class:`bpy_struct`, :class:`ID`
 
+
 .. class:: Annotation(ID)
 
    Freehand annotation sketchbook

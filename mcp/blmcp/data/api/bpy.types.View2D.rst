@@ -5,6 +5,7 @@ View2D(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: View2D(bpy_struct)
 
    Scroll and zoom for a 2D region

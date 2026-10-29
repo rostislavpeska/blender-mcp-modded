@@ -5,6 +5,7 @@ ByteIntAttributeValue(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: ByteIntAttributeValue(bpy_struct)
 
    8-bit value in geometry attribute

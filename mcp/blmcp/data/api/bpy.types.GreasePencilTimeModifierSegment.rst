@@ -5,13 +5,14 @@ GreasePencilTimeModifierSegment(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: GreasePencilTimeModifierSegment(bpy_struct)
 
    Configuration for a single dash segment
 
    .. attribute:: name
 
-      Name of the dash segment (default "", never None)
+      Name of the dash segment (default "Segment", never None)
 
       :type: str
 

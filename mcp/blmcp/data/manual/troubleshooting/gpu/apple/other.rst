@@ -3,9 +3,9 @@
 Troubleshooting macOS -- Other GPU
 **********************************
 
-.. include:: ../common/introduction.rst
+.. include:: ../_common/introduction.rst
    :start-line: 1
 .. include:: common.rst
    :start-line: 1
-.. include:: ../common/other.rst
+.. include:: ../_common/other.rst
    :start-line: 1

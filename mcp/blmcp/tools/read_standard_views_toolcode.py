@@ -23,8 +23,8 @@ import os
 import tempfile
 from typing import NamedTuple
 
-# MCP messages are capped at 1 MB; base64 expands data by 4/3.
-_IMAGE_SIZE_LIMIT_IN_BYTES = (1_048_576 * 3) // 4
+# Match upstream screenshots: reserve 2 KiB for the JSON envelope before base64.
+_IMAGE_SIZE_LIMIT_IN_BYTES = ((1_048_576 - 2048) * 3) // 4
 
 # Preferred 2x2 layout order (falls back to name sort for anything unexpected).
 _VIEW_ORDER = {"_std_front": 0, "_std_right": 1, "_std_back": 2, "_std_left": 3}

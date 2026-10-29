@@ -48,6 +48,36 @@ Text fields store text strings, and provide the means to edit text by standard t
 For text fields with an icon and pop-ups, see :ref:`ui-data-id`.
 
 
+Text Boxes
+----------
+
+.. figure:: /images/interface_controls_buttons_fields_text-box.png
+   :align: center
+
+   A text and a search field.
+
+Text boxes allow the input of multi-line text.
+Unlike single-line text fields, they support line breaks and paragraph-style editing.
+
+Text boxes can be resized by dragging the handle in the bottom-right corner of the field.
+This allows more text to be visible without scrolling.
+
+Text boxes use the same editing shortcuts as regular text fields, with additional shortcuts
+for navigating and editing across multiple lines.
+
+.. list-table::
+   :width: 100%
+   :widths: 20 80
+
+   * - :kbd:`Shift-Enter`
+     - Insert a new line.
+   * - :kbd:`Up`, :kbd:`Down`
+     - Move the cursor between lines.
+
+Text boxes are commonly used for descriptions, notes, scripts,
+and other longer text content throughout Blender's interface.
+
+
 Number Fields
 =============
 

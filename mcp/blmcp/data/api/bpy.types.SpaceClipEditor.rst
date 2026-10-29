@@ -5,6 +5,7 @@ SpaceClipEditor(Space)
 
 base classes --- :class:`bpy_struct`, :class:`Space`
 
+
 .. class:: SpaceClipEditor(Space)
 
    Clip editor space data

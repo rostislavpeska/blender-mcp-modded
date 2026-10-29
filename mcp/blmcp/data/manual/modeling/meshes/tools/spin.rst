@@ -43,7 +43,7 @@ Steps
 Angle
    Specifies the angle "swept" by this tool, in degrees (e.g. set it to 180 for half a turn).
 Auto Merge
-   Automatically merges the first a last duplicates,
+   Automatically merges the first and last duplicates,
    if they make a full revolution which results in overlapping geometry.
 Flip Normals
    Reverses the :term:`Normal's <Normal>` direction for any resulting geometry.

@@ -5,6 +5,7 @@ SpaceOutliner(Space)
 
 base classes --- :class:`bpy_struct`, :class:`Space`
 
+
 .. class:: SpaceOutliner(Space)
 
    Outliner space data
@@ -75,6 +76,12 @@ base classes --- :class:`bpy_struct`, :class:`Space`
         Hierarchies -- Display library override relationships.
 
       :type: Literal['PROPERTIES', 'HIERARCHIES']
+
+   .. attribute:: scroll_to_active
+
+      Scroll the active item into view when it changes outside of the Outliner (default False)
+
+      :type: bool
 
    .. attribute:: show_mode_column
 

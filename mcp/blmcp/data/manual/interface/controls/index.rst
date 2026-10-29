@@ -13,6 +13,7 @@
    buttons/decorators.rst
    templates/data_block.rst
    templates/list_view.rst
+   templates/tree_view.rst
    templates/color_picker.rst
    templates/color_ramp.rst
    templates/color_palette.rst

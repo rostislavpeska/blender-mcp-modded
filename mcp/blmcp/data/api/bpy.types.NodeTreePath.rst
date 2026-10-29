@@ -5,6 +5,7 @@ NodeTreePath(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: NodeTreePath(bpy_struct)
 
    Element of the node space tree path

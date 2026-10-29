@@ -5,6 +5,7 @@ ParticleInstanceModifier(Modifier)
 
 base classes --- :class:`bpy_struct`, :class:`Modifier`
 
+
 .. class:: ParticleInstanceModifier(Modifier)
 
    Particle system instancing modifier

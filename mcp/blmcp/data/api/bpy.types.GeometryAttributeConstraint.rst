@@ -5,6 +5,7 @@ GeometryAttributeConstraint(Constraint)
 
 base classes --- :class:`bpy_struct`, :class:`Constraint`
 
+
 .. class:: GeometryAttributeConstraint(Constraint)
 
    Create a constraint-based relationship with an attribute from geometry

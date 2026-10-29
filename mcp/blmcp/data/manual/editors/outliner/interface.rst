@@ -66,8 +66,8 @@ or clear it using :kbd:`Alt-F`.
 
 .. _editors-outliner-interface-filter:
 
-Filter
-------
+Options
+-------
 
 The funnel icon in the header offers further control over what is displayed in the editor.
 Depending on the *Display Mode*, some options are not available.
@@ -95,7 +95,8 @@ Show Mode Column
    Show the column for toggling the :doc:`object interaction mode </editors/3dview/modes>`.
 
 
-.. rubric:: Search
+Search
+^^^^^^
 
 .. _bpy.types.SpaceOutliner.use_filter_complete:
 
@@ -109,7 +110,8 @@ Case Sensitive
    Take lower/upper case into account when comparing the search text to the item names.
 
 
-.. rubric:: Filter
+Filter
+^^^^^^
 
 .. _bpy.types.SpaceOutliner.use_filter_view_layers:
 

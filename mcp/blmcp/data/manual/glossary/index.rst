@@ -20,7 +20,7 @@ This page lists definitions for terms used in Blender and this manual.
 
    :doc:`Action </animation/actions>`
       Blender's container for animation data.  In Blender, animatable :term:`data-blocks <Data-Block>` do not store
-      their own animation data, but instead store their animation data an actions.
+      their own animation data, but instead store their animation data in actions.
 
    Action Safe
       Area of the screen visible on most devices. Place content inside it to ensure it does not get cut off.
@@ -587,7 +587,7 @@ This page lists definitions for terms used in Blender and this manual.
 
    NDOF
    3D Mouse
-      A general term used to describe a 3D mouse, or any input devices which supports
+      A general term used to describe a 3D mouse, or any input devices which support
       more degrees of freedom than a conventional 2D input device, see: :ref:`hardware-ndof`.
 
    Nonlinear Animation
@@ -668,7 +668,7 @@ This page lists definitions for terms used in Blender and this manual.
 
    Panel
       A user interface element that contains buttons.
-      Panels are collapsible to hide there contents and can often be rearranged.
+      Panels are collapsible to hide their contents and can often be rearranged.
       See :ref:`bpy.types.Panel` as described in the user interface section.
 
    Parent
@@ -853,7 +853,7 @@ This page lists definitions for terms used in Blender and this manual.
    Rolling Shutter
       In real CMOS cameras the sensor is read out with scanlines
       and hence different scanlines are sampled at a different moment in time.
-      This, for example, make vertical straight lines being curved when doing a horizontal camera pan.
+      This, for example, makes vertical straight lines being curved when doing a horizontal camera pan.
       See also `Rolling Shutter <https://en.wikipedia.org/wiki/Rolling_shutter>`__ on Wikipedia.
 
    Roughness Map
@@ -1008,7 +1008,7 @@ This page lists definitions for terms used in Blender and this manual.
 
       A white point is defined by a set of `CIE illuminates <https://en.wikipedia.org/wiki/Standard_illuminant>`__
       which correspond to a color temperature.
-      For example, D65 corresponds to 6500 K light and D70 corresponding to 7000 K.
+      For example, D65 corresponds to 6500 K light and D70 corresponds to 7000 K.
 
    World Space
       A 3D coordinate system that originates at a point at the origin of the world.

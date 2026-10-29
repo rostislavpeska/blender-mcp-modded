@@ -5,6 +5,7 @@ RepeatItem(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: RepeatItem(bpy_struct)
 
 
@@ -93,9 +94,11 @@ References
 
    - :class:`GeometryNodeBake.active_item`
    - :class:`GeometryNodeCaptureAttribute.active_item`
+   - :class:`GeometryNodeClosureToList.active_item`
    - :class:`GeometryNodeFieldToGrid.active_item`
    - :class:`GeometryNodeRepeatOutput.active_item`
    - :class:`GeometryNodeRepeatOutput.repeat_items`
    - :class:`NodeGeometryRepeatOutputItems.new`
    - :class:`NodeGeometryRepeatOutputItems.remove`
+   - :class:`ShaderNodeRaycast.active_item`
 

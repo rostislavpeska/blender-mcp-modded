@@ -5,6 +5,7 @@ GeometryNodeInputID(GeometryNode)
 
 base classes --- :class:`bpy_struct`, :class:`Node`, :class:`NodeInternal`, :class:`GeometryNode`
 
+
 .. class:: GeometryNodeInputID(GeometryNode)
 
    Retrieve a stable random identifier value from the "id" attribute on the point domain, or the index if the attribute does not exist
@@ -71,6 +72,7 @@ Inherited Properties
    - :class:`Node.label`
    - :class:`Node.inputs`
    - :class:`Node.outputs`
+   - :class:`Node.panel_states`
    - :class:`Node.internal_links`
    - :class:`Node.parent`
    - :class:`Node.warning_propagation`

@@ -87,7 +87,7 @@ see the :ref:`Vertex Weight Edit modifier <modeling-modifiers-weight-edit-influe
 Example
 =======
 
-Here is and example of using a texture and the mapping curve to generate weights used by
+Here is an example of using a texture and the mapping curve to generate weights used by
 the :doc:`Wave </modeling/modifiers/deform/wave>` modifier.
 
 .. list-table:: Texture channel variations.

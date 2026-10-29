@@ -5,6 +5,7 @@ NodeTreeInterfaceSocketVectorTranslation(NodeTreeInterfaceSocket)
 
 base classes --- :class:`bpy_struct`, :class:`NodeTreeInterfaceItem`, :class:`NodeTreeInterfaceSocket`
 
+
 .. class:: NodeTreeInterfaceSocketVectorTranslation(NodeTreeInterfaceSocket)
 
    3D vector socket of a node

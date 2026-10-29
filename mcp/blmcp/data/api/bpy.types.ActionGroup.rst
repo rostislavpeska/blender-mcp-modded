@@ -5,6 +5,7 @@ ActionGroup(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: ActionGroup(bpy_struct)
 
    Groups of F-Curves

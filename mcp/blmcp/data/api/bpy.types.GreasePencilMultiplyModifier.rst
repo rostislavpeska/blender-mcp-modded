@@ -5,6 +5,7 @@ GreasePencilMultiplyModifier(Modifier)
 
 base classes --- :class:`bpy_struct`, :class:`Modifier`
 
+
 .. class:: GreasePencilMultiplyModifier(Modifier)
 
    Generate multiple strokes from one stroke

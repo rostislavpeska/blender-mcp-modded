@@ -5,6 +5,7 @@ VIEW3D_AST_pose_library(AssetShelf)
 
 base classes --- :class:`bpy_struct`, :class:`AssetShelf`
 
+
 .. class:: VIEW3D_AST_pose_library(AssetShelf)
 
 

@@ -5,6 +5,7 @@ Theme(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: Theme(bpy_struct)
 
    User interface styling and color settings
@@ -77,7 +78,7 @@ base class --- :class:`bpy_struct`
 
    .. attribute:: name
 
-      Name of the theme (default "", never None)
+      Name of the theme (default "Default", never None)
 
       :type: str
 

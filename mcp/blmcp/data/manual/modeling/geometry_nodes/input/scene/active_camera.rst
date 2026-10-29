@@ -1,5 +1,6 @@
 .. index:: Geometry Nodes; Active Camera
 .. _bpy.types.GeometryNodeInputActiveCamera:
+.. --- copy below this line ---
 
 ******************
 Active Camera Node

@@ -5,6 +5,7 @@ SceneStrip(Strip)
 
 base classes --- :class:`bpy_struct`, :class:`Strip`
 
+
 .. class:: SceneStrip(Strip)
 
    Sequence strip using the rendered image of a scene
@@ -161,7 +162,7 @@ base classes --- :class:`bpy_struct`, :class:`Strip`
 
    .. attribute:: use_proxy
 
-      Use a preview proxy and/or time-code index for this strip (default False)
+      Use a preview proxy for this strip (default False)
 
       :type: bool
 
@@ -170,6 +171,12 @@ base classes --- :class:`bpy_struct`, :class:`Strip`
       Reverse frame order (default False)
 
       :type: bool
+
+   .. attribute:: view_layer
+
+      View Layer of the scene to render (uses the default if unset)
+
+      :type: :class:`ViewLayer` | None
 
    .. attribute:: volume
 
@@ -227,7 +234,6 @@ Inherited Properties
    - :class:`Strip.frame_offset_end`
    - :class:`Strip.right_handle_offset`
    - :class:`Strip.channel`
-   - :class:`Strip.use_linear_modifiers`
    - :class:`Strip.blend_type`
    - :class:`Strip.blend_alpha`
    - :class:`Strip.effect_fader`
@@ -235,6 +241,7 @@ Inherited Properties
    - :class:`Strip.color_tag`
    - :class:`Strip.modifiers`
    - :class:`Strip.show_retiming_keys`
+   - :class:`Strip.connections`
 
 Inherited Functions
 -------------------

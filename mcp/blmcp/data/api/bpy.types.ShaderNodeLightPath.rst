@@ -5,6 +5,7 @@ ShaderNodeLightPath(ShaderNode)
 
 base classes --- :class:`bpy_struct`, :class:`Node`, :class:`NodeInternal`, :class:`ShaderNode`
 
+
 .. class:: ShaderNodeLightPath(ShaderNode)
 
    Retrieve the type of incoming ray for which the shader is being executed.
@@ -72,6 +73,7 @@ Inherited Properties
    - :class:`Node.label`
    - :class:`Node.inputs`
    - :class:`Node.outputs`
+   - :class:`Node.panel_states`
    - :class:`Node.internal_links`
    - :class:`Node.parent`
    - :class:`Node.warning_propagation`

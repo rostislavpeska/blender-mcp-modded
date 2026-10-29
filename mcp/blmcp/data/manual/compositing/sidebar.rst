@@ -11,6 +11,8 @@ View
    :Panel:     :menuselection:`Sidebar region --> View`
 
 
+.. _bpy.types.SpaceNodeEditor.show_backdrop:
+
 Backdrop
 --------
 

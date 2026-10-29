@@ -74,4 +74,6 @@ Limitations
 ===========
 
 - Camera motion blur does not work for :doc:`Orthographic Cameras </render/cameras>`.
-- Motion blur does not take into account the movement of :doc:`Lights </render/lights/light_object>`.
+- Motion blur does not take into account the movement of :doc:`Lights </render/lights/light_object>`
+  in world coordinates, which means lights are essentially stationary during rendering of this frame,
+  and moving the camera together with lights will wrongly produce motion blur.

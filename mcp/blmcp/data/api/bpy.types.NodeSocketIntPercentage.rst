@@ -5,6 +5,7 @@ NodeSocketIntPercentage(NodeSocketStandard)
 
 base classes --- :class:`bpy_struct`, :class:`NodeSocket`, :class:`NodeSocketStandard`
 
+
 .. class:: NodeSocketIntPercentage(NodeSocketStandard)
 
    Integer number socket of a node

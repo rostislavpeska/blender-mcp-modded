@@ -5,6 +5,7 @@ ParticleKey(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: ParticleKey(bpy_struct)
 
    Key location for a particle over time

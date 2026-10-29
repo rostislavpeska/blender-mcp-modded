@@ -5,9 +5,16 @@ TextStrip(EffectStrip)
 
 base classes --- :class:`bpy_struct`, :class:`Strip`, :class:`EffectStrip`
 
+
 .. class:: TextStrip(EffectStrip)
 
    Sequence strip creating text
+
+   .. attribute:: abs_space_line
+
+      Distance between lines of text in pixels (in [0, 5000], default 1.0)
+
+      :type: float
 
    .. attribute:: alignment_x
 
@@ -111,11 +118,29 @@ base classes --- :class:`bpy_struct`, :class:`Strip`, :class:`EffectStrip`
 
       :type: float
 
+   .. attribute:: space_line
+
+      Distance between lines of text in proportion to text size (in [0, 50], default 1.0)
+
+      :type: float
+
    .. attribute:: text
 
       Text that will be displayed (default "", never None)
 
       :type: str
+
+   .. data:: textbox_state
+
+      Textbox state in the UI (readonly)
+
+      :type: :class:`TextboxState` | None
+
+   .. attribute:: use_absolute_line_spacing
+
+      Define spacing using pixel values instead of relative scaling based on font size (default False)
+
+      :type: bool
 
    .. attribute:: use_bold
 
@@ -203,7 +228,6 @@ Inherited Properties
    - :class:`Strip.frame_offset_end`
    - :class:`Strip.right_handle_offset`
    - :class:`Strip.channel`
-   - :class:`Strip.use_linear_modifiers`
    - :class:`Strip.blend_type`
    - :class:`Strip.blend_alpha`
    - :class:`Strip.effect_fader`
@@ -211,6 +235,7 @@ Inherited Properties
    - :class:`Strip.color_tag`
    - :class:`Strip.modifiers`
    - :class:`Strip.show_retiming_keys`
+   - :class:`Strip.connections`
    - :class:`EffectStrip.use_deinterlace`
    - :class:`EffectStrip.alpha_mode`
    - :class:`EffectStrip.use_flip_x`

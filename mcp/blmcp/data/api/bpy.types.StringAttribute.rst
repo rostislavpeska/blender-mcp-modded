@@ -5,6 +5,7 @@ StringAttribute(Attribute)
 
 base classes --- :class:`bpy_struct`, :class:`Attribute`
 
+
 .. class:: StringAttribute(Attribute)
 
    Geometry attribute that stores strings

@@ -5,6 +5,7 @@ ThemeConsole(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: ThemeConsole(bpy_struct)
 
    Theme settings for the Console

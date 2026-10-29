@@ -69,7 +69,7 @@ Strip Proxy & Timecode
 
    :Panel:     :menuselection:`Sidebar region --> Proxy & Timecode --> Strip Proxy & Timecode`
 
-.. figure:: /images/video-editing_sequencer_sidebar_proxy_panel.png
+.. figure:: /images/editors_video-sequencer_sequencer_sidebar_proxy-panel.png
    :align: right
 
 Contains strip-specific proxy settings. The checkbox in the header can be used to
@@ -101,28 +101,3 @@ Quality
 
    - **0%**: Maximum compression, producing the smallest file size but the most noticeable quality loss.
    - **100%**: No compression, preserving full image quality at the cost of a larger file size.
-
-.. _bpy.types.StripProxy.timecode:
-
-:term:`Timecode` Index
-   When you are working with footage directly copied from a camera without preprocessing it,
-   there might be numerous artifacts, mostly due to seeking to a given frame in the sequence.
-   This happens because such footage usually does not have correct frame rate values in the file header.
-   This issue can still arise when the source clip has the same frame rate as the scene settings.
-   In order for Blender to correctly calculate the frames and frame rate there are two possible solutions:
-
-   #. Preprocess your video with e.g. MEncoder to repair the file header and insert the correct keyframes.
-   #. Use the Timecode Index option in Blender.
-
-   :None:
-      Ignore generated timecodes, seek in movie stream based on calculated timestamp.
-   :Record Run:
-      Seek based on timestamps read from movie stream, giving the best match between scene and movie times.
-   :Record Run No Gaps:
-      Effectively convert movie to an image sequence,
-      ignoring incomplete or dropped frames, and changes in frame rate.
-
-   .. note::
-
-      *Record Run* is the Timecode Index which usually is best to use, but if the source file is totally damaged,
-      *Record Run No Gaps* will be the only chance of getting an acceptable result.

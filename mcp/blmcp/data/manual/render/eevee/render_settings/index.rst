@@ -8,7 +8,7 @@
    :maxdepth: 2
 
    sampling.rst
-   clamping.rst
+   light_paths.rst
    raytracing.rst
    volumes.rst
    curves.rst

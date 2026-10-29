@@ -5,6 +5,7 @@ FModifierSmooth(FModifier)
 
 base classes --- :class:`bpy_struct`, :class:`FModifier`
 
+
 .. class:: FModifierSmooth(FModifier)
 
    Smooth curve using Gaussian smoothing

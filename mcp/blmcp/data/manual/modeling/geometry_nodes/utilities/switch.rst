@@ -1,5 +1,6 @@
 .. index:: Geometry Nodes; Switch
 .. _bpy.types.GeometryNodeSwitch:
+.. --- copy below this line ---
 
 ***********
 Switch Node
@@ -10,12 +11,22 @@ Switch Node
    :alt: Switch Node.
 
 The *Switch* node outputs one of two inputs depending on a condition.
-Only the input that is passed through the node is computed.
+
+When the inputs are regular values, only the input that is passed through
+the node is evaluated. This means the unused input is not computed.
+
+.. note::
+
+   For Geometry Nodes:
+
+   When the inputs are :doc:`/modeling/geometry_nodes/fields`, both inputs may be evaluated
+   before the switch is applied. The switch then selects which result is used
+   for each element. Because of this, the node should not be relied on to avoid
+   evaluating expensive field inputs.
 
 .. seealso::
 
-   The :doc:`/modeling/geometry_nodes/utilities/menu_switch`
-   and :doc:`/modeling/geometry_nodes/utilities/index_switch`
+   The :doc:`menu_switch` and :doc:`index_switch`
    can be used to switch between an arbitrary amount of inputs.
 
 

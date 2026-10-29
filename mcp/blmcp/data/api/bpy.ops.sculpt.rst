@@ -92,7 +92,7 @@ Sculpt Operators
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
 
-.. function:: color_filter(*, start_mouse=(0, 0), area_normal_radius=0.25, strength=1.0, iteration_count=1, event_history=None, type='FILL', fill_color=(1.0, 1.0, 1.0))
+.. function:: color_filter(*, start_mouse=(0, 0), area_normal_radius=0.25, strength=1.0, iteration_count=1, event_history=None, type='FILL', fill_color=(1.0, 1.0, 1.0), use_immediate=False, use_secondary_color=False)
 
    Applies a filter to modify the active color attribute
 
@@ -131,6 +131,10 @@ Sculpt Operators
    :type type: Literal['FILL', 'HUE', 'SATURATION', 'VALUE', 'BRIGHTNESS', 'CONTRAST', 'SMOOTH', 'RED', 'GREEN', 'BLUE']
    :param fill_color: Fill Color, (array of 3 items, in [0, inf], optional)
    :type fill_color: :class:`mathutils.Color` | Sequence[float]
+   :param use_immediate: Immediate Apply, Apply once without entering modal interaction (optional)
+   :type use_immediate: bool
+   :param use_secondary_color: Use Secondary Color, (optional)
+   :type use_secondary_color: bool
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
 

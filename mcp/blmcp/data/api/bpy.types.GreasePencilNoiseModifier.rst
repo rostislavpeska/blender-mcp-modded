@@ -5,6 +5,7 @@ GreasePencilNoiseModifier(Modifier)
 
 base classes --- :class:`bpy_struct`, :class:`Modifier`
 
+
 .. class:: GreasePencilNoiseModifier(Modifier)
 
    Noise effect modifier

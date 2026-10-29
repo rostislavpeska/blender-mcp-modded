@@ -5,8 +5,49 @@ ID(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
-subclasses --- 
-:class:`Action`, :class:`Annotation`, :class:`Armature`, :class:`Brush`, :class:`CacheFile`, :class:`Camera`, :class:`Collection`, :class:`Curve`, :class:`Curves`, :class:`FreestyleLineStyle`, :class:`GreasePencil`, :class:`Image`, :class:`Key`, :class:`Lattice`, :class:`Library`, :class:`Light`, :class:`LightProbe`, :class:`Mask`, :class:`Material`, :class:`Mesh`, :class:`MetaBall`, :class:`MovieClip`, :class:`NodeTree`, :class:`Object`, :class:`PaintCurve`, :class:`Palette`, :class:`ParticleSettings`, :class:`PointCloud`, :class:`Scene`, :class:`Screen`, :class:`Sound`, :class:`Speaker`, :class:`Text`, :class:`Texture`, :class:`VectorFont`, :class:`Volume`, :class:`WindowManager`, :class:`WorkSpace`, :class:`World`
+.. toctree::
+   :caption: Subclasses
+   :maxdepth: 1
+
+   bpy.types.Action.rst
+   bpy.types.Annotation.rst
+   bpy.types.Armature.rst
+   bpy.types.Brush.rst
+   bpy.types.CacheFile.rst
+   bpy.types.Camera.rst
+   bpy.types.Collection.rst
+   bpy.types.Curve.rst
+   bpy.types.Curves.rst
+   bpy.types.FreestyleLineStyle.rst
+   bpy.types.GreasePencil.rst
+   bpy.types.Image.rst
+   bpy.types.Key.rst
+   bpy.types.Lattice.rst
+   bpy.types.Library.rst
+   bpy.types.Light.rst
+   bpy.types.LightProbe.rst
+   bpy.types.Mask.rst
+   bpy.types.Material.rst
+   bpy.types.Mesh.rst
+   bpy.types.MetaBall.rst
+   bpy.types.MovieClip.rst
+   bpy.types.NodeTree.rst
+   bpy.types.Object.rst
+   bpy.types.PaintCurve.rst
+   bpy.types.Palette.rst
+   bpy.types.ParticleSettings.rst
+   bpy.types.PointCloud.rst
+   bpy.types.Scene.rst
+   bpy.types.Screen.rst
+   bpy.types.Sound.rst
+   bpy.types.Speaker.rst
+   bpy.types.Text.rst
+   bpy.types.Texture.rst
+   bpy.types.VectorFont.rst
+   bpy.types.Volume.rst
+   bpy.types.WindowManager.rst
+   bpy.types.WorkSpace.rst
+   bpy.types.World.rst
 
 .. class:: ID(bpy_struct)
 
@@ -370,6 +411,7 @@ References
    - :class:`Action.fcurve_ensure_for_datablock`
    - :class:`ActionSlot.users`
    - :class:`AssetRepresentation.local_id`
+   - :class:`BlendData.all_ids`
    - :class:`BlendData.pack_linked_ids_hierarchy`
    - :class:`BlendData.pack_linked_ids_hierarchy`
    - :class:`BlendDataObjects.new`

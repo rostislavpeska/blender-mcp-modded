@@ -81,6 +81,18 @@ Timings
 
    In the context of geometry nodes, see :ref:`modeling-geometry_nodes-inspection-timings`.
 
+.. _bpy.types.SpaceNodeOverlay.show_render_size:
+
+Render Region
+   Displays a border showing the final render region defined in the scene.
+   Space outside the render region appear shaded for reference.
+
+.. _bpy.types.SpaceNodeOverlay.passepartout_alpha:
+
+Passepartout Alpha
+   Controls the opacity of the shaded area outside the render region.
+   Higher values darken the outside area more, making the render region stand out.
+
 
 Toolbar
 =======
@@ -138,6 +150,10 @@ Node
 
    :Panel:     :menuselection:`Sidebar --> Node`
 
+The *Node* tab in the Sidebar contains properties that control the behavior
+and appearance of the active node. Available options depend on the node
+type and the editor.
+
 .. figure:: /images/interface_controls_nodes_sidebar_item.png
    :align: center
 
@@ -150,47 +166,59 @@ Node
 .. _bpy.types.Node.name:
 
 Name
-   A unique node identifier inside this node tree.
+   A unique identifier for the node within its node tree.
+   This name must be unique and is used internally for references.
 
 .. _bpy.types.Node.label:
 
 Label
-   Nodes can be given a title by modifying the text field.
+   A custom title displayed at the top of the node.
+   Unlike the Name, this does not need to be unique and is useful
+   for organizing complex node trees.
+
+.. _bpy.types.Node.use_custom_color:
+.. _bpy.types.Node.color:
+
+Color
+   By default, the node background color is defined by the current theme.
+   Enable this option to override it with a custom color.
+
+   Custom colors can provide visual cues to distinguish related nodes
+   or highlight important parts of a node tree.
+
+   The preset button next to the color field allows saving and reusing
+   custom colors.
+
+   Node Color Specials
+      Contains :doc:`/interface/operators` related to custom node colors.
+
+      .. _bpy.ops.node.node_copy_color:
+
+      Copy to Selected
+         Copies the color of the :term:`Active` node to all selected nodes.
+
+.. _bpy.types.Node.show_options:
+
+Show Options
+   Shows or hides additional node-specific options in the node header,
+   when available for that node type.
+
+.. _bpy.types.Node.mute:
+
+Mute
+   Temporarily disables the node without removing it.
+   When possible, the node is bypassed and its inputs are passed directly to its outputs.
 
 .. _bpy.types.Node.warning_propagation:
 
 Propagation :guilabel:`Geometry Nodes`
-   Controls which warnings in this node will be propagated to the parent node group or modifier.
+   Controls which messages from this node are propagated to the parent
+   node group or modifier.
 
-   :All Messages: Propagate every info, error, and warning message upstream.
-   :Errors and Warnings: Propagate only error and warning messages upstream.
-   :Errors: Propagate only error messages upstream.
-   :None: Do not propagate any messages upstream.
-
-
-.. _bpy.types.Node.use_custom_color:
-
-Color
-"""""
-
-By default, the node's background color is defined by the user theme.
-This color can be overridden by selecting a custom color in this panel.
-Custom node colors can be used to provide a visual cue to help distinguish some nodes from others.
-The button to the right of the checkbox lets you save colors as presets
-for reusing later on (much like a palette).
-
-.. _bpy.types.Node.color:
-
-Color
-   Color of the node background.
-
-   Node Color Specials
-      This menu contains :doc:`/interface/operators` for working with nodes with custom colors.
-
-      .. _bpy.ops.node.node_copy_color:
-
-      Copy Color
-         Copies the color of the :term:`Active` node and applies it to all selected nodes.
+   :All Messages: Propagate informational messages, warnings, and errors.
+   :Errors and Warnings: Propagate only warnings and errors.
+   :Errors: Propagate only error messages.
+   :None: Do not propagate any messages.
 
 
 Properties

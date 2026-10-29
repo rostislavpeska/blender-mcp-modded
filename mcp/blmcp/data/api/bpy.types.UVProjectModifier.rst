@@ -5,6 +5,7 @@ UVProjectModifier(Modifier)
 
 base classes --- :class:`bpy_struct`, :class:`Modifier`
 
+
 .. class:: UVProjectModifier(Modifier)
 
    UV projection modifier to set UVs from a projector

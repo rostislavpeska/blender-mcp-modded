@@ -5,6 +5,7 @@ GreasePencilLineartModifier(Modifier)
 
 base classes --- :class:`bpy_struct`, :class:`Modifier`
 
+
 .. class:: GreasePencilLineartModifier(Modifier)
 
    Generate Line Art strokes from selected source
@@ -20,6 +21,12 @@ base classes --- :class:`bpy_struct`, :class:`Modifier`
       Angles smaller than this will be treated as creases. Crease angle priority: object Line Art crease override > mesh auto smooth angle > Line Art default crease. (in [0, 3.14159], default 2.44346)
 
       :type: float
+
+   .. attribute:: fill_strokes
+
+      Generate filled strokes instead of only outline (default False)
+
+      :type: bool
 
    .. attribute:: invert_source_vertex_group
 

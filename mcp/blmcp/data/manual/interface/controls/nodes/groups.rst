@@ -50,7 +50,7 @@ Only sockets connected to this node will be available as outputs on the group it
 
 .. important::
 
-   Avoid using nodes output nodes such as Material Output inside node groups.
+   Avoid using output nodes such as Material Output inside node groups.
    These should be used on the top level node tree to improve re-usability of node groups.
 
    Use *Group Output* to pass data out of a node group.
@@ -102,7 +102,7 @@ Group
 
    The *Group* panel.
 
-This panel contains properties that relate the group node such as it's name and look.
+This panel contains properties that relate the group node such as its name and look.
 
 Name
    The name of node as displayed in the :ref:`interface-nodes-parts-title`.
@@ -272,6 +272,10 @@ Subtype :guilabel:`Integer` :guilabel:`Float` :guilabel:`Vector` :guilabel:`Stri
    Integers
       :None:
          Standard integer values with no special interpretation.
+      :Pixel:
+         Represents values in pixels, showing a "px" suffix.
+         Typically used for dimensions, resolutions, image sizes,
+         or other screen-space measurements.
       :Percentage:
          Displayed as a percentage.
          Typically used with *Min* and *Max* values set to 0 and 100.
@@ -282,6 +286,10 @@ Subtype :guilabel:`Integer` :guilabel:`Float` :guilabel:`Vector` :guilabel:`Stri
    Floats
       :None:
          Standard floating-point values with no special unit.
+      :Pixel:
+         Represents values in pixels, showing a "px" suffix.
+         Typically used for dimensions, resolutions, image sizes,
+         or other screen-space measurements.
       :Percentage:
          Displayed as a percentage.
          Typically used with *Min* and *Max* values set to 0 and 100.
@@ -313,6 +321,10 @@ Subtype :guilabel:`Integer` :guilabel:`Float` :guilabel:`Vector` :guilabel:`Stri
    Vectors
       :None:
          Standard vector values.
+      :Pixel:
+         Represents values in pixels, showing a "px" suffix.
+         Typically used for dimensions, resolutions, image sizes,
+         or other screen-space measurements.
       :Percentage:
          Each component is displayed as a percentage.
       :Factor:
@@ -375,9 +387,21 @@ Expanded :guilabel:`Menu`
 
 .. _bpy.types.NodeTreeInterfaceSocket.default_input:
 
-Default Input :guilabel:`Geometry Nodes` -- :guilabel:`Input` -- :guilabel:`Integer` :guilabel:`Vector` :guilabel:`Matrix`
+Default Input :guilabel:`Geometry Nodes`, :guilabel:`Compositing Nodes` -- :guilabel:`Input` -- :guilabel:`Integer` :guilabel:`Vector` :guilabel:`Matrix` :guilabel:`Object`
    The value used when the socket is unconnected.
+   The available options depends on the socket type.
    Requires *Hide Value* to be enabled.
+
+   :Default Value: The node socket's default value.
+   :Index: The index from the context.
+   :ID or Index: The “id” attribute if available, otherwise the index.
+   :Normal: The geometry's normal direction.
+   :Position: The position from the context.
+   :Left Handle: The left Bézier control point handle from the context.
+   :Right Handle: The right Bézier control point handle from the context.
+   :Scene Frame: The current frame in the scene.
+   :Uniform Image Coordinates: The uniform image coordinates of the compositing space.
+   :Self Object: The object that contains the geometry nodes modifier currently being executed.
 
 .. _bpy.types.NodeTreeInterfaceSocket.optional_label:
 

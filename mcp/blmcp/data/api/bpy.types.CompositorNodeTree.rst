@@ -5,9 +5,16 @@ CompositorNodeTree(NodeTree)
 
 base classes --- :class:`bpy_struct`, :class:`ID`, :class:`NodeTree`
 
+
 .. class:: CompositorNodeTree(NodeTree)
 
    Node tree consisting of linked nodes used for compositing
+
+   .. attribute:: is_strip_modifier
+
+      The node group is used as a sequencer strip modifier (default False)
+
+      :type: bool
 
    .. attribute:: use_viewer_border
 

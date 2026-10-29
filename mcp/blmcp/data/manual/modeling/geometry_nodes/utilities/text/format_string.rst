@@ -1,5 +1,10 @@
 .. index:: Geometry Nodes; Format String
 .. _bpy.types.FunctionNodeFormatString:
+.. _bpy.types.NodeFunctionFormatStringItem:
+.. _bpy.ops.node.format_string_item_add:
+.. _bpy.ops.node.format_string_item_remove:
+.. _bpy.ops.node.format_string_item_move:
+.. --- copy below this line ---
 
 ******************
 Format String Node
@@ -35,14 +40,8 @@ Additional input values (Float, Integer, or String) can be managed in the Format
 Properties
 ==========
 
-.. _bpy.types.NodeFunctionFormatStringItem:
-
 Format Items
 ------------
-
-.. _bpy.ops.node.format_string_item_add:
-.. _bpy.ops.node.format_string_item_remove:
-.. _bpy.ops.node.format_string_item_move:
 
 A :ref:`list view <ui-list-view>`. to manage the dynamic list of inputs used in the format string.
 Each entry corresponds to a value that can be inserted into the format using a placeholder.

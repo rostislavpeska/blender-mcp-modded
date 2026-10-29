@@ -5,6 +5,7 @@ LineStyleColorModifier_Material(LineStyleColorModifier)
 
 base classes --- :class:`bpy_struct`, :class:`LineStyleModifier`, :class:`LineStyleColorModifier`
 
+
 .. class:: LineStyleColorModifier_Material(LineStyleColorModifier)
 
    Change line color based on a material attribute

@@ -23,7 +23,7 @@ Inputs
 Image
    Standard color input.
 Factor
-   Controls the amount the filter effects the image.
+   Controls the amount the filter affects the image.
 Color Threshold
    The threshold to control high/low complexity.
 Neighbor Threshold

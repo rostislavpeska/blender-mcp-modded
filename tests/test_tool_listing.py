@@ -28,11 +28,12 @@ EXPECTED_TOOLS = [
     {
         "name": "list_blender_instances",
         "description": "\n"
-        "List the running Blender instances that registered an MCP server, and which one this session uses.\n"
+        "        List the running Blender instances that registered an MCP server, and which one this session uses.\n"
         "\n"
-        "Each instance has its own port. When several run, the other tools refuse to guess:\n"
-        "choose one with ``select_blender_instance``.\n"
-        "With *probe*, each instance is asked (read-only) for its open file and unsaved state.\n",
+        "        Each instance has its own port. When several run, the other tools refuse to guess:\n"
+        "        choose one with ``select_blender_instance``.\n"
+        "        With *probe*, each instance is asked (read-only) for its open file and unsaved state.\n"
+        "        ",
         "inputSchema": {
             "properties": {
                 "probe": {
@@ -48,24 +49,33 @@ EXPECTED_TOOLS = [
     {
         "name": "select_blender_instance",
         "description": "\n"
-        "Choose which running Blender this MCP session talks to, by process id or port.\n"
+        "        Choose which running Blender this MCP session talks to, by process id or port.\n"
         "\n"
-        "The choice holds for this session only, so two sessions can drive two Blender instances.\n"
-        "Call with neither argument to clear it. A ``BLENDER_MCP_PORT`` pin of the MCP server wins over it.\n",
+        "        The choice holds for this session only, so two sessions can drive two Blender instances.\n"
+        "        Call with neither argument to clear it. A ``BLENDER_MCP_PORT`` pin of the MCP server wins over it.\n"
+        "        ",
         "inputSchema": {
             "properties": {
                 "pid": {
                     "anyOf": [
-                        {"type": "integer"},
-                        {"type": "null"}
+                        {
+                            "type": "integer"
+                        },
+                        {
+                            "type": "null"
+                        }
                     ],
                     "default": None,
                     "title": "Pid"
                 },
                 "port": {
                     "anyOf": [
-                        {"type": "integer"},
-                        {"type": "null"}
+                        {
+                            "type": "integer"
+                        },
+                        {
+                            "type": "null"
+                        }
                     ],
                     "default": None,
                     "title": "Port"
@@ -78,12 +88,13 @@ EXPECTED_TOOLS = [
     {
         "name": "execute_blender_code",
         "description": "\n"
-        "Execute Python code in the connected Blender instance.\n"
+        "        Execute Python code in the connected Blender instance.\n"
         "\n"
-        "The code runs in Blender's Python environment with full access to ``bpy``.\n"
-        "To return data, assign a JSON-serialisable dict to a variable named ``result``.\n"
-        "Deferred completion via ``check_is_finished`` is only supported by the\n"
-        "interactive addon server, and is rejected in background mode.\n",
+        "        The code runs in Blender's Python environment with full access to ``bpy``.\n"
+        "        To return data, assign a JSON-serialisable dict to a variable named ``result``.\n"
+        "        Deferred completion via ``check_is_finished`` is only supported by the\n"
+        "        interactive addon server, and is rejected in background mode.\n"
+        "        ",
         "inputSchema": {
             "properties": {
                 "code": {
@@ -101,10 +112,11 @@ EXPECTED_TOOLS = [
     {
         "name": "execute_blender_code_for_cli",
         "description": "\n"
-        "Execute Python code in a background Blender process.\n"
+        "        Execute Python code in a background Blender process.\n"
         "\n"
-        "Opens *blend_file* with ``blender --background`` and runs *code*.\n"
-        "Assign a dict to ``result`` to return data.\n",
+        "        Opens *blend_file* with ``blender --background`` and runs *code*.\n"
+        "        Assign a dict to ``result`` to return data.\n"
+        "        ",
         "inputSchema": {
             "properties": {
                 "blend_file": {
@@ -127,7 +139,8 @@ EXPECTED_TOOLS = [
     {
         "name": "get_blendfile_summary_datablocks",
         "description": "\n"
-        "Return a summary of the blend file: data-block counts, active workspace, and render engine.\n",
+        "        Return a summary of the blend file: data-block counts, active workspace, and render engine.\n"
+        "        ",
         "inputSchema": {
             "properties": {},
             "title": "get_blendfile_summary_datablocksArguments",
@@ -137,7 +150,8 @@ EXPECTED_TOOLS = [
     {
         "name": "get_blendfile_summary_datablocks_for_cli",
         "description": "\n"
-        "Return a data-block summary by opening *blend_file* in background Blender.\n",
+        "        Return a data-block summary by opening *blend_file* in background Blender.\n"
+        "        ",
         "inputSchema": {
             "properties": {
                 "blend_file": {
@@ -155,8 +169,9 @@ EXPECTED_TOOLS = [
     {
         "name": "get_blendfile_summary_missing_files",
         "description": "\n"
-        "Report external file references that are missing from disk\n"
-        "(images, libraries, fonts, sounds, movie clips, caches, sequences).\n",
+        "        Report external file references that are missing from disk\n"
+        "        (images, libraries, fonts, sounds, movie clips, caches, sequences).\n"
+        "        ",
         "inputSchema": {
             "properties": {},
             "title": "get_blendfile_summary_missing_filesArguments",
@@ -166,7 +181,8 @@ EXPECTED_TOOLS = [
     {
         "name": "get_blendfile_summary_missing_files_for_cli",
         "description": "\n"
-        "Report missing file references by opening *blend_file* in background Blender.\n",
+        "        Report missing file references by opening *blend_file* in background Blender.\n"
+        "        ",
         "inputSchema": {
             "properties": {
                 "blend_file": {
@@ -184,7 +200,8 @@ EXPECTED_TOOLS = [
     {
         "name": "get_blendfile_summary_of_linked_libraries",
         "description": "\n"
-        "Return a tree of directly and indirectly linked library files.\n",
+        "        Return a tree of directly and indirectly linked library files.\n"
+        "        ",
         "inputSchema": {
             "properties": {},
             "title": "get_blendfile_summary_of_linked_librariesArguments",
@@ -194,7 +211,8 @@ EXPECTED_TOOLS = [
     {
         "name": "get_blendfile_summary_of_linked_libraries_for_cli",
         "description": "\n"
-        "Return linked-library info by opening *blend_file* in background Blender.\n",
+        "        Return linked-library info by opening *blend_file* in background Blender.\n"
+        "        ",
         "inputSchema": {
             "properties": {
                 "blend_file": {
@@ -212,7 +230,8 @@ EXPECTED_TOOLS = [
     {
         "name": "get_blendfile_summary_path_info",
         "description": "\n"
-        "Simple/fast access to the blend file's path, save status, age, and backups.\n",
+        "        Simple/fast access to the blend file's path, save status, age, and backups.\n"
+        "        ",
         "inputSchema": {
             "properties": {},
             "title": "get_blendfile_summary_path_infoArguments",
@@ -222,7 +241,8 @@ EXPECTED_TOOLS = [
     {
         "name": "get_blendfile_summary_path_info_for_cli",
         "description": "\n"
-        "Return path info by opening *blend_file* in background Blender.\n",
+        "        Return path info by opening *blend_file* in background Blender.\n"
+        "        ",
         "inputSchema": {
             "properties": {
                 "blend_file": {
@@ -240,7 +260,8 @@ EXPECTED_TOOLS = [
     {
         "name": "get_blendfile_summary_usage_guess",
         "description": "\n"
-        "Guess the primary use-cases of the current blend file (scored 0-100 with certainty).\n",
+        "        Guess the primary use-cases of the current blend file (scored 0-100 with certainty).\n"
+        "        ",
         "inputSchema": {
             "properties": {},
             "title": "get_blendfile_summary_usage_guessArguments",
@@ -250,7 +271,8 @@ EXPECTED_TOOLS = [
     {
         "name": "get_blendfile_summary_usage_guess_for_cli",
         "description": "\n"
-        "Guess use-cases by opening *blend_file* in background Blender.\n",
+        "        Guess use-cases by opening *blend_file* in background Blender.\n"
+        "        ",
         "inputSchema": {
             "properties": {
                 "blend_file": {
@@ -268,10 +290,11 @@ EXPECTED_TOOLS = [
     {
         "name": "get_object_detail_summary",
         "description": "\n"
-        "Return a structured summary of the object identified by *name*.\n"
+        "        Return a structured summary of the object identified by *name*.\n"
         "\n"
-        "Includes type, transforms, parent, children, modifiers, constraints,\n"
-        "materials, visibility, data-block name, and collections.\n",
+        "        Includes type, transforms, parent, children, modifiers, constraints,\n"
+        "        materials, visibility, data-block name, and collections.\n"
+        "        ",
         "inputSchema": {
             "properties": {
                 "name": {
@@ -289,10 +312,11 @@ EXPECTED_TOOLS = [
     {
         "name": "get_objects_summary",
         "description": "\n"
-        "Return the scene's collection hierarchy and their objects.\n"
+        "        Return the scene's collection hierarchy and their objects.\n"
         "\n"
-        "Each collection lists its objects (name, type, parent, data name,\n"
-        "selection, visibility) and nested child collections.\n",
+        "        Each collection lists its objects (name, type, parent, data name,\n"
+        "        selection, visibility) and nested child collections.\n"
+        "        ",
         "inputSchema": {
             "properties": {},
             "title": "get_objects_summaryArguments",
@@ -302,55 +326,56 @@ EXPECTED_TOOLS = [
     {
         "name": "get_python_api_docs",
         "description": "\n"
-        "Return the Blender Python API docs for *identifier*, or list\n"
-        "modules matching a trailing-``*`` discovery pattern.\n"
+        "        Return the Blender Python API docs for *identifier*, or list\n"
+        "        modules matching a trailing-``*`` discovery pattern.\n"
         "\n"
-        "*identifier* should be a fully-qualified Python name (e.g.\n"
-        "``bpy.app`` or ``bpy.types.Scene.frame_current``).\n"
-        "The trailing-``*`` forms are supported as discovery entry-points:\n"
+        "        *identifier* should be a fully-qualified Python name (e.g.\n"
+        "        ``bpy.app`` or ``bpy.types.Scene.frame_current``).\n"
+        "        The trailing-``*`` forms are supported as discovery entry-points:\n"
         "\n"
-        "- ``*`` enumerates the top-level modules (``bpy``, ``bmesh``,\n"
-        "  ``mathutils``, ``gpu``, ...).\n"
-        "- ``X.*`` enumerates the direct-child identifiers under the\n"
-        "  *X* namespace (``bpy.*`` -> ``bpy.app``, ``bpy.context``, ...).\n"
+        "        - ``*`` enumerates the top-level modules (``bpy``, ``bmesh``,\n"
+        "          ``mathutils``, ``gpu``, ...).\n"
+        "        - ``X.*`` enumerates the direct-child identifiers under the\n"
+        "          *X* namespace (``bpy.*`` -> ``bpy.app``, ``bpy.context``, ...).\n"
         "\n"
-        "Both return a ``namespace`` response even when ``X.rst`` would\n"
-        "otherwise resolve to ``exact``; the ``.*`` form lets an agent\n"
-        "force the child listing.\n"
+        "        Both return a ``namespace`` response even when ``X.rst`` would\n"
+        "        otherwise resolve to ``exact``; the ``.*`` form lets an agent\n"
+        "        force the child listing.\n"
         "\n"
-        "The response always carries ``kind``, ``found``, and ``identifier``.\n"
-        "The remaining keys depend on ``kind``:\n"
+        "        The response always carries ``kind``, ``found``, and ``identifier``.\n"
+        "        The remaining keys depend on ``kind``:\n"
         "\n"
-        "- ``\"exact\"`` (``found=True``): ``<identifier>.rst`` was read.\n"
-        "  Extra keys: ``content`` (RST text), ``examples``. When the\n"
-        "  file exceeds 32 KB, ``content`` is replaced with a dot-point\n"
-        "  summary of the file's top-level definitions (prefixed by a\n"
-        "  header noting the truncation) and ``examples`` is empty -\n"
-        "  re-query individual members for their rendered blocks.\n"
-        "- ``\"namespace\"`` (``found=True``):\n"
-        "  no ``<identifier>.rst`` but ``<identifier>.<child>.rst`` siblings exist.\n"
-        "  Extra key: ``submodules`` (list of child identifiers).\n"
-        "- ``\"definition\"`` (``found=True``):\n"
-        "  *identifier* is defined inside a parent RST\n"
-        "  (e.g. ``bpy.props.IntProperty`` lives in ``bpy.props.rst``).\n"
-        "  Extra keys: ``content`` (rendered block), ``examples``.\n"
-        "- ``\"partial\"`` (``found=False``):\n"
-        "  the parent RST was located but the trailing component isn't defined in it.\n"
-        "  Extra keys:\n"
-        "  - ``parent`` the identifier whose RST was loaded.\n"
-        "  - ``available`` top-level definitions in that RST.\n"
-        "  - ``submodules`` sibling identifiers ``<parent>.<child>`` with their own RSTs,\n"
-        "    filtered to those whose last component contains every character of the missing tail.\n"
+        "        - ``\"exact\"`` (``found=True``): ``<identifier>.rst`` was read.\n"
+        "          Extra keys: ``content`` (RST text), ``examples``. When the\n"
+        "          file exceeds 32 KB, ``content`` is replaced with a dot-point\n"
+        "          summary of the file's top-level definitions (prefixed by a\n"
+        "          header noting the truncation) and ``examples`` is empty -\n"
+        "          re-query individual members for their rendered blocks.\n"
+        "        - ``\"namespace\"`` (``found=True``):\n"
+        "          no ``<identifier>.rst`` but ``<identifier>.<child>.rst`` siblings exist.\n"
+        "          Extra key: ``submodules`` (list of child identifiers).\n"
+        "        - ``\"definition\"`` (``found=True``):\n"
+        "          *identifier* is defined inside a parent RST\n"
+        "          (e.g. ``bpy.props.IntProperty`` lives in ``bpy.props.rst``).\n"
+        "          Extra keys: ``content`` (rendered block), ``examples``.\n"
+        "        - ``\"partial\"`` (``found=False``):\n"
+        "          the parent RST was located but the trailing component isn't defined in it.\n"
+        "          Extra keys:\n"
+        "          - ``parent`` the identifier whose RST was loaded.\n"
+        "          - ``available`` top-level definitions in that RST.\n"
+        "          - ``submodules`` sibling identifiers ``<parent>.<child>`` with their own RSTs,\n"
+        "            filtered to those whose last component contains every character of the missing tail.\n"
         "\n"
-        "  For a toctree landing page like ``bpy.types`` ``available`` is empty and ``submodules``\n"
-        "  is the near-miss list; for a self-contained module like ``bpy.props`` it's the reverse.\n"
-        "- ``\"suggestions\"`` (``found=False``):\n"
-        "  no direct match, but *identifier* appears as a component of other files.\n"
-        "  Extra key: ``suggestions`` (list of full identifiers).\n"
-        "- ``\"missing\"`` (``found=False``): nothing matched.\n"
+        "          For a toctree landing page like ``bpy.types`` ``available`` is empty and ``submodules``\n"
+        "          is the near-miss list; for a self-contained module like ``bpy.props`` it's the reverse.\n"
+        "        - ``\"suggestions\"`` (``found=False``):\n"
+        "          no direct match, but *identifier* appears as a component of other files.\n"
+        "          Extra key: ``suggestions`` (list of full identifiers).\n"
+        "        - ``\"missing\"`` (``found=False``): nothing matched.\n"
         "\n"
-        "``examples`` (present on the ``exact`` and ``definition`` kinds)\n"
-        "is a list of ``{path, content}`` entries referenced from this documentation.\n",
+        "        ``examples`` (present on the ``exact`` and ``definition`` kinds)\n"
+        "        is a list of ``{path, content}`` entries referenced from this documentation.\n"
+        "        ",
         "inputSchema": {
             "properties": {
                 "identifier": {
@@ -368,12 +393,13 @@ EXPECTED_TOOLS = [
     {
         "name": "get_screenshot_of_area_as_image",
         "description": "\n"
-        "Take a screenshot of a single Blender area and return it as a PNG image.\n"
+        "        Take a screenshot of a single Blender area and return it as a PNG image.\n"
         "\n"
-        "*area_ui_type* matches the area's ``ui_type``.\n"
+        "        *area_ui_type* matches the area's ``ui_type``.\n"
         "\n"
-        "*size_limit_in_bytes* caps the image size in bytes.\n"
-        "Zero (the default) uses the MCP message size limit.\n",
+        "        *size_limit_in_bytes* caps the image size in bytes.\n"
+        "        Zero (the default) uses the MCP message size limit.\n"
+        "        ",
         "inputSchema": {
             "properties": {
                 "area_ui_type": {
@@ -420,10 +446,11 @@ EXPECTED_TOOLS = [
     {
         "name": "get_screenshot_of_window_as_image",
         "description": "\n"
-        "Take a screenshot of the entire Blender window and return it as a PNG image.\n"
+        "        Take a screenshot of the entire Blender window and return it as a PNG image.\n"
         "\n"
-        "*size_limit_in_bytes* caps the image size in bytes.\n"
-        "Zero (the default) uses the MCP message size limit.\n",
+        "        *size_limit_in_bytes* caps the image size in bytes.\n"
+        "        Zero (the default) uses the MCP message size limit.\n"
+        "        ",
         "inputSchema": {
             "properties": {
                 "size_limit_in_bytes": {
@@ -439,7 +466,8 @@ EXPECTED_TOOLS = [
     {
         "name": "get_screenshot_of_window_as_json",
         "description": "\n"
-        "Return a JSON description of the Blender window layout, areas, active object, and selection.\n",
+        "        Return a JSON description of the Blender window layout, areas, active object, and selection.\n"
+        "        ",
         "inputSchema": {
             "properties": {},
             "title": "get_screenshot_of_window_as_jsonArguments",
@@ -449,16 +477,17 @@ EXPECTED_TOOLS = [
     {
         "name": "import_canonical_model",
         "description": "\n"
-        "Import a 3D model and canonicalize it in one step.\n"
+        "        Import a 3D model and canonicalize it in one step.\n"
         "\n"
-        "*source* is an http(s) URL (e.g. a generated .glb) or a local file path\n"
-        "(.glb/.gltf/.obj/.fbx). The model is joined into a single mesh, its\n"
-        "transforms are applied, it is uniformly scaled so its largest bounding-box\n"
-        "dimension equals *target_size*, its origin is set to *pivot* (\"center\" =\n"
-        "bounding-box centre, \"bottom\" = base centre), and it is placed at the\n"
-        "world origin. Pass *collection_name* to link it into a specific collection.\n"
+        "        *source* is an http(s) URL (e.g. a generated .glb) or a local file path\n"
+        "        (.glb/.gltf/.obj/.fbx). The model is joined into a single mesh, its\n"
+        "        transforms are applied, it is uniformly scaled so its largest bounding-box\n"
+        "        dimension equals *target_size*, its origin is set to *pivot* (\"center\" =\n"
+        "        bounding-box centre, \"bottom\" = base centre), and it is placed at the\n"
+        "        world origin. Pass *collection_name* to link it into a specific collection.\n"
         "\n"
-        "Returns the object name and its final bounding box.\n",
+        "        Returns the object name and its final bounding box.\n"
+        "        ",
         "inputSchema": {
             "properties": {
                 "source": {
@@ -491,7 +520,8 @@ EXPECTED_TOOLS = [
     {
         "name": "jump_to_tab_by_name",
         "description": "\n"
-        "Switch the active workspace tab to *name*.\n",
+        "        Switch the active workspace tab to *name*.\n"
+        "        ",
         "inputSchema": {
             "properties": {
                 "name": {
@@ -509,10 +539,11 @@ EXPECTED_TOOLS = [
     {
         "name": "jump_to_tab_by_space_type",
         "description": "\n"
-        "Switch to a workspace whose main area matches *space_type*.\n"
+        "        Switch to a workspace whose main area matches *space_type*.\n"
         "\n"
-        "If *allow_edits* is True and no matching workspace exists, a new one\n"
-        "is created by duplicating the current workspace.\n",
+        "        If *allow_edits* is True and no matching workspace exists, a new one\n"
+        "        is created by duplicating the current workspace.\n"
+        "        ",
         "inputSchema": {
             "properties": {
                 "space_type": {
@@ -535,10 +566,11 @@ EXPECTED_TOOLS = [
     {
         "name": "jump_to_view3d_object_by_name",
         "description": "\n"
-        "Move the 3D viewport to focus on an object by *name*.\n"
+        "        Move the 3D viewport to focus on an object by *name*.\n"
         "\n"
-        "If *allow_edits* is True the object may be un-hidden and its\n"
-        "collections enabled to make it visible.\n",
+        "        If *allow_edits* is True the object may be un-hidden and its\n"
+        "        collections enabled to make it visible.\n"
+        "        ",
         "inputSchema": {
             "properties": {
                 "name": {
@@ -561,10 +593,11 @@ EXPECTED_TOOLS = [
     {
         "name": "jump_to_view3d_object_data_by_name",
         "description": "\n"
-        "Move the 3D viewport to the object whose data block matches *name*.\n"
+        "        Move the 3D viewport to the object whose data block matches *name*.\n"
         "\n"
-        "If *allow_edits* is True the object may be un-hidden and its\n"
-        "collections enabled to make it visible.\n",
+        "        If *allow_edits* is True the object may be un-hidden and its\n"
+        "        collections enabled to make it visible.\n"
+        "        ",
         "inputSchema": {
             "properties": {
                 "name": {
@@ -587,18 +620,19 @@ EXPECTED_TOOLS = [
     {
         "name": "place_standard_cameras",
         "description": "\n"
-        "Place four standardized framing cameras (front, right, back, left) around\n"
-        "the scene, fitted to the bounds of the framed meshes and aimed at their\n"
-        "centre. The cameras live in a hidden collection (excluded from the\n"
-        "viewport, still renderable).\n"
+        "        Place four standardized framing cameras (front, right, back, left) around\n"
+        "        the scene, fitted to the bounds of the framed meshes and aimed at their\n"
+        "        centre. The cameras live in a hidden collection (excluded from the\n"
+        "        viewport, still renderable).\n"
         "\n"
-        "By default every mesh in the scene is framed. Pass *target_collection* to\n"
-        "frame only the meshes inside one collection, and/or *ignore_object_names*\n"
-        "to drop objects (e.g. a large ground or water plane) that would otherwise\n"
-        "dominate the fit.\n"
+        "        By default every mesh in the scene is framed. Pass *target_collection* to\n"
+        "        frame only the meshes inside one collection, and/or *ignore_object_names*\n"
+        "        to drop objects (e.g. a large ground or water plane) that would otherwise\n"
+        "        dominate the fit.\n"
         "\n"
-        "To read the views afterwards, call ``read_standard_views`` (or set one\n"
-        "camera active and use ``render_viewport_to_path``).\n",
+        "        To read the views afterwards, call ``read_standard_views`` (or set one\n"
+        "        camera active and use ``render_viewport_to_path``).\n"
+        "        ",
         "inputSchema": {
             "properties": {
                 "distance_multiplier": {
@@ -613,8 +647,12 @@ EXPECTED_TOOLS = [
                 },
                 "target_collection": {
                     "anyOf": [
-                        {"type": "string"},
-                        {"type": "null"}
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
                     ],
                     "default": None,
                     "title": "Target Collection"
@@ -622,10 +660,14 @@ EXPECTED_TOOLS = [
                 "ignore_object_names": {
                     "anyOf": [
                         {
-                            "items": {"type": "string"},
+                            "items": {
+                                "type": "string"
+                            },
                             "type": "array"
                         },
-                        {"type": "null"}
+                        {
+                            "type": "null"
+                        }
                     ],
                     "default": None,
                     "title": "Ignore Object Names"
@@ -638,12 +680,13 @@ EXPECTED_TOOLS = [
     {
         "name": "read_standard_views",
         "description": "\n"
-        "Render every standardized camera (placed by ``place_standard_cameras``)\n"
-        "and return a single 2x2 contact-sheet image (front / right / back / left)\n"
-        "so the scene can be understood from all angles in one step. Render\n"
-        "settings and the active camera are restored afterwards.\n"
+        "        Render every standardized camera (placed by ``place_standard_cameras``)\n"
+        "        and return a single 2x2 contact-sheet image (front / right / back / left)\n"
+        "        so the scene can be understood from all angles in one step. Render\n"
+        "        settings and the active camera are restored afterwards.\n"
         "\n"
-        "Call ``place_standard_cameras`` first if the rig does not exist yet.\n",
+        "        Call ``place_standard_cameras`` first if the rig does not exist yet.\n"
+        "        ",
         "inputSchema": {
             "properties": {
                 "collection_name": {
@@ -669,7 +712,8 @@ EXPECTED_TOOLS = [
     {
         "name": "render_thumbnail_to_path",
         "description": "\n"
-        "Render a small, low-quality thumbnail to *output_path* (temporarily overrides settings).\n",
+        "        Render a small, low-quality thumbnail to *output_path* (temporarily overrides settings).\n"
+        "        ",
         "inputSchema": {
             "properties": {
                 "output_path": {
@@ -687,7 +731,8 @@ EXPECTED_TOOLS = [
     {
         "name": "render_viewport_to_path",
         "description": "\n"
-        "Render the current scene to *output_path* using current render settings.\n",
+        "        Render the current scene to *output_path* using current render settings.\n"
+        "        ",
         "inputSchema": {
             "properties": {
                 "output_path": {
@@ -749,8 +794,12 @@ EXPECTED_TOOLS = [
                 },
                 "index": {
                     "anyOf": [
-                        {"type": "integer"},
-                        {"type": "null"}
+                        {
+                            "type": "integer"
+                        },
+                        {
+                            "type": "null"
+                        }
                     ],
                     "default": None,
                     "title": "Index"
@@ -810,8 +859,12 @@ EXPECTED_TOOLS = [
                 },
                 "index": {
                     "anyOf": [
-                        {"type": "integer"},
-                        {"type": "null"}
+                        {
+                            "type": "integer"
+                        },
+                        {
+                            "type": "null"
+                        }
                     ],
                     "default": None,
                     "title": "Index"
@@ -825,20 +878,118 @@ EXPECTED_TOOLS = [
         }
     },
     {
+        "name": "sketchfab_search",
+        "description": "\n"
+        "        Search Sketchfab for 3D models (public API). Returns candidates, each with\n"
+        "        uid, name, a preview thumbnail_url, license, faces, downloadable and\n"
+        "        viewer_url. Then sketchfab_preview(thumbnail_url) to see one, and\n"
+        "        sketchfab_download(uid) + import_canonical_model(glb_url) to bring it in.\n"
+        "        ",
+        "inputSchema": {
+            "properties": {
+                "query": {
+                    "title": "Query",
+                    "type": "string"
+                },
+                "downloadable": {
+                    "default": True,
+                    "title": "Downloadable",
+                    "type": "boolean"
+                },
+                "limit": {
+                    "default": 12,
+                    "title": "Limit",
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "query"
+            ],
+            "title": "sketchfab_searchArguments",
+            "type": "object"
+        }
+    },
+    {
+        "name": "sketchfab_preview",
+        "description": "\n"
+        "        Fetch a Sketchfab model's preview thumbnail (the thumbnail_url from\n"
+        "        sketchfab_search) and return it as an image, so you can judge a model\n"
+        "        before importing it.\n"
+        "        ",
+        "inputSchema": {
+            "properties": {
+                "thumbnail_url": {
+                    "title": "Thumbnail Url",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "thumbnail_url"
+            ],
+            "title": "sketchfab_previewArguments",
+            "type": "object"
+        }
+    },
+    {
+        "name": "sketchfab_download",
+        "description": "\n"
+        "        Resolve a downloadable Sketchfab model (by uid from sketchfab_search) to a\n"
+        "        short-lived model URL via the gated n8n webhook (which holds the Sketchfab\n"
+        "        token). Returns {glb_url, is_zip}. Feed glb_url to import_canonical_model\n"
+        "        (it unpacks the glTF ZIP automatically).\n"
+        "        ",
+        "inputSchema": {
+            "properties": {
+                "uid": {
+                    "title": "Uid",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "uid"
+            ],
+            "title": "sketchfab_downloadArguments",
+            "type": "object"
+        }
+    },
+    {
         "name": "generate_3d",
         "description": "\n"
-        "Start text-to-3D generation via the n8n pipeline (async).\n"
+        "        Start 3D generation (TRELLIS) via the n8n pipeline (async). Two modes:\n"
         "\n"
-        "Returns immediately with ``job_id``, ``status_url`` and ``response_url``.\n"
-        "Pass ``status_url`` + ``response_url`` to ``wait_for_3d_job`` to get the\n"
-        "finished ``glb_url``, then ``import_canonical_model(glb_url)`` to bring it\n"
-        "into the scene.\n"
+        "        * Text mode (no *image*): *prompt* describes ONLY the object (e.g. \"a\n"
+        "          rusty iron lantern\"). The server wraps it in a product-shot prompt\n"
+        "          (isolated object, plain light-grey background), renders that image with\n"
+        "          *image_model* (default google/gemini-2.5-flash-image) and sends the\n"
+        "          image to TRELLIS.\n"
+        "        * Image mode (*image* given): your image goes straight to TRELLIS; no\n"
+        "          image is generated and *image_model* is ignored. *image* is a local\n"
+        "          file path (.png, .jpg/.jpeg or .webp, at most 8 MB; sent inline as a\n"
+        "          data: URI), a public http(s) URL that fal can fetch without auth, or a\n"
+        "          ``data:image/png|jpeg|webp;base64,...`` URI. *prompt* is optional here\n"
+        "          and only sent as a label. Best input: one whole object, centred, on a\n"
+        "          plain light background, no other objects.\n"
         "\n"
-        "*prompt* should describe ONLY the object (e.g. \"a rusty iron lantern\").\n"
-        "The isolation/background instructions are added server-side.\n",
+        "        Characters: TRELLIS builds the mesh in exactly the pose it sees, so state\n"
+        "        the pose precisely, as the target skeleton's bind pose in degrees, e.g.\n"
+        "        \"T-pose: arms straight out to the sides at 90 degrees from the body,\n"
+        "        palms down, legs straight, feet shoulder-width apart, facing the camera\"\n"
+        "        or \"A-pose: arms 45 degrees below horizontal\". In text mode put this in\n"
+        "        *prompt*; in image mode the image itself must already show that pose.\n"
+        "\n"
+        "        Returns immediately with ``job_id``, ``status_url`` and ``response_url``.\n"
+        "        Pass ``status_url`` + ``response_url`` to ``wait_for_3d_job`` to get the\n"
+        "        finished ``glb_url``, then ``import_canonical_model(glb_url)`` to bring it\n"
+        "        into the scene.\n"
+        "\n"
+        "        Image mode needs the n8n workflow with the \"Has Input Image?\" branch\n"
+        "        (n8n/README.md); an older workflow ignores *image* and runs text mode\n"
+        "        on *prompt* instead.\n"
+        "        ",
         "inputSchema": {
             "properties": {
                 "prompt": {
+                    "default": "",
                     "title": "Prompt",
                     "type": "string"
                 },
@@ -846,11 +997,13 @@ EXPECTED_TOOLS = [
                     "default": "",
                     "title": "Image Model",
                     "type": "string"
+                },
+                "image": {
+                    "default": "",
+                    "title": "Image",
+                    "type": "string"
                 }
             },
-            "required": [
-                "prompt"
-            ],
             "title": "generate_3dArguments",
             "type": "object"
         }
@@ -858,11 +1011,12 @@ EXPECTED_TOOLS = [
     {
         "name": "wait_for_3d_job",
         "description": "\n"
-        "Poll a 3D generation job (from ``generate_3d``) until the model is ready.\n"
+        "        Poll a 3D generation job (from ``generate_3d``) until the model is ready.\n"
         "\n"
-        "Returns ``{\"status\": \"completed\", \"glb_url\": ...}`` on success \u2014 feed the\n"
-        "``glb_url`` to ``import_canonical_model``. Returns a ``timeout`` or\n"
-        "``failed`` status otherwise.\n",
+        "        Returns ``{\"status\": \"completed\", \"glb_url\": ...}`` on success \u2014 feed the\n"
+        "        ``glb_url`` to ``import_canonical_model``. Returns a ``timeout`` or\n"
+        "        ``failed`` status otherwise.\n"
+        "        ",
         "inputSchema": {
             "properties": {
                 "status_url": {

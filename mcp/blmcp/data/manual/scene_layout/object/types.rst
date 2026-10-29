@@ -39,6 +39,8 @@ New objects can be created with the *Add* menu in the 3D Viewport's header.
    Objects created by drawing strokes.
    See :doc:`Grease Pencil Primitives </grease_pencil/primitives>`
 
+.. _bpy.ops.object.armature_add:
+
 :doc:`Armature </animation/armatures/index>`
    Used for rigging 3D models to make them pose-able and animatable.
 :doc:`Lattice </animation/lattice>`

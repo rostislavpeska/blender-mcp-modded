@@ -83,7 +83,7 @@ Import Scene Operators
    :File: `addons_core/io_scene_fbx/__init__.py\:222 <https://projects.blender.org/blender/blender/src/branch/main/scripts/addons_core/io_scene_fbx/__init__.py#L222>`__
 
 
-.. function:: gltf(*, filepath="", export_import_convert_lighting_mode='SPEC', filter_glob="*.glb;*.gltf", directory="", files=None, loglevel=0, import_pack_images=True, merge_vertices=False, import_shading='NORMALS', bone_heuristic='BLENDER', disable_bone_shape=False, bone_shape_scale_factor=1.0, guess_original_bind_pose=True, import_webp_texture=False, import_unused_materials=False, import_select_created_objects=True, import_scene_extras=True, import_scene_as_collection=True, import_merge_material_slots=True)
+.. function:: gltf(*, filepath="", export_import_convert_lighting_mode='SPEC', filter_glob="*.glb;*.gltf", directory="", files=None, loglevel=0, import_pack_images=True, merge_vertices=False, import_shading='NORMALS', bone_heuristic='BLENDER', disable_bone_shape=False, bone_shape_scale_factor=1.0, guess_original_bind_pose=True, import_webp_texture=False, import_unused_materials=False, import_select_created_objects=True, import_scene_extras=True, import_scene_as_collection=True, import_merge_material_slots=True, import_point_as_pointcloud=False)
 
    Load a glTF 2.0 file
 
@@ -139,8 +139,10 @@ Import Scene Operators
    :type import_scene_as_collection: bool
    :param import_merge_material_slots: Merge Material Slot when possible, Merge material slots when possible (optional)
    :type import_merge_material_slots: bool
+   :param import_point_as_pointcloud: Import Points as Point Cloud, Import mesh with only POINTS primitives as Point Cloud objects (optional)
+   :type import_point_as_pointcloud: bool
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `addons_core/io_scene_gltf2/__init__.py\:2013 <https://projects.blender.org/blender/blender/src/branch/main/scripts/addons_core/io_scene_gltf2/__init__.py#L2013>`__
+   :File: `addons_core/io_scene_gltf2/__init__.py\:2072 <https://projects.blender.org/blender/blender/src/branch/main/scripts/addons_core/io_scene_gltf2/__init__.py#L2072>`__
 
 

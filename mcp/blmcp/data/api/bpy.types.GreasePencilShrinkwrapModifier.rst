@@ -5,6 +5,7 @@ GreasePencilShrinkwrapModifier(Modifier)
 
 base classes --- :class:`bpy_struct`, :class:`Modifier`
 
+
 .. class:: GreasePencilShrinkwrapModifier(Modifier)
 
    Shrink wrapping modifier to shrink wrap an object to a target

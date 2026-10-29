@@ -3,7 +3,8 @@ RetimingKeys(bpy_prop_collection)
 
 .. currentmodule:: bpy.types
 
-base classes --- :class:`bpy_prop`, :class:`bpy_prop_collection`
+base class --- :class:`bpy_prop_collection`
+
 
 .. class:: RetimingKeys(bpy_prop_collection)
 
@@ -13,7 +14,7 @@ base classes --- :class:`bpy_prop`, :class:`bpy_prop_collection`
 
       Add retiming key
 
-      :param timeline_frame: Timeline Frame, (in [-1048574, 1048574], optional)
+      :param timeline_frame: Timeline Frame, Where to add the retiming key in the timeline (in [-1048574, 1048574], optional)
       :type timeline_frame: int
       :return: New RetimingKey
       :rtype: :class:`RetimingKey`

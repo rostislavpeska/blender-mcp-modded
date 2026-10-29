@@ -5,6 +5,7 @@ LayoutPanelState(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: LayoutPanelState(bpy_struct)
 
 

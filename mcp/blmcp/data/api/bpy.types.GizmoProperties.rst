@@ -5,6 +5,7 @@ GizmoProperties(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: GizmoProperties(bpy_struct)
 
    Input properties of a Gizmo

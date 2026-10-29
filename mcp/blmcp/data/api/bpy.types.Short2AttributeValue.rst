@@ -5,6 +5,7 @@ Short2AttributeValue(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: Short2AttributeValue(bpy_struct)
 
    2D value in geometry attribute

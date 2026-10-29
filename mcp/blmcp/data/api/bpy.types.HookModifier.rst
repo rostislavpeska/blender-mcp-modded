@@ -5,6 +5,7 @@ HookModifier(Modifier)
 
 base classes --- :class:`bpy_struct`, :class:`Modifier`
 
+
 .. class:: HookModifier(Modifier)
 
    Hook modifier to modify the location of vertices

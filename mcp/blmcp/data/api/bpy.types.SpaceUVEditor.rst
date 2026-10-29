@@ -5,6 +5,7 @@ SpaceUVEditor(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: SpaceUVEditor(bpy_struct)
 
    UV editor data for the image editor space

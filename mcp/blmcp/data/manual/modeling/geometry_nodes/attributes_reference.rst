@@ -76,7 +76,7 @@ The type of an attribute is the kind of data stored at each element.
 :Vector:
    3D vector with floating-point values, often representing directions or positions.
 :Color:
-   RGBA color with 32-bit floating-point values, stored in linear :term:`Color Space`
+   RGBA color with 32-bit floating-point values, stored in linear :term:`Color Space`.
    Suitable for high dynamic range and wide-gamut colors.
 :Byte Color:
    RGBA color with 8-bit positive integer values, useful for compact color storage.
@@ -85,7 +85,9 @@ The type of an attribute is the kind of data stored at each element.
 :String:
    Text string for storing names or labels.
 :2D Vector:
-   2D vector with floating-point values, often used for UV coordinates.
+   Two dimension vector with floating-point values, often used for UV coordinates.
+:4D Vector:
+   Four dimension vector with floating-point values, often used for rotation quaternions.
 :8-Bit Integer:
    Small integer with a range from -128 to 127.
 :2D 16-Bit Integer Vector:

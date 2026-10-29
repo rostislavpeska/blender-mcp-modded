@@ -5,6 +5,7 @@ FileAssetSelectIDFilter(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: FileAssetSelectIDFilter(bpy_struct)
 
    Which asset types to show/hide, when browsing an asset library

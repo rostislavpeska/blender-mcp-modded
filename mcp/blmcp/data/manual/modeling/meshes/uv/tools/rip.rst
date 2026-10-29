@@ -1,15 +1,16 @@
 .. _bpy.ops.uv.rip:
 
-***
-Rip
-***
+**********
+Rip Region
+**********
 
 .. reference::
 
-   :Tool:      :menuselection:`Toolbar --> Rip`
+   :Tool:      :menuselection:`Toolbar --> Rip Region`
 
-The *Rip* tool interactively separates selected UV elements (vertices, edges, or faces) from connected components,
-creating a "rip" in the UV map. After the separation, the selection can be moved in the direction of the mouse
+The *Rip Region* tool interactively separates selected UV elements
+(vertices, edges, or faces) from connected components, creating a "rip" in the UV map.
+After the separation, the selection can be moved in the direction of the mouse
 pointer, allowing the detached elements to be repositioned interactively.
 
 This is useful for isolating UV islands or unwrapping overlapping elements
@@ -27,11 +28,11 @@ without affecting surrounding geometry.
 
 .. note::
 
-   The *Rip* tool is not compatible with
+   The *Rip Region* tool is not compatible with
    :ref:`Sync Selection <bpy.types.ToolSettings.use_uv_select_sync>`.
    To use this tool, make sure Sync Selection is disabled in the UV Editor.
 
 .. seealso::
 
-   - :ref:`UV Rip Move Operator <bpy.ops.uv.rip_move>` -- operator version of the rip operator.
+   - :ref:`Rip Move UV Operator <bpy.ops.uv.rip_move>` -- operator version of the rip operator.
    - Mesh editing :ref:`Rip <bpy.ops.mesh.rip_move>` -- Similar functionality for mesh editing in the 3D Viewport.

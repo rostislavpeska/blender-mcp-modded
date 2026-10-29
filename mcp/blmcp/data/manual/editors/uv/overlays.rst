@@ -50,16 +50,32 @@ Tiles X, Y
    tile grids to display in each cardinal direction.
 
 
-UV Editing
+UV Stretch
 ==========
 
-.. _bpy.types.SpaceUVEditor.display_stretch_type:
 .. _bpy.types.SpaceUVEditor.show_stretch:
 
 Display Stretch
-   Show how much of a shape difference there is between UV space and 3D space.
-   Blue means low distortion, red means high.
-   You can choose whether to display the distortion based on *Angle* or *Area*.
+   Visualize UV distortion by comparing the UV mapping to the original 3D mesh.
+
+   Blue indicates little distortion, while red indicates high distortion.
+
+.. _bpy.types.SpaceUVEditor.display_stretch_type:
+
+Display Stretch Type
+   Method used to measure distortion.
+
+   :Angle:
+      Compare the angles of mesh faces with their corresponding UV faces.
+      This highlights angular distortion introduced by the UV mapping.
+   :Area:
+      Compare the area of mesh faces with their corresponding UV faces.
+      This highlights differences in scale between the 3D mesh and the UV layout.
+
+.. _bpy.types.SpaceUVEditor.stretch_opacity:
+
+Opacity
+   Adjust the opacity of the stretch visualization overlay.
 
 
 Geometry
@@ -67,7 +83,7 @@ Geometry
 
 .. _bpy.types.SpaceUVEditor.show_uv:
 
-Display UVs
+Display UVs :guilabel:`Object Mode`
    Show the active UV map as an overlay in the UV Editor.
 
    .. _bpy.types.SpaceUVEditor.uv_face_opacity:
@@ -108,6 +124,8 @@ Faces :guilabel:`Edit Mode`
 
 Image
 =====
+
+.. _bpy.types.SpaceUVEditor.show_metadata:
 
 Show Metadata
    Display metadata about the selected Render Result. See the Output tab's

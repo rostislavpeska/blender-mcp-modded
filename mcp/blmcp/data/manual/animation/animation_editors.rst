@@ -166,13 +166,41 @@ Audio -- Scrubbing
 Audio -- Play Audio
    Uncheck to mute all sound.
 
+.. _bpy.types.Scene.lock_frame_selection_to_range:
+
 Playback -- Limit to Frame Range
    Don't allow moving the Playhead outside of the Frame Range using the mouse.
+
+.. _bpy.types.Scene.allow_preroll:
+
+Playback -- Allow Preroll
+   Allows playback to continue before the *Start Frame*.
+
+   This is useful when starting playback from outside the scene frame range,
+   such as when scrubbing earlier frames or previewing motion that leads into the defined frame range.
+
+   This option is disabled when *Limit to Frame Range* is enabled.
 
 .. _bpy.types.Screen.use_follow:
 
 Playback -- Follow Current Frame
    Automatically pan the view to catch up when the Playhead goes off screen.
+
+.. _bpy.types.Scene.playback_loop_mode:
+
+Loop
+   Defines what happens when playback reaches the last frame.
+
+   :Infinite:
+      After the last frame, playback jumps back to the first frame and continues playing indefinitely.
+   :Stop at End Frame:
+      Playback stops when the last frame is reached.
+   :Stop at Start Frame:
+      After reaching the last frame, playback jumps to the first frame and stops.
+   :Restore Frame:
+      After reaching the last frame, playback stops at the frame where playback originally started.
+   :Bounce:
+      When the last frame is reached, playback reverses direction.
 
 .. _bpy.types.Screen.use_play:
 
@@ -190,6 +218,15 @@ Play In
 
 Show -- Subframes
    Display and allow setting fractional frame values for the current frame.
+
+.. _bpy.types.SpaceSequenceEditor.show_scrubbing_region:
+
+Show -- Scrubbing Region :guilabel:`Video Sequencer`
+   Show a dedicated region above the timeline for scrubbing through the
+   entire playback range without changing the current timeline zoom level.
+
+   Like other editor regions, the Scrubbing Region can be hidden by dragging
+   its boundary toward the edge of the editor.
 
 Set Start/End Frame
    Set the scene's start/end frame to the current frame.

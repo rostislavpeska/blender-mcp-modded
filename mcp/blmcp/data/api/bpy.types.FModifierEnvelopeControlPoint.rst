@@ -5,6 +5,7 @@ FModifierEnvelopeControlPoint(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: FModifierEnvelopeControlPoint(bpy_struct)
 
    Control point for envelope F-Modifier

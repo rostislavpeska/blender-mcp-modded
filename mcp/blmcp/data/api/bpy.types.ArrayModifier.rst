@@ -5,6 +5,7 @@ ArrayModifier(Modifier)
 
 base classes --- :class:`bpy_struct`, :class:`Modifier`
 
+
 .. class:: ArrayModifier(Modifier)
 
    Array duplication modifier

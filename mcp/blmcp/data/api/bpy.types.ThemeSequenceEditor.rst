@@ -5,6 +5,7 @@ ThemeSequenceEditor(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: ThemeSequenceEditor(bpy_struct)
 
    Theme settings for the Sequence Editor

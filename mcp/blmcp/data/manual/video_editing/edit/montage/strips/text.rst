@@ -18,12 +18,34 @@ The strip will display the text inserted in its text field on the final sequence
    This is useful when using Text strips as subtitles.
 
 
+.. _bpy.ops.sequencer.text_strip_style_preset_add:
+
 Options
 =======
 
+Text strips support customizable typography, layout, and styling options
+for creating subtitles, captions, titles, credits, and other text overlays.
+
+The appearance of the text can be customized with outlines, shadows,
+background boxes, alignment controls, and font styling options.
+
+Style presets are available in the header for quickly applying common layouts
+and visual styles.
+
+Blender includes several example presets:
+
+- Subtitle -- Traditional subtitle styling.
+- Main Title -- Large centered title text.
+- Title Corner -- Small title aligned to the lower-left corner.
+
 Text
-   The actual text displayed.
-   Text is limited to 512 characters.
+   The actual text displayed by the strip.
+
+   The text can contain multiple lines and supports standard UTF-8 characters,
+   including accented characters, symbols, and many non-Latin writing systems.
+
+   Text can be edited directly in the text field or interactively in the
+   :ref:`Preview region <bpy.ops.sequencer.text_edit_mode_toggle>`.
 
 Wrap Width
    Wraps the text by the percentage of the frame width,
@@ -42,6 +64,11 @@ Font
       Use an italicized font face with a slanted visual appearance.
 Size
    Size of the text.
+Line Spacing
+   Controls the vertical spacing between lines of text.
+
+   By default, the spacing is specified as a factor of the text size.
+   Press :bl-icon:`fixed_size` to switch to an absolute spacing using a pixel value.
 Color
    The text color.
 

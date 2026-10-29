@@ -5,6 +5,7 @@ NodeCombineBundleItem(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: NodeCombineBundleItem(bpy_struct)
 
 

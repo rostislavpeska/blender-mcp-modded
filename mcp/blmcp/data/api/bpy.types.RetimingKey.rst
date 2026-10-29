@@ -5,6 +5,7 @@ RetimingKey(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: RetimingKey(bpy_struct)
 
    Key mapped to particular frame that can be moved to change playback speed

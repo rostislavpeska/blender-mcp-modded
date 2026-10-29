@@ -5,8 +5,18 @@ ViewerPathElem(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
-subclasses --- 
-:class:`EvaluateClosureNodeViewerPathElem`, :class:`ForeachGeometryElementZoneViewerPathElem`, :class:`GroupNodeViewerPathElem`, :class:`IDViewerPathElem`, :class:`ModifierViewerPathElem`, :class:`RepeatZoneViewerPathElem`, :class:`SimulationZoneViewerPathElem`, :class:`ViewerNodeViewerPathElem`
+.. toctree::
+   :caption: Subclasses
+   :maxdepth: 1
+
+   bpy.types.EvaluateClosureNodeViewerPathElem.rst
+   bpy.types.ForeachGeometryElementZoneViewerPathElem.rst
+   bpy.types.GroupNodeViewerPathElem.rst
+   bpy.types.IDViewerPathElem.rst
+   bpy.types.ModifierViewerPathElem.rst
+   bpy.types.RepeatZoneViewerPathElem.rst
+   bpy.types.SimulationZoneViewerPathElem.rst
+   bpy.types.ViewerNodeViewerPathElem.rst
 
 .. class:: ViewerPathElem(bpy_struct)
 

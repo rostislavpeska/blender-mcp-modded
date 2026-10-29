@@ -6,7 +6,7 @@ The Blender Community
 Being freely available from the start, even while it was closed source, considerably helped Blender's adoption by the
 community. A large, stable, and active community of users has gathered around Blender since 1998. The community showed
 its support for Blender in 2002 when they helped raise €100,000 in seven weeks to enable Blender to go Open Source
-under the `GNU GPL License <https://www.gnu.org/licenses/gpl.html>`__.
+under the `GNU GPL V2 License <https://www.gnu.org/licenses/old-licenses/gpl-2.0.html>`__.
 
 
 Independent Sites
@@ -53,20 +53,20 @@ page.
 Chat
 ====
 
-For real-time discussion, we have `chat.blender.org <https://chat.blender.org>`__ which uses `Blender ID
-<https://id.blender.org>`__ for authentication.
+For real-time discussion, we have `chat.blender.org <https://chat.blender.org>`__
+which uses `Blender ID <https://id.blender.org>`__ for authentication.
 
 You can join these channels:
 
-- `#general <https://chat.blender.org/#/room/#general:blender.org>`__
+- `#general <https://matrix.to/#/#general:blender.org>`__
   For general chat with the community.
-- `#blender-coders <https://chat.blender.org/#/room/#blender-coders:blender.org>`__
+- `#blender-coders <https://matrix.to/#/#blender-coders:blender.org>`__
   For developers to discuss Blender development.
-- `#python <https://chat.blender.org/#/room/#python:blender.org>`__
+- `#python <https://matrix.to/#/#python:blender.org>`__
   For support for developers using the Python API.
-- `#docs <https://chat.blender.org/#/room/#docs:blender.org>`__
+- `#docs <https://matrix.to/#/#docs:blender.org>`__
   For discussion related to Blender's documentation.
-- `#translations <https://chat.blender.org/#/room/#translations:blender.org>`__
+- `#translations <https://matrix.to/#/#translations:blender.org>`__
   For discussion related to translating Blender and its documentation.
 
 

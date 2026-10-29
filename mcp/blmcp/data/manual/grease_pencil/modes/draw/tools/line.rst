@@ -9,7 +9,7 @@ Line Tool
    :Mode:      Draw Mode
    :Tool:      :menuselection:`Toolbar --> Line`
 
-The Line tool create straight lines using any of the *Draw* type brushes.
+The Line tool creates straight lines using any of the *Draw* type brushes.
 
 
 Tool Settings

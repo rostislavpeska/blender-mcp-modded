@@ -5,6 +5,7 @@ CurveMap(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: CurveMap(bpy_struct)
 
    Curve in a curve mapping

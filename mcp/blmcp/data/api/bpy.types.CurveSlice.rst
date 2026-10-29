@@ -5,6 +5,7 @@ CurveSlice(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: CurveSlice(bpy_struct)
 
    A single curve from a curves data-block

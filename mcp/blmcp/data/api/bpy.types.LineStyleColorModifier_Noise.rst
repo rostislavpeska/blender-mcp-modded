@@ -5,6 +5,7 @@ LineStyleColorModifier_Noise(LineStyleColorModifier)
 
 base classes --- :class:`bpy_struct`, :class:`LineStyleModifier`, :class:`LineStyleColorModifier`
 
+
 .. class:: LineStyleColorModifier_Noise(LineStyleColorModifier)
 
    Change line color based on random noise

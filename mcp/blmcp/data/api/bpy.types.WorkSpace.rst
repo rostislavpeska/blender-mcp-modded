@@ -5,6 +5,7 @@ WorkSpace(ID)
 
 base classes --- :class:`bpy_struct`, :class:`ID`
 
+
 .. class:: WorkSpace(ID)
 
    Workspace data-block, defining the working environment for the user
@@ -24,11 +25,13 @@ base classes --- :class:`bpy_struct`, :class:`ID`
       - ``LOCAL``
         Current File -- Show the assets currently available in this Blender session.
       - ``ESSENTIALS``
-        Essentials -- Show the basic building blocks and utilities coming with Blender.
+        Essentials -- Show basic building blocks and utilities coming with Blender.
+      - ``ONLINE_ESSENTIALS``
+        Online Essentials -- Show additional building blocks and utilities available online.
       - ``CUSTOM``
         Custom -- Show assets from the asset libraries configured in the Preferences.
 
-      :type: Literal['ALL', 'LOCAL', 'ESSENTIALS', 'CUSTOM']
+      :type: Literal['ALL', 'LOCAL', 'ESSENTIALS', 'ONLINE_ESSENTIALS', 'CUSTOM']
 
    .. attribute:: object_mode
 
@@ -87,6 +90,10 @@ base classes --- :class:`bpy_struct`, :class:`ID`
 
       Set the status text or None to clear,
       When text is a function, this will be called with the (header, context) arguments.
+      
+      :param text: Status text to display, ``None`` to clear, or a callable
+         to install as the status bar's draw function.
+      :type text: str | None | Callable[[:class:`Header`, :class:`Context`], None]
 
    .. classmethod:: bl_rna_get_subclass(id, default=None, /)
    

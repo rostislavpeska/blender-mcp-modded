@@ -35,6 +35,12 @@ Inputs
 Geometry
    Standard geometry input.
 
+Selection
+   Boolean field indicating which elements are captured.
+
+   The captured fields are only evaluated for selected elements.
+   Unselected elements are assigned the default value for the corresponding data type
+
 Capture Items
    The fields to store. Inputs can be added by connecting another node's output
    to this node's blank input, or by using the *Capture Items* list in the node's
@@ -69,6 +75,11 @@ Outputs
 
 Geometry
    Standard geometry output.
+
+Selection
+   Passes through the evaluated *Selection* field.
+
+   This can be used by downstream nodes without evaluating the selection field again.
 
 Attribute
    The node has an attribute output for each of its field inputs.

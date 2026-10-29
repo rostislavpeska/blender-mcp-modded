@@ -9,3 +9,4 @@
 
    object.rst
    data.rst
+   curve_data.rst

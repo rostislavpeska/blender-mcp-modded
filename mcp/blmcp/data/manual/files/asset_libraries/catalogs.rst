@@ -1,4 +1,3 @@
-
 **************
 Asset Catalogs
 **************
@@ -45,6 +44,27 @@ So, in the preceding example, selecting ``Characters/Ellie/Poses`` will also sho
 ``Characters/Ellie/Poses/Head`` and ``Characters/Ellie/Poses/Hands``.
 
 
+
+Using Catalogs to Extend Menus
+==============================
+
+Some menus in Blender can be extended using assets. For example, the *Add Modifier* menu, or the *Add* menus
+in the Geometry Nodes Editor and Compositor. The catalog hierarchy will be used to define which submenu the
+assets will go to. So a compositing asset placed in a *My Compositor Assets > Effects* catalog hierarchy
+means the asset will how up under *My Compositor Assets > Effects* in the *Add* menu of the Compositor, for
+example.
+
+.. tip::
+
+   Contents of top-level catalogs named "Geometry Nodes" or "Compositing" will be placed into the
+   corresponding menus directly, skipping this top-level sub-menu. For example, geometry nodes assets stored
+   in a *Geometry Nodes > Generate* catalog will be displayed under *Generate* in the *Add Modifier* menu,
+   or the Geometry Node Editor's *Add* menu.
+
+   Assets directly placed inside *Compositing* or *Geometry Nodes* catalogs will show up under
+   *Unassigned* in the menus.
+
+
 .. _bpy.ops.asset.catalog_new:
 
 Creating Catalogs
@@ -52,9 +72,9 @@ Creating Catalogs
 
 New catalogs can be created in the :doc:`/editors/asset_browser`
 through :menuselection:`Header --> Catalog --> New Asset Catalog`.
-Once the catalog is created you can double :kbd:`LMB` on it's name in the
+Once the catalog is created you can double :kbd:`LMB` on its name in the
 *Source List* region of the editor to give the catalog a more descriptive name.
-Catalogs can also be created in this region by clicking the plus icon found at the top of the tree view.
+Catalogs can also be created in this region by clicking the plus icon found at the top of the :ref:`ui-tree-view`.
 
 
 Assigning an Asset
@@ -80,9 +100,9 @@ Saving Catalogs
 Saving catalogs makes any edits to any catalogs permanent by writing the current set up to the asset library.
 Catalogs can be saved in the :doc:`/editors/asset_browser`
 through :menuselection:`Header --> Catalog --> Save Asset Catalog`.
-Once the catalog is created you can double :kbd:`LMB` on it's name
+Once the catalog is created you can double :kbd:`LMB` on its name
 Catalogs can also be saved in the *Source List* region of the editor
-by clicking the save icon found at the top of the tree view.
+by clicking the save icon found at the top of the :ref:`ui-tree-view`.
 
 
 Components of a Catalog

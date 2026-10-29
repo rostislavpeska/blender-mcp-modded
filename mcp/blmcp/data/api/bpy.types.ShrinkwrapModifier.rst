@@ -5,6 +5,7 @@ ShrinkwrapModifier(Modifier)
 
 base classes --- :class:`bpy_struct`, :class:`Modifier`
 
+
 .. class:: ShrinkwrapModifier(Modifier)
 
    Shrink wrapping modifier to shrink wrap and object to a target

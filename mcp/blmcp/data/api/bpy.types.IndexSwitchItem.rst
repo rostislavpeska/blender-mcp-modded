@@ -5,6 +5,7 @@ IndexSwitchItem(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: IndexSwitchItem(bpy_struct)
 
 

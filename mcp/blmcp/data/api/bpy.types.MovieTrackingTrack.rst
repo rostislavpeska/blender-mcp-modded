@@ -5,6 +5,7 @@ MovieTrackingTrack(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: MovieTrackingTrack(bpy_struct)
 
    Match-moving track data for tracking

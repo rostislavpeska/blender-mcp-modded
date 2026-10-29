@@ -5,6 +5,7 @@ BuildModifier(Modifier)
 
 base classes --- :class:`bpy_struct`, :class:`Modifier`
 
+
 .. class:: BuildModifier(Modifier)
 
    Build effect modifier

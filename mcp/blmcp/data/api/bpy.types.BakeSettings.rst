@@ -5,6 +5,7 @@ BakeSettings(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: BakeSettings(bpy_struct)
 
    Bake data for a Scene data-block
@@ -34,7 +35,7 @@ base class --- :class:`bpy_struct`
 
    .. attribute:: filepath
 
-      Image filepath to use when saving externally (default "", never None, blend relative ``//`` prefix supported)
+      Image filepath to use when saving externally (default "//", never None, blend relative ``//`` prefix supported)
 
       :type: str
 

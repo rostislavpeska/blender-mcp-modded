@@ -5,6 +5,7 @@ LineStyleAlphaModifier_DistanceFromObject(LineStyleAlphaModifier)
 
 base classes --- :class:`bpy_struct`, :class:`LineStyleModifier`, :class:`LineStyleAlphaModifier`
 
+
 .. class:: LineStyleAlphaModifier_DistanceFromObject(LineStyleAlphaModifier)
 
    Change alpha transparency based on the distance from an object

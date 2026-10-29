@@ -5,6 +5,7 @@ FunctionNodeBitMath(FunctionNode)
 
 base classes --- :class:`bpy_struct`, :class:`Node`, :class:`NodeInternal`, :class:`FunctionNode`
 
+
 .. class:: FunctionNodeBitMath(FunctionNode)
 
    Perform bitwise operations on 32-bit integers
@@ -90,6 +91,7 @@ Inherited Properties
    - :class:`Node.label`
    - :class:`Node.inputs`
    - :class:`Node.outputs`
+   - :class:`Node.panel_states`
    - :class:`Node.internal_links`
    - :class:`Node.parent`
    - :class:`Node.warning_propagation`

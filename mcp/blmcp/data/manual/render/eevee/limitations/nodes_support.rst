@@ -20,9 +20,17 @@ Shader to RGB
 -------------
 
 EEVEE supports the conversion of BSDF outputs into color inputs to make a wide variety of custom shading.
-This is supported using the :doc:`Shader to RGB </render/shader_nodes/color/shader_to_rgb>` node.
-This node evaluates the lighting of the BSDFs connected to it just like a *Blended* material and inherits
-its limitation.
+This is supported using the:doc:`Shader to RGB </render/shader_nodes/color/shader_to_rgb>` node.
+This node evaluates the lighting of the BSDFs connected to it similarly to a
+*Blended* material and inherits its limitations.
+
+Transparent BSDF is supported through the *Shader to RGB* workflow.
+This allows access to the radiance behind an object, depending on the material type:
+
+- **Dithered** material with *Raytraced Transmission* disabled will sample the nearest light probe.
+- **Dithered** material with *Raytraced Transmission* enabled will show other
+  Dithered materials with transmission disabled, or fall back to the nearest probe.
+- **Blended** material will show all Dithered materials, or fall back to the nearest probe.
 
 
 Specular BSDF
@@ -65,6 +73,9 @@ Subsurface Scattering
 
 Transparent BSDF
    Colored and additive transparency are only compatible with blended modes.
+   When used with :doc:`Shader to RGB </render/shader_nodes/color/shader_to_rgb>`,
+   transparency can expose radiance behind objects depending on the material mode
+   and ray-traced transmission settings.
 
 Translucent BSDF
    Does not diffuse the light inside the object. It only lights the object with reversed normals.

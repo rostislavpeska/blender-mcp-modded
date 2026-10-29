@@ -5,6 +5,7 @@ FreestyleLineSet(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: FreestyleLineSet(bpy_struct)
 
    Line set for associating lines and style parameters

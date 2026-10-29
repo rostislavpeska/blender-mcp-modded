@@ -5,6 +5,7 @@ ChildOfConstraint(Constraint)
 
 base classes --- :class:`bpy_struct`, :class:`Constraint`
 
+
 .. class:: ChildOfConstraint(Constraint)
 
    Create constraint-based parent-child relationship
@@ -35,55 +36,55 @@ base classes --- :class:`bpy_struct`, :class:`Constraint`
 
    .. attribute:: use_location_x
 
-      Use X Location of Parent (default False)
+      Use X Location of Parent (default True)
 
       :type: bool
 
    .. attribute:: use_location_y
 
-      Use Y Location of Parent (default False)
+      Use Y Location of Parent (default True)
 
       :type: bool
 
    .. attribute:: use_location_z
 
-      Use Z Location of Parent (default False)
+      Use Z Location of Parent (default True)
 
       :type: bool
 
    .. attribute:: use_rotation_x
 
-      Use X Rotation of Parent (default False)
+      Use X Rotation of Parent (default True)
 
       :type: bool
 
    .. attribute:: use_rotation_y
 
-      Use Y Rotation of Parent (default False)
+      Use Y Rotation of Parent (default True)
 
       :type: bool
 
    .. attribute:: use_rotation_z
 
-      Use Z Rotation of Parent (default False)
+      Use Z Rotation of Parent (default True)
 
       :type: bool
 
    .. attribute:: use_scale_x
 
-      Use X Scale of Parent (default False)
+      Use X Scale of Parent (default True)
 
       :type: bool
 
    .. attribute:: use_scale_y
 
-      Use Y Scale of Parent (default False)
+      Use Y Scale of Parent (default True)
 
       :type: bool
 
    .. attribute:: use_scale_z
 
-      Use Z Scale of Parent (default False)
+      Use Z Scale of Parent (default True)
 
       :type: bool
 

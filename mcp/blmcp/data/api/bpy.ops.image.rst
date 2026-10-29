@@ -519,11 +519,11 @@ Image Operators
    :type directory: str
    :param files: files, (optional)
    :type files: :class:`bpy_prop_collection`\ [:class:`OperatorFileListElement`] | None
-   :param relative_path: Use relative path, (optional)
+   :param relative_path: Relative Path, (optional)
    :type relative_path: bool
-   :param use_sequence_detection: Use sequence detection, (optional)
+   :param use_sequence_detection: Detect Sequence, (optional)
    :type use_sequence_detection: bool
-   :param use_udim_detection: Use UDIM detection, (optional)
+   :param use_udim_detection: Detect UDIM, (optional)
    :type use_udim_detection: bool
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
@@ -883,6 +883,12 @@ Image Operators
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
 
+.. function:: view_ndof()
+
+   Use a 3D mouse device to pan/zoom the view
+
+   :return: Result of the operator call.
+   :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
 .. function:: view_pan(*, offset=(0.0, 0.0))
 
    Pan the view

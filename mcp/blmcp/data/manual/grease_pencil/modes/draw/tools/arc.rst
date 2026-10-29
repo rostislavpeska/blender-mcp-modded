@@ -9,7 +9,7 @@ Arc Tool
    :Mode:      Draw Mode
    :Tool:      :menuselection:`Toolbar --> Arc`
 
-The Arc tool create simple arcs using any of the *Draw* type brushes.
+The Arc tool creates simple arcs using any of the *Draw* type brushes.
 
 
 Tool Settings

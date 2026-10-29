@@ -26,11 +26,10 @@ Properties
    :Mode:      Object Mode
    :Editor:    :menuselection:`Properties --> Camera`
 
-
-.. _camera-lens-type:
-
 Lens
 ----
+
+.. _bpy.types.Camera.type:
 
 .. rubric:: Type
 
@@ -92,15 +91,11 @@ Orthographic
          :align: center
          :width: 50%
 
-Panoramic
-   :guilabel:`Cycles Only`
-
+Panoramic :guilabel:`Cycles Only`
    This type covers a variety of panoramic projections.
    See the Cycles :ref:`panoramic camera <bpy.types.Camera.panorama_type>` settings for more information.
 
-Custom
-   :guilabel:`Cycles Only`
-
+Custom :guilabel:`Cycles Only`
    Custom cameras enable user-defined behavior through the use of OSL code.
    See the :doc:`Cycles custom camera documentation </render/cycles/osl/camera>` for more information.
 
@@ -129,7 +124,7 @@ Shift
 
 .. _camera-clipping:
 
-Clip Start and End
+Clip Start, End
    The interval in which objects are directly visible.
    Any objects outside this range still influence the image indirectly,
    as further light bounces are not clipped.
@@ -143,7 +138,7 @@ Clip Start and End
 
    .. tip::
 
-      When *Limits* in the *Viewport Display* panel is enabled,
+      When :ref:`bpy.types.Camera.show_limits` in the *Viewport Display* panel is enabled,
       the clip bounds will be visible as two yellow connected dots on the camera's line of sight.
 
    .. seealso::
@@ -171,10 +166,13 @@ or by using the distance between the camera and a chosen object:
 
 Focus Object
    Choose an object which will determine the focal point. Linking an object will deactivate the distance parameter.
-Focal Distance
+
+.. _bpy.types.CameraDOFSettings.focus_distance:
+
+Focus Distance
    Sets the distance to the focal point when no *Focus Object* is specified.
-   This distance can be visualized in the 3D Viewport by enabling *Limits* in the camera's
-   :ref:`Viewport Display <bpy.types.Camera.show>` panel.
+   This distance can be visualized in the 3D Viewport by enabling :ref:`bpy.types.Camera.show_limits`
+   in the :ref:`Viewport Display <bpy.types.Camera.show>` panel.
 
    .. hint::
 
@@ -262,11 +260,11 @@ The Safe Areas can be customized by their outer margin,
 which is a percentage scale of the area between the center and the render size.
 Values are shared between the Video Sequence editor and camera view.
 
-Title Safe Margins X/Y
+Title Safe Margins X, Y
    Also known as *Graphics Safe*.
    Place all important information (graphics or text) inside this area to
    ensure it can be seen by the majority of viewers.
-Action Safe Margins X/Y
+Action Safe Margins X, Y
    Make sure any significant action or characters in the shot are inside this area.
    This zone also doubles as a sort of "margin" for the screen which can be used
    to keep elements from piling up against the edges.
@@ -361,11 +359,10 @@ Rotation
 Scale
    Scales the image up or down from its center.
 
-Flip
-   X
-      Swaps the image around, such that the left side is now on the right, and the right now on the left.
-   Y
-      Swaps the image around, such that the top side is now on the bottom, and the bottom now on the top.
+Flip -- X
+   Swaps the image around, such that the left side is now on the right, and the right now on the left.
+Flip -- Y
+   Swaps the image around, such that the top side is now on the bottom, and the bottom now on the top.
 
 .. note::
 
@@ -374,8 +371,8 @@ Flip
    is enabled or the :ref:`scene world <bpy.types.View3DShading.use_scene_world>`
    is disabled in the viewport.
 
+
 .. _bpy.types.Camera.show:
-.. _bpy.types.Camera.display_size:
 
 Viewport Display
 ----------------
@@ -386,27 +383,29 @@ Viewport Display
 
    Camera view displaying safe areas, sensor and name.
 
+.. _bpy.types.Camera.display_size:
+
 Size
    Size of the camera visualization in the 3D Viewport. This setting has **no** effect on
    the render output of a camera. The camera visualization can also be scaled using
    the standard Scale :kbd:`S` transform key.
 
-Show
-   Limits
-      Shows an orange line indicating the *Clip Start* and *End* values,
-      as well as a yellow cross indicating the *Focus Distance*.
-      If the *Focus Distance* gizmo is enabled in the 3D Viewport's
-      :doc:`gizmo settings </editors/3dview/display/gizmo>`,
-      this cross can also be dragged with the mouse to adjust the distance.
-   Mist
-      Toggles viewing of the mist limits on and off.
-      The limits are shown as two connected white dots on the camera line of sight.
-      The mist limits and other options are set in the *World* panel,
-      in the :ref:`Mist section <bpy.types.WorldMistSettings>`.
-   Sensor
-      Displays a dotted frame in camera view.
-   Name
-      Toggle name display on and off in camera view.
+.. _bpy.types.Camera.show_limits:
+
+Show -- Limits
+   Shows an orange line indicating the *Clip Start* and *End* values,
+   as well as a yellow cross indicating the *Focus Distance*.
+   If 3D Viewport's :ref:`bpy.types.SpaceView3D.show_gizmo_camera_dof_distance` is enabled,
+   this cross can also be dragged with the mouse to adjust the distance.
+Show -- Mist
+   Toggles viewing of the mist limits on and off.
+   The limits are shown as two connected white dots on the camera line of sight.
+   The mist limits and other options are set in the *World* panel,
+   in the :ref:`Mist section <bpy.types.WorldMistSettings>`.
+Show -- Sensor
+   Displays a dotted frame in camera view.
+Show -- Name
+   Toggle name display on and off in camera view.
 
 .. _bpy.types.Camera.show_passepartout:
 .. _bpy.types.Camera.passepartout_alpha:
@@ -431,27 +430,24 @@ Composition Guides
 Thirds
    Adds lines dividing the frame in thirds vertically and horizontally.
 
-Center
-   Center
+Center -- Center
       Adds lines dividing the frame in half vertically and horizontally.
-   Diagonal
+Center -- Diagonal
       Adds lines connecting opposite corners.
 
-Golden
-   Ratio
-      Divides the width and height into Golden proportions (about 0.618 of the size from all sides of the frame).
-   Triangle A
-      Displays a diagonal line from the lower left to upper right corners,
-      then adds perpendicular lines that pass through the top left and bottom right corners.
-   Triangle B
-      Same as A, but with the opposite corners.
+Golden -- Ratio
+   Divides the width and height into golden proportions (about 0.618 of the size from all sides of the frame).
+Golden -- Triangle A
+   Displays a diagonal line from the lower left to upper right corners,
+   then adds perpendicular lines that pass through the top left and bottom right corners.
+Golden -- Triangle B
+   Same as A, but with the opposite corners.
 
-Harmony
-   Triangle A
-      Displays a diagonal line from the lower left to upper right corners,
-      then lines from the top left and bottom right corners to 0.618 the lengths of the opposite side.
-   Triangle B
-      Same as A, but with the opposite corners.
+Harmony -- Triangle A
+   Displays a diagonal line from the lower left to upper right corners,
+   then lines from the top left and bottom right corners to 0.618 the lengths of the opposite side.
+Harmony -- Triangle B
+   Same as A, but with the opposite corners.
 
 .. _bpy.types.Camera.composition_guide_color:
 

@@ -5,6 +5,7 @@ FluidDomainSettings(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: FluidDomainSettings(bpy_struct)
 
    Fluid domain settings

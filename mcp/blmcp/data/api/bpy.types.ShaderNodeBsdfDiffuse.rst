@@ -5,6 +5,7 @@ ShaderNodeBsdfDiffuse(ShaderNode)
 
 base classes --- :class:`bpy_struct`, :class:`Node`, :class:`NodeInternal`, :class:`ShaderNode`
 
+
 .. class:: ShaderNodeBsdfDiffuse(ShaderNode)
 
    Lambertian and Oren-Nayar diffuse reflection
@@ -71,6 +72,7 @@ Inherited Properties
    - :class:`Node.label`
    - :class:`Node.inputs`
    - :class:`Node.outputs`
+   - :class:`Node.panel_states`
    - :class:`Node.internal_links`
    - :class:`Node.parent`
    - :class:`Node.warning_propagation`

@@ -37,9 +37,12 @@ Color
 
       .. math::
 
-         \sigma_{a} = \frac{\ln(Color)}
-         {\left(5.969 - 0.215\beta_{N} + 2.532\beta_{N}^{2} -
-         10.73\beta_{N}^{3} + 5.574\beta_{N}^{4} + 0.245\beta_{N}^{5}\right)^{2}}
+         \sigma_{a} =
+         \left(
+         \frac{\ln(Color)}
+         {5.969 - 0.215\beta_{N} + 2.532\beta_{N}^{2} -
+         10.73\beta_{N}^{3} + 5.574\beta_{N}^{4} + 0.245\beta_{N}^{5}}
+         \right)^{2}
 
       where :math:`\beta_{N}` is the radial roughness of the hair after applying randomization (if specified).
 

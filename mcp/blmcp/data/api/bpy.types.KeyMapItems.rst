@@ -3,7 +3,8 @@ KeyMapItems(bpy_prop_collection)
 
 .. currentmodule:: bpy.types
 
-base classes --- :class:`bpy_prop`, :class:`bpy_prop_collection`
+base class --- :class:`bpy_prop_collection`
+
 
 .. class:: KeyMapItems(bpy_prop_collection)
 
@@ -129,6 +130,7 @@ base classes --- :class:`bpy_prop`, :class:`bpy_prop_collection`
 
       match_event
 
+      :param event: Event to match against
       :type event: :class:`Event` | None
       :rtype: :class:`KeyMapItem`
 

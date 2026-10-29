@@ -5,6 +5,7 @@ PropertyGroupItem(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: PropertyGroupItem(bpy_struct)
 
    Property that stores arbitrary, user defined properties

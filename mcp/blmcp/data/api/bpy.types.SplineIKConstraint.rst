@@ -5,6 +5,7 @@ SplineIKConstraint(Constraint)
 
 base classes --- :class:`bpy_struct`, :class:`Constraint`
 
+
 .. class:: SplineIKConstraint(Constraint)
 
    Align 'n' bones along a curve

@@ -5,6 +5,7 @@ SmoothModifier(Modifier)
 
 base classes --- :class:`bpy_struct`, :class:`Modifier`
 
+
 .. class:: SmoothModifier(Modifier)
 
    Smoothing effect modifier

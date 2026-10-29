@@ -385,12 +385,12 @@ Clean Tracks
    :Mode:      Tracking
    :Menu:      :menuselection:`Track --> Clean Up --> Clean Tracks`
 
-Identifies all tracks which matches settings from above and performs desired action on them.
+Identifies all tracks which match settings from above and performs desired action on them.
 
 Tracked Frames
    Tracks or tracked segments shorter than this number of frames will be removed.
 Reprojection Error
-   Tracks which has reprojection error higher than this value will be removed.
+   Tracks which have reprojection error higher than this value will be removed.
 Action
    Several actions can be performed for bad tracks.
 
@@ -413,7 +413,7 @@ Filter Tracks
    :Menu:      :menuselection:`Track --> Clean Up --> Filter Tracks`
 
 This operator deletes obviously bad tracks (for example, the ones which are too short).
-Additionally, it identifies tracks which has suspicious spikes in their motion and selects them.
+Additionally, it identifies tracks which have suspicious spikes in their motion and selects them.
 
 
 .. _bpy.ops.clip.delete_track:

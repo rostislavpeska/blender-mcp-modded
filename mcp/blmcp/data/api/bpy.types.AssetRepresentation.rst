@@ -5,6 +5,7 @@ AssetRepresentation(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: AssetRepresentation(bpy_struct)
 
    Information about an entity that makes it possible for the asset system to deal with the entity as asset
@@ -27,6 +28,12 @@ base class --- :class:`bpy_struct`
 
       :type: Literal[:ref:`rna_enum_id_type_items`]
 
+   .. data:: is_online
+
+      True if this asset is accessed via internet, not stored on disk (default False, readonly)
+
+      :type: bool
+
    .. data:: local_id
 
       The local data-block this asset represents; only valid if that is a data-block in this file (readonly)
@@ -44,6 +51,12 @@ base class --- :class:`bpy_struct`
       (default "", readonly, never None)
 
       :type: str
+
+   .. data:: owner_asset_library
+
+      The asset library containing this asset (readonly)
+
+      :type: :class:`AssetLibrary` | None
 
    .. classmethod:: bl_rna_get_subclass(id, default=None, /)
    

@@ -107,7 +107,7 @@ Correlation
    when it should stop sooner, increase this value.
 
 Margin
-   Can be used disable tracks when they become too close to the image boundary.
+   Can be used to disable tracks when they become too close to the image boundary.
    This slider sets "too close" in pixels.
 
 Use Mask

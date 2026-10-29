@@ -242,7 +242,7 @@ This script shows how operators can be used to model a link of a chain.
    :rtype: dict[str, Any]
 
 
-.. function:: mirror(bm, geom=[], matrix=mathutils.Matrix.Identity(4), merge_dist=0, axis='X', mirror_u=False, mirror_v=False, mirror_udim=False, use_shapekey=False)
+.. function:: mirror(bm, geom=[], matrix=((1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0, 1)), merge_dist=0, axis='X', mirror_u=False, mirror_v=False, mirror_udim=False, use_shapekey=False)
 
    Mirror.
 
@@ -339,6 +339,86 @@ This script shows how operators can be used to model a link of a chain.
    :type dist: float
 
 
+.. function:: circularize(bm, geom=[], factor=0, custom_radius=0, angle=0, fit_method=0, flatten=0, regular=False, lock_x=False, lock_y=False, lock_z=False, mirror_x=False, mirror_y=False, mirror_z=False)
+
+   Circularize.
+
+   Shape selected geometry into a circle.
+
+   :param bm: The bmesh to operate on.
+   :type bm: :class:`bmesh.types.BMesh`
+   :param geom:
+      Input geometry.
+   :type geom: list[:class:`bmesh.types.BMVert` | :class:`bmesh.types.BMEdge` | :class:`bmesh.types.BMFace`]
+   :param factor:
+      Influence factor: spans from 0.0 to 1.0.
+   :type factor: float
+   :param custom_radius:
+      Custom radius.
+   :type custom_radius: float
+   :param angle:
+      Rotation angle.
+   :type angle: float
+   :param fit_method:
+      Method to fit the circle.
+   :type fit_method: int
+   :param flatten:
+      Flatten factor: 0.0 projects onto the mesh, 1.0 flattens on the optimal plane.
+   :type flatten: float
+   :param regular:
+      Distributes vertices at constant distances, otherwise preserves original spacing.
+   :type regular: bool
+   :param lock_x:
+      Lock X-axis editing.
+   :type lock_x: bool
+   :param lock_y:
+      Lock Y-axis editing.
+   :type lock_y: bool
+   :param lock_z:
+      Lock Z-axis editing.
+   :type lock_z: bool
+   :param mirror_x:
+      Use X axis of the mirror modifier.
+   :type mirror_x: bool
+   :param mirror_y:
+      Use Y axis of the mirror modifier.
+   :type mirror_y: bool
+   :param mirror_z:
+      Use Z axis of the mirror modifier.
+   :type mirror_z: bool
+
+
+.. function:: flatten(bm, geom=[], factor=0, method=0, view_normal=(0.0, 0.0, 0.0), lock_x=False, lock_y=False, lock_z=False)
+
+   Flatten.
+
+   Flatten vertices on a best-fitting plane.
+
+   :param bm: The bmesh to operate on.
+   :type bm: :class:`bmesh.types.BMesh`
+   :param geom:
+      Input geometry.
+   :type geom: list[:class:`bmesh.types.BMVert` | :class:`bmesh.types.BMEdge` | :class:`bmesh.types.BMFace`]
+   :param factor:
+      Influence factor: spans from 0.0 to 1.0.
+   :type factor: float
+   :param method:
+      Plane on which vertices are flattened.
+   :type method: int
+   :param view_normal:
+      View direction in object local space.
+   :type view_normal: Sequence[float]
+   :param lock_x:
+      Lock X axis editing.
+   :type lock_x: bool
+   :param lock_y:
+      Lock Y axis editing.
+   :type lock_y: bool
+   :param lock_z:
+      Lock Z axis editing.
+   :type lock_z: bool
+
+
 .. function:: collapse(bm, edges=[], uvs=False)
 
    Collapse Connected.
@@ -355,7 +435,7 @@ This script shows how operators can be used to model a link of a chain.
    :type uvs: bool
 
 
-.. function:: pointmerge_facedata(bm, verts=[], vert_snap=None)
+.. function:: pointmerge_facedata(bm, verts=[], vert_target=None)
 
    Face-Data Point Merge.
 
@@ -366,9 +446,9 @@ This script shows how operators can be used to model a link of a chain.
    :param verts:
       Input vertices.
    :type verts: list[:class:`bmesh.types.BMVert`]
-   :param vert_snap:
-      Snap vertex.
-   :type vert_snap: :class:`bmesh.types.BMVert` | None
+   :param vert_target:
+      Target vertex to merge into.
+   :type vert_target: :class:`bmesh.types.BMVert` | None
 
 
 .. function:: average_vert_facedata(bm, verts=[])
@@ -385,7 +465,7 @@ This script shows how operators can be used to model a link of a chain.
    :type verts: list[:class:`bmesh.types.BMVert`]
 
 
-.. function:: pointmerge(bm, verts=[], merge_co=mathutils.Vector())
+.. function:: pointmerge(bm, verts=[], merge_co=(0.0, 0.0, 0.0), vert_target=None)
 
    Point Merge.
 
@@ -399,6 +479,10 @@ This script shows how operators can be used to model a link of a chain.
    :param merge_co:
       Position to merge at.
    :type merge_co: Sequence[float]
+   :param vert_target:
+      Optional target vertex to merge into. Does not override merge_co.
+      Set this to preserve the custom data of the target vertex.
+   :type vert_target: :class:`bmesh.types.BMVert` | None
 
 
 .. function:: collapse_uvs(bm, edges=[])
@@ -414,7 +498,7 @@ This script shows how operators can be used to model a link of a chain.
    :type edges: list[:class:`bmesh.types.BMEdge`]
 
 
-.. function:: weld_verts(bm, targetmap={}, use_centroid=False)
+.. function:: weld_verts(bm, targetmap={}, use_centroid=False, average_vert_data=False)
 
    Weld Verts.
 
@@ -431,9 +515,12 @@ This script shows how operators can be used to model a link of a chain.
       Merge vertices to their centroid position,
       otherwise use the position of the target vertex.
    :type use_centroid: bool
+   :param average_vert_data:
+      Whether to average custom data of merged vertices.
+   :type average_vert_data: bool
 
 
-.. function:: create_vert(bm, co=mathutils.Vector())
+.. function:: create_vert(bm, co=(0.0, 0.0, 0.0))
 
    Make Vertex.
 
@@ -748,7 +835,7 @@ This script shows how operators can be used to model a link of a chain.
    :rtype: dict[str, Any]
 
 
-.. function:: rotate(bm, cent=mathutils.Vector(), matrix=mathutils.Matrix.Identity(4), verts=[], space=mathutils.Matrix.Identity(4), use_shapekey=False)
+.. function:: rotate(bm, cent=(0.0, 0.0, 0.0), matrix=((1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0, 1)), verts=[], space=((1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0, 1)), use_shapekey=False)
 
    Rotate.
 
@@ -773,7 +860,7 @@ This script shows how operators can be used to model a link of a chain.
    :type use_shapekey: bool
 
 
-.. function:: translate(bm, vec=mathutils.Vector(), space=mathutils.Matrix.Identity(4), verts=[], use_shapekey=False)
+.. function:: translate(bm, vec=(0.0, 0.0, 0.0), space=((1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0, 1)), verts=[], use_shapekey=False)
 
    Translate.
 
@@ -795,7 +882,7 @@ This script shows how operators can be used to model a link of a chain.
    :type use_shapekey: bool
 
 
-.. function:: scale(bm, vec=mathutils.Vector(), space=mathutils.Matrix.Identity(4), verts=[], use_shapekey=False)
+.. function:: scale(bm, vec=(0.0, 0.0, 0.0), space=((1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0, 1)), verts=[], use_shapekey=False)
 
    Scale.
 
@@ -817,7 +904,7 @@ This script shows how operators can be used to model a link of a chain.
    :type use_shapekey: bool
 
 
-.. function:: transform(bm, matrix=mathutils.Matrix.Identity(4), space=mathutils.Matrix.Identity(4), verts=[], use_shapekey=False)
+.. function:: transform(bm, matrix=((1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0, 1)), space=((1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0, 1)), verts=[], use_shapekey=False)
 
    Transform.
 
@@ -1135,7 +1222,7 @@ This script shows how operators can be used to model a link of a chain.
    :type use_boundary_tear: bool
 
 
-.. function:: dissolve_edges(bm, edges=[], use_verts=False, use_face_split=False, angle_threshold=0)
+.. function:: dissolve_edges(bm, edges=[], use_verts=False, use_face_split=False, angle_threshold=0, use_preserve_quads=False)
 
    Dissolve Edges.
 
@@ -1154,6 +1241,9 @@ This script shows how operators can be used to model a link of a chain.
       Do not dissolve verts between 2 edges when their angle exceeds this threshold.
       Disabled by default.
    :type angle_threshold: float
+   :param use_preserve_quads:
+      When dissolving the edge between 2 triangles, don't dissolve the verts.
+   :type use_preserve_quads: bool
    :return:
 
       - ``region``:
@@ -1390,7 +1480,7 @@ This script shows how operators can be used to model a link of a chain.
    :rtype: dict[str, Any]
 
 
-.. function:: bisect_plane(bm, geom=[], dist=0, plane_co=mathutils.Vector(), plane_no=mathutils.Vector(), use_snap_center=False, clear_outer=False, clear_inner=False)
+.. function:: bisect_plane(bm, geom=[], dist=0, plane_co=(0.0, 0.0, 0.0), plane_no=(0.0, 0.0, 0.0), use_snap_center=False, clear_outer=False, clear_inner=False)
 
    Bisect Plane.
 
@@ -1537,7 +1627,7 @@ This script shows how operators can be used to model a link of a chain.
    :rtype: dict[str, Any]
 
 
-.. function:: spin(bm, geom=[], cent=mathutils.Vector(), axis=mathutils.Vector(), dvec=mathutils.Vector(), angle=0, space=mathutils.Matrix.Identity(4), steps=0, use_merge=False, use_normal_flip=False, use_duplicate=False)
+.. function:: spin(bm, geom=[], cent=(0.0, 0.0, 0.0), axis=(0.0, 0.0, 0.0), dvec=(0.0, 0.0, 0.0), angle=0, space=((1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0, 1)), steps=0, use_merge=False, use_normal_flip=False, use_duplicate=False)
 
    Spin.
 
@@ -1677,7 +1767,7 @@ This script shows how operators can be used to model a link of a chain.
    :rtype: dict[str, Any]
 
 
-.. function:: create_grid(bm, x_segments=0, y_segments=0, size=0, matrix=mathutils.Matrix.Identity(4), calc_uvs=False)
+.. function:: create_grid(bm, x_segments=0, y_segments=0, size=0, matrix=((1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0, 1)), calc_uvs=False)
 
    Create Grid.
 
@@ -1710,7 +1800,7 @@ This script shows how operators can be used to model a link of a chain.
    :rtype: dict[str, Any]
 
 
-.. function:: create_uvsphere(bm, u_segments=0, v_segments=0, radius=0, matrix=mathutils.Matrix.Identity(4), calc_uvs=False)
+.. function:: create_uvsphere(bm, u_segments=0, v_segments=0, radius=0, matrix=((1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0, 1)), calc_uvs=False)
 
    Create UV Sphere.
 
@@ -1743,7 +1833,7 @@ This script shows how operators can be used to model a link of a chain.
    :rtype: dict[str, Any]
 
 
-.. function:: create_icosphere(bm, subdivisions=0, radius=0, matrix=mathutils.Matrix.Identity(4), calc_uvs=False)
+.. function:: create_icosphere(bm, subdivisions=0, radius=0, matrix=((1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0, 1)), calc_uvs=False)
 
    Create Ico-Sphere.
 
@@ -1773,7 +1863,7 @@ This script shows how operators can be used to model a link of a chain.
    :rtype: dict[str, Any]
 
 
-.. function:: create_monkey(bm, matrix=mathutils.Matrix.Identity(4), calc_uvs=False)
+.. function:: create_monkey(bm, matrix=((1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0, 1)), calc_uvs=False)
 
    Create Suzanne.
 
@@ -1797,7 +1887,7 @@ This script shows how operators can be used to model a link of a chain.
    :rtype: dict[str, Any]
 
 
-.. function:: create_cone(bm, cap_ends=False, cap_tris=False, segments=0, radius1=0, radius2=0, depth=0, matrix=mathutils.Matrix.Identity(4), calc_uvs=False)
+.. function:: create_cone(bm, cap_ends=False, cap_tris=False, segments=0, radius1=0, radius2=0, depth=0, matrix=((1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0, 1)), calc_uvs=False)
 
    Create Cone.
 
@@ -1839,7 +1929,7 @@ This script shows how operators can be used to model a link of a chain.
    :rtype: dict[str, Any]
 
 
-.. function:: create_circle(bm, cap_ends=False, cap_tris=False, segments=0, radius=0, matrix=mathutils.Matrix.Identity(4), calc_uvs=False)
+.. function:: create_circle(bm, cap_ends=False, cap_tris=False, segments=0, radius=0, matrix=((1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0, 1)), calc_uvs=False)
 
    Creates a Circle.
 
@@ -1873,7 +1963,7 @@ This script shows how operators can be used to model a link of a chain.
    :rtype: dict[str, Any]
 
 
-.. function:: create_cube(bm, size=0, matrix=mathutils.Matrix.Identity(4), calc_uvs=False)
+.. function:: create_cube(bm, size=0, matrix=((1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0, 1)), calc_uvs=False)
 
    Create Cube
 
@@ -2013,7 +2103,7 @@ This script shows how operators can be used to model a link of a chain.
    :rtype: dict[str, Any]
 
 
-.. function:: triangle_fill(bm, use_beauty=False, use_dissolve=False, edges=[], normal=mathutils.Vector())
+.. function:: triangle_fill(bm, use_beauty=False, use_dissolve=False, edges=[], normal=(0.0, 0.0, 0.0))
 
    Triangle Fill.
 
@@ -2297,6 +2387,34 @@ This script shows how operators can be used to model a link of a chain.
         **type** list[:class:`bmesh.types.BMVert` | :class:`bmesh.types.BMEdge` | :class:`bmesh.types.BMFace`]
 
    :rtype: dict[str, Any]
+
+
+.. function:: space_edge_loops_evenly(bm, geom=[], interpolation='CUBIC', factor=0, lock_x=False, lock_y=False, lock_z=False)
+
+   Space Evenly.
+
+   Space the vertices in a regular distribution on the loop.
+
+   :param bm: The bmesh to operate on.
+   :type bm: :class:`bmesh.types.BMesh`
+   :param geom:
+      Input geometry.
+   :type geom: list[:class:`bmesh.types.BMEdge`]
+   :param interpolation:
+      Method used for interpolation.
+   :type interpolation: Literal['CUBIC', 'LINEAR']
+   :param factor:
+      Influence factor: spans from 0.0 to 1.0.
+   :type factor: float
+   :param lock_x:
+      Lock X-axis editing.
+   :type lock_x: bool
+   :param lock_y:
+      Lock Y-axis editing.
+   :type lock_y: bool
+   :param lock_z:
+      Lock Z-axis editing.
+   :type lock_z: bool
 
 
 .. function:: symmetrize(bm, input=[], direction='-X', dist=0, use_shapekey=False)

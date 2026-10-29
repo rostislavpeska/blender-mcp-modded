@@ -1,4 +1,3 @@
-
 *****************
 Library Overrides
 *****************
@@ -15,7 +14,7 @@ unmodified properties of the overridden one will be updated accordingly.
    Automatic conversion from proxies to library overrides happens when loading a blend-file,
    but results on complex characters are not guaranteed and may need manual fixes.
 
-Library overrides supports:
+Library overrides support:
 
 - Multiple independent overrides of a same linked data
   (e.g. having the same character multiple times in the same scene).
@@ -37,7 +36,7 @@ Library overrides supports:
 
    The main one is probably posed (but not animated) armature objects, when their Armature obdata
    itself is not overridden. The Pose bones of an armature object are fully linked to the bones
-   of its Armature obdata, if the later goes missing, the pose bones are definitively lost.
+   of its Armature obdata, if the latter goes missing, the pose bones are definitively lost.
 
 
 .. note:: Proper Collections Layout Matters
@@ -78,7 +77,7 @@ change greatly depending on whether animation data was already defined in the li
 data-block. Animation data is created for a datablock if it gets animated by keyframes, or
 through drivers.
 
-In general, an overrides can do much more with its animation data if no animation data exists
+In general, an override can do much more with its animation data if no animation data exists
 in its linked reference data-block.
 
 **Keyframes (a.k.a. F-Curves)**
@@ -96,7 +95,7 @@ and no new F-Curve can be added.
 
 If the linked reference data has animation data, then its overrides only have
 limited possibilities to edit the existing :doc:`drivers </animation/drivers/introduction>`.
-For example, it will be possible to change the exisitng target of a driver,
+For example, it will be possible to change the existing target of a driver,
 but it won't be possible to add new drivers, or new targets to an existing driver.
 
 If the linked reference data has no animation data, then its overrides will create a new one
@@ -161,7 +160,7 @@ Make an Override
 
 Create overrides from the selected data-blocks.
 
-Blender automatically create overrides for all required data-blocks to ensure that
+Blender automatically creates overrides for all required data-blocks to ensure that
 valid override hierarchies are created.
 
 Only overrides created from selected items will be user-editable.
@@ -319,6 +318,14 @@ Remove Overrides
 Remove the property from the overrides. The value of the linked in data-block will be used.
 For array properties all elements will be removed from the override.
 
+.. reference::
+
+   :Editor:    Outliner --> Library Overrides View
+   :Mode:      Object Mode
+   :Property:  :menuselection:`Context Menu --> Remove`
+
+Remove the selected (groups of) properties from the overrides, and all of their sub-items
+if any. The values from the linked-in data-block will be used.
 
 Remove Single Override
 ----------------------

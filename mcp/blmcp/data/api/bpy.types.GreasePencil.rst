@@ -5,6 +5,7 @@ GreasePencil(ID)
 
 base classes --- :class:`bpy_struct`, :class:`ID`
 
+
 .. class:: GreasePencil(ID)
 
    Grease Pencil data-block
@@ -145,6 +146,17 @@ base classes --- :class:`bpy_struct`, :class:`ID`
 
       :type: bool
 
+   .. method:: unit_test_compare(*, grease_pencil=None, threshold=7.1526e-06)
+
+      unit_test_compare
+
+      :param grease_pencil: Grease Pencil to compare to (optional)
+      :type grease_pencil: :class:`GreasePencil` | None
+      :param threshold: Threshold, Comparison tolerance threshold (in [0, inf], optional)
+      :type threshold: float
+      :return: Return value, String description of result of comparison (never None)
+      :rtype: str
+
    .. classmethod:: bl_rna_get_subclass(id, default=None, /)
    
       :param id: The RNA type identifier.
@@ -256,4 +268,5 @@ References
    - :class:`BlendData.grease_pencils`
    - :class:`BlendDataGreasePencilsV3.new`
    - :class:`BlendDataGreasePencilsV3.remove`
+   - :class:`GreasePencil.unit_test_compare`
 

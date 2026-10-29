@@ -5,12 +5,16 @@ VIEWLAYER_UL_aov(UIList)
 
 base classes --- :class:`bpy_struct`, :class:`UIList`
 
+
 .. class:: VIEWLAYER_UL_aov(UIList)
 
 
    .. staticmethod:: aov_icon(item)
 
-   .. method:: draw_item(_context, layout, _data, item, icon, _active_data, _active_propname)
+      :param item: AOV item to pick an icon for.
+      :type item: :class:`bpy.types.AOV`
+      :return: Icon identifier for *item*'s AOV type.
+      :rtype: str
 
    .. classmethod:: bl_rna_get_subclass(id, default=None, /)
    

@@ -26,7 +26,7 @@ You can also cycle through tabs with :kbd:`Ctrl-Tab` and
 :kbd:`Shift-Ctrl-Tab`, or press down :kbd:`LMB` and move the mouse over the tab header icons.
 Pressing :kbd:`NumpadPeriod` scrolls to the active tab in case it is out of view.
 
-Note, these shortcuts does not apply to Workspace tabs; see :ref:`Workspace controls <workspaces-controls>`.
+Note, these shortcuts do not apply to Workspace tabs; see :ref:`Workspace controls <workspaces-controls>`.
 
 .. container:: lead
 

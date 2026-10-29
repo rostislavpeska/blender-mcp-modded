@@ -138,6 +138,17 @@ Mask Operators
 
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
+.. function:: move_to_layer(*, target_layer_name="", add_new_layer=False)
+
+   Move the active spline to layer
+
+   :param target_layer_name: Name, Target Mask Layer (optional, never None)
+   :type target_layer_name: str
+   :param add_new_layer: New Layer, Move selection to a new layer (optional)
+   :type add_new_layer: bool
+   :return: Result of the operator call.
+   :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
+
 .. function:: new(*, name="")
 
    Create new mask

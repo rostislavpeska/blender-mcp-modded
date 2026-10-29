@@ -5,6 +5,7 @@ BrushCapabilitiesImagePaint(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: BrushCapabilitiesImagePaint(bpy_struct)
 
    Read-only indications of supported operations

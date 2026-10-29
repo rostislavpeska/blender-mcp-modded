@@ -3,7 +3,8 @@ wmTools(bpy_prop_collection)
 
 .. currentmodule:: bpy.types
 
-base classes --- :class:`bpy_prop`, :class:`bpy_prop_collection`
+base class --- :class:`bpy_prop_collection`
+
 
 .. class:: wmTools(bpy_prop_collection)
 
@@ -12,6 +13,7 @@ base classes --- :class:`bpy_prop`, :class:`bpy_prop_collection`
 
       
 
+      :param mode: Object mode
       :type mode: Literal[:ref:`rna_enum_context_mode_items`]
       :param create: Create, (optional)
       :type create: bool
@@ -21,6 +23,7 @@ base classes --- :class:`bpy_prop`, :class:`bpy_prop_collection`
 
       
 
+      :param mode: Image space mode
       :type mode: Literal[:ref:`rna_enum_space_image_mode_all_items`]
       :param create: Create, (optional)
       :type create: bool
@@ -38,6 +41,7 @@ base classes --- :class:`bpy_prop`, :class:`bpy_prop_collection`
 
       
 
+      :param mode: Sequencer view type
       :type mode: Literal[:ref:`rna_enum_space_sequencer_view_type_items`]
       :param create: Create, (optional)
       :type create: bool

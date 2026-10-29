@@ -5,6 +5,7 @@ ShapeKeyBezierPoint(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: ShapeKeyBezierPoint(bpy_struct)
 
    Point in a shape key for Bézier curves

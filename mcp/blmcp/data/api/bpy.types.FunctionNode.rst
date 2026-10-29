@@ -5,8 +5,65 @@ FunctionNode(NodeInternal)
 
 base classes --- :class:`bpy_struct`, :class:`Node`, :class:`NodeInternal`
 
-subclasses --- 
-:class:`FunctionNodeAlignEulerToVector`, :class:`FunctionNodeAlignRotationToVector`, :class:`FunctionNodeAxesToRotation`, :class:`FunctionNodeAxisAngleToRotation`, :class:`FunctionNodeBitMath`, :class:`FunctionNodeBooleanMath`, :class:`FunctionNodeCombineColor`, :class:`FunctionNodeCombineMatrix`, :class:`FunctionNodeCombineTransform`, :class:`FunctionNodeCompare`, :class:`FunctionNodeEulerToRotation`, :class:`FunctionNodeFindInString`, :class:`FunctionNodeFloatToInt`, :class:`FunctionNodeFormatString`, :class:`FunctionNodeHashValue`, :class:`FunctionNodeInputBool`, :class:`FunctionNodeInputColor`, :class:`FunctionNodeInputInt`, :class:`FunctionNodeInputRotation`, :class:`FunctionNodeInputSpecialCharacters`, :class:`FunctionNodeInputString`, :class:`FunctionNodeInputVector`, :class:`FunctionNodeIntegerMath`, :class:`FunctionNodeInvertMatrix`, :class:`FunctionNodeInvertRotation`, :class:`FunctionNodeMatchString`, :class:`FunctionNodeMatrixDeterminant`, :class:`FunctionNodeMatrixMultiply`, :class:`FunctionNodeMatrixSVD`, :class:`FunctionNodeProjectPoint`, :class:`FunctionNodeQuaternionToRotation`, :class:`FunctionNodeRandomValue`, :class:`FunctionNodeReplaceString`, :class:`FunctionNodeRotateEuler`, :class:`FunctionNodeRotateRotation`, :class:`FunctionNodeRotateVector`, :class:`FunctionNodeRotationToAxisAngle`, :class:`FunctionNodeRotationToEuler`, :class:`FunctionNodeRotationToQuaternion`, :class:`FunctionNodeSeparateColor`, :class:`FunctionNodeSeparateMatrix`, :class:`FunctionNodeSeparateTransform`, :class:`FunctionNodeSliceString`, :class:`FunctionNodeStringLength`, :class:`FunctionNodeStringToValue`, :class:`FunctionNodeTransformDirection`, :class:`FunctionNodeTransformPoint`, :class:`FunctionNodeTransposeMatrix`, :class:`FunctionNodeValueToString`
+.. toctree::
+   :caption: Subclasses
+   :maxdepth: 1
+
+   bpy.types.FunctionNodeAlignEulerToVector.rst
+   bpy.types.FunctionNodeAlignRotationToVector.rst
+   bpy.types.FunctionNodeAxesToRotation.rst
+   bpy.types.FunctionNodeAxisAngleToRotation.rst
+   bpy.types.FunctionNodeBitMath.rst
+   bpy.types.FunctionNodeBooleanMath.rst
+   bpy.types.FunctionNodeCombineColor.rst
+   bpy.types.FunctionNodeCombineMatrix.rst
+   bpy.types.FunctionNodeCombineTransform.rst
+   bpy.types.FunctionNodeCompare.rst
+   bpy.types.FunctionNodeEulerToRotation.rst
+   bpy.types.FunctionNodeFindInString.rst
+   bpy.types.FunctionNodeFloatToInt.rst
+   bpy.types.FunctionNodeFormatString.rst
+   bpy.types.FunctionNodeHashValue.rst
+   bpy.types.FunctionNodeInputBool.rst
+   bpy.types.FunctionNodeInputColor.rst
+   bpy.types.FunctionNodeInputInt.rst
+   bpy.types.FunctionNodeInputIntVector.rst
+   bpy.types.FunctionNodeInputMenu.rst
+   bpy.types.FunctionNodeInputRotation.rst
+   bpy.types.FunctionNodeInputSpecialCharacters.rst
+   bpy.types.FunctionNodeInputString.rst
+   bpy.types.FunctionNodeInputVector.rst
+   bpy.types.FunctionNodeIntegerMath.rst
+   bpy.types.FunctionNodeInvertMatrix.rst
+   bpy.types.FunctionNodeInvertRotation.rst
+   bpy.types.FunctionNodeMatchString.rst
+   bpy.types.FunctionNodeMatrixDeterminant.rst
+   bpy.types.FunctionNodeMatrixMultiply.rst
+   bpy.types.FunctionNodeMatrixSVD.rst
+   bpy.types.FunctionNodeProjectPoint.rst
+   bpy.types.FunctionNodeQuaternionToRotation.rst
+   bpy.types.FunctionNodeRandomValue.rst
+   bpy.types.FunctionNodeReplaceString.rst
+   bpy.types.FunctionNodeReverseString.rst
+   bpy.types.FunctionNodeRotateEuler.rst
+   bpy.types.FunctionNodeRotateRotation.rst
+   bpy.types.FunctionNodeRotateVector.rst
+   bpy.types.FunctionNodeRotationToAxisAngle.rst
+   bpy.types.FunctionNodeRotationToEuler.rst
+   bpy.types.FunctionNodeRotationToQuaternion.rst
+   bpy.types.FunctionNodeSeparateColor.rst
+   bpy.types.FunctionNodeSeparateMatrix.rst
+   bpy.types.FunctionNodeSeparateTransform.rst
+   bpy.types.FunctionNodeSetStringCase.rst
+   bpy.types.FunctionNodeSliceString.rst
+   bpy.types.FunctionNodeSplitString.rst
+   bpy.types.FunctionNodeStringLength.rst
+   bpy.types.FunctionNodeStringToValue.rst
+   bpy.types.FunctionNodeTransformDirection.rst
+   bpy.types.FunctionNodeTransformPoint.rst
+   bpy.types.FunctionNodeTransposeMatrix.rst
+   bpy.types.FunctionNodeTrimString.rst
+   bpy.types.FunctionNodeValueToString.rst
 
 .. class:: FunctionNode(NodeInternal)
 
@@ -48,6 +105,7 @@ Inherited Properties
    - :class:`Node.label`
    - :class:`Node.inputs`
    - :class:`Node.outputs`
+   - :class:`Node.panel_states`
    - :class:`Node.internal_links`
    - :class:`Node.parent`
    - :class:`Node.warning_propagation`

@@ -5,10 +5,9 @@ PARTICLE_UL_particle_systems(UIList)
 
 base classes --- :class:`bpy_struct`, :class:`UIList`
 
+
 .. class:: PARTICLE_UL_particle_systems(UIList)
 
-
-   .. method:: draw_item(_context, layout, data, item, icon, _active_data, _active_propname, _index, _flt_flag)
 
    .. classmethod:: bl_rna_get_subclass(id, default=None, /)
    

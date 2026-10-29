@@ -5,6 +5,7 @@ GreasePencilSubdivModifier(Modifier)
 
 base classes --- :class:`bpy_struct`, :class:`Modifier`
 
+
 .. class:: GreasePencilSubdivModifier(Modifier)
 
    Subdivide Stroke modifier

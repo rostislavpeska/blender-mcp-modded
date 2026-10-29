@@ -5,6 +5,7 @@ ThemeStyle(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: ThemeStyle(bpy_struct)
 
    Theme settings for style sets

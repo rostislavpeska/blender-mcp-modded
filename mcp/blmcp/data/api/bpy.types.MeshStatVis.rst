@@ -5,6 +5,7 @@ MeshStatVis(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: MeshStatVis(bpy_struct)
 
 

@@ -176,7 +176,7 @@ Use After Creation
    The new orientation stays selected.
 Overwrite Previous
    If the new orientation is given an existing name, a suffix will be added
-   to it's name to avoid overwriting the existing orientation,
+   to its name to avoid overwriting the existing orientation,
    unless *Overwrite Previous* is checked, in which case it will be overwritten.
 
 

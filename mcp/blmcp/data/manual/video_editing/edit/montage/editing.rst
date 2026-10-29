@@ -34,6 +34,7 @@ The drop-down arrow offers the following options:
 .. _bpy.types.SequencerToolSettings.snap_to_hold_offset:
 .. _bpy.types.SequencerToolSettings.snap_to_markers:
 .. _bpy.types.SequencerToolSettings.snap_to_retiming_keys:
+.. _bpy.types.SequencerToolSettings.snap_to_all_channels:
 
 Snap to
    Frame Range
@@ -48,6 +49,9 @@ Snap to
       Snaps the transformed selection to :doc:`/animation/markers`.
    Retiming Keys
       Snaps the transformed selection to :ref:`sequencer-editing-retiming`.
+   All Channels
+      Allows snapping to any strip channel.
+      If disabled, snapping only snaps to strips currently on the same channel as transformed strips.
 
 .. _bpy.types.SequencerToolSettings.snap_ignore_muted:
 .. _bpy.types.SequencerToolSettings.snap_ignore_sound:
@@ -117,7 +121,7 @@ The frame number label over the strip displays the end frame of the strip.
 
    You can select several (handles of) strips by :kbd:`Shift-LMB` clicking: when you press :kbd:`G`,
    everything that is selected will move with your mouse -- this means that,
-   for example, you can at the same time move a strip, shorten two others, and extend a forth one.
+   for example, you can at the same time move a strip, shorten two others, and extend a fourth one.
 
 
 Move/Extend from Current Frame
@@ -195,7 +199,25 @@ Snap Strips to the Current Frame
    :Menu:      :menuselection:`Strip --> Transform --> Snap Strips to the Current Frame`
    :Shortcut:  :kbd:`Shift-S`
 
-Moves the strip or control point to the current frame.
+Moves the selected strips so that they align with the current frame.
+The active strip is used as the reference, and the mouse position
+relative to the playhead determines which side of the strip snaps
+to the current frame.
+
+When invoked from the menu, click with :kbd:`LMB` on either side
+of the playhead to choose which side to snap.
+
+Frame
+   The frame to which the selected strips will be snapped.
+
+Snap Side
+   Determines which side of the strip snaps to the frame when
+   no strip handles are selected.
+
+Keep Offset
+   If enabled, all selected strips are moved together,
+   preserving their relative timing.
+   If disabled, each strip snaps individually.
 
 
 .. _bpy.ops.sequencer.offset_clear:

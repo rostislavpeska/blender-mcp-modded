@@ -5,6 +5,7 @@ SubsurfModifier(Modifier)
 
 base classes --- :class:`bpy_struct`, :class:`Modifier`
 
+
 .. class:: SubsurfModifier(Modifier)
 
    Subdivision surface modifier

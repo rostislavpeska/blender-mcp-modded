@@ -5,6 +5,7 @@ ImagePreview(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: ImagePreview(bpy_struct)
 
    Preview image and icon
@@ -17,15 +18,15 @@ base class --- :class:`bpy_struct`
 
    .. attribute:: icon_pixels
 
-      Icon pixels, as bytes (always 32-bit RGBA) (in [-inf, inf], default 0)
+      Icon pixels, as bytes (always 32-bit RGBA) (dynamic array, in [-inf, inf], default 0)
 
-      :type: int
+      :type: :class:`bpy_prop_array`\ [int]
 
    .. attribute:: icon_pixels_float
 
-      Icon pixels components, as floats (RGBA concatenated values) (in [-inf, inf], default 0.0)
+      Icon pixels components, as floats (RGBA concatenated values) (dynamic array, in [-inf, inf], default 0.0)
 
-      :type: float
+      :type: :class:`bpy_prop_array`\ [float]
 
    .. attribute:: icon_size
 
@@ -35,15 +36,15 @@ base class --- :class:`bpy_struct`
 
    .. attribute:: image_pixels
 
-      Image pixels, as bytes (always 32-bit RGBA) (in [-inf, inf], default 0)
+      Image pixels, as bytes (always 32-bit RGBA) (dynamic array, in [-inf, inf], default 0)
 
-      :type: int
+      :type: :class:`bpy_prop_array`\ [int]
 
    .. attribute:: image_pixels_float
 
-      Image pixels components, as floats (RGBA concatenated values) (in [-inf, inf], default 0.0)
+      Image pixels components, as floats (RGBA concatenated values) (dynamic array, in [-inf, inf], default 0.0)
 
-      :type: float
+      :type: :class:`bpy_prop_array`\ [float]
 
    .. attribute:: image_size
 

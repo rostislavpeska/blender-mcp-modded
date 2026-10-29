@@ -9,9 +9,11 @@ Compare Node
    :align: center
    :alt: Compare Node.
 
-The *Compare* node takes two inputs and does an operation to determine whether they are similar.
-The node can work on all generic data types, and has modes for vectors that contain more complex
-comparisons, which can help to reduce the number of necessary nodes, and make a node tree more readable.
+The *Compare* node compares two values and outputs whether they satisfy a selected comparison operation.
+
+The node supports all generic data types, including data-blocks. For vector inputs, additional comparison
+modes are available that can perform more complex comparisons while reducing the number of required nodes
+and improving node tree readability.
 
 
 Inputs
@@ -29,7 +31,12 @@ Epsilon
 Properties
 ==========
 
+Type
+   The data type to compare.
+
 Mode
+   Method used to compare vector inputs.
+
    :Element-Wise:
       Compare each axis of the input vectors separately, and output true only when the result is true
       for each axis.
@@ -46,6 +53,9 @@ Mode
       The vectors are normalized, so their length does not matter.
 
 Operation
+   The comparison operation to perform.
+   Available operations depend on the selected data type.
+
    :Less Than:
       True when the first input is smaller than second input.
    :Less Than or Equal:

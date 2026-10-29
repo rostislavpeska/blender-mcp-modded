@@ -28,7 +28,7 @@ Properties
 ==========
 
 Movie Clip
-   Used to select a Movie Clip data-block to use, for controls see :ref:`ui-data-block`.
+   Used to select a :ref:`movie clip <bpy.types.MovieClip>` to use, for controls see :ref:`ui-data-block`.
 
 Tracking Object
    Camera object to get track information from.

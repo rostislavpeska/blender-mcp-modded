@@ -5,6 +5,7 @@ SceneGpencil(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: SceneGpencil(bpy_struct)
 
    Render settings

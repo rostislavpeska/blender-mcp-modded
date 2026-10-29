@@ -5,6 +5,7 @@ ObjectSolverConstraint(Constraint)
 
 base classes --- :class:`bpy_struct`, :class:`Constraint`
 
+
 .. class:: ObjectSolverConstraint(Constraint)
 
    Lock motion to the reconstructed object movement

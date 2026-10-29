@@ -1,5 +1,6 @@
 .. index:: Geometry Nodes; Warning
 .. _bpy.types.GeometryNodeWarning:
+.. --- copy below this line ---
 
 ************
 Warning Node
@@ -9,14 +10,15 @@ Warning Node
    :align: right
    :alt: Warning Node.
 
-Outputs a custom message that is displayed in the
-:ref:`modifiers-geometry-nodes-warnings` panel of the Geometry Nodes modifier.
+The *Warning* node outputs a custom message that is displayed when the node tree
+is evaluated.
 
-This allows node groups to communicate expectations, assumptions, or error conditions
-about input values, such as required ranges, missing data, or unsupported configurations.
+This allows node groups to communicate expectations, assumptions, or error
+conditions, such as required input ranges, missing data, or unsupported
+configurations.
 
-By default, warnings are propagated through all parent node groups.
-This behavior can be controlled using the
+By default, warnings are propagated through parent node groups.
+This behavior can be controlled with the
 :ref:`bpy.types.Node.warning_propagation` setting on each node.
 
 
@@ -24,21 +26,24 @@ Inputs
 ======
 
 Show
-   Controls whether the warning is shown in the
-   :ref:`modifiers-geometry-nodes-warnings` panel.
+   Controls whether the warning is displayed.
+
    When disabled, the warning is suppressed.
 
 Message
-   The text message to display.
-   This can be used to describe incorrect inputs, required conditions,
-   or other relevant information for users of the node group.
+   Text of the warning message.
+
+   This can be used to describe invalid inputs, required conditions,
+   or other information relevant to users of the node group.
 
 
 Properties
 ==========
 
 Warning Type
-   The severity of the message, which also affects the icon shown in the warnings panel.
+   Severity of the warning.
+
+   The warning type also determines the icon used when the message is displayed.
 
    :Info:
       Informational message that does not indicate a problem.
@@ -52,5 +57,15 @@ Outputs
 =======
 
 Show
-   Passthrough of the *Show* input, allowing the warning state to be forwarded
-   to other nodes.
+   Passes through the *Show* input.
+
+   This can be used to combine or forward warning conditions to other nodes.
+
+
+.. --- geometry nodes specific ---
+
+Usage
+=====
+
+When used inside a Geometry Nodes tree, warnings are displayed in the
+:ref:`modifiers-geometry-nodes-warnings` panel of the Geometry Nodes modifier.

@@ -5,6 +5,7 @@ XrEventData(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: XrEventData(bpy_struct)
 
    XR Data for Window Manager Event

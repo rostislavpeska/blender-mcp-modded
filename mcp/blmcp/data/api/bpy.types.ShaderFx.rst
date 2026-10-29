@@ -5,8 +5,19 @@ ShaderFx(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
-subclasses --- 
-:class:`ShaderFxBlur`, :class:`ShaderFxColorize`, :class:`ShaderFxFlip`, :class:`ShaderFxGlow`, :class:`ShaderFxPixel`, :class:`ShaderFxRim`, :class:`ShaderFxShadow`, :class:`ShaderFxSwirl`, :class:`ShaderFxWave`
+.. toctree::
+   :caption: Subclasses
+   :maxdepth: 1
+
+   bpy.types.ShaderFxBlur.rst
+   bpy.types.ShaderFxColorize.rst
+   bpy.types.ShaderFxFlip.rst
+   bpy.types.ShaderFxGlow.rst
+   bpy.types.ShaderFxPixel.rst
+   bpy.types.ShaderFxRim.rst
+   bpy.types.ShaderFxShadow.rst
+   bpy.types.ShaderFxSwirl.rst
+   bpy.types.ShaderFxWave.rst
 
 .. class:: ShaderFx(bpy_struct)
 

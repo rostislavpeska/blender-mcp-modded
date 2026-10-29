@@ -5,6 +5,7 @@ UvSculpt(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: UvSculpt(bpy_struct)
 
 

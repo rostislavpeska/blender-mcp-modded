@@ -66,7 +66,7 @@ Only materials with *Single Sided* turned on for Light Probe Volumes will reduce
 
 Validity Threshold
    Capture points with validity below this threshold will be ignored during lighting interpolation.
-   This remove the influence of capture points trapped inside closed geometry, reducing the artifacts they produced.
+   This removes the influence of capture points trapped inside closed geometry, reducing the artifacts they produced.
 
 .. _bpy.types.LightProbeVolume.dilation_threshold:
 

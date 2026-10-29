@@ -5,6 +5,7 @@ LineStyleColorModifier_AlongStroke(LineStyleColorModifier)
 
 base classes --- :class:`bpy_struct`, :class:`LineStyleModifier`, :class:`LineStyleColorModifier`
 
+
 .. class:: LineStyleColorModifier_AlongStroke(LineStyleColorModifier)
 
    Change line color along stroke

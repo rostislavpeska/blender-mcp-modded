@@ -5,6 +5,7 @@ NodeTreeInterfaceSocketGeometry(NodeTreeInterfaceSocket)
 
 base classes --- :class:`bpy_struct`, :class:`NodeTreeInterfaceItem`, :class:`NodeTreeInterfaceSocket`
 
+
 .. class:: NodeTreeInterfaceSocketGeometry(NodeTreeInterfaceSocket)
 
    Geometry socket of a node

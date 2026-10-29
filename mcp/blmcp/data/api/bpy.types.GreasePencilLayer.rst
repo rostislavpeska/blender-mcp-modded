@@ -5,6 +5,7 @@ GreasePencilLayer(GreasePencilTreeNode)
 
 base classes --- :class:`bpy_struct`, :class:`GreasePencilTreeNode`
 
+
 .. class:: GreasePencilLayer(GreasePencilTreeNode)
 
    Collection of related drawings
@@ -222,6 +223,7 @@ References
    :columns: 2
 
    - :class:`GreasePencil.layers`
+   - :class:`GreasePencilLayerMasks.add`
    - :class:`GreasePencilv3Layers.active`
    - :class:`GreasePencilv3Layers.move`
    - :class:`GreasePencilv3Layers.move_bottom`

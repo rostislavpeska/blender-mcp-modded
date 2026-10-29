@@ -5,6 +5,7 @@ TextBox(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: TextBox(bpy_struct)
 
    Text bounding box for layout

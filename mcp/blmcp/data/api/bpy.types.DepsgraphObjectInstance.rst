@@ -5,6 +5,7 @@ DepsgraphObjectInstance(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: DepsgraphObjectInstance(bpy_struct)
 
    Extended information about dependency graph object iterator (Warning: All data here is 'evaluated' one, not original .blend IDs)

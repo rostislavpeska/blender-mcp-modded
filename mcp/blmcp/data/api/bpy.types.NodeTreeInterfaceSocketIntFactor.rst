@@ -5,6 +5,7 @@ NodeTreeInterfaceSocketIntFactor(NodeTreeInterfaceSocket)
 
 base classes --- :class:`bpy_struct`, :class:`NodeTreeInterfaceItem`, :class:`NodeTreeInterfaceSocket`
 
+
 .. class:: NodeTreeInterfaceSocketIntFactor(NodeTreeInterfaceSocket)
 
    Integer number socket of a node

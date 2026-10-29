@@ -5,6 +5,7 @@ ColorMixStrip(EffectStrip)
 
 base classes --- :class:`bpy_struct`, :class:`Strip`, :class:`EffectStrip`
 
+
 .. class:: ColorMixStrip(EffectStrip)
 
    Color Mix Strip
@@ -89,7 +90,6 @@ Inherited Properties
    - :class:`Strip.frame_offset_end`
    - :class:`Strip.right_handle_offset`
    - :class:`Strip.channel`
-   - :class:`Strip.use_linear_modifiers`
    - :class:`Strip.blend_type`
    - :class:`Strip.blend_alpha`
    - :class:`Strip.effect_fader`
@@ -97,6 +97,7 @@ Inherited Properties
    - :class:`Strip.color_tag`
    - :class:`Strip.modifiers`
    - :class:`Strip.show_retiming_keys`
+   - :class:`Strip.connections`
    - :class:`EffectStrip.use_deinterlace`
    - :class:`EffectStrip.alpha_mode`
    - :class:`EffectStrip.use_flip_x`

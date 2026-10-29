@@ -172,6 +172,7 @@ from a search field, this can be done using :class:`bpy.types.Operator.invoke_se
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: Operator(bpy_struct)
 
    Storage of an operator being executed, or registered after execution
@@ -353,6 +354,8 @@ base class --- :class:`bpy_struct`
 
    .. method:: as_keywords(*, ignore=())
 
+      :param ignore: Property names to omit from the result.
+      :type ignore: Iterable[str]
       :return: A copy of the properties as a dictionary.
       :rtype: dict[str, Any]
 

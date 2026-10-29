@@ -5,6 +5,7 @@ NodeSocketTexture(NodeSocketStandard)
 
 base classes --- :class:`bpy_struct`, :class:`NodeSocket`, :class:`NodeSocketStandard`
 
+
 .. class:: NodeSocketTexture(NodeSocketStandard)
 
    Texture socket of a node

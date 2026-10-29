@@ -5,6 +5,7 @@ BlenderRNA(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: BlenderRNA(bpy_struct)
 
    Blender RNA structure definitions

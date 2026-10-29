@@ -34,7 +34,7 @@ Bones
       In the 3D Viewport, bones can only be picked if the armature is in Pose Mode or in Edit Mode.
 
 Camera Depth
-   Number fields effecting distance can also use the eyedropper.
+   Number fields affecting distance can also use the eyedropper.
 
    This is used to set the camera's depth of field so the depth chosen is in focus.
 

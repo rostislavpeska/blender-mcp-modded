@@ -35,7 +35,7 @@ Size
    Meanwhile the texture of the brush will be visible inside the circle.
    You can also enter the size numerically with the number keys.
 
-   The size can be decreased/increased using :kbd:`[` and :kbd:`]` respectfully.
+   The size can be decreased/increased using :kbd:`[` and :kbd:`]` respectively.
 
    :bl-icon:`stylus_pressure` (Size Pressure)
       Adjusts the size based on the stylus pressure when using a :ref:`Graphics Tablet <hardware-tablet>`.
@@ -49,6 +49,8 @@ Size
          increased pressure results in a larger brush size.
 
          For the curve controls see: :ref:`Curve widget <ui-curve-widget>`.
+
+.. _bpy.types.Brush.use_locked_size:
 
 Size Unit :guilabel:`Sculpt Mode`
    Controls how the brush *Size* is measured.
@@ -87,6 +89,8 @@ Strength
          increased pressure results in a stronger brush deformation.
 
          For the curve controls see: :ref:`Curve widget <ui-curve-widget>`.
+
+.. _bpy.types.Brush.blend:
 
 Blend
    Set the way the color or value is applied over the targeted Color Attribute, Vertex Group or Image Texture.
@@ -222,12 +226,6 @@ Brush Type
    - :doc:`Weight Paint </sculpt_paint/weight_paint/brushes>`
    - :doc:`Texture Paint </sculpt_paint/texture_paint/brushes>`
 
-Accumulate
-   Causes stroke dabs to accumulate on top of each other.
-
-Front Faces Only
-   When enabled, the brush only affects vertices that are facing the viewer.
-
 Affect Alpha :guilabel:`2D Painting Only`
    When this is disabled, it prevents changes to the alpha channel while painting (Only in 3D Viewport).
 
@@ -235,22 +233,11 @@ Anti-Aliasing :guilabel:`2D Painting Only`
    Toggles :term:`Anti-Aliasing` around the brush,
    this is useful if you are working with pixel art or low resolution textures.
 
-.. _bpy.types.Brush.use_automasking_topology:
-.. _bpy.types.Brush.use_automasking_boundary_face_sets:
-.. _bpy.types.Brush.use_automasking_boundary_edges:
-.. _bpy.types.Brush.use_automasking_cavity:
-.. _bpy.types.Brush.use_automasking_cavity_inverted:
-.. _bpy.types.Brush.use_automasking_view_normal:
-.. _bpy.types.Brush.use_automasking_start_normal:
-.. _bpy.types.Brush.automasking:
+Accumulate
+   Causes stroke dabs to accumulate on top of each other.
 
-Auto-Masking :guilabel:`Sculpt Mode`
-   The auto-masking toggles in the brush settings are the same as the sculpt mode auto-masking settings.
-   The difference is that these toggles can be customized per brush to create specific brush behaviors.
-
-.. seealso::
-
-   For more information on the Auto-Masking toggles, see :doc:`Auto-Masking </sculpt_paint/sculpting/controls>`.
+Front Faces Only
+   When enabled, the brush only affects vertices that are facing the viewer.
 
 .. _bpy.types.Brush.sculpt_plane:
 
@@ -267,15 +254,38 @@ Sculpt Plane :guilabel:`Sculpt Mode`
       The movement takes place in the positive direction of one of the global axes.
 
 .. _bpy.types.Brush.use_original_normal:
+
+Original -- Normal :guilabel:`Sculpt Mode`
+   When locked it keeps using the normal of the surface where stroke was initiated,
+   instead of the surface normal currently under the cursor.
+
 .. _bpy.types.Brush.use_original_plane:
 
-Original :guilabel:`Sculpt Mode`
-   Normal
-      When locked it keeps using the normal of the surface where stroke was initiated,
-      instead of the surface normal currently under the cursor.
-   Plane
-      When locked keep using the plane origin of surface where stroke was initiated,
-      instead of the surface plane currently under the cursor.
+Original -- Plane :guilabel:`Sculpt Mode`
+   When locked keep using the plane origin of surface where stroke was initiated,
+   instead of the surface plane currently under the cursor.
+
+
+.. _bpy.types.Brush.use_automasking_topology:
+.. _bpy.types.Brush.use_automasking_boundary_face_sets:
+.. _bpy.types.Brush.use_automasking_boundary_edges:
+.. _bpy.types.Brush.use_automasking_cavity:
+.. _bpy.types.Brush.use_automasking_cavity_inverted:
+.. _bpy.types.Brush.use_automasking_view_normal:
+.. _bpy.types.Brush.use_automasking_start_normal:
+.. _bpy.types.Brush.automasking:
+
+Auto-Masking
+------------
+
+:guilabel:`Sculpt Mode`
+
+The auto-masking toggles in the brush settings are the same as the sculpt mode auto-masking settings.
+The difference is that these toggles can be customized per brush to create specific brush behaviors.
+
+.. seealso::
+
+   For more information on the Auto-Masking toggles, see :doc:`Auto-Masking </sculpt_paint/sculpting/controls>`.
 
 
 Color Picker
@@ -394,13 +404,13 @@ This is useful when working with several colors at once.
 Palette
    A :ref:`ui-data-block` to select a palette.
 
-:bl-icon:`add` (New Pallet Color)
+:bl-icon:`add` (New Palette Color)
    Adds the current brush's primary *Color* to the palette.
 
-:bl-icon:`remove` (Delete Pallet Color)
+:bl-icon:`remove` (Delete Palette Color)
    Removes the currently selected color from the palette.
 
-:bl-icon:`tria_up`/:bl-icon:`tria_down` (Move Pallet Color)
+:bl-icon:`tria_up`/:bl-icon:`tria_down` (Move Palette Color)
    Moves the selected color up/down one position.
 
 :bl-icon:`sortsize` (Sort By)

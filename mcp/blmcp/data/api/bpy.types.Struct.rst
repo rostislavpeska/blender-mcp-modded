@@ -5,6 +5,7 @@ Struct(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: Struct(bpy_struct)
 
    RNA structure definition

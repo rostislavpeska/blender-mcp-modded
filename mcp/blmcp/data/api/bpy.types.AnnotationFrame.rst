@@ -5,6 +5,7 @@ AnnotationFrame(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: AnnotationFrame(bpy_struct)
 
    Collection of related sketches on a particular frame
@@ -25,7 +26,7 @@ base class --- :class:`bpy_struct`
 
       Freehand curves defining the sketch on this frame (default None, readonly)
 
-      :type: :class:`bpy_prop_collection`\ [:class:`AnnotationStroke`]
+      :type: :class:`AnnotationStrokes`\ [:class:`AnnotationStroke`]
 
    .. classmethod:: bl_rna_get_subclass(id, default=None, /)
    

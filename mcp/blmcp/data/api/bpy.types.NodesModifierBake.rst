@@ -5,6 +5,7 @@ NodesModifierBake(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: NodesModifierBake(bpy_struct)
 
 

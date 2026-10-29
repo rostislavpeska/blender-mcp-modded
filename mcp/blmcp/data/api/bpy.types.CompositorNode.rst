@@ -5,8 +5,100 @@ CompositorNode(NodeInternal)
 
 base classes --- :class:`bpy_struct`, :class:`Node`, :class:`NodeInternal`
 
-subclasses --- 
-:class:`CompositorNodeAlphaOver`, :class:`CompositorNodeAntiAliasing`, :class:`CompositorNodeBilateralblur`, :class:`CompositorNodeBlur`, :class:`CompositorNodeBokehBlur`, :class:`CompositorNodeBokehImage`, :class:`CompositorNodeBoxMask`, :class:`CompositorNodeBrightContrast`, :class:`CompositorNodeChannelMatte`, :class:`CompositorNodeChromaMatte`, :class:`CompositorNodeColorBalance`, :class:`CompositorNodeColorCorrection`, :class:`CompositorNodeColorMatte`, :class:`CompositorNodeColorSpill`, :class:`CompositorNodeCombineColor`, :class:`CompositorNodeConvertColorSpace`, :class:`CompositorNodeConvertToDisplay`, :class:`CompositorNodeConvolve`, :class:`CompositorNodeCornerPin`, :class:`CompositorNodeCrop`, :class:`CompositorNodeCryptomatte`, :class:`CompositorNodeCryptomatteV2`, :class:`CompositorNodeCurveRGB`, :class:`CompositorNodeCustomGroup`, :class:`CompositorNodeDBlur`, :class:`CompositorNodeDefocus`, :class:`CompositorNodeDenoise`, :class:`CompositorNodeDespeckle`, :class:`CompositorNodeDiffMatte`, :class:`CompositorNodeDilateErode`, :class:`CompositorNodeDisplace`, :class:`CompositorNodeDistanceMatte`, :class:`CompositorNodeDoubleEdgeMask`, :class:`CompositorNodeEllipseMask`, :class:`CompositorNodeExposure`, :class:`CompositorNodeFilter`, :class:`CompositorNodeFlip`, :class:`CompositorNodeGamma`, :class:`CompositorNodeGlare`, :class:`CompositorNodeGroup`, :class:`CompositorNodeHueCorrect`, :class:`CompositorNodeHueSat`, :class:`CompositorNodeIDMask`, :class:`CompositorNodeImage`, :class:`CompositorNodeImageCoordinates`, :class:`CompositorNodeImageInfo`, :class:`CompositorNodeInpaint`, :class:`CompositorNodeInvert`, :class:`CompositorNodeKeying`, :class:`CompositorNodeKeyingScreen`, :class:`CompositorNodeKuwahara`, :class:`CompositorNodeLensdist`, :class:`CompositorNodeLevels`, :class:`CompositorNodeLumaMatte`, :class:`CompositorNodeMapUV`, :class:`CompositorNodeMask`, :class:`CompositorNodeMaskToSDF`, :class:`CompositorNodeMovieClip`, :class:`CompositorNodeMovieDistortion`, :class:`CompositorNodeNormal`, :class:`CompositorNodeNormalize`, :class:`CompositorNodeOutputFile`, :class:`CompositorNodePixelate`, :class:`CompositorNodePlaneTrackDeform`, :class:`CompositorNodePosterize`, :class:`CompositorNodePremulKey`, :class:`CompositorNodeRGB`, :class:`CompositorNodeRGBToBW`, :class:`CompositorNodeRLayers`, :class:`CompositorNodeRelativeToPixel`, :class:`CompositorNodeRotate`, :class:`CompositorNodeScale`, :class:`CompositorNodeSceneTime`, :class:`CompositorNodeSeparateColor`, :class:`CompositorNodeSequencerStripInfo`, :class:`CompositorNodeSetAlpha`, :class:`CompositorNodeSplit`, :class:`CompositorNodeStabilize`, :class:`CompositorNodeSwitch`, :class:`CompositorNodeSwitchView`, :class:`CompositorNodeTime`, :class:`CompositorNodeTonemap`, :class:`CompositorNodeTrackPos`, :class:`CompositorNodeTransform`, :class:`CompositorNodeTranslate`, :class:`CompositorNodeVecBlur`, :class:`CompositorNodeViewer`, :class:`CompositorNodeZcombine`
+.. toctree::
+   :caption: Subclasses
+   :maxdepth: 1
+
+   bpy.types.CompositorNodeAlphaOver.rst
+   bpy.types.CompositorNodeAntiAliasing.rst
+   bpy.types.CompositorNodeBilateralblur.rst
+   bpy.types.CompositorNodeBlankImage.rst
+   bpy.types.CompositorNodeBlur.rst
+   bpy.types.CompositorNodeBokehBlur.rst
+   bpy.types.CompositorNodeBokehImage.rst
+   bpy.types.CompositorNodeBoxMask.rst
+   bpy.types.CompositorNodeBrightContrast.rst
+   bpy.types.CompositorNodeChannelMatte.rst
+   bpy.types.CompositorNodeChromaMatte.rst
+   bpy.types.CompositorNodeColorBalance.rst
+   bpy.types.CompositorNodeColorCorrection.rst
+   bpy.types.CompositorNodeColorMatte.rst
+   bpy.types.CompositorNodeColorSpill.rst
+   bpy.types.CompositorNodeCombineColor.rst
+   bpy.types.CompositorNodeConvertColorSpace.rst
+   bpy.types.CompositorNodeConvertToDisplay.rst
+   bpy.types.CompositorNodeConvolve.rst
+   bpy.types.CompositorNodeCornerPin.rst
+   bpy.types.CompositorNodeCrop.rst
+   bpy.types.CompositorNodeCryptomatte.rst
+   bpy.types.CompositorNodeCryptomatteV2.rst
+   bpy.types.CompositorNodeCurveRGB.rst
+   bpy.types.CompositorNodeCustomGroup.rst
+   bpy.types.CompositorNodeDBlur.rst
+   bpy.types.CompositorNodeDefocus.rst
+   bpy.types.CompositorNodeDenoise.rst
+   bpy.types.CompositorNodeDespeckle.rst
+   bpy.types.CompositorNodeDiffMatte.rst
+   bpy.types.CompositorNodeDilateErode.rst
+   bpy.types.CompositorNodeDisplace.rst
+   bpy.types.CompositorNodeDistanceMatte.rst
+   bpy.types.CompositorNodeDoubleEdgeMask.rst
+   bpy.types.CompositorNodeEllipseMask.rst
+   bpy.types.CompositorNodeExposure.rst
+   bpy.types.CompositorNodeFilter.rst
+   bpy.types.CompositorNodeFlip.rst
+   bpy.types.CompositorNodeGamma.rst
+   bpy.types.CompositorNodeGlare.rst
+   bpy.types.CompositorNodeGroup.rst
+   bpy.types.CompositorNodeHueCorrect.rst
+   bpy.types.CompositorNodeHueSat.rst
+   bpy.types.CompositorNodeIDMask.rst
+   bpy.types.CompositorNodeImage.rst
+   bpy.types.CompositorNodeImageCoordinates.rst
+   bpy.types.CompositorNodeImageInfo.rst
+   bpy.types.CompositorNodeInpaint.rst
+   bpy.types.CompositorNodeInvert.rst
+   bpy.types.CompositorNodeKeying.rst
+   bpy.types.CompositorNodeKeyingScreen.rst
+   bpy.types.CompositorNodeKuwahara.rst
+   bpy.types.CompositorNodeLensdist.rst
+   bpy.types.CompositorNodeLevels.rst
+   bpy.types.CompositorNodeLumaMatte.rst
+   bpy.types.CompositorNodeMapUV.rst
+   bpy.types.CompositorNodeMask.rst
+   bpy.types.CompositorNodeMaskToSDF.rst
+   bpy.types.CompositorNodeMovieClip.rst
+   bpy.types.CompositorNodeMovieDistortion.rst
+   bpy.types.CompositorNodeNormal.rst
+   bpy.types.CompositorNodeNormalize.rst
+   bpy.types.CompositorNodeOutputFile.rst
+   bpy.types.CompositorNodePixelate.rst
+   bpy.types.CompositorNodePlaneTrackDeform.rst
+   bpy.types.CompositorNodePosterize.rst
+   bpy.types.CompositorNodePremulKey.rst
+   bpy.types.CompositorNodeRGB.rst
+   bpy.types.CompositorNodeRGBToBW.rst
+   bpy.types.CompositorNodeRLayers.rst
+   bpy.types.CompositorNodeRelativeToPixel.rst
+   bpy.types.CompositorNodeRotate.rst
+   bpy.types.CompositorNodeScale.rst
+   bpy.types.CompositorNodeSceneTime.rst
+   bpy.types.CompositorNodeSeparateColor.rst
+   bpy.types.CompositorNodeSequencerStripInfo.rst
+   bpy.types.CompositorNodeSetAlpha.rst
+   bpy.types.CompositorNodeSplit.rst
+   bpy.types.CompositorNodeStabilize.rst
+   bpy.types.CompositorNodeStringToImage.rst
+   bpy.types.CompositorNodeSwitch.rst
+   bpy.types.CompositorNodeSwitchView.rst
+   bpy.types.CompositorNodeTime.rst
+   bpy.types.CompositorNodeTonemap.rst
+   bpy.types.CompositorNodeTrackPos.rst
+   bpy.types.CompositorNodeTransform.rst
+   bpy.types.CompositorNodeTranslate.rst
+   bpy.types.CompositorNodeVecBlur.rst
+   bpy.types.CompositorNodeViewer.rst
+   bpy.types.CompositorNodeZcombine.rst
 
 .. class:: CompositorNode(NodeInternal)
 
@@ -48,6 +140,7 @@ Inherited Properties
    - :class:`Node.label`
    - :class:`Node.inputs`
    - :class:`Node.outputs`
+   - :class:`Node.panel_states`
    - :class:`Node.internal_links`
    - :class:`Node.parent`
    - :class:`Node.warning_propagation`

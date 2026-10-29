@@ -9,7 +9,7 @@ Vertex Painting stores the color information as a
 :ref:`Color Attribute <modeling-meshes-properties-object_data-color-attributes>`
 which can be used by different render engines.
 
-Color attribute's can be managed in the pallette pop-over in the middle of the header.
+Color attribute's can be managed in the palette pop-over in the middle of the header.
 
 .. figure:: /images/sculpt-paint_vertex-paint_introduction_mode-menu.png
 

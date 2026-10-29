@@ -5,6 +5,7 @@ NodeCompositorFileOutputItem(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: NodeCompositorFileOutputItem(bpy_struct)
 
 

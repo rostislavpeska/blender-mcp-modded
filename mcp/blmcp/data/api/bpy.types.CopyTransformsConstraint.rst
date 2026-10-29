@@ -5,6 +5,7 @@ CopyTransformsConstraint(Constraint)
 
 base classes --- :class:`bpy_struct`, :class:`Constraint`
 
+
 .. class:: CopyTransformsConstraint(Constraint)
 
    Copy all the transforms of the target

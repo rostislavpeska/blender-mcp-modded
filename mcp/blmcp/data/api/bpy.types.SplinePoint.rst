@@ -5,6 +5,7 @@ SplinePoint(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: SplinePoint(bpy_struct)
 
    Spline point without handles

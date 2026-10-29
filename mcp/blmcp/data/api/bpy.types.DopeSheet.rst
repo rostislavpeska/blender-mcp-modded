@@ -5,6 +5,7 @@ DopeSheet(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: DopeSheet(bpy_struct)
 
    Settings for filtering the channels shown in animation editors
@@ -95,7 +96,7 @@ base class --- :class:`bpy_struct`
 
    .. attribute:: show_lightprobes
 
-      Include visualization of lightprobe related animation data (default True)
+      Include visualization of light probe related animation data (default True)
 
       :type: bool
 

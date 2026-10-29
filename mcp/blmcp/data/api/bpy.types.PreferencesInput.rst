@@ -5,6 +5,7 @@ PreferencesInput(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: PreferencesInput(bpy_struct)
 
    Settings for input devices
@@ -62,6 +63,132 @@ base class --- :class:`bpy_struct`
       Which method to use for viewport navigation (default ``'WALK'``)
 
       :type: Literal[:ref:`rna_enum_navigation_mode_items`]
+
+   .. attribute:: ndof_deadzone
+
+      Threshold of initial movement needed from the device's rest position (in [0, 1], default 0.0)
+
+      :type: float
+
+   .. attribute:: ndof_fly_helicopter
+
+      Device up/down directly controls the Z position of the 3D viewport (default False)
+
+      :type: bool
+
+   .. attribute:: ndof_fly_speed_auto
+
+      Automatically adjusts fly navigation speed based on the distance of objects near the center of the viewport, making it easier to navigate complex scenes. Speed is recalculated each time movement starts. (default False)
+
+      :type: bool
+
+   .. attribute:: ndof_lock_camera_pan_zoom
+
+      Pan/zoom the camera view instead of leaving the camera view when orbiting (default True)
+
+      :type: bool
+
+   .. attribute:: ndof_lock_horizon
+
+      Lock Horizon forces the horizon to be kept leveled as it currently is (default True)
+
+      :type: bool
+
+   .. attribute:: ndof_navigation_mode
+
+      3D Mouse Navigation Mode (default ``'OBJECT'``)
+
+      - ``OBJECT``
+        Object -- This mode is like reaching into the screen and holding the model in your hand. Push the 3D Mouse cap left, and the model moves left. Push right and the model moves right.
+      - ``FLY``
+        Fly -- Enables using the 3D Mouse as if it is a camera. Push into the scene and the camera moves forward into the scene. You are entering the scene as if flying around in it. This also inverts pan & zoom for 2D views.
+      - ``DRONE``
+        Drone -- Enables a Fly Mode navigation but pushing the cap forward while looking down will not change the altitude of the camera..
+
+      :type: Literal['OBJECT', 'FLY', 'DRONE']
+
+   .. attribute:: ndof_orbit_center_auto
+
+      Auto sets the orbit center dynamically. When the complete model is in view, the center of volume of the whole model is used as the rotation point. When you move closer, the orbit center will be set on an object close to your center of the view. (default True)
+
+      :type: bool
+
+   .. attribute:: ndof_orbit_center_selected
+
+      Selected Item forces the orbit center to only take the currently selected objects into account. (default False)
+
+      :type: bool
+
+   .. attribute:: ndof_panx_invert_axis
+
+      (default False)
+
+      :type: bool
+
+   .. attribute:: ndof_pany_invert_axis
+
+      (default False)
+
+      :type: bool
+
+   .. attribute:: ndof_panz_invert_axis
+
+      (default False)
+
+      :type: bool
+
+   .. attribute:: ndof_rotation_sensitivity
+
+      Overall sensitivity of the 3D Mouse for rotation (in [0.01, 40], default 4.0)
+
+      :type: float
+
+   .. attribute:: ndof_rotx_invert_axis
+
+      (default False)
+
+      :type: bool
+
+   .. attribute:: ndof_roty_invert_axis
+
+      (default False)
+
+      :type: bool
+
+   .. attribute:: ndof_rotz_invert_axis
+
+      (default False)
+
+      :type: bool
+
+   .. attribute:: ndof_show_guide_orbit_axis
+
+      Display the center and axis during rotation (default False)
+
+      :type: bool
+
+   .. attribute:: ndof_show_guide_orbit_center
+
+      Display the orbit center during rotation (default True)
+
+      :type: bool
+
+   .. attribute:: ndof_translation_sensitivity
+
+      Overall sensitivity of the 3D Mouse for translation (in [0.01, 40], default 4.0)
+
+      :type: float
+
+   .. attribute:: ndof_zoom_direction
+
+      Which axis of the 3D Mouse cap zooms the view (default ``'NDOF_ZOOM_FORWARD'``)
+
+      - ``NDOF_ZOOM_FORWARD``
+        Forward/Backward -- Zoom by pulling the 3D Mouse cap upwards or pushing the cap downwards.
+      - ``NDOF_ZOOM_UP``
+        Up/Down -- Zoom by pulling the 3D Mouse cap upwards or pushing the cap downwards.
+
+      :type: Literal['NDOF_ZOOM_FORWARD', 'NDOF_ZOOM_UP']
 
    .. attribute:: pressure_softness
 

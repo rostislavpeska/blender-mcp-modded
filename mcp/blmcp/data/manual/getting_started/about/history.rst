@@ -46,9 +46,9 @@ first-ever crowdfunding campaign: Free Blender. Thanks to Blender's community of
 was able to raise one hundred and ten thousand euros in just seven weeks — sufficient to regain Blender from its
 investors.
 
-On Sunday, October 13th, 2002, Blender was released under the terms of the `GNU General Public License
-<https://www.gnu.org/licenses/gpl.html>`__, the strictest possible open-source contract. Not only would Blender be
-free, but its source code would remain free, forever, to be used for any purpose whatsoever.
+On Sunday, October 13th, 2002, Blender was released under the terms of the `GNU General Public V2 License
+<https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html>`__, the strictest possible open-source contract.
+Not only would Blender be free, but its source code would remain free, forever, to be used for any purpose whatsoever.
 
 The success of Free Blender cleared the way for a style of development that has become Blender's defining strength.
 While Blender's evolution is partly driven by grant-funded developers and guided by a core team at the Blender

@@ -13,7 +13,7 @@ This can either be useful for posing a model without a rig,
 adjusting the proportions of a mesh or other fast deformations.
 
 The brush will automatically determine an origin point,
-indicated with a while line on the brush cursor.
+indicated with a white line on the brush cursor.
 
 If the :ref:`Deformation Target <bpy.types.Brush.deform_target>`
 is changed, the brush can also be used for cloth sculpting.

@@ -41,6 +41,9 @@ Attribute Type With Auto Items
 :FLOAT2: 2D Vector.
 
    2D vector with floating-point values.
+:FLOAT4: 4D Vector.
+
+   4D vector with floating-point values.
 :BYTE_COLOR: Byte Color.
 
    RGBA color with 8-bit positive integer values.

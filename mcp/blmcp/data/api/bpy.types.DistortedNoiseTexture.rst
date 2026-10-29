@@ -5,6 +5,7 @@ DistortedNoiseTexture(Texture)
 
 base classes --- :class:`bpy_struct`, :class:`ID`, :class:`Texture`
 
+
 .. class:: DistortedNoiseTexture(Texture)
 
    Procedural distorted noise texture

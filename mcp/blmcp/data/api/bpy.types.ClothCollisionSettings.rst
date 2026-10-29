@@ -5,6 +5,7 @@ ClothCollisionSettings(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: ClothCollisionSettings(bpy_struct)
 
    Cloth simulation settings for self collision and collision with other objects

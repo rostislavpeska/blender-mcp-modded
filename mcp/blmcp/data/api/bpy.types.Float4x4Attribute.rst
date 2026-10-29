@@ -5,6 +5,7 @@ Float4x4Attribute(Attribute)
 
 base classes --- :class:`bpy_struct`, :class:`Attribute`
 
+
 .. class:: Float4x4Attribute(Attribute)
 
    Geometry attribute that stores a 4 by 4 float matrix

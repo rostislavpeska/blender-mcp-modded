@@ -5,6 +5,7 @@ ConsoleLine(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: ConsoleLine(bpy_struct)
 
    Input line for the interactive console

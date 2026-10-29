@@ -5,6 +5,7 @@ ShaderNodeUVAlongStroke(ShaderNode)
 
 base classes --- :class:`bpy_struct`, :class:`Node`, :class:`NodeInternal`, :class:`ShaderNode`
 
+
 .. class:: ShaderNodeUVAlongStroke(ShaderNode)
 
    UV coordinates that map a texture along the stroke length
@@ -77,6 +78,7 @@ Inherited Properties
    - :class:`Node.label`
    - :class:`Node.inputs`
    - :class:`Node.outputs`
+   - :class:`Node.panel_states`
    - :class:`Node.internal_links`
    - :class:`Node.parent`
    - :class:`Node.warning_propagation`

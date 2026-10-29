@@ -5,6 +5,7 @@ NodesModifierWarning(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: NodesModifierWarning(bpy_struct)
 
    Warning created during evaluation of a geometry nodes modifier

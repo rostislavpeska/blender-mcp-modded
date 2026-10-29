@@ -5,6 +5,7 @@ GreasePencilTintModifier(Modifier)
 
 base classes --- :class:`bpy_struct`, :class:`Modifier`
 
+
 .. class:: GreasePencilTintModifier(Modifier)
 
 

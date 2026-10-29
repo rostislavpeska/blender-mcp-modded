@@ -5,6 +5,7 @@ NODE_FH_image_node(FileHandler)
 
 base classes --- :class:`bpy_struct`, :class:`FileHandler`
 
+
 .. class:: NODE_FH_image_node(FileHandler)
 
 

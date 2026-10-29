@@ -5,6 +5,7 @@ wmOwnerID(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: wmOwnerID(bpy_struct)
 
 

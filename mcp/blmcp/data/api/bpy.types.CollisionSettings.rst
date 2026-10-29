@@ -5,6 +5,7 @@ CollisionSettings(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: CollisionSettings(bpy_struct)
 
    Collision settings for object in physics simulation

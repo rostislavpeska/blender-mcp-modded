@@ -16,7 +16,7 @@ color management, and compositing with other strips in the timeline.
 .. tip::
 
    Image strips can display thumbnails in the Sequencer overlaid on their strips
-   by enabling the :ref:`Thumbnails <bpy.types.SequencerTimelineOverlay.show_thumbnails>` overlay.
+   by enabling the :ref:`Thumbnails <bpy.types.SequencerTimelineOverlay.thumbnail_display_style>` overlay.
 
 
 Single Image

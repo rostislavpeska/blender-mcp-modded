@@ -5,6 +5,7 @@ SpaceConsole(Space)
 
 base classes --- :class:`bpy_struct`, :class:`Space`
 
+
 .. class:: SpaceConsole(Space)
 
    Interactive Python console

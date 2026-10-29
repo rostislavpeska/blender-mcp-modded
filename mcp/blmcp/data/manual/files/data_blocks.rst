@@ -27,13 +27,13 @@ Some common characteristics:
 - They can have their own animation data.
 - They can have :doc:`/files/custom_properties`.
 
-User will typically interact with the higher level data types (objects, meshes, etc.).
+You will typically interact with the higher level data types (objects, meshes, etc.).
 When doing more complex projects, managing data-blocks becomes more important,
 especially when inter-linking blend-files.
 The main editor for that is the :doc:`Outliner </editors/outliner/index>`.
 
-Not all data in Blender is a data-block,
-bones, sequence strips or vertex groups e.g. are not,
+Not all data in Blender is a data-block. E.g.
+bones, sequence strips or vertex groups are not;
 they belong to armature, scene and mesh types respectively.
 
 
@@ -184,7 +184,7 @@ Pack
      - |none|
      - An isosurface in 3D space.
        Used as data of metaball objects.
-   * - :bl-icon:`tracker` :doc:`Movie Clip </editors/clip/introduction>`
+   * - :bl-icon:`tracker` :ref:`Movie Clip <bpy.types.MovieClip>`
      - |tick|
      - |cross|
      - Reference to an image sequence or video file.
@@ -306,20 +306,21 @@ but you can still manually remove it if needed.
 Name & Rename
 =============
 
-Data-blocks names are unique within their namespace. A data-block namespace is defined by its type, and the blendfile
+A data-block's name is unique within its namespace. A data-block namespace is defined by its type, and the blendfile
 it is stored in.
 
 This means that there can be for example an Object and a Mesh named the same, but there cannot be two local objects
 named the same in a blendfile. However, it is possible to have one local and several linked Objects sharing the same
 name.
 
-Data-block names have a fixed length of 255 bytes, i.e. 255 basic ASCII characters, or less when using diacritics or
-non-latin glyphs (the UTF8 encoding will then typically use more than one byte per character).
+Data-block names have a fixed length of 255 bytes and are UTF-8 encoded. This is room for 255 basic ASCII characters,
+or less when using diacritics or non-latin glyphs, which use more than one byte per character. Data-block names cannot
+contain a Null character (`U+0000`).
 
-When Blender has to name a new data-block, or rename an existing one, it will check for name collisions. If a
+When Blender has to name a new data-block or rename an existing one, it will check for name collisions. If a
 data-block with the same name already exists, the (re)named data-block will get a numeric extension added as a
-post-fix to its 'root name', like e.g. `.001`. The first available index is used (up to the `999` value, after that
-the postfix index values are simply incremented until no collision happens anymore).
+post-fix to its 'root name', like e.g. `.001`. The first available index is used up to the `999` value - after that
+the postfix index values are simply incremented until no collision happens anymore.
 
 In case adding the numeric suffix would make the data-block name too long, the root name part will be shortened as
 needed.
@@ -328,7 +329,7 @@ Blender will never rename another data-block when doing automatic naming. So e.g
 there are already `Cube` and `Cube.001` local objects, the new one will be named `Cube.002`.
 
 Local data-blocks can be renamed by the user in several places in the UI (like the ID selection widget, or the
-Outliner view). When renamed from the UI, the behavior in case of name collision is as follow:
+Outliner view). When renamed from the UI, the behavior in case of name collision is as follows:
 
 - If the original root name is different than in the new requested name, the renamed data-block gets the first
   available numerical suffix.
@@ -337,7 +338,7 @@ Outliner view). When renamed from the UI, the behavior in case of name collision
     rename the data-block to `Cube.002`.
 
 - If the original root name is the same as in the new requested name, the renamed data-block gets the requested name,
-  and the conflicting of data-block is renamed accordingly.
+  and the conflicting data-block is renamed accordingly.
 
   - E.g. assuming that there are three objects named `Sphere`, `Cube` and `Cube.001`, renaming `Cube.001` to `Cube`
     will rename the data-block to `Cube`, and the other data-block to `Cube.001`.
@@ -417,7 +418,7 @@ This can be achieved by :kbd:`Shift-LMB` on the "X" icon next to its name.
 
 .. warning::
 
-   Deleting some data-blocks can lead to deletion of some of its users, which would become invalid without them.
+   Deleting some data-blocks can lead to deletion of some of their users, which would become invalid without them.
    The main example is that object-data deletion (like mesh, curve, camera...) will also delete all objects using it.
 
 Those two operations are also available in the context menu

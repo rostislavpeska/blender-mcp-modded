@@ -5,6 +5,7 @@ CompositorNodeBokehImage(CompositorNode)
 
 base classes --- :class:`bpy_struct`, :class:`Node`, :class:`NodeInternal`, :class:`CompositorNode`
 
+
 .. class:: CompositorNodeBokehImage(CompositorNode)
 
    Generate image with bokeh shape for use with the Bokeh Blur filter node
@@ -71,6 +72,7 @@ Inherited Properties
    - :class:`Node.label`
    - :class:`Node.inputs`
    - :class:`Node.outputs`
+   - :class:`Node.panel_states`
    - :class:`Node.internal_links`
    - :class:`Node.parent`
    - :class:`Node.warning_propagation`

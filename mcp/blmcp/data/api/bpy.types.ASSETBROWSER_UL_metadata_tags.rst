@@ -5,10 +5,9 @@ ASSETBROWSER_UL_metadata_tags(UIList)
 
 base classes --- :class:`bpy_struct`, :class:`UIList`
 
+
 .. class:: ASSETBROWSER_UL_metadata_tags(UIList)
 
-
-   .. method:: draw_item(_context, layout, _data, item, icon, _active_data, _active_propname, _index)
 
    .. classmethod:: bl_rna_get_subclass(id, default=None, /)
    

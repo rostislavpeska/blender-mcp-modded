@@ -5,6 +5,7 @@ BoidRuleGoal(BoidRule)
 
 base classes --- :class:`bpy_struct`, :class:`BoidRule`
 
+
 .. class:: BoidRuleGoal(BoidRule)
 
 

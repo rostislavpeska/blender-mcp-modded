@@ -5,6 +5,7 @@ SequencerToolSettings(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: SequencerToolSettings(bpy_struct)
 
 
@@ -57,6 +58,12 @@ base class --- :class:`bpy_struct`
    .. attribute:: snap_ignore_sound
 
       Don't snap to sound strips (default False)
+
+      :type: bool
+
+   .. attribute:: snap_to_all_channels
+
+      Allow snapping to any channel. If disabled, only snap to strips currently on the same channel as transformed strips (default False)
 
       :type: bool
 

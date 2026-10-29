@@ -155,6 +155,16 @@ class TestRST(unittest.TestCase):
         missing = self._rst_parse_docs.find_definition_in_doctree(doc, "NotDefined")
         self.assertIsNone(missing)
 
+    def test_details_preserves_nested_api_definitions(self) -> None:
+        """The Blender 5.2 BLF page keeps methods inside a details block addressable."""
+        path = os.path.join(_DATA_DIR, "api", "blf.types.rst")
+        [(_, doc)] = self._rst_parse_docs.iter_doctrees_for_paths([path], jobs=1, strict=True)
+        text = self._rst_parse_docs.find_definition_in_doctree(doc, "BLFImBufContext.__enter__")
+        self.assertIsNotNone(text)
+        self.assertIn("__enter__", text)
+        self.assertIn("BLFImBufContext", text)
+        self.assertIn("Special Methods", doc.astext())
+
     def test_iter_doctrees_strict_raises_on_unknown_directive(self) -> None:
         """
         Checks that ``strict=True`` raises on an unregistered directive.

@@ -5,6 +5,7 @@ LineStyleTextureSlot(TextureSlot)
 
 base classes --- :class:`bpy_struct`, :class:`TextureSlot`
 
+
 .. class:: LineStyleTextureSlot(TextureSlot)
 
    Texture slot for textures in a LineStyle data-block

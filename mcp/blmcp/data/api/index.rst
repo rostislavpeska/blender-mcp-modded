@@ -1,11 +1,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Blender 5.1 Python API Documentation
+Blender 5.2 Python API Documentation
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 Welcome to the Python API documentation for `Blender <https://www.blender.org>`__, the free and open source 3D creation suite.
 
-This site can be used offline: `Download the full documentation (zipped HTML files) <blender_python_reference_5_1.zip>`__
+This site can be used offline: `Download the full documentation (zipped HTML files) <blender_python_reference_5_2.zip>`__
 
 .. toctree::
    :hidden:

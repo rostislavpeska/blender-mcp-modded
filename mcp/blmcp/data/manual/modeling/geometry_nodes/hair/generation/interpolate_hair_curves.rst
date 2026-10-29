@@ -13,12 +13,8 @@ For simpler duplication-based setups, the
 :doc:`Duplicate Hair Curves </modeling/geometry_nodes/hair/generation/duplicate_hair_curves>`
 node provides a lighter-weight alternative that may perform faster.
 
-.. note::
-
-   This node or modifier requires valid *Surface* geometry or object inputs,
-   along with a *Surface UV Map*, to function properly.
-
 .. peertube:: 4dt7vp3qmry5MPZC3usxVb
+
 
 Inputs
 ======
@@ -26,22 +22,7 @@ Inputs
 Geometry
    The input geometry containing the guide hair curves to interpolate.
 
-Surface Input Type
-   Determines how the surface data is provided for interpolation.
-
-   :Object:
-      Use an object reference to provide the surface.
-   :Geometry:
-      Use a geometry input directly connected to the surface mesh.
-
-Surface
-   The surface object used as the attachment base for the interpolated curves.
-   Its transforms must match those of the modifier object.
-
-Surface UV Map
-   The UV map used to find attachment locations for the interpolated curves on the surface.
-
-Surface Rest Position
+Resting Surface
    When enabled, sets the surface mesh to its rest position before attaching curves.
    This ensures consistent root positions when deformation is applied afterward.
 
@@ -49,7 +30,7 @@ Surface Rest Position
 
       When combining this node with :doc:`Deform Curves on Surface
       </modeling/geometry_nodes/curve/operations/deform_curves_on_surface>`,
-      enable *Surface Rest Position* if the deformation node follows this one,
+      enable *Resting Surface* if the deformation node follows this one,
       so that pre-deformed coordinates are used for consistent interpolation.
 
 Follow Surface Normal

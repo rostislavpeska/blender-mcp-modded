@@ -17,4 +17,4 @@ Edit Mode
    This chapter mainly deals with this mode.
 Sculpt Mode
    An alternative editing mode which uses brushes to deform the mesh as though it were a piece of clay.
-   See the :doc:`Sculpting & Painting </sculpt_paint/sculpting/introduction/general>` section.
+   See the :doc:`Sculpting & Painting </sculpt_paint/sculpting/index>` section.

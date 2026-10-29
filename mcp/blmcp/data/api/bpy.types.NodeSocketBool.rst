@@ -5,6 +5,7 @@ NodeSocketBool(NodeSocketStandard)
 
 base classes --- :class:`bpy_struct`, :class:`NodeSocket`, :class:`NodeSocketStandard`
 
+
 .. class:: NodeSocketBool(NodeSocketStandard)
 
    Boolean value socket of a node

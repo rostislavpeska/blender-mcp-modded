@@ -5,6 +5,7 @@ ThemeStatusBar(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: ThemeStatusBar(bpy_struct)
 
    Theme settings for the Status Bar

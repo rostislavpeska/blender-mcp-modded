@@ -5,6 +5,7 @@ Brush(ID)
 
 base classes --- :class:`bpy_struct`, :class:`ID`
 
+
 .. class:: Brush(ID)
 
    Brush data-block for storing brush settings for painting and sculpting
@@ -18,54 +19,6 @@ base classes --- :class:`bpy_struct`, :class:`ID`
    .. attribute:: auto_smooth_factor
 
       Amount of smoothing to automatically apply to each stroke (in [0, 1], default 0.0)
-
-      :type: float
-
-   .. attribute:: automasking_boundary_edges_propagation_steps
-
-      Distance where boundary edge automasking is going to protect vertices from the fully masked edge (in [1, 20], default 1)
-
-      :type: int
-
-   .. attribute:: automasking_cavity_blur_steps
-
-      The number of times the cavity mask is blurred (in [0, 25], default 0)
-
-      :type: int
-
-   .. data:: automasking_cavity_curve
-
-      Curve used for the sensitivity (readonly)
-
-      :type: :class:`CurveMapping` | None
-
-   .. attribute:: automasking_cavity_factor
-
-      The contrast of the cavity mask (in [0, 5], default 1.0)
-
-      :type: float
-
-   .. attribute:: automasking_start_normal_falloff
-
-      Extend the angular range with a falloff gradient (in [0.0001, 1], default 0.25)
-
-      :type: float
-
-   .. attribute:: automasking_start_normal_limit
-
-      The range of angles that will be affected (in [0.0001, 3.14159], default 0.349066)
-
-      :type: float
-
-   .. attribute:: automasking_view_normal_falloff
-
-      Extend the angular range with a falloff gradient (in [0.0001, 1], default 0.25)
-
-      :type: float
-
-   .. attribute:: automasking_view_normal_limit
-
-      The range of angles that will be affected (in [0.0001, 3.14159], default 1.5708)
 
       :type: float
 
@@ -601,6 +554,18 @@ base classes --- :class:`bpy_struct`, :class:`ID`
 
       :type: Literal['DRAW', 'SMOOTH']
 
+   .. data:: mesh_automasking_settings
+
+      (readonly)
+
+      :type: :class:`MeshAutomaskingSettings` | None
+
+   .. attribute:: minimum_distance
+
+      Minimum distance to other scene objects after projecting onto them (in [0, 10], default 0.0)
+
+      :type: float
+
    .. attribute:: multiplane_scrape_angle
 
       Angle between the planes of the crease (in [0, 160], default 0.0)
@@ -696,6 +661,17 @@ base classes --- :class:`bpy_struct`, :class:`ID`
       Smooth iterations applied after calculating the pose factor of each vertex (in [0, 100], default 4)
 
       :type: int
+
+   .. attribute:: project_ray_direction_type
+
+      Ray Direction (default ``'VIEW_NORMAL'``)
+
+      - ``VIEW_NORMAL``
+        View Normal -- Project the vertices along the view normal..
+      - ``PLANE_NORMAL``
+        Plane Normal -- Project the vertices along the plane normal..
+
+      :type: Literal['VIEW_NORMAL', 'PLANE_NORMAL']
 
    .. attribute:: rake_factor
 
@@ -948,63 +924,9 @@ base classes --- :class:`bpy_struct`, :class:`ID`
 
       :type: bool
 
-   .. attribute:: use_automasking_boundary_edges
+   .. attribute:: use_bidirectional
 
-      Do not affect non manifold boundary edges (default False)
-
-      :type: bool
-
-   .. attribute:: use_automasking_boundary_face_sets
-
-      Do not affect vertices that belong to a face set boundary (default False)
-
-      :type: bool
-
-   .. attribute:: use_automasking_cavity
-
-      Do not affect vertices on peaks, based on the surface curvature (default False)
-
-      :type: bool
-
-   .. attribute:: use_automasking_cavity_inverted
-
-      Do not affect vertices within crevices, based on the surface curvature (default False)
-
-      :type: bool
-
-   .. attribute:: use_automasking_custom_cavity_curve
-
-      Use custom curve (default False)
-
-      :type: bool
-
-   .. attribute:: use_automasking_face_sets
-
-      Affect only vertices that share face sets with the active vertex (default False)
-
-      :type: bool
-
-   .. attribute:: use_automasking_start_normal
-
-      Affect only vertices with a similar normal to where the stroke starts (default False)
-
-      :type: bool
-
-   .. attribute:: use_automasking_topology
-
-      Affect only vertices connected to the active vertex under the brush (default False)
-
-      :type: bool
-
-   .. attribute:: use_automasking_view_normal
-
-      Affect only vertices with a normal that faces the viewer (default False)
-
-      :type: bool
-
-   .. attribute:: use_automasking_view_occlusion
-
-      Only affect vertices that are not occluded by other faces (slower performance) (default False)
+      Project vertices both along the projection direction and its inverse, choosing the closest intersection. (default False)
 
       :type: bool
 
@@ -1513,5 +1435,4 @@ References
    - :class:`BlendDataBrushes.new`
    - :class:`BlendDataBrushes.remove`
    - :class:`Paint.brush`
-   - :class:`Paint.eraser_brush`
 

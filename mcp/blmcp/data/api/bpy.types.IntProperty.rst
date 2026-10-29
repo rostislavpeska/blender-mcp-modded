@@ -5,6 +5,7 @@ IntProperty(Property)
 
 base classes --- :class:`bpy_struct`, :class:`Property`
 
+
 .. class:: IntProperty(Property)
 
    RNA integer number property definition
@@ -35,13 +36,13 @@ base classes --- :class:`bpy_struct`, :class:`Property`
 
    .. data:: hard_max
 
-      Maximum value used by buttons (in [-inf, inf], default 0, readonly)
+      Hard maximum, trying to assign a value above will silently assign this maximum instead (in [-inf, inf], default 0, readonly)
 
       :type: int
 
    .. data:: hard_min
 
-      Minimum value used by buttons (in [-inf, inf], default 0, readonly)
+      Hard minimum, trying to assign a value below will silently assign this minimum instead (in [-inf, inf], default 0, readonly)
 
       :type: int
 
@@ -53,13 +54,13 @@ base classes --- :class:`bpy_struct`, :class:`Property`
 
    .. data:: soft_max
 
-      Maximum value used by buttons (in [-inf, inf], default 0, readonly)
+      Soft maximum (<= hard_max), user cannot drag widgets above this value in the UI (in [-inf, inf], default 0, readonly)
 
       :type: int
 
    .. data:: soft_min
 
-      Minimum value used by buttons (in [-inf, inf], default 0, readonly)
+      Soft minimum (>= hard_min), user cannot drag widgets below this value in the UI (in [-inf, inf], default 0, readonly)
 
       :type: int
 

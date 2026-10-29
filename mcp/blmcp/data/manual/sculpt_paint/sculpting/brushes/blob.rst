@@ -20,7 +20,7 @@ General
 -------
 
 Magnify
-   By default at 0.5 to push out the mesh during the stoke.
+   By default at 0.5 to push out the mesh during the stroke.
    More info at :ref:`Pinch/Magnify <bpy.types.Brush.crease_pinch_factor>`
 
 .. note::

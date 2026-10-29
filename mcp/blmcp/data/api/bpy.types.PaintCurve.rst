@@ -5,6 +5,7 @@ PaintCurve(ID)
 
 base classes --- :class:`bpy_struct`, :class:`ID`
 
+
 .. class:: PaintCurve(ID)
 
 

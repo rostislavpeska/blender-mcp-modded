@@ -51,3 +51,5 @@ Node Socket Type Items
 
 :SOUND: Sound.
 
+:INT_VECTOR: Integer Vector.
+

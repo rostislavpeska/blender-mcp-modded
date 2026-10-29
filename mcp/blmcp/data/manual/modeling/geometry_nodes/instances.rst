@@ -16,7 +16,7 @@ the actual data. This optimization allows render engines like :doc:`Cycles </ren
 to handle the same geometry data in many different locations better than when the data is duplicated.
 
 Each instance keeps track of which geometry it corresponds to
-and how the instanced is transformed compared to it's source geometry.
+and how the instance is transformed compared to it's source geometry.
 Instances can also store the ``id`` attribute,
 which is used to correct motion blur when instances move in an animation.
 
@@ -68,9 +68,9 @@ were more complicated.
 Realizing Instances
 ===================
 
-The term "realizing" instances referes to converting the instances into unique geometry.
+The term "realizing" instances refers to converting the instances into unique geometry.
 When instances are realized they will take up more memory and manipulation to geometry
-will have to be processed individually rather the once per instancing geometry.
+will have to be processed individually rather than once per instancing geometry.
 
 To realize instance use the :doc:`/modeling/geometry_nodes/instances/realize_instances`.
 

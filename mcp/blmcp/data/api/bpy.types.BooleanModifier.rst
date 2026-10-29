@@ -5,6 +5,7 @@ BooleanModifier(Modifier)
 
 base classes --- :class:`bpy_struct`, :class:`Modifier`
 
+
 .. class:: BooleanModifier(Modifier)
 
    Boolean operations modifier

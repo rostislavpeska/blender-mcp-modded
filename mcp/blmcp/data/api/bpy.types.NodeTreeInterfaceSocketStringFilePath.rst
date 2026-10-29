@@ -5,13 +5,14 @@ NodeTreeInterfaceSocketStringFilePath(NodeTreeInterfaceSocket)
 
 base classes --- :class:`bpy_struct`, :class:`NodeTreeInterfaceItem`, :class:`NodeTreeInterfaceSocket`
 
+
 .. class:: NodeTreeInterfaceSocketStringFilePath(NodeTreeInterfaceSocket)
 
    String socket of a node
 
    .. attribute:: default_value
 
-      Input value used for unconnected socket (default "", never None)
+      Input value used for unconnected socket (default "", never None, blend relative ``//`` prefix supported)
 
       :type: str
 

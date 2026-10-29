@@ -5,6 +5,7 @@ RigidBodyConstraint(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: RigidBodyConstraint(bpy_struct)
 
    Constraint influencing Objects inside Rigid Body Simulation

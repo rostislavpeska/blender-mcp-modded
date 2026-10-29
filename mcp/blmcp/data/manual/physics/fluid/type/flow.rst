@@ -192,7 +192,7 @@ Normal
    Note that, initial velocities will always be applied along all face normals.
    Thus with a closed flow source mesh, fluid will always be emitted in more than one direction.
    To set initial velocities along only one direction all normals need to point in the same direction.
-   This is can be achieved when using a plane as the flow object.
+   This can be achieved when using a plane as the flow object.
 
 .. _bpy.types.FluidFlowSettings.velocity_coord:
 

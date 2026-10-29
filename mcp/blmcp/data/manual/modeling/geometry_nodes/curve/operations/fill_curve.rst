@@ -86,4 +86,4 @@ The following figures display diverse application of the Group ID.
 .. figure:: /images/modeling_geometry-nodes_curve_curve-fill_group-id_2.png
    :align: center
 
-   Here, the 4 curves are seperated into two groups based on their positions, resulting in 2 mesh islands.
+   Here, the 4 curves are separated into two groups based on their positions, resulting in 2 mesh islands.

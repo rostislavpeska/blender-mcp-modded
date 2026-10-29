@@ -5,6 +5,7 @@ ParticleDupliWeight(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: ParticleDupliWeight(bpy_struct)
 
    Weight of a particle instance object in a collection

@@ -5,6 +5,7 @@ IO_FH_svg_as_curves(FileHandler)
 
 base classes --- :class:`bpy_struct`, :class:`FileHandler`
 
+
 .. class:: IO_FH_svg_as_curves(FileHandler)
 
 

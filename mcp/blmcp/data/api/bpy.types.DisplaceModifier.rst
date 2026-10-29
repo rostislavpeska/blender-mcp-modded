@@ -5,6 +5,7 @@ DisplaceModifier(Modifier)
 
 base classes --- :class:`bpy_struct`, :class:`Modifier`
 
+
 .. class:: DisplaceModifier(Modifier)
 
    Displacement modifier

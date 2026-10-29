@@ -5,6 +5,7 @@ EQCurveMappingData(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: EQCurveMappingData(bpy_struct)
 
    EQCurveMappingData

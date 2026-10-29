@@ -5,6 +5,7 @@ NodeSocketMaterial(NodeSocketStandard)
 
 base classes --- :class:`bpy_struct`, :class:`NodeSocket`, :class:`NodeSocketStandard`
 
+
 .. class:: NodeSocketMaterial(NodeSocketStandard)
 
    Material socket of a node

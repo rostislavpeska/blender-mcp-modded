@@ -5,6 +5,7 @@ DynamicPaintSurface(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: DynamicPaintSurface(bpy_struct)
 
    A canvas surface layer
@@ -115,7 +116,7 @@ base class --- :class:`bpy_struct`
 
       (default ``'PNG'``)
 
-      :type: Literal['PNG']
+      :type: Literal['PNG', 'OPENEXR']
 
    .. attribute:: image_output_path
 

@@ -283,33 +283,8 @@ The following metadata entries are supported:
 ``[[ string widget = "null" ]]``
    Hides the parameter from the user interface.
 
-``[[ string widget = "boolean" ]]`` or ``[[ string widget = "checkbox" ]]``
+``[[ string widget = "boolean" ]]`` or ``[[ string widget = "checkBox" ]]``
    Displays an integer parameter as a boolean checkbox.
-
-``[[ string widget = "filename" ]]``
-   Displays the parameter as a file path selector.
-
-``[[ string widget = "mapper", string options = "left:0|right:1" ]]``
-   Displays an integer parameter as an enumerated menu.
-   The *options* string defines a list of label-value pairs separated by ``|``.
-
-``[[ string vecsemantics = "POINT" ]]``
-   Marks a vector parameter as a translation input (position vector).
-
-``[[ string vecsemantics = "NORMAL" ]]``
-   Marks a vector parameter as a normal input (direction vector).
-
-``[[ string unit = "radians" ]]``
-   Marks a float parameter as an angle input, displayed in radians.
-
-``[[ string unit = "m" ]]``
-   Marks a float parameter as a distance input, displayed in meters.
-
-``[[ string unit = "mm" ]]``
-   Marks a float parameter as a distance input, displayed in millimeters.
-
-``[[ string unit = "s" ]]`` or ``[[ string unit = "sec" ]]``
-   Marks a float parameter as a time input, displayed in seconds.
 
 
 Limitations
@@ -321,8 +296,6 @@ Limitations
 
 Some OSL features are not available when using the OptiX backend. Examples include:
 
-- Memory usage reductions offered by features like on-demand texture loading and
-   mip-mapping are not available.
 - Texture lookups require OSL to be able to determine a constant image file path for each
    texture call.
 - Some noise functions are not available. Examples include *Cell*, *Simplex*, and *Gabor*.

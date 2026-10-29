@@ -5,8 +5,11 @@ FileSelectParams(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
-subclasses --- 
-:class:`FileAssetSelectParams`
+.. toctree::
+   :caption: Subclasses
+   :maxdepth: 1
+
+   bpy.types.FileAssetSelectParams.rst
 
 .. class:: FileSelectParams(bpy_struct)
 

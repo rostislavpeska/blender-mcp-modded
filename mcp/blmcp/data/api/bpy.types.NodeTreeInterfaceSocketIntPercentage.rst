@@ -5,6 +5,7 @@ NodeTreeInterfaceSocketIntPercentage(NodeTreeInterfaceSocket)
 
 base classes --- :class:`bpy_struct`, :class:`NodeTreeInterfaceItem`, :class:`NodeTreeInterfaceSocket`
 
+
 .. class:: NodeTreeInterfaceSocketIntPercentage(NodeTreeInterfaceSocket)
 
    Integer number socket of a node

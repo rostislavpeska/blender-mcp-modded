@@ -49,9 +49,18 @@ Link Fonts to Text
 Copy Modifiers
    Replaces the :doc:`modifiers </modeling/modifiers/introduction>` of the selected objects
    by those of the active object.
+Copy Constraints
+   Replaces the :doc:`constraints </animation/constraints/introduction>` of the selected objects
+   by those of the active object.
 Copy Grease Pencil Effects
    Replaces the :doc:`visual effects </grease_pencil/visual_effects/introduction>` of the selected
    Grease Pencil objects by those of the active object.
+Copy Light Linking
+   Replaces the assigned :ref:`Light Linking <bpy.types.Object.light_linking>`
+   collection of the selected objects with that of the active object.
+Copy Shadow Linking
+   Replaces the assigned :ref:`Shadow Linking <bpy.types.Object.light_linking>`
+   collection of the selected objects with that of the active object.
 
 .. _bpy.ops.object.join_uvs:
 

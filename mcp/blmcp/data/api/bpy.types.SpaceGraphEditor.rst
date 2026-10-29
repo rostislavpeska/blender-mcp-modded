@@ -5,6 +5,7 @@ SpaceGraphEditor(Space)
 
 base classes --- :class:`bpy_struct`, :class:`Space`
 
+
 .. class:: SpaceGraphEditor(Space)
 
    Graph Editor space data

@@ -73,7 +73,7 @@ Edge Tag :guilabel:`Edge Mode`
 
 Face Stepping
    Allow diagonal paths for vertices and faces,
-   and :ref:`edge rings <modeling-meshes-selecting-edge-rings>` for edges.
+   and :ref:`edge rings <bpy.ops.mesh.select_edge_ring_multi>` for edges.
 Topology Distance
    Pick the path that crosses the least edges instead of the smallest distance.
 Fill Region :kbd:`Shift-Ctrl-LMB`

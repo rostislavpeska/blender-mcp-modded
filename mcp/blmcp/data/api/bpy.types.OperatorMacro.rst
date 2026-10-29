@@ -5,6 +5,7 @@ OperatorMacro(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: OperatorMacro(bpy_struct)
 
    Storage of a sub operator in a macro after it has been added

@@ -6,7 +6,7 @@ Introduction
 Sculpting and painting offers a more freeform workflow of editing via :doc:`brushes </sculpt_paint/brush/index>`.
 There are several :doc:`modes </editors/3dview/modes>` to do this, each with their own purpose.
 
-- :doc:`Sculpting </sculpt_paint/sculpting/introduction/general>`:
+- :doc:`Sculpting </sculpt_paint/sculpting/index>`:
   Change and transform the topology of your mesh.
 - :doc:`Vertex Paint </sculpt_paint/vertex_paint/introduction>`:
   Change the color of vertices in the active Color Attribute.

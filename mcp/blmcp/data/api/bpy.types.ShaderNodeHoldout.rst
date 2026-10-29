@@ -5,6 +5,7 @@ ShaderNodeHoldout(ShaderNode)
 
 base classes --- :class:`bpy_struct`, :class:`Node`, :class:`NodeInternal`, :class:`ShaderNode`
 
+
 .. class:: ShaderNodeHoldout(ShaderNode)
 
    Create a "hole" in the image with zero alpha transparency, which is useful for compositing.
@@ -72,6 +73,7 @@ Inherited Properties
    - :class:`Node.label`
    - :class:`Node.inputs`
    - :class:`Node.outputs`
+   - :class:`Node.panel_states`
    - :class:`Node.internal_links`
    - :class:`Node.parent`
    - :class:`Node.warning_propagation`

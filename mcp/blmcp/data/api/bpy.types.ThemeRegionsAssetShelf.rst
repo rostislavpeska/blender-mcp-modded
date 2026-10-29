@@ -5,6 +5,7 @@ ThemeRegionsAssetShelf(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: ThemeRegionsAssetShelf(bpy_struct)
 
    Theme settings for asset shelves

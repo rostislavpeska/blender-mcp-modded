@@ -5,6 +5,7 @@ PathCompare(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: PathCompare(bpy_struct)
 
    Match paths against this value

@@ -5,6 +5,7 @@ CurvePoint(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: CurvePoint(bpy_struct)
 
    Curve control point

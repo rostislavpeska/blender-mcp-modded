@@ -56,6 +56,7 @@ use the ``users()`` method of the ActionSlot.
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: ActionSlot(bpy_struct)
 
    Identifier for a set of channels in this Action, that can be used by a data-block to specify what it gets animated by

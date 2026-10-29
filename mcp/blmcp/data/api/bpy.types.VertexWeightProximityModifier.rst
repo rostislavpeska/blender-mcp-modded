@@ -5,6 +5,7 @@ VertexWeightProximityModifier(Modifier)
 
 base classes --- :class:`bpy_struct`, :class:`Modifier`
 
+
 .. class:: VertexWeightProximityModifier(Modifier)
 
    Set the weights of vertices in a group from a target object's distance

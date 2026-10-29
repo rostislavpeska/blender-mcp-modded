@@ -5,6 +5,7 @@ OperatorMousePath(PropertyGroup)
 
 base classes --- :class:`bpy_struct`, :class:`PropertyGroup`
 
+
 .. class:: OperatorMousePath(PropertyGroup)
 
    Mouse path values for operators that record such paths

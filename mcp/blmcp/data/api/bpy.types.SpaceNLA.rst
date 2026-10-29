@@ -5,6 +5,7 @@ SpaceNLA(Space)
 
 base classes --- :class:`bpy_struct`, :class:`Space`
 
+
 .. class:: SpaceNLA(Space)
 
    NLA editor space data

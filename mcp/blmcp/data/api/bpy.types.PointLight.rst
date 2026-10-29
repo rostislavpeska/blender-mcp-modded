@@ -5,6 +5,7 @@ PointLight(Light)
 
 base classes --- :class:`bpy_struct`, :class:`ID`, :class:`Light`
 
+
 .. class:: PointLight(Light)
 
    Omnidirectional point Light
@@ -62,14 +63,6 @@ base classes --- :class:`bpy_struct`, :class:`ID`, :class:`Light`
       Apply falloff to avoid sharp edges when the light geometry intersects with other objects (default True)
 
       :type: bool
-
-   .. method:: inline_shader_nodes()
-
-      Get the inlined shader nodes of this light. This preprocesses the node tree
-      to remove nested groups, repeat zones and more.
-      
-      :return: The inlined shader nodes.
-      :rtype: :class:`bpy.types.InlineShaderNodes`
 
    .. classmethod:: bl_rna_get_subclass(id, default=None, /)
    

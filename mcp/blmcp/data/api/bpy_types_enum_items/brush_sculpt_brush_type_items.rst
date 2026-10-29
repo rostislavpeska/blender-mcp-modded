@@ -55,6 +55,8 @@ Brush Sculpt Brush Type Items
 
 :BOUNDARY: Boundary.
 
+:SCENE_PROJECT: Scene Project.
+
 
 
 ----

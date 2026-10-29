@@ -5,8 +5,11 @@ SpreadsheetTableID(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
-subclasses --- 
-:class:`SpreadsheetTableIDGeometry`
+.. toctree::
+   :caption: Subclasses
+   :maxdepth: 1
+
+   bpy.types.SpreadsheetTableIDGeometry.rst
 
 .. class:: SpreadsheetTableID(bpy_struct)
 

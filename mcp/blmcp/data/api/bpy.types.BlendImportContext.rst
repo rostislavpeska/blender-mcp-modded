@@ -5,6 +5,7 @@ BlendImportContext(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: BlendImportContext(bpy_struct)
 
    Contextual data for a blendfile library/linked-data related operation. Currently only exposed as read-only data for the pre/post blendimport handlers

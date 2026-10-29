@@ -3,7 +3,7 @@
 Troubleshooting Linux -- AMD
 ****************************
 
-.. include:: ../common/introduction.rst
+.. include:: ../_common/introduction.rst
    :start-line: 1
 
 On Linux, graphics drivers are usually installed as a package by your Linux distribution. Installing the latest
@@ -14,11 +14,11 @@ AMD drivers are open source, except for OpenCL support which is available as par
 packages through your Linux distribution is usually best. AMD also provides graphics drivers for download on their
 website if you need the latest version.
 
-`AMD Drivers and Support Website <https://www.amd.com/en/support>`__
+`AMD Drivers and Support Website <https://www.amd.com/en/support/download/drivers.html>`__
 
-.. include:: ../common/mesa.rst
+.. include:: ../_common/mesa.rst
    :start-line: 1
-.. include:: ../common/laptops.rst
+.. include:: ../_common/laptops.rst
    :start-line: 1
-.. include:: ../common/other.rst
+.. include:: ../_common/other.rst
    :start-line: 1

@@ -1,4 +1,3 @@
-
 ************
 Introduction
 ************
@@ -79,7 +78,7 @@ Rigging often involves using one or more of the following features:
    as well as making some properties automatically update based on changes elsewhere.
 
 Rigging can be as advanced as your project requires. 
-Rigs effective define a user interface for the animator to use, 
+Rigs effectively define a user interface for the animator to use, 
 without being concerned with the underlying mechanisms
 
 .. TODO nice images of rigged objects.

@@ -5,6 +5,7 @@ NodeSocketShader(NodeSocketStandard)
 
 base classes --- :class:`bpy_struct`, :class:`NodeSocket`, :class:`NodeSocketStandard`
 
+
 .. class:: NodeSocketShader(NodeSocketStandard)
 
    Shader socket of a node

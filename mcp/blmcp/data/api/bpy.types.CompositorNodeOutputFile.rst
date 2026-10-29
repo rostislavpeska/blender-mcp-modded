@@ -5,6 +5,7 @@ CompositorNodeOutputFile(CompositorNode)
 
 base classes --- :class:`bpy_struct`, :class:`Node`, :class:`NodeInternal`, :class:`CompositorNode`
 
+
 .. class:: CompositorNodeOutputFile(CompositorNode)
 
    Write image file to disk
@@ -17,13 +18,13 @@ base classes --- :class:`bpy_struct`, :class:`Node`, :class:`NodeInternal`, :cla
 
    .. attribute:: directory
 
-      The directory where the image will be written (default "", never None, blend relative ``//`` prefix supported, Supports `template expressions <https://docs.blender.org/manual/en/5.1/files/file_paths.html#path-templates>`_)
+      The directory where the image will be written (default "", never None, blend relative ``//`` prefix supported, Supports `template expressions <https://docs.blender.org/manual/en/5.2/files/file_paths.html#path-templates>`_)
 
       :type: str
 
    .. attribute:: file_name
 
-      The base name of the file. Other information might be included in the final file name depending on the node options (default "", never None, Supports `template expressions <https://docs.blender.org/manual/en/5.1/files/file_paths.html#path-templates>`_)
+      The base name of the file. Other information might be included in the final file name depending on the node options (default "", never None, Supports `template expressions <https://docs.blender.org/manual/en/5.2/files/file_paths.html#path-templates>`_)
 
       :type: str
 
@@ -42,6 +43,12 @@ base classes --- :class:`bpy_struct`, :class:`Node`, :class:`NodeInternal`, :cla
    .. attribute:: save_as_render
 
       Apply render part of display transform when saving byte image (default False)
+
+      :type: bool
+
+   .. attribute:: use_file_extension
+
+      Add the file format extensions to the saved file name (eg: filename + .jpg) (default False)
 
       :type: bool
 
@@ -107,6 +114,7 @@ Inherited Properties
    - :class:`Node.label`
    - :class:`Node.inputs`
    - :class:`Node.outputs`
+   - :class:`Node.panel_states`
    - :class:`Node.internal_links`
    - :class:`Node.parent`
    - :class:`Node.warning_propagation`

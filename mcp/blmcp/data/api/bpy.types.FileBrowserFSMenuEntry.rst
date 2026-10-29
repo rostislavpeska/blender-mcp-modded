@@ -5,6 +5,7 @@ FileBrowserFSMenuEntry(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: FileBrowserFSMenuEntry(bpy_struct)
 
    File Select Parameters

@@ -5,6 +5,7 @@ LineStyleAlphaModifier_CreaseAngle(LineStyleAlphaModifier)
 
 base classes --- :class:`bpy_struct`, :class:`LineStyleModifier`, :class:`LineStyleAlphaModifier`
 
+
 .. class:: LineStyleAlphaModifier_CreaseAngle(LineStyleAlphaModifier)
 
    Alpha transparency based on the angle between two adjacent faces

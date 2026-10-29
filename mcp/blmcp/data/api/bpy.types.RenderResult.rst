@@ -5,6 +5,7 @@ RenderResult(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: RenderResult(bpy_struct)
 
    Result of rendering, including all layers and passes

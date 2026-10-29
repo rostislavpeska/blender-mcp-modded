@@ -127,6 +127,7 @@ a text object, an error will be reported.
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: Depsgraph(bpy_struct)
 
 

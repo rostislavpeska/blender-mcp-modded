@@ -5,6 +5,7 @@ MaskParent(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: MaskParent(bpy_struct)
 
    Parenting settings for masking element

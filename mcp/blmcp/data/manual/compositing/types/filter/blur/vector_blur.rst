@@ -40,7 +40,7 @@ Usage
 =====
 
 Even with a correct compositing setup with Image, Z and Speed nodes all linked to the appropriate passes,
-there may still be artifacts. The 2D render passes does not contain 3D information,
+there may still be artifacts. The 2D render passes do not contain 3D information,
 and so the information what is behind a moving object or outside the camera view is lost.
 
 Better results can be achieved by rendering the scene into multiple render layers,

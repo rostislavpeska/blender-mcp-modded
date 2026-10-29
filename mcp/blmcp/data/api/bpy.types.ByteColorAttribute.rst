@@ -5,6 +5,7 @@ ByteColorAttribute(Attribute)
 
 base classes --- :class:`bpy_struct`, :class:`Attribute`
 
+
 .. class:: ByteColorAttribute(Attribute)
 
    Geometry attribute that stores RGBA colors as positive integer values using 8-bits per channel

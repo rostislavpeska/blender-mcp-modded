@@ -5,6 +5,7 @@ View3DOverlay(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: View3DOverlay(bpy_struct)
 
    Settings for display of overlays in the 3D viewport

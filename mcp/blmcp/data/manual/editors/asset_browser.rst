@@ -44,7 +44,7 @@ Import Method
    This option can be found in the center of the Asset Browser header
    (when an asset library other than *Current File* or *Essentials* is selected):
 
-   :Follow Preferences:
+   :Follow Asset or Preferences:
       Use the import method set in the :ref:`File Path Preferences <bpy.types.UserAssetLibrary.import_method>`.
    :Link:
       The asset will be :ref:`linked <bpy.ops.wm.link>` to the current blend-file, and thus be read-only.
@@ -76,7 +76,7 @@ Instance Collections -- When Linking/Appending
    Some asset types such as collections can be created as an instanced collection.
    This is done by enabling the *Instance* option after dragging collection assets into the 3D Viewport.
    By enabling these options, an empty object is added that uses an instance of the collection.
-   If these option is disabled, the full collection hierarchy will be added to the scene.
+   If this option is disabled, the full collection hierarchy will be added to the scene.
 
    Collection Assets from the current file will always be instanced.
 
@@ -111,6 +111,29 @@ Sort By
       Sort the asset list so that assets in the same catalog are kept together.
       Within a single catalog, assets are ordered by name.
       The catalogs are in order of the flattened catalog hierarchy.
+
+
+.. _bpy.types.FileAssetSelectIDFilter:
+
+Filter
+^^^^^^
+
+Controls which asset types are displayed when browsing an asset library.
+
+.. _bpy.types.FileAssetSelectParams.asset_access:
+
+Access
+   Filters assets based on whether they are available locally or must be
+   downloaded from an online asset library.
+
+   :Online and Offline:
+      Shows both downloaded assets and assets that are available online.
+   :Online Only:
+      Shows only assets that are available online and have not yet been
+      downloaded.
+   :Offline Only:
+      Shows only assets that are already available locally, either from
+      local asset libraries or previously downloaded online assets.
 
 
 Main Region
@@ -167,7 +190,7 @@ Copy Bundle to Asset Library
    become available as part of the library.
 
 Catalogs
-   Tree view that shows the :doc:`catalogs </files/asset_libraries/catalogs>` of the selected
+   :ref:`ui-tree-view` that shows the :doc:`catalogs </files/asset_libraries/catalogs>` of the selected
    asset library. A catalog is a group of assets; when you select one, only the assets in that
    catalog and its child catalogs will be listed.
 
@@ -278,6 +301,21 @@ the search term will also be shown.
 
    Depending on the current mode of the object and the selected asset types, more panels may be shown.
    For example, see :doc:`/animation/armatures/posing/editing/pose_library`.
+
+
+Import
+^^^^^^
+
+.. _bpy.types.AssetMetaData.use_preferred_import_method:
+
+Preferred Method
+   Uses the asset's preferred import method when
+   :ref:`Follow Asset or Preferences <bpy.types.FileAssetSelectParams.import_method>`
+   is selected in the Asset Browser.
+
+   This allows assets to specify the import method that best suits their
+   intended use. For example, a base mesh for sculpting can specify that it
+   should always be appended so it is immediately editable after import.
 
 
 .. _assets-using:

@@ -5,8 +5,31 @@ NodeInternal(Node)
 
 base classes --- :class:`bpy_struct`, :class:`Node`
 
-subclasses --- 
-:class:`CompositorNode`, :class:`FunctionNode`, :class:`GeometryNode`, :class:`NodeClosureInput`, :class:`NodeClosureOutput`, :class:`NodeCombineBundle`, :class:`NodeEnableOutput`, :class:`NodeEvaluateClosure`, :class:`NodeFrame`, :class:`NodeGetBundleItem`, :class:`NodeGroup`, :class:`NodeGroupInput`, :class:`NodeGroupOutput`, :class:`NodeJoinBundle`, :class:`NodeReroute`, :class:`NodeSeparateBundle`, :class:`NodeStoreBundleItem`, :class:`ShaderNode`, :class:`TextureNode`
+.. toctree::
+   :caption: Subclasses
+   :maxdepth: 1
+
+   bpy.types.CompositorNode.rst
+   bpy.types.FunctionNode.rst
+   bpy.types.GeometryNode.rst
+   bpy.types.NodeClosureInput.rst
+   bpy.types.NodeClosureOutput.rst
+   bpy.types.NodeCombineBundle.rst
+   bpy.types.NodeEnableOutput.rst
+   bpy.types.NodeEvaluateClosure.rst
+   bpy.types.NodeFrame.rst
+   bpy.types.NodeGetBundleItem.rst
+   bpy.types.NodeGetNestedBundlePaths.rst
+   bpy.types.NodeGroup.rst
+   bpy.types.NodeGroupInput.rst
+   bpy.types.NodeGroupOutput.rst
+   bpy.types.NodeImplicitConversion.rst
+   bpy.types.NodeJoinBundle.rst
+   bpy.types.NodeReroute.rst
+   bpy.types.NodeSeparateBundle.rst
+   bpy.types.NodeStoreBundleItem.rst
+   bpy.types.ShaderNode.rst
+   bpy.types.TextureNode.rst
 
 .. class:: NodeInternal(Node)
 
@@ -87,6 +110,7 @@ Inherited Properties
    - :class:`Node.label`
    - :class:`Node.inputs`
    - :class:`Node.outputs`
+   - :class:`Node.panel_states`
    - :class:`Node.internal_links`
    - :class:`Node.parent`
    - :class:`Node.warning_propagation`

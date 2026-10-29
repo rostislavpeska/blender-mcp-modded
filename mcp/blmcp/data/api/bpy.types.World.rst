@@ -5,6 +5,7 @@ World(ID)
 
 base classes --- :class:`bpy_struct`, :class:`ID`
 
+
 .. class:: World(ID)
 
    World data-block describing the environment and ambient lighting of a scene
@@ -115,7 +116,7 @@ base classes --- :class:`bpy_struct`, :class:`ID`
       to remove nested groups, repeat zones and more.
       
       :return: The inlined shader nodes.
-      :rtype: :class:`bpy.types.InlineShaderNodes`
+      :rtype: :class:`InlineShaderNodes`
 
    .. classmethod:: bl_rna_get_subclass(id, default=None, /)
    

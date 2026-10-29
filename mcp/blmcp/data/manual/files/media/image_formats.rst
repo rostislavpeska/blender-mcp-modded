@@ -1,14 +1,10 @@
 .. _bpy.types.Image:
 .. _bpy.ops.image:
-
-**************************
-Supported Graphics Formats
-**************************
-
 .. _files-media-image_formats:
 
-Image Formats
-=============
+***********************
+Supported Image Formats
+***********************
 
 This is the list of image file formats supported internally by Blender:
 
@@ -53,7 +49,7 @@ This is the list of image file formats supported internally by Blender:
    * - AVIF
      - 8, 10, 12bit
      - |tick|
-     - |tick|
+     - |cross|
      - |cross|
      - ``.avif``
    * - BMP
@@ -174,10 +170,68 @@ All
    Press :kbd:`A` to select/deselect all files in the directory.
 
 
+.. _files-images-saving-modified:
+
+Saving Modified Images
+======================
+
+Images edited within Blender, such as painted textures, generated images,
+or compositor results, are stored separately from the blend-file itself.
+
+When closing Blender or saving a blend-file, modified images may need to be
+saved manually depending on the configured behavior in
+:ref:`Save Modified Images <bpy.types.PreferencesFilePaths.save_modified_images>`.
+
+Unsaved images are marked with an asterisk (``*``) in the Image Editor and
+other interface elements.
+
+
+Saving Blend-Files
+------------------
+
+When saving a blend-file, Blender can:
+
+- Ask whether modified images should be saved.
+- Automatically save modified images.
+- Ignore modified images.
+
+This behavior is controlled by the
+:ref:`Save Modified Images <bpy.types.PreferencesFilePaths.save_modified_images>`
+preference.
+
+
+Closing Blender
+---------------
+
+When closing Blender, modified images that have not been saved may trigger
+a confirmation dialog.
+
+If modified images are discarded without saving, all unsaved image changes
+will be permanently lost.
+
+.. tip::
+
+   To manually save images use:
+
+   - :ref:`bpy.ops.image.save`
+   - :ref:`bpy.ops.image.save_as`
+   - :ref:`bpy.ops.image.save_all_modified`
+
+.. warning::
+
+   Render Result images and Compositor Viewer node results are temporary and
+   are not automatically saved to disk when saving the blend-file or closing Blender.
+
+   These results must be manually saved if they should be preserved.
+
+   Failing to save these images before rendering again, loading a new file,
+   or closing Blender will cause the image data to be lost.
+
+
 .. _bpy.types.ImageFormatSettings:
 
-Saving Images
-=============
+Images Settings
+===============
 
 File Format
    Choose the image file format to save to. Based on which format is used,
@@ -365,3 +419,36 @@ this format is supported by many other software packages.
 
 Radiance ``.hdr`` files store colors still in 8 bits per component,
 but with an additional (shared) 8-bit exponent value, making it 32 bits per pixel.
+
+
+.. _files-image-metadata:
+
+Metadata
+========
+
+Metadata is additional information stored inside an image file
+that describes how the image was created or how it should be interpreted.
+
+Blender can write metadata into supported image formats
+when enabled in the :doc:`Output Properties </render/output/properties/metadata>`.
+
+
+Limitations
+-----------
+
+Not all formats support metadata,
+and some may only support a limited subset of fields.
+
+When using formats that do not support metadata,
+render information is not preserved in the saved file.
+
+
+Orientation Metadata
+^^^^^^^^^^^^^^^^^^^^
+
+EXIF orientation metadata (commonly found in JPEG images)
+is ignored when loading images into Blender.
+Images are displayed using their stored pixel data without automatic rotation.
+
+If an image appears incorrectly rotated,
+it can be adjusted manually using :ref:`bpy.ops.image.rotate_orthogonal`.

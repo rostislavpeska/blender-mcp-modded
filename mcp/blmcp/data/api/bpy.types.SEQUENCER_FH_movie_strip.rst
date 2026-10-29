@@ -5,6 +5,7 @@ SEQUENCER_FH_movie_strip(FileHandler)
 
 base classes --- :class:`bpy_struct`, :class:`FileHandler`
 
+
 .. class:: SEQUENCER_FH_movie_strip(FileHandler)
 
 

@@ -5,9 +5,27 @@ RenderSettings(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: RenderSettings(bpy_struct)
 
    Rendering settings for a Scene data-block
+
+   .. attribute:: anisotropic_filter
+
+      Quality of anisotropic filtering in materials (default ``'FILTER_2'``)
+
+      - ``FILTER_0``
+        Off -- Turn off anisotropic filtering.
+      - ``FILTER_2``
+        2× -- Use 2 samples for anisotropic filtering.
+      - ``FILTER_4``
+        4× -- Use 4 samples for anisotropic filtering.
+      - ``FILTER_8``
+        8× -- Use 8 samples for anisotropic filtering.
+      - ``FILTER_16``
+        16× -- Use 16 samples for anisotropic filtering.
+
+      :type: Literal['FILTER_0', 'FILTER_2', 'FILTER_4', 'FILTER_8', 'FILTER_16']
 
    .. data:: bake
 
@@ -80,7 +98,7 @@ base class --- :class:`bpy_struct`
 
    .. attribute:: compositor_device
 
-      Set how compositing is executed (default ``'CPU'``)
+      Set how compositing is executed (default ``'GPU'``)
 
       :type: Literal['CPU', 'GPU']
 
@@ -121,7 +139,7 @@ base class --- :class:`bpy_struct`
 
    .. attribute:: filepath
 
-      Directory/name to save animations, # characters define the position and padding of frame numbers (default "", never None, blend relative ``//`` prefix supported, Supports `template expressions <https://docs.blender.org/manual/en/5.1/files/file_paths.html#path-templates>`_)
+      Directory/name to save animations, # characters define the position and padding of frame numbers (default "//", never None, blend relative ``//`` prefix supported, Supports `template expressions <https://docs.blender.org/manual/en/5.2/files/file_paths.html#path-templates>`_)
 
       :type: str
 
@@ -303,6 +321,12 @@ base class --- :class:`bpy_struct`
 
       :type: int
 
+   .. attribute:: save_output
+
+      Write frames to disk for animation renders (default True)
+
+      :type: bool
+
    .. attribute:: sequencer_gl_preview
 
       Display method used in the sequencer view (default ``'SOLID'``)
@@ -428,6 +452,12 @@ base class --- :class:`bpy_struct`
 
       :type: Literal['AUTO', 'FIXED']
 
+   .. attribute:: use_auto_generate_texture_cache
+
+      Automatically create tx files from image files when rendering, if the files do not exist or are outdated. The path to store the texture cache files is configured in the preferences (default False)
+
+      :type: bool
+
    .. attribute:: use_border
 
       Render a user-defined render region, within the frame size (default False)
@@ -514,7 +544,7 @@ base class --- :class:`bpy_struct`
 
    .. attribute:: use_sequencer_override_scene_strip
 
-      Use workbench render settings from the sequencer scene, instead of each individual scene used in the strip (default False)
+      Use Workbench render and world settings from the sequencer scene, instead of each strip's scene (default False)
 
       :type: bool
 
@@ -635,6 +665,12 @@ base class --- :class:`bpy_struct`
    .. attribute:: use_stamp_time
 
       Include the rendered frame timecode as HH:MM:SS.FF in image metadata (default True)
+
+      :type: bool
+
+   .. attribute:: use_texture_cache
+
+      Load texture tiles at appropriate resolution on demand to reduce memory usage. This avoids loading all textures into memory, at the cost of extra disk space and some performance (default True)
 
       :type: bool
 

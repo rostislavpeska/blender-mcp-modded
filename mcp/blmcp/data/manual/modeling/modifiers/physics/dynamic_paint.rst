@@ -4,7 +4,7 @@
 Dynamic Paint Modifier
 **********************
 
-The Dynamic Paint modifier is a container for a :doc:`Dynamic Paint Physics </physics/cloth/index>` simulation.
+The Dynamic Paint modifier is a container for a :doc:`Dynamic Paint Physics </physics/dynamic_paint/index>` simulation.
 
 
 Options

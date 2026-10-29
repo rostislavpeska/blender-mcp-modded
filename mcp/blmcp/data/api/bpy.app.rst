@@ -46,9 +46,10 @@ This module contains application values that remain unchanged during runtime.
 
    String, the cache directory used by blender (read-only).
    
-   If the parent of the cache folder (i.e. the part of the path that is not Blender-specific) does not exist, returns None.
+   In rare cases the default cache directory may not be available;
+   in this case a temporary directory is used.
    
-   :type: str | None
+   :type: str
 
 
 .. data:: debug
@@ -409,39 +410,57 @@ This module contains application values that remain unchanged during runtime.
 
    Constant value bpy.app.alembic(supported=False, version=(0, 0, 0), version_string='Unknown')
 
+   :type: alembic
+
 .. data:: build_options
 
-   Constant value bpy.app.build_options(bullet=False, codec_avi=False, codec_ffmpeg=False, codec_sndfile=False, compositor_cpu=True, cycles=False, cycles_osl=False, freestyle=False, image_cineon=False, image_dds=True, image_hdr=True, image_openexr=False, image_openjpeg=False, image_tiff=True, image_webp=False, input_ndof=False, audaspace=False, international=False, openal=False, opensubdiv=False, sdl=False, coreaudio=False, jack=False, pulseaudio=False, wasapi=False, libmv=False, mod_oceansim=False, mod_remesh=False, io_wavefront_obj=False, io_ply=False, io_stl=False, io_fbx=False, io_gpencil=False, opencolorio=False, openmp=False, openvdb=False, alembic=False, usd=False, fluid=False, xr_openxr=False, potrace=False, pugixml=False, haru=False, experimental_features=False)
+   Constant value bpy.app.build_options(bullet=False, codec_avi=False, codec_ffmpeg=False, codec_sndfile=False, compositor_cpu=True, cycles=False, cycles_osl=False, freestyle=False, image_cineon=False, image_dds=True, image_hdr=True, image_openexr=True, image_openjpeg=False, image_tiff=True, image_webp=False, input_ndof=True, audaspace=False, international=False, openal=False, opensubdiv=True, sdl=False, coreaudio=False, jack=False, pulseaudio=False, wasapi=False, libmv=False, mod_oceansim=False, mod_remesh=False, io_wavefront_obj=True, io_ply=False, io_stl=False, io_fbx=False, io_gpencil=False, opencolorio=True, openmp=False, openvdb=False, alembic=False, usd=False, fluid=False, xr_openxr=False, potrace=False, pugixml=False, haru=False, experimental_features=False)
+
+   :type: build_options
 
 .. data:: ffmpeg
 
    Constant value bpy.app.ffmpeg(supported=False, avcodec_version='Unknown', avcodec_version_string='Unknown', avdevice_version='Unknown', avdevice_version_string='Unknown', avformat_version='Unknown', avformat_version_string='Unknown', avutil_version='Unknown', avutil_version_string='Unknown', swscale_version='Unknown', swscale_version_string='Unknown')
 
+   :type: ffmpeg
+
 .. data:: ocio
 
-   Constant value bpy.app.ocio(supported=False, version=(0, 0, 0), version_string='Unknown')
+   Constant value bpy.app.ocio(supported=True, version=(2, 5, 1), version_string=' 2,  5,  1')
+
+   :type: ocio
 
 .. data:: oiio
 
-   Constant value bpy.app.oiio(supported=True, version=(3, 1, 9), version_string=' 3,  1,  9')
+   Constant value bpy.app.oiio(supported=True, version=(3, 1, 12), version_string=' 3,  1, 12')
+
+   :type: oiio
 
 .. data:: opensubdiv
 
-   Constant value bpy.app.opensubdiv(supported=False, version=(0, 0, 0), version_string='Unknown')
+   Constant value bpy.app.opensubdiv(supported=True, version=(3, 7, 0), version_string=' 3,  7,  0')
+
+   :type: opensubdiv
 
 .. data:: openvdb
 
    Constant value bpy.app.openvdb(supported=False, version=(0, 0, 0), version_string='Unknown')
 
+   :type: openvdb
+
 .. data:: sdl
 
    Constant value bpy.app.sdl(supported=False, version=(0, 0, 0), version_string='Unknown')
+
+   :type: sdl
 
 .. data:: usd
 
    Constant value bpy.app.usd(supported=False, version=(0, 0, 0), version_string='Unknown')
 
-.. staticmethod:: help_text(*, all=False)
+   :type: usd
+
+.. function:: help_text(*, all=False)
 
    Return the help text as a string.
 
@@ -451,7 +470,7 @@ This module contains application values that remain unchanged during runtime.
    :rtype: str
 
 
-.. staticmethod:: is_job_running(job_type)
+.. function:: is_job_running(job_type)
 
    Check whether a job of the given type is running.
 
@@ -461,7 +480,7 @@ This module contains application values that remain unchanged during runtime.
    :rtype: bool
 
 
-.. staticmethod:: memory_usage_undo()
+.. function:: memory_usage_undo()
 
    Get undo memory usage information.
 

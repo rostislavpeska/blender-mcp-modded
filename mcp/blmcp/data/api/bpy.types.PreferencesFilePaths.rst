@@ -5,6 +5,7 @@ PreferencesFilePaths(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: PreferencesFilePaths(bpy_struct)
 
    Default paths for external files
@@ -69,7 +70,7 @@ base class --- :class:`bpy_struct`
 
    .. attribute:: font_directory
 
-      The default directory to search for loading fonts (default "", never None, blend relative ``//`` prefix supported)
+      The default directory to search for loading fonts (default "//", never None, blend relative ``//`` prefix supported)
 
       :type: str
 
@@ -99,9 +100,22 @@ base class --- :class:`bpy_struct`
 
    .. attribute:: render_output_directory
 
-      The default directory for rendering output, for new scenes (default "", never None, blend relative ``//`` prefix supported)
+      The default directory for rendering output, for new scenes (default "//", never None, blend relative ``//`` prefix supported)
 
       :type: str
+
+   .. attribute:: save_modified_images
+
+      How modified images should be handled when saving the .blend file (default ``'ASK'``)
+
+      - ``ASK``
+        Ask Every Time -- Show dialog to save modified images when saving the .blend file.
+      - ``ALWAYS_SAVE``
+        Always Save -- Always save modified images when saving the .blend file.
+      - ``NEVER_SAVE``
+        Never Save -- Never save modified images when saving the .blend file.
+
+      :type: Literal['ASK', 'ALWAYS_SAVE', 'NEVER_SAVE']
 
    .. attribute:: save_version
 
@@ -135,7 +149,7 @@ base class --- :class:`bpy_struct`
 
    .. attribute:: sound_directory
 
-      The default directory to search for sounds (default "", never None, blend relative ``//`` prefix supported)
+      The default directory to search for sounds (default "//", never None, blend relative ``//`` prefix supported)
 
       :type: str
 
@@ -168,9 +182,15 @@ base class --- :class:`bpy_struct`
 
       :type: str
 
+   .. attribute:: texture_cache_directory
+
+      The directory for storing tx files generated from image files, for more efficient rendering. Paths may be absolute, or relative to the image file. Leave blank to store tx files in the same directory as image files (default "", never None, blend relative ``//`` prefix supported)
+
+      :type: str
+
    .. attribute:: texture_directory
 
-      The default directory to search for textures (default "", never None, blend relative ``//`` prefix supported)
+      The default directory to search for textures (default "//", never None, blend relative ``//`` prefix supported)
 
       :type: str
 

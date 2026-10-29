@@ -5,6 +5,7 @@ BoolProperty(Property)
 
 base classes --- :class:`bpy_struct`, :class:`Property`
 
+
 .. class:: BoolProperty(Property)
 
    RNA boolean property definition

@@ -75,7 +75,7 @@ MatCaps
 
 
 This panel manages :term:`MatCap` image files
-which can used to light the view when :ref:`MatCap <render-workbench-matcap>` shading is enabled.
+which can be used to light the view when :ref:`MatCap <render-workbench-matcap>` shading is enabled.
 
 Two kinds of images are supported for MatCaps. Regular image files and
 multilayered OpenEXR files. When using multilayered OpenEXR files,

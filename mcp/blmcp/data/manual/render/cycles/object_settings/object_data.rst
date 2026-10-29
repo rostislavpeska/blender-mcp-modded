@@ -197,7 +197,7 @@ to selectively speed up caustic rendering of objects in your scene.
 
    The rendering technique used to speed up the rendering of caustics is based on
    :abbr:`MNEE (Manifold Next Event Estimation)`. There are a number of limitations with this technique
-   and it's implementation in Cycles:
+   and its implementation in Cycles:
 
    - Only refractive caustics in the shadows of objects work. Caustics from reflections or caustics that
      fall outside shadows are not rendered with this technique.
@@ -217,6 +217,7 @@ to selectively speed up caustic rendering of objects in your scene.
    - MNEE Caustics only work if the caustic caster has smooth normals.
    - Volumetric materials are not considered when calculating MNEE caustics.
    - Bump and normal maps are ignored when calculating caustics.
+   - GPU rendering using Radeon RX 6000 series *HIP* devices on Windows is not supported.
 
 .. _bpy.types.CyclesObjectSettings.is_caustics_caster:
 

@@ -10,14 +10,19 @@ Brush
    In the :ref:`Data-Block menu <ui-data-block>` you find predefined Brush presets.
    And you can create your own custom presets as needed.
 
-Radius
-   This option controls the radius of the brush, measured in pixels.
+Blend
+   The blending mode used when applying the brush.
+
+   See :ref:`bpy.types.Brush.blend` for more information.
+
+Size
+   This option controls the diameter of the brush, measured in pixels.
    :kbd:`F` allows you to change the brush size interactively by
    dragging the mouse and then :kbd:`LMB` (the texture of the brush should be visible inside the circle).
    Typing a number then enter while using :kbd:`F` allows you to enter the size numerically.
 
    :bl-icon:`stylus_pressure` (Size Pressure)
-      Adjusts the brush radius based on the stylus pressure when using a :ref:`Graphics Tablet <hardware-tablet>`.
+      Adjusts the brush size based on the stylus pressure when using a :ref:`Graphics Tablet <hardware-tablet>`.
 
 Strength
    How powerful the brush is when applied.

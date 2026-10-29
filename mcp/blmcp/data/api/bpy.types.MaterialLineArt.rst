@@ -5,6 +5,7 @@ MaterialLineArt(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: MaterialLineArt(bpy_struct)
 
 

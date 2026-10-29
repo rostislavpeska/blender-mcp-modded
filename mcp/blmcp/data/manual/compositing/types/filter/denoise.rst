@@ -24,12 +24,14 @@ Image
    Noisy image input.
 Albedo
    Optional albedo render pass to better preserve detail.
-   For Cycles, it is recommended to use the Denoising Albedo render pass,
-   which is available when enabling the Denoising Data passes.
+
+   For Cycles, use the *Denoising Albedo* render pass
+   (available when enabling :ref:`Denoising Data <bpy.types.CyclesRenderLayerSettings.denoising_store_passes>` pass).
 Normal
    Optional normal render pass to better preserve detail.
-   For Cycles, it is recommended to use the Denoising Normal render pass,
-   which is available when enabling the Denoising Data passes.
+
+   For Cycles, use the *Denoising Normal* render pass
+   (available when enabling :ref:`Denoising Data <bpy.types.CyclesRenderLayerSettings.denoising_store_passes>` pass).
 HDR
    Preserve colors outside the 0 to 1 range.
 Prefilter
@@ -60,6 +62,35 @@ Outputs
 
 Image
    Denoised image output.
+
+
+Workflow
+========
+
+When using the Denoise node with Cycles, additional render passes should be enabled
+to achieve the best results.
+
+#. Enable :ref:`Denoising Data <bpy.types.CyclesRenderLayerSettings.denoising_store_passes>`
+   in the *View Layer* properties.
+
+#. Render the image. This will generate the following passes:
+
+   - *Noisy Image*
+   - *Denoising Albedo*
+   - *Denoising Normal*
+   - (and other auxiliary passes)
+
+#. In the Compositor:
+
+   - Connect the *Noisy Image* output to the node's *Image* input.
+   - Connect *Denoising Albedo* to the *Albedo* input.
+   - Connect *Denoising Normal* to the *Normal* input.
+
+Providing these passes allows the denoiser to better preserve edges,
+textures, and fine details.
+
+The node can still be used without these additional inputs,
+but the result may appear softer or lose detail.
 
 
 Examples

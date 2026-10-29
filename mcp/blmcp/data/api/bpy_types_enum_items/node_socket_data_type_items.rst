@@ -49,3 +49,5 @@ Node Socket Data Type Items
 
 :SOUND: Sound.
 
+:INT_VECTOR: Integer Vector.
+

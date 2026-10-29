@@ -5,6 +5,7 @@ XrSessionSettings(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: XrSessionSettings(bpy_struct)
 
 
@@ -41,7 +42,7 @@ base class --- :class:`bpy_struct`
 
    .. attribute:: base_scale
 
-      Uniform scale to apply to VR view (in [1e-06, inf], default 1.0)
+      Uniform base pose scale to apply to VR view (in [1e-06, inf], default 1.0)
 
       :type: float
 
@@ -338,7 +339,48 @@ base class --- :class:`bpy_struct`
 
    .. attribute:: view_scale
 
-      Scaling factor applied on top of scene scale for adjustments to the VR view. When possible, prefer modifying the scene scale instead (in [1e-06, inf], default 1.0)
+      Scaling factor applied to the VR view for fine adjustements. Modifying this value will keep the viewer at the same world relative position (in [1e-06, inf], default 1.0)
+
+      :type: float
+
+   .. attribute:: viewfinder_crosshair_enabled
+
+      Enable the Viewfinder Crosshair (default True)
+
+      :type: bool
+
+   .. attribute:: viewfinder_enabled
+
+      Enable the Location Scouting Viewfinder (default True)
+
+      :type: bool
+
+   .. attribute:: viewfinder_hand
+
+      Hand on which to place the Location Scouting Viewfinder (default ``'LEFT'``)
+
+      - ``LEFT``
+        Left -- Place the viewfinder on the left hand controller.
+      - ``RIGHT``
+        Right -- Place the viewfinder on the right hand controller.
+
+      :type: Literal['LEFT', 'RIGHT']
+
+   .. attribute:: viewfinder_passepartout_opacity
+
+      Opacity of the darkened Viewfinder Passepartout overlay (in [0, 1], default 0.5)
+
+      :type: float
+
+   .. attribute:: viewfinder_passepartout_overscan
+
+      Border size of the Viewfinder Passepartout overlay (in [0, 1], default 0.5)
+
+      :type: float
+
+   .. attribute:: viewfinder_scale
+
+      Location Scouting Viewfinder size scale (in [-3, inf], default 1.0)
 
       :type: float
 

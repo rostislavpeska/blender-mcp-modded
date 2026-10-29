@@ -5,6 +5,7 @@ TransformOrientationSlot(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: TransformOrientationSlot(bpy_struct)
 
 

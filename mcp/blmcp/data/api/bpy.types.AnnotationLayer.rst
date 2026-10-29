@@ -5,6 +5,7 @@ AnnotationLayer(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: AnnotationLayer(bpy_struct)
 
    Collection of related sketches

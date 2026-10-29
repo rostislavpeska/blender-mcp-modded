@@ -5,6 +5,7 @@ Histogram(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: Histogram(bpy_struct)
 
    Statistical view of the levels of color in an image

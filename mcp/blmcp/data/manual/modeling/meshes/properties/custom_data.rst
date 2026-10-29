@@ -13,7 +13,13 @@ This panel is used to manage any generic data attributes that a mesh could have.
 
 Clear Sculpt Mask Data
    Deletes the internal ``sculpt_mask`` attribute.
-   This attribute is used by the :ref:`Sculpt Masking Feature <face_sets>`.
+   This attribute is used by the :ref:`Sculpt Masking Feature <sculpt-masks>`.
+
+.. _bpy.ops.mesh.customdata_face_sets_clear:
+
+Clear Sculpt Face Sets
+   Deletes the internal ``sculpt_face_set`` attribute.
+   This attribute is used by the :ref:`Sculpt Face Set Feature <face_sets>`.
 
 .. _bpy.ops.mesh.customdata_skin_clear:
 .. _bpy.ops.mesh.customdata_skin_add:

@@ -5,24 +5,25 @@ ToolSettings(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: ToolSettings(bpy_struct)
 
 
    .. attribute:: anim_fix_to_cam_use_loc
 
-      Create location keys when fixing to the scene camera (default True)
+      Create location keys when fixing to the scene camera (default False)
 
       :type: bool
 
    .. attribute:: anim_fix_to_cam_use_rot
 
-      Create rotation keys when fixing to the scene camera (default True)
+      Create rotation keys when fixing to the scene camera (default False)
 
       :type: bool
 
    .. attribute:: anim_fix_to_cam_use_scale
 
-      Create scale keys when fixing to the scene camera (default True)
+      Create scale keys when fixing to the scene camera (default False)
 
       :type: bool
 
@@ -76,7 +77,7 @@ base class --- :class:`bpy_struct`
 
    .. attribute:: auto_keying_mode
 
-      Mode of automatic keyframe insertion for objects, bones and masks (default ``'ADD_REPLACE_KEYS'``)
+      Can add additional constraints on when auto keying can insert keyframes (default ``'ADD_REPLACE_KEYS'``)
 
       :type: Literal['ADD_REPLACE_KEYS', 'REPLACE_KEYS']
 
@@ -576,7 +577,7 @@ base class --- :class:`bpy_struct`
 
    .. attribute:: use_keyframe_insert_auto
 
-      Automatic keyframe insertion for objects, bones and masks (default True)
+      Automatically insert keyframes on modified properties (default True)
 
       :type: bool
 

@@ -10,6 +10,11 @@ Environment Texture Node
 
 The Node *Environmental Texture* is used to light your scene using an environment map image file as a texture.
 
+.. tip::
+
+   An *Environment Texture* node can be created by dragging an image file into
+   the Shader Editor while editing the *World* shader.
+
 
 Inputs
 ======

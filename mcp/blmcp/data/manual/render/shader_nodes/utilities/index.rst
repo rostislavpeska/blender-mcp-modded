@@ -21,6 +21,7 @@
 .. toctree::
    :maxdepth: 1
 
+   implicit_conversion.rst
    closure.rst
    evaluate_closure.rst
    bundle/combine_bundle.rst

@@ -5,6 +5,7 @@ NodeSocketStringFilePath(NodeSocketStandard)
 
 base classes --- :class:`bpy_struct`, :class:`NodeSocket`, :class:`NodeSocketStandard`
 
+
 .. class:: NodeSocketStringFilePath(NodeSocketStandard)
 
    String socket of a node

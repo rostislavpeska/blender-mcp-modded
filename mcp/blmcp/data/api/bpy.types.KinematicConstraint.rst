@@ -5,6 +5,7 @@ KinematicConstraint(Constraint)
 
 base classes --- :class:`bpy_struct`, :class:`Constraint`
 
+
 .. class:: KinematicConstraint(Constraint)
 
    Inverse Kinematics

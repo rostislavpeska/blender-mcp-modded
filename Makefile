@@ -20,7 +20,7 @@ Targets
      Run tests:         make test_integration TESTS=TestChatClient.test_name
      Multiple tests:    make test_integration TESTS="test_one test_two"
    * format:            Auto-format Python sources with autopep8.
-   * readme_update:     Regenerate the tools listing in readme.rst.
+   * readme_update:     Regenerate the tools listing in readme_tools.rst.
 
 Static Source Code Checking
    * check_license:   Verify SPDX headers in all Python files.

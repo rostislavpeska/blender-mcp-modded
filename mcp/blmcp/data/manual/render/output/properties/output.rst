@@ -1,3 +1,4 @@
+.. _bpy.types.RenderSettings.save_output:
 
 ******
 Output
@@ -7,8 +8,29 @@ Output
 
    Output panel.
 
-This panel provides options for setting the location of rendered frames for animations,
-and the quality of the saved images.
+This panel defines where rendered images and animations are saved, along with
+their output format and quality settings.
+
+By default, animation renders are saved automatically, while still renders are
+not. Still images must be saved manually from the :doc:`/editors/image/index`
+or written using a :doc:`/compositing/types/output/file_output`.
+
+The automatic saving of renders can be toggled using the checkbox in the panel header.
+
+When enabled, Blender behaves in the standard way: still renders (:kbd:`F12`)
+are not saved automatically, while animation renders (:kbd:`Ctrl-F12`) are
+written to the configured output path.
+
+When disabled, Blender does not write render output from this panel and instead
+relies on other systems. For animation renders, if the
+:doc:`/editors/video_sequencer/index` is active and no alternative output is
+available, an error is raised. Otherwise, if compositing is enabled, active
+:doc:`/compositing/types/output/file_output` nodes are used to save the result.
+If no such nodes exist, an error is reported.
+
+Playblast operations also require an active output method. Both *Render
+Playblast* and *Render Playblast on Keyframes* will raise an error when render
+output is disabled in this panel.
 
 .. _bpy.types.RenderSettings.filepath:
 

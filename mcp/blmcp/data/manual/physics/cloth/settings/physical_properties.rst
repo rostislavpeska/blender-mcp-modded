@@ -124,7 +124,7 @@ Compression
 Vertex Group
    The *Tension* and *Compression* of internal springs can be controlled via
    a :doc:`Vertex Group </modeling/meshes/properties/vertex_groups/index>` to
-   specify which the portions of the mesh have internal springs or the spring strength.
+   specify which portions of the mesh have internal springs or the spring strength.
 
 .. _bpy.types.ClothSettings.internal_tension_stiffness_max:
 
@@ -190,7 +190,7 @@ Fluid Density
    If the value is negative, it instead models buoyancy from a surrounding fluid.
 
    The fluid is not actually simulated, so while the setting helps to achieve
-   a more plausible object shapes at rest, it cannot create realistic fluid dynamics effects.
+   more plausible object shapes at rest, it cannot create realistic fluid dynamics effects.
    It can also be used to give more weight to a soft body like object with heavy and
    sufficiently flexible filling, even if it is not a fluid by itself.
 
@@ -203,7 +203,7 @@ Fluid Density
 
 Vertex Group
    Cloth pressure can be controlled via a :doc:`Vertex Group </modeling/meshes/properties/vertex_groups/index>`
-   to specify which the portions of the mesh to apply pressure.
+   to specify which portions of the mesh to apply pressure.
    Zero weight means no pressure while a weight of one means full pressure.
 
    Note, faces with a vertex that has zero weight will be excluded from the *Target Volume* calculation.

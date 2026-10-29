@@ -16,10 +16,6 @@ Selecting
 Blender has two main selection modes: left-click select and right-click select.
 See the :ref:`Select with Mouse Button <keymap-blender_default-prefs-select_with>` preference.
 
-While left-click select is the default as it's the most common in other applications,
-right-click select does have its advantages.
-See: `Learn the benefits of right-click select <https://vimeo.com/76335056>`__.
-
 
 Hovering
 ========

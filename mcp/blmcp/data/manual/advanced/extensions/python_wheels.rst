@@ -75,7 +75,7 @@ Update the Manifest
 
 Running
    Once the extension has been installed you can check the module is being loaded by importing it in the
-   Python console and printing it's location:
+   Python console and printing its location:
 
    .. code-block:: python
 

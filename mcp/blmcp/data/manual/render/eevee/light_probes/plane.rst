@@ -46,6 +46,16 @@ Distance
    For light probe planes, the influence distance is the distance from the plane.
    Only surfaces whose normals are aligned with the Reflection Plane will receive the captured reflection.
 
+.. _bpy.types.LightProbe.parallax_distance:
+
+Parallax
+   Controls the amount of parallax applied to reflections on
+   :ref:`Blended materials <bpy.types.Material.surface_render_method>` and
+   :doc:`Shader To RGB evaluation </render/shader_nodes/color/shader_to_rgb>`.
+
+   Increasing this value enhances the perceived depth of reflections,
+   while lower values produce a flatter, less distorted result.
+
 
 Capture
 -------

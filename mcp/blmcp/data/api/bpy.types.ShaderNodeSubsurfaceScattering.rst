@@ -5,6 +5,7 @@ ShaderNodeSubsurfaceScattering(ShaderNode)
 
 base classes --- :class:`bpy_struct`, :class:`Node`, :class:`NodeInternal`, :class:`ShaderNode`
 
+
 .. class:: ShaderNodeSubsurfaceScattering(ShaderNode)
 
    Subsurface multiple scattering shader to simulate light entering the surface and bouncing internally.
@@ -20,8 +21,10 @@ base classes --- :class:`bpy_struct`, :class:`Node`, :class:`NodeInternal`, :cla
         Random Walk -- Volumetric approximation to physically based volume scattering, using the scattering radius as specified.
       - ``RANDOM_WALK_SKIN``
         Random Walk (Skin) -- Volumetric approximation to physically based volume scattering, with scattering radius automatically adjusted to match color textures. Designed for skin shading..
+      - ``RANDOM_WALK_LEGACY``
+        Random Walk (Legacy) -- Volumetric approximation to physically based volume scattering, using the scattering radius as specified.
 
-      :type: Literal['BURLEY', 'RANDOM_WALK', 'RANDOM_WALK_SKIN']
+      :type: Literal['BURLEY', 'RANDOM_WALK', 'RANDOM_WALK_SKIN', 'RANDOM_WALK_LEGACY']
 
    .. classmethod:: is_registered_node_type()
 
@@ -85,6 +88,7 @@ Inherited Properties
    - :class:`Node.label`
    - :class:`Node.inputs`
    - :class:`Node.outputs`
+   - :class:`Node.panel_states`
    - :class:`Node.internal_links`
    - :class:`Node.parent`
    - :class:`Node.warning_propagation`

@@ -5,6 +5,7 @@ CameraStereoData(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: CameraStereoData(bpy_struct)
 
    Stereoscopy settings for a Camera data-block

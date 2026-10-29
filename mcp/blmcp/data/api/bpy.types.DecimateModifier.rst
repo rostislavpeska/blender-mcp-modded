@@ -5,6 +5,7 @@ DecimateModifier(Modifier)
 
 base classes --- :class:`bpy_struct`, :class:`Modifier`
 
+
 .. class:: DecimateModifier(Modifier)
 
    Decimation modifier

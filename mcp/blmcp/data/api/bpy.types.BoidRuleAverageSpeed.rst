@@ -5,6 +5,7 @@ BoidRuleAverageSpeed(BoidRule)
 
 base classes --- :class:`bpy_struct`, :class:`BoidRule`
 
+
 .. class:: BoidRuleAverageSpeed(BoidRule)
 
 

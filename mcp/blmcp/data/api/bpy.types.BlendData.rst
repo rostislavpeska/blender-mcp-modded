@@ -5,6 +5,7 @@ BlendData(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: BlendData(bpy_struct)
 
    Main data structure representing a .blend file and all its data-blocks
@@ -14,6 +15,12 @@ base class --- :class:`bpy_struct`
       Action data-blocks (default None, readonly)
 
       :type: :class:`BlendDataActions`\ [:class:`Action`]
+
+   .. data:: all_ids
+
+      Read-only list of all IDs listed in Blender data-base (default None, readonly)
+
+      :type: :class:`bpy_prop_collection`\ [:class:`ID`]
 
    .. data:: annotations
 
@@ -325,8 +332,8 @@ base class --- :class:`bpy_struct`
    
       For list of valid set members for visit_types, see: :class:`bpy.types.KeyingSetPath.id_type`.
    
-      :param visit_path_fn: function that takes three parameters: the data-block, a file path, and a placeholder for future use. The function should return either ``None`` or a ``str``. In the latter case, the visited file path will be replaced with the returned string.
-      :type visit_path_fn: Callable[[:class:`bpy.types.ID`, str, Any], str|None]
+      :param visit_path_fn: function that takes three parameters: the data-block, a file path, and a :class:`bpy.types.BlendDataPathMeta` metadata object. The function should return either ``None`` or a ``str``. In the latter case, the visited file path will be replaced with the returned string.
+      :type visit_path_fn: Callable[[:class:`bpy.types.ID`, str, :class:`bpy.types.BlendDataPathMeta`], str|None]
       :param subset: When given, only these data-blocks and their used file paths will be visited.
       :type subset: set[str] | None
       :param visit_types: When given, only visit data-blocks of these types. Ignored if ``subset`` is also given.
@@ -351,16 +358,16 @@ base class --- :class:`bpy_struct`
       :rtype: dict[:class:`bpy.types.ID`, set[str]]
 
 
-   .. method:: orphans_purge()
+   .. method:: orphans_purge(do_local_ids=True, do_linked_ids=True, do_recursive=False)
    
       Remove (delete) all IDs with no user.
    
       :param do_local_ids: Include unused local IDs in the deletion, defaults to True
-      :type do_local_ids: bool, optional
+      :type do_local_ids: bool
       :param do_linked_ids: Include unused linked IDs in the deletion, defaults to True
-      :type do_linked_ids: bool, optional
+      :type do_linked_ids: bool
       :param do_recursive: Recursively check for unused IDs, ensuring no orphaned one remain after a single run of that function, defaults to False
-      :type do_recursive: bool, optional
+      :type do_recursive: bool
       :return: The number of deleted IDs.
       :rtype: int
 

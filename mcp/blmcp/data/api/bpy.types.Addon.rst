@@ -5,6 +5,7 @@ Addon(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: Addon(bpy_struct)
 
    Python add-ons to be loaded automatically

@@ -22,7 +22,7 @@ Here are some of the main operations available:
 Move
 ----
 
-This operations allows you to move elements along the X, Y, and Z axes in the scene.
+This operation allows you to move elements along the X, Y, and Z axes in the scene.
 
 
 Rotate

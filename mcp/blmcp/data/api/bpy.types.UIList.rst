@@ -31,8 +31,42 @@ example of how to create/use filtering/reordering callbacks.
 
 base class --- :class:`bpy_struct`
 
-subclasses --- 
-:class:`ASSETBROWSER_UL_metadata_tags`, :class:`CLIP_UL_tracking_objects`, :class:`CURVES_UL_attributes`, :class:`DATA_UL_bone_collections`, :class:`FILEBROWSER_UL_dir`, :class:`GPENCIL_UL_annotation_layer`, :class:`GPENCIL_UL_matslots`, :class:`GREASE_PENCIL_UL_attributes`, :class:`GREASE_PENCIL_UL_masks`, :class:`IMAGE_UL_render_slots`, :class:`IMAGE_UL_udim_tiles`, :class:`MASK_UL_layers`, :class:`MATERIAL_UL_matslots`, :class:`MESH_UL_attributes`, :class:`MESH_UL_color_attributes`, :class:`MESH_UL_color_attributes_selector`, :class:`MESH_UL_uvmaps`, :class:`MESH_UL_vgroups`, :class:`PARTICLE_UL_particle_systems`, :class:`PHYSICS_UL_dynapaint_surfaces`, :class:`POINTCLOUD_UL_attributes`, :class:`POSE_UL_selection_set`, :class:`RENDER_UL_renderviews`, :class:`SCENE_UL_gltf2_filter_action`, :class:`SCENE_UL_keying_set_paths`, :class:`TEXTURE_UL_texpaintslots`, :class:`TEXTURE_UL_texslots`, :class:`UI_UL_list`, :class:`USERPREF_UL_asset_libraries`, :class:`USERPREF_UL_extension_repos`, :class:`VIEWLAYER_UL_aov`, :class:`VOLUME_UL_grids`, :class:`WORKSPACE_UL_addons_items`
+.. toctree::
+   :caption: Subclasses
+   :maxdepth: 1
+
+   bpy.types.ASSETBROWSER_UL_metadata_tags.rst
+   bpy.types.CLIP_UL_tracking_objects.rst
+   bpy.types.CURVES_UL_attributes.rst
+   bpy.types.DATA_UL_bone_collections.rst
+   bpy.types.FILEBROWSER_UL_dir.rst
+   bpy.types.GPENCIL_UL_annotation_layer.rst
+   bpy.types.GPENCIL_UL_matslots.rst
+   bpy.types.GREASE_PENCIL_UL_attributes.rst
+   bpy.types.GREASE_PENCIL_UL_masks.rst
+   bpy.types.IMAGE_UL_render_slots.rst
+   bpy.types.IMAGE_UL_udim_tiles.rst
+   bpy.types.MASK_UL_layers.rst
+   bpy.types.MATERIAL_UL_matslots.rst
+   bpy.types.MESH_UL_attributes.rst
+   bpy.types.MESH_UL_color_attributes.rst
+   bpy.types.MESH_UL_color_attributes_selector.rst
+   bpy.types.MESH_UL_uvmaps.rst
+   bpy.types.MESH_UL_vgroups.rst
+   bpy.types.PARTICLE_UL_particle_systems.rst
+   bpy.types.PHYSICS_UL_dynapaint_surfaces.rst
+   bpy.types.POINTCLOUD_UL_attributes.rst
+   bpy.types.POSE_UL_selection_set.rst
+   bpy.types.RENDER_UL_renderviews.rst
+   bpy.types.SCENE_UL_gltf2_filter_action.rst
+   bpy.types.SCENE_UL_keying_set_paths.rst
+   bpy.types.TEXTURE_UL_texpaintslots.rst
+   bpy.types.TEXTURE_UL_texslots.rst
+   bpy.types.UI_UL_list.rst
+   bpy.types.USERPREF_UL_extension_repos.rst
+   bpy.types.VIEWLAYER_UL_aov.rst
+   bpy.types.VOLUME_UL_grids.rst
+   bpy.types.WORKSPACE_UL_addons_items.rst
 
 .. class:: UIList(bpy_struct)
 
@@ -117,6 +151,7 @@ subclasses ---
 
       Draw an item in the list (NOTE: when you define your own draw_item function, you may want to check given 'item' is of the right type...)
 
+      :param context: The context
       :type context: :class:`Context` | None
       :param layout: Layout to draw the item (never None)
       :type layout: :class:`UILayout` | None
@@ -139,6 +174,7 @@ subclasses ---
 
       Draw filtering options
 
+      :param context: The context
       :type context: :class:`Context` | None
       :param layout: Layout to draw the item (never None)
       :type layout: :class:`UILayout` | None
@@ -147,6 +183,7 @@ subclasses ---
 
       Filter and/or re-order items of the collection (output filter results in filter_flags, and reorder results in filter_neworder arrays)
 
+      :param context: The context
       :type context: :class:`Context` | None
       :param data: Data from which to take Collection property
       :type data: :class:`AnyType` | None
@@ -163,17 +200,31 @@ subclasses ---
 
       Append a draw function to this menu,
       takes the same arguments as the menus draw function
+      
+      :param draw_func: Draw function to append.
+      :type draw_func: Callable[[Self, :class:`Context`], None]
 
    .. classmethod:: is_extended()
+
+      Test if any draw function has been added via :meth:`append` or :meth:`prepend`.
+      
+      :return: True when at least one draw function has been added.
+      :rtype: bool
 
    .. classmethod:: prepend(draw_func)
 
       Prepend a draw function to this menu, takes the same arguments as
       the menus draw function
+      
+      :param draw_func: Draw function to prepend.
+      :type draw_func: Callable[[Self, :class:`Context`], None]
 
    .. classmethod:: remove(draw_func)
 
       Remove a draw function that has been added to this menu.
+      
+      :param draw_func: Draw function previously registered via :meth:`append` or :meth:`prepend`.
+      :type draw_func: Callable[[Self, :class:`Context`], None]
 
    .. classmethod:: bl_rna_get_subclass(id, default=None, /)
    

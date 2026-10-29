@@ -5,6 +5,7 @@ SkinModifier(Modifier)
 
 base classes --- :class:`bpy_struct`, :class:`Modifier`
 
+
 .. class:: SkinModifier(Modifier)
 
    Generate Skin

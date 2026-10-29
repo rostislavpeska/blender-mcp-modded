@@ -5,6 +5,7 @@ ThemeView3D(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: ThemeView3D(bpy_struct)
 
    Theme settings for the 3D viewport
@@ -218,6 +219,12 @@ base class --- :class:`bpy_struct`
       (array of 4 items, in [0, 1], default (0.0, 0.0, 0.0, 0.0))
 
       :type: :class:`bpy_prop_array`\ [float]
+
+   .. attribute:: grid_axis_brightness
+
+      Brightness of the grid axis lines (in [0, 1], default 0.46)
+
+      :type: float
 
    .. attribute:: grid_major
 

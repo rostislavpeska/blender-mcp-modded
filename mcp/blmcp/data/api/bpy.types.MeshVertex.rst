@@ -5,6 +5,7 @@ MeshVertex(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: MeshVertex(bpy_struct)
 
    Vertex in a Mesh data-block

@@ -5,6 +5,7 @@ LatticePoint(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: LatticePoint(bpy_struct)
 
    Point in the lattice grid

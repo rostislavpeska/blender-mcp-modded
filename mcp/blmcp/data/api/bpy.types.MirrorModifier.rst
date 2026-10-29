@@ -5,6 +5,7 @@ MirrorModifier(Modifier)
 
 base classes --- :class:`bpy_struct`, :class:`Modifier`
 
+
 .. class:: MirrorModifier(Modifier)
 
    Mirroring modifier

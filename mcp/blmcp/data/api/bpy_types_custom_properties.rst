@@ -19,10 +19,13 @@ For examples on using custom properties see the quick-start section on
 - :class:`bpy.types.Node`
 - :class:`bpy.types.NodeSocket`
 - :class:`bpy.types.NodeTreeInterfaceSocket`
-- :class:`bpy.types.NodesModifier`
+- :class:`bpy.types.NodesModifierProperties`
+- :class:`bpy.types.NodesModifierPropertiesEmpty`
 - :class:`bpy.types.OperatorProperties`
 - :class:`bpy.types.PoseBone`
 - :class:`bpy.types.PropertyGroup`
+- :class:`bpy.types.SequencerCompositorModifierProperties`
+- :class:`bpy.types.SequencerCompositorModifierPropertiesEmpty`
 - :class:`bpy.types.Strip`
 - :class:`bpy.types.TimelineMarker`
 - :class:`bpy.types.View3DShading`

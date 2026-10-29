@@ -18,10 +18,18 @@ which are described below.
 Viewport Gizmos
 ===============
 
+.. _bpy.types.SpaceView3D.show_gizmo_navigate:
+
 Navigate
    Enable/disable the :ref:`navigation gizmo <navigation-gizmo>`.
+
+.. _bpy.types.SpaceView3D.show_gizmo_tool:
+
 Active Tool
    Enable/disable the gizmo of the active tool.
+
+.. _bpy.types.SpaceView3D.show_gizmo_context:
+
 Active Object
    Enable/disable the Object Gizmos for the active element (see below).
 
@@ -55,14 +63,23 @@ Orientation
    The orientation to use for the gizmo. *Default* means to use the viewport's
    :doc:`Transform Orientation </editors/3dview/controls/orientation>`.
    The other options override it.
+
+.. _bpy.types.SpaceView3D.show_gizmo_object_translate:
+
 Move
    Show the gizmo to control the location.
    Dragging the small white circle allows free movement in the viewing plane.
+
+.. _bpy.types.SpaceView3D.show_gizmo_object_rotate:
+
 Rotate
    Show the gizmo to control the rotation.
    Dragging the large white circle allows rotation around the viewing direction.
    Dragging the translucent white disc within that circle (only visible when
    hovering over the gizmo) allows :ref:`trackball rotation <view3d-transform-trackball>`.
+
+.. _bpy.types.SpaceView3D.show_gizmo_object_scale:
+
 Scale
    Show the gizmo to control the scale.
    Dragging the area between the small and large white circles scales along all three axes.
@@ -105,8 +122,13 @@ Empty
 
 Gizmo settings for :doc:`empties </modeling/empties>`.
 
+.. _bpy.types.SpaceView3D.show_gizmo_empty_image:
+
 Image
    Show the gizmo to adjust the image size and position.
+
+.. _bpy.types.SpaceView3D.show_gizmo_empty_force_field:
+
 Force Field
    Show the gizmo to adjust the :doc:`force field </physics/forces/force_fields/introduction>`.
 
@@ -116,8 +138,13 @@ Light
 
 Gizmo settings for :doc:`lights </render/lights/light_object>`.
 
+.. _bpy.types.SpaceView3D.show_gizmo_light_size:
+
 Size
    Show the gizmo to adjust the Spot Size of spotlights.
+
+.. _bpy.types.SpaceView3D.show_gizmo_light_look_at:
+
 Look At
    Show the gizmo to adjust the direction of lights.
 
@@ -127,10 +154,15 @@ Camera
 
 Gizmo settings for :doc:`cameras </render/cameras>`.
 
+.. _bpy.types.SpaceView3D.show_gizmo_camera_lens:
+
 Lens
    Show the gizmo to adjust the focal length (for Perspective cameras)
    or orthographic scale (for Orthographic cameras).
+
+.. _bpy.types.SpaceView3D.show_gizmo_camera_dof_distance:
+
 Focus Distance
-   Enable the gizmo for adjusting the focus distance. To see this gizmo,
-   you need to enable the :menuselection:`Viewport Display --> Limits` checkbox
-   in the camera's properties (green camera icon).
+   Enable the gizmo for adjusting the camera's :ref:`bpy.types.CameraDOFSettings.focus_distance`.
+   To see this gizmo, you must also enable :ref:`bpy.types.Camera.show_limits`
+   in the camera's viewport display properties.

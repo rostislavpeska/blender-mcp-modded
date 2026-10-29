@@ -5,6 +5,7 @@ ShaderNodeBsdfTransparent(ShaderNode)
 
 base classes --- :class:`bpy_struct`, :class:`Node`, :class:`NodeInternal`, :class:`ShaderNode`
 
+
 .. class:: ShaderNodeBsdfTransparent(ShaderNode)
 
    Transparency without refraction, passing straight through the surface as if there were no geometry
@@ -71,6 +72,7 @@ Inherited Properties
    - :class:`Node.label`
    - :class:`Node.inputs`
    - :class:`Node.outputs`
+   - :class:`Node.panel_states`
    - :class:`Node.internal_links`
    - :class:`Node.parent`
    - :class:`Node.warning_propagation`

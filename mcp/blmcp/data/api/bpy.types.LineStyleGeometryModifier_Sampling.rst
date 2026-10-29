@@ -5,6 +5,7 @@ LineStyleGeometryModifier_Sampling(LineStyleGeometryModifier)
 
 base classes --- :class:`bpy_struct`, :class:`LineStyleModifier`, :class:`LineStyleGeometryModifier`
 
+
 .. class:: LineStyleGeometryModifier_Sampling(LineStyleGeometryModifier)
 
    Specify a new sampling value that determines the resolution of stroke polylines

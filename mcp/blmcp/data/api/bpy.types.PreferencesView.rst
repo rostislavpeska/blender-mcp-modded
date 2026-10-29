@@ -5,9 +5,16 @@ PreferencesView(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: PreferencesView(bpy_struct)
 
    Preferences related to viewing data
+
+   .. attribute:: asset_access
+
+      Choose the visibility of online and offline assets (default ``'ALL'``)
+
+      :type: Literal[:ref:`rna_enum_asset_access_items`]
 
    .. attribute:: border_width
 
@@ -31,6 +38,29 @@ base class --- :class:`bpy_struct`
         Square (HV + S) -- A square showing Hue/Value, with Saturation slider.
 
       :type: Literal['CIRCLE_HSV', 'CIRCLE_HSL', 'SQUARE_SV', 'SQUARE_HS', 'SQUARE_HV']
+
+   .. attribute:: date_format
+
+      Format for displaying date strings (default ``'DEFAULT'``)
+
+      - ``DEFAULT``
+        Default -- Default date formatting based on output language.
+      - ``LE_SLASH``
+        dd/mm/yyyy -- Date format: dd/mm/yyyy, eg: 27/02/2019.
+      - ``LE_DOT``
+        dd.mm.yyyy -- Date format: dd.mm.yyyy, eg: 27.02.2019.
+      - ``LE_DASH``
+        dd-mm-yyyy -- Date format: dd-mm-yyyy, eg: 27-02-2019.
+      - ``ME_SLASH``
+        mm/dd/yyyy -- Date format: mm/dd/yyyy, eg: 02/27/2019.
+      - ``BE_SLASH``
+        yyyy/mm/dd -- Date format: yyyy/mm/dd, eg: 2019/02/27.
+      - ``BE_DOT``
+        yyyy.mm.dd -- Date format: yyyy.mm.dd, eg: 2019.02.27.
+      - ``BE_DASH``
+        yyyy-mm-dd -- Date format: yyyy-mm-dd, eg: 2019-02-27.
+
+      :type: Literal['DEFAULT', 'LE_SLASH', 'LE_DOT', 'LE_DASH', 'ME_SLASH', 'BE_SLASH', 'BE_DOT', 'BE_DASH']
 
    .. attribute:: factor_display_type
 
@@ -341,6 +371,17 @@ base class --- :class:`bpy_struct`
       Method for making user interface text render sharp (default ``'AUTO'``)
 
       :type: Literal['AUTO', 'NONE', 'SLIGHT', 'FULL']
+
+   .. attribute:: time_format
+
+      Format for displaying time strings (default ``'H24'``)
+
+      - ``H24``
+        24-Hour (23:59) -- Time format: 24-hour clock with colon, eg: 23:59.
+      - ``H12``
+        12-Hour (11:59 PM) -- Time format: 12-hour clock, eg: 11:59 PM.
+
+      :type: Literal['H24', 'H12']
 
    .. attribute:: timecode_style
 

@@ -37,7 +37,7 @@ right for everyone.
    improvements. A new long-term support version is available every year. *These LTS releases will occasionally have
    minor patches (such as 4.2.6) which improve stability or fix critical bugs.*
 
-`Daily Builds <https://builder.blender.org/download/>`__
+`Daily Builds <https://builder.blender.org/download/daily/>`__
    A package updated daily to include the newest changes in development. These versions are automatically built on a
    schedule.  They are not as thoroughly tested as the release types above, and might break or crash. Builds marked as
    **Alpha** are still undergoing major changes and feature additions, while those marked **Beta** are

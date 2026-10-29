@@ -5,6 +5,7 @@ RenderSlot(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: RenderSlot(bpy_struct)
 
    Parameters defining the render slot

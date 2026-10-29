@@ -8,6 +8,7 @@ AddonPreferences(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: AddonPreferences(bpy_struct)
 
 

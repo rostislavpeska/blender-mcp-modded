@@ -10,9 +10,14 @@ and understand complex setups.
 Read the documentation at [blender.org/lab/mcp-server](https://www.blender.org/lab/mcp-server/)
 
 > **This is a modded fork** of the official [`blender_mcp`](https://projects.blender.org/lab/blender_mcp)
-> (kept as the `upstream` remote). It adds a standardized-camera framing rig, a
-> canonical model importer, and an async text-to-3D pipeline. Everything from
-> upstream is unchanged and needs no configuration.
+> (kept as the `upstream` remote). It retains the official tools and adds
+> standardized cameras, canonical import, text/image-to-3D, Sketchfab tools,
+> and explicit selection between Blender sessions. The latter intentionally
+> changes connection selection; see "Several Blender instances" below.
+>
+> Official baseline: [`dbbf836`](https://projects.blender.org/lab/blender_mcp/commit/dbbf836ad4b1025f14a2b3b504c43903f39e0b04),
+> checked on 2026-10-29 ([sync issue #1](https://github.com/rostislavpeska/blender-mcp-modded/issues/1)).
+> MCP package version 1.0.2; the official add-on manifest still says 1.0.0.
 
 ## Modded additions
 
@@ -23,18 +28,27 @@ Read the documentation at [blender.org/lab/mcp-server](https://www.blender.org/l
   `ignore_object_names` control what gets framed (e.g. exclude a huge ground plane).
 - **`read_standard_views`** - render all standard cameras into a single 2x2
   contact-sheet image, so a scene can be understood from every angle in one call.
-- **`import_canonical_model`** - import a `.glb/.gltf/.obj/.fbx` (URL or local path)
+- **`import_canonical_model`** - import a `.glb/.gltf/.obj/.fbx` or glTF ZIP (URL or local path)
   and canonicalize it: joined to one mesh, transforms applied, uniformly scaled so
   its largest dimension = `target_size`, origin set to `center` or `bottom`, and
   placed at the world origin.
 - **`generate_3d` / `wait_for_3d_job`** - async text-to-3D. `generate_3d(prompt)`
   kicks off an n8n pipeline (text -> image -> [TRELLIS](https://github.com/microsoft/TRELLIS))
   and returns job handles; `wait_for_3d_job(...)` polls until the `.glb` is ready.
+  `generate_3d(image=...)` (local png/jpeg/webp up to 8 MB, http(s) URL or `data:` URI)
+  skips the image generation and sends your image to TRELLIS (needs the updated
+  workflow, see [n8n/README.md](n8n/README.md#input-image-mode-image---3d)).
   Pair with `import_canonical_model` for a full **prompt -> object-in-scene** loop.
+- **`sketchfab_search` / `sketchfab_preview` / `sketchfab_download`** - search
+  public model metadata, inspect a thumbnail, and request a download URL. Search
+  and preview use the public API; download requires your separately hosted
+  `sketchfab-download` n8n webhook. That workflow is not included in this repo.
+- **`list_blender_instances` / `select_blender_instance`** - choose the target
+  Blender process by PID or port using its instance registry.
 
-### Config (only for `generate_3d` / `wait_for_3d_job`)
+### Config (generation, job status, and Sketchfab download)
 
-These two tools are thin HTTP clients for two n8n webhooks that **you host on your
+These tools are thin HTTP clients for n8n webhooks that **you host on your
 own n8n**. This MCP is instance-agnostic - it ships **no** default host. Import the
 workflows in [`n8n/`](n8n/) (see `n8n/README.md`), then set:
 
@@ -50,22 +64,62 @@ other tool (cameras, import, and all upstream tools) needs **no** configuration.
 
 ## Design notes, technical debt & contributing
 
-**Why a separate repo (not a clean upstream fork).** These features were built as
-a pragmatic, *additive* extension for a specific "text -> 3D -> into a Blender
-scene" workflow, not as a maintained fork. The new tools live as **isolated
-modules** under `mcp/blmcp/tools/`, following upstream's own tool-pair convention,
-so they don't entangle with upstream code. The only upstream files touched are one
-additive guidance block in `prompts.yml` and one line in `mcp/pyproject.toml`
-(the `python-dotenv` dep). Keeping the surface tiny is deliberate - it makes
-rebasing on upstream, or contributing individual pieces back, straightforward.
+The extra tools live in separate modules under `mcp/blmcp/tools/`, following
+upstream's tool-pair convention. Shared changes are limited to connection and
+instance selection, add-on startup/registration, the additional prompt guidance,
+and the `python-dotenv` dependency. Official tool implementations and reference
+documentation are retained from the pinned baseline. The reference parser also
+recognizes the new `details` blocks without hiding their nested API methods.
+
+### Updating from official Blender Lab
+
+The first sync reconstructed the historical delta from official `98b0e49` to
+`dbbf836`, applied it on top of the fork, and recorded `dbbf836` as a merge parent.
+The fork originally had an unrelated root. Recording the real upstream parent
+restores a normal merge base for future updates; it does not erase the fork's
+history. Subsequent updates can use `git fetch upstream` and
+`git merge upstream/main` on a review branch.
+
+The 2026-10-29 sync includes the upstream nonblocking partial-write fix, 2 KiB
+image-envelope allowance, MCP dependency bound below version 2, Blender 5.2
+reference data, generated tool documentation, and GPL license. The contact-sheet
+tool now uses the same envelope allowance. The dependency lock is updated too.
+Strict parsing of the new `blf.types` page exposed an upstream parser gap;
+the added `details` handler preserves its title and nested method lookup.
+
+Before installing an update:
+
+1. Compare against the pinned upstream revision. Every existing upstream tool
+   and reference document must remain present; inspect each shared-file change.
+2. Run the unit tests below, including the tool-list snapshot. Refresh that
+   snapshot only after reviewing added or changed tools. Regenerate the public
+   tool list with `python _misc/readme_update_from_tools.py`.
+3. Run the opt-in proofs in a factory Blender with isolated user resources.
+   They use no paid services and never connect to the owner's port 9876.
+4. Back up the installed add-on and MCP launch configuration. Close Blender
+   after the owner saves or chooses what to do with unsaved work. Replace the
+   add-on only while Blender is closed: lazy imports can otherwise mix revisions.
+   Restart the MCP client too, then verify its tool list and the target instance.
+   Roll back both components from the backup if activation fails.
+
+From the repository root, with dependencies installed using `uv sync --project mcp`:
+
+```sh
+uv run --project mcp python -m unittest tests.test_tool_listing tests.test_rst_parse tests.test_rst_search tests.test_mcp_server tests.test_port_per_session tests.test_threed_pipeline tests.test_upstream_sync -q
+```
+
+Set `BLENDER_BIN` to a Blender executable and `BLENDER_MCP_PROOF_PORT` to a free
+port in 9877-9899 to run `tests/test_port_per_session.py TestBackgroundBlenderProof`.
+With `BLENDER_BIN`, run `tests/test_modded_blender.py` for two-part GLB and ZIP
+import, normalization, protected-object preservation, and repeatable camera
+placement. These native proofs were run on Blender 5.1.2. Contact-sheet pixels
+still need a GUI check; the background proof only verifies its documented refusal.
+External generation and Sketchfab credentials/services require separate checks.
+The upstream GUI integration suite uses fixed ports, including 9876, and must
+run in a disposable environment without an owner's Blender session.
 
 **Known technical debt (honest list):**
 
-- **No upstream git lineage.** This began as a `--depth 1` shallow clone, which
-  can't be pushed to a new remote; it was re-committed as a single fresh root
-  commit. So the history does **not** preserve the official commit lineage
-  (upstream is kept as the `upstream` remote for reference, but there is no clean
-  merge base). A proper fork would retain history.
 - **n8n coupling for `generate_3d` / `wait_for_3d_job`.** These call an external
   n8n instance (fal Trellis + OpenRouter, via webhooks). It was the fastest path
   on top of an existing n8n stack, but it is infrastructure-heavy for others. The
@@ -75,7 +129,7 @@ rebasing on upstream, or contributing individual pieces back, straightforward.
   chiefly because the Windows/MSIX Claude Desktop build does not reliably pass a
   config `env` block to the spawned server process. On a normal host the env is
   passed directly and the `.env` is unnecessary.
-- **The `prompts.yml` edit** is the one non-additive change; a cleaner version
+- **The `prompts.yml` edit** adds default camera guidance; a cleaner version
   would make that guidance opt-in rather than editing the shared prompt.
 
 **We are open to collaborating.** The camera-framing tools
@@ -166,7 +220,7 @@ requests to Blender.
 ``mcp/blmcp/tools/``
    Each tool is a single module, auto-discovered at startup.
    Modules ending in ``_toolcode`` contain code that runs inside
-   Blender (sent to the addon for execution) and are skipped during
+   Blender (sent to the add-on for execution) and are skipped during
    discovery.
 
 ``mcp/blmcp/tools_helpers/``
@@ -175,62 +229,5 @@ requests to Blender.
 
 
 ### Tools
-- ``execute_blender_code``
-   - Execute Python code in the connected Blender instance.
-- ``execute_blender_code_for_cli``
-   - Execute Python code in a background Blender process.
-- ``get_blendfile_summary_datablocks``
-   - Return a summary of the blend file: data-block counts, active workspace,
-   and render engine.
-- ``get_blendfile_summary_datablocks_for_cli``
-   - Return a data-block summary by opening *blend_file* in background
-   Blender.
-- ``get_blendfile_summary_missing_files``
-   - Report external file references that are missing from disk (images,
-   libraries, fonts, sounds, movie clips, caches, sequences).
-- ``get_blendfile_summary_missing_files_for_cli``
-   - Report missing file references by opening *blend_file* in background
-   Blender.
-- ``get_blendfile_summary_of_linked_libraries``
-   - Return a tree of directly and indirectly linked library files.
-- ``get_blendfile_summary_of_linked_libraries_for_cli``
-   - Return linked-library info by opening *blend_file* in background
-   Blender.
-- ``get_blendfile_summary_path_info``
-   - Simple/fast access to the blend file's path, save status, age, and
-   backups.
-- ``get_blendfile_summary_path_info_for_cli``
-   - Return path info by opening *blend_file* in background Blender.
-- ``get_blendfile_summary_usage_guess``
-   - Guess the primary use-cases of the current blend file (scored 0-100 with
-   certainty).
-- ``get_blendfile_summary_usage_guess_for_cli``
-   - Guess use-cases by opening *blend_file* in background Blender.
-- ``get_object_detail_summary``
-   - Return a structured summary of the object identified by *name*.
-- ``get_objects_summary``
-   - Return the scene's collection hierarchy and their objects.
-- ``get_python_api_docs``
-   - Return the Blender Python API docs for *identifier*, or list modules
-   matching a trailing-``*`` discovery pattern.
-- ``get_screenshot_of_area_as_image``
-   - Take a screenshot of a single Blender area and return it as a PNG image.
-- ``get_screenshot_of_window_as_image``
-   - Take a screenshot of the entire Blender window and return it as a PNG
-   image.
-- ``get_screenshot_of_window_as_json``
-   - Return a JSON description of the Blender window layout, areas, active
-   object, and selection.
-- ``jump_to_tab_by_name``
-   - Switch the active workspace tab to *name*.
-- ``jump_to_tab_by_space_type``
-   - Switch to a workspace whose main area matches *space_type*.
-- ``jump_to_view3d_object_by_name``
-   - Move the 3D viewport to focus on an object by *name*.
-- ``jump_to_view3d_object_data_by_name``
-   - Move the 3D viewport to the object whose data block matches *name*.
-- ``render_thumbnail_to_path``
-   - Render a small, low-quality thumbnail to *output_path* (temporarily
-   overrides settings).
-- ``render_viewport_to_path``
-   - Render the current scene to *output_path* using current render settings.
+
+See [readme_tools.rst](readme_tools.rst) for the tools the MCP server exposes.

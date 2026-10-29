@@ -4,7 +4,7 @@ Developer Tools
 ***************
 
 These preferences are reserved for features that aid Blender and add-on development.
-This category is hidden by default and is visible enabling
+This category is hidden by default and is visible after enabling
 :ref:`Developer Extras <bpy.types.PreferencesView.show_developer_ui>`.
 
 

@@ -19,3 +19,4 @@
    markers.rst
    shape_keys/index.rst
    motion_paths.rst
+   in_betweens.rst

@@ -5,12 +5,9 @@ GREASE_PENCIL_UL_attributes(UIList)
 
 base classes --- :class:`bpy_struct`, :class:`UIList`
 
+
 .. class:: GREASE_PENCIL_UL_attributes(UIList)
 
-
-   .. method:: draw_item(_context, layout, _data, attribute, _icon, _active_data, _active_propname, _index)
-
-   .. method:: filter_items(_context, data, property)
 
    .. classmethod:: bl_rna_get_subclass(id, default=None, /)
    

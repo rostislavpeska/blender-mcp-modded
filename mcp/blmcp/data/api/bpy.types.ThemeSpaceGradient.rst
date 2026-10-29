@@ -5,6 +5,7 @@ ThemeSpaceGradient(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: ThemeSpaceGradient(bpy_struct)
 
 

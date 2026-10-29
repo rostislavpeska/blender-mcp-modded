@@ -5,6 +5,7 @@ SelectedUvElement(PropertyGroup)
 
 base classes --- :class:`bpy_struct`, :class:`PropertyGroup`
 
+
 .. class:: SelectedUvElement(PropertyGroup)
 
 

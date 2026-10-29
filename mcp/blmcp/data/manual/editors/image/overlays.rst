@@ -13,15 +13,28 @@ The options that are visible in the pop-over depend on the Image Editor mode.
 The following overlay categories are available:
 
 
-Geometry
-========
+Guides
+======
 
-Display UVs
-   Display selected and active object's UVs.
+Grid
+   Show the grid.
 
-UV Face Opacity
-   Opacity of faces. Useful to differentiate between UV islands. Can also be reduced when
-   texture painting to prevent faces from tinting the texture's colors.
+Over Image
+   Show the grid on top of the image rather than behind it.
+
+Grid Shape Source
+   How the row and column counts are determined.
+
+   :Dynamic: The grid starts at 8×8 cells that are automatically subdivided further as you zoom in.
+   :Fixed: The row and column counts are fixed and can be configured manually.
+   :Pixel: Each grid cell matches one image pixel.
+
+Fixed Subdivisions X, Y
+   Number of columns/rows in the grid.
+
+Tiles X, Y
+   The number of :doc:`UDIM </modeling/meshes/uv/workflows/udims>`
+   tile grids to display in each cardinal direction.
 
 
 Image

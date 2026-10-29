@@ -5,6 +5,7 @@ Palette(ID)
 
 base classes --- :class:`bpy_struct`, :class:`ID`
 
+
 .. class:: Palette(ID)
 
 

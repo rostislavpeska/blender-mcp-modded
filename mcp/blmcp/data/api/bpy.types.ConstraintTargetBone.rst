@@ -5,6 +5,7 @@ ConstraintTargetBone(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: ConstraintTargetBone(bpy_struct)
 
    Target bone for multi-target constraints

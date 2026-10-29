@@ -57,3 +57,13 @@ Transform
       Interactively add a UV sphere mesh object.
    :ref:`Add Icosphere <tool-add-icosphere>`
       Interactively add an icosphere mesh object.
+
+:ref:`Breakdowner <bpy.ops.pose.breakdown>`
+   Interactively blend the current pose toward neighboring keyframes,
+   making it easy to create animation breakdown poses.
+
+   :ref:`Push <bpy.ops.pose.push>`
+      Exaggerate the current pose away from neighboring keyframes.
+
+   :ref:`Relax <bpy.ops.pose.relax>`
+      Blend the current pose toward neighboring keyframes, reducing the amount of motion.

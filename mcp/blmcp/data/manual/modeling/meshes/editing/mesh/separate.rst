@@ -11,7 +11,7 @@ Separate
    :Menu:      :menuselection:`Mesh --> Separate`
    :Shortcut:  :kbd:`P`
 
-Splits the mesh into to two or more new, separate mesh objects.
+Splits the mesh into two or more new, separate mesh objects.
 
 .. figure:: /images/modeling_meshes_editing_mesh_separate_example.png
 

@@ -5,6 +5,7 @@ FModifierCycles(FModifier)
 
 base classes --- :class:`bpy_struct`, :class:`FModifier`
 
+
 .. class:: FModifierCycles(FModifier)
 
    Repeat the values of the modified F-Curve

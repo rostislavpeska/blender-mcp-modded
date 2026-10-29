@@ -5,6 +5,7 @@ ThemeRegions(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: ThemeRegions(bpy_struct)
 
    Theme settings for regions that are common among editors

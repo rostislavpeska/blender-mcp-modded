@@ -5,10 +5,9 @@ IMAGE_UL_udim_tiles(UIList)
 
 base classes --- :class:`bpy_struct`, :class:`UIList`
 
+
 .. class:: IMAGE_UL_udim_tiles(UIList)
 
-
-   .. method:: draw_item(_context, layout, _data, item, _icon, _active_data, _active_propname, _index)
 
    .. classmethod:: bl_rna_get_subclass(id, default=None, /)
    

@@ -5,6 +5,7 @@ UserSolidLight(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: UserSolidLight(bpy_struct)
 
    Light used for Studio lighting in solid shading mode

@@ -5,6 +5,7 @@ XrUserPath(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: XrUserPath(bpy_struct)
 
 

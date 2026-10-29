@@ -5,9 +5,16 @@ SpaceNodeOverlay(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: SpaceNodeOverlay(bpy_struct)
 
    Settings for display of overlays in the Node Editor
+
+   .. attribute:: passepartout_alpha
+
+      Opacity of the darkened overlay outside the render region (in [0, 1], default 0.5)
+
+      :type: float
 
    .. attribute:: preview_shape
 
@@ -41,6 +48,12 @@ base class --- :class:`bpy_struct`
    .. attribute:: show_previews
 
       Display each node's preview if node is toggled (default False)
+
+      :type: bool
+
+   .. attribute:: show_render_size
+
+      Display the region of the final render (default True)
 
       :type: bool
 

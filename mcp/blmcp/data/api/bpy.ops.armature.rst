@@ -36,12 +36,34 @@ Armature Operators
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
 
-.. function:: bone_primitive_add(*, name="Bone")
+.. function:: bone_primitive_add(*, name="Bone", space='OBJECT', align='UP', length=1.0, use_deform=True)
 
    Add a new bone located at the 3D cursor
 
    :param name: Name, Name of the newly created bone (optional, never None)
    :type name: str
+   :param space: Space, Co-ordinate system the new bone will be created in (optional)
+
+      - ``OBJECT``
+        Object -- The newly created bone will use Object Space co-ordinate system.
+      - ``WORLD``
+        World -- The newly created bone will use World Space co-ordinate system.
+   :type space: Literal['OBJECT', 'WORLD']
+   :param align: Align, Initial orientation of the new bone (optional)
+
+      - ``UP``
+        Up -- Make the bone visually point upwards so the long axis is aligned with the World/Object positive Z axis (depending on the choice above).
+      - ``AXES``
+        Axes -- Align the new bone to match the axes of the World/Object (depending on the choice above).
+      - ``3D_CURSOR``
+        3D Cursor -- Align new bone to match the axes of the 3D cursor.
+      - ``3D_VIEW``
+        Viewport -- Align new bone to match the axes of the 3D viewport.
+   :type align: Literal['UP', 'AXES', '3D_CURSOR', '3D_VIEW']
+   :param length: Length, Length of the new bone (in [0.001, inf], optional)
+   :type length: float
+   :param use_deform: Deform, Enable bone to deform geometry (optional)
+   :type use_deform: bool
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
 
@@ -207,6 +229,19 @@ Armature Operators
    :type ARMATURE_OT_duplicate: dict[str, Any]
    :param TRANSFORM_OT_translate: Move, Move selected items (optional, :func:`bpy.ops.transform.translate` keyword arguments)
    :type TRANSFORM_OT_translate: dict[str, Any]
+   :return: Result of the operator call.
+   :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
+
+.. function:: duplicate_rename(*, do_flip_names=False, search="", replace="")
+
+   Make copies of the selected bones within the same armature and replace a part of their name
+
+   :param do_flip_names: Flip Names, Try to flip names of the bones, if possible, instead of adding a number extension (optional)
+   :type do_flip_names: bool
+   :param search: Search, A part of the current bone name that will be replaced (optional, never None)
+   :type search: str
+   :param replace: Replace, The substitute to be inserted into the place of the given search term. If left empty the search term will be removed (optional, never None)
+   :type replace: str
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
 

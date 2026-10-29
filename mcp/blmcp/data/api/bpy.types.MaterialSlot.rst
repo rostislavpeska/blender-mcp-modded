@@ -5,6 +5,7 @@ MaterialSlot(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: MaterialSlot(bpy_struct)
 
    Material slot in an object

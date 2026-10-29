@@ -5,6 +5,7 @@ Pose(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: Pose(bpy_struct)
 
    A collection of pose channels, including settings for animating bones

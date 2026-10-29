@@ -20,6 +20,15 @@ It doesn't take transparency into account to discard hits.
 :guilabel:`EEVEE Only`
 The Raycast node has the usual :ref:`Screen-Space Effects limitations<eevee-limitations-screenspace>`.
 
+.. tip::
+   :guilabel:`EEVEE Only`
+   Objects can be excluded from ray cast intersections by disabling
+   :ref:`Raycast <bpy.types.Object.visible_raycast>` in the object's
+   visibility settings.
+
+   This can be useful to prevent helper geometry or other objects from
+   being detected by the Raycast node.
+
 
 Inputs
 ======
@@ -63,3 +72,12 @@ Hit Position
 Hit Normal
    The geometry *Normal* of the hit surface.
    If no hit is found, a zero vector is returned.
+
+Attributes
+==========
+
+:guilabel:`Cycles Only`
+
+Geometry attributes at the intersection point can be accessed. Add attributes in the Sample Attributes panel in the node editor sidebar, and new attribute sockets appear on the node. Fill in the attribute name and link the new output socket to use the value. When no intersection is found, the attribute output is zero.
+
+EEVEE does not support attribute access, and outputs attributes as zero.

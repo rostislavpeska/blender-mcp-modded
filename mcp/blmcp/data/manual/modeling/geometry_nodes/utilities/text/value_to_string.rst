@@ -1,5 +1,6 @@
 .. index:: Geometry Nodes; Value to String
 .. _bpy.types.FunctionNodeValueToString:
+.. --- copy below this line ---
 
 ********************
 Value to String Node
@@ -20,6 +21,18 @@ Value
 
 Decimals :guilabel:`Float Data Type`
    Integer value used to determine the precision of the output value.
+
+Base :guilabel:`Integer Data Type`
+   Numeric base used to represent integer values.
+
+   For example, use ``2`` for binary, ``8`` for octal, ``10`` for decimal,
+   or ``16`` for hexadecimal.
+
+Padding :guilabel:`Integer Data Type`
+   Minimum width of the output string.
+
+   If the converted value contains fewer characters than the specified
+   width, leading zeros are added until the minimum width is reached.
 
 
 Properties

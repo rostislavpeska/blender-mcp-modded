@@ -5,6 +5,7 @@ FreestyleModuleSettings(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: FreestyleModuleSettings(bpy_struct)
 
    Style module configuration for specifying a style module

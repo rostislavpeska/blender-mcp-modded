@@ -5,8 +5,110 @@ ShaderNode(NodeInternal)
 
 base classes --- :class:`bpy_struct`, :class:`Node`, :class:`NodeInternal`
 
-subclasses --- 
-:class:`ShaderNodeAddShader`, :class:`ShaderNodeAmbientOcclusion`, :class:`ShaderNodeAttribute`, :class:`ShaderNodeBackground`, :class:`ShaderNodeBevel`, :class:`ShaderNodeBlackbody`, :class:`ShaderNodeBrightContrast`, :class:`ShaderNodeBsdfAnisotropic`, :class:`ShaderNodeBsdfDiffuse`, :class:`ShaderNodeBsdfGlass`, :class:`ShaderNodeBsdfHair`, :class:`ShaderNodeBsdfHairPrincipled`, :class:`ShaderNodeBsdfMetallic`, :class:`ShaderNodeBsdfPrincipled`, :class:`ShaderNodeBsdfRayPortal`, :class:`ShaderNodeBsdfRefraction`, :class:`ShaderNodeBsdfSheen`, :class:`ShaderNodeBsdfToon`, :class:`ShaderNodeBsdfTranslucent`, :class:`ShaderNodeBsdfTransparent`, :class:`ShaderNodeBump`, :class:`ShaderNodeCameraData`, :class:`ShaderNodeClamp`, :class:`ShaderNodeCombineColor`, :class:`ShaderNodeCombineXYZ`, :class:`ShaderNodeCustomGroup`, :class:`ShaderNodeDisplacement`, :class:`ShaderNodeEeveeSpecular`, :class:`ShaderNodeEmission`, :class:`ShaderNodeFloatCurve`, :class:`ShaderNodeFresnel`, :class:`ShaderNodeGamma`, :class:`ShaderNodeGroup`, :class:`ShaderNodeHairInfo`, :class:`ShaderNodeHoldout`, :class:`ShaderNodeHueSaturation`, :class:`ShaderNodeInvert`, :class:`ShaderNodeLayerWeight`, :class:`ShaderNodeLightFalloff`, :class:`ShaderNodeLightPath`, :class:`ShaderNodeMapRange`, :class:`ShaderNodeMapping`, :class:`ShaderNodeMath`, :class:`ShaderNodeMix`, :class:`ShaderNodeMixRGB`, :class:`ShaderNodeMixShader`, :class:`ShaderNodeNewGeometry`, :class:`ShaderNodeNormal`, :class:`ShaderNodeNormalMap`, :class:`ShaderNodeObjectInfo`, :class:`ShaderNodeOutputAOV`, :class:`ShaderNodeOutputLight`, :class:`ShaderNodeOutputLineStyle`, :class:`ShaderNodeOutputMaterial`, :class:`ShaderNodeOutputWorld`, :class:`ShaderNodeParticleInfo`, :class:`ShaderNodePointInfo`, :class:`ShaderNodeRGB`, :class:`ShaderNodeRGBCurve`, :class:`ShaderNodeRGBToBW`, :class:`ShaderNodeRadialTiling`, :class:`ShaderNodeRaycast`, :class:`ShaderNodeScript`, :class:`ShaderNodeSeparateColor`, :class:`ShaderNodeSeparateXYZ`, :class:`ShaderNodeShaderToRGB`, :class:`ShaderNodeSqueeze`, :class:`ShaderNodeSubsurfaceScattering`, :class:`ShaderNodeTangent`, :class:`ShaderNodeTexBrick`, :class:`ShaderNodeTexChecker`, :class:`ShaderNodeTexCoord`, :class:`ShaderNodeTexEnvironment`, :class:`ShaderNodeTexGabor`, :class:`ShaderNodeTexGradient`, :class:`ShaderNodeTexIES`, :class:`ShaderNodeTexImage`, :class:`ShaderNodeTexMagic`, :class:`ShaderNodeTexNoise`, :class:`ShaderNodeTexSky`, :class:`ShaderNodeTexVoronoi`, :class:`ShaderNodeTexWave`, :class:`ShaderNodeTexWhiteNoise`, :class:`ShaderNodeUVAlongStroke`, :class:`ShaderNodeUVMap`, :class:`ShaderNodeValToRGB`, :class:`ShaderNodeValue`, :class:`ShaderNodeVectorCurve`, :class:`ShaderNodeVectorDisplacement`, :class:`ShaderNodeVectorMath`, :class:`ShaderNodeVectorRotate`, :class:`ShaderNodeVectorTransform`, :class:`ShaderNodeVertexColor`, :class:`ShaderNodeVolumeAbsorption`, :class:`ShaderNodeVolumeCoefficients`, :class:`ShaderNodeVolumeInfo`, :class:`ShaderNodeVolumePrincipled`, :class:`ShaderNodeVolumeScatter`, :class:`ShaderNodeWavelength`, :class:`ShaderNodeWireframe`
+.. toctree::
+   :caption: Subclasses
+   :maxdepth: 1
+
+   bpy.types.ShaderNodeAddShader.rst
+   bpy.types.ShaderNodeAmbientOcclusion.rst
+   bpy.types.ShaderNodeAttribute.rst
+   bpy.types.ShaderNodeBackground.rst
+   bpy.types.ShaderNodeBevel.rst
+   bpy.types.ShaderNodeBlackbody.rst
+   bpy.types.ShaderNodeBrightContrast.rst
+   bpy.types.ShaderNodeBsdfAnisotropic.rst
+   bpy.types.ShaderNodeBsdfDiffuse.rst
+   bpy.types.ShaderNodeBsdfGlass.rst
+   bpy.types.ShaderNodeBsdfHair.rst
+   bpy.types.ShaderNodeBsdfHairPrincipled.rst
+   bpy.types.ShaderNodeBsdfMetallic.rst
+   bpy.types.ShaderNodeBsdfPrincipled.rst
+   bpy.types.ShaderNodeBsdfRayPortal.rst
+   bpy.types.ShaderNodeBsdfRefraction.rst
+   bpy.types.ShaderNodeBsdfSheen.rst
+   bpy.types.ShaderNodeBsdfToon.rst
+   bpy.types.ShaderNodeBsdfTranslucent.rst
+   bpy.types.ShaderNodeBsdfTransparent.rst
+   bpy.types.ShaderNodeBump.rst
+   bpy.types.ShaderNodeCameraData.rst
+   bpy.types.ShaderNodeClamp.rst
+   bpy.types.ShaderNodeCombineColor.rst
+   bpy.types.ShaderNodeCombineXYZ.rst
+   bpy.types.ShaderNodeCustomGroup.rst
+   bpy.types.ShaderNodeDisplacement.rst
+   bpy.types.ShaderNodeEeveeSpecular.rst
+   bpy.types.ShaderNodeEmission.rst
+   bpy.types.ShaderNodeFloatCurve.rst
+   bpy.types.ShaderNodeFresnel.rst
+   bpy.types.ShaderNodeGamma.rst
+   bpy.types.ShaderNodeGroup.rst
+   bpy.types.ShaderNodeHairInfo.rst
+   bpy.types.ShaderNodeHoldout.rst
+   bpy.types.ShaderNodeHueSaturation.rst
+   bpy.types.ShaderNodeInvert.rst
+   bpy.types.ShaderNodeLayerWeight.rst
+   bpy.types.ShaderNodeLightFalloff.rst
+   bpy.types.ShaderNodeLightPath.rst
+   bpy.types.ShaderNodeMapRange.rst
+   bpy.types.ShaderNodeMapping.rst
+   bpy.types.ShaderNodeMath.rst
+   bpy.types.ShaderNodeMix.rst
+   bpy.types.ShaderNodeMixRGB.rst
+   bpy.types.ShaderNodeMixShader.rst
+   bpy.types.ShaderNodeNewGeometry.rst
+   bpy.types.ShaderNodeNormal.rst
+   bpy.types.ShaderNodeNormalMap.rst
+   bpy.types.ShaderNodeObjectInfo.rst
+   bpy.types.ShaderNodeOutputAOV.rst
+   bpy.types.ShaderNodeOutputLight.rst
+   bpy.types.ShaderNodeOutputLineStyle.rst
+   bpy.types.ShaderNodeOutputMaterial.rst
+   bpy.types.ShaderNodeOutputWorld.rst
+   bpy.types.ShaderNodeParticleInfo.rst
+   bpy.types.ShaderNodePointInfo.rst
+   bpy.types.ShaderNodeRGB.rst
+   bpy.types.ShaderNodeRGBCurve.rst
+   bpy.types.ShaderNodeRGBToBW.rst
+   bpy.types.ShaderNodeRadialTiling.rst
+   bpy.types.ShaderNodeRaycast.rst
+   bpy.types.ShaderNodeScript.rst
+   bpy.types.ShaderNodeSeparateColor.rst
+   bpy.types.ShaderNodeSeparateXYZ.rst
+   bpy.types.ShaderNodeShaderToRGB.rst
+   bpy.types.ShaderNodeSqueeze.rst
+   bpy.types.ShaderNodeSubsurfaceScattering.rst
+   bpy.types.ShaderNodeTangent.rst
+   bpy.types.ShaderNodeTexBrick.rst
+   bpy.types.ShaderNodeTexChecker.rst
+   bpy.types.ShaderNodeTexCoord.rst
+   bpy.types.ShaderNodeTexEnvironment.rst
+   bpy.types.ShaderNodeTexGabor.rst
+   bpy.types.ShaderNodeTexGradient.rst
+   bpy.types.ShaderNodeTexIES.rst
+   bpy.types.ShaderNodeTexImage.rst
+   bpy.types.ShaderNodeTexMagic.rst
+   bpy.types.ShaderNodeTexNoise.rst
+   bpy.types.ShaderNodeTexSky.rst
+   bpy.types.ShaderNodeTexVoronoi.rst
+   bpy.types.ShaderNodeTexWave.rst
+   bpy.types.ShaderNodeTexWhiteNoise.rst
+   bpy.types.ShaderNodeUVAlongStroke.rst
+   bpy.types.ShaderNodeUVMap.rst
+   bpy.types.ShaderNodeValToRGB.rst
+   bpy.types.ShaderNodeValue.rst
+   bpy.types.ShaderNodeVectorCurve.rst
+   bpy.types.ShaderNodeVectorDisplacement.rst
+   bpy.types.ShaderNodeVectorMath.rst
+   bpy.types.ShaderNodeVectorRotate.rst
+   bpy.types.ShaderNodeVectorTransform.rst
+   bpy.types.ShaderNodeVertexColor.rst
+   bpy.types.ShaderNodeVolumeAbsorption.rst
+   bpy.types.ShaderNodeVolumeCoefficients.rst
+   bpy.types.ShaderNodeVolumeInfo.rst
+   bpy.types.ShaderNodeVolumePrincipled.rst
+   bpy.types.ShaderNodeVolumeScatter.rst
+   bpy.types.ShaderNodeWavelength.rst
+   bpy.types.ShaderNodeWireframe.rst
 
 .. class:: ShaderNode(NodeInternal)
 
@@ -49,6 +151,7 @@ Inherited Properties
    - :class:`Node.label`
    - :class:`Node.inputs`
    - :class:`Node.outputs`
+   - :class:`Node.panel_states`
    - :class:`Node.internal_links`
    - :class:`Node.parent`
    - :class:`Node.warning_propagation`

@@ -42,6 +42,7 @@ Sculpt Brush Types
    rotate.rst
    slide_relax.rst
    boundary.rst
+   scene_project.rst
 
 -----
 

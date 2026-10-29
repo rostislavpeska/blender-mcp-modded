@@ -5,6 +5,7 @@ WorldMistSettings(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: WorldMistSettings(bpy_struct)
 
    Mist settings for a World data-block

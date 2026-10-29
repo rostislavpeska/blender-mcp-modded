@@ -17,7 +17,7 @@ Shape Keys Panel
 
 
 The *Shape Keys* panel is used to create, organize, and manage shape keys.
-It presents a tree view where shape keys can be reordered by click-dragging.
+It presents a :ref:`ui-tree-view` where shape keys can be reordered by click-dragging.
 
 .. container:: lead
 
@@ -111,7 +111,7 @@ Shape Key Specials
       Same as *Mirror Shape Key* though it detects the mirrored vertices based on the topology of the mesh.
       The mesh vertices do not have to be perfectly symmetrical for this action to work.
 
-  .. _bpy.ops.object.shape_key_make_basis:
+   .. _bpy.ops.object.shape_key_make_basis:
 
    Make Basis
       Makes the selected shape key the new *Basis* shape key. The vertex positions of the
@@ -121,8 +121,19 @@ Shape Key Specials
       This operation is useful when a corrective or edited shape key should become the
       default shape of the mesh instead of the original basis.
 
+   .. _bpy.ops.object.shape_key_apply_to_basis:
+
+   Apply to Basis
+      Applies the deformation of the selected shape key to the *Basis* shape key.
+      The selected shape key is then removed.
+
+      The result becomes part of the base mesh shape, and remaining shape keys are
+      recalculated relative to the updated basis.
+
+   .. _bpy.ops.object.shape_key_remove_all:
+
    Apply All
-      Saves the current visible shape to the mesh data and deletes all Shape Keys.
+      Applies the currently evaluated (visible) shape to the mesh data and removes all shape keys.
 
    .. _bpy.ops.object.shape_key_remove:
 

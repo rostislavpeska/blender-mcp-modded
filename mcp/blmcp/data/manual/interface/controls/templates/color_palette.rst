@@ -16,13 +16,13 @@ This is useful when working with several colors at once.
 Palette
    A :ref:`ui-data-block` to select a palette.
 
-:bl-icon:`add` (New Pallet Color)
+:bl-icon:`add` (New Palette Color)
    Adds the current brush's primary *Color* to the palette.
 
-:bl-icon:`remove` (Delete Pallet Color)
+:bl-icon:`remove` (Delete Palette Color)
    Removes the currently selected color from the palette.
 
-:bl-icon:`tria_up`/:bl-icon:`tria_down` (Move Pallet Color)
+:bl-icon:`tria_up`/:bl-icon:`tria_down` (Move Palette Color)
    Moves the selected color up/down one position.
 
 :bl-icon:`sortsize` (Sort By)

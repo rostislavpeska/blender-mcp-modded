@@ -140,6 +140,15 @@ Shadow Caustics
    :ref:`Cast and Receive caustics object settings <bpy.types.CyclesObjectSettings.is_caustics_caster>`
    to selectively speed up refractive caustic rendering of select objects.
 
+.. _bpy.types.CyclesWorldSettings.use_shadows:
+
+Cast Shadow
+   Allows the world background to cast shadows in the scene.
+
+   When enabled, objects can block light coming from the world environment.
+   Disabling this prevents the world from contributing shadowing, which can be useful
+   for artistic control or reducing overly dark indirect lighting.
+
 
 Volume
 ------

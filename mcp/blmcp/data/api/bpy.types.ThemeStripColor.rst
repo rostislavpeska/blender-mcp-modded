@@ -5,6 +5,7 @@ ThemeStripColor(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: ThemeStripColor(bpy_struct)
 
    Theme settings for strip colors

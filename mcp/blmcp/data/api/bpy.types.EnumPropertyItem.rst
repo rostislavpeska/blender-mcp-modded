@@ -5,6 +5,7 @@ EnumPropertyItem(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: EnumPropertyItem(bpy_struct)
 
    Definition of a choice in an RNA enum property

@@ -5,6 +5,7 @@ FloatAttribute(Attribute)
 
 base classes --- :class:`bpy_struct`, :class:`Attribute`
 
+
 .. class:: FloatAttribute(Attribute)
 
    Geometry attribute that stores floating-point values

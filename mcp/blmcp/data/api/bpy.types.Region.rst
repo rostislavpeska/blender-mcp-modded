@@ -5,6 +5,7 @@ Region(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: Region(bpy_struct)
 
    Region in a subdivided screen area

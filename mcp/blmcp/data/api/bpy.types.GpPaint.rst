@@ -5,6 +5,7 @@ GpPaint(Paint)
 
 base classes --- :class:`bpy_struct`, :class:`Paint`
 
+
 .. class:: GpPaint(Paint)
 
 
@@ -48,8 +49,6 @@ Inherited Properties
    - :class:`bpy_struct.id_data`
    - :class:`Paint.brush`
    - :class:`Paint.brush_asset_reference`
-   - :class:`Paint.eraser_brush`
-   - :class:`Paint.eraser_brush_asset_reference`
    - :class:`Paint.palette`
    - :class:`Paint.show_brush`
    - :class:`Paint.show_brush_on_surface`
@@ -70,6 +69,7 @@ Inherited Properties
    - :class:`Paint.show_size_curve`
    - :class:`Paint.show_jitter_curve`
    - :class:`Paint.unified_paint_settings`
+   - :class:`Paint.mesh_automasking_settings`
 
 Inherited Functions
 -------------------

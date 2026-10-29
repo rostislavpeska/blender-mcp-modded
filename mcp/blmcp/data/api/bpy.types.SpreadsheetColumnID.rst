@@ -5,6 +5,7 @@ SpreadsheetColumnID(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: SpreadsheetColumnID(bpy_struct)
 
    Data used to identify a spreadsheet column

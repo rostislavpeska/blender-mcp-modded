@@ -5,6 +5,7 @@ LineStyleThicknessModifier_DistanceFromObject(LineStyleThicknessModifier)
 
 base classes --- :class:`bpy_struct`, :class:`LineStyleModifier`, :class:`LineStyleThicknessModifier`
 
+
 .. class:: LineStyleThicknessModifier_DistanceFromObject(LineStyleThicknessModifier)
 
    Change line thickness based on the distance from an object

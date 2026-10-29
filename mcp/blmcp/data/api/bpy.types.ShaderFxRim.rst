@@ -5,6 +5,7 @@ ShaderFxRim(ShaderFx)
 
 base classes --- :class:`bpy_struct`, :class:`ShaderFx`
 
+
 .. class:: ShaderFxRim(ShaderFx)
 
    Rim effect

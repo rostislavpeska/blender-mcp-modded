@@ -5,6 +5,7 @@ UserAssetLibrary(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: UserAssetLibrary(bpy_struct)
 
    Settings to define a reusable library for Asset Browsers to use
@@ -19,16 +20,7 @@ base class --- :class:`bpy_struct`
 
       Determine how the asset will be imported, unless overridden by the Asset Browser (default ``'PACK'``)
 
-      - ``LINK``
-        Link -- Import the assets as linked data-block.
-      - ``APPEND``
-        Append -- Import the assets as copied data-block, with no link to the original asset data-block.
-      - ``APPEND_REUSE``
-        Append (Reuse Data) -- Import the assets as copied data-block while avoiding multiple copies of nested, typically heavy data. For example the textures of a material asset, or the mesh of an object asset, don't have to be copied every time this asset is imported. The instances of the asset share the data instead..
-      - ``PACK``
-        Pack -- Import the asset as linked data-block, and pack it in the current file (ensures that it remains unchanged in case the library data is modified, is not available anymore, etc.).
-
-      :type: Literal['LINK', 'APPEND', 'APPEND_REUSE', 'PACK']
+      :type: Literal[:ref:`rna_enum_asset_import_method_items`]
 
    .. attribute:: name
 
@@ -42,9 +34,21 @@ base class --- :class:`bpy_struct`
 
       :type: str
 
+   .. attribute:: remote_url
+
+      Remote URL to the asset library (default "", never None)
+
+      :type: str
+
    .. attribute:: use_relative_path
 
       Use relative path when linking assets from this asset library (default True)
+
+      :type: bool
+
+   .. data:: use_remote_url
+
+      Synchronize the asset library with a remote URL (default False, readonly)
 
       :type: bool
 

@@ -41,6 +41,16 @@ Convention
    Blender uses the OpenGL convention by default for rendering and baking, where the Y axis in
    the green channel points up. The DirectX convention can be used for normal maps from other
    software, that assumes the Y axis points down.
+Base
+   Base surface that the normal map is applied relative to, when displacement is used.
+
+   :Original Base:
+      The smooth, undisplaced base surface normal and tangents, for a
+      displacement map and normal map that match.
+   :Displaced Base:
+      The displaced surface normal and tangents, to apply a normal
+      map in addition to displacement.
+
 UV Map
    Name of the UV map to derive normal mapping tangents from. When chained with an Image Texture node,
    this UV map should be the same as the UV map used to map the texture.

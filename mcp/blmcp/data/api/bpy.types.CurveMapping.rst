@@ -5,6 +5,7 @@ CurveMapping(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: CurveMapping(bpy_struct)
 
    Curve mapping to map color, vector and scalar values to other values using a user defined curve
@@ -165,7 +166,6 @@ References
 .. hlist::
    :columns: 2
 
-   - :class:`Brush.automasking_cavity_curve`
    - :class:`Brush.curve_distance_falloff`
    - :class:`Brush.curve_jitter`
    - :class:`Brush.curve_random_hue`
@@ -216,14 +216,14 @@ References
    - :class:`LineStyleThicknessModifier_DistanceFromObject.curve`
    - :class:`LineStyleThicknessModifier_Material.curve`
    - :class:`LineStyleThicknessModifier_Tangent.curve`
+   - :class:`MeshAutomaskingSettings.cavity_curve`
+   - :class:`MeshAutomaskingSettings.cavity_curve_op`
    - :class:`Paint.cavity_curve`
    - :class:`ParticleBrush.curve`
    - :class:`ParticleSettings.clump_curve`
    - :class:`ParticleSettings.roughness_curve`
    - :class:`ParticleSettings.twist_curve`
    - :class:`RenderSettings.motion_blur_shutter_curve`
-   - :class:`Sculpt.automasking_cavity_curve`
-   - :class:`Sculpt.automasking_cavity_curve_op`
    - :class:`ShaderNodeFloatCurve.mapping`
    - :class:`ShaderNodeRGBCurve.mapping`
    - :class:`ShaderNodeVectorCurve.mapping`

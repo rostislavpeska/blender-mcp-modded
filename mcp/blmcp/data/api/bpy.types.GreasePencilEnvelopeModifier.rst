@@ -5,6 +5,7 @@ GreasePencilEnvelopeModifier(Modifier)
 
 base classes --- :class:`bpy_struct`, :class:`Modifier`
 
+
 .. class:: GreasePencilEnvelopeModifier(Modifier)
 
    Envelope stroke effect modifier

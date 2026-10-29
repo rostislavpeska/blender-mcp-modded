@@ -5,6 +5,7 @@ ViewerNodeViewerPathElem(ViewerPathElem)
 
 base classes --- :class:`bpy_struct`, :class:`ViewerPathElem`
 
+
 .. class:: ViewerNodeViewerPathElem(ViewerPathElem)
 
 

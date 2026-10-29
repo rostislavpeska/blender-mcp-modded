@@ -5,6 +5,7 @@ Point(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: Point(bpy_struct)
 
    Point in a point cloud

@@ -1,4 +1,5 @@
-.. index:: Compositor Nodes; Mix Rotation
+.. index:: Geometry Nodes; Mix Rotation
+.. --- copy below this line ---
 
 ************
 Mix Rotation

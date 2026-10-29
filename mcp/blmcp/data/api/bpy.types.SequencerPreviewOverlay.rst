@@ -5,12 +5,73 @@ SequencerPreviewOverlay(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: SequencerPreviewOverlay(bpy_struct)
 
+
+   .. attribute:: composition_guide_color
+
+      Color and alpha for compositional guide overlays (array of 4 items, in [0, inf], default (0.5, 0.5, 0.5, 1.0))
+
+      :type: :class:`bpy_prop_array`\ [float]
 
    .. attribute:: show_annotation
 
       Show annotations for this view (default False)
+
+      :type: bool
+
+   .. attribute:: show_composition_center
+
+      Display center composition guide (default False)
+
+      :type: bool
+
+   .. attribute:: show_composition_center_diagonal
+
+      Display diagonal center composition guide (default False)
+
+      :type: bool
+
+   .. attribute:: show_composition_golden
+
+      Display golden ratio composition guide (default False)
+
+      :type: bool
+
+   .. attribute:: show_composition_golden_tria_a
+
+      Display golden triangle A composition guide (default False)
+
+      :type: bool
+
+   .. attribute:: show_composition_golden_tria_b
+
+      Display golden triangle B composition guide (default False)
+
+      :type: bool
+
+   .. attribute:: show_composition_guides
+
+      Display composition guides over the preview (default False)
+
+      :type: bool
+
+   .. attribute:: show_composition_harmony_tri_a
+
+      Display harmony A composition guide (default False)
+
+      :type: bool
+
+   .. attribute:: show_composition_harmony_tri_b
+
+      Display harmony B composition guide (default False)
+
+      :type: bool
+
+   .. attribute:: show_composition_thirds
+
+      Display rule of thirds composition guide (default False)
 
       :type: bool
 

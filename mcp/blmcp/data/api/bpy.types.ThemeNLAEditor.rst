@@ -5,6 +5,7 @@ ThemeNLAEditor(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: ThemeNLAEditor(bpy_struct)
 
    Theme settings for the NLA Editor

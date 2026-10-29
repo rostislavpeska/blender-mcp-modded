@@ -120,7 +120,7 @@ Use Channel
       One of the color channels' values.
    Hue
       The hue from the HSV color model
-      (i.e; the color in the standard wheel, e.g. blue has a higher hue value than yellow).
+      (i.e. the color in the standard wheel, e.g. blue has a higher hue value than yellow).
    Saturation
       The saturation from the HSV color model (e.g. the value for pure red is 1.0, for gray is 0.0).
    Value

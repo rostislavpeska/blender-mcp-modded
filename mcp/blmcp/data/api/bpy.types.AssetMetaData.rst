@@ -5,6 +5,7 @@ AssetMetaData(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: AssetMetaData(bpy_struct)
 
    Additional data stored for an asset data-block
@@ -51,11 +52,23 @@ base class --- :class:`bpy_struct`
 
       :type: str
 
+   .. attribute:: preferred_import_method
+
+      (default ``'APPEND'``)
+
+      :type: Literal[:ref:`rna_enum_asset_import_method_items`]
+
    .. data:: tags
 
       Custom tags (name tokens) for the asset, used for filtering and general asset management (default None, readonly)
 
       :type: :class:`AssetTags`\ [:class:`AssetTag`]
+
+   .. attribute:: use_preferred_import_method
+
+      When "Follow Asset or Preferences" is selected for the import method in the Asset Browser, use the preferred import method of this asset (default False)
+
+      :type: bool
 
    .. classmethod:: bl_rna_get_subclass(id, default=None, /)
    

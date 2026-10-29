@@ -5,6 +5,7 @@ GeometryNodeConvexHull(GeometryNode)
 
 base classes --- :class:`bpy_struct`, :class:`Node`, :class:`NodeInternal`, :class:`GeometryNode`
 
+
 .. class:: GeometryNodeConvexHull(GeometryNode)
 
    Create a mesh that encloses all points in the input geometry with the smallest number of points
@@ -71,6 +72,7 @@ Inherited Properties
    - :class:`Node.label`
    - :class:`Node.inputs`
    - :class:`Node.outputs`
+   - :class:`Node.panel_states`
    - :class:`Node.internal_links`
    - :class:`Node.parent`
    - :class:`Node.warning_propagation`

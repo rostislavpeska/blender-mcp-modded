@@ -5,6 +5,7 @@ TrackToConstraint(Constraint)
 
 base classes --- :class:`bpy_struct`, :class:`Constraint`
 
+
 .. class:: TrackToConstraint(Constraint)
 
    Aim the constrained object toward the target
@@ -35,7 +36,7 @@ base classes --- :class:`bpy_struct`, :class:`Constraint`
 
    .. attribute:: up_axis
 
-      Axis that points upward (default ``'UP_X'``)
+      Axis that points upward (default ``'UP_Y'``)
 
       :type: Literal['UP_X', 'UP_Y', 'UP_Z']
 

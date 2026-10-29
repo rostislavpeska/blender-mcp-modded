@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 """
-Update the tools listing in ``readme.rst`` from tool module docstrings.
+Update the tools listing in ``readme_tools.rst`` from tool module docstrings.
 
 Scans ``mcp/blmcp/tools/`` for ``@mcp.tool()`` decorated functions,
 extracts their names and docstrings, and replaces the content between
@@ -81,7 +81,7 @@ def main() -> int:
     """
     repo_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     tools_dir = os.path.join(repo_root, "mcp", "blmcp", "tools")
-    readme_path = os.path.join(repo_root, "readme.rst")
+    readme_path = os.path.join(repo_root, "readme_tools.rst")
 
     tools = _extract_tools(tools_dir)
     if not tools:

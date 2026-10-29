@@ -3,7 +3,8 @@ BlendDataLibraries(bpy_prop_collection)
 
 .. currentmodule:: bpy.types
 
-base classes --- :class:`bpy_prop`, :class:`bpy_prop_collection`
+base class --- :class:`bpy_prop_collection`
+
 
 .. class:: BlendDataLibraries(bpy_prop_collection)
 
@@ -51,8 +52,27 @@ base classes --- :class:`bpy_prop`, :class:`bpy_prop_collection`
 
    .. method:: load(filepath, *, link=False, pack=False, relative=False, set_fake=False, recursive=False, reuse_local_id=False, assets_only=False, clear_asset_data=False, create_liboverrides=False, reuse_liboverrides=False, create_liboverrides_runtime=False)
    
-      Returns a context manager which exposes 2 library objects on entering.
-      Each object has attributes matching bpy.data which are lists of strings to be linked.
+      Returns a context manager which exposes a pair of library objects (input and output)
+      on entering.
+   
+      The input contains the data-blocks available in the loaded blend-file library and should
+      be treated as read-only.
+      Data-block names added to the output are linked/appended when the context exits.
+   
+      Each library object contains:
+         - Attributes matching ``bpy.data``, which are lists of strings representing linkable
+           data-blocks.
+         - A ``libraries`` attribute, which for the input is a list of all other libraries
+           used by the loaded one, as named tuples (``filepath``, ``is_archive``). The
+           filepath may be absolute, or relative to the loaded blend-file. The output
+           ``libraries`` attribute is always ``None``.
+         - A ``version`` attribute, representing the version of the loaded library blend-file
+           (for the input) or the version of the current Blender (for the output).
+   
+      Notes:
+         - Not all data-block types are linkable (e.g. WindowManager, Library, ...).
+         - Packed linked data-blocks are not linkable and are not listed in the input
+           ``libraries`` attribute.
    
       :param filepath: The path to a blend file.
       :type filepath: str | bytes

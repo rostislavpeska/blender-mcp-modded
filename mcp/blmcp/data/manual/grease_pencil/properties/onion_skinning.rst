@@ -3,7 +3,7 @@
 Onion Skinning
 **************
 
-Onion Skinning show ghosts of the keyframes before and after the current frame allowing animators
+Onion Skinning shows ghosts of the keyframes before and after the current frame allowing animators
 to make decisions in the animation sequence.
 
 The main switch to show/hide Onion Skinning is in the :ref:`Viewport Overlays <3dview-overlay-grease-pencil>`,

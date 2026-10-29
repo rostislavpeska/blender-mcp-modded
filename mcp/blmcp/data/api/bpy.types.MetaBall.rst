@@ -5,6 +5,7 @@ MetaBall(ID)
 
 base classes --- :class:`bpy_struct`, :class:`ID`
 
+
 .. class:: MetaBall(ID)
 
    Metaball data-block to define blobby surfaces

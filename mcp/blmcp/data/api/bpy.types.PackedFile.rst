@@ -5,6 +5,7 @@ PackedFile(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: PackedFile(bpy_struct)
 
    External file packed into the .blend file

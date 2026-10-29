@@ -5,6 +5,7 @@ FModifierGenerator(FModifier)
 
 base classes --- :class:`bpy_struct`, :class:`FModifier`
 
+
 .. class:: FModifierGenerator(FModifier)
 
    Deterministically generate values for the modified F-Curve

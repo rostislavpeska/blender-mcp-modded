@@ -779,13 +779,23 @@ set or returned, but do not control how/where that data is stored.
 
    .. attribute:: function
 
-      Undocumented, consider `contributing <https://developer.blender.org/>`__.
+      The property registration function (e.g. :func:`bpy.props.IntProperty`).
+      
+      :type: Callable
 
 
    .. attribute:: keywords
 
-      Undocumented, consider `contributing <https://developer.blender.org/>`__.
+      The keyword arguments passed to the property registration function.
+      
+      :type: dict[str, Any]
 
+
+   .. details:: Special Methods
+
+      .. method:: __repr__()
+
+         :rtype: str
 
 
 

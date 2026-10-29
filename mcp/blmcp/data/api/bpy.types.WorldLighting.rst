@@ -5,6 +5,7 @@ WorldLighting(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: WorldLighting(bpy_struct)
 
    Lighting for a World data-block

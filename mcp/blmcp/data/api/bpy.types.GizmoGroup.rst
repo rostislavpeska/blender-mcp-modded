@@ -5,6 +5,7 @@ GizmoGroup(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: GizmoGroup(bpy_struct)
 
    Storage of an operator being executed, or registered after execution

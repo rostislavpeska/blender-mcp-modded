@@ -5,6 +5,7 @@ GreasePencilArrayModifier(Modifier)
 
 base classes --- :class:`bpy_struct`, :class:`Modifier`
 
+
 .. class:: GreasePencilArrayModifier(Modifier)
 
    Create grid of duplicate instances

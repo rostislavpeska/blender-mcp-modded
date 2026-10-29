@@ -5,8 +5,18 @@ LineStyleAlphaModifier(LineStyleModifier)
 
 base classes --- :class:`bpy_struct`, :class:`LineStyleModifier`
 
-subclasses --- 
-:class:`LineStyleAlphaModifier_AlongStroke`, :class:`LineStyleAlphaModifier_CreaseAngle`, :class:`LineStyleAlphaModifier_Curvature_3D`, :class:`LineStyleAlphaModifier_DistanceFromCamera`, :class:`LineStyleAlphaModifier_DistanceFromObject`, :class:`LineStyleAlphaModifier_Material`, :class:`LineStyleAlphaModifier_Noise`, :class:`LineStyleAlphaModifier_Tangent`
+.. toctree::
+   :caption: Subclasses
+   :maxdepth: 1
+
+   bpy.types.LineStyleAlphaModifier_AlongStroke.rst
+   bpy.types.LineStyleAlphaModifier_CreaseAngle.rst
+   bpy.types.LineStyleAlphaModifier_Curvature_3D.rst
+   bpy.types.LineStyleAlphaModifier_DistanceFromCamera.rst
+   bpy.types.LineStyleAlphaModifier_DistanceFromObject.rst
+   bpy.types.LineStyleAlphaModifier_Material.rst
+   bpy.types.LineStyleAlphaModifier_Noise.rst
+   bpy.types.LineStyleAlphaModifier_Tangent.rst
 
 .. class:: LineStyleAlphaModifier(LineStyleModifier)
 

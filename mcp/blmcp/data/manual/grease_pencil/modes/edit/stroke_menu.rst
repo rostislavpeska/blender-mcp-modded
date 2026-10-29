@@ -254,11 +254,15 @@ Move to Layer
    :Menu:      :menuselection:`Stroke --> Move to Layer`
    :Shortcut:  :kbd:`M`
 
-A pop-up menu to move the stroke to a different layer.
-You can choose the layer to move the selected strokes to
-from a list of layers of the current Grease Pencil object.
-You can also add a new layer to move the selected stroke to.
-When creating a new layer, there is another pop-up to type in the name of the new layer.
+Moves the selected strokes to a different layer.
+
+A pop-up menu lists all layers and layer groups in the active Grease Pencil object.
+Select a target to move the selected strokes.
+
+New Layer
+   Creates a new layer and moves the selected strokes to it.
+
+   After selecting this option, a prompt appears to enter the name of the new layer.
 
 
 .. _bpy.ops.grease_pencil.stroke_material_set:
@@ -503,15 +507,38 @@ Handles
 
 .. _bpy.ops.grease_pencil.set_curve_resolution:
 
-Set Curve Resolution
-====================
+Set Resolution
+==============
 
 .. reference::
 
    :Mode:      Edit Mode
-   :Menu:      :menuselection:`Stroke --> Set Curve Resolution`
+   :Menu:      :menuselection:`Stroke --> Set Resolution`
 
 Sets the number of points generated along each curve segment (between two handles).
+
+
+.. _bpy.ops.grease_pencil.set_stroke_type:
+
+Set Stroke Type
+===============
+
+.. reference::
+
+   :Mode:      Edit Mode
+   :Menu:      :menuselection:`Stroke --> Set Stroke Type`
+
+Changes the type of the selected curves.
+
+Type
+   :Stroke:
+      Converts the selected curves to stroke-only.
+      Any fill component is removed.
+   :Fill:
+      Converts the selected curves to fill-only.
+      The stroke outline is removed.
+   :Both:
+      Enables both stroke and fill components on the selected curves.
 
 
 .. _bpy.ops.grease_pencil.reset_uvs:
@@ -522,6 +549,49 @@ Reset UVs
 .. reference::
 
    :Mode:      Edit Mode
-   :Menu:      :menuselection:`Stroke --> Set Curve Resolution`
+   :Menu:      :menuselection:`Stroke --> Reset UVs`
 
-Reset UV transformation to default values.
+Resets the UV transformation of the selected curves
+to their default values.
+
+This restores the stroke and fill UV mapping,
+removing any scaling, rotation, or offset adjustments
+applied to the material coordinates.
+
+
+.. _bpy.ops.grease_pencil.join_fills:
+
+Join Fills
+==========
+
+.. reference::
+
+   :Mode:      Edit Mode
+   :Menu:      :menuselection:`Stroke --> Join Fills`
+   :Shortcut:  :kbd:`Shift-J`
+
+Merges multiple selected fill regions into a single fill.
+
+This is useful when combining separate enclosed shapes
+into one unified filled region.
+
+
+.. _bpy.ops.grease_pencil.separate_fills:
+
+Separate Fills
+==============
+
+.. reference::
+
+   :Mode:      Edit Mode
+   :Menu:      :menuselection:`Stroke --> Separate Fills`
+   :Shortcut:  :kbd:`Alt-P`
+
+Splits a combined fill region into separate fills
+based on their individual boundary curves.
+
+This allows previously joined fill regions
+to be edited independently again.
+
+Individual
+   Create a separate fill for each individual stroke.

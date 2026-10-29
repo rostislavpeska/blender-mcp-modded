@@ -5,6 +5,7 @@ NodeSocketSound(NodeSocketStandard)
 
 base classes --- :class:`bpy_struct`, :class:`NodeSocket`, :class:`NodeSocketStandard`
 
+
 .. class:: NodeSocketSound(NodeSocketStandard)
 
    Sound socket of a node

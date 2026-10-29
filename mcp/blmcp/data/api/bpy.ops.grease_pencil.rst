@@ -604,12 +604,14 @@ Grease Pencil Operators
 
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-.. function:: move_to_layer(*, target_layer_name="", add_new_layer=False)
+.. function:: move_to_layer(*, target_layer_name="", target_group_name="", add_new_layer=False)
 
    Move selected strokes to another layer
 
    :param target_layer_name: Name, Target Grease Pencil Layer (optional, never None)
    :type target_layer_name: str
+   :param target_group_name: Target Group, Group to add the new layer to (optional, never None)
+   :type target_group_name: str
    :param add_new_layer: New Layer, Move selection to a new layer (optional)
    :type add_new_layer: bool
    :return: Result of the operator call.
@@ -913,12 +915,15 @@ Grease Pencil Operators
 
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-.. function:: select_linked()
+.. function:: select_linked(*, deselect=False)
 
    Select all points in curves with any point selection
 
+   :param deselect: Deselect linked, Deselect linked strokes (optional)
+   :type deselect: bool
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
+
 .. function:: select_more()
 
    Grow the selection by one point

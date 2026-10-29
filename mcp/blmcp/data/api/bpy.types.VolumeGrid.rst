@@ -5,6 +5,7 @@ VolumeGrid(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: VolumeGrid(bpy_struct)
 
    3D volume grid

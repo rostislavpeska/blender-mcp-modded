@@ -5,6 +5,7 @@ ThemeRegionsScrubbing(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: ThemeRegionsScrubbing(bpy_struct)
 
 

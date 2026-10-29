@@ -5,9 +5,16 @@ LightProbePlane(LightProbe)
 
 base classes --- :class:`bpy_struct`, :class:`ID`, :class:`LightProbe`
 
+
 .. class:: LightProbePlane(LightProbe)
 
    Light probe that captures incoming light from a single direction on a plane
+
+   .. attribute:: parallax_distance
+
+      Amount of parallax to use for reflections on Blended materials or Shader To RGB evaluation (in [0, inf], default 2.5)
+
+      :type: float
 
    .. classmethod:: bl_rna_get_subclass(id, default=None, /)
    

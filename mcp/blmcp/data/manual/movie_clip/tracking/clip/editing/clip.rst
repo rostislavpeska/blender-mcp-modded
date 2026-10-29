@@ -41,7 +41,7 @@ Prefetch
    :Menu:      :menuselection:`Clip --> Prefetch`
    :Shortcut:  :kbd:`P`
 
-Fills cache with frames. As many frames as fits into cache are load form the drive.
+Fills cache with frames. As many frames as fits into cache are loaded from the drive.
 This allows to fill in the cache as fast as possible when you really need to track something,
 but this keeps CPU and drive bandwidth idle if you've got a Clip editor opened but not actually interacting with it.
 

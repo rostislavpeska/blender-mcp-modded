@@ -5,19 +5,34 @@
 3D Cursor
 *********
 
-The 3D Cursor is a point in space that has both a location and a rotation.
-It's used for a number of purposes. For example, it defines where newly
-added objects are placed, and can also be used to manually position and orient
-the transform gizmo (see :doc:`Pivot Point </editors/3dview/controls/pivot_point/index>`
-and :doc:`Transform Orientation </editors/3dview/controls/orientation>`).
-Some tools, such as :doc:`Bend </modeling/meshes/editing/mesh/transform/bend>`,
-also use the Cursor.
+.. figure:: /images/editors_3dview_3d-cursor.png
+   :align: right
+   :width: 250px
+
+   The 3D Cursor.
+
+The *3D Cursor* is a point in 3D space that has both a location and a rotation.
+It serves as a reference for many operations in Blender.
+
+By default, newly added objects appear at the Cursor location.
+The Cursor can also define the pivot for transformations,
+control the orientation of tools, and act as a target for snapping
+and placement operations.
+
+Some modeling and transformation tools, such as
+:doc:`Bend </modeling/meshes/editing/mesh/transform/bend>`,
+use the Cursor as their center of influence.
+
+The Cursor's position and orientation can also be used as the
+:doc:`Pivot Point </editors/3dview/controls/pivot_point/index>`
+or as a :doc:`Transform Orientation </editors/3dview/controls/orientation>`.
 
 
 Placement
 =========
 
-There are a few methods to position the 3D Cursor.
+There are several ways to position the 3D Cursor depending on the level
+of precision required.
 
 
 .. _bpy.ops.view3d.cursor3d:
@@ -36,23 +51,34 @@ Direct Placement with the Mouse
 
    Positioning the 3D Cursor with two orthogonal views.
 
-The Cursor tool offers the most flexibility. Simply select it in the Toolbar
-and click a point in the scene with :kbd:`LMB` to place the 3D Cursor there.
-In the tool settings, you can choose how it should be oriented:
-by default, it matches the view orientation, but you can also make it
-match the surface normal of a piece of geometry,
-or the :doc:`transform orientation </editors/3dview/controls/orientation>`.
+The *Cursor* tool provides the most flexible way to place the Cursor.
+Select the tool in the Toolbar and click a location in the scene
+with :kbd:`LMB` to position the Cursor.
 
-Alternatively, you can press :kbd:`Shift-RMB` with any tool selected.
-In this case, the 3D Cursor will always be aligned to the view orientation.
+The tool settings allow controlling how the Cursor is oriented:
 
-For accuracy you should use two perpendicular orthogonal 3D Viewports,
-i.e. any combination of top :kbd:`Numpad7`, front :kbd:`Numpad1` and side :kbd:`Numpad3`.
-That way you can control the positioning along two axes in one view and
-determine the depth in the other.
+- *View* -- The Cursor aligns with the current view orientation.
+- *Surface* -- The Cursor aligns with the surface normal of the geometry
+  under the mouse pointer.
+- *Transform Orientation* -- The Cursor uses the currently selected
+  :doc:`transform orientation </editors/3dview/controls/orientation>`.
 
-By default, the depth of the geometry under the cursor is used.
-This can be disabled using the *Cursor Surface Project* toggle
+Alternatively, press :kbd:`Shift-RMB` while any tool is active to place
+the Cursor quickly. In this case, the Cursor always aligns with the
+view orientation.
+
+For precise placement it is often helpful to use two perpendicular
+orthographic views, such as a combination of:
+
+- Top :kbd:`Numpad7`
+- Front :kbd:`Numpad1`
+- Right :kbd:`Numpad3`
+
+This allows controlling the Cursor position on two axes in one view
+while adjusting depth in the other.
+
+By default, the Cursor is projected onto the surface under the mouse.
+This behavior can be disabled using the *Cursor Surface Project* option
 in the :doc:`Preferences </editors/preferences/editing>`.
 
 
@@ -65,22 +91,104 @@ Sidebar
    :Panel:     :menuselection:`Sidebar region --> View --> 3D Cursor`
 
 .. figure:: /images/editors_3dview_3d-cursor_panel.png
+   :align: right
 
-   The 3D Cursor panel of the Sidebar region.
+   The 3D Cursor panel in the Sidebar.
 
-The 3D Cursor can also be positioned and oriented by editing the
-respective values in the Sidebar.
+The Cursor position and rotation can be edited numerically in the Sidebar.
+This allows precise placement by entering coordinates directly.
+
+Both the *Location* and *Rotation* values can be adjusted,
+making it possible to orient tools or transformations relative to the Cursor.
+
+.. container:: lead
+
+   .. clear
 
 
 Snapping
 --------
 
-.. reference::
+Another way to position the 3D Cursor is through snapping options.
 
-   :Mode:      Object, Edit, and Pose Mode
-   :Menu:      :menuselection:`Object/Mesh/... --> Snap --> Cursor to ...`
-   :Shortcut:  :kbd:`Shift-S`
+Several operators are available for aligning the Cursor with
+different elements in the scene, such as:
 
-One more way of positioning the 3D Cursor is through the Snap menu,
-which allows you to move the Cursor to the origin of the selected object
-for example.
+- :ref:`bpy.ops.view3d.snap_cursor_to_selected` -- moves the Cursor to the selected objects.
+- :ref:`bpy.ops.view3d.snap_cursor_to_center` -- moves the Cursor to the world origin.
+- :ref:`bpy.ops.view3d.snap_cursor_to_grid` -- moves the Cursor to the nearest grid overlay point.
+- :ref:`bpy.ops.view3d.snap_cursor_to_active` -- moves the Cursor at the origin of the active object.
+
+These snapping operations are useful for precisely aligning the Cursor
+with existing geometry or scene elements.
+
+
+Usage
+=====
+
+The 3D Cursor serves as a flexible reference point within the scene.
+Unlike most scene elements, it stores both a position and an orientation,
+allowing it to act as a temporary coordinate system for many operations.
+
+Because of this, the Cursor is frequently used as a placement guide,
+a transformation reference, or a target location for tools and operators.
+
+Object Placement
+----------------
+
+By default, newly created objects are placed at the location of the 3D Cursor.
+This makes it useful for precisely positioning new geometry, lights, cameras,
+or other scene elements before they are created.
+
+Artists commonly move the Cursor first, then add objects so they appear
+exactly where needed.
+
+
+Transform Reference
+-------------------
+
+The Cursor can also serve as a pivot or orientation reference for transformations.
+When the :doc:`/editors/3dview/controls/pivot_point/index` is set to *3D Cursor*,
+transform operations such as rotate or scale occur relative to the Cursor's location.
+
+Similarly, the Cursor's rotation can be used to define
+:doc:`/editors/3dview/controls/orientation` for transformations,
+allowing objects to align to custom directions.
+
+
+Modeling Workflows
+------------------
+
+Many modeling operations use the Cursor as a center or reference point.
+For example, it can define the center of spin, mirror, or other tools that rely on
+a user-defined origin.
+
+The Cursor is also commonly used together with snapping tools to precisely place
+geometry or align objects relative to existing scene elements.
+
+
+Viewport Navigation
+-------------------
+
+The Cursor can also influence viewport behavior:
+
+- :ref:`bpy.ops.view3d.view_center_cursor` centers the viewport on the Cursor.
+- :ref:`bpy.types.SpaceView3D.lock_cursor` locks viewport navigation to the Cursor
+  instead of the active selection.
+
+This allows the Cursor to act as a navigation anchor when exploring the scene.
+
+
+Cursor-Based Operators
+----------------------
+
+Several operators use the Cursor as a target location:
+
+- :ref:`bpy.ops.view3d.snap_selected_to_cursor`
+  Moves selected objects to the Cursor's position and orientation.
+
+- :ref:`cursor-center-and-frame`
+  Moves the Cursor to the world origin and frames the entire scene.
+
+Because the Cursor is lightweight and easy to reposition,
+it acts as a convenient temporary reference for many tasks throughout Blender.

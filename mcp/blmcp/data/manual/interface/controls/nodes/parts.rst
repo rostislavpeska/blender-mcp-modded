@@ -81,6 +81,8 @@ Float (light gray)
    Indicates that the socket accepts/produces floating-point numbers.
 Integer (lime green)
    Used to pass an integer value (a number without a fractional component).
+Integer Vector (slate blue)
+   A vector made of integer values which can be either two or three-dimensional.
 String (light blue)
    Used to pass a text value.
 Vector (dark blue)
@@ -107,7 +109,7 @@ Texture (pink)
 Image (apricot)
    Used to pass an image data-block.
 Font (brown)
-   Used to pass an font data-block.
+   Used to pass a font data-block.
 
 
 .. _interface-controls-nodes-socket_shape:
@@ -123,8 +125,8 @@ Auto
    Automatically detects a good structure type based on how the socket is used.
 Dynamic (Circle)
    Socket can work with multiple types of structures.
-Single (Square)
-   These sockets expects a single value, they are represented by a circular socket shape.
+Single (Rectangle)
+   These sockets expects a single value, they are represented by a tall rectangular shape.
 Fields (Diamond)
    Represents a value that can vary per element (e.g. per point, edge, or face).
    You can think of a field as a "value map", similar to how the brightness of pixels
@@ -132,16 +134,7 @@ Fields (Diamond)
 
    If a single value is connected to a field socket,
    it is implicitly broadcast all elements receive the same value.
-
-   Fields can have the following appearance:
-
-   - **Diamond**: The socket can accept a field input, or it outputs a field. A constant single
-     value can be connected to these sockets, but then the output will often not  vary per element.
-
-   - **Diamond with Dot** : The socket can be a field, but it is currently a single value.
-     This is helpful because it allows tracking where single values are calculated,
-     instead of a field with many different results.
-     It also means that :ref:`socket-inspection` will show the value instead of field input names.
+   It also means that :ref:`socket-inspection` will show the value instead of field input names.
 
    .. seealso::
 
@@ -151,6 +144,12 @@ Grid (Four Squares)
    Grids can represent data such as image pixels, voxel densities, or other sampled values in space.
    They allow complex operations where values are distributed continuously across space,
    rather than being attached to individual geometry elements.
+Lists (Three Lines)
+   Represents an ordered collection of values.
+
+   Lists can contain any number of items of the same data type and allow multiple values
+   to be passed through a single socket. They are commonly used for operations that gather,
+   filter, sort, or process collections of values.
 
 
 Inputs
@@ -172,6 +171,8 @@ Outputs
 The outputs are located on the top right side of the node,
 and can be connected to the input of nodes further down the node tree.
 
+
+.. _nodes-sockets-conversion:
 
 Conversion
 ----------
@@ -197,11 +198,16 @@ Valid conversions:
 - Between float and boolean -- values greater than 0 are true, true maps to 1, and false maps to 0.
 - Between rotations and matrices.
 
-Explicit conversion requires the use of a conversion node such as
-the :doc:`/render/shader_nodes/color/shader_to_rgb`
-or the :doc:`/render/shader_nodes/color/rgb_to_bw` node.
-The :doc:`/render/shader_nodes/utilities/math/math` node also contains
-some functions to convert between degrees and radians.
+Explicit conversion requires the use of dedicated conversion nodes.
+Examples include:
+
+- :doc:`/render/shader_nodes/color/shader_to_rgb`
+- :doc:`/render/shader_nodes/color/rgb_to_bw`
+- :doc:`/interface/controls/nodes/types/utilities/implicit_conversion`
+
+Some nodes also provide conversion operations directly. For example,
+the :doc:`/render/shader_nodes/utilities/math/math` node includes
+functions to convert between degrees and radians.
 
 
 .. _bpy.types.NodeSetting:

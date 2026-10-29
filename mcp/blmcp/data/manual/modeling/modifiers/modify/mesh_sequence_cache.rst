@@ -78,7 +78,7 @@ Velocity Unit
    Defines how the velocity vectors are interpreted with regard to time.
 
    :Frame:
-      The velocity unit was encoded in frames and does not need to be scale by scene FPS.
+      The velocity unit was encoded in frames and does not need to be scaled by scene FPS.
    :Second:
       The velocity unit was encoded in seconds and needs to be scaled by the scene FPS (1 / FPS).
 

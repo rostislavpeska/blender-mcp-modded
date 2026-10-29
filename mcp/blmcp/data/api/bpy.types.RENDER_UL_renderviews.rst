@@ -5,10 +5,9 @@ RENDER_UL_renderviews(UIList)
 
 base classes --- :class:`bpy_struct`, :class:`UIList`
 
+
 .. class:: RENDER_UL_renderviews(UIList)
 
-
-   .. method:: draw_item(_context, layout, _data, item, icon, _active_data, _active_propname, index)
 
    .. classmethod:: bl_rna_get_subclass(id, default=None, /)
    

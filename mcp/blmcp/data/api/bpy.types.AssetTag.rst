@@ -5,6 +5,7 @@ AssetTag(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: AssetTag(bpy_struct)
 
    User defined tag (name token)

@@ -5,6 +5,7 @@ ColorRamp(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: ColorRamp(bpy_struct)
 
    Color ramp mapping a scalar value to a color

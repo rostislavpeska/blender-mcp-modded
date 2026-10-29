@@ -5,6 +5,7 @@ LatticeModifier(Modifier)
 
 base classes --- :class:`bpy_struct`, :class:`Modifier`
 
+
 .. class:: LatticeModifier(Modifier)
 
    Lattice deformation modifier

@@ -5,6 +5,7 @@ BrushCapabilitiesSculpt(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: BrushCapabilitiesSculpt(bpy_struct)
 
    Read-only indications of which brush operations are supported by the current sculpt tool

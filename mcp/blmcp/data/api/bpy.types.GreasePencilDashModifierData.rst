@@ -5,6 +5,7 @@ GreasePencilDashModifierData(Modifier)
 
 base classes --- :class:`bpy_struct`, :class:`Modifier`
 
+
 .. class:: GreasePencilDashModifierData(Modifier)
 
    Create dot-dash effect for strokes

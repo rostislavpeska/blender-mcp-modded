@@ -41,7 +41,7 @@ Source
    Mesh object to copy data from.
 
    :bl-icon:`orientation_global` Object Transform
-      Whether take into account the world space transformations of the source and destination objects.
+      Whether to take into account the world space transformations of the source and destination objects.
       When unchecked, the modifier acts like both objects are in the same position and have
       the default rotation and scale.
 

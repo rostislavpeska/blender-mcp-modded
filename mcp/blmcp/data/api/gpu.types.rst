@@ -3,17 +3,19 @@ GPU Types (gpu.types)
 
 .. module:: gpu.types
 
-.. class:: Buffer(format, dimensions, data)
+.. class:: Buffer
 
    For Python access to GPU functions requiring a pointer.
 
-   :param format: Format type to interpret the buffer.
-      ``UINT_24_8`` is deprecated, use ``FLOAT`` instead.
-   :type format: Literal['FLOAT', 'INT', 'UINT', 'UBYTE', 'UINT_24_8', '10_11_11_REV']
-   :param dimensions: Array describing the dimensions.
-   :type dimensions: int | Sequence[int]
-   :param data: Optional data array.
-   :type data: Buffer | Sequence[float] | Sequence[int]
+   .. method:: __init__(format, dimensions, data)
+
+      :param format: Format type to interpret the buffer.
+         ``UINT_24_8`` is deprecated, use ``FLOAT`` instead.
+      :type format: Literal['FLOAT', 'INT', 'UINT', 'UBYTE', 'UINT_24_8', '10_11_11_REV']
+      :param dimensions: Array describing the dimensions.
+      :type dimensions: int | Sequence[int]
+      :param data: Optional data array.
+      :type data: Buffer | Sequence[float] | Sequence[int]
 
    .. method:: to_list()
    
@@ -25,21 +27,50 @@ GPU Types (gpu.types)
 
    .. attribute:: dimensions
 
-      Undocumented, consider `contributing <https://developer.blender.org/>`__.
+      The size of the buffer for each dimension.
+      
+      Setting the dimensions is supported when the total number of elements is unchanged.
+      
+      :type: list[int]
+
+
+   .. details:: Special Methods
+
+      .. method:: __getitem__(key)
+
+         :param key: Index or key.
+         :type key: int
+         :rtype: float
+
+      .. method:: __len__()
+
+         :rtype: int
+
+      .. method:: __repr__()
+
+         :rtype: str
+
+      .. method:: __setitem__(key, value)
+
+         :param key: Index or key.
+         :type key: int
+         :param value: Value to assign.
+         :type value: object
 
 
 
-
-.. class:: GPUBatch(type, buf, elem=None)
+.. class:: GPUBatch
 
    Reusable container for drawable geometry.
 
-   :param type: The primitive type of geometry to be drawn.
-   :type type: Literal['POINTS', 'LINES', 'TRIS', 'LINE_STRIP', 'LINE_LOOP', 'TRI_STRIP', 'TRI_FAN', 'LINES_ADJ', 'TRIS_ADJ', 'LINE_STRIP_ADJ']
-   :param buf: Vertex buffer containing all or some of the attributes required for drawing.
-   :type buf: :class:`gpu.types.GPUVertBuf`
-   :param elem: An optional index buffer.
-   :type elem: :class:`gpu.types.GPUIndexBuf` | None
+   .. method:: __init__(type, buf, elem=None)
+
+      :param type: The primitive type of geometry to be drawn.
+      :type type: Literal['POINTS', 'LINES', 'TRIS', 'LINE_STRIP', 'LINE_LOOP', 'TRI_STRIP', 'TRI_FAN', 'LINES_ADJ', 'TRIS_ADJ', 'LINE_STRIP_ADJ']
+      :param buf: Vertex buffer containing all or some of the attributes required for drawing.
+      :type buf: :class:`gpu.types.GPUVertBuf`
+      :param elem: An optional index buffer.
+      :type elem: :class:`gpu.types.GPUIndexBuf` | None
 
    .. method:: draw(shader=None)
    
@@ -107,16 +138,94 @@ GPU Types (gpu.types)
 
 
 
-.. class:: GPUFrameBuffer(*, depth_slot=None, color_slots=None)
+.. class:: GPUDevice
+
+   Represents a GPU device.
+
+   :ivar index: Device index.
+   :type index: int
+   :ivar identifier: Device identifier.
+   :type identifier: str
+   :ivar name: Device name.
+   :type name: str
+
+   .. attribute:: identifier
+
+      Device identifier.
+      
+      :type: str
+
+
+   .. attribute:: index
+
+      Device index.
+      
+      :type: int
+
+
+   .. attribute:: name
+
+      Device name.
+      
+      :type: str
+
+
+   .. details:: Special Methods
+
+      .. method:: __eq__(other)
+
+         :param other: The other operand.
+         :type other: object
+         :rtype: bool
+
+      .. method:: __ge__(other)
+
+         :param other: The other operand.
+         :type other: Self
+         :rtype: bool
+
+      .. method:: __gt__(other)
+
+         :param other: The other operand.
+         :type other: Self
+         :rtype: bool
+
+      .. method:: __le__(other)
+
+         :param other: The other operand.
+         :type other: Self
+         :rtype: bool
+
+      .. method:: __lt__(other)
+
+         :param other: The other operand.
+         :type other: Self
+         :rtype: bool
+
+      .. method:: __ne__(other)
+
+         :param other: The other operand.
+         :type other: object
+         :rtype: bool
+
+      .. method:: __repr__()
+
+         :rtype: str
+
+
+
+.. class:: GPUFrameBuffer
 
    This object gives access to framebuffer functionalities.
    When a 'layer' is specified in a argument, a single layer of a 3D or array texture is attached to the frame-buffer.
    For cube map textures, layer is translated into a cube map face.
 
-   :param depth_slot: GPUTexture to attach or a ``dict`` containing keywords: 'texture', 'layer' and 'mip'.
-   :type depth_slot: :class:`gpu.types.GPUTexture` | dict[str, int | :class:`gpu.types.GPUTexture`] | None
-   :param color_slots: Tuple where each item can be a GPUTexture or a ``dict`` containing keywords: 'texture', 'layer' and 'mip'.
-   :type color_slots: :class:`gpu.types.GPUTexture` | dict[str, int | :class:`gpu.types.GPUTexture`] | Sequence[:class:`gpu.types.GPUTexture` | dict[str, int | :class:`gpu.types.GPUTexture`]] | None
+   .. method:: __init__(*, depth_slot=None, color_slots=None)
+
+      :param depth_slot: GPUTexture to attach or a ``dict`` containing keywords: 'texture', 'layer' and 'mip'.
+      :type depth_slot: :class:`gpu.types.GPUTexture` | dict[str, int | :class:`gpu.types.GPUTexture`] | None
+      :param color_slots: Tuple where each item can be a GPUTexture or a ``dict`` containing keywords: 'texture', 'layer' and 'mip'.
+      :type color_slots: :class:`gpu.types.GPUTexture` | dict[str, int | :class:`gpu.types.GPUTexture`] | Sequence[:class:`gpu.types.GPUTexture` | dict[str, int | :class:`gpu.types.GPUTexture`]] | None
 
    .. method:: bind()
    
@@ -205,33 +314,39 @@ GPU Types (gpu.types)
    .. attribute:: is_bound
 
       Checks if this is the active frame-buffer in the context.
+      
+      :type: bool
 
 
 
 
-.. class:: GPUIndexBuf(type, seq)
+.. class:: GPUIndexBuf
 
    Contains an index buffer.
 
-   :param type: The primitive type this index buffer is composed of.
-   :type type: Literal['POINTS', 'LINES', 'TRIS', 'LINES_ADJ', 'TRIS_ADJ']
-   :param seq: Indices this index buffer will contain.
-      Whether a 1D or 2D sequence is required depends on the type.
-      Optionally the sequence can support the buffer protocol.
-   :type seq: Buffer | Sequence[int] | Sequence[Sequence[int]]
+   .. method:: __init__(type, seq)
+
+      :param type: The primitive type this index buffer is composed of.
+      :type type: Literal['POINTS', 'LINES', 'TRIS', 'LINES_ADJ', 'TRIS_ADJ']
+      :param seq: Indices this index buffer will contain.
+         Whether a 1D or 2D sequence is required depends on the type.
+         Optionally the sequence can support the buffer protocol.
+      :type seq: Buffer | Sequence[int] | Sequence[Sequence[int]]
 
 
 
-.. class:: GPUOffScreen(width, height, *, format='RGBA8')
+.. class:: GPUOffScreen
 
    This object gives access to off screen buffers.
 
-   :param width: Horizontal dimension of the buffer.
-   :type width: int
-   :param height: Vertical dimension of the buffer.
-   :type height: int
-   :param format: Internal data format inside GPU memory for color attachment texture.
-   :type format: Literal['RGBA8', 'RGBA16', 'RGBA16F', 'RGBA32F']
+   .. method:: __init__(width, height, *, format='RGBA8')
+
+      :param width: Horizontal dimension of the buffer.
+      :type width: int
+      :param height: Vertical dimension of the buffer.
+      :type height: int
+      :param format: Internal data format inside GPU memory for color attachment texture.
+      :type format: Literal['RGBA8', 'RGBA16', 'RGBA16F', 'RGBA32F']
 
    .. method:: bind()
    
@@ -674,12 +789,14 @@ GPU Types (gpu.types)
 
 
 
-.. class:: GPUStageInterfaceInfo(name)
+.. class:: GPUStageInterfaceInfo
 
    List of varyings between shader stages.
 
-   :param name: Name of the interface block.
-   :type name: str
+   .. method:: __init__(name)
+
+      :param name: Name of the interface block.
+      :type name: str
 
    .. method:: flat(type, name)
    
@@ -720,22 +837,24 @@ GPU Types (gpu.types)
 
 
 
-.. class:: GPUTexture(size, *, layers=0, is_cubemap=False, format='RGBA8', data=None)
+.. class:: GPUTexture
 
    This object gives access to GPU textures.
 
-   :param size: Dimensions of the texture 1D, 2D, 3D or cubemap.
-   :type size: int | Sequence[int]
-   :param layers: Number of layers in texture array or number of cubemaps in cubemap array
-   :type layers: int
-   :param is_cubemap: Indicates the creation of a cubemap texture.
-   :type is_cubemap: bool
-   :param format: Internal data format inside GPU memory.
-      ``DEPTH24_STENCIL8`` is deprecated, use ``DEPTH32F_STENCIL8``.
-      ``DEPTH_COMPONENT24`` is deprecated, use ``DEPTH_COMPONENT32F``.
-   :type format: Literal['RGBA8UI', 'RGBA8I', 'RGBA8', 'RGBA32UI', 'RGBA32I', 'RGBA32F', 'RGBA16UI', 'RGBA16I', 'RGBA16F', 'RGBA16', 'RG8UI', 'RG8I', 'RG8', 'RG32UI', 'RG32I', 'RG32F', 'RG16UI', 'RG16I', 'RG16F', 'RG16', 'R8UI', 'R8I', 'R8', 'R32UI', 'R32I', 'R32F', 'R16UI', 'R16I', 'R16F', 'R16', 'R11F_G11F_B10F', 'DEPTH32F_STENCIL8', 'DEPTH24_STENCIL8', 'SRGB8_A8', 'RGB16F', 'SRGB8_A8_DXT1', 'SRGB8_A8_DXT3', 'SRGB8_A8_DXT5', 'RGBA8_DXT1', 'RGBA8_DXT3', 'RGBA8_DXT5', 'DEPTH_COMPONENT32F', 'DEPTH_COMPONENT24', 'DEPTH_COMPONENT16']
-   :param data: Buffer object to fill the texture.
-   :type data: :class:`gpu.types.Buffer` | None
+   .. method:: __init__(size, *, layers=0, is_cubemap=False, format='RGBA8', data=None)
+
+      :param size: Dimensions of the texture 1D, 2D, 3D or cubemap.
+      :type size: int | Sequence[int]
+      :param layers: Number of layers in texture array or number of cubemaps in cubemap array
+      :type layers: int
+      :param is_cubemap: Indicates the creation of a cubemap texture.
+      :type is_cubemap: bool
+      :param format: Internal data format inside GPU memory.
+         ``DEPTH24_STENCIL8`` is deprecated, use ``DEPTH32F_STENCIL8``.
+         ``DEPTH_COMPONENT24`` is deprecated, use ``DEPTH_COMPONENT32F``.
+      :type format: Literal['RGBA8UI', 'RGBA8I', 'RGBA8', 'RGBA32UI', 'RGBA32I', 'RGBA32F', 'RGBA16UI', 'RGBA16I', 'RGBA16F', 'RGBA16', 'RG8UI', 'RG8I', 'RG8', 'RG32UI', 'RG32I', 'RG32F', 'RG16UI', 'RG16I', 'RG16F', 'RG16', 'R8UI', 'R8I', 'R8', 'R32UI', 'R32I', 'R32F', 'R16UI', 'R16I', 'R16F', 'R16', 'R11F_G11F_B10F', 'DEPTH32F_STENCIL8', 'DEPTH24_STENCIL8', 'SRGB8_A8', 'RGB16F', 'SRGB8_A8_DXT1', 'SRGB8_A8_DXT3', 'SRGB8_A8_DXT5', 'RGBA8_DXT1', 'RGBA8_DXT3', 'RGBA8_DXT5', 'DEPTH_COMPONENT32F', 'DEPTH_COMPONENT24', 'DEPTH_COMPONENT16']
+      :param data: Buffer object to fill the texture.
+      :type data: :class:`gpu.types.Buffer` | None
 
    .. method:: anisotropic_filter(use_anisotropic)
    
@@ -830,12 +949,14 @@ GPU Types (gpu.types)
 
 
 
-.. class:: GPUUniformBuf(data)
+.. class:: GPUUniformBuf
 
    This object gives access to uniform buffers.
 
-   :param data: Data to fill the buffer.
-   :type data: Buffer
+   .. method:: __init__(data)
+
+      :param data: Data to fill the buffer.
+      :type data: Buffer
 
    .. method:: update(data)
    
@@ -847,14 +968,16 @@ GPU Types (gpu.types)
 
 
 
-.. class:: GPUVertBuf(format, len)
+.. class:: GPUVertBuf
 
    Contains a VBO.
 
-   :param format: Vertex format.
-   :type format: :class:`gpu.types.GPUVertFormat`
-   :param len: Amount of vertices that will fit into this buffer.
-   :type len: int
+   .. method:: __init__(format, len)
+
+      :param format: Vertex format.
+      :type format: :class:`gpu.types.GPUVertFormat`
+      :param len: Amount of vertices that will fit into this buffer.
+      :type len: int
 
    .. method:: attr_fill(id, data)
    
@@ -896,11 +1019,43 @@ GPU Types (gpu.types)
 
    Context manager for matrix stack push/pop.
 
+   .. details:: Special Methods
+
+      .. method:: __enter__()
+
+         :rtype: :class:`MatrixStackContext`
+
+      .. method:: __exit__(exc_type, exc_value, traceback)
+
+         :param exc_type: Exception type, or ``None``.
+         :type exc_type: type | None
+         :param exc_value: Exception instance, or ``None``.
+         :type exc_value: BaseException | None
+         :param traceback: Traceback object, or ``None``.
+         :type traceback: BaseException | None
+         :rtype: bool
+
 
 
 .. class:: OffScreenStackContext
 
    Context manager for off-screen framebuffer binding.
+
+   .. details:: Special Methods
+
+      .. method:: __enter__()
+
+         :rtype: :class:`OffScreenStackContext`
+
+      .. method:: __exit__(exc_type, exc_value, traceback)
+
+         :param exc_type: Exception type, or ``None``.
+         :type exc_type: type | None
+         :param exc_value: Exception instance, or ``None``.
+         :type exc_value: BaseException | None
+         :param traceback: Traceback object, or ``None``.
+         :type traceback: BaseException | None
+         :rtype: bool
 
 
 

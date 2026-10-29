@@ -5,6 +5,7 @@ ExplodeModifier(Modifier)
 
 base classes --- :class:`bpy_struct`, :class:`Modifier`
 
+
 .. class:: ExplodeModifier(Modifier)
 
    Explosion effect modifier based on a particle system

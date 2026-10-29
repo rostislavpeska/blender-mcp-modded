@@ -11,9 +11,16 @@ Color Filter
 Apply color corrections or effects on the active color attribute
 on all vertices in the mesh at the same time.
 
-To use this tool, click and drag away from left to right
-or from right to left for a negative effect.
+For the *Fill* filter type, the color is taken from the active brush
+or the unified paint color, depending on the current settings.
 
+Usage
+-----
+
+- :kbd:`LMB`: Applies a fill using the current color and tool strength.
+- :kbd:`LMB`-drag: Adjusts the effect strength interactively (drag left/right).
+- :kbd:`Ctrl-LMB`: Uses the secondary color for filling.
+- :kbd:`Ctrl-X`: Applies a full-strength fill using the current color.
 
 Tool Settings
 =============

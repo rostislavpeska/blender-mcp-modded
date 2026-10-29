@@ -5,6 +5,7 @@ FunctionNodeInputString(FunctionNode)
 
 base classes --- :class:`bpy_struct`, :class:`Node`, :class:`NodeInternal`, :class:`FunctionNode`
 
+
 .. class:: FunctionNodeInputString(FunctionNode)
 
    Provide a string value that can be connected to other nodes in the tree
@@ -14,6 +15,12 @@ base classes --- :class:`bpy_struct`, :class:`Node`, :class:`NodeInternal`, :cla
       (default "", never None)
 
       :type: str
+
+   .. data:: textbox_state
+
+      (readonly)
+
+      :type: :class:`TextboxState` | None
 
    .. classmethod:: is_registered_node_type()
 
@@ -77,6 +84,7 @@ Inherited Properties
    - :class:`Node.label`
    - :class:`Node.inputs`
    - :class:`Node.outputs`
+   - :class:`Node.panel_states`
    - :class:`Node.internal_links`
    - :class:`Node.parent`
    - :class:`Node.warning_propagation`

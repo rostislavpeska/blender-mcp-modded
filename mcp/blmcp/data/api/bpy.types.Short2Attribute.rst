@@ -5,6 +5,7 @@ Short2Attribute(Attribute)
 
 base classes --- :class:`bpy_struct`, :class:`Attribute`
 
+
 .. class:: Short2Attribute(Attribute)
 
    Geometry attribute that stores 2D integer vectors

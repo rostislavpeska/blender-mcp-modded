@@ -18,10 +18,14 @@ Selecting components (vertices, edges, or faces) in one editor will automaticall
 corresponding elements in the other.
 
 With *Sync Selection* enabled, all faces are visible in the UV Editor at all times,
-since UV visibility follows mesh selection in the 3D Viewport. Selecting a vertex, edge,
-or face in the 3D Viewport selects its corresponding UV elements. However, when a single
-3D vertex or edge corresponds to multiple UV vertices or edges (for example, along a UV seam),
-you cannot select them individually—selecting one selects all of them.
+since UV visibility follows mesh selection in the 3D Viewport.
+
+Viewport Selection
+   Selecting a vertex, edge, or face in the 3D Viewport selects all its corresponding UV elements.
+UV Selection
+   Selecting a UV will select vertices, edges and faces in the 3D viewport.
+
+   With vertex & edge selection modes it is possible for only *some* of the UV's attached to a vertex to be selected.
 
 When disabled, only the UVs belonging to the currently selected faces in the 3D Viewport are shown.
 Selections in the UV Editor are independent, allowing individual UV vertices and edges to be selected
@@ -80,7 +84,6 @@ Sticky Selection Mode
 =====================
 
 Options for automatically selecting additional UV vertices.
-Only available when *Face* selection mode is active, or when *Sync Selection* is disabled.
 
 Disabled
    Each UV vertex can be selected independently of the others.
@@ -94,7 +97,6 @@ Shared Location
 Shared Vertex
    Automatically select UV vertices that correspond to the same mesh vertex,
    even if they have different UV coordinates.
-   This is also the behavior when *Sync Selection* is enabled.
 
 
 Select Menu
@@ -125,6 +127,16 @@ Lasso Select
 
 More/Less :kbd:`Ctrl-NumpadPlus`, :kbd:`Ctrl-NumpadMinus`
    Expands/contracts the selection to/from adjacent elements.
+
+All by Trait
+   Tile
+      See :ref:`bpy.ops.uv.select_tile`.
+   Pinned :kbd:`Shift-P`
+      See :ref:`bpy.ops.uv.select_pinned`.
+   Overlap
+      See :ref:`bpy.ops.uv.select_overlap`.
+   Winding
+      See :ref:`bpy.ops.uv.select_by_winding`.
 
 
 .. _bpy.ops.uv.select_similar:
@@ -220,8 +232,12 @@ This is useful for quickly selecting an entire UV island when only a portion
 of it is currently selected, such as when adjusting layout, packing, or applying
 transforms to a whole island.
 
-When *Sync Selection* is enabled, linked selection follows mesh connectivity
-instead of UV island connectivity.
+Delimit
+   Restricts how linked UV selection expands.
+
+   :Seam: Stop selection across edges marked as seams.
+   :Sharp: Stop selection across sharp edges.
+   :Material: Stop selection across faces using different materials.
 
 
 .. _bpy.ops.uv.shortest_path_select:
@@ -273,49 +289,6 @@ Offset
    Mesh edit :ref:`Select Shortest Path <bpy.ops.mesh.shortest_path_select>`.
 
 
-.. _bpy.ops.uv.select_tile:
-
-Select Tile
-===========
-
-.. reference::
-
-   :Mode:      Edit Mode
-   :Menu:      :menuselection:`Select --> Select Tile`
-
-Selects UV faces that lie within a specific UV tile, primarily intended for use
-with :doc:`UDIM workflows </modeling/meshes/uv/workflows/udims>`.
-
-The initial tile is determined by the position of the 2D Cursor.
-All UV faces whose coordinates fall inside that tile are selected.
-
-This operator is useful when working with multi-tile UV layouts, allowing you to
-quickly isolate and operate on UVs assigned to a particular UDIM tile, such as for
-packing, transforming, or baking textures.
-
-To select a different tile, move the 2D Cursor to the desired tile location
-and run the operator again.
-
-
-.. _bpy.ops.uv.select_pinned:
-
-Select Pinned
-=============
-
-.. reference::
-
-   :Mode:      Edit Mode
-   :Menu:      :menuselection:`Select --> Select Pinned`
-   :Shortcut:  :kbd:`Shift-P`
-
-Selects all pinned UVs in the UV Editor.
-
-Pinned UVs are constrained during unwrapping and certain transform operations,
-allowing them to stay fixed while other UVs are adjusted.
-This operator is useful for quickly identifying or modifying pinned regions,
-such as when refining UV layouts or controlling unwrap behavior.
-
-
 Select Split
 ============
 
@@ -340,17 +313,64 @@ their neighbors.
    to *Disabled*.
 
 
-.. _bpy.ops.uv.select_overlap:
+Select All by Trait
+===================
 
-Select Overlap
-==============
+.. _bpy.ops.uv.select_tile:
+
+Select Tile
+-----------
 
 .. reference::
 
    :Mode:      Edit Mode
-   :Menu:      :menuselection:`Select --> Select Overlap`
+   :Menu:      :menuselection:`Select --> Select All by Trait --> Tile`
 
-Selects all UV faces that overlap with one another in the UV Editor.
+Selects UV faces that lie within a specific UV tile, primarily intended for use
+with :doc:`UDIM workflows </modeling/meshes/uv/workflows/udims>`.
+
+The initial tile is determined by the position of the 2D Cursor.
+All UV faces whose coordinates fall inside that tile are selected.
+
+This operator is useful when working with multi-tile UV layouts, allowing you to
+quickly isolate and operate on UVs assigned to a particular UDIM tile, such as for
+packing, transforming, or baking textures.
+
+To select a different tile, move the 2D Cursor to the desired tile location
+and run the operator again.
+
+
+.. _bpy.ops.uv.select_pinned:
+
+Select Pinned
+-------------
+
+.. reference::
+
+   :Mode:      Edit Mode
+   :Menu:      :menuselection:`Select --> Select All by Trait --> Pinned`
+
+   :Shortcut:  :kbd:`Shift-P`
+
+Selects all pinned UVs in the UV Editor.
+
+Pinned UVs are constrained during unwrapping and certain transform operations,
+allowing them to stay fixed while other UVs are adjusted.
+This operator is useful for quickly identifying or modifying pinned regions,
+such as when refining UV layouts or controlling unwrap behavior.
+
+
+.. _bpy.ops.uv.select_overlap:
+
+Select Overlap
+--------------
+
+.. reference::
+
+   :Mode:      Edit Mode
+   :Menu:      :menuselection:`Select --> Select All by Trait --> Overlap`
+
+Selects all UV faces that overlap with one another in the UV Editor. Selects the entire island when island selection mode is enabled
 
 Overlapping UVs share the same or partially intersecting texture space,
 which can cause rendering artifacts, texture bleeding, or incorrect baking results.
@@ -360,6 +380,22 @@ It is commonly used when preparing UVs for texture baking, lightmaps,
 or game engine export, where overlapping UVs are often undesirable.
 Once selected, overlapping faces can be moved, scaled, or repacked
 to resolve the overlap.
+
+
+.. _bpy.ops.uv.select_by_winding:
+
+Select by Winding
+-----------------
+
+.. reference::
+
+   :Mode:      Edit Mode
+   :Menu:      :menuselection:`Select --> Select All by Trait --> Winding`
+
+Selects faces by their winding - positive or negative,
+where a negative winding would mirror the content of an image displayed on the mesh.
+
+This can be useful to detect problems when flipping the UV mapping isn't desired.
 
 
 .. _bpy.ops.uv.select_loop:
@@ -403,4 +439,4 @@ rather than replacing it.
 
 .. seealso::
 
-   Mesh edit :ref:`Select Edge Rings <modeling-meshes-selecting-edge-rings>`.
+   Mesh edit :ref:`Select Edge Rings <bpy.ops.mesh.select_edge_ring_multi>`.

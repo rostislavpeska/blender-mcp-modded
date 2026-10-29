@@ -5,6 +5,7 @@ GreasePencilLayerMask(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: GreasePencilLayerMask(bpy_struct)
 
    List of Mask Layers
@@ -93,4 +94,6 @@ References
    :columns: 2
 
    - :class:`GreasePencilLayer.mask_layers`
+   - :class:`GreasePencilLayerMasks.add`
+   - :class:`GreasePencilLayerMasks.remove`
 

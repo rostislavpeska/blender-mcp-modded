@@ -5,6 +5,7 @@ VectorFont(ID)
 
 base classes --- :class:`bpy_struct`, :class:`ID`
 
+
 .. class:: VectorFont(ID)
 
    Vector font for Text objects
@@ -141,6 +142,7 @@ References
    - :class:`BlendData.fonts`
    - :class:`BlendDataFonts.load`
    - :class:`BlendDataFonts.remove`
+   - :class:`GeometryNodeInputFont.font`
    - :class:`NodeSocketFont.default_value`
    - :class:`NodeTreeInterfaceSocketFont.default_value`
    - :class:`TextCurve.font`

@@ -19,7 +19,7 @@ Sequencer Operators
    :type overlap: bool
    :param overlap_shuffle_override: Override Overlap Shuffle Behavior, Use the overlap_mode tool settings to determine how to shuffle overlapping strips (optional)
    :type overlap_shuffle_override: bool
-   :param skip_locked_or_muted_channels: Skip Locked or Muted Channels, Add strips to muted or locked channels when adding movie strips (optional)
+   :param skip_locked_or_muted_channels: Skip Locked/Muted Channels, Make strips occupy nearest unmuted and unlocked channels (optional)
    :type skip_locked_or_muted_channels: bool
    :param asset_library_type: Asset Library Type, (optional)
    :type asset_library_type: Literal[:ref:`rna_enum_asset_library_type_items`]
@@ -102,11 +102,13 @@ Sequencer Operators
         Text -- Add a simple text strip.
       - ``COLORMIX``
         Color Mix -- Combine two strips using blend modes.
-   :type type: Literal['CROSS', 'ADD', 'SUBTRACT', 'ALPHA_OVER', 'ALPHA_UNDER', 'GAMMA_CROSS', 'MULTIPLY', 'WIPE', 'GLOW', 'COLOR', 'SPEED', 'MULTICAM', 'ADJUSTMENT', 'GAUSSIAN_BLUR', 'TEXT', 'COLORMIX']
+      - ``COMPOSITOR``
+        Compositor -- Compositor based effect.
+   :type type: Literal['CROSS', 'ADD', 'SUBTRACT', 'ALPHA_OVER', 'ALPHA_UNDER', 'GAMMA_CROSS', 'MULTIPLY', 'WIPE', 'GLOW', 'COLOR', 'SPEED', 'MULTICAM', 'ADJUSTMENT', 'GAUSSIAN_BLUR', 'TEXT', 'COLORMIX', 'COMPOSITOR']
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
 
-.. function:: change_path(*, filepath="", directory="", files=None, hide_props_region=True, check_existing=False, filter_blender=False, filter_backup=False, filter_image=False, filter_movie=False, filter_python=False, filter_font=False, filter_sound=False, filter_text=False, filter_archive=False, filter_btx=False, filter_alembic=False, filter_usd=False, filter_obj=False, filter_volume=False, filter_folder=True, filter_blenlib=False, filemode=9, relative_path=True, display_type='DEFAULT', sort_method='', use_placeholders=False)
+.. function:: change_path(*, filepath="", directory="", files=None, hide_props_region=True, check_existing=False, filter_blender=False, filter_backup=False, filter_image=False, filter_movie=False, filter_python=False, filter_font=False, filter_sound=False, filter_text=False, filter_archive=False, filter_btx=False, filter_alembic=False, filter_usd=False, filter_obj=False, filter_volume=False, filter_folder=True, filter_blenlib=False, filemode=9, relative_path=True, display_type='DEFAULT', sort_method='', use_sequence_detection=True, use_placeholders=False)
 
    Undocumented, consider `contributing <https://developer.blender.org/>`__.
 
@@ -169,6 +171,8 @@ Sequencer Operators
    :type display_type: Literal['DEFAULT', 'LIST_VERTICAL', 'LIST_HORIZONTAL', 'THUMBNAIL']
    :param sort_method: File sorting mode, (optional)
    :type sort_method: str
+   :param use_sequence_detection: Detect Sequences, Automatically detect animated sequences in selected images (based on file names) (optional)
+   :type use_sequence_detection: bool
    :param use_placeholders: Use Placeholders, Use placeholders for missing frames of the strip (optional)
    :type use_placeholders: bool
    :return: Result of the operator call.
@@ -178,7 +182,7 @@ Sequencer Operators
 
    Change Scene assigned to Strip
 
-   :param scene: Scene, (optional)
+   :param scene: Scene, Scene to assign to the strip (optional)
    :type scene: str
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
@@ -221,7 +225,7 @@ Sequencer Operators
 
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `startup/bl_operators/sequencer.py\:134 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/sequencer.py#L134>`__
+   :File: `startup/bl_operators/sequencer.py\:129 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/sequencer.py#L129>`__
 
 .. function:: delete(*, delete_data=False)
 
@@ -269,7 +273,7 @@ Sequencer Operators
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
 
-.. function:: effect_strip_add(*, type='CROSS', move_strips=True, frame_start=0, length=0, channel=1, replace_sel=True, overlap=False, overlap_shuffle_override=False, skip_locked_or_muted_channels=True, color=(0.0, 0.0, 0.0))
+.. function:: effect_strip_add(*, type='CROSS', move_strips=True, frame_start=0, length=0, channel=1, replace_sel=True, overlap=False, overlap_shuffle_override=False, skip_locked_or_muted_channels=True, width=0, height=0, color=(0.0, 0.0, 0.0))
 
    Add an effect to the sequencer, most are applied on top of existing strips
 
@@ -307,7 +311,9 @@ Sequencer Operators
         Text -- Add a simple text strip.
       - ``COLORMIX``
         Color Mix -- Combine two strips using blend modes.
-   :type type: Literal['CROSS', 'ADD', 'SUBTRACT', 'ALPHA_OVER', 'ALPHA_UNDER', 'GAMMA_CROSS', 'MULTIPLY', 'WIPE', 'GLOW', 'COLOR', 'SPEED', 'MULTICAM', 'ADJUSTMENT', 'GAUSSIAN_BLUR', 'TEXT', 'COLORMIX']
+      - ``COMPOSITOR``
+        Compositor -- Compositor based effect.
+   :type type: Literal['CROSS', 'ADD', 'SUBTRACT', 'ALPHA_OVER', 'ALPHA_UNDER', 'GAMMA_CROSS', 'MULTIPLY', 'WIPE', 'GLOW', 'COLOR', 'SPEED', 'MULTICAM', 'ADJUSTMENT', 'GAUSSIAN_BLUR', 'TEXT', 'COLORMIX', 'COMPOSITOR']
    :param move_strips: Move Strips, Automatically begin translating strips with the mouse after adding them to the timeline (optional)
    :type move_strips: bool
    :param frame_start: Start Frame, Start frame of the strip (in [-inf, inf], optional)
@@ -322,8 +328,12 @@ Sequencer Operators
    :type overlap: bool
    :param overlap_shuffle_override: Override Overlap Shuffle Behavior, Use the overlap_mode tool settings to determine how to shuffle overlapping strips (optional)
    :type overlap_shuffle_override: bool
-   :param skip_locked_or_muted_channels: Skip Locked or Muted Channels, Add strips to muted or locked channels when adding movie strips (optional)
+   :param skip_locked_or_muted_channels: Skip Locked/Muted Channels, Make strips occupy nearest unmuted and unlocked channels (optional)
    :type skip_locked_or_muted_channels: bool
+   :param width: Width, Width of the color strip in pixels (in [1, inf], optional)
+   :type width: int
+   :param height: Height, Height of the color strip in pixels (in [1, 32767], optional)
+   :type height: int
    :param color: Color, Initialize the strip with this color (array of 3 items, in [0, 1], optional)
    :type color: :class:`mathutils.Color` | Sequence[float]
    :return: Result of the operator call.
@@ -333,15 +343,15 @@ Sequencer Operators
 
    Enable selected proxies on all selected Movie and Image strips
 
-   :param proxy_25: 25%, (optional)
+   :param proxy_25: 25%, Build proxy at 25% resolution (optional)
    :type proxy_25: bool
-   :param proxy_50: 50%, (optional)
+   :param proxy_50: 50%, Build proxy at 50% resolution (optional)
    :type proxy_50: bool
-   :param proxy_75: 75%, (optional)
+   :param proxy_75: 75%, Build proxy at 75% resolution (optional)
    :type proxy_75: bool
-   :param proxy_100: 100%, (optional)
+   :param proxy_100: 100%, Build proxy at 100% resolution (optional)
    :type proxy_100: bool
-   :param overwrite: Overwrite, (optional)
+   :param overwrite: Overwrite, Overwrite existing proxy files (optional)
    :type overwrite: bool
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
@@ -427,7 +437,7 @@ Sequencer Operators
    :type type: Literal['IN_OUT', 'IN', 'OUT', 'CURSOR_FROM', 'CURSOR_TO']
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `startup/bl_operators/sequencer.py\:221 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/sequencer.py#L221>`__
+   :File: `startup/bl_operators/sequencer.py\:216 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/sequencer.py#L216>`__
 
 
 .. function:: fades_clear()
@@ -436,7 +446,7 @@ Sequencer Operators
 
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `startup/bl_operators/sequencer.py\:157 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/sequencer.py#L157>`__
+   :File: `startup/bl_operators/sequencer.py\:152 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/sequencer.py#L152>`__
 
 .. function:: gap_insert(*, frames=10)
 
@@ -546,7 +556,7 @@ Sequencer Operators
    :type overlap: bool
    :param overlap_shuffle_override: Override Overlap Shuffle Behavior, Use the overlap_mode tool settings to determine how to shuffle overlapping strips (optional)
    :type overlap_shuffle_override: bool
-   :param skip_locked_or_muted_channels: Skip Locked or Muted Channels, Add strips to muted or locked channels when adding movie strips (optional)
+   :param skip_locked_or_muted_channels: Skip Locked/Muted Channels, Make strips occupy nearest unmuted and unlocked channels (optional)
    :type skip_locked_or_muted_channels: bool
    :param fit_method: Fit Method, Mode for fitting the image to the canvas (optional)
    :type fit_method: Literal[:ref:`rna_enum_strip_scale_method_items`]
@@ -599,9 +609,9 @@ Sequencer Operators
    :type overlap: bool
    :param overlap_shuffle_override: Override Overlap Shuffle Behavior, Use the overlap_mode tool settings to determine how to shuffle overlapping strips (optional)
    :type overlap_shuffle_override: bool
-   :param skip_locked_or_muted_channels: Skip Locked or Muted Channels, Add strips to muted or locked channels when adding movie strips (optional)
+   :param skip_locked_or_muted_channels: Skip Locked/Muted Channels, Make strips occupy nearest unmuted and unlocked channels (optional)
    :type skip_locked_or_muted_channels: bool
-   :param mask: Mask, (optional)
+   :param mask: Mask, Mask to add as a strip (optional)
    :type mask: str
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
@@ -714,7 +724,7 @@ Sequencer Operators
    :type overlap: bool
    :param overlap_shuffle_override: Override Overlap Shuffle Behavior, Use the overlap_mode tool settings to determine how to shuffle overlapping strips (optional)
    :type overlap_shuffle_override: bool
-   :param skip_locked_or_muted_channels: Skip Locked or Muted Channels, Add strips to muted or locked channels when adding movie strips (optional)
+   :param skip_locked_or_muted_channels: Skip Locked/Muted Channels, Make strips occupy nearest unmuted and unlocked channels (optional)
    :type skip_locked_or_muted_channels: bool
    :param fit_method: Fit Method, Mode for fitting the image to the canvas (optional)
    :type fit_method: Literal[:ref:`rna_enum_strip_scale_method_items`]
@@ -745,9 +755,9 @@ Sequencer Operators
    :type overlap: bool
    :param overlap_shuffle_override: Override Overlap Shuffle Behavior, Use the overlap_mode tool settings to determine how to shuffle overlapping strips (optional)
    :type overlap_shuffle_override: bool
-   :param skip_locked_or_muted_channels: Skip Locked or Muted Channels, Add strips to muted or locked channels when adding movie strips (optional)
+   :param skip_locked_or_muted_channels: Skip Locked/Muted Channels, Make strips occupy nearest unmuted and unlocked channels (optional)
    :type skip_locked_or_muted_channels: bool
-   :param clip: Clip, (optional)
+   :param clip: Clip, Movie clip to add as a strip (optional)
    :type clip: str
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
@@ -810,7 +820,7 @@ Sequencer Operators
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
 .. function:: rebuild_proxy()
 
-   Rebuild all selected proxies and timecode indices
+   Rebuild all selected proxies
 
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
@@ -948,9 +958,9 @@ Sequencer Operators
    :type overlap: bool
    :param overlap_shuffle_override: Override Overlap Shuffle Behavior, Use the overlap_mode tool settings to determine how to shuffle overlapping strips (optional)
    :type overlap_shuffle_override: bool
-   :param skip_locked_or_muted_channels: Skip Locked or Muted Channels, Add strips to muted or locked channels when adding movie strips (optional)
+   :param skip_locked_or_muted_channels: Skip Locked/Muted Channels, Make strips occupy nearest unmuted and unlocked channels (optional)
    :type skip_locked_or_muted_channels: bool
-   :param scene: Scene, (optional)
+   :param scene: Scene, Scene to add as a strip (optional)
    :type scene: str
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
@@ -971,9 +981,9 @@ Sequencer Operators
    :type overlap: bool
    :param overlap_shuffle_override: Override Overlap Shuffle Behavior, Use the overlap_mode tool settings to determine how to shuffle overlapping strips (optional)
    :type overlap_shuffle_override: bool
-   :param skip_locked_or_muted_channels: Skip Locked or Muted Channels, Add strips to muted or locked channels when adding movie strips (optional)
+   :param skip_locked_or_muted_channels: Skip Locked/Muted Channels, Make strips occupy nearest unmuted and unlocked channels (optional)
    :type skip_locked_or_muted_channels: bool
-   :param type: Type, (optional)
+   :param type: Type, Method for creating the new scene (optional)
 
       - ``NEW``
         New -- Add new Strip with a new empty Scene with default settings.
@@ -1218,7 +1228,7 @@ Sequencer Operators
 
    :param extend: Extend, Extend the selection (optional)
    :type extend: bool
-   :param side: Side, (optional)
+   :param side: Side, Whether to select all strips to the left or right of the current frame, or just those intersecting with it (optional)
 
       - ``LEFT``
         Left -- Select to the left of the current frame.
@@ -1256,7 +1266,7 @@ Sequencer Operators
 
 .. function:: snap(*, frame=0, side='LEFT', keep_offset=True)
 
-   Snap strips to the current frame, using the active strip as the anchor, and the mouse cursor relative to the playhead to determine the side of the playhead to snap to
+   Snap strips to the current frame, using the active (or closest) strip as the anchor, and the mouse cursor relative to the playhead to determine the side of the playhead to snap to
 
    :param frame: Frame, Frame where selected strips will be snapped (in [-inf, inf], optional)
    :type frame: int
@@ -1353,7 +1363,7 @@ Sequencer Operators
    :type overlap: bool
    :param overlap_shuffle_override: Override Overlap Shuffle Behavior, Use the overlap_mode tool settings to determine how to shuffle overlapping strips (optional)
    :type overlap_shuffle_override: bool
-   :param skip_locked_or_muted_channels: Skip Locked or Muted Channels, Add strips to muted or locked channels when adding movie strips (optional)
+   :param skip_locked_or_muted_channels: Skip Locked/Muted Channels, Make strips occupy nearest unmuted and unlocked channels (optional)
    :type skip_locked_or_muted_channels: bool
    :param cache: Cache, Cache the sound in memory (optional)
    :type cache: bool
@@ -1391,25 +1401,25 @@ Sequencer Operators
    :type camera: int
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `startup/bl_operators/sequencer.py\:101 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/sequencer.py#L101>`__
+   :File: `startup/bl_operators/sequencer.py\:96 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/sequencer.py#L96>`__
 
 
 .. function:: strip_color_tag_set(*, color='NONE')
 
    Set a color tag for the selected strips
 
-   :param color: Color Tag, (optional)
+   :param color: Color Tag, Color used to tag strips for organizing them in the timeline (optional)
    :type color: Literal[:ref:`rna_enum_strip_color_items`]
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
 
 .. function:: strip_jump(*, next=True, center=True)
 
-   Move frame to next or previous edit point
+   Move playhead to the next or previous edit point, which may be a strip handle or its center
 
-   :param next: Next Strip, (optional)
+   :param next: Next Strip, Jump to the next handle or center, else the previous (optional)
    :type next: bool
-   :param center: Use Strip Center, (optional)
+   :param center: Use Strip Center, Jump to the center of the strip rather than its handles (optional)
    :type center: bool
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
@@ -1423,17 +1433,43 @@ Sequencer Operators
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
 
-.. function:: strip_modifier_copy(*, type='REPLACE')
+.. function:: strip_modifier_add_node_group(*, asset_library_type='LOCAL', asset_library_identifier="", relative_asset_identifier="", session_uid=0)
+
+   Add a modifier to the strip
+
+   :param asset_library_type: Asset Library Type, (optional)
+   :type asset_library_type: Literal[:ref:`rna_enum_asset_library_type_items`]
+   :param asset_library_identifier: Asset Library Identifier, (optional, never None)
+   :type asset_library_identifier: str
+   :param relative_asset_identifier: Relative Asset Identifier, (optional, never None)
+   :type relative_asset_identifier: str
+   :param session_uid: Session UID, Session UID of the data-block to use by the operator (in [-inf, inf], optional)
+   :type session_uid: int
+   :return: Result of the operator call.
+   :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
+
+.. function:: strip_modifier_copy(*, type='REPLACE', modifier="")
 
    Copy modifiers of the active strip to all selected strips
 
-   :param type: Type, (optional)
+   :param type: Type, Whether to replace all modifiers on the selected strips or append to their existing modifier stack (optional)
 
       - ``REPLACE``
         Replace -- Replace modifiers in destination.
       - ``APPEND``
         Append -- Append active modifiers to selected strips.
    :type type: Literal['REPLACE', 'APPEND']
+   :param modifier: Modifier, Name of the modifier to copy. If empty, copy all modifiers (optional, never None)
+   :type modifier: str
+   :return: Result of the operator call.
+   :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
+
+.. function:: strip_modifier_duplicate(*, modifier="")
+
+   Duplicate (active) modifier of the active strip
+
+   :param modifier: Modifier, Name of the modifier to duplicate. If empty duplicate the active modifier (optional, never None)
+   :type modifier: str
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
 
@@ -1628,6 +1664,21 @@ Sequencer Operators
 
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
+.. function:: text_strip_style_preset_add(*, name="", remove_name=False, remove_active=False)
+
+   Add or remove a text strip style and layout preset
+
+   :param name: Name, Name of the preset, used to make the path name (optional, never None)
+   :type name: str
+   :param remove_name: remove_name, (optional)
+   :type remove_name: bool
+   :param remove_active: remove_active, (optional)
+   :type remove_active: bool
+   :return: Result of the operator call.
+   :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
+   :File: `startup/bl_operators/presets.py\:119 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/presets.py#L119>`__
+
+
 .. function:: unlock()
 
    Unlock strips so they can be transformed

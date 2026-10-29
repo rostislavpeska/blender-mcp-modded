@@ -14,3 +14,10 @@
    radius.rst
    selection.rst
    active_element.rst
+
+-----
+
+.. toctree::
+   :maxdepth: 1
+
+   get_geometry_bundle.rst

@@ -5,6 +5,7 @@ StringProperty(Property)
 
 base classes --- :class:`bpy_struct`, :class:`Property`
 
+
 .. class:: StringProperty(Property)
 
    RNA text string property definition

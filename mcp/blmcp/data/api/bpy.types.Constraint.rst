@@ -5,8 +5,39 @@ Constraint(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
-subclasses --- 
-:class:`ActionConstraint`, :class:`ArmatureConstraint`, :class:`CameraSolverConstraint`, :class:`ChildOfConstraint`, :class:`ClampToConstraint`, :class:`CopyLocationConstraint`, :class:`CopyRotationConstraint`, :class:`CopyScaleConstraint`, :class:`CopyTransformsConstraint`, :class:`DampedTrackConstraint`, :class:`FloorConstraint`, :class:`FollowPathConstraint`, :class:`FollowTrackConstraint`, :class:`GeometryAttributeConstraint`, :class:`KinematicConstraint`, :class:`LimitDistanceConstraint`, :class:`LimitLocationConstraint`, :class:`LimitRotationConstraint`, :class:`LimitScaleConstraint`, :class:`LockedTrackConstraint`, :class:`MaintainVolumeConstraint`, :class:`ObjectSolverConstraint`, :class:`PivotConstraint`, :class:`ShrinkwrapConstraint`, :class:`SplineIKConstraint`, :class:`StretchToConstraint`, :class:`TrackToConstraint`, :class:`TransformCacheConstraint`, :class:`TransformConstraint`
+.. toctree::
+   :caption: Subclasses
+   :maxdepth: 1
+
+   bpy.types.ActionConstraint.rst
+   bpy.types.ArmatureConstraint.rst
+   bpy.types.CameraSolverConstraint.rst
+   bpy.types.ChildOfConstraint.rst
+   bpy.types.ClampToConstraint.rst
+   bpy.types.CopyLocationConstraint.rst
+   bpy.types.CopyRotationConstraint.rst
+   bpy.types.CopyScaleConstraint.rst
+   bpy.types.CopyTransformsConstraint.rst
+   bpy.types.DampedTrackConstraint.rst
+   bpy.types.FloorConstraint.rst
+   bpy.types.FollowPathConstraint.rst
+   bpy.types.FollowTrackConstraint.rst
+   bpy.types.GeometryAttributeConstraint.rst
+   bpy.types.KinematicConstraint.rst
+   bpy.types.LimitDistanceConstraint.rst
+   bpy.types.LimitLocationConstraint.rst
+   bpy.types.LimitRotationConstraint.rst
+   bpy.types.LimitScaleConstraint.rst
+   bpy.types.LockedTrackConstraint.rst
+   bpy.types.MaintainVolumeConstraint.rst
+   bpy.types.ObjectSolverConstraint.rst
+   bpy.types.PivotConstraint.rst
+   bpy.types.ShrinkwrapConstraint.rst
+   bpy.types.SplineIKConstraint.rst
+   bpy.types.StretchToConstraint.rst
+   bpy.types.TrackToConstraint.rst
+   bpy.types.TransformCacheConstraint.rst
+   bpy.types.TransformConstraint.rst
 
 .. class:: Constraint(bpy_struct)
 

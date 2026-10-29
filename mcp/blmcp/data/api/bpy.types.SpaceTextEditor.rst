@@ -5,6 +5,7 @@ SpaceTextEditor(Space)
 
 base classes --- :class:`bpy_struct`, :class:`Space`
 
+
 .. class:: SpaceTextEditor(Space)
 
    Text editor space data

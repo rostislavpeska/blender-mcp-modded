@@ -5,6 +5,7 @@ PivotConstraint(Constraint)
 
 base classes --- :class:`bpy_struct`, :class:`Constraint`
 
+
 .. class:: PivotConstraint(Constraint)
 
    Rotate around a different point
@@ -23,7 +24,7 @@ base classes --- :class:`bpy_struct`, :class:`Constraint`
 
    .. attribute:: rotation_range
 
-      Rotation range on which pivoting should occur (default ``'NX'``)
+      Rotation range on which pivoting should occur (default ``'ALWAYS_ACTIVE'``)
 
       - ``ALWAYS_ACTIVE``
         Always -- Use the pivot point in every rotation.

@@ -5,6 +5,7 @@ FluidEffectorSettings(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: FluidEffectorSettings(bpy_struct)
 
    Smoke collision settings

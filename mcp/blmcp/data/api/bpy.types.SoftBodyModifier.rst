@@ -5,6 +5,7 @@ SoftBodyModifier(Modifier)
 
 base classes --- :class:`bpy_struct`, :class:`Modifier`
 
+
 .. class:: SoftBodyModifier(Modifier)
 
    Soft body simulation modifier

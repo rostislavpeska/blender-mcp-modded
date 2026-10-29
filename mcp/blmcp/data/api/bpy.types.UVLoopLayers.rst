@@ -3,7 +3,8 @@ UVLoopLayers(bpy_prop_collection)
 
 .. currentmodule:: bpy.types
 
-base classes --- :class:`bpy_prop`, :class:`bpy_prop_collection`
+base class --- :class:`bpy_prop_collection`
+
 
 .. class:: UVLoopLayers(bpy_prop_collection)
 
@@ -18,6 +19,18 @@ base classes --- :class:`bpy_prop`, :class:`bpy_prop_collection`
    .. attribute:: active_index
 
       Active UV map index (in [0, inf], default 0)
+
+      :type: int
+
+   .. attribute:: active_render
+
+      Active Render UV Map layer
+
+      :type: :class:`MeshUVLoopLayer` | None
+
+   .. attribute:: active_render_index
+
+      Active Render UV map index (in [0, inf], default 0)
 
       :type: int
 

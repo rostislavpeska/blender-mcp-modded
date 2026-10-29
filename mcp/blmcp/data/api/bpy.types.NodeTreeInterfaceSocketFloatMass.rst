@@ -5,6 +5,7 @@ NodeTreeInterfaceSocketFloatMass(NodeTreeInterfaceSocket)
 
 base classes --- :class:`bpy_struct`, :class:`NodeTreeInterfaceItem`, :class:`NodeTreeInterfaceSocket`
 
+
 .. class:: NodeTreeInterfaceSocketFloatMass(NodeTreeInterfaceSocket)
 
    Floating-point number socket of a node

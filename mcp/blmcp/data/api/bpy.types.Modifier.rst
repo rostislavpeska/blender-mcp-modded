@@ -5,8 +5,93 @@ Modifier(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
-subclasses --- 
-:class:`ArmatureModifier`, :class:`ArrayModifier`, :class:`BevelModifier`, :class:`BooleanModifier`, :class:`BuildModifier`, :class:`CastModifier`, :class:`ClothModifier`, :class:`CollisionModifier`, :class:`CorrectiveSmoothModifier`, :class:`CurveModifier`, :class:`DataTransferModifier`, :class:`DecimateModifier`, :class:`DisplaceModifier`, :class:`DynamicPaintModifier`, :class:`EdgeSplitModifier`, :class:`ExplodeModifier`, :class:`FluidModifier`, :class:`GreasePencilArmatureModifier`, :class:`GreasePencilArrayModifier`, :class:`GreasePencilBuildModifier`, :class:`GreasePencilColorModifier`, :class:`GreasePencilDashModifierData`, :class:`GreasePencilEnvelopeModifier`, :class:`GreasePencilHookModifier`, :class:`GreasePencilLatticeModifier`, :class:`GreasePencilLengthModifier`, :class:`GreasePencilLineartModifier`, :class:`GreasePencilMirrorModifier`, :class:`GreasePencilMultiplyModifier`, :class:`GreasePencilNoiseModifier`, :class:`GreasePencilOffsetModifier`, :class:`GreasePencilOpacityModifier`, :class:`GreasePencilOutlineModifier`, :class:`GreasePencilShrinkwrapModifier`, :class:`GreasePencilSimplifyModifier`, :class:`GreasePencilSmoothModifier`, :class:`GreasePencilSubdivModifier`, :class:`GreasePencilTextureModifier`, :class:`GreasePencilThickModifierData`, :class:`GreasePencilTimeModifier`, :class:`GreasePencilTintModifier`, :class:`GreasePencilWeightAngleModifier`, :class:`GreasePencilWeightProximityModifier`, :class:`HookModifier`, :class:`LaplacianDeformModifier`, :class:`LaplacianSmoothModifier`, :class:`LatticeModifier`, :class:`MaskModifier`, :class:`MeshCacheModifier`, :class:`MeshDeformModifier`, :class:`MeshSequenceCacheModifier`, :class:`MeshToVolumeModifier`, :class:`MirrorModifier`, :class:`MultiresModifier`, :class:`NodesModifier`, :class:`NormalEditModifier`, :class:`OceanModifier`, :class:`ParticleInstanceModifier`, :class:`ParticleSystemModifier`, :class:`RemeshModifier`, :class:`ScrewModifier`, :class:`ShrinkwrapModifier`, :class:`SimpleDeformModifier`, :class:`SkinModifier`, :class:`SmoothModifier`, :class:`SoftBodyModifier`, :class:`SolidifyModifier`, :class:`SubsurfModifier`, :class:`SurfaceDeformModifier`, :class:`SurfaceModifier`, :class:`TriangulateModifier`, :class:`UVProjectModifier`, :class:`UVWarpModifier`, :class:`VertexWeightEditModifier`, :class:`VertexWeightMixModifier`, :class:`VertexWeightProximityModifier`, :class:`VolumeDisplaceModifier`, :class:`VolumeToMeshModifier`, :class:`WarpModifier`, :class:`WaveModifier`, :class:`WeightedNormalModifier`, :class:`WeldModifier`, :class:`WireframeModifier`
+.. toctree::
+   :caption: Subclasses
+   :maxdepth: 1
+
+   bpy.types.ArmatureModifier.rst
+   bpy.types.ArrayModifier.rst
+   bpy.types.BevelModifier.rst
+   bpy.types.BooleanModifier.rst
+   bpy.types.BuildModifier.rst
+   bpy.types.CastModifier.rst
+   bpy.types.ClothModifier.rst
+   bpy.types.CollisionModifier.rst
+   bpy.types.CorrectiveSmoothModifier.rst
+   bpy.types.CurveModifier.rst
+   bpy.types.DataTransferModifier.rst
+   bpy.types.DecimateModifier.rst
+   bpy.types.DisplaceModifier.rst
+   bpy.types.DynamicPaintModifier.rst
+   bpy.types.EdgeSplitModifier.rst
+   bpy.types.ExplodeModifier.rst
+   bpy.types.FluidModifier.rst
+   bpy.types.GreasePencilArmatureModifier.rst
+   bpy.types.GreasePencilArrayModifier.rst
+   bpy.types.GreasePencilBuildModifier.rst
+   bpy.types.GreasePencilColorModifier.rst
+   bpy.types.GreasePencilDashModifierData.rst
+   bpy.types.GreasePencilEnvelopeModifier.rst
+   bpy.types.GreasePencilHookModifier.rst
+   bpy.types.GreasePencilLatticeModifier.rst
+   bpy.types.GreasePencilLengthModifier.rst
+   bpy.types.GreasePencilLineartModifier.rst
+   bpy.types.GreasePencilMirrorModifier.rst
+   bpy.types.GreasePencilMultiplyModifier.rst
+   bpy.types.GreasePencilNoiseModifier.rst
+   bpy.types.GreasePencilOffsetModifier.rst
+   bpy.types.GreasePencilOpacityModifier.rst
+   bpy.types.GreasePencilOutlineModifier.rst
+   bpy.types.GreasePencilShrinkwrapModifier.rst
+   bpy.types.GreasePencilSimplifyModifier.rst
+   bpy.types.GreasePencilSmoothModifier.rst
+   bpy.types.GreasePencilSubdivModifier.rst
+   bpy.types.GreasePencilTextureModifier.rst
+   bpy.types.GreasePencilThickModifierData.rst
+   bpy.types.GreasePencilTimeModifier.rst
+   bpy.types.GreasePencilTintModifier.rst
+   bpy.types.GreasePencilWeightAngleModifier.rst
+   bpy.types.GreasePencilWeightProximityModifier.rst
+   bpy.types.HookModifier.rst
+   bpy.types.LaplacianDeformModifier.rst
+   bpy.types.LaplacianSmoothModifier.rst
+   bpy.types.LatticeModifier.rst
+   bpy.types.MaskModifier.rst
+   bpy.types.MeshCacheModifier.rst
+   bpy.types.MeshDeformModifier.rst
+   bpy.types.MeshSequenceCacheModifier.rst
+   bpy.types.MeshToVolumeModifier.rst
+   bpy.types.MirrorModifier.rst
+   bpy.types.MultiresModifier.rst
+   bpy.types.NodesModifier.rst
+   bpy.types.NormalEditModifier.rst
+   bpy.types.OceanModifier.rst
+   bpy.types.ParticleInstanceModifier.rst
+   bpy.types.ParticleSystemModifier.rst
+   bpy.types.RemeshModifier.rst
+   bpy.types.ScrewModifier.rst
+   bpy.types.ShrinkwrapModifier.rst
+   bpy.types.SimpleDeformModifier.rst
+   bpy.types.SkinModifier.rst
+   bpy.types.SmoothModifier.rst
+   bpy.types.SoftBodyModifier.rst
+   bpy.types.SolidifyModifier.rst
+   bpy.types.SubsurfModifier.rst
+   bpy.types.SurfaceDeformModifier.rst
+   bpy.types.SurfaceModifier.rst
+   bpy.types.TriangulateModifier.rst
+   bpy.types.UVProjectModifier.rst
+   bpy.types.UVWarpModifier.rst
+   bpy.types.VertexWeightEditModifier.rst
+   bpy.types.VertexWeightMixModifier.rst
+   bpy.types.VertexWeightProximityModifier.rst
+   bpy.types.VolumeDisplaceModifier.rst
+   bpy.types.VolumeToMeshModifier.rst
+   bpy.types.WarpModifier.rst
+   bpy.types.WaveModifier.rst
+   bpy.types.WeightedNormalModifier.rst
+   bpy.types.WeldModifier.rst
+   bpy.types.WireframeModifier.rst
 
 .. class:: Modifier(bpy_struct)
 

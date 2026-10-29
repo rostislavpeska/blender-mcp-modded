@@ -5,6 +5,7 @@ Driver(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: Driver(bpy_struct)
 
    Driver for the value of a setting based on an external value

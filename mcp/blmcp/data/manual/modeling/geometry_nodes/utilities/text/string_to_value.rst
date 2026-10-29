@@ -1,5 +1,6 @@
 .. index:: Geometry Nodes; String to Value
 .. _bpy.types.FunctionNodeStringToValue:
+.. --- copy below this line ---
 
 ********************
 String to Value Node
@@ -21,6 +22,12 @@ Inputs
 
 String
    The input text string to be converted into a numerical value.
+
+Base :guilabel:`Integer Data Type`
+   Numeric base used when parsing integers.
+
+   For example, use ``2`` for binary, ``8`` for octal, ``10`` for decimal,
+   or ``16`` for hexadecimal.
 
 
 Properties

@@ -5,6 +5,7 @@ NodeTreeInterface(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: NodeTreeInterface(bpy_struct)
 
    Declaration of sockets and ui panels of a node group

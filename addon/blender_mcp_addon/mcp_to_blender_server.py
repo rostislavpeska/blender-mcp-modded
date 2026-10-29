@@ -35,6 +35,7 @@ import os
 import select
 import socket
 import sys
+import time
 import traceback
 from collections.abc import Callable
 from typing import NamedTuple
@@ -140,6 +141,8 @@ _LISTEN_BACKLOG = 5
 _RECV_BUFFER_SIZE = 4096
 # Seconds before a client that has not sent a complete request is closed.
 _CLIENT_TIMEOUT = 10.0
+# Seconds to keep writing a queued response before giving up on the client.
+_SEND_TIMEOUT = 30.0
 # How often `poll_blocking` checks for shutdown.
 _POLL_BLOCKING_TIMEOUT = 1.0
 _DEFERRED_UNSUPPORTED_MESSAGE = (
@@ -173,6 +176,22 @@ class _Client:
         self.timeout: int = _timer.client_timeout_countdown
 
 
+class _PendingWrite(NamedTuple):
+    """
+    A response that has only been partially written to a client connection.
+
+    The connection has been removed from ``_State.clients``, it is owned
+    by ``_State.pending_writes`` until the response is written or abandoned.
+    See ``_flush_pending_writes``.
+    """
+
+    conn: socket.socket
+    # Bytes remaining to write.
+    data: memoryview
+    # Abandon the response once this time passes.
+    deadline: float
+
+
 # ---------------------------------------------------------------------------
 # Server state.
 
@@ -184,6 +203,7 @@ class _State:
     __slots__ = (
         "sock",
         "clients",
+        "pending_writes",
     )
 
     def __init__(self) -> None:
@@ -191,6 +211,8 @@ class _State:
         self.sock: socket.socket | None = None
         # Connected clients that have not yet sent a complete request.
         self.clients: list[_Client] = []
+        # Responses waiting on clients to drain their receive buffers.
+        self.pending_writes: list[_PendingWrite] = []
 
 
 _state = _State()
@@ -345,18 +367,103 @@ def _execute_code_from_request(
     return exec_result, strict_json
 
 
-def _close_client(client: _Client) -> None:
+def _close_conn(conn: socket.socket) -> None:
     """
-    Close a client connection and remove it from the active list.
+    Close a connection, ignoring any error.
     """
     try:
-        client.conn.close()
+        conn.close()
     except Exception:  # pylint: disable=broad-exception-caught
         pass
+
+
+def _remove_client(client: _Client) -> None:
+    """
+    Remove a client from the active list, leaving its connection open.
+    """
     try:
         _state.clients.remove(client)
     except ValueError:
         pass
+
+
+def _close_client(client: _Client) -> None:
+    """
+    Close a client connection and remove it from the active list.
+    """
+    _close_conn(client.conn)
+    _remove_client(client)
+
+
+def _close_client_with_response(client: _Client, response: dict[str, object]) -> None:
+    """
+    Send a final *response* to a client, closing the connection once written.
+    """
+    _remove_client(client)
+    _send_response_and_close(client.conn, response)
+
+
+# ---------------------------------------------------------------------------
+# Non-blocking response sending.
+
+# NOTE: never use `sendall` on these connections, they are non-blocking so it
+# raises `BlockingIOError` as soon as the kernel send buffer fills, leaving a
+# partially written response which the client reads back as truncated JSON.
+# In practice this showed up on macOS, where a Hi-DPI screenshot (~1MB of base64)
+# exceeds the send buffer, seen from the MCP server side as an
+# "Unterminated string" JSON error.
+#
+# Setting the socket to blocking for the send would fix it too, however that
+# stalls Blender's main thread until the client drains its receive buffer.
+# Instead queue whatever the socket won't take now, writing the rest on following polls.
+
+def _send_partial(conn: socket.socket, data: memoryview) -> memoryview:
+    """
+    Write as much of *data* as the socket accepts without blocking.
+
+    Return the bytes remaining, empty once written in full or the connection is broken.
+    """
+    while data:
+        try:
+            sent = conn.send(data)
+        except BlockingIOError:
+            # The kernel send buffer is full, write the rest on a later poll.
+            break
+        except OSError:
+            return memoryview(b"")
+        data = data[sent:]
+    return data
+
+
+def _send_response_and_close(conn: socket.socket, response: dict[str, object]) -> None:
+    """
+    Send *response* on *conn*, closing the connection once it has all been written.
+
+    Whatever the send buffer won't take right away is queued, see ``_flush_pending_writes``.
+    """
+    data = _send_partial(conn, memoryview(_encode_response(response)))
+    if not data:
+        _close_conn(conn)
+        return
+    _state.pending_writes.append(_PendingWrite(conn, data, time.monotonic() + _SEND_TIMEOUT))
+
+
+def _flush_pending_writes() -> bool:
+    """
+    Continue writing queued responses, closing each connection once complete.
+
+    Return ``True`` while responses remain queued.
+    """
+    pending_next: list[_PendingWrite] = []
+    for pending in _state.pending_writes:
+        data = _send_partial(pending.conn, pending.data)
+        # Keep waiting while bytes remain and the client is still reading.
+        if data and (time.monotonic() < pending.deadline):
+            pending_next.append(pending._replace(data=data))
+            continue
+        _close_conn(pending.conn)
+    _state.pending_writes = pending_next
+    return bool(pending_next)
 
 
 # ---------------------------------------------------------------------------
@@ -391,15 +498,10 @@ def _service_clients() -> bool:
         # Evict clients that have not sent a complete request in time.
         client.timeout -= 1
         if client.timeout <= 0:
-            try:
-                err: dict[str, object] = {
-                    "status": "error",
-                    "message": "Client timed out",
-                }
-                client.conn.sendall(_encode_response(err))
-            except OSError:
-                pass
-            _close_client(client)
+            _close_client_with_response(client, {
+                "status": "error",
+                "message": "Client timed out",
+            })
             continue
 
         try:
@@ -420,15 +522,10 @@ def _service_clients() -> bool:
 
         # Guard against unbounded input from a misbehaving client.
         if len(client.buffer) > _MAX_REQUEST_BYTES:
-            try:
-                err = {
-                    "status": "error",
-                    "message": "Request exceeds {:d} byte limit".format(_MAX_REQUEST_BYTES),
-                }
-                client.conn.sendall(_encode_response(err))
-            except OSError:
-                pass
-            _close_client(client)
+            _close_client_with_response(client, {
+                "status": "error",
+                "message": "Request exceeds {:d} byte limit".format(_MAX_REQUEST_BYTES),
+            })
             continue
 
         if b"\0" not in client.buffer:
@@ -454,16 +551,9 @@ def _service_clients() -> bool:
                 str(exec_result.response.get("stderr", "")),
             )
             # Remove from clients without closing the socket.
-            try:
-                _state.clients.remove(client)
-            except ValueError:
-                pass
+            _remove_client(client)
         else:
-            try:
-                client.conn.sendall(_encode_response(exec_result.response))
-            except OSError:
-                pass
-            _close_client(client)
+            _close_client_with_response(client, exec_result.response)
         did_work = True
 
     return did_work
@@ -471,14 +561,17 @@ def _service_clients() -> bool:
 
 def poll() -> bool:
     """
-    Non-blocking poll: accept new connections, service existing clients,
-    and check deferred responses.
+    Non-blocking poll: finish sending queued responses, accept new connections,
+    service existing clients, and check deferred responses.
 
-    Return ``True`` if work was done or deferred clients are pending.
+    Return ``True`` if work was done, or deferred clients & queued responses are pending.
     """
     from . import deferred_tool
+    # Stay in active polling mode until queued responses have been written.
+    did_work = _flush_pending_writes()
     _accept_clients()
-    did_work = _service_clients()
+    if _service_clients():
+        did_work = True
     if deferred_tool.poll():
         did_work = True
     # Stay in active polling mode while deferred clients exist.
@@ -640,24 +733,22 @@ def start(host: str, port: int) -> None:
 
 def stop() -> None:
     """
-    Close the listening socket, all client connections, and deferred responses.
+    Close the listening socket, all client connections, queued responses and deferred responses.
     """
     from . import deferred_tool
 
     sock = _state.sock
     _state.sock = None
     if sock is not None:
-        try:
-            sock.close()
-        except Exception:  # pylint: disable=broad-exception-caught
-            pass
+        _close_conn(sock)
 
     for client in _state.clients:
-        try:
-            client.conn.close()
-        except Exception:  # pylint: disable=broad-exception-caught
-            pass
+        _close_conn(client.conn)
     _state.clients.clear()
+
+    for pending in _state.pending_writes:
+        _close_conn(pending.conn)
+    _state.pending_writes.clear()
 
     deferred_tool.close_all()
 

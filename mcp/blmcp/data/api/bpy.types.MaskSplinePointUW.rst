@@ -5,6 +5,7 @@ MaskSplinePointUW(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: MaskSplinePointUW(bpy_struct)
 
    Single point in spline segment defining feather

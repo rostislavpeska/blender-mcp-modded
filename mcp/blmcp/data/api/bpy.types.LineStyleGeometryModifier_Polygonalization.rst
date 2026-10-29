@@ -5,6 +5,7 @@ LineStyleGeometryModifier_Polygonalization(LineStyleGeometryModifier)
 
 base classes --- :class:`bpy_struct`, :class:`LineStyleModifier`, :class:`LineStyleGeometryModifier`
 
+
 .. class:: LineStyleGeometryModifier_Polygonalization(LineStyleGeometryModifier)
 
    Modify the stroke geometry so that it looks more 'polygonal'

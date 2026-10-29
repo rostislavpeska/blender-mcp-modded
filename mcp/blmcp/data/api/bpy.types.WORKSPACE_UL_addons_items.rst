@@ -5,12 +5,9 @@ WORKSPACE_UL_addons_items(UIList)
 
 base classes --- :class:`bpy_struct`, :class:`UIList`
 
+
 .. class:: WORKSPACE_UL_addons_items(UIList)
 
-
-   .. method:: draw_item(context, layout, _data, addon, _icon, _active_data, _active_propname, _index)
-
-   .. method:: filter_items(_context, data, property)
 
    .. classmethod:: bl_rna_get_subclass(id, default=None, /)
    

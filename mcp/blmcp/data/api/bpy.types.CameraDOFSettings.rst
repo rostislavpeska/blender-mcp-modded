@@ -5,6 +5,7 @@ CameraDOFSettings(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: CameraDOFSettings(bpy_struct)
 
    Depth of Field settings

@@ -5,6 +5,7 @@ CacheObjectPath(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: CacheObjectPath(bpy_struct)
 
    Path of an object inside of an Alembic archive

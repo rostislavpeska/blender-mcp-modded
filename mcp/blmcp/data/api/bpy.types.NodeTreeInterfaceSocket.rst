@@ -5,8 +5,89 @@ NodeTreeInterfaceSocket(NodeTreeInterfaceItem)
 
 base classes --- :class:`bpy_struct`, :class:`NodeTreeInterfaceItem`
 
-subclasses --- 
-:class:`NodeTreeInterfaceSocketBool`, :class:`NodeTreeInterfaceSocketBundle`, :class:`NodeTreeInterfaceSocketClosure`, :class:`NodeTreeInterfaceSocketCollection`, :class:`NodeTreeInterfaceSocketColor`, :class:`NodeTreeInterfaceSocketFloat`, :class:`NodeTreeInterfaceSocketFloatAngle`, :class:`NodeTreeInterfaceSocketFloatColorTemperature`, :class:`NodeTreeInterfaceSocketFloatDistance`, :class:`NodeTreeInterfaceSocketFloatFactor`, :class:`NodeTreeInterfaceSocketFloatFrequency`, :class:`NodeTreeInterfaceSocketFloatMass`, :class:`NodeTreeInterfaceSocketFloatPercentage`, :class:`NodeTreeInterfaceSocketFloatTime`, :class:`NodeTreeInterfaceSocketFloatTimeAbsolute`, :class:`NodeTreeInterfaceSocketFloatUnsigned`, :class:`NodeTreeInterfaceSocketFloatWavelength`, :class:`NodeTreeInterfaceSocketFont`, :class:`NodeTreeInterfaceSocketGeometry`, :class:`NodeTreeInterfaceSocketImage`, :class:`NodeTreeInterfaceSocketInt`, :class:`NodeTreeInterfaceSocketIntFactor`, :class:`NodeTreeInterfaceSocketIntPercentage`, :class:`NodeTreeInterfaceSocketIntUnsigned`, :class:`NodeTreeInterfaceSocketMask`, :class:`NodeTreeInterfaceSocketMaterial`, :class:`NodeTreeInterfaceSocketMatrix`, :class:`NodeTreeInterfaceSocketMenu`, :class:`NodeTreeInterfaceSocketObject`, :class:`NodeTreeInterfaceSocketRotation`, :class:`NodeTreeInterfaceSocketScene`, :class:`NodeTreeInterfaceSocketShader`, :class:`NodeTreeInterfaceSocketSound`, :class:`NodeTreeInterfaceSocketString`, :class:`NodeTreeInterfaceSocketStringFilePath`, :class:`NodeTreeInterfaceSocketText`, :class:`NodeTreeInterfaceSocketTexture`, :class:`NodeTreeInterfaceSocketVector`, :class:`NodeTreeInterfaceSocketVector2D`, :class:`NodeTreeInterfaceSocketVector4D`, :class:`NodeTreeInterfaceSocketVectorAcceleration`, :class:`NodeTreeInterfaceSocketVectorAcceleration2D`, :class:`NodeTreeInterfaceSocketVectorAcceleration4D`, :class:`NodeTreeInterfaceSocketVectorDirection`, :class:`NodeTreeInterfaceSocketVectorDirection2D`, :class:`NodeTreeInterfaceSocketVectorDirection4D`, :class:`NodeTreeInterfaceSocketVectorEuler`, :class:`NodeTreeInterfaceSocketVectorEuler2D`, :class:`NodeTreeInterfaceSocketVectorEuler4D`, :class:`NodeTreeInterfaceSocketVectorFactor`, :class:`NodeTreeInterfaceSocketVectorFactor2D`, :class:`NodeTreeInterfaceSocketVectorFactor4D`, :class:`NodeTreeInterfaceSocketVectorPercentage`, :class:`NodeTreeInterfaceSocketVectorPercentage2D`, :class:`NodeTreeInterfaceSocketVectorPercentage4D`, :class:`NodeTreeInterfaceSocketVectorTranslation`, :class:`NodeTreeInterfaceSocketVectorTranslation2D`, :class:`NodeTreeInterfaceSocketVectorTranslation4D`, :class:`NodeTreeInterfaceSocketVectorVelocity`, :class:`NodeTreeInterfaceSocketVectorVelocity2D`, :class:`NodeTreeInterfaceSocketVectorVelocity4D`, :class:`NodeTreeInterfaceSocketVectorXYZ`, :class:`NodeTreeInterfaceSocketVectorXYZ2D`, :class:`NodeTreeInterfaceSocketVectorXYZ4D`
+.. toctree::
+   :caption: Subclasses
+   :maxdepth: 1
+
+   bpy.types.NodeTreeInterfaceSocketBool.rst
+   bpy.types.NodeTreeInterfaceSocketBundle.rst
+   bpy.types.NodeTreeInterfaceSocketClosure.rst
+   bpy.types.NodeTreeInterfaceSocketCollection.rst
+   bpy.types.NodeTreeInterfaceSocketColor.rst
+   bpy.types.NodeTreeInterfaceSocketFloat.rst
+   bpy.types.NodeTreeInterfaceSocketFloatAngle.rst
+   bpy.types.NodeTreeInterfaceSocketFloatColorTemperature.rst
+   bpy.types.NodeTreeInterfaceSocketFloatDistance.rst
+   bpy.types.NodeTreeInterfaceSocketFloatFactor.rst
+   bpy.types.NodeTreeInterfaceSocketFloatFrequency.rst
+   bpy.types.NodeTreeInterfaceSocketFloatMass.rst
+   bpy.types.NodeTreeInterfaceSocketFloatPercentage.rst
+   bpy.types.NodeTreeInterfaceSocketFloatPixel.rst
+   bpy.types.NodeTreeInterfaceSocketFloatTime.rst
+   bpy.types.NodeTreeInterfaceSocketFloatTimeAbsolute.rst
+   bpy.types.NodeTreeInterfaceSocketFloatUnsigned.rst
+   bpy.types.NodeTreeInterfaceSocketFloatWavelength.rst
+   bpy.types.NodeTreeInterfaceSocketFont.rst
+   bpy.types.NodeTreeInterfaceSocketGeometry.rst
+   bpy.types.NodeTreeInterfaceSocketImage.rst
+   bpy.types.NodeTreeInterfaceSocketInt.rst
+   bpy.types.NodeTreeInterfaceSocketIntFactor.rst
+   bpy.types.NodeTreeInterfaceSocketIntPercentage.rst
+   bpy.types.NodeTreeInterfaceSocketIntPixel.rst
+   bpy.types.NodeTreeInterfaceSocketIntUnsigned.rst
+   bpy.types.NodeTreeInterfaceSocketIntVector2D.rst
+   bpy.types.NodeTreeInterfaceSocketIntVector3D.rst
+   bpy.types.NodeTreeInterfaceSocketIntVectorFactor2D.rst
+   bpy.types.NodeTreeInterfaceSocketIntVectorFactor3D.rst
+   bpy.types.NodeTreeInterfaceSocketIntVectorPercentage2D.rst
+   bpy.types.NodeTreeInterfaceSocketIntVectorPercentage3D.rst
+   bpy.types.NodeTreeInterfaceSocketIntVectorPixel2D.rst
+   bpy.types.NodeTreeInterfaceSocketIntVectorPixel3D.rst
+   bpy.types.NodeTreeInterfaceSocketIntVectorUnsigned2D.rst
+   bpy.types.NodeTreeInterfaceSocketIntVectorUnsigned3D.rst
+   bpy.types.NodeTreeInterfaceSocketMask.rst
+   bpy.types.NodeTreeInterfaceSocketMaterial.rst
+   bpy.types.NodeTreeInterfaceSocketMatrix.rst
+   bpy.types.NodeTreeInterfaceSocketMenu.rst
+   bpy.types.NodeTreeInterfaceSocketObject.rst
+   bpy.types.NodeTreeInterfaceSocketRotation.rst
+   bpy.types.NodeTreeInterfaceSocketScene.rst
+   bpy.types.NodeTreeInterfaceSocketShader.rst
+   bpy.types.NodeTreeInterfaceSocketSound.rst
+   bpy.types.NodeTreeInterfaceSocketString.rst
+   bpy.types.NodeTreeInterfaceSocketStringFilePath.rst
+   bpy.types.NodeTreeInterfaceSocketText.rst
+   bpy.types.NodeTreeInterfaceSocketTexture.rst
+   bpy.types.NodeTreeInterfaceSocketVector.rst
+   bpy.types.NodeTreeInterfaceSocketVector2D.rst
+   bpy.types.NodeTreeInterfaceSocketVector4D.rst
+   bpy.types.NodeTreeInterfaceSocketVectorAcceleration.rst
+   bpy.types.NodeTreeInterfaceSocketVectorAcceleration2D.rst
+   bpy.types.NodeTreeInterfaceSocketVectorAcceleration4D.rst
+   bpy.types.NodeTreeInterfaceSocketVectorDirection.rst
+   bpy.types.NodeTreeInterfaceSocketVectorDirection2D.rst
+   bpy.types.NodeTreeInterfaceSocketVectorDirection4D.rst
+   bpy.types.NodeTreeInterfaceSocketVectorEuler.rst
+   bpy.types.NodeTreeInterfaceSocketVectorEuler2D.rst
+   bpy.types.NodeTreeInterfaceSocketVectorEuler4D.rst
+   bpy.types.NodeTreeInterfaceSocketVectorFactor.rst
+   bpy.types.NodeTreeInterfaceSocketVectorFactor2D.rst
+   bpy.types.NodeTreeInterfaceSocketVectorFactor4D.rst
+   bpy.types.NodeTreeInterfaceSocketVectorPercentage.rst
+   bpy.types.NodeTreeInterfaceSocketVectorPercentage2D.rst
+   bpy.types.NodeTreeInterfaceSocketVectorPercentage4D.rst
+   bpy.types.NodeTreeInterfaceSocketVectorPixel.rst
+   bpy.types.NodeTreeInterfaceSocketVectorPixel2D.rst
+   bpy.types.NodeTreeInterfaceSocketVectorPixel4D.rst
+   bpy.types.NodeTreeInterfaceSocketVectorTranslation.rst
+   bpy.types.NodeTreeInterfaceSocketVectorTranslation2D.rst
+   bpy.types.NodeTreeInterfaceSocketVectorTranslation4D.rst
+   bpy.types.NodeTreeInterfaceSocketVectorVelocity.rst
+   bpy.types.NodeTreeInterfaceSocketVectorVelocity2D.rst
+   bpy.types.NodeTreeInterfaceSocketVectorVelocity4D.rst
+   bpy.types.NodeTreeInterfaceSocketVectorXYZ.rst
+   bpy.types.NodeTreeInterfaceSocketVectorXYZ2D.rst
+   bpy.types.NodeTreeInterfaceSocketVectorXYZ4D.rst
 
 .. class:: NodeTreeInterfaceSocket(NodeTreeInterfaceItem)
 
@@ -50,8 +131,14 @@ subclasses ---
         Left Handle -- The left Bézier control point handle from the context.
       - ``HANDLE_RIGHT``
         Right Handle -- The right Bézier control point handle from the context.
+      - ``SCENE_FRAME``
+        Scene Frame -- The current frame in the scene.
+      - ``UNIFORM_IMAGE_COORDINATES``
+        Uniform Image Coordinates -- The uniform image coordinates of the compositing space.
+      - ``SELF_OBJECT``
+        Self Object -- The object that contains the geometry nodes modifier currently being executed.
 
-      :type: Literal['VALUE', 'INDEX', 'ID_OR_INDEX', 'NORMAL', 'POSITION', 'INSTANCE_TRANSFORM', 'HANDLE_LEFT', 'HANDLE_RIGHT']
+      :type: Literal['VALUE', 'INDEX', 'ID_OR_INDEX', 'NORMAL', 'POSITION', 'INSTANCE_TRANSFORM', 'HANDLE_LEFT', 'HANDLE_RIGHT', 'SCENE_FRAME', 'UNIFORM_IMAGE_COORDINATES', 'SELF_OBJECT']
 
    .. attribute:: description
 

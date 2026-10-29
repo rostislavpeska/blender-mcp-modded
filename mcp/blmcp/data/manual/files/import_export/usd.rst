@@ -7,7 +7,7 @@ Universal Scene Description
 Importing USD Files
 ===================
 
-`USD <https://graphics.pixar.com/usd/release/index.html>`__ files typically represent the scene as
+`USD <https://openusd.org/release/index.html>`__ files typically represent the scene as
 a hierarchy of primitives, or `prims <https://graphics.pixar.com/usd/release/glossary.html#USDGlossary-Prim>`__.
 Individual prims contain data to describe scene entities, such as geometry, lights, cameras and transform hierarchies.
 Blender's USD importer converts USD prims to a hierarchy of Blender objects. Like the USD exporter,
@@ -339,7 +339,7 @@ This means that the following meshes can be exported:
 
 .. figure:: /images/files_import-export_usd_example.png
 
-   Shot from `Spring <https://studio.blender.org/films/spring/>`__ exported to USD and opened in USDView.
+   Shot from `Spring <https://studio.blender.org/projects/spring/>`__ exported to USD and opened in USDView.
 
 
 .. _bpy.ops.wm.usd_export:
@@ -364,6 +364,11 @@ Include
    Animation
       When checked, the entire scene frame range is exported.
       When unchecked, only the current scene frame is exported.
+
+Incremental Save :guilabel:`Animation`
+   Incrementally save after the specified number of frames to reduce peak memory usage.
+   Incremental saves can result in longer export times and potential issues with some
+   file synchronization services. Zero disables incremental save.
 
 Blender Data
    Custom Properties
@@ -391,7 +396,7 @@ File References
 Convert Orientation
    Convert orientation axis to a different convention to match other applications.
    Blender uses Y Forward, Z Up (since the front view looks along the +Y direction).
-   For example, its common for applications to use Y as the up axis, in that case -Z Forward, Y Up is needed.
+   For example, it's common for applications to use Y as the up axis, in that case -Z Forward, Y Up is needed.
 
    Forward / Up Axis
       By mapping these to different axes you can convert rotations between applications default up and forward axes.
@@ -441,7 +446,7 @@ Hair
 
 .. note::
 
-   The corresponding USD schema type used during Export is analagous to the type read during
+   The corresponding USD schema type used during Export is analogous to the type read during
    Import. See the Import section for details.
 
 
@@ -653,7 +658,7 @@ Instancing/Referencing
 USDZ
    Due to a current limitation in the USD library, UDIM textures cannot be include in the USDZ archive.
    This limitation will likely be addressed in a future version of USD.
-   (See `USD pull request #2133 <https://github.com/PixarAnimationStudios/USD/pull/2133>`__.)
+   (See `USD pull request #2133 <https://github.com/PixarAnimationStudios/OpenUSD/pull/2133>`__.)
 
 
 USD Primvar data types

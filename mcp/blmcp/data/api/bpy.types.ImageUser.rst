@@ -5,6 +5,7 @@ ImageUser(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: ImageUser(bpy_struct)
 
    Parameters defining how an Image data-block is used by another data-block

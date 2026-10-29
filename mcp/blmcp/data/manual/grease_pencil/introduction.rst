@@ -8,7 +8,7 @@ from a mouse or pressure-sensitive stylus and places it in 3D space
 as a collection of points, which are defined as a stroke.
 
 The Grease Pencil object can be used to make traditional 2D animation, cut-out animation,
-motion graphics, or used it as storyboard tool, among other things.
+motion graphics, or use it as a storyboard tool, among other things.
 
 .. figure:: /images/grease-pencil_introduction_example.png
 

@@ -5,6 +5,7 @@ SpaceInfo(Space)
 
 base classes --- :class:`bpy_struct`, :class:`Space`
 
+
 .. class:: SpaceInfo(Space)
 
    Info space data

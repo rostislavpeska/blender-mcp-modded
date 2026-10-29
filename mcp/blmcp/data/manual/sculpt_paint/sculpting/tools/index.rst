@@ -7,6 +7,7 @@
    :maxdepth: 1
 
    brush_tool.rst
+   add_object_tools.rst
    mask_tools.rst
    hide_tools.rst
    face_set_tools.rst

@@ -5,12 +5,9 @@ USERPREF_UL_extension_repos(UIList)
 
 base classes --- :class:`bpy_struct`, :class:`UIList`
 
+
 .. class:: USERPREF_UL_extension_repos(UIList)
 
-
-   .. method:: draw_item(_context, layout, _data, item, icon, _active_data, _active_propname, _index)
-
-   .. method:: filter_items(_context, data, propname)
 
    .. classmethod:: bl_rna_get_subclass(id, default=None, /)
    

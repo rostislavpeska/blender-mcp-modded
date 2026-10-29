@@ -5,6 +5,7 @@ ThemeProperties(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: ThemeProperties(bpy_struct)
 
    Theme settings for the Properties

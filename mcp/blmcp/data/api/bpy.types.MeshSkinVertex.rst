@@ -5,6 +5,7 @@ MeshSkinVertex(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: MeshSkinVertex(bpy_struct)
 
    Per-vertex skin data for use with the Skin modifier

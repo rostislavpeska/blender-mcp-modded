@@ -220,7 +220,7 @@ Join the team and :ref:`start documenting Blender <about-user-contribute>` today
 .. rubric:: Translations
 
 Help bring Blender to the world! 🌍
-Join the translation effort to make the Blender accessible in more languages.
+Join the translation effort to make Blender accessible in more languages.
 
 - :doc:`Translate Blender's UI </contribute/translate_blender>`
 - :doc:`Translate Blender's User Manual  </contribute/translate_manual/index>`

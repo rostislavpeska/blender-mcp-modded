@@ -62,8 +62,8 @@ Snap Handle Angle
 Tool Settings
 =============
 
-Radius
-   Control newly added point's radius.
+Size
+   Control the diameter of newly added strokes.
 Stroke Placement
    The :doc:`Stroke Placement </grease_pencil/modes/draw/stroke_placement>` of newly added points.
 Drawing Plane

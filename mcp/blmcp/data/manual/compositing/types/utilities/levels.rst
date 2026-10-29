@@ -9,7 +9,7 @@ Levels Node
    :align: right
    :alt: Levels Node.
 
-The Levels Node read the input color channels and outputs analytical values.
+The Levels Node reads the input color channels and outputs analytical values.
 The output is one-dimensional meaning the visualization will be a uniform gray color.
 
 
@@ -39,3 +39,7 @@ Standard Deviation
    How much pixel values differ from the mean.
    A low standard deviation indicates that the pixel values tend to be very close to the mean.
    A high standard deviation indicates that the values are spread out over a large range of values.
+Minimum
+   The lowest pixel value in the selected channel.
+Maximum
+   The highest pixel value in the selected channel.

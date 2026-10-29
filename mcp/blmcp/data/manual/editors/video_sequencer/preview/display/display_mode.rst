@@ -36,9 +36,6 @@ Specifically:
   waveform pixel is black. If at least three pixels in the frame column have this brightness,
   the waveform pixel is white.
 
-When this scope is selected, you have the following option in
-:menuselection:`Sidebar --> View --> View Settings`:
-
 The examples below show two images and their corresponding luma waveforms.
 
 .. list-table::

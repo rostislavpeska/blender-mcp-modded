@@ -5,6 +5,7 @@ NodeSeparateBundleItem(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: NodeSeparateBundleItem(bpy_struct)
 
 

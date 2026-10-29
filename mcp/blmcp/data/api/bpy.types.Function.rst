@@ -5,6 +5,7 @@ Function(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: Function(bpy_struct)
 
    RNA function definition

@@ -5,6 +5,7 @@ SceneRenderView(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: SceneRenderView(bpy_struct)
 
    Render viewpoint for 3D stereo and multiview rendering

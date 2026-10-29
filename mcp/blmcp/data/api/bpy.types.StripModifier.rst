@@ -5,8 +5,21 @@ StripModifier(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
-subclasses --- 
-:class:`BrightContrastModifier`, :class:`ColorBalanceModifier`, :class:`CurvesModifier`, :class:`EchoModifier`, :class:`HueCorrectModifier`, :class:`MaskStripModifier`, :class:`PitchModifier`, :class:`SequencerCompositorModifierData`, :class:`SequencerTonemapModifierData`, :class:`SoundEqualizerModifier`, :class:`WhiteBalanceModifier`
+.. toctree::
+   :caption: Subclasses
+   :maxdepth: 1
+
+   bpy.types.BrightContrastModifier.rst
+   bpy.types.ColorBalanceModifier.rst
+   bpy.types.CurvesModifier.rst
+   bpy.types.EchoModifier.rst
+   bpy.types.HueCorrectModifier.rst
+   bpy.types.MaskStripModifier.rst
+   bpy.types.PitchModifier.rst
+   bpy.types.SequencerCompositorModifierData.rst
+   bpy.types.SequencerTonemapModifierData.rst
+   bpy.types.SoundEqualizerModifier.rst
+   bpy.types.WhiteBalanceModifier.rst
 
 .. class:: StripModifier(bpy_struct)
 
@@ -14,7 +27,7 @@ subclasses ---
 
    .. attribute:: enable
 
-      Enable this modifier (default True)
+      Use modifier during render (default True)
 
       :type: bool
 
@@ -73,6 +86,12 @@ subclasses ---
    .. attribute:: show_expanded
 
       Mute expanded settings for the modifier (default False)
+
+      :type: bool
+
+   .. attribute:: show_preview
+
+      Display modifier in preview (default False)
 
       :type: bool
 

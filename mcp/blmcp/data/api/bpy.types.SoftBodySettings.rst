@@ -5,6 +5,7 @@ SoftBodySettings(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: SoftBodySettings(bpy_struct)
 
    Soft body simulation settings for an object

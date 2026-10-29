@@ -57,7 +57,7 @@ Surface
 Surface UV Map
    The UV map used when sampling the surface normals for displacement.
 
-Surface Normal Displacement
+Distance
    Amount of displacement applied along the sampled surface normal.
    Can be positive or negative depending on the desired direction.
 

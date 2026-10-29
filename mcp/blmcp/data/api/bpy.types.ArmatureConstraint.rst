@@ -5,6 +5,7 @@ ArmatureConstraint(Constraint)
 
 base classes --- :class:`bpy_struct`, :class:`Constraint`
 
+
 .. class:: ArmatureConstraint(Constraint)
 
    Applies transformations done by the Armature modifier

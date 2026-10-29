@@ -5,6 +5,7 @@ IntAttributeValue(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: IntAttributeValue(bpy_struct)
 
    Integer value in geometry attribute

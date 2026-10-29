@@ -5,10 +5,9 @@ VOLUME_UL_grids(UIList)
 
 base classes --- :class:`bpy_struct`, :class:`UIList`
 
+
 .. class:: VOLUME_UL_grids(UIList)
 
-
-   .. method:: draw_item(_context, layout, _data, grid, _icon, _active_data, _active_propname, _index)
 
    .. classmethod:: bl_rna_get_subclass(id, default=None, /)
    

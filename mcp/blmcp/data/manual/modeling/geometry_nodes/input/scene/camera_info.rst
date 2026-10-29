@@ -1,5 +1,6 @@
 .. index:: Geometry Nodes; Camera Info
 .. _bpy.types.GeometryNodeCameraInfo:
+.. --- copy below this line ---
 
 ****************
 Camera Info Node

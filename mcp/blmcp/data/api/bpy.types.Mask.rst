@@ -5,6 +5,7 @@ Mask(ID)
 
 base classes --- :class:`bpy_struct`, :class:`ID`
 
+
 .. class:: Mask(ID)
 
    Mask data-block defining mask for compositing

@@ -5,6 +5,7 @@ FloatColorAttribute(Attribute)
 
 base classes --- :class:`bpy_struct`, :class:`Attribute`
 
+
 .. class:: FloatColorAttribute(Attribute)
 
    Geometry attribute that stores RGBA colors as floating-point values using 32-bits per channel

@@ -5,8 +5,27 @@ EffectStrip(Strip)
 
 base classes --- :class:`bpy_struct`, :class:`Strip`
 
-subclasses --- 
-:class:`AddStrip`, :class:`AdjustmentStrip`, :class:`AlphaOverStrip`, :class:`AlphaUnderStrip`, :class:`ColorMixStrip`, :class:`ColorStrip`, :class:`CrossStrip`, :class:`GammaCrossStrip`, :class:`GaussianBlurStrip`, :class:`GlowStrip`, :class:`MulticamStrip`, :class:`MultiplyStrip`, :class:`SpeedControlStrip`, :class:`SubtractStrip`, :class:`TextStrip`, :class:`WipeStrip`
+.. toctree::
+   :caption: Subclasses
+   :maxdepth: 1
+
+   bpy.types.AddStrip.rst
+   bpy.types.AdjustmentStrip.rst
+   bpy.types.AlphaOverStrip.rst
+   bpy.types.AlphaUnderStrip.rst
+   bpy.types.ColorMixStrip.rst
+   bpy.types.ColorStrip.rst
+   bpy.types.CompositorStrip.rst
+   bpy.types.CrossStrip.rst
+   bpy.types.GammaCrossStrip.rst
+   bpy.types.GaussianBlurStrip.rst
+   bpy.types.GlowStrip.rst
+   bpy.types.MulticamStrip.rst
+   bpy.types.MultiplyStrip.rst
+   bpy.types.SpeedControlStrip.rst
+   bpy.types.SubtractStrip.rst
+   bpy.types.TextStrip.rst
+   bpy.types.WipeStrip.rst
 
 .. class:: EffectStrip(Strip)
 
@@ -91,7 +110,7 @@ subclasses ---
 
    .. attribute:: use_proxy
 
-      Use a preview proxy and/or time-code index for this strip (default False)
+      Use a preview proxy for this strip (default False)
 
       :type: bool
 
@@ -151,7 +170,6 @@ Inherited Properties
    - :class:`Strip.frame_offset_end`
    - :class:`Strip.right_handle_offset`
    - :class:`Strip.channel`
-   - :class:`Strip.use_linear_modifiers`
    - :class:`Strip.blend_type`
    - :class:`Strip.blend_alpha`
    - :class:`Strip.effect_fader`
@@ -159,6 +177,7 @@ Inherited Properties
    - :class:`Strip.color_tag`
    - :class:`Strip.modifiers`
    - :class:`Strip.show_retiming_keys`
+   - :class:`Strip.connections`
 
 Inherited Functions
 -------------------

@@ -5,6 +5,7 @@ Armature(ID)
 
 base classes --- :class:`bpy_struct`, :class:`ID`
 
+
 .. class:: Armature(ID)
 
    Armature data-block containing a hierarchy of bones, usually used for rigging characters

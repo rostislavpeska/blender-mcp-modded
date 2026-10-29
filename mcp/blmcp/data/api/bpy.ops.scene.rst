@@ -24,7 +24,7 @@ Scene Operators
 
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `addons_core/io_scene_gltf2/blender/com/gltf2_blender_ui.py\:615 <https://projects.blender.org/blender/blender/src/branch/main/scripts/addons_core/io_scene_gltf2/blender/com/gltf2_blender_ui.py#L615>`__
+   :File: `addons_core/io_scene_gltf2/blender/com/gltf2_blender_ui.py\:681 <https://projects.blender.org/blender/blender/src/branch/main/scripts/addons_core/io_scene_gltf2/blender/com/gltf2_blender_ui.py#L681>`__
 
 .. function:: gpencil_brush_preset_add(*, name="", remove_name=False, remove_active=False)
 

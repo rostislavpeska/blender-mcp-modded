@@ -5,6 +5,7 @@ MovieTrackingStabilization(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: MovieTrackingStabilization(bpy_struct)
 
    2D stabilization based on tracking markers

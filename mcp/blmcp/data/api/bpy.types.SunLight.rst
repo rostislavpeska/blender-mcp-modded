@@ -5,6 +5,7 @@ SunLight(Light)
 
 base classes --- :class:`bpy_struct`, :class:`ID`, :class:`Light`
 
+
 .. class:: SunLight(Light)
 
    Constant direction parallel ray Light
@@ -80,14 +81,6 @@ base classes --- :class:`bpy_struct`, :class:`ID`, :class:`Light`
       Enable jittered soft shadows to increase shadow precision (disabled in viewport unless enabled in the render settings). Has a high performance impact. (default False)
 
       :type: bool
-
-   .. method:: inline_shader_nodes()
-
-      Get the inlined shader nodes of this light. This preprocesses the node tree
-      to remove nested groups, repeat zones and more.
-      
-      :return: The inlined shader nodes.
-      :rtype: :class:`bpy.types.InlineShaderNodes`
 
    .. classmethod:: bl_rna_get_subclass(id, default=None, /)
    

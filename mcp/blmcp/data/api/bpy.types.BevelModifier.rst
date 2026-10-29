@@ -5,6 +5,7 @@ BevelModifier(Modifier)
 
 base classes --- :class:`bpy_struct`, :class:`Modifier`
 
+
 .. class:: BevelModifier(Modifier)
 
    Bevel modifier to make edges and vertices more rounded
@@ -34,7 +35,7 @@ base classes --- :class:`bpy_struct`, :class:`Modifier`
 
    .. attribute:: edge_weight
 
-      Attribute name for edge weight (default "", never None)
+      Attribute name for edge weight (default "bevel_weight_edge", never None)
 
       :type: str
 
@@ -188,7 +189,7 @@ base classes --- :class:`bpy_struct`, :class:`Modifier`
 
    .. attribute:: vertex_weight
 
-      Attribute name for vertex weight (default "", never None)
+      Attribute name for vertex weight (default "bevel_weight_vert", never None)
 
       :type: str
 

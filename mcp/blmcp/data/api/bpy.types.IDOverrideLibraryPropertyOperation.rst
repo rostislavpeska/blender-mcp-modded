@@ -5,6 +5,7 @@ IDOverrideLibraryPropertyOperation(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: IDOverrideLibraryPropertyOperation(bpy_struct)
 
    Description of an override operation over an overridden property
@@ -24,6 +25,12 @@ base class --- :class:`bpy_struct`
 
       :type: set[Literal['MANDATORY', 'LOCKED', 'IDPOINTER_MATCH_REFERENCE', 'IDPOINTER_ITEM_USE_ID']]
 
+   .. data:: label
+
+      UI label to display in dedicated view of the Outliner, in place of the actual UI widget to edit the value (default "", readonly, never None)
+
+      :type: str
+
    .. data:: operation
 
       What override operation is performed (default ``'REPLACE'``, readonly)
@@ -42,8 +49,10 @@ base class --- :class:`bpy_struct`
         Insert After -- Insert a new item into collection after the one referenced in subitem_reference_name/_id or _index.
       - ``INSERT_BEFORE``
         Insert Before -- Insert a new item into collection before the one referenced in subitem_reference_name/_id or _index (NOT USED).
+      - ``CUSTOM``
+        Custom -- Custom operation, specific to a RNA property, and handled through dedicated callbacks (used in specific cases, e.g. to handle data not actually exposed in RNA).
 
-      :type: Literal['NOOP', 'REPLACE', 'DIFF_ADD', 'DIFF_SUB', 'FACT_MULTIPLY', 'INSERT_AFTER', 'INSERT_BEFORE']
+      :type: Literal['NOOP', 'REPLACE', 'DIFF_ADD', 'DIFF_SUB', 'FACT_MULTIPLY', 'INSERT_AFTER', 'INSERT_BEFORE', 'CUSTOM']
 
    .. data:: subitem_local_id
 
@@ -78,6 +87,12 @@ base class --- :class:`bpy_struct`
    .. data:: subitem_reference_name
 
       Used to handle changes into collection (default "", readonly, never None)
+
+      :type: str
+
+   .. data:: tooltip
+
+      UI tooltip to display in dedicated view of the Outliner, when the label itself cannot provide all required information (default "", readonly, never None)
 
       :type: str
 

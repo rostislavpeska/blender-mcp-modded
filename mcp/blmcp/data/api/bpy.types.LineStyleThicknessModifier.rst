@@ -5,8 +5,19 @@ LineStyleThicknessModifier(LineStyleModifier)
 
 base classes --- :class:`bpy_struct`, :class:`LineStyleModifier`
 
-subclasses --- 
-:class:`LineStyleThicknessModifier_AlongStroke`, :class:`LineStyleThicknessModifier_Calligraphy`, :class:`LineStyleThicknessModifier_CreaseAngle`, :class:`LineStyleThicknessModifier_Curvature_3D`, :class:`LineStyleThicknessModifier_DistanceFromCamera`, :class:`LineStyleThicknessModifier_DistanceFromObject`, :class:`LineStyleThicknessModifier_Material`, :class:`LineStyleThicknessModifier_Noise`, :class:`LineStyleThicknessModifier_Tangent`
+.. toctree::
+   :caption: Subclasses
+   :maxdepth: 1
+
+   bpy.types.LineStyleThicknessModifier_AlongStroke.rst
+   bpy.types.LineStyleThicknessModifier_Calligraphy.rst
+   bpy.types.LineStyleThicknessModifier_CreaseAngle.rst
+   bpy.types.LineStyleThicknessModifier_Curvature_3D.rst
+   bpy.types.LineStyleThicknessModifier_DistanceFromCamera.rst
+   bpy.types.LineStyleThicknessModifier_DistanceFromObject.rst
+   bpy.types.LineStyleThicknessModifier_Material.rst
+   bpy.types.LineStyleThicknessModifier_Noise.rst
+   bpy.types.LineStyleThicknessModifier_Tangent.rst
 
 .. class:: LineStyleThicknessModifier(LineStyleModifier)
 

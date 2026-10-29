@@ -20,8 +20,14 @@ of the scene and only show nodes of the renderer they are designed for.
 
 base classes --- :class:`bpy_struct`, :class:`ID`
 
-subclasses --- 
-:class:`CompositorNodeTree`, :class:`GeometryNodeTree`, :class:`ShaderNodeTree`, :class:`TextureNodeTree`
+.. toctree::
+   :caption: Subclasses
+   :maxdepth: 1
+
+   bpy.types.CompositorNodeTree.rst
+   bpy.types.GeometryNodeTree.rst
+   bpy.types.ShaderNodeTree.rst
+   bpy.types.TextureNodeTree.rst
 
 .. class:: NodeTree(ID)
 
@@ -334,6 +340,7 @@ References
    - :class:`BlendDataNodeTrees.remove`
    - :class:`CompositorNodeCustomGroup.node_tree`
    - :class:`CompositorNodeGroup.node_tree`
+   - :class:`CompositorStrip.node_group`
    - :class:`EvaluateClosureNodeViewerPathElem.source_node_tree`
    - :class:`FreestyleLineStyle.node_tree`
    - :class:`GeometryNodeCustomGroup.node_tree`

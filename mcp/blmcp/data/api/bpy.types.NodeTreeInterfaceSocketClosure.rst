@@ -5,6 +5,7 @@ NodeTreeInterfaceSocketClosure(NodeTreeInterfaceSocket)
 
 base classes --- :class:`bpy_struct`, :class:`NodeTreeInterfaceItem`, :class:`NodeTreeInterfaceSocket`
 
+
 .. class:: NodeTreeInterfaceSocketClosure(NodeTreeInterfaceSocket)
 
    Closure socket of a node

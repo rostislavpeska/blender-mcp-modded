@@ -5,6 +5,7 @@ NodeSocketRotation(NodeSocketStandard)
 
 base classes --- :class:`bpy_struct`, :class:`NodeSocket`, :class:`NodeSocketStandard`
 
+
 .. class:: NodeSocketRotation(NodeSocketStandard)
 
    Rotation value socket of a node

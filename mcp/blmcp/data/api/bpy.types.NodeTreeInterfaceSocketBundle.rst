@@ -5,6 +5,7 @@ NodeTreeInterfaceSocketBundle(NodeTreeInterfaceSocket)
 
 base classes --- :class:`bpy_struct`, :class:`NodeTreeInterfaceItem`, :class:`NodeTreeInterfaceSocket`
 
+
 .. class:: NodeTreeInterfaceSocketBundle(NodeTreeInterfaceSocket)
 
    Bundle socket of a node

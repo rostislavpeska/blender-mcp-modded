@@ -5,6 +5,7 @@ PreferencesSystem(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: PreferencesSystem(bpy_struct)
 
    Graphics driver and operating system settings
@@ -104,6 +105,12 @@ base class --- :class:`bpy_struct`
 
       :type: int
 
+   .. attribute:: geometry_nodes_stack_limit
+
+      Approximate maximum size of the call stack used by Geometry Nodes. For example, this corresponds to the number of allowed nested node groups. Setting this too high can result in crashes caused by running out of stack memory. (in [1, inf], default 100)
+
+      :type: int
+
    .. attribute:: gl_clip_alpha
 
       Clip alpha below this threshold in the 3D textured view (in [0, 1], default 0.004)
@@ -143,19 +150,6 @@ base class --- :class:`bpy_struct`
       Number of shader compilation threads or subprocesses, clamped at the max threads supported by the CPU (requires restarting Blender for changes to take effect). A higher number increases the RAM usage while reducing compilation time. A value of 0 will use automatic configuration. (OpenGL only) (in [0, 32], default 0)
 
       :type: int
-
-   .. attribute:: image_draw_method
-
-      Method used for displaying images on the screen (default ``'AUTO'``)
-
-      - ``AUTO``
-        Automatic -- Automatically choose method based on GPU and image.
-      - ``2DTEXTURE``
-        2D Texture -- Use CPU for display transform and display image with 2D texture.
-      - ``GLSL``
-        GLSL -- Use GLSL shaders for display transform and display image with 2D texture.
-
-      :type: Literal['AUTO', '2DTEXTURE', 'GLSL']
 
    .. data:: is_microsoft_store_install
 
@@ -226,6 +220,12 @@ base class --- :class:`bpy_struct`
         Subprocess -- Use subprocesses for compiling shaders.
 
       :type: Literal['THREAD', 'SUBPROCESS']
+
+   .. attribute:: show_panel_tabs_compact
+
+      Display sidebar tabs in a compact size that shows icons when available (default False)
+
+      :type: bool
 
    .. data:: solid_lights
 

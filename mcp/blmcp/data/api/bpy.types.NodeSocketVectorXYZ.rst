@@ -5,6 +5,7 @@ NodeSocketVectorXYZ(NodeSocketStandard)
 
 base classes --- :class:`bpy_struct`, :class:`NodeSocket`, :class:`NodeSocketStandard`
 
+
 .. class:: NodeSocketVectorXYZ(NodeSocketStandard)
 
    3D vector socket of a node

@@ -8,3 +8,4 @@
 
    introduction.rst
    catalogs.rst
+   remote_asset_libraries.rst

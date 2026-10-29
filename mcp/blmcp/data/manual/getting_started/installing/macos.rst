@@ -8,8 +8,9 @@ different versions that are available for Blender (if you have not done so yet).
 
 .. important::
 
-   Blender supports both Intel and Apple Silicon architectures on macOS. Make sure to download a variant that is
-   compatible with your CPU's architecture.
+   Blender 5.0 and later only supports Macs with Apple silicon.
+   For more information, see `Deprecation and removal of macOS Intel builds in Blender 5.0
+   <https://devtalk.blender.org/t/deprecation-and-removal-of-macos-intel-builds-in-blender-5-0/>`__.
 
 
 Install from a DMG

@@ -5,6 +5,7 @@ NodeSocketFont(NodeSocketStandard)
 
 base classes --- :class:`bpy_struct`, :class:`NodeSocket`, :class:`NodeSocketStandard`
 
+
 .. class:: NodeSocketFont(NodeSocketStandard)
 
    Font socket of a node

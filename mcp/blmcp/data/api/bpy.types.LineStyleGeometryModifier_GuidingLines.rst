@@ -5,6 +5,7 @@ LineStyleGeometryModifier_GuidingLines(LineStyleGeometryModifier)
 
 base classes --- :class:`bpy_struct`, :class:`LineStyleModifier`, :class:`LineStyleGeometryModifier`
 
+
 .. class:: LineStyleGeometryModifier_GuidingLines(LineStyleGeometryModifier)
 
    Modify the stroke geometry so that it corresponds to its main direction line

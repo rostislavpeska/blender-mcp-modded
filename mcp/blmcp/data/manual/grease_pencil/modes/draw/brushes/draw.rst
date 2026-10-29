@@ -23,14 +23,14 @@ Brush Settings
 Material
    Data-block selector for the :doc:`material </grease_pencil/materials/index>`.
 
-Radius
-   The radius of the brush in pixels.
+Size
+   The diameter of the brush in pixels.
 
    :kbd:`F` allows you to change the brush size interactively by dragging the pointer or
    by typing a number then confirm.
 
    :bl-icon:`stylus_pressure` (Size Pressure)
-      Adjusts the radius based on the stylus pressure when using a :ref:`Graphics Tablet <hardware-tablet>`.
+      Adjusts the brush size based on the stylus pressure when using a :ref:`Graphics Tablet <hardware-tablet>`.
       The gradient of the pressure can be customized using
       the :doc:`curve widget </interface/controls/templates/curve>`.
 
@@ -46,6 +46,21 @@ Strength
       Adjusts the strength based on the stylus pressure when using a :ref:`Graphics Tablet <hardware-tablet>`.
       The gradient of the pressure can be customized using
       the :doc:`curve widget </interface/controls/templates/curve>`.
+
+.. _bpy.types.BrushGpencilSettings.stroke_type:
+
+Stroke Mode
+   Defines which part of the Grease Pencil material is affected when drawing.
+
+   :Stroke:
+      Applies only the stroke (outline) component of the material.
+      The fill is not created or modified.
+   :Fill:
+      Applies only the fill component of the material.
+      No stroke outline is drawn.
+   :Both:
+      Applies both the stroke and fill components of the material
+      when creating or editing strokes.
 
 .. _bpy.types.BrushGpencilSettings.caps_type:
 
@@ -122,7 +137,7 @@ Iterations
 
 .. _bpy.types.BrushGpencilSettings.pen_subdivision_steps:
 
-Subdivision Steps
+Subdivisions
    Number of subdivisions to apply to newly created strokes.
 
 .. _bpy.types.BrushGpencilSettings.simplify_factor:
@@ -136,6 +151,8 @@ Trim Strokes End
    Automatically trim intersection strokes ends.
 
 .. _bpy.types.BrushGpencilSettings.use_settings_outline:
+.. _bpy.types.BrushGpencilSettings.material_alt:
+.. _bpy.types.BrushGpencilSettings.outline_thickness_factor:
 
 Outline
    Activate the conversion of the newly created stroke to its outline.
@@ -144,6 +161,31 @@ Outline
       Material used for outline stroke.
    Thickness
       Thickness used for outline stroke.
+
+.. _bpy.types.BrushGpencilSettings.curve_type:
+
+Curve Type
+   The type of curve used to interpolate between stroke points when drawing.
+
+   :Catmull Rom:
+      Creates a smooth interpolating curve that passes through all points,
+      producing natural-looking strokes.
+   :Poly:
+      Connects points with straight line segments without smoothing.
+   :Bézier:
+      Generates a smooth curve using Bézier interpolation,
+      allowing for more controlled and rounded stroke shapes.
+   :NURBS:
+      Uses Non-Uniform Rational B-Splines for smooth curves,
+      suitable for precise and mathematically defined shapes.
+
+.. _bpy.types.BrushGpencilSettings.conversion_threshold:
+
+Threshold
+   The minimum distance between points required when converting strokes.
+
+   Points closer than this distance are merged or ignored during conversion,
+   reducing the number of points and simplifying the resulting curve.
 
 
 .. _bpy.types.BrushGpencilSettings.use_settings_random:

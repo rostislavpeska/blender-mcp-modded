@@ -5,6 +5,7 @@ NodeTreeInterfaceSocketColor(NodeTreeInterfaceSocket)
 
 base classes --- :class:`bpy_struct`, :class:`NodeTreeInterfaceItem`, :class:`NodeTreeInterfaceSocket`
 
+
 .. class:: NodeTreeInterfaceSocketColor(NodeTreeInterfaceSocket)
 
    RGBA color socket of a node

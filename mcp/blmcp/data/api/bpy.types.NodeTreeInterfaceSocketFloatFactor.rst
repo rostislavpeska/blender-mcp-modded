@@ -5,6 +5,7 @@ NodeTreeInterfaceSocketFloatFactor(NodeTreeInterfaceSocket)
 
 base classes --- :class:`bpy_struct`, :class:`NodeTreeInterfaceItem`, :class:`NodeTreeInterfaceSocket`
 
+
 .. class:: NodeTreeInterfaceSocketFloatFactor(NodeTreeInterfaceSocket)
 
    Floating-point number socket of a node

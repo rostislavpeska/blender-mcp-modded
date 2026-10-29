@@ -73,6 +73,9 @@ Rotation & Scale
 Apply Properties
    Modify properties such as curve vertex radius, font size and bone envelope
    according to the applied transformation. (Found in the :ref:`bpy.ops.screen.redo_last` panel)
+Corrective Flip Normals
+   Flips surface normals when applying a negative scale.
+   This prevents inverted shading that can occur when objects have negative scaling.
 
 
 .. _bpy.ops.object.transforms_to_deltas:
@@ -143,6 +146,8 @@ Apply the result of each selected object's constraints to that object's own tran
 This will make the objects keep their location, rotation, and scale even if their
 constraints are disabled or deleted.
 
+
+.. _objects-apply-visual_geometry_as_mesh:
 
 Visual Geometry as Mesh
 =======================

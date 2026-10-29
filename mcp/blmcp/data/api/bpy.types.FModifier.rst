@@ -5,8 +5,18 @@ FModifier(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
-subclasses --- 
-:class:`FModifierCycles`, :class:`FModifierEnvelope`, :class:`FModifierFunctionGenerator`, :class:`FModifierGenerator`, :class:`FModifierLimits`, :class:`FModifierNoise`, :class:`FModifierSmooth`, :class:`FModifierStepped`
+.. toctree::
+   :caption: Subclasses
+   :maxdepth: 1
+
+   bpy.types.FModifierCycles.rst
+   bpy.types.FModifierEnvelope.rst
+   bpy.types.FModifierFunctionGenerator.rst
+   bpy.types.FModifierGenerator.rst
+   bpy.types.FModifierLimits.rst
+   bpy.types.FModifierNoise.rst
+   bpy.types.FModifierSmooth.rst
+   bpy.types.FModifierStepped.rst
 
 .. class:: FModifier(bpy_struct)
 

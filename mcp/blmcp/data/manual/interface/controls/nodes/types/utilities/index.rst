@@ -9,3 +9,10 @@
 
    Bundle <bundles/index.rst>
    Closure <closure/index.rst>
+
+-----
+
+.. toctree::
+   :maxdepth: 2
+
+   implicit_conversion.rst

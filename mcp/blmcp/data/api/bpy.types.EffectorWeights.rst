@@ -5,6 +5,7 @@ EffectorWeights(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: EffectorWeights(bpy_struct)
 
    Effector weights for physics simulation

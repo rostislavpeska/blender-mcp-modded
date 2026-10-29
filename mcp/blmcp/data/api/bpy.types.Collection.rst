@@ -5,6 +5,7 @@ Collection(ID)
 
 base classes --- :class:`bpy_struct`, :class:`ID`
 
+
 .. class:: Collection(ID)
 
    Collection of Object data-blocks

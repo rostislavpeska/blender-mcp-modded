@@ -5,6 +5,7 @@ ImagePackedFile(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: ImagePackedFile(bpy_struct)
 
 

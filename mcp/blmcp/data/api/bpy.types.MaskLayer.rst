@@ -5,6 +5,7 @@ MaskLayer(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: MaskLayer(bpy_struct)
 
    Single layer used for masking pixels
@@ -26,6 +27,17 @@ base class --- :class:`bpy_struct`
       Falloff type of the feather (default ``'SMOOTH'``)
 
       :type: Literal[:ref:`rna_enum_proportional_falloff_curve_only_items`]
+
+   .. attribute:: fill_solver
+
+      Triangulation solver for filling 2D curves (default ``'CDT'``)
+
+      - ``SWEEP_LINE``
+        Sweep Line -- Fast without support for self-intersection.
+      - ``CDT``
+        Delaunay -- Constrained Delaunay Triangulation (CDT), robust with support for self-intersections.
+
+      :type: Literal['SWEEP_LINE', 'CDT']
 
    .. attribute:: hide
 
@@ -77,7 +89,7 @@ base class --- :class:`bpy_struct`
 
    .. attribute:: use_fill_overlap
 
-      Calculate self intersections and overlap before filling (default False)
+      Calculate self intersections and overlap before filling (only for the sweep-line solver) (default False)
 
       :type: bool
 

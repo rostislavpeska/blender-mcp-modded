@@ -5,6 +5,7 @@ Sound(ID)
 
 base classes --- :class:`bpy_struct`, :class:`ID`
 
+
 .. class:: Sound(ID)
 
    Sound data-block referencing an external or packed sound file

@@ -5,6 +5,7 @@ MusgraveTexture(Texture)
 
 base classes --- :class:`bpy_struct`, :class:`ID`, :class:`Texture`
 
+
 .. class:: MusgraveTexture(Texture)
 
    Procedural musgrave texture

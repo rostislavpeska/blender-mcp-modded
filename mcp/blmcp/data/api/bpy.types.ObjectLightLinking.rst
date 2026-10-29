@@ -5,6 +5,7 @@ ObjectLightLinking(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: ObjectLightLinking(bpy_struct)
 
 

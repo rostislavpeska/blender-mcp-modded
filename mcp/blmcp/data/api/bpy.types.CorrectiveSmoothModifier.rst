@@ -5,6 +5,7 @@ CorrectiveSmoothModifier(Modifier)
 
 base classes --- :class:`bpy_struct`, :class:`Modifier`
 
+
 .. class:: CorrectiveSmoothModifier(Modifier)
 
    Correct distortion caused by deformation

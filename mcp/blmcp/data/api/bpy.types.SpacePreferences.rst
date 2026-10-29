@@ -5,6 +5,7 @@ SpacePreferences(Space)
 
 base classes --- :class:`bpy_struct`, :class:`Space`
 
+
 .. class:: SpacePreferences(Space)
 
    Blender preferences space data
@@ -40,9 +41,9 @@ base classes --- :class:`bpy_struct`, :class:`Space`
 
    .. data:: tab_search_results
 
-      Whether or not each visible tab has a search result (default False, readonly)
+      Whether or not each visible tab has a search result (dynamic array, default False, readonly)
 
-      :type: bool
+      :type: :class:`bpy_prop_array`\ [bool]
 
    .. classmethod:: bl_rna_get_subclass(id, default=None, /)
    

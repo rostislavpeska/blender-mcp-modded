@@ -10,6 +10,7 @@ Nodes for working with data stored per object element, e.g. vertex groups.
 
    attribute_statistic.rst
    domain_size.rst
+   get_attribute_names.rst
 
 -----
 
@@ -19,4 +20,6 @@ Nodes for working with data stored per object element, e.g. vertex groups.
    blur_attribute.rst
    capture_attribute.rst
    remove_named_attribute.rst
+   rename_attribute.rst
    store_named_attribute.rst
+   transfer_attributes.rst

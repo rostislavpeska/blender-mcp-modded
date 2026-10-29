@@ -5,6 +5,7 @@ RigidBodyWorld(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: RigidBodyWorld(bpy_struct)
 
    Self-contained rigid body simulation environment and settings

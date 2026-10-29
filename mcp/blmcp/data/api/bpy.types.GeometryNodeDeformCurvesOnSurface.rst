@@ -5,6 +5,7 @@ GeometryNodeDeformCurvesOnSurface(GeometryNode)
 
 base classes --- :class:`bpy_struct`, :class:`Node`, :class:`NodeInternal`, :class:`GeometryNode`
 
+
 .. class:: GeometryNodeDeformCurvesOnSurface(GeometryNode)
 
    Translate and rotate curves based on changes between the object's original and evaluated surface mesh
@@ -71,6 +72,7 @@ Inherited Properties
    - :class:`Node.label`
    - :class:`Node.inputs`
    - :class:`Node.outputs`
+   - :class:`Node.panel_states`
    - :class:`Node.internal_links`
    - :class:`Node.parent`
    - :class:`Node.warning_propagation`

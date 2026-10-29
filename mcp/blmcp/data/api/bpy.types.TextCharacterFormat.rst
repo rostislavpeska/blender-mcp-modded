@@ -5,6 +5,7 @@ TextCharacterFormat(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: TextCharacterFormat(bpy_struct)
 
    Text character formatting settings

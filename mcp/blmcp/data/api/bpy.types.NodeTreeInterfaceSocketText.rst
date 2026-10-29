@@ -5,6 +5,7 @@ NodeTreeInterfaceSocketText(NodeTreeInterfaceSocket)
 
 base classes --- :class:`bpy_struct`, :class:`NodeTreeInterfaceItem`, :class:`NodeTreeInterfaceSocket`
 
+
 .. class:: NodeTreeInterfaceSocketText(NodeTreeInterfaceSocket)
 
    Text socket of a node

@@ -5,6 +5,7 @@ TexPaintSlot(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: TexPaintSlot(bpy_struct)
 
    Slot that contains information about texture painting

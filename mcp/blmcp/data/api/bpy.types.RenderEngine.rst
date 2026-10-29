@@ -19,8 +19,11 @@ GPU Render Engine
 
 base class --- :class:`bpy_struct`
 
-subclasses --- 
-:class:`HydraRenderEngine`
+.. toctree::
+   :caption: Subclasses
+   :maxdepth: 1
+
+   bpy.types.HydraRenderEngine.rst
 
 .. class:: RenderEngine(bpy_struct)
 
@@ -166,6 +169,7 @@ subclasses ---
 
       Render scene into an image
 
+      :param depsgraph: Evaluated dependency graph
       :type depsgraph: :class:`Depsgraph` | None
 
    .. method:: render_frame_finish()
@@ -177,14 +181,18 @@ subclasses ---
 
       Draw render image
 
+      :param context: The context
       :type context: :class:`Context` | None
+      :param depsgraph: Evaluated dependency graph
       :type depsgraph: :class:`Depsgraph` | None
 
    .. method:: bake(depsgraph, object, pass_type, pass_filter, width, height)
 
       Bake passes
 
+      :param depsgraph: Evaluated dependency graph
       :type depsgraph: :class:`Depsgraph` | None
+      :param object: Object to bake
       :type object: :class:`Object` | None
       :param pass_type: Pass, Pass to bake
       :type pass_type: Literal[:ref:`rna_enum_bake_pass_type_items`]
@@ -199,14 +207,18 @@ subclasses ---
 
       Update on data changes for viewport render
 
+      :param context: The context
       :type context: :class:`Context` | None
+      :param depsgraph: Evaluated dependency graph
       :type depsgraph: :class:`Depsgraph` | None
 
    .. method:: view_draw(context, depsgraph)
 
       Draw viewport render
 
+      :param context: The context
       :type context: :class:`Context` | None
+      :param depsgraph: Evaluated dependency graph
       :type depsgraph: :class:`Depsgraph` | None
 
    .. method:: update_script_node(*, node=None)
@@ -337,6 +349,7 @@ subclasses ---
 
       camera_shift_x
 
+      :param camera: Camera object
       :type camera: :class:`Object` | None
       :param use_spherical_stereo: Spherical Stereo, (optional)
       :type use_spherical_stereo: bool
@@ -347,6 +360,7 @@ subclasses ---
 
       camera_model_matrix
 
+      :param camera: Camera object
       :type camera: :class:`Object` | None
       :param use_spherical_stereo: Spherical Stereo, (optional)
       :type use_spherical_stereo: bool
@@ -357,6 +371,7 @@ subclasses ---
 
       use_spherical_stereo
 
+      :param camera: Camera object
       :type camera: :class:`Object` | None
       :return: Spherical Stereo
       :rtype: bool
@@ -415,6 +430,7 @@ subclasses ---
 
       Bind GLSL fragment shader that converts linear colors to display space colors using scene color management settings
 
+      :param scene: Scene whose color management is used
       :type scene: :class:`Scene` | None
 
    .. method:: unbind_display_space_shader()
@@ -426,6 +442,7 @@ subclasses ---
 
       Test if GLSL display space shader is supported for the combination of graphics card and scene settings
 
+      :param scene: Scene whose color management is used
       :type scene: :class:`Scene` | None
       :return: Supported
       :rtype: bool
@@ -434,6 +451,7 @@ subclasses ---
 
       Get the pixel size that should be used for preview rendering
 
+      :param scene: Scene whose preview settings are used
       :type scene: :class:`Scene` | None
       :return: Pixel Size, (in [1, 8])
       :rtype: int
@@ -467,7 +485,9 @@ subclasses ---
 
       Register a render pass that will be part of the render with the current settings
 
+      :param scene: Scene the pass is registered for
       :type scene: :class:`Scene` | None
+      :param view_layer: View layer the pass belongs to
       :type view_layer: :class:`ViewLayer` | None
       :param name: Name, (never None)
       :type name: str

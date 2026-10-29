@@ -109,7 +109,7 @@ Empty Space :guilabel:`Gas Only`
 .. _bpy.types.FluidDomainSettings.delete_in_obstacle:
 
 Delete in Obstacle
-   Remover any volume of fluid that intersects with an obstacle inside the domain.
+   Remove any volume of fluid that intersects with an obstacle inside the domain.
 
 
 .. _bpy.types.FluidDomainSettings.use_collision_border_front:

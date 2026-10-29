@@ -85,6 +85,7 @@ Executing the operator will then print all values.
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: Menu(bpy_struct)
 
    Editor menu containing buttons
@@ -138,6 +139,7 @@ base class --- :class:`bpy_struct`
 
       If this method returns a non-null output, then the menu can be drawn
 
+      :param context: The context
       :type context: :class:`Context` | None
       :rtype: bool
 
@@ -145,16 +147,28 @@ base class --- :class:`bpy_struct`
 
       Draw UI elements into the menu UI layout
 
+      :param context: The context
       :type context: :class:`Context` | None
 
    .. classmethod:: append(draw_func)
 
       Append a draw function to this menu,
       takes the same arguments as the menus draw function
+      
+      :param draw_func: Draw function to append.
+      :type draw_func: Callable[[Self, :class:`Context`], None]
 
    .. classmethod:: draw_collapsible(context, layout)
 
-   .. method:: draw_preset(_context)
+      Draw the menu inline when the header shows menus, otherwise draw it
+      as a collapsed icon. Intended for use within header draw functions.
+      
+      :param context: The context.
+      :type context: :class:`Context`
+      :param layout: The layout to draw into.
+      :type layout: :class:`UILayout`
+
+   .. method:: draw_preset(context)
 
       Define these on the subclass:
       - preset_operator (string)
@@ -164,10 +178,18 @@ base class --- :class:`bpy_struct`
       - preset_add_operator (string)
       - preset_extensions (set of strings)
       - preset_operator_defaults (dict of keyword args)
+      
+      :param context: The context.
+      :type context: :class:`Context`
 
    .. classmethod:: is_extended()
 
-   .. method:: path_menu(searchpaths, operator, *, props_default=None, prop_filepath='filepath', filter_ext=None, filter_path=None, display_name=None, add_operator=None, add_operator_props=None, translate=True)
+      Test if any draw function has been added via :meth:`append` or :meth:`prepend`.
+      
+      :return: True when at least one draw function has been added.
+      :rtype: bool
+
+   .. method:: path_menu(searchpaths, operator, *, props_default=None, prop_filepath='filepath', filter_ext=None, filter_path=None, display_name=None, add_operator=None, add_operator_props=None, translate=True, recursive_paths=False)
 
       Populate a menu from a list of paths.
       
@@ -184,17 +206,33 @@ base class --- :class:`bpy_struct`
          Returning false excludes the file from the list.
       
       :type filter_ext: Callable[[str], bool] | None
+      :param filter_path: Optional callback that takes the file name, returns false to exclude it.
+      :type filter_path: Callable[[str], bool] | None
       :param display_name: Optional callback that takes the full path, returns the name to display.
       :type display_name: Callable[[str], str] | None
+      :param add_operator: Optional operator id used to add or remove entries.
+      :type add_operator: str | None
+      :param add_operator_props: Properties to assign to the add/remove operator.
+      :type add_operator_props: dict[str, Any] | None
+      :param translate: Translate the displayed names.
+      :type translate: bool
+      :param recursive_paths: Add submenus for sub-directories instead of listing their contents.
+      :type recursive_paths: bool
 
    .. classmethod:: prepend(draw_func)
 
       Prepend a draw function to this menu, takes the same arguments as
       the menus draw function
+      
+      :param draw_func: Draw function to prepend.
+      :type draw_func: Callable[[Self, :class:`Context`], None]
 
    .. classmethod:: remove(draw_func)
 
       Remove a draw function that has been added to this menu.
+      
+      :param draw_func: Draw function previously registered via :meth:`append` or :meth:`prepend`.
+      :type draw_func: Callable[[Self, :class:`Context`], None]
 
    .. classmethod:: bl_rna_get_subclass(id, default=None, /)
    

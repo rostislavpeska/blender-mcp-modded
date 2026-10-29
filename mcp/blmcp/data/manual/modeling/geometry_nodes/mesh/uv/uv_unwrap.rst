@@ -10,7 +10,7 @@ UV Unwrap Node
    :align: right
    :alt: UV Unwrap node.
 
-The *UV Unwrap Node* generates a UV map islands based on a selection of seam edges.
+The *UV Unwrap Node* generates UV map islands based on a selection of seam edges.
 The node implicitly performs a :doc:`Pack Islands </modeling/geometry_nodes/mesh/uv/pack_uv_islands>`
 operation upon completion, because the results may not be generally useful otherwise.
 

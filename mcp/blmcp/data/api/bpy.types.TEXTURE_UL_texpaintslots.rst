@@ -5,10 +5,9 @@ TEXTURE_UL_texpaintslots(UIList)
 
 base classes --- :class:`bpy_struct`, :class:`UIList`
 
+
 .. class:: TEXTURE_UL_texpaintslots(UIList)
 
-
-   .. method:: draw_item(_context, layout, _data, item, _icon, _active_data, _active_propname, _index)
 
    .. classmethod:: bl_rna_get_subclass(id, default=None, /)
    

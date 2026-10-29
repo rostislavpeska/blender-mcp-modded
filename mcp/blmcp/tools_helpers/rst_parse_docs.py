@@ -113,6 +113,18 @@ class _DirectivePreserve(docutils.parsers.rst.Directive):
         return [container]
 
 
+class _DirectiveDetails(_DirectivePreserve):
+    """Keep collapsible content transparent to nested API definition lookup."""
+
+    def run(self):
+        container = docutils.nodes.container()
+        if self.arguments:
+            container += docutils.nodes.paragraph(text=" ".join(self.arguments))
+        if self.content:
+            self.state.nested_parse(self.content, self.content_offset, container)
+        return [container]
+
+
 class _DirectiveLiteralInclude(_DirectivePreserve):
     """
     Variant of ``_DirectivePreserve`` that captures Sphinx
@@ -214,6 +226,7 @@ def _register_stubs() -> None:
     # Literalinclude uses its own subclass so `:lines:` etc. survive
     # into the rendered signature; see `_DirectiveLiteralInclude`.
     directives.register_directive("literalinclude", _DirectiveLiteralInclude)
+    directives.register_directive("details", _DirectiveDetails)
 
     # Content-bearing rendering directives: body kept, signature line
     # dropped.

@@ -5,6 +5,7 @@ NlaTrack(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: NlaTrack(bpy_struct)
 
    An animation layer containing Actions referenced as NLA strips

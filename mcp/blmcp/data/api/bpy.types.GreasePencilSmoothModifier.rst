@@ -5,6 +5,7 @@ GreasePencilSmoothModifier(Modifier)
 
 base classes --- :class:`bpy_struct`, :class:`Modifier`
 
+
 .. class:: GreasePencilSmoothModifier(Modifier)
 
    Smooth effect modifier

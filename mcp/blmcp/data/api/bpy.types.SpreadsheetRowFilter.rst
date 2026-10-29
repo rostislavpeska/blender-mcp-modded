@@ -5,6 +5,7 @@ SpreadsheetRowFilter(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: SpreadsheetRowFilter(bpy_struct)
 
 
@@ -65,6 +66,12 @@ base class --- :class:`bpy_struct`
    .. attribute:: value_float3
 
       (array of 3 items, in [-inf, inf], default (0.0, 0.0, 0.0))
+
+      :type: :class:`bpy_prop_array`\ [float]
+
+   .. attribute:: value_float4
+
+      (array of 4 items, in [-inf, inf], default (0.0, 0.0, 0.0, 0.0))
 
       :type: :class:`bpy_prop_array`\ [float]
 

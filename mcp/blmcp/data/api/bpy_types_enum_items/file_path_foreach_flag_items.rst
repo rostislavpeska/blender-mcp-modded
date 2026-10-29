@@ -9,9 +9,6 @@ File Path Foreach Flag Items
 :SKIP_PACKED: Skip Packed.
 
    Skip paths when their matching data is packed.
-:RESOLVE_TOKEN: Resolve Token.
-
-   Resolve tokens within a virtual filepath to a single, concrete, filepath. Currently only used for UDIM tiles.
 :SKIP_WEAK_REFERENCES: Skip Weak References.
 
    Skip weak reference paths. Those paths are typically 'nice to have' extra information, but are not used as actual source of data by the current .blend file.
@@ -21,3 +18,15 @@ File Path Foreach Flag Items
 :RELOAD_EDITED: Reload Edited.
 
    Reload data when the path is edited.
+:RESOLVE_TOKEN: Resolve Tokens.
+
+   Resolve tokens within a virtual filepath to a single, concrete, filepath. Currently only used for UDIM tiles.
+:EXPAND_TOKENS: Expand Tokens.
+
+   Expand template tokens in virtual file paths and invoke the callback once for each concrete file. Currently only used for UDIM tiles.
+:EXPAND_SEQUENCES: Expand Sequences.
+
+   Expand image and volume sequences, invoking the callback once per file on disk.
+:EXPAND_CACHES: Expand Caches.
+
+   Visit cache files, like texture cache files associated with images.

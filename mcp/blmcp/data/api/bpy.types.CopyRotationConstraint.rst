@@ -5,6 +5,7 @@ CopyRotationConstraint(Constraint)
 
 base classes --- :class:`bpy_struct`, :class:`Constraint`
 
+
 .. class:: CopyRotationConstraint(Constraint)
 
    Copy the rotation of the target

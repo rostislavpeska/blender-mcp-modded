@@ -29,7 +29,7 @@ Force Fields Settings
 
    :Panel:     :menuselection:`Particle System --> Force Fields Settings`
 
-The Force Field Settings panel allows you to make each individual act as a force field,
+The Force Field Settings panel allows you to make each individual particle act as a force field,
 allowing them to affect other dynamic systems, or even, each other.
 
 Self Effect

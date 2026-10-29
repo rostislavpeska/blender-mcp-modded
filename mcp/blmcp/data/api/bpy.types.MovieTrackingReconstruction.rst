@@ -5,6 +5,7 @@ MovieTrackingReconstruction(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: MovieTrackingReconstruction(bpy_struct)
 
    Match-moving reconstruction data from tracker

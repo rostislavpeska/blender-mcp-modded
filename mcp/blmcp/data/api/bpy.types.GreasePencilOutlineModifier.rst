@@ -5,6 +5,7 @@ GreasePencilOutlineModifier(Modifier)
 
 base classes --- :class:`bpy_struct`, :class:`Modifier`
 
+
 .. class:: GreasePencilOutlineModifier(Modifier)
 
    Outline of Strokes modifier from camera view

@@ -5,6 +5,7 @@ BoidRuleFight(BoidRule)
 
 base classes --- :class:`bpy_struct`, :class:`BoidRule`
 
+
 .. class:: BoidRuleFight(BoidRule)
 
 

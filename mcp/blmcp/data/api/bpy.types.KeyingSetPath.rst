@@ -5,6 +5,7 @@ KeyingSetPath(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: KeyingSetPath(bpy_struct)
 
    Path to a setting for use in a Keying Set

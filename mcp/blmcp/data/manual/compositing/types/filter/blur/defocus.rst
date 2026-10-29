@@ -82,7 +82,7 @@ As the balls recede into the distance, they get blurrier.
 No Z-Buffer Examples
 --------------------
 
-Sometimes might want to have more control to blur the image. For instance,
+Sometimes you might want to have more control to blur the image. For instance,
 you may want to only blur one object while leaving everything else alone (or the other way around),
 or you want to blur the whole image uniformly all at once.
 The node, therefore, allows you to use something other than an actual Z-buffer as the Z input.

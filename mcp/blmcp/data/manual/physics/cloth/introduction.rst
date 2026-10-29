@@ -6,7 +6,7 @@ Introduction
 Cloth simulation is one of the hardest aspects of computer graphics,
 it is a deceptively simple real-world item that is taken for granted,
 but it actually has very complex internal and environmental interactions.
-Cloth is commonly modeled as 2D mesh to simulate real world objects such as fabrics, flags, banners.
+Cloth is commonly modeled as a 2D mesh to simulate real world objects such as fabrics, flags, banners.
 And yet cloth can also be used to model 3D objects such as teddy bears, pillows, balloons, or balls.
 
 Cloth interacts with and is affected by other moving objects,

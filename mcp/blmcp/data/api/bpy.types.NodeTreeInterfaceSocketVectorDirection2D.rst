@@ -5,6 +5,7 @@ NodeTreeInterfaceSocketVectorDirection2D(NodeTreeInterfaceSocket)
 
 base classes --- :class:`bpy_struct`, :class:`NodeTreeInterfaceItem`, :class:`NodeTreeInterfaceSocket`
 
+
 .. class:: NodeTreeInterfaceSocketVectorDirection2D(NodeTreeInterfaceSocket)
 
    3D vector socket of a node

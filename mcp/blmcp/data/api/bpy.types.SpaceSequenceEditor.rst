@@ -5,6 +5,7 @@ SpaceSequenceEditor(Space)
 
 base classes --- :class:`bpy_struct`, :class:`Space`
 
+
 .. class:: SpaceSequenceEditor(Space)
 
    Sequence editor space data
@@ -156,6 +157,12 @@ base classes --- :class:`bpy_struct`, :class:`Space`
    .. attribute:: show_region_ui
 
       (default False)
+
+      :type: bool
+
+   .. attribute:: show_scrubbing_region
+
+      Region with full playback range for scrubbing in the sequencer (default False)
 
       :type: bool
 

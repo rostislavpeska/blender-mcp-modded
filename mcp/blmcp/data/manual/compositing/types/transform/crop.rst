@@ -28,7 +28,13 @@ Width
 Height
    The height of the crop region.
 Alpha Crop
-   Sets the areas outside of the crop region to be transparent instead of actually cropping the size of the image.
+   Set areas outside the crop region to be transparent instead of changing the dimensions of the image.
+
+   When enabled, the output image retains the same resolution as the input image,
+   with pixels outside the crop region replaced by transparency.
+
+   When the node is active and :ref:`bpy.types.SpaceNodeEditor.show_gizmo_active_node` is enabled,
+   the crop region can be adjusted interactively in the backdrop or Image editor.
 
 
 Outputs

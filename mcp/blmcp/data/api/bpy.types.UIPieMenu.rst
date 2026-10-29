@@ -5,6 +5,7 @@ UIPieMenu(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: UIPieMenu(bpy_struct)
 
 

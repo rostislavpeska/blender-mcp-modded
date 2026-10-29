@@ -15,7 +15,7 @@ is disabled.
 Using Custom Cameras
 ====================
 
-In order to use a custom camera, set the :ref:`lens type <camera-lens-type>` to Custom.
+In order to use a custom camera, set the :ref:`Lens Type <bpy.types.Camera.type>` to *Custom*.
 
 This enables the selection of a text data-block or external file, similar to the
 :ref:`Script node <bpy.types.ShaderNodeScript>` in shaders.
@@ -104,16 +104,47 @@ To further control how they are presented, the following OSL metadata can be use
 
 ``[[ string help = "This is a parameter" ]]``
   Description of the parameter, shown in the tooltip.
+
 ``[[ float sensitivity = 0.25 ]]``
   How far to increment/decrement the parameter when dragging/clicking.
+
 ``[[ int digits = 2 ]]``
   How many digits are displayed for numerical parameters.
+
 ``[[ float min = -5, float max = 5 ]]``
   What range the property can take on.
+
 ``[[ int slider = 1, float slidermin = -4, float slidermax = 4 ]]``
   Display the property as a slider with the given range.
+
 ``[[ string widget = "boolean" ]]``
   Display the ```int``` property as a checkbox, resulting in values 0 or 1.
+
+``[[ string widget = "filename" ]]``
+   Displays the parameter as a file path selector.
+
+``[[ string widget = "mapper", string options = "left:0|right:1" ]]``
+   Displays an integer parameter as an enumerated menu.
+
+   The *options* string defines a list of label-value pairs separated by ``|``.
+
+``[[ string vecsemantics = "POINT" ]]``
+   Marks a vector parameter as a translation input (position vector).
+
+``[[ string vecsemantics = "NORMAL" ]]``
+   Marks a vector parameter as a normal input (direction vector).
+
+``[[ string unit = "radians" ]]``
+   Marks a float parameter as an angle input, displayed in radians.
+
+``[[ string unit = "m" ]]``
+   Marks a float parameter as a distance input, displayed in meters.
+
+``[[ string unit = "mm" ]]``
+   Marks a float parameter as a distance input, displayed in millimeters.
+
+``[[ string unit = "s" ]]`` or ``[[ string unit = "sec" ]]``
+   Marks a float parameter as a time input, displayed in seconds.
 
 An Example
 ----------

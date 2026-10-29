@@ -5,6 +5,7 @@ Timer(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: Timer(bpy_struct)
 
    Window event timer

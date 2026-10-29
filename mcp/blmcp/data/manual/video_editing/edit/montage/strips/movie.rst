@@ -4,8 +4,20 @@
 Movie Strip
 ***********
 
-To add a movie (with or without audio) select a movie file(s) in the File Browser
-e.g. in the Audio-Video Interleaved format (``*.avi`` file).
+A Movie strip displays video from a movie file in the Sequencer.
+Optionally, one or more :doc:`Sound Strips </video_editing/edit/montage/strips/sound>`
+can also be created from the movie's audio streams.
+
+Movie strips reference the original media file rather than embedding it in the
+blend-file, allowing changes made in external editing or encoding software to
+be reflected by simply reloading the file.
+
+To add a Movie strip, choose :menuselection:`Add --> Movie` and select one or
+more movie files in the File Browser.
+
+If a movie contains multiple video or audio streams, Blender imports each
+stream as a separate strip. The strips are automatically synchronized to match
+the timing stored in the movie file, including any delays between streams.
 
 .. note:: Clips can be Huge
 
@@ -16,7 +28,7 @@ e.g. in the Audio-Video Interleaved format (``*.avi`` file).
 .. tip::
 
    Movie strips can display thumbnails in the Sequencer overlaid on their strips
-   by enabling the :ref:`Thumbnails <bpy.types.SequencerTimelineOverlay.show_thumbnails>` overlay.
+   by enabling the :ref:`Thumbnails <bpy.types.SequencerTimelineOverlay.thumbnail_display_style>` overlay.
 
 
 .. _bpy.ops.sequencer.movie_strip_add:
@@ -31,13 +43,12 @@ Add Movie Strip
 Move Strips
    Use mouse to position strip in timeline immediately after adding. If this option is enabled, Start Frame and
    Channel properties are not displayed.
-   
+
 Start Frame
    The :ref:`Start Frame <bpy.types.Strip.frame_start>` to place the left handle of the strip.
 
 Channel
    The :doc:`Channel </editors/video_sequencer/sequencer/channels>` to place the strip.
-
 
 Relative Path
    Store the location of the image file relative to the blend-file.
@@ -78,7 +89,10 @@ Adjust Playback Rate
    Automatically adjusts the video's speed to playback at the original speed regardless of the scene's frame rate.
 
 Sound
-   Add a :doc:`Sound Strip </video_editing/edit/montage/strips/sound>` that contains the movie's audio track.
+   Import the movie's audio streams as
+   :doc:`Sound Strips </video_editing/edit/montage/strips/sound>`.
+
+   When the movie contains multiple audio streams, a sound strip is created for each stream.
 
 Set Scene Frame Rate
    Sets the :ref:`Scene Frame Rate <bpy.types.RenderSettings.fps>` to the frame rate encoded in the movie file.

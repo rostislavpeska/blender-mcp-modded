@@ -1,5 +1,4 @@
 .. index:: Compositor Nodes; Unsharp Mask
-.. _bpy.types.CompositorNodeUnsharpMask:
 
 *****************
 Unsharp Mask Node
@@ -9,12 +8,16 @@ Unsharp Mask Node
    :align: right
    :alt: Unsharp Mask Node.
 
-The *Unsharp Mask* node enhances the apparent sharpness of an image by increasing edge contrast.
+.. --- modifier-intro-start ---
+
+*Unsharp Mask* enhances the apparent sharpness of an image by increasing edge contrast.
 Despite its name, it does not blur the image; instead, it sharpens details by subtracting a
 blurred (unsharp) version of the image from the original and emphasizing the resulting edges.
 
 This technique is commonly used in photography, printing, and digital compositing
 to improve clarity and definition.
+
+.. --- modifier-intro-end ---
 
 
 Inputs
@@ -22,6 +25,8 @@ Inputs
 
 Image
    Standard color input image.
+
+.. --- modifier-options-start ---
 
 Radius
    Controls how much surrounding area is sampled when detecting edges.
@@ -35,6 +40,8 @@ Factor
 Threshold
    Defines how different a pixel must be from its surrounding area before sharpening is applied.
    Higher values limit sharpening to more distinct edges, reducing noise enhancement.
+
+.. --- modifier-options-end ---
 
 
 Outputs

@@ -5,6 +5,7 @@ Gizmo(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: Gizmo(bpy_struct)
 
    Collection of gizmos
@@ -189,6 +190,12 @@ base class --- :class:`bpy_struct`
 
       :type: bool
 
+   .. attribute:: use_undo
+
+      Push an undo step after each use of the gizmo (default False)
+
+      :type: bool
+
    .. method:: draw(context)
 
       
@@ -370,6 +377,7 @@ base class --- :class:`bpy_struct`
       Get the range for this target property.
    
       :param target: Target property name.
+      :type target: str
       :return: The range of this property (min, max).
       :rtype: tuple[float, float]
 

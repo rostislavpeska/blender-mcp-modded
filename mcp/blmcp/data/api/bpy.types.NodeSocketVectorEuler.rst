@@ -5,6 +5,7 @@ NodeSocketVectorEuler(NodeSocketStandard)
 
 base classes --- :class:`bpy_struct`, :class:`NodeSocket`, :class:`NodeSocketStandard`
 
+
 .. class:: NodeSocketVectorEuler(NodeSocketStandard)
 
    3D vector socket of a node

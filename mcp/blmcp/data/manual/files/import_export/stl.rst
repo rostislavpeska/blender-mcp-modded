@@ -77,3 +77,10 @@ Geometry
 Apply Modifiers
    Export objects using the evaluated mesh, meaning the resulting mesh after all
    :doc:`Modifiers </modeling/modifiers/index>` have been calculated.
+
+Properties
+   For properties that have different settings for the viewport/final render pick which is used for output.
+   One example where this is important is the :doc:`/modeling/modifiers/generate/subdivision_surface`.
+
+   :Viewport: Use viewport properties.
+   :Render: Use final render properties.

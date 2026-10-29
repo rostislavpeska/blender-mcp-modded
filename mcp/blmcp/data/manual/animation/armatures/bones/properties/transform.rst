@@ -42,7 +42,7 @@ Roll
 .. _bpy.types.EditBone.length:
 
 Length
-   The distance from the bone's head to it's tail. Changing the length moves the tail end.
+   The distance from the bone's head to its tail. Changing the length moves the tail end.
 
 .. _bpy.types.EditBone.lock:
 

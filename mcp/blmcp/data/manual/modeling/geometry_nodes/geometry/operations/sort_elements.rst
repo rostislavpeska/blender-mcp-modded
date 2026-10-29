@@ -28,7 +28,7 @@ Group ID
 
 Sort Weight
    The sorted values used to do the reordering.
-   If the connected socket is is not a field, this socket has no effect.
+   If the connected socket is not a field, this socket has no effect.
 
 
 Properties

@@ -67,7 +67,7 @@ Materials
 Material Name Collision
    Behavior when the name of an imported material conflicts with an existing material.
 
-   :Make Unique: Import each USD material as a unique Blender material.
+   :Make Unique: Import each OBJ material as a unique Blender material.
    :Reference Existing: If a material with the same name already exists, reference that instead of importing.
 
 
@@ -92,7 +92,7 @@ Forward Axis, Up Axis
    between applications default up and forward axis.
 
    Blender uses Y Forward, Z Up (since the front view looks along the +Y direction).
-   For example, its common for applications to use Y as the up axis, in that case -Z Forward, Y Up is needed.
+   For example, it's common for applications to use Y as the up axis, in that case -Z Forward, Y Up is needed.
 
 
 Geometry Properties

@@ -5,6 +5,7 @@ LineStyleAlphaModifier_Curvature_3D(LineStyleAlphaModifier)
 
 base classes --- :class:`bpy_struct`, :class:`LineStyleModifier`, :class:`LineStyleAlphaModifier`
 
+
 .. class:: LineStyleAlphaModifier_Curvature_3D(LineStyleAlphaModifier)
 
    Alpha transparency based on the radial curvature of 3D mesh surfaces

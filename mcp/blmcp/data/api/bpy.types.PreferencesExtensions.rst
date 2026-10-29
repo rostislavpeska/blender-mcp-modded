@@ -5,6 +5,7 @@ PreferencesExtensions(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: PreferencesExtensions(bpy_struct)
 
    Settings for extensions

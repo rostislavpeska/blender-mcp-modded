@@ -5,6 +5,7 @@ ShaderFxPixel(ShaderFx)
 
 base classes --- :class:`bpy_struct`, :class:`ShaderFx`
 
+
 .. class:: ShaderFxPixel(ShaderFx)
 
    Pixelate effect

@@ -5,6 +5,7 @@ NodeTreeInterfaceSocketIntUnsigned(NodeTreeInterfaceSocket)
 
 base classes --- :class:`bpy_struct`, :class:`NodeTreeInterfaceItem`, :class:`NodeTreeInterfaceSocket`
 
+
 .. class:: NodeTreeInterfaceSocketIntUnsigned(NodeTreeInterfaceSocket)
 
    Integer number socket of a node

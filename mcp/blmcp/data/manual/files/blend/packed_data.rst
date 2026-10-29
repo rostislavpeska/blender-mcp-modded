@@ -14,7 +14,7 @@ You know that a data is packed when you see a little "gift box" icon displayed n
 
 .. warning:: Not all external files can be packed
 
-   Some typically heavy external files, like videos from the :doc:`Sequence Editor </video_editing/introduction>`
+   Some typically heavy external files, like videos from the :doc:`Sequence Editor </video_editing/index>`
    or :doc:`Movie Clips </editors/clip/introduction>`, cannot be packed in a blend-file.
 
 

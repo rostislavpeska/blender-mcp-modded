@@ -5,6 +5,7 @@ NodeSocketBundle(NodeSocketStandard)
 
 base classes --- :class:`bpy_struct`, :class:`NodeSocket`, :class:`NodeSocketStandard`
 
+
 .. class:: NodeSocketBundle(NodeSocketStandard)
 
    Bundle socket of a node

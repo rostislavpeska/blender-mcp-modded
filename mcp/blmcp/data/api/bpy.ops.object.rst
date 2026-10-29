@@ -950,7 +950,7 @@ Object Operators
    :type use_selected_objects: bool
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `startup/bl_operators/geometry_nodes.py\:285 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/geometry_nodes.py#L285>`__
+   :File: `startup/bl_operators/geometry_nodes.py\:262 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/geometry_nodes.py#L262>`__
 
 
 .. function:: grease_pencil_add(*, type='EMPTY', use_in_front=True, stroke_depth_offset=0.05, use_lights=True, stroke_depth_order='3D', radius=1.0, align='WORLD', location=(0.0, 0.0, 0.0), rotation=(0.0, 0.0, 0.0), scale=(0.0, 0.0, 0.0))
@@ -1474,9 +1474,15 @@ Object Operators
         Link Fonts to Text -- Replace Text object Fonts.
       - ``MODIFIERS``
         Copy Modifiers -- Replace Modifiers.
+      - ``CONSTRAINTS``
+        Copy Constraints -- Replace Constraints.
       - ``EFFECTS``
         Copy Grease Pencil Effects -- Replace Grease Pencil Effects.
-   :type type: Literal['OBDATA', 'MATERIAL', 'ANIMATION', 'GROUPS', 'DUPLICOLLECTION', 'FONTS', 'MODIFIERS', 'EFFECTS']
+      - ``LIGHT_LINKING``
+        Copy Light Linking -- Replace assigned Light Linking collection.
+      - ``SHADOW_LINKING``
+        Copy Shadow Linking -- Replace assigned Shadow Linking collection.
+   :type type: Literal['OBDATA', 'MATERIAL', 'ANIMATION', 'GROUPS', 'DUPLICOLLECTION', 'FONTS', 'MODIFIERS', 'CONSTRAINTS', 'EFFECTS', 'LIGHT_LINKING', 'SHADOW_LINKING']
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
 
@@ -2187,7 +2193,7 @@ Object Operators
    :type fade: bool
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `startup/bl_operators/object_quick_effects.py\:273 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/object_quick_effects.py#L273>`__
+   :File: `startup/bl_operators/object_quick_effects.py\:280 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/object_quick_effects.py#L280>`__
 
 
 .. function:: quick_fur(*, density='MEDIUM', length=0.1, radius=0.001, view_percentage=1.0, apply_hair_guides=True, use_noise=True, use_frizz=True)
@@ -2210,7 +2216,7 @@ Object Operators
    :type use_frizz: bool
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `startup/bl_operators/object_quick_effects.py\:92 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/object_quick_effects.py#L92>`__
+   :File: `startup/bl_operators/object_quick_effects.py\:103 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/object_quick_effects.py#L103>`__
 
 
 .. function:: quick_liquid(*, show_flows=False)
@@ -2221,7 +2227,7 @@ Object Operators
    :type show_flows: bool
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `startup/bl_operators/object_quick_effects.py\:553 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/object_quick_effects.py#L553>`__
+   :File: `startup/bl_operators/object_quick_effects.py\:556 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/object_quick_effects.py#L556>`__
 
 
 .. function:: quick_smoke(*, style='SMOKE', show_flows=False)
@@ -2234,7 +2240,7 @@ Object Operators
    :type show_flows: bool
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `startup/bl_operators/object_quick_effects.py\:447 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/object_quick_effects.py#L447>`__
+   :File: `startup/bl_operators/object_quick_effects.py\:454 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/object_quick_effects.py#L454>`__
 
 
 .. function:: randomize_transform(*, random_seed=0, use_delta=False, use_loc=True, loc=(0.0, 0.0, 0.0), use_rot=True, rot=(0.0, 0.0, 0.0), use_scale=True, scale_even=False, scale=(1.0, 1.0, 1.0))
@@ -2842,7 +2848,7 @@ Object Operators
 
 .. function:: transform_axis_target()
 
-   Interactively point cameras and lights to a location (Ctrl translates)
+   Interactively point cameras and lights to the surface under the pointer (Ctrl to translate)
 
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]

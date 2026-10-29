@@ -5,6 +5,7 @@ CollectionProperty(Property)
 
 base classes --- :class:`bpy_struct`, :class:`Property`
 
+
 .. class:: CollectionProperty(Property)
 
    RNA collection property to define lists, arrays and mappings

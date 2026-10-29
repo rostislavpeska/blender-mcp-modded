@@ -5,6 +5,7 @@ SurfaceCurve(Curve)
 
 base classes --- :class:`bpy_struct`, :class:`ID`, :class:`Curve`
 
+
 .. class:: SurfaceCurve(Curve)
 
    Curve data-block used for storing surfaces

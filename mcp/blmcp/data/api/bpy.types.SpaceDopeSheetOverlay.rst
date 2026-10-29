@@ -5,6 +5,7 @@ SpaceDopeSheetOverlay(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: SpaceDopeSheetOverlay(bpy_struct)
 
 

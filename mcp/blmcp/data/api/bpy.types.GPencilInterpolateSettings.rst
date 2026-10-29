@@ -5,6 +5,7 @@ GPencilInterpolateSettings(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: GPencilInterpolateSettings(bpy_struct)
 
    Settings for Grease Pencil interpolation tools

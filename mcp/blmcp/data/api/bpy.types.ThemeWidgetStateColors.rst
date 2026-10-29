@@ -5,6 +5,7 @@ ThemeWidgetStateColors(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: ThemeWidgetStateColors(bpy_struct)
 
    Theme settings for widget state colors

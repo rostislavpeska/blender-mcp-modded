@@ -5,6 +5,7 @@ MeshDeformModifier(Modifier)
 
 base classes --- :class:`bpy_struct`, :class:`Modifier`
 
+
 .. class:: MeshDeformModifier(Modifier)
 
    Mesh deformation modifier to deform with other meshes

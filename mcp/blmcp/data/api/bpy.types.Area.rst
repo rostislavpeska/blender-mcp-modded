@@ -5,6 +5,7 @@ Area(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: Area(bpy_struct)
 
    Area in a subdivided screen, containing an editor

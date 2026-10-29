@@ -5,6 +5,7 @@ IO_FH_gltf2(FileHandler)
 
 base classes --- :class:`bpy_struct`, :class:`FileHandler`
 
+
 .. class:: IO_FH_gltf2(FileHandler)
 
 

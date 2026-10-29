@@ -114,7 +114,7 @@ Life
 Damping
    An additional number of frames in which the wave slowly damps from the *Height* value
    to zero after *Life* is reached.
-   The dampening occurs for all the ripples and begins in the first frame after the *Life* is over.
+   The damping occurs for all the ripples and begins in the first frame after the *Life* is over.
    Ripples disappear over *Damping* frames.
 Speed
    The speed per frame, of the ripple.

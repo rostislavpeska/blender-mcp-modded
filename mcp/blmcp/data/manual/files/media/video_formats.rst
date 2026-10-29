@@ -3,164 +3,246 @@
 Supported Video & Audio Formats
 *******************************
 
-Blender used `FFmpeg <https://ffmpeg.org/>`__ to handle video encoding/decoding various video formats.
-These formats are primarily used for compressing rendered sequences into a playable movie.
-Video formats are composed of a container, a codec, and sometimes audio which is stored using its own codec.
-The roll of the container to encapsulate video and audio data that is compressed using a codec.
+Blender uses `FFmpeg <https://ffmpeg.org/>`__ to handle video encoding and decoding.
+These formats are primarily used to compress rendered image sequences into playable movies.
 
-Codecs compress the channels of a video down to save space and enable continuous playback.
-*Lossy* codecs make smaller files at the expense of image quality,
-while *lossless* codecs compress as much as possible the video/audio, but without losing any existing data.
+A video file is typically composed of:
 
-Some codecs, like H.264, are great for larger images. Codecs are used to encode and decode the movie,
-and so must be present on both the encoding machine (Blender) and the target machine.
-The results of the encoding are stored in a container file.
+* A **container** -- wraps video, audio, and metadata into a single file.
+* A **video codec** -- compresses the video stream.
+* An **audio codec** -- compresses the audio stream (optional).
 
-There are dozens, if not hundreds, of codecs, including Xvid, H.264, DivX, Microsoft,
-and so on. Each has advantages and disadvantages, and compatibility with different players on
-different operating systems.
-
-.. note::
-
-   Most codecs can only compress the RGB or YUV colors,
-   but some support the Alpha channel as well. Codecs that support RGBA include:
-
-   - `FFmpeg video codec #1 <https://en.wikipedia.org/wiki/FFV1>`__
-   - `PNG <https://en.wikipedia.org/wiki/Portable_Network_Graphics>`__
-   - QuickTime Animation
-   - WebM/VP9 (although Blender will not import the alpha channel due to
-     a `limitation of FFmpeg <https://trac.ffmpeg.org/ticket/8344>`__).
 
 
 .. _files-video-containers:
 
-FFmpeg Containers
-=================
+Supported Video Containers
+==========================
+
+The container stores encoded streams but does not define how they are compressed.
 
 :`MPEG-4 <https://en.wikipedia.org/wiki/MPEG-4>`__:
-   While being a :ref:`video codec <files-video-codecs>`, it is also a real container,
-   in which you can store video and audio streams using various codecs.
-   It is widely supported by many modern software and hardware players.
+   While also referring to a family of codecs, MPEG-4 is a container format
+   capable of storing video and audio streams encoded with various codecs.
+   It is widely supported across modern software and hardware.
 
    File Extensions: ``.mp4``, ``.mpg``, ``.mpeg``
 :`Matroska <https://en.wikipedia.org/wiki/Matroska>`__:
-   A free open-standard container format, a file format that can hold an unlimited number of video,
-   audio, picture or subtitle tracks in one file.
+   A free open-standard container format capable of holding multiple
+   video, audio, subtitle, and metadata tracks in a single file.
 
    File Extension: ``.mkv``
 :`WebM <https://en.wikipedia.org/wiki/WebM>`__:
-   A free open-standard container format, designed to be used for internet streaming.
-   Note that this container can only hold a VP9 video codec, and Vorbis or Opus audio codecs.
+   A free open-standard container designed primarily for web streaming.
+   This container supports VP9 or AV1 video and Vorbis or Opus audio codecs.
 
    File Extension: ``.webm``
 
 -----
 
 :`AVI <https://en.wikipedia.org/wiki/Audio_Video_Interleave>`__:
-   A derivative of the Resource Interchange File Format (RIFF).
-   One of the first and most widely used video container format.
+   One of the earliest and most widely used video container formats,
+   derived from the Resource Interchange File Format (RIFF).
 
    File Extension: ``.avi``
 :`DV <https://en.wikipedia.org/wiki/DV>`__:
-   An intra-frame video compression scheme, used by many digital camcorders back in the days.
-   It uses the discrete cosine transform (DCT, similar algorithm to JPEG)
-   to compress video on a frame-by-frame basis.
-   Audio is stored uncompressed.
-   This container enforces the video codec, you can only define quality parameters.
+   A digital video container used by many legacy camcorders.
+   This container enforces the DV video codec and stores audio uncompressed.
 
-   File extension: ``.dv``
+   File Extension: ``.dv``
 :`Flash <https://en.wikipedia.org/wiki/Flash_Video>`__:
-   A container file format used to deliver video over the internet using Adobe Flash Player.
-   This container enforces the video codec, you can only define quality parameters.
+   A container format formerly used for internet video delivery
+   through Adobe Flash Player. This container enforces specific codecs.
 
    File Extension: ``.flv``
 :`MPEG-1 <https://en.wikipedia.org/wiki/MPEG-1>`__:
-   A standard for lossy compression of video and audio.
-   It is designed to compress VHS-quality raw digital video and CD audio down to 1.5 Mbit/s.
-   This container enforces the video codec, you can only define quality parameters, and the audio codec.
+   A container format for lossy video and audio compression.
+   It enforces the MPEG-1 codec family.
 
    File Extensions: ``.mpg``, ``.mpeg``
 :`MPEG-2 <https://en.wikipedia.org/wiki/MPEG-2>`__:
-   A standard for "the generic coding of moving pictures and associated audio information".
-   It describes a combination of lossy video compression and lossy audio data compression
-   methods which permit storage and transmission of movies using
-   currently available storage media (notably DVDs) and transmission bandwidth.
-   This container enforces the video codec, you can only define quality parameters, and the audio codec.
+   A container used for DVD and broadcast video.
+   It enforces MPEG-2 encoding for video and associated audio streams.
 
-   File Extensions:  ``.dvd``, ``.vob``, ``.mpg``, ``.mpeg``
+   File Extensions: ``.dvd``, ``.vob``, ``.mpg``, ``.mpeg``
 :`Ogg <https://en.wikipedia.org/wiki/Ogg>`__:
-   A free open-standard container format, that can hold an unlimited number of video,
-   audio, picture or subtitle tracks in one file.
+   A free open-standard container capable of holding multiple
+   video, audio, subtitle, or metadata streams.
 
-   File Extensions:  ``.ogg``, ``.ogv``
+   File Extensions: ``.ogg``, ``.ogv``
 :`QuickTime <https://en.wikipedia.org/wiki/.mov>`__:
-   A multi-tracks format. QuickTime and MP4 container formats can use the same codecs.
-   They are mostly interchangeable in a QuickTime-only environment.
-   MP4, being an international standard, has more support.
+   A multi-track container format. It shares many codecs with MP4.
+   While largely interchangeable in some workflows, MP4 is more widely supported.
 
    File Extension: ``.mov``
 
 
 .. _files-video-codecs:
 
-FFmpeg Video Codecs
-===================
+Supported Video Codecs
+======================
 
-These options are not available with all :ref:`Containers <files-video-containers>`.
+Codecs compress video and audio data to reduce file size and enable continuous playback.
+
+*Lossy* codecs reduce file size by discarding some data.
+They produce smaller files at the expense of image or audio quality.
+
+*Lossless* codecs preserve all original data while still applying compression.
+They result in larger files but maintain full fidelity.
+
+Some codecs are optimized for distribution and streaming (e.g., H.264, AV1),
+while others are designed for editing and intermediate workflows (e.g., ProRes, DNxHD).
+
+Because codecs are required for both encoding and decoding,
+they must be available on both the system creating the file and the device playing it.
+
+Not all codecs are available in all containers.
 
 :No Video: For audio-only encoding.
 :`AV1 <https://en.wikipedia.org/wiki/AV1>`__:
-   A free open-standard lossy video compression format, designed as a successor to *VP9*.
-   AV1 offers great compression rates and visual quality,
-   *AV1* produces video files that are about 30% more space efficient than *VP9*
+   A free open-standard lossy video compression format designed as a successor to VP9.
+   Offers high compression efficiency and supports HDR output.
 :`H.264 <https://en.wikipedia.org/wiki/Advanced_Video_Coding>`__:
-   A modern variation of the MPEG-4 family, this lossy codec is very commonly used.
-   It offers a very good compression/quality ratio.
+   A widely used lossy codec offering a strong compression-to-quality ratio.
+   Common for streaming and general delivery.
+
 :`H.265 / HEVC <https://en.wikipedia.org/wiki/High_Efficiency_Video_Coding>`__:
-   An improved format of H.264 with improved compression efficiency, advanced motion compensation,
-   larger coding blocks, and enhanced prediction models for high-resolution content.
+   An improved successor to H.264 with better compression efficiency.
+   Supports HDR output and higher bit depths.
 :`WEBM / VP9 <https://en.wikipedia.org/wiki/VP9>`__:
-   A free open-standard lossy video compression format.
-   One of the most recent codecs, it is widely used for internet streaming.
+   A free open-standard lossy video codec widely used for internet streaming.
+   Supports alpha channel transparency.
 
 -----
 
 :`DNxHD <https://en.wikipedia.org/wiki/Avid_DNxHD>`__:
-   Intended to be usable as both an intermediate format suitable for use while editing,
-   and as a presentation format. It can be either lossless or lossy.
+   Intended as an intermediate editing format.
+   Can operate in either lossy or lossless modes.
 :`DV <https://en.wikipedia.org/wiki/DV>`__:
    See :ref:`Containers <files-video-containers>`.
 :`FFmpeg video codec #1 <https://en.wikipedia.org/wiki/FFV1>`__:
-   FFV1 is a lossless intra-frame video codec.
-   It can use either variable length coding or arithmetic coding for entropy coding.
-   The encoder and decoder are part of the free, open-source library libavcodec in FFmpeg.
-   Supports an alpha channel.
+   A lossless intra-frame video codec.
+   Supports alpha channel transparency.
 :`Flash Video <https://en.wikipedia.org/wiki/Flash_Video>`__:
    See :ref:`Containers <files-video-containers>`.
 :`HuffYUV <https://en.wikipedia.org/wiki/Huffyuv>`__:
-   Lossless video codec created by Ben Rudiak-Gould which is
-   meant to replace uncompressed YCbCr as a video capture format.
+   A lossless codec designed to replace uncompressed YCbCr capture formats.
 :`MPEG-1 <https://en.wikipedia.org/wiki/MPEG-1>`__:
    See :ref:`Containers <files-video-containers>`.
 :`MPEG-2 <https://en.wikipedia.org/wiki/MPEG-2>`__:
    See :ref:`Containers <files-video-containers>`.
 :`MPEG-4(DivX) <https://en.wikipedia.org/wiki/MPEG-4>`__:
-   Inherits many of the features of MPEG-1, MPEG-2 and other related standards, but also adds new features.
+   A lossy codec extending MPEG standards with additional compression features.
 :`ProRes <https://en.wikipedia.org/wiki/Apple_ProRes>`__:
-   A high-quality, visually lossless video codec developed by Apple Inc.
-   It is commonly used in professional post-production workflows.
+   A high-quality, visually lossless codec commonly used in professional post-production.
 
-   ProRes output supports a configurable :ref:`Profile <bpy.types.FFmpegSettings.ffmpeg_prores_profile>`
-   to control the quality, compression level, and data rate of the encoded video.
+   Supports configurable :ref:`Profile <bpy.types.FFmpegSettings.ffmpeg_prores_profile>`.
 
 :`PNG <https://en.wikipedia.org/wiki/Portable_Network_Graphics>`__:
-   Lossless, this stores each frame as an independent image in the video stream.
-   Compression will be poor, but as every frame is fully self-contained, scrubbing and editing can be simpler.
-   Supports an alpha channel.
+   Stores each frame as an independent image in the stream.
+   Lossless and supports alpha channel transparency.
 :`QuickTime Animation <https://en.wikipedia.org/wiki/QuickTime_Animation>`__:
-   Original format of QuickTime videos. Supports an alpha channel.
+   Legacy lossless QuickTime codec supporting alpha channel transparency.
 :`Theora <https://en.wikipedia.org/wiki/Theora>`__:
-   A free open-standard lossy codec designed together with the :ref:`Ogg container <files-video-containers>`.
+   A free open-standard lossy codec designed for the Ogg container.
+
+
+Supported Features
+------------------
+
+.. |tick|  unicode:: U+2713
+.. |cross| unicode:: U+2717
+
+.. list-table::
+   :header-rows: 1
+   :class: valign
+   :widths: 30 20 20 10 10
+
+   * - Codec
+     - Compression
+     - Color Depth
+     - Alpha
+     - HDR
+   * - AV1
+     - Lossy
+     - 8, 10, 12bit
+     - |cross|
+     - |tick|
+   * - H.264
+     - Lossy
+     - 8, 10bit
+     - |cross|
+     - |cross|
+   * - H.265 / HEVC
+     - Lossy
+     - 8, 10, 12bit
+     - |cross|
+     - |tick|
+   * - WEBM / VP9
+     - Lossy
+     - 8bit
+     - |tick|
+     - |cross|
+   * - DNxHD
+     - Lossy / Lossless
+     - 8bit
+     - |cross|
+     - |cross|
+   * - DV
+     - Lossy
+     - 8bit
+     - |cross|
+     - |cross|
+   * - FFmpeg video codec #1
+     - Lossless
+     - 8, 10, 12, 16bit
+     - |tick|
+     - |cross|
+   * - Flash Video
+     - Lossy
+     - 8bit
+     - |cross|
+     - |cross|
+   * - HuffYUV
+     - Lossless
+     - 8bit
+     - |cross|
+     - |cross|
+   * - MPEG-1
+     - Lossy
+     - 8bit
+     - |cross|
+     - |cross|
+   * - MPEG-2
+     - Lossy
+     - 8bit
+     - |cross|
+     - |cross|
+   * - MPEG-4 (DivX)
+     - Lossy
+     - 8bit
+     - |cross|
+     - |cross|
+   * - ProRes
+     - Visually Lossless
+     - 8, 10bit
+     - |cross|
+     - |cross|
+   * - PNG
+     - Lossless
+     - 8bit
+     - |tick|
+     - |cross|
+   * - QuickTime Animation
+     - Lossless
+     - 8bit
+     - |tick|
+     - |cross|
+   * - Theora
+     - Lossy
+     - 8bit
+     - |cross|
+     - |cross|
 
 
 .. _files-audio-codecs:
@@ -171,27 +253,40 @@ FFmpeg Audio Codecs
 :No Audio:
    For video-only encoding.
 :`AAC <https://en.wikipedia.org/wiki/Advanced_Audio_Coding>`__:
-   Advanced Audio Codec, a standardized, lossy compression and encoding scheme for digital audio.
-   AAC generally achieves better sound quality than MP3 at similar bit rates.
+   A standardized lossy audio codec providing better quality than MP3 at similar bit rates.
 :`AC3 <https://en.wikipedia.org/wiki/Dolby_Digital>`__:
-   Audio Codec 3, an audio compression technology developed by Dolby Laboratories.
+   Dolby Digital audio compression format.
 :`FLAC <https://en.wikipedia.org/wiki/FLAC>`__:
-   Free Lossless Audio Codec.
-   Digital audio compressed by FLAC's algorithm can typically be reduced to 50-60% of its original size.
+   A free lossless audio codec reducing file size while preserving full fidelity.
 :`MP2 <https://en.wikipedia.org/wiki/MPEG-1_Audio_Layer_II>`__:
    A lossy audio compression format.
 :`MP3 <https://en.wikipedia.org/wiki/MP3>`__:
-   A lossy audio compression format, widely used as final audio format.
+   A widely supported lossy audio compression format.
 :`Opus <https://en.wikipedia.org/wiki/Opus_(audio_format)>`__:
-   A lossy audio compression format, designed to encode speech or general audio
-   and is intended to replace the *Vorbis* codec.
+   A modern lossy codec designed for speech and general audio.
+   Intended as a successor to Vorbis.
 :`PCM <https://en.wikipedia.org/wiki/PCM>`__:
-   Pulse Code Modulation, a method used to digitally represent sampled analog signals.
-   It is the standard form for digital audio in computers and various Blu-ray,
-   Compact Disc and DVD formats, as well as other uses such as digital telephone systems.
+   Uncompressed digital audio format.
 :`Vorbis <https://en.wikipedia.org/wiki/Vorbis>`__:
-   An open-standard, highly-compressed format comparable to MP3 or AAC.
-   Vorbis generally achieves better sound quality than MP3 at similar bit rates.
+   A free open-standard lossy audio codec comparable to AAC or MP3.
+
+
+HDR Support
+===========
+
+Videos can be rendered using wide-gamut and HDR color spaces.
+
+To export HDR video:
+
+* Set Color Management Display to Rec.2100 PQ or HLG.
+* Set Video Codec to H.265 / HEVC or AV1.
+* Set Bit Depth to 10 or 12.
+
+HDR videos are written with 100 nits diffuse white
+to match common video player conventions.
+
+Compatibility varies between players and devices.
+10-bit PQ is generally the most compatible HDR configuration.
 
 
 Known Limitations
@@ -200,5 +295,5 @@ Known Limitations
 Video Output Size
 -----------------
 
-Some codecs impose limitations on output size,
-``H.264``, for example requires both the height and width to be divisible by 2.
+Some codecs impose output size restrictions.
+For example, H.264 requires both width and height to be divisible by 2.

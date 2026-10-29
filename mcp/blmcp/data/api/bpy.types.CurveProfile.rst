@@ -5,6 +5,7 @@ CurveProfile(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: CurveProfile(bpy_struct)
 
    Profile Path editor used to build a profile path
