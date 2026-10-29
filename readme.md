@@ -79,6 +79,9 @@ The fork originally had an unrelated root. Recording the real upstream parent
 restores a normal merge base for future updates; it does not erase the fork's
 history. Subsequent updates can use `git fetch upstream` and
 `git merge upstream/main` on a review branch.
+The one-time repair also fetched full upstream history: the old shallow boundary
+could be merged locally but GitHub rejected its missing ancestor object on push.
+For another shallow checkout, fetch that history before publishing the merge.
 
 The 2026-10-29 sync includes the upstream nonblocking partial-write fix, 2 KiB
 image-envelope allowance, MCP dependency bound below version 2, Blender 5.2
