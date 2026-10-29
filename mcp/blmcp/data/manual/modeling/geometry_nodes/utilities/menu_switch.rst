@@ -13,6 +13,12 @@ Menu Switch Node
 The *Menu Switch* node outputs one of its inputs based on a selected menu item.
 Only the active input is evaluated, allowing efficient switching between multiple options.
 
+On top of not evaluating any inactive inputs, which is something all switch nodes do, the
+*Menu Switch* has the extra functionality that it hides any socket that is connected
+to an inactive input, even if they are indirectly coupled through an *Index Switch* or
+*Switch* node. This can be used to hide irrelevant settings from the node interface or
+modifier panel.
+
 The available menu entries are defined by the user. Menu items can be
 added and removed, as well as renamed and reordered in the editor side
 bar. Renaming a menu entry keeps existing links of the matching input

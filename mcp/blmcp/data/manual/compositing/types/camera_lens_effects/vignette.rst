@@ -8,8 +8,12 @@ Vignette Node
    :align: right
    :alt: Vignette Node.
 
-The *Vignette* node darkens or fades out the edges of an image to draw attention toward the center.
+.. --- modifier-intro-start ---
+
+*Vignette* darkens or fades out the edges of an image to draw attention toward the center.
 This effect is often used for artistic or cinematic purposes to create focus, mood, or a sense of depth.
+
+.. --- modifier-intro-end ---
 
 
 Inputs
@@ -17,6 +21,8 @@ Inputs
 
 Image
    Standard color input image.
+
+.. --- modifier-options-start ---
 
 Factor
    Controls the overall strength of the vignette effect.
@@ -44,6 +50,8 @@ Offset
 
 Angle
    Rotates the vignette mask around the image center.
+
+.. --- modifier-options-end ---
 
 
 Outputs

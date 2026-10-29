@@ -32,9 +32,9 @@ UV Map
    Which UV map to modify. Defaults to the active rendering layer.
 
 Aspect X/Y
-   Changes the image's aspect ratio. Only apply when a camera is used as projector object.
+   Changes the image's aspect ratio. Only applies when a camera is used as projector object.
 Scale X/Y
-   Scales the image. Only apply when a camera is used as projector object.
+   Scales the image. Only applies when a camera is used as projector object.
 
 Projectors
    Up to ten projector objects are supported.
@@ -67,7 +67,7 @@ Perspective Projection on Low Poly Meshes
 Perspective UV projections onto low poly geometry (such as a plane) may cause noticeable artifacts.
 This is an inherent limitation since UV interpolation doesn't account for perspective projection.
 
-The issue can reduced by subdividing the geometry.
+The issue can be reduced by subdividing the geometry.
 
 
 Vertices Behind the Camera

@@ -5,6 +5,7 @@ ShaderFxWave(ShaderFx)
 
 base classes --- :class:`bpy_struct`, :class:`ShaderFx`
 
+
 .. class:: ShaderFxWave(ShaderFx)
 
    Wave Deformation effect

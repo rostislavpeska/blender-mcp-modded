@@ -5,6 +5,7 @@ FreestyleLineStyle(ID)
 
 base classes --- :class:`bpy_struct`, :class:`ID`
 
+
 .. class:: FreestyleLineStyle(ID)
 
    Freestyle line style, reusable by multiple line sets

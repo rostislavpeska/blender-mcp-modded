@@ -5,6 +5,7 @@ LineStyleThicknessModifier_Tangent(LineStyleThicknessModifier)
 
 base classes --- :class:`bpy_struct`, :class:`LineStyleModifier`, :class:`LineStyleThicknessModifier`
 
+
 .. class:: LineStyleThicknessModifier_Tangent(LineStyleThicknessModifier)
 
    Thickness based on the direction of the stroke

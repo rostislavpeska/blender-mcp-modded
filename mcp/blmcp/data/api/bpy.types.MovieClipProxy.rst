@@ -5,6 +5,7 @@ MovieClipProxy(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: MovieClipProxy(bpy_struct)
 
    Proxy parameters for a movie clip
@@ -30,12 +31,6 @@ base class --- :class:`bpy_struct`
    .. attribute:: build_75
 
       Build proxy resolution 75% of the original footage dimension (default False)
-
-      :type: bool
-
-   .. attribute:: build_record_run
-
-      Build record run time code index (default True)
 
       :type: bool
 
@@ -74,19 +69,6 @@ base class --- :class:`bpy_struct`
       JPEG quality of proxy images (in [0, 32767], default 50)
 
       :type: int
-
-   .. attribute:: timecode
-
-      (default ``'NONE'``)
-
-      - ``NONE``
-        None -- Ignore generated timecodes, seek in movie stream based on calculated timestamp.
-      - ``RECORD_RUN``
-        Record Run -- Seek based on timestamps read from movie stream, giving the best match between scene and movie times.
-      - ``FREE_RUN_NO_GAPS``
-        Record Run No Gaps -- Effectively convert movie to an image sequence, ignoring incomplete or dropped frames, and changes in frame rate.
-
-      :type: Literal['NONE', 'RECORD_RUN', 'FREE_RUN_NO_GAPS']
 
    .. classmethod:: bl_rna_get_subclass(id, default=None, /)
    

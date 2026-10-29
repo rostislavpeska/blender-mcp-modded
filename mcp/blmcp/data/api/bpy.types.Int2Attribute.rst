@@ -5,6 +5,7 @@ Int2Attribute(Attribute)
 
 base classes --- :class:`bpy_struct`, :class:`Attribute`
 
+
 .. class:: Int2Attribute(Attribute)
 
    Geometry attribute that stores 2D integer vectors

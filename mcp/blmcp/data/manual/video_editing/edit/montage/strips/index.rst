@@ -19,11 +19,33 @@ Types
    scene.rst
    clip.rst
    mask.rst
+
+-----
+
+.. toctree::
+   :maxdepth: 2
+   :titlesonly:
+
    movie.rst
    sound.rst
    image.rst
+
+-----
+
+.. toctree::
+   :maxdepth: 2
+   :titlesonly:
+
    color.rst
    text.rst
+
+-----
+
+.. toctree::
+   :maxdepth: 2
+   :titlesonly:
+
    adjustment.rst
+   compositor.rst
    effects/index.rst
    transitions/index.rst

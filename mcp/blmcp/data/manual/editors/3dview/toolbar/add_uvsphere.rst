@@ -6,7 +6,7 @@ Add UV Sphere
 
 .. reference::
 
-   :Mode:      Object Mode and Edit Mode
+   :Mode:      Object Mode, Edit Mode, and Sculpt Mode
    :Tool:      :menuselection:`Toolbar --> Add UV Sphere`
 
 Interactively add a :ref:`UV sphere mesh object <bpy.ops.mesh.primitive_uv_sphere_add>`.

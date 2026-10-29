@@ -5,6 +5,7 @@ ColorManagedSequencerColorspaceSettings(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: ColorManagedSequencerColorspaceSettings(bpy_struct)
 
    Input color space settings

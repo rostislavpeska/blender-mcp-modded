@@ -5,6 +5,7 @@ VolumeDisplay(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: VolumeDisplay(bpy_struct)
 
    Volume object display settings for 3D viewport

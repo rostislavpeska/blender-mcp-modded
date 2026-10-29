@@ -5,6 +5,7 @@ ViewLayerEEVEE(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: ViewLayerEEVEE(bpy_struct)
 
    View Layer settings for EEVEE

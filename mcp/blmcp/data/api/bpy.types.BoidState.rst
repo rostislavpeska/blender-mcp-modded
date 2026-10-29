@@ -5,6 +5,7 @@ BoidState(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: BoidState(bpy_struct)
 
    Boid state for boid physics

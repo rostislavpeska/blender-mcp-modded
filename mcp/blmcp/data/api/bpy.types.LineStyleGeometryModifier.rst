@@ -5,8 +5,24 @@ LineStyleGeometryModifier(LineStyleModifier)
 
 base classes --- :class:`bpy_struct`, :class:`LineStyleModifier`
 
-subclasses --- 
-:class:`LineStyleGeometryModifier_2DOffset`, :class:`LineStyleGeometryModifier_2DTransform`, :class:`LineStyleGeometryModifier_BackboneStretcher`, :class:`LineStyleGeometryModifier_BezierCurve`, :class:`LineStyleGeometryModifier_Blueprint`, :class:`LineStyleGeometryModifier_GuidingLines`, :class:`LineStyleGeometryModifier_PerlinNoise1D`, :class:`LineStyleGeometryModifier_PerlinNoise2D`, :class:`LineStyleGeometryModifier_Polygonalization`, :class:`LineStyleGeometryModifier_Sampling`, :class:`LineStyleGeometryModifier_Simplification`, :class:`LineStyleGeometryModifier_SinusDisplacement`, :class:`LineStyleGeometryModifier_SpatialNoise`, :class:`LineStyleGeometryModifier_TipRemover`
+.. toctree::
+   :caption: Subclasses
+   :maxdepth: 1
+
+   bpy.types.LineStyleGeometryModifier_2DOffset.rst
+   bpy.types.LineStyleGeometryModifier_2DTransform.rst
+   bpy.types.LineStyleGeometryModifier_BackboneStretcher.rst
+   bpy.types.LineStyleGeometryModifier_BezierCurve.rst
+   bpy.types.LineStyleGeometryModifier_Blueprint.rst
+   bpy.types.LineStyleGeometryModifier_GuidingLines.rst
+   bpy.types.LineStyleGeometryModifier_PerlinNoise1D.rst
+   bpy.types.LineStyleGeometryModifier_PerlinNoise2D.rst
+   bpy.types.LineStyleGeometryModifier_Polygonalization.rst
+   bpy.types.LineStyleGeometryModifier_Sampling.rst
+   bpy.types.LineStyleGeometryModifier_Simplification.rst
+   bpy.types.LineStyleGeometryModifier_SinusDisplacement.rst
+   bpy.types.LineStyleGeometryModifier_SpatialNoise.rst
+   bpy.types.LineStyleGeometryModifier_TipRemover.rst
 
 .. class:: LineStyleGeometryModifier(LineStyleModifier)
 

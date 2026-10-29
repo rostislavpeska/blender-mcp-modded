@@ -11,6 +11,7 @@ These nodes are used to output the composited result in some way.
    enable_output.rst
    group_output.rst
    viewer.rst
+   warning.rst
 
 ----------
 

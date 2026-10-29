@@ -31,6 +31,9 @@ def register(mcp: FastMCP) -> None:
         context: int = 0,
         index: int | None = None,
     ) -> dict[str, object]:
+        """
+        Full-text search over the bundled Blender user manual.
+        """
         return search(
             query=query,
             scope="manual",

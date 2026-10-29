@@ -5,6 +5,7 @@ PreferencesApps(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: PreferencesApps(bpy_struct)
 
    Preferences that work only for apps

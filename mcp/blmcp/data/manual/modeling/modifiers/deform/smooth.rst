@@ -37,7 +37,7 @@ Repeat
    equivalent to executing the *Smooth* tool multiple times.
 
 Vertex Group
-   If set, restrict the effect to the only vertices in that vertex group.
+   If set, restrict the effect to only the vertices in that vertex group.
    This allows for selective, real-time smoothing, by painting vertex weights.
 
    :bl-icon:`arrow_leftright` Invert

@@ -41,6 +41,7 @@ A mix-in parent class can be used to share common properties and
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: Panel(bpy_struct)
 
    Panel containing UI elements
@@ -62,6 +63,18 @@ base class --- :class:`bpy_struct`
       The panel tooltip (default "")
 
       :type: str
+
+   .. attribute:: bl_icon
+
+      Icon override for the panel category tab (default ``'NONE'``)
+
+      :type: Literal[:ref:`rna_enum_icon_items`]
+
+   .. attribute:: bl_icon_value
+
+      Icon value override for the panel category tab (in [-inf, inf], default 0)
+
+      :type: int
 
    .. attribute:: bl_idname
 
@@ -195,17 +208,31 @@ base class --- :class:`bpy_struct`
 
       Append a draw function to this menu,
       takes the same arguments as the menus draw function
+      
+      :param draw_func: Draw function to append.
+      :type draw_func: Callable[[Self, :class:`Context`], None]
 
    .. classmethod:: is_extended()
+
+      Test if any draw function has been added via :meth:`append` or :meth:`prepend`.
+      
+      :return: True when at least one draw function has been added.
+      :rtype: bool
 
    .. classmethod:: prepend(draw_func)
 
       Prepend a draw function to this menu, takes the same arguments as
       the menus draw function
+      
+      :param draw_func: Draw function to prepend.
+      :type draw_func: Callable[[Self, :class:`Context`], None]
 
    .. classmethod:: remove(draw_func)
 
       Remove a draw function that has been added to this menu.
+      
+      :param draw_func: Draw function previously registered via :meth:`append` or :meth:`prepend`.
+      :type draw_func: Callable[[Self, :class:`Context`], None]
 
    .. classmethod:: bl_rna_get_subclass(id, default=None, /)
    

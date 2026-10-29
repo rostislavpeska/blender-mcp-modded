@@ -9,7 +9,7 @@ Curve Tool
    :Mode:      Draw Mode
    :Tool:      :menuselection:`Toolbar --> Curve`
 
-The Curve tool create complex Bézier style curves using any of the *Draw* type brushes..
+The Curve tool create complex Bézier style curves using any of the *Draw* type brushes.
 
 
 Tool Settings

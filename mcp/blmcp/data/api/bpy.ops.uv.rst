@@ -127,12 +127,14 @@ Uv Operators
 
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-.. function:: copy_mirrored_faces(*, direction='POSITIVE', precision=3)
+.. function:: copy_mirrored_faces(*, mesh_axis='POS_X', uv_axis='X', precision=3)
 
-   Copy mirror UV coordinates on the X axis based on a mirrored mesh
+   Copy mirror UV coordinates based on a mirrored mesh
 
-   :param direction: Axis Direction, (optional)
-   :type direction: Literal['POSITIVE', 'NEGATIVE']
+   :param mesh_axis: Mesh Axis, Mirror vertices based on mesh axis (optional)
+   :type mesh_axis: Literal[:ref:`rna_enum_object_axis_flip_items`]
+   :param uv_axis: UV Axis, Axis to mirror UV coordinates (optional)
+   :type uv_axis: Literal[:ref:`rna_enum_axis_xy_items`]
    :param precision: Precision, Tolerance for finding vertex duplicates (in [1, 16], optional)
    :type precision: int
    :return: Result of the operator call.
@@ -532,7 +534,7 @@ Uv Operators
 
    Unstitch UVs and move the result
 
-   :param UV_OT_rip: UV Rip, Rip selected vertices or a selected region (optional, :func:`bpy.ops.uv.rip` keyword arguments)
+   :param UV_OT_rip: Rip UVs, Rip selected vertices or a selected region (optional, :func:`bpy.ops.uv.rip` keyword arguments)
    :type UV_OT_rip: dict[str, Any]
    :param TRANSFORM_OT_translate: Move, Move selected items (optional, :func:`bpy.ops.transform.translate` keyword arguments)
    :type TRANSFORM_OT_translate: dict[str, Any]
@@ -615,6 +617,17 @@ Uv Operators
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
 
+.. function:: select_by_winding(*, winding='NEGATIVE', extend=False)
+
+   Select UV faces by their winding
+
+   :param winding: Winding, Select faces with positive or negative winding (optional)
+   :type winding: Literal['POSITIVE', 'NEGATIVE']
+   :param extend: Extend, Extend selection rather than clearing the existing selection (optional)
+   :type extend: bool
+   :return: Result of the operator call.
+   :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
+
 .. function:: select_circle(*, x=0, y=0, radius=25, wait_for_input=True, mode='SET')
 
    Select UV vertices using circle selection
@@ -680,13 +693,23 @@ Uv Operators
 
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-.. function:: select_linked()
+.. function:: select_linked(*, delimit=set())
 
    Select all UV vertices linked to the active UV map
 
+   :param delimit: Delimit, Delimit selection when selecting linked UVs (optional)
+
+      - ``SEAM``
+        Seam -- Delimit by edge seams.
+      - ``SHARP``
+        Sharp -- Delimit by sharp edges.
+      - ``MATERIAL``
+        Material -- Delimit by face material.
+   :type delimit: set[Literal['SEAM', 'SHARP', 'MATERIAL']]
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-.. function:: select_linked_pick(*, extend=False, deselect=False, location=(0.0, 0.0))
+
+.. function:: select_linked_pick(*, extend=False, deselect=False, delimit=set(), location=(0.0, 0.0))
 
    Select all UV vertices linked under the mouse
 
@@ -694,6 +717,15 @@ Uv Operators
    :type extend: bool
    :param deselect: Deselect, Deselect linked UV vertices rather than selecting them (optional)
    :type deselect: bool
+   :param delimit: Delimit, Delimit selection when selecting linked UVs (optional)
+
+      - ``SEAM``
+        Seam -- Delimit by edge seams.
+      - ``SHARP``
+        Sharp -- Delimit by sharp edges.
+      - ``MATERIAL``
+        Material -- Delimit by face material.
+   :type delimit: set[Literal['SEAM', 'SHARP', 'MATERIAL']]
    :param location: Location, Mouse location in normalized coordinates, 0.0 to 1.0 is within the image bounds (array of 2 items, in [-inf, inf], optional)
    :type location: :class:`mathutils.Vector` | Sequence[float]
    :return: Result of the operator call.
@@ -953,7 +985,7 @@ Uv Operators
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
 
-.. function:: unwrap(*, method='CONFORMAL', fill_holes=False, correct_aspect=True, use_subsurf_data=False, margin_method='SCALED', margin=0.001, no_flip=False, iterations=10, use_weights=False, weight_group="uv_importance", weight_factor=1.0)
+.. function:: unwrap(*, method='CONFORMAL', fill_holes=False, correct_aspect=True, use_subsurf_data=False, use_original_bounds=False, margin_method='SCALED', margin=0.001, no_flip=False, iterations=10, use_weights=False, weight_group="uv_importance", weight_factor=1.0)
 
    Unwrap the mesh of the object being edited
 
@@ -965,6 +997,8 @@ Uv Operators
    :type correct_aspect: bool
    :param use_subsurf_data: Use Subdivision Surface, Map UVs taking vertex position after Subdivision Surface modifier has been applied (optional)
    :type use_subsurf_data: bool
+   :param use_original_bounds: Original Bounds, Unwrap islands into their original bounds, instead of re-packing (optional)
+   :type use_original_bounds: bool
    :param margin_method: Margin Method, (optional)
 
       - ``SCALED``

@@ -5,6 +5,7 @@ ShapeKeyPoint(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: ShapeKeyPoint(bpy_struct)
 
    Point in a shape key

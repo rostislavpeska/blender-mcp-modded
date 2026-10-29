@@ -5,6 +5,7 @@ MeshLoopTriangle(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: MeshLoopTriangle(bpy_struct)
 
    Tessellated triangle in a Mesh data-block
@@ -49,7 +50,7 @@ base class --- :class:`bpy_struct`
 
       Local space unit length custom normal vectors of the face corners of this triangle (multi-dimensional array of 3 * 3 items, in [-1, 1], default ((0.0, 0.0, 0.0), (0.0, 0.0, 0.0), (0.0, 0.0, 0.0)), readonly)
 
-      :type: :class:`bpy_prop_array`\ [float]
+      :type: :class:`bpy_prop_array`\ [:class:`bpy_prop_array`\ [float]]
 
    .. data:: use_smooth
 

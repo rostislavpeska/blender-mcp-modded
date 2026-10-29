@@ -57,7 +57,7 @@ Auto-Masking
    Auto-Masking settings.
 
 These properties automatically mask geometry based on stroke, layers and materials under the cursor.
-It's an quick alternative to frequent manual masking.
+It's a quick alternative to frequent manual masking.
 These masks are initialized on every new tool usage. They are also never visible as an overlay.
 
 These properties can be accessed via a :ref:`bpy.types.UIPieMenu` by pressing :kbd:`Shift-Alt-A`.

@@ -5,6 +5,7 @@ ConstraintTarget(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: ConstraintTarget(bpy_struct)
 
    Target object for multi-target constraints

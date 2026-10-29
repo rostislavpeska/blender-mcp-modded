@@ -5,6 +5,7 @@ Int2AttributeValue(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: Int2AttributeValue(bpy_struct)
 
    2D value in geometry attribute

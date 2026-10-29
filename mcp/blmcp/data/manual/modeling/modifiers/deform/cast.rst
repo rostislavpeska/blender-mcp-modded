@@ -60,7 +60,7 @@ Size from Radius
    If activated, calculate *Size* from *Radius*, for smoother results.
 
 Vertex Group
-   If set, restrict the effect to the only vertices in that vertex group.
+   If set, restrict the effect to only the vertices in that vertex group.
    This allows selective, real-time casting, by painting vertex weights.
 
    :bl-icon:`arrow_leftright` Invert

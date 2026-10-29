@@ -17,8 +17,7 @@ Move, Rotate, Scale
    See :doc:`Basic Transformations </scene_layout/object/editing/transform/introduction>`.
 To Sphere, Shear, Bend, Push/Pull, Warp, Randomize
    See :doc:`Mesh Transformations </modeling/meshes/editing/mesh/transform/index>`.
-Move/Scale Texture Space
-   See :ref:`properties-texture-space`.
+
 
 Mirror
 ======

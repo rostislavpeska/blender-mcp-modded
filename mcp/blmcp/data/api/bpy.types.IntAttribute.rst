@@ -5,6 +5,7 @@ IntAttribute(Attribute)
 
 base classes --- :class:`bpy_struct`, :class:`Attribute`
 
+
 .. class:: IntAttribute(Attribute)
 
    Geometry attribute that stores integer values

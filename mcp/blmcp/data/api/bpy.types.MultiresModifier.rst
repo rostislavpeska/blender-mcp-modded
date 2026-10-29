@@ -5,6 +5,7 @@ MultiresModifier(Modifier)
 
 base classes --- :class:`bpy_struct`, :class:`Modifier`
 
+
 .. class:: MultiresModifier(Modifier)
 
    Multiresolution mesh modifier

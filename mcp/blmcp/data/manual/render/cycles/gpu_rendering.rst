@@ -27,7 +27,7 @@ CUDA -- NVIDIA
 
 :abbr:`CUDA (Compute Unified Device Architecture)` is supported on Windows and Linux and requires a
 NVIDIA graphics cards with compute capability 5.0 and higher. To make sure your GPU is supported,
-see the `list of NVIDIA graphics cards <https://developer.nvidia.com/cuda-gpus#compute>`__
+see the `list of NVIDIA graphics cards <https://developer.nvidia.com/cuda/gpus>`__
 with the compute capabilities and supported graphics cards.
 
 
@@ -37,7 +37,7 @@ OptiX -- NVIDIA
 ---------------
 
 OptiX is supported on Windows and Linux and requires a NVIDIA graphics cards with compute capability 5.0 and higher
-and a driver version of at least 535. To make sure your GPU is supported,
+and a driver version of at least 575. To make sure your GPU is supported,
 see the `list of NVIDIA graphics cards <https://developer.nvidia.com/cuda-gpus#compute>`__.
 
 OptiX takes advantage of hardware ray-tracing acceleration in RTX graphics cards, for improved performance.
@@ -62,7 +62,7 @@ Supported GPUs include:
 Minimum driver versions:
 
 - Windows: Radeon Software 24.9.1 or Radeon PRO Software 24.Q4
-- Linux: Radeon Software 23.40 or `ROCm HIP Runtime 6.0 <https://rocm.docs.amd.com/projects/install-on-linux/en/latest/install/quick-start.html>`__
+- Linux: Radeon Software 24.30 or `ROCm HIP Runtime 6.3 <https://rocm.docs.amd.com/projects/install-on-linux/en/latest/install/quick-start.html>`__
 
 Please refer to `AMD's website <https://www.amd.com/en/products/specifications.html>`__ for more
 information about AMD graphics cards and their architectures.
@@ -70,8 +70,7 @@ information about AMD graphics cards and their architectures.
 Hardware ray-tracing support is available with the most recent drivers.
 This can be enabled in the preferences, and is supported on Radeon RX 6000 and newer.
 
-GPU accelerated denoising is available on discrete Radeon RX 6000 and newer.
-
+GPU accelerated denoising is available on discrete Radeon RX 6000 and newer GPUs on Linux, and discrete Radeon RX 7000 and newer GPUs on Windows.
 
 oneAPI -- Intel
 ---------------
@@ -243,7 +242,7 @@ In this case Blender may try to dynamically build a kernel for your graphics car
 In this case you can:
 
 #. Check if the latest Blender version
-   (official or `experimental builds <https://builder.blender.org/download/>`__)
+   (official or `daily builds <https://builder.blender.org/download/daily/>`__)
    supports your graphics card.
 #. If you build Blender yourself, try to download and install a newer CUDA developer toolkit.
 

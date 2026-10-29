@@ -5,6 +5,7 @@ WalkNavigation(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: WalkNavigation(bpy_struct)
 
    Walk navigation settings

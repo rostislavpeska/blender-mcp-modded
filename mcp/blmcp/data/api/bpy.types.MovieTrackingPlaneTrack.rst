@@ -5,6 +5,7 @@ MovieTrackingPlaneTrack(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: MovieTrackingPlaneTrack(bpy_struct)
 
    Match-moving plane track data for tracking

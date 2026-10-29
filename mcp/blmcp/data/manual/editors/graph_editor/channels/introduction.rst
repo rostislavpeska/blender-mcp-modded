@@ -42,6 +42,7 @@ The headers contain the following toggle buttons:
    Keep the row and its children visible even when selecting a different object.
 :bl-icon:`hide_off` / :bl-icon:`hide_on` Hide
    Hides the keyframes and curve associated with the channel.
+   Use :kbd:`Ctrl-LMB` to solo the selected channel.
 :bl-icon:`modifier_on` / :bl-icon:`modifier_off` Modifiers
    Deactivates the modifiers of the curve.
 :bl-icon:`checkbox_hlt` / :bl-icon:`checkbox_dehlt` Mute

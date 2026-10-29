@@ -5,6 +5,7 @@ DynamicPaintCanvasSettings(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: DynamicPaintCanvasSettings(bpy_struct)
 
    Dynamic Paint canvas settings

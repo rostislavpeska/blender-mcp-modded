@@ -5,6 +5,7 @@ NodeTreeInterfaceSocketFloatWavelength(NodeTreeInterfaceSocket)
 
 base classes --- :class:`bpy_struct`, :class:`NodeTreeInterfaceItem`, :class:`NodeTreeInterfaceSocket`
 
+
 .. class:: NodeTreeInterfaceSocketFloatWavelength(NodeTreeInterfaceSocket)
 
    Floating-point number socket of a node

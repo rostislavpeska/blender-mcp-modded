@@ -64,12 +64,12 @@ Flip Quad Tessellation
    :Menu:      :menuselection:`Face --> Face Data --> Flip Quad Tessellation`
 
 Internally, every :term:`quad` is :term:`tessellated <Tessellation>` into two triangles.
-This operator swaps the tesselation direction of the selected quads.
+This operator swaps the tessellation direction of the selected quads.
 
 .. list-table::
 
-   * - .. figure:: /images/modeling_meshes_editing_face_flip-tesselation_before.png
-     - .. figure:: /images/modeling_meshes_editing_face_flip-tesselation_after.png
+   * - .. figure:: /images/modeling_meshes_editing_face_flip-tessellation_before.png
+     - .. figure:: /images/modeling_meshes_editing_face_flip-tessellation_after.png
 
 .. seealso::
 

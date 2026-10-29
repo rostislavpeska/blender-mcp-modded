@@ -93,7 +93,7 @@ Object Mode List
      - A Grease Pencil-only mode, dedicated to modifying individual strokes and points of Grease Pencil objects.
    * - .. rubric:: :bl-icon:`vpaint_hlt`
      - :doc:`Vertex Paint Mode (Grease Pencil) </grease_pencil/modes/vertex_paint/index>`
-     - A Grease Pencil-only mode, dedicated to adding color the vertices of strokes directly.
+     - A Grease Pencil-only mode, dedicated to adding color to the vertices of strokes directly.
    * - .. rubric:: :bl-icon:`wpaint_hlt`
      - :doc:`Weight Paint Mode (Grease Pencil) </grease_pencil/modes/weight_paint/index>`
      - A Grease Pencil-only mode, dedicated to assigning vertex weights to stroke.

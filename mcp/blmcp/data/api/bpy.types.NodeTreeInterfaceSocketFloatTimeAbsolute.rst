@@ -5,6 +5,7 @@ NodeTreeInterfaceSocketFloatTimeAbsolute(NodeTreeInterfaceSocket)
 
 base classes --- :class:`bpy_struct`, :class:`NodeTreeInterfaceItem`, :class:`NodeTreeInterfaceSocket`
 
+
 .. class:: NodeTreeInterfaceSocketFloatTimeAbsolute(NodeTreeInterfaceSocket)
 
    Floating-point number socket of a node

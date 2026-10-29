@@ -9,7 +9,7 @@ Posterize
    :align: right
    :alt: Posterize Node.
 
-The *Posterize Node* reduces the number of colors in image, converting
+The *Posterize Node* reduces the number of colors in an image, converting
 smooth gradients into sharp transitions.
 This node is useful for generating masks in particular for rotoscoping.
 

@@ -5,6 +5,7 @@ MovieClip(ID)
 
 base classes --- :class:`bpy_struct`, :class:`ID`
 
+
 .. class:: MovieClip(ID)
 
    MovieClip data-block referencing an external movie file
@@ -94,7 +95,7 @@ base classes --- :class:`bpy_struct`, :class:`ID`
 
    .. attribute:: use_proxy
 
-      Use a preview proxy and/or timecode index for this clip (default False)
+      Use a preview proxy for this clip (default False)
 
       :type: bool
 

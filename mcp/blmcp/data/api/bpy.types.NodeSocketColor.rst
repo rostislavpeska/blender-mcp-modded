@@ -5,6 +5,7 @@ NodeSocketColor(NodeSocketStandard)
 
 base classes --- :class:`bpy_struct`, :class:`NodeSocket`, :class:`NodeSocketStandard`
 
+
 .. class:: NodeSocketColor(NodeSocketStandard)
 
    RGBA color socket of a node

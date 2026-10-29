@@ -18,6 +18,7 @@ This chapter explains how to change Blender's default configuration with the *Pr
 
 The Blender *Preferences* contains settings to control how Blender behaves.
 At the left of the editor, the available options are grouped into sections.
+A search field above the section list allows filtering preferences by name.
 
 .. figure:: /images/editors_preferences_section_interface.webp
 
@@ -70,7 +71,27 @@ Load Factory Preferences
       This only resets the preferences and will not affect settings stored in the startup file.
       This includes app templates, area locations, and any Blender properties not part of the preferences.
 
-      These must be reverted though :menuselection:`File --> Defaults`.
+      These must be reverted through :menuselection:`File --> Defaults`.
+
+
+.. _bpy.types.SpacePreferences.search_filter:
+
+Searching Preferences
+=====================
+
+The search field at the top of the Preferences editor filters sections and panels
+based on the entered text.
+
+Matching categories and panel headers are highlighted,
+this makes it easy to locate specific settings in large sections.
+
+- :kbd:`Ctrl-F` focuses the search field.
+- :kbd:`Alt-F` clears the search text.
+
+.. note::
+
+   The *Extensions* and *Add-ons* sections are excluded from this filter,
+   as they provide their own search functionality.
 
 .. tip::
 

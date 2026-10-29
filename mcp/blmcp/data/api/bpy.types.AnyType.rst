@@ -5,6 +5,7 @@ AnyType(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: AnyType(bpy_struct)
 
    RNA type used for pointers to any possible data
@@ -136,6 +137,8 @@ References
    - :class:`UILayout.template_track`
    - :class:`UILayout.template_vectorscope`
    - :class:`UILayout.template_waveform`
+   - :class:`UILayout.textbox`
+   - :class:`UILayout.textbox_with_state`
    - :class:`UIList.draw_item`
    - :class:`UIList.draw_item`
    - :class:`UIList.draw_item`

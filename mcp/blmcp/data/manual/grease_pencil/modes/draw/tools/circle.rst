@@ -9,7 +9,7 @@ Circle Tool
    :Mode:      Draw Mode
    :Tool:      :menuselection:`Toolbar --> Circle`
 
-The Circle tool create oval shapes using any of the *Draw* type brushes.
+The Circle tool creates oval shapes using any of the *Draw* type brushes.
 
 
 Tool Settings

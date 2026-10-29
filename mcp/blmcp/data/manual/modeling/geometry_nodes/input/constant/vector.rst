@@ -10,7 +10,8 @@ Vector Node
    :align: right
    :alt: Vector Node.
 
-The *Vector* input node creates a single vector.
+The *Vector* node outputs a constant vector value with 2, 3, or 4 components.
+This node is commonly used to provide fixed directions, coordinates, or offsets to other nodes.
 
 
 Inputs
@@ -22,13 +23,20 @@ This node has no inputs.
 Properties
 ==========
 
-- X
-- Y
-- Z
+Dimensions
+   The number of components in the vector. Valid values range from 2 to 4.
+   Increasing the dimension adds additional components to the vector.
+
+   *This option can only be found in the Sidebar.*
+
+X, Y, Z, W
+   The value of each vector component.
+
+   Only the components corresponding to the selected *Dimensions* are shown.
 
 
-Output
-======
+Outputs
+=======
 
 Vector
-   Standard vector output.
+   The resulting vector value.

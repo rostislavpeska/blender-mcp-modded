@@ -5,6 +5,7 @@ CurveProfilePoint(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: CurveProfilePoint(bpy_struct)
 
    Point of a path used to define a profile

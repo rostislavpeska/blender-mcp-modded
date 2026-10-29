@@ -5,6 +5,7 @@ UserExtensionRepo(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: UserExtensionRepo(bpy_struct)
 
    Settings to define an extension repository

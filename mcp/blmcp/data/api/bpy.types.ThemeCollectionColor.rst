@@ -5,6 +5,7 @@ ThemeCollectionColor(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: ThemeCollectionColor(bpy_struct)
 
    Theme settings for collection colors

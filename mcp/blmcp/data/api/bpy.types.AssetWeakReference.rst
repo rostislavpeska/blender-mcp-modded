@@ -5,6 +5,7 @@ AssetWeakReference(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: AssetWeakReference(bpy_struct)
 
    Weak reference to some asset
@@ -24,11 +25,13 @@ base class --- :class:`bpy_struct`
       - ``LOCAL``
         Current File -- Show the assets currently available in this Blender session.
       - ``ESSENTIALS``
-        Essentials -- Show the basic building blocks and utilities coming with Blender.
+        Essentials -- Show basic building blocks and utilities coming with Blender.
+      - ``ONLINE_ESSENTIALS``
+        Online Essentials -- Show additional building blocks and utilities available online.
       - ``CUSTOM``
         Custom -- Show assets from the asset libraries configured in the Preferences.
 
-      :type: Literal['ALL', 'LOCAL', 'ESSENTIALS', 'CUSTOM']
+      :type: Literal['ALL', 'LOCAL', 'ESSENTIALS', 'ONLINE_ESSENTIALS', 'CUSTOM']
 
    .. data:: relative_asset_identifier
 
@@ -103,5 +106,4 @@ References
 
    - :class:`AssetShelf.get_active_asset`
    - :class:`Paint.brush_asset_reference`
-   - :class:`Paint.eraser_brush_asset_reference`
 

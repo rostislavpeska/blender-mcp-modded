@@ -5,7 +5,7 @@
 Build Modifier
 **************
 
-The *Build* modifier make strokes appear or disappear in a frame range to
+The *Build* modifier makes strokes appear or disappear in a frame range to
 create the effect of animating lines being drawn or erased.
 
 .. seealso::

@@ -5,8 +5,90 @@ NodeSocketStandard(NodeSocket)
 
 base classes --- :class:`bpy_struct`, :class:`NodeSocket`
 
-subclasses --- 
-:class:`NodeSocketBool`, :class:`NodeSocketBundle`, :class:`NodeSocketClosure`, :class:`NodeSocketCollection`, :class:`NodeSocketColor`, :class:`NodeSocketFloat`, :class:`NodeSocketFloatAngle`, :class:`NodeSocketFloatColorTemperature`, :class:`NodeSocketFloatDistance`, :class:`NodeSocketFloatFactor`, :class:`NodeSocketFloatFrequency`, :class:`NodeSocketFloatMass`, :class:`NodeSocketFloatPercentage`, :class:`NodeSocketFloatTime`, :class:`NodeSocketFloatTimeAbsolute`, :class:`NodeSocketFloatUnsigned`, :class:`NodeSocketFloatWavelength`, :class:`NodeSocketFont`, :class:`NodeSocketGeometry`, :class:`NodeSocketImage`, :class:`NodeSocketInt`, :class:`NodeSocketIntFactor`, :class:`NodeSocketIntPercentage`, :class:`NodeSocketIntUnsigned`, :class:`NodeSocketMask`, :class:`NodeSocketMaterial`, :class:`NodeSocketMatrix`, :class:`NodeSocketMenu`, :class:`NodeSocketObject`, :class:`NodeSocketRotation`, :class:`NodeSocketScene`, :class:`NodeSocketShader`, :class:`NodeSocketSound`, :class:`NodeSocketString`, :class:`NodeSocketStringFilePath`, :class:`NodeSocketText`, :class:`NodeSocketTexture`, :class:`NodeSocketVector`, :class:`NodeSocketVector2D`, :class:`NodeSocketVector4D`, :class:`NodeSocketVectorAcceleration`, :class:`NodeSocketVectorAcceleration2D`, :class:`NodeSocketVectorAcceleration4D`, :class:`NodeSocketVectorDirection`, :class:`NodeSocketVectorDirection2D`, :class:`NodeSocketVectorDirection4D`, :class:`NodeSocketVectorEuler`, :class:`NodeSocketVectorEuler2D`, :class:`NodeSocketVectorEuler4D`, :class:`NodeSocketVectorFactor`, :class:`NodeSocketVectorFactor2D`, :class:`NodeSocketVectorFactor4D`, :class:`NodeSocketVectorPercentage`, :class:`NodeSocketVectorPercentage2D`, :class:`NodeSocketVectorPercentage4D`, :class:`NodeSocketVectorTranslation`, :class:`NodeSocketVectorTranslation2D`, :class:`NodeSocketVectorTranslation4D`, :class:`NodeSocketVectorVelocity`, :class:`NodeSocketVectorVelocity2D`, :class:`NodeSocketVectorVelocity4D`, :class:`NodeSocketVectorXYZ`, :class:`NodeSocketVectorXYZ2D`, :class:`NodeSocketVectorXYZ4D`, :class:`NodeSocketVirtual`
+.. toctree::
+   :caption: Subclasses
+   :maxdepth: 1
+
+   bpy.types.NodeSocketBool.rst
+   bpy.types.NodeSocketBundle.rst
+   bpy.types.NodeSocketClosure.rst
+   bpy.types.NodeSocketCollection.rst
+   bpy.types.NodeSocketColor.rst
+   bpy.types.NodeSocketFloat.rst
+   bpy.types.NodeSocketFloatAngle.rst
+   bpy.types.NodeSocketFloatColorTemperature.rst
+   bpy.types.NodeSocketFloatDistance.rst
+   bpy.types.NodeSocketFloatFactor.rst
+   bpy.types.NodeSocketFloatFrequency.rst
+   bpy.types.NodeSocketFloatMass.rst
+   bpy.types.NodeSocketFloatPercentage.rst
+   bpy.types.NodeSocketFloatPixel.rst
+   bpy.types.NodeSocketFloatTime.rst
+   bpy.types.NodeSocketFloatTimeAbsolute.rst
+   bpy.types.NodeSocketFloatUnsigned.rst
+   bpy.types.NodeSocketFloatWavelength.rst
+   bpy.types.NodeSocketFont.rst
+   bpy.types.NodeSocketGeometry.rst
+   bpy.types.NodeSocketImage.rst
+   bpy.types.NodeSocketInt.rst
+   bpy.types.NodeSocketIntFactor.rst
+   bpy.types.NodeSocketIntPercentage.rst
+   bpy.types.NodeSocketIntPixel.rst
+   bpy.types.NodeSocketIntUnsigned.rst
+   bpy.types.NodeSocketIntVector2D.rst
+   bpy.types.NodeSocketIntVector3D.rst
+   bpy.types.NodeSocketIntVectorFactor2D.rst
+   bpy.types.NodeSocketIntVectorFactor3D.rst
+   bpy.types.NodeSocketIntVectorPercentage2D.rst
+   bpy.types.NodeSocketIntVectorPercentage3D.rst
+   bpy.types.NodeSocketIntVectorPixel2D.rst
+   bpy.types.NodeSocketIntVectorPixel3D.rst
+   bpy.types.NodeSocketIntVectorUnsigned2D.rst
+   bpy.types.NodeSocketIntVectorUnsigned3D.rst
+   bpy.types.NodeSocketMask.rst
+   bpy.types.NodeSocketMaterial.rst
+   bpy.types.NodeSocketMatrix.rst
+   bpy.types.NodeSocketMenu.rst
+   bpy.types.NodeSocketObject.rst
+   bpy.types.NodeSocketRotation.rst
+   bpy.types.NodeSocketScene.rst
+   bpy.types.NodeSocketShader.rst
+   bpy.types.NodeSocketSound.rst
+   bpy.types.NodeSocketString.rst
+   bpy.types.NodeSocketStringFilePath.rst
+   bpy.types.NodeSocketText.rst
+   bpy.types.NodeSocketTexture.rst
+   bpy.types.NodeSocketVector.rst
+   bpy.types.NodeSocketVector2D.rst
+   bpy.types.NodeSocketVector4D.rst
+   bpy.types.NodeSocketVectorAcceleration.rst
+   bpy.types.NodeSocketVectorAcceleration2D.rst
+   bpy.types.NodeSocketVectorAcceleration4D.rst
+   bpy.types.NodeSocketVectorDirection.rst
+   bpy.types.NodeSocketVectorDirection2D.rst
+   bpy.types.NodeSocketVectorDirection4D.rst
+   bpy.types.NodeSocketVectorEuler.rst
+   bpy.types.NodeSocketVectorEuler2D.rst
+   bpy.types.NodeSocketVectorEuler4D.rst
+   bpy.types.NodeSocketVectorFactor.rst
+   bpy.types.NodeSocketVectorFactor2D.rst
+   bpy.types.NodeSocketVectorFactor4D.rst
+   bpy.types.NodeSocketVectorPercentage.rst
+   bpy.types.NodeSocketVectorPercentage2D.rst
+   bpy.types.NodeSocketVectorPercentage4D.rst
+   bpy.types.NodeSocketVectorPixel.rst
+   bpy.types.NodeSocketVectorPixel2D.rst
+   bpy.types.NodeSocketVectorPixel4D.rst
+   bpy.types.NodeSocketVectorTranslation.rst
+   bpy.types.NodeSocketVectorTranslation2D.rst
+   bpy.types.NodeSocketVectorTranslation4D.rst
+   bpy.types.NodeSocketVectorVelocity.rst
+   bpy.types.NodeSocketVectorVelocity2D.rst
+   bpy.types.NodeSocketVectorVelocity4D.rst
+   bpy.types.NodeSocketVectorXYZ.rst
+   bpy.types.NodeSocketVectorXYZ2D.rst
+   bpy.types.NodeSocketVectorXYZ4D.rst
+   bpy.types.NodeSocketVirtual.rst
 
 .. class:: NodeSocketStandard(NodeSocket)
 

@@ -5,6 +5,7 @@ SPHFluidSettings(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: SPHFluidSettings(bpy_struct)
 
    Settings for particle fluids physics

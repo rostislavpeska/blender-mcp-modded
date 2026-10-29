@@ -58,7 +58,7 @@ White Level
    This sets the threshold for what becomes fully opaque in the output (white in the matte).
    It should be set as high as possible. Colors close to green in the foreground
    may require reducing this value and/or adjusting the *Screen Balance*.
-   Particularly problematic parts can fixed with a *Core Matte* instead of a low *Clip White*.
+   Particularly problematic parts can be fixed with a *Core Matte* instead of a low *Clip White*.
 
    This value does not impact areas detected as edges to ensure edge detail is preserved.
 
@@ -82,7 +82,7 @@ Tolerance
    a :doc:`Viewer Node </compositing/types/output/viewer>` to the *Edges* output.
 
    Sharper detected edges (smaller *Size*, like 2 / larger *Tolerance*, like 0.4)
-   will create a sharper matte, but may loose some detail like stray hairs.
+   will create a sharper matte, but may lose some detail like stray hairs.
    A sharp matte is good, but disappearing or flickering hairs are distracting.
 
    Fat edges (larger *Size*, like 8 / smaller *Tolerance*, like 0.05)

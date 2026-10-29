@@ -3,7 +3,8 @@ IDOverrideLibraryPropertyOperations(bpy_prop_collection)
 
 .. currentmodule:: bpy.types
 
-base classes --- :class:`bpy_prop`, :class:`bpy_prop_collection`
+base class --- :class:`bpy_prop_collection`
+
 
 .. class:: IDOverrideLibraryPropertyOperations(bpy_prop_collection)
 
@@ -29,7 +30,9 @@ base classes --- :class:`bpy_prop`, :class:`bpy_prop_collection`
            Insert After -- Insert a new item into collection after the one referenced in subitem_reference_name/_id or _index.
          - ``INSERT_BEFORE``
            Insert Before -- Insert a new item into collection before the one referenced in subitem_reference_name/_id or _index (NOT USED).
-      :type operation: Literal['NOOP', 'REPLACE', 'DIFF_ADD', 'DIFF_SUB', 'FACT_MULTIPLY', 'INSERT_AFTER', 'INSERT_BEFORE']
+         - ``CUSTOM``
+           Custom -- Custom operation, specific to a RNA property, and handled through dedicated callbacks (used in specific cases, e.g. to handle data not actually exposed in RNA).
+      :type operation: Literal['NOOP', 'REPLACE', 'DIFF_ADD', 'DIFF_SUB', 'FACT_MULTIPLY', 'INSERT_AFTER', 'INSERT_BEFORE', 'CUSTOM']
       :param use_id: Use ID Pointer Subitem, Whether the found or created liboverride operation should use ID pointers or not (optional)
       :type use_id: bool
       :param subitem_reference_name: Subitem Reference Name, Used to handle insertions or ID replacements into collection (optional, never None)

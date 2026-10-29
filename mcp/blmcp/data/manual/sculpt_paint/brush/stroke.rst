@@ -98,7 +98,7 @@ Stroke Method :kbd:`Alt-E`
       Draw Curve :kbd:`Return`
          To confirm and execute the curved stroke,
          press :kbd:`Return` or use the Draw Curve button.
-         Alternativey, :kbd:`Ctrl-LMB` can be used to execute the stroke (In right click select with :kbd:`LMB`).
+         Alternatively, :kbd:`Ctrl-LMB` can be used to execute the stroke (In right click select with :kbd:`LMB`).
 
 .. _bpy.types.Brush.use_scene_spacing:
 

@@ -5,6 +5,7 @@ CastModifier(Modifier)
 
 base classes --- :class:`bpy_struct`, :class:`Modifier`
 
+
 .. class:: CastModifier(Modifier)
 
    Modifier to cast to other shapes

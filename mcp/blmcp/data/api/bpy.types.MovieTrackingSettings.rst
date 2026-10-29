@@ -5,6 +5,7 @@ MovieTrackingSettings(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: MovieTrackingSettings(bpy_struct)
 
    Match moving settings

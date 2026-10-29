@@ -5,6 +5,7 @@ NodeEvaluateClosureInputItem(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: NodeEvaluateClosureInputItem(bpy_struct)
 
 

@@ -5,6 +5,7 @@ Event(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: Event(bpy_struct)
 
    Window Manager Event

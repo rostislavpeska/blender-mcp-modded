@@ -5,6 +5,7 @@ Library(ID)
 
 base classes --- :class:`bpy_struct`, :class:`ID`
 
+
 .. class:: Library(ID)
 
    External .blend file from which data is linked
@@ -67,7 +68,7 @@ base classes --- :class:`bpy_struct`, :class:`ID`
 
       ID data-blocks that use this library
       
-      :type: tuple[:class:`bpy.types.ID`, ...]
+      :type: tuple[:class:`ID`, ...]
       
       .. note::
       

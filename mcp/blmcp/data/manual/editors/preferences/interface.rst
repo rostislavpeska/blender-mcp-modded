@@ -37,20 +37,15 @@ Developer Extras
 
    - :ref:`Operator Search <bpy.ops.wm.search_operator>`
    - :doc:`Sequencer Cache Settings </editors/video_sequencer/sequencer/sidebar/cache>`
+   - :doc:`Preferences Developer Tools Tab </editors/preferences/developer_tools>`
+   - Shows the name of icons in the tooltip when hovering over icon buttons.
+   - Adds several option to the :kbd:`RMB` button context menu:
 
-   Button Context Menu
-      Online Python Reference
-         To open the Python reference manual.
-      Copy Python Command
-         To copy the expression used when pressing the button.
-      Edit Source
-         To edit Python source code that defines the button.
-      Edit Translation
-         The option to edit UI translations
-         (only available when the *Manage UI translations* add-on is also enabled).
-   Preferences
-      Experimental Tab
-         Work in progress features can be enabled here which are currently being tested.
+     - *Online Python Reference* -- To open the Python reference manual.
+     - *Copy Python Command* -- To copy the expression used when pressing the button.
+     - *Edit Source* -- To edit Python source code that defines the button.
+     - *Edit Translation* -- The option to edit UI translations
+       (only available when the *Manage UI translations* add-on is also enabled).
 
 .. _bpy.types.PreferencesView.show_tooltips:
 
@@ -188,7 +183,7 @@ Render In
 
    :Keep User Interface: The user interface does not change and the render is computed in the background.
    :Maximize Area: A new Image editor is opened as a temporary window in full screen mode.
-   :Image Editor: The area that is the largest on screen is replaced placed by a temporary Image editor.
+   :Image Editor: The area that is the largest on screen is replaced by a temporary Image editor.
    :New Window: A new Image editor is opened as a regularly sized temporary window.
 
 .. _bpy.types.PreferencesView.filebrowser_display_type:
@@ -264,6 +259,28 @@ Translate
       Translates all labels in menus, buttons, and panels.
    New Data
       Translates the names of new data-blocks.
+
+.. _bpy.types.PreferencesView.date_format:
+
+Date Format
+   Format used to display dates.
+
+   :Default: Uses the default date format for the selected language.
+   :dd/mm/yyyy: Displays dates as day/month/year, for example ``27/02/2019``.
+   :dd.mm.yyyy: Displays dates as day.month.year, for example ``27.02.2019``.
+   :dd-mm-yyyy: Displays dates as day-month-year, for example ``27-02-2019``.
+   :mm/dd/yyyy: Displays dates as month/day/year, for example ``02/27/2019``.
+   :yyyy/mm/dd: Displays dates as year/month/day, for example ``2019/02/27``.
+   :yyyy.mm.dd: Displays dates as year.month.day, for example ``2019.02.27``.
+   :yyyy-mm-dd: Displays dates as year-month-day, for example ``2019-02-27``.
+
+.. _bpy.types.PreferencesView.time_format:
+
+Time Format
+   Format used to display times.
+
+   :24-Hour (23:59): Displays times using a 24-hour clock, for example ``23:59``.
+   :12-Hour (11:59 PM): Displays times using a 12-hour clock, for example ``11:59 PM``.
 
 
 Accessibility

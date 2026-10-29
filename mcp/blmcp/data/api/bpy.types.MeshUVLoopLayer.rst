@@ -5,6 +5,7 @@ MeshUVLoopLayer(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: MeshUVLoopLayer(bpy_struct)
 
 
@@ -126,6 +127,7 @@ References
    - :class:`Mesh.uv_layer_stencil`
    - :class:`Mesh.uv_layers`
    - :class:`UVLoopLayers.active`
+   - :class:`UVLoopLayers.active_render`
    - :class:`UVLoopLayers.new`
    - :class:`UVLoopLayers.remove`
 

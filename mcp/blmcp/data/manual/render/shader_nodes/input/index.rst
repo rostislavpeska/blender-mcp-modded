@@ -4,6 +4,13 @@
 ###############
 
 .. toctree::
+   :maxdepth: 2
+
+   Constant <constant/index.rst>
+
+-----
+
+.. toctree::
    :maxdepth: 1
 
    ao.rst
@@ -19,11 +26,10 @@
    particle_info.rst
    point_info.rst
    raycast.rst
-   rgb.rst
+   scene_time.rst
    tangent.rst
    texture_coordinate.rst
    uv_map.rst
-   value.rst
    vertex_color.rst
    volume_info.rst
    wireframe.rst

@@ -5,15 +5,29 @@ AnnotationStroke(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: AnnotationStroke(bpy_struct)
 
    Freehand curve defining part of a sketch
+
+   .. attribute:: display_mode
+
+      Coordinate space that stroke is in (default ``'3DSPACE'``)
+
+      - ``3DSPACE``
+        3D Space -- Stroke is in 3D space.
+      - ``2DSPACE``
+        2D Space -- Stroke is in 2D space, locked to the camera view.
+      - ``2DIMAGE``
+        2D Image -- Stroke is in 2D image/UV space.
+
+      :type: Literal['3DSPACE', '2DSPACE', '2DIMAGE']
 
    .. data:: points
 
       Stroke data points (default None, readonly)
 
-      :type: :class:`bpy_prop_collection`\ [:class:`AnnotationStrokePoint`]
+      :type: :class:`AnnotationStrokePoints`\ [:class:`AnnotationStrokePoint`]
 
    .. classmethod:: bl_rna_get_subclass(id, default=None, /)
    
@@ -81,4 +95,6 @@ References
    :columns: 2
 
    - :class:`AnnotationFrame.strokes`
+   - :class:`AnnotationStrokes.new`
+   - :class:`AnnotationStrokes.remove`
 

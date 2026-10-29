@@ -3,7 +3,7 @@ Pointcloud Operators
 
 .. module:: bpy.ops.pointcloud
 
-.. function:: attribute_set(*, value_float=0.0, value_float_vector_2d=(0.0, 0.0), value_float_vector_3d=(0.0, 0.0, 0.0), value_int=0, value_int_vector_2d=(0, 0), value_color=(1.0, 1.0, 1.0, 1.0), value_bool=False)
+.. function:: attribute_set(*, value_float=0.0, value_float_vector_2d=(0.0, 0.0), value_float_vector_3d=(0.0, 0.0, 0.0), value_float_vector_4d=(0.0, 0.0, 0.0, 0.0), value_int=0, value_int_vector_2d=(0, 0), value_color=(1.0, 1.0, 1.0, 1.0), value_bool=False)
 
    Set values of the active attribute for selected elements
 
@@ -13,6 +13,8 @@ Pointcloud Operators
    :type value_float_vector_2d: Sequence[float]
    :param value_float_vector_3d: Value, (array of 3 items, in [-inf, inf], optional)
    :type value_float_vector_3d: Sequence[float]
+   :param value_float_vector_4d: Value, (array of 4 items, in [-inf, inf], optional)
+   :type value_float_vector_4d: Sequence[float]
    :param value_int: Value, (in [-inf, inf], optional)
    :type value_int: int
    :param value_int_vector_2d: Value, (array of 2 items, in [-inf, inf], optional)

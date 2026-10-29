@@ -5,6 +5,7 @@ GreasePencilMirrorModifier(Modifier)
 
 base classes --- :class:`bpy_struct`, :class:`Modifier`
 
+
 .. class:: GreasePencilMirrorModifier(Modifier)
 
 

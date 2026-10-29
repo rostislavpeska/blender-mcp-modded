@@ -5,6 +5,7 @@ BoidRuleAvoidCollision(BoidRule)
 
 base classes --- :class:`bpy_struct`, :class:`BoidRule`
 
+
 .. class:: BoidRuleAvoidCollision(BoidRule)
 
 

@@ -5,6 +5,7 @@ ArmatureModifier(Modifier)
 
 base classes --- :class:`bpy_struct`, :class:`Modifier`
 
+
 .. class:: ArmatureModifier(Modifier)
 
    Armature deformation modifier

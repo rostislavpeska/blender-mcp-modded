@@ -91,7 +91,7 @@ Paste File
    :Mode:      Edit Mode
    :Menu:      :menuselection:`Header --> Text --> Paste File`
 
-Inserts text from and external text file.
+Inserts text from an external text file.
 This will bring up a :doc:`File Browser </editors/file_browser>` for navigating to a valid UTF-8 file.
 As usual, be careful that the file does not have too many characters,
 as interactive response will slow down.

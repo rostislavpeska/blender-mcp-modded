@@ -39,12 +39,12 @@ Where to help
 Contacts
 ========
 
-`Project Page <https://projects.blender.org/blender/documentation>`__
+`Project Page <https://projects.blender.org/blender/blender-manual>`__
    An overview of the documentation project.
 `Documentation Forum <https://devtalk.blender.org/c/documentation/12>`__
    A forum based discussions on writing and translating documentation. This includes the user manual, Wiki, release
    notes, and code docs.
 :ref:`blender-chat`
    ``#docs`` channel for informal discussions in real-time.
-`Project Workboard <https://projects.blender.org/blender/documentation/projects>`__
+`Project Workboard <https://projects.blender.org/blender/blender-manual/projects>`__
    Manage tasks such as bugs, todo lists, and future plans.

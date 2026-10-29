@@ -5,6 +5,7 @@ GreasePencilSimplifyModifier(Modifier)
 
 base classes --- :class:`bpy_struct`, :class:`Modifier`
 
+
 .. class:: GreasePencilSimplifyModifier(Modifier)
 
    Simplify Stroke modifier

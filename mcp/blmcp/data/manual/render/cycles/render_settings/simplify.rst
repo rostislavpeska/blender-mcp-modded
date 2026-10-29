@@ -21,9 +21,18 @@ Max Subdivision
 Child Particles
    Show only a subset of all child hairs and particles.
 
+.. _bpy.types.CyclesRenderSettings.texture_resolution:
+
+Texture Resolution
+   Scale down image textures to reduce memory usage.
+
+   With the :ref:`Texture Cache <bpy.types.RenderSettings.use_texture_cache>`
+   and viewport rendering of complex scenes, a lower resolution can help ensure
+   all textures fit in memory for interactive updates.
+
 .. _bpy.types.CyclesRenderSettings.texture_limit:
 
-Texture Limit
+Texture Size Limit
    Automatically scales textures down so that they are no larger than the values chosen.
    This can help reduce computer memory resources when rendering large scenes with huge textures.
 

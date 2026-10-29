@@ -38,7 +38,7 @@ Inputs
 
    .. note::
 
-      The :ref:`attribute domain <attribute-domains>` and the used to access the attribute is defined by the
+      The :ref:`attribute domain <attribute-domains>` and the data type used to access the attribute is defined by the
       node the input is connected to.
 
 
@@ -64,7 +64,7 @@ Note, this does not work with :doc:`Instanced Data </modeling/geometry_nodes/ins
 The attribute name used by default when using the node group in a modifier for the first
 time is defined in the :doc:`node group outputs panel </interface/controls/nodes/groups>`.
 
-This panel is hidden unless output node has attribute sockets.
+This panel is hidden unless the output node has attribute sockets.
 
 
 .. _geometry_nodes-manage_panel:

@@ -5,6 +5,7 @@ GeometryNodeAttributeDomainSize(GeometryNode)
 
 base classes --- :class:`bpy_struct`, :class:`Node`, :class:`NodeInternal`, :class:`GeometryNode`
 
+
 .. class:: GeometryNodeAttributeDomainSize(GeometryNode)
 
    Retrieve the number of elements in a geometry for each attribute domain
@@ -77,6 +78,7 @@ Inherited Properties
    - :class:`Node.label`
    - :class:`Node.inputs`
    - :class:`Node.outputs`
+   - :class:`Node.panel_states`
    - :class:`Node.internal_links`
    - :class:`Node.parent`
    - :class:`Node.warning_propagation`

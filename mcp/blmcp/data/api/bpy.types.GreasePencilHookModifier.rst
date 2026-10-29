@@ -5,6 +5,7 @@ GreasePencilHookModifier(Modifier)
 
 base classes --- :class:`bpy_struct`, :class:`Modifier`
 
+
 .. class:: GreasePencilHookModifier(Modifier)
 
    Hook modifier to modify the location of stroke points

@@ -107,7 +107,7 @@ options:
   -e, --enable  Enable the extension after installation.
   --no-prefs    Treat the user-preferences as read-only,
                 preventing updates for operations that would otherwise modify them.
-                This means removing extensions or repositories for example, wont update the user-preferences.
+                This means removing extensions or repositories for example, won't update the user-preferences.
 
 .. _command-line-args-extension-install-file:
 
@@ -130,7 +130,7 @@ options:
   -e, --enable          Enable the extension after installation.
   --no-prefs            Treat the user-preferences as read-only,
                         preventing updates for operations that would otherwise modify them.
-                        This means removing extensions or repositories for example, wont update the user-preferences.
+                        This means removing extensions or repositories for example, won't update the user-preferences.
 
 .. _command-line-args-extension-remove:
 
@@ -150,7 +150,7 @@ options:
   -h, --help  show this help message and exit
   --no-prefs  Treat the user-preferences as read-only,
               preventing updates for operations that would otherwise modify them.
-              This means removing extensions or repositories for example, wont update the user-preferences.
+              This means removing extensions or repositories for example, won't update the user-preferences.
 
 
 Repository Management
@@ -209,7 +209,7 @@ options:
   --clear-all           Clear all repositories before adding, simplifies test setup.
   --no-prefs            Treat the user-preferences as read-only,
                         preventing updates for operations that would otherwise modify them.
-                        This means removing extensions or repositories for example, wont update the user-preferences.
+                        This means removing extensions or repositories for example, won't update the user-preferences.
 
 .. _command-line-args-extension-repo-remove:
 
@@ -229,7 +229,7 @@ options:
   -h, --help  show this help message and exit
   --no-prefs  Treat the user-preferences as read-only,
               preventing updates for operations that would otherwise modify them.
-              This means removing extensions or repositories for example, wont update the user-preferences.
+              This means removing extensions or repositories for example, won't update the user-preferences.
 
 
 Extension Creation
@@ -255,11 +255,11 @@ options:
   --source-dir SOURCE_DIR
                         The package source directory containing a ``blender_manifest.toml`` manifest.
 
-                        Default's to the current directory.
+                        Defaults to the current directory.
   --output-dir OUTPUT_DIR
                         The package output directory.
 
-                        Default's to the current directory.
+                        Defaults to the current directory.
   --output-filepath OUTPUT_FILEPATH
                         The package output filepath (should include a ``.zip`` extension).
 
@@ -343,7 +343,7 @@ options:
                            id = "my_example_package"
                            reason = "Explanation for why this extension was blocked"
                            [[blocklist]]
-                           id = "other_extenison"
+                           id = "other_extension"
                            reason = "Another reason for why this is blocked"
 
   --html                Create a HTML file (``index.html``) as well as the repository JSON

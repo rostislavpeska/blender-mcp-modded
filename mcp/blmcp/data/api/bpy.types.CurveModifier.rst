@@ -5,6 +5,7 @@ CurveModifier(Modifier)
 
 base classes --- :class:`bpy_struct`, :class:`Modifier`
 
+
 .. class:: CurveModifier(Modifier)
 
    Curve deformation modifier

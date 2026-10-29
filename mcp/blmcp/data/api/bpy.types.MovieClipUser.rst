@@ -5,6 +5,7 @@ MovieClipUser(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: MovieClipUser(bpy_struct)
 
    Parameters defining how a MovieClip data-block is used by another data-block

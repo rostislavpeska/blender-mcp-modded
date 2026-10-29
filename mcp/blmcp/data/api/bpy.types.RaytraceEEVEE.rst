@@ -5,9 +5,16 @@ RaytraceEEVEE(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: RaytraceEEVEE(bpy_struct)
 
    Quality options for the raytracing pipeline
+
+   .. attribute:: backface_radiance_scale
+
+      Amount of the front face lighting to reuse for backface lighting approximation (in [0, 1], default 0.25)
+
+      :type: float
 
    .. attribute:: denoise_bilateral
 
@@ -52,7 +59,7 @@ base class --- :class:`bpy_struct`
 
    .. attribute:: screen_trace_thickness
 
-      Surface thickness used to detect intersection when using screen-tracing (in [1e-06, inf], default 0.2)
+      Surface thickness used to detect intersection when using screen-tracing (in [1e-06, inf], default 0.1)
 
       :type: float
 
@@ -61,6 +68,12 @@ base class --- :class:`bpy_struct`
       Maximum roughness to use the tracing pipeline for. Higher roughness surfaces will use fast GI approximation. A value of 1 will disable fast GI approximation. (in [0, 1], default 0.5)
 
       :type: float
+
+   .. attribute:: use_backface_hit
+
+      Consider rays hitting backfaces as valid (default True)
+
+      :type: bool
 
    .. attribute:: use_denoise
 

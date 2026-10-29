@@ -5,6 +5,7 @@ PrimitiveFloat(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: PrimitiveFloat(bpy_struct)
 
    RNA wrapped float

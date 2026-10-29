@@ -5,6 +5,7 @@ EnumProperty(Property)
 
 base classes --- :class:`bpy_struct`, :class:`Property`
 
+
 .. class:: EnumProperty(Property)
 
    RNA enumeration property definition, to choose from a number of predefined options

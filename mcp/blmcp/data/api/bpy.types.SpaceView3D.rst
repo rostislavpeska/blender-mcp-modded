@@ -5,6 +5,7 @@ SpaceView3D(Space)
 
 base classes --- :class:`bpy_struct`, :class:`Space`
 
+
 .. class:: SpaceView3D(Space)
 
    3D View space data

@@ -35,6 +35,7 @@ This example script prints the vertices and UVs for each polygon, assumes the ac
 
 base classes --- :class:`bpy_struct`, :class:`ID`
 
+
 .. class:: Mesh(ID)
 
    Mesh data-block defining geometric surfaces
@@ -418,14 +419,14 @@ base classes --- :class:`bpy_struct`, :class:`ID`
       Define custom normals of this mesh (use zero-vectors to keep auto ones)
 
       :param normals: Normals (multi-dimensional array of 1 * 3 items, in [-1, 1])
-      :type normals: Sequence[float]
+      :type normals: Sequence[Sequence[float]]
 
    .. method:: normals_split_custom_set_from_vertices(normals)
 
       Define custom normals of this mesh, from vertices' normals (use zero-vectors to keep auto ones)
 
       :param normals: Normals (multi-dimensional array of 1 * 3 items, in [-1, 1])
-      :type normals: Sequence[float]
+      :type normals: Sequence[Sequence[float]]
 
    .. method:: update(*, calc_edges=False, calc_edges_loose=False)
 
@@ -484,6 +485,11 @@ base classes --- :class:`bpy_struct`, :class:`ID`
 
    .. method:: edge_creases_ensure()
 
+      Ensure the "crease_edge" attribute exists, creating it if needed.
+      
+      :return: The edge crease attribute.
+      :rtype: :class:`FloatAttribute`
+
    .. method:: edge_creases_remove()
 
    .. method:: from_pydata(vertices, edges, faces, shade_flat=True)
@@ -511,6 +517,8 @@ base classes --- :class:`bpy_struct`, :class:`ID`
          the *vertices* argument. eg: [(5, 6, 8, 9), (1, 2, 3), ...]
       
       :type faces: Iterable[Sequence[int]]
+      :param shade_flat: When true, mark new faces as flat-shaded.
+      :type shade_flat: bool
       
       .. warning::
       
@@ -532,9 +540,19 @@ base classes --- :class:`bpy_struct`, :class:`ID`
 
    .. method:: vertex_creases_ensure()
 
+      Ensure the "crease_vert" attribute exists, creating it if needed.
+      
+      :return: The vertex crease attribute.
+      :rtype: :class:`FloatAttribute`
+
    .. method:: vertex_creases_remove()
 
    .. method:: vertex_paint_mask_ensure()
+
+      Ensure the ".sculpt_mask" attribute exists, creating it if needed.
+      
+      :return: The vertex paint mask attribute.
+      :rtype: :class:`FloatAttribute`
 
    .. method:: vertex_paint_mask_remove()
 

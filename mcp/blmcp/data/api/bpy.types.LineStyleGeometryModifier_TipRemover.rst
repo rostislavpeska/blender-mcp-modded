@@ -5,6 +5,7 @@ LineStyleGeometryModifier_TipRemover(LineStyleGeometryModifier)
 
 base classes --- :class:`bpy_struct`, :class:`LineStyleModifier`, :class:`LineStyleGeometryModifier`
 
+
 .. class:: LineStyleGeometryModifier_TipRemover(LineStyleGeometryModifier)
 
    Remove a piece of stroke at the beginning and the end of stroke backbone

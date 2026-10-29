@@ -5,6 +5,7 @@ ShaderFxSwirl(ShaderFx)
 
 base classes --- :class:`bpy_struct`, :class:`ShaderFx`
 
+
 .. class:: ShaderFxSwirl(ShaderFx)
 
    Swirl effect

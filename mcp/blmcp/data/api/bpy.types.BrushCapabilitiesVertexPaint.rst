@@ -5,6 +5,7 @@ BrushCapabilitiesVertexPaint(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: BrushCapabilitiesVertexPaint(bpy_struct)
 
    Read-only indications of supported operations

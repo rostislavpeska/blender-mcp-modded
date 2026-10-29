@@ -4,7 +4,7 @@
 Introduction
 ************
 
-Force fields offer a way to influence a simulation, in example to add extra movement.
+Force fields offer a way to influence a simulation, for example to add extra movement.
 :doc:`Particles </physics/particles/index>`, :doc:`Soft Bodies </physics/soft_body/index>`,
 :doc:`Rigid Bodies </physics/rigid_body/index>`, and :doc:`Cloth objects </physics/cloth/index>`
 can all be affected by forces fields.

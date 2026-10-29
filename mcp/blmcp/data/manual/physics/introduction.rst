@@ -28,7 +28,7 @@ Quick Effects
 
 Sets up a basic simulation scene or effect including the selected objects.
 The tool will add essential objects like domains or particle systems both with predefined settings,
-so that there will be instant viewable result.
+so that there will be an instant viewable result.
 
 
 .. _bpy.ops.object.quick_fur:

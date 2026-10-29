@@ -5,6 +5,7 @@ AnnotationStrokePoint(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: AnnotationStrokePoint(bpy_struct)
 
    Data point for freehand stroke curve

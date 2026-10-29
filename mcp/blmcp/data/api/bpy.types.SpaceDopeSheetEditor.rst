@@ -5,6 +5,7 @@ SpaceDopeSheetEditor(Space)
 
 base classes --- :class:`bpy_struct`, :class:`Space`
 
+
 .. class:: SpaceDopeSheetEditor(Space)
 
    Dope Sheet space data

@@ -5,6 +5,7 @@ BezierSplinePoint(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: BezierSplinePoint(bpy_struct)
 
    Bézier curve point with two handles

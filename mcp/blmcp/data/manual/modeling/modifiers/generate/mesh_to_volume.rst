@@ -47,7 +47,7 @@ Resolution Mode
       For final rendering of animations, it's better to specify the voxel size explicitly to avoid artifacts.
    :Voxel Size:
       This allows setting the exact voxel size that will be used.
-      This is idea for rendering when the voxel size should not change between frames.
+      This is ideal for rendering when the voxel size should not change between frames.
 
 
 Example

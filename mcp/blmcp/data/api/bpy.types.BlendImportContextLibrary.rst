@@ -5,6 +5,7 @@ BlendImportContextLibrary(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: BlendImportContextLibrary(bpy_struct)
 
    Library (blendfile) reference in a BlendImportContext data. Currently only exposed as read-only data for the pre/post blendimport handlers

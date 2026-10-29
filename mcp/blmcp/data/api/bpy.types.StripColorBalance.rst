@@ -5,6 +5,7 @@ StripColorBalance(StripColorBalanceData)
 
 base classes --- :class:`bpy_struct`, :class:`StripColorBalanceData`
 
+
 .. class:: StripColorBalance(StripColorBalanceData)
 
    Color balance parameters for a sequence strip

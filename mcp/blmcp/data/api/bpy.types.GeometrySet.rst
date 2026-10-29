@@ -1,6 +1,8 @@
 GeometrySet
 ===========
 
+.. currentmodule:: bpy.types
+
 
 Accessing Evaluated Geometry
 ++++++++++++++++++++++++++++
@@ -91,6 +93,12 @@ Accessing Evaluated Geometry
    
       :param evaluated_object: The evaluated object to create a geometry set from.
       :type evaluated_object: bpy.types.Object
+
+   .. details:: Special Methods
+
+      .. method:: __repr__()
+
+         :rtype: str
 
 
 

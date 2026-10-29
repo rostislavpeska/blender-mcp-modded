@@ -5,6 +5,7 @@ XrComponentPath(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: XrComponentPath(bpy_struct)
 
 

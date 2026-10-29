@@ -5,8 +5,11 @@ NodeSocket(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
-subclasses --- 
-:class:`NodeSocketStandard`
+.. toctree::
+   :caption: Subclasses
+   :maxdepth: 1
+
+   bpy.types.NodeSocketStandard.rst
 
 .. class:: NodeSocket(bpy_struct)
 
@@ -309,6 +312,8 @@ References
    - :class:`NodeTreeInterfaceSocketFloatMass.init_socket`
    - :class:`NodeTreeInterfaceSocketFloatPercentage.from_socket`
    - :class:`NodeTreeInterfaceSocketFloatPercentage.init_socket`
+   - :class:`NodeTreeInterfaceSocketFloatPixel.from_socket`
+   - :class:`NodeTreeInterfaceSocketFloatPixel.init_socket`
    - :class:`NodeTreeInterfaceSocketFloatTime.from_socket`
    - :class:`NodeTreeInterfaceSocketFloatTime.init_socket`
    - :class:`NodeTreeInterfaceSocketFloatTimeAbsolute.from_socket`
@@ -327,8 +332,30 @@ References
    - :class:`NodeTreeInterfaceSocketIntFactor.init_socket`
    - :class:`NodeTreeInterfaceSocketIntPercentage.from_socket`
    - :class:`NodeTreeInterfaceSocketIntPercentage.init_socket`
+   - :class:`NodeTreeInterfaceSocketIntPixel.from_socket`
+   - :class:`NodeTreeInterfaceSocketIntPixel.init_socket`
    - :class:`NodeTreeInterfaceSocketIntUnsigned.from_socket`
    - :class:`NodeTreeInterfaceSocketIntUnsigned.init_socket`
+   - :class:`NodeTreeInterfaceSocketIntVector2D.from_socket`
+   - :class:`NodeTreeInterfaceSocketIntVector2D.init_socket`
+   - :class:`NodeTreeInterfaceSocketIntVector3D.from_socket`
+   - :class:`NodeTreeInterfaceSocketIntVector3D.init_socket`
+   - :class:`NodeTreeInterfaceSocketIntVectorFactor2D.from_socket`
+   - :class:`NodeTreeInterfaceSocketIntVectorFactor2D.init_socket`
+   - :class:`NodeTreeInterfaceSocketIntVectorFactor3D.from_socket`
+   - :class:`NodeTreeInterfaceSocketIntVectorFactor3D.init_socket`
+   - :class:`NodeTreeInterfaceSocketIntVectorPercentage2D.from_socket`
+   - :class:`NodeTreeInterfaceSocketIntVectorPercentage2D.init_socket`
+   - :class:`NodeTreeInterfaceSocketIntVectorPercentage3D.from_socket`
+   - :class:`NodeTreeInterfaceSocketIntVectorPercentage3D.init_socket`
+   - :class:`NodeTreeInterfaceSocketIntVectorPixel2D.from_socket`
+   - :class:`NodeTreeInterfaceSocketIntVectorPixel2D.init_socket`
+   - :class:`NodeTreeInterfaceSocketIntVectorPixel3D.from_socket`
+   - :class:`NodeTreeInterfaceSocketIntVectorPixel3D.init_socket`
+   - :class:`NodeTreeInterfaceSocketIntVectorUnsigned2D.from_socket`
+   - :class:`NodeTreeInterfaceSocketIntVectorUnsigned2D.init_socket`
+   - :class:`NodeTreeInterfaceSocketIntVectorUnsigned3D.from_socket`
+   - :class:`NodeTreeInterfaceSocketIntVectorUnsigned3D.init_socket`
    - :class:`NodeTreeInterfaceSocketMaterial.from_socket`
    - :class:`NodeTreeInterfaceSocketMaterial.init_socket`
    - :class:`NodeTreeInterfaceSocketMatrix.from_socket`
@@ -383,6 +410,12 @@ References
    - :class:`NodeTreeInterfaceSocketVectorPercentage2D.init_socket`
    - :class:`NodeTreeInterfaceSocketVectorPercentage4D.from_socket`
    - :class:`NodeTreeInterfaceSocketVectorPercentage4D.init_socket`
+   - :class:`NodeTreeInterfaceSocketVectorPixel.from_socket`
+   - :class:`NodeTreeInterfaceSocketVectorPixel.init_socket`
+   - :class:`NodeTreeInterfaceSocketVectorPixel2D.from_socket`
+   - :class:`NodeTreeInterfaceSocketVectorPixel2D.init_socket`
+   - :class:`NodeTreeInterfaceSocketVectorPixel4D.from_socket`
+   - :class:`NodeTreeInterfaceSocketVectorPixel4D.init_socket`
    - :class:`NodeTreeInterfaceSocketVectorTranslation.from_socket`
    - :class:`NodeTreeInterfaceSocketVectorTranslation.init_socket`
    - :class:`NodeTreeInterfaceSocketVectorTranslation2D.from_socket`

@@ -5,6 +5,7 @@ SpaceFileBrowser(Space)
 
 base classes --- :class:`bpy_struct`, :class:`Space`
 
+
 .. class:: SpaceFileBrowser(Space)
 
    File browser space data

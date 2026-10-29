@@ -5,6 +5,7 @@ XrActionMapBinding(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: XrActionMapBinding(bpy_struct)
 
    Binding in an XR action map item

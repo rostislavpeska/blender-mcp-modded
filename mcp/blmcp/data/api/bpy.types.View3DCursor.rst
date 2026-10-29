@@ -5,6 +5,7 @@ View3DCursor(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: View3DCursor(bpy_struct)
 
 

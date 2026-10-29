@@ -107,14 +107,14 @@ Mirrors the selected keyframes across a reference point.
 
 By Times over Current Frame
    Mirror horizontally across the current frame.
-By Values over Cursor Value
-   Mirror vertically across the 2D Cursor's value.
-By Times over Zero Time
-   Mirror horizontally across frame 0.
-By Values over Zero Value
-   Mirror vertically across value 0.
 By Times over First Selected Marker
    Mirror horizontally across the first selected marker.
+By Times over Zero Time
+   Mirror horizontally across frame 0.
+By Values over Cursor Value
+   Mirror vertically across the 2D Cursor's value.
+By Values over Zero Value
+   Mirror vertically across value 0.
 
 
 .. _bpy.ops.graph.frame_jump:

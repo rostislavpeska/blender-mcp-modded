@@ -5,6 +5,7 @@ CollectionLightLinking(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: CollectionLightLinking(bpy_struct)
 
    Light linking settings of objects and children collections of a collection

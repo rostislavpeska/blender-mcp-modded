@@ -5,6 +5,7 @@ MotionPath(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: MotionPath(bpy_struct)
 
    Cache of the world-space positions of an element over a frame range

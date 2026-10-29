@@ -17,7 +17,7 @@ The node can combine multiple :term:`Color Models <Color Model>` depending on th
 Inputs
 ======
 
-The outputs of this node depends on the Mode property (see below).
+The outputs of this node depend on the Mode property (see below).
 
 Alpha
    The color channel that is responsible for the image's transparency.
@@ -72,7 +72,7 @@ Increase Luminance
 
 .. figure:: /images/compositing_types_converter_math_multiply.png
 
-   An example of the scaling the Luminance channel.
+   An example of scaling the Luminance channel.
 
 This example has a *Math (Multiply)* node increasing the luminance channel (Y)
 of the image to make it brighter.

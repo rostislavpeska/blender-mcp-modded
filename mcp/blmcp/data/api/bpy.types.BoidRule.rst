@@ -5,8 +5,16 @@ BoidRule(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
-subclasses --- 
-:class:`BoidRuleAverageSpeed`, :class:`BoidRuleAvoid`, :class:`BoidRuleAvoidCollision`, :class:`BoidRuleFight`, :class:`BoidRuleFollowLeader`, :class:`BoidRuleGoal`
+.. toctree::
+   :caption: Subclasses
+   :maxdepth: 1
+
+   bpy.types.BoidRuleAverageSpeed.rst
+   bpy.types.BoidRuleAvoid.rst
+   bpy.types.BoidRuleAvoidCollision.rst
+   bpy.types.BoidRuleFight.rst
+   bpy.types.BoidRuleFollowLeader.rst
+   bpy.types.BoidRuleGoal.rst
 
 .. class:: BoidRule(bpy_struct)
 

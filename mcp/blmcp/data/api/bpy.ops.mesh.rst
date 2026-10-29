@@ -3,7 +3,7 @@ Mesh Operators
 
 .. module:: bpy.ops.mesh
 
-.. function:: attribute_set(*, value_float=0.0, value_float_vector_2d=(0.0, 0.0), value_float_vector_3d=(0.0, 0.0, 0.0), value_int=0, value_int_vector_2d=(0, 0), value_color=(1.0, 1.0, 1.0, 1.0), value_bool=False)
+.. function:: attribute_set(*, value_float=0.0, value_float_vector_2d=(0.0, 0.0), value_float_vector_3d=(0.0, 0.0, 0.0), value_float_vector_4d=(0.0, 0.0, 0.0, 0.0), value_int=0, value_int_vector_2d=(0, 0), value_color=(1.0, 1.0, 1.0, 1.0), value_bool=False)
 
    Set values of the active attribute for selected elements
 
@@ -13,6 +13,8 @@ Mesh Operators
    :type value_float_vector_2d: Sequence[float]
    :param value_float_vector_3d: Value, (array of 3 items, in [-inf, inf], optional)
    :type value_float_vector_3d: Sequence[float]
+   :param value_float_vector_4d: Value, (array of 4 items, in [-inf, inf], optional)
+   :type value_float_vector_4d: Sequence[float]
    :param value_int: Value, (in [-inf, inf], optional)
    :type value_int: int
    :param value_int_vector_2d: Value, (array of 2 items, in [-inf, inf], optional)
@@ -214,6 +216,34 @@ Mesh Operators
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
 
+.. function:: circularize(*, factor=1.0, fit_method='LEAST_SQUARE', angle=0.0, use_custom_radius=False, custom_radius=1.0, regular=True, flatten=1.0, lock=(False, False, False))
+
+   Shape selected geometry into a circle
+
+   :param factor: Factor, Circularization factor (in [0, 1], optional)
+   :type factor: float
+   :param fit_method: Method, Method used for fitting a circle to the vertices (optional)
+
+      - ``LEAST_SQUARE``
+        Best Fit -- Calculate a best-fit circle using non-linear least squares.
+      - ``CONTRACT``
+        Interior Fit -- Only move vertices towards the center.
+   :type fit_method: Literal['LEAST_SQUARE', 'CONTRACT']
+   :param angle: Rotation, Rotate the circle (in [-6.28319, 6.28319], optional)
+   :type angle: float
+   :param use_custom_radius: Use Custom Radius, Enable custom radius (optional)
+   :type use_custom_radius: bool
+   :param custom_radius: Radius, Radius of the circle (in [0, inf], optional)
+   :type custom_radius: float
+   :param regular: Space Evenly, Distribute vertices at constant distances along the circle, otherwise preserves original spacing (optional)
+   :type regular: bool
+   :param flatten: Flatten, Flatten the circle, instead of projecting it on the mesh (in [0, 1], optional)
+   :type flatten: float
+   :param lock: Lock, Lock editing of the axis (array of 3 items, optional)
+   :type lock: Sequence[bool]
+   :return: Result of the operator call.
+   :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
+
 .. function:: colors_reverse()
 
    Flip direction of face corner color attribute inside faces
@@ -238,6 +268,12 @@ Mesh Operators
 .. function:: customdata_custom_splitnormals_clear()
 
    Remove the custom normals layer, if it exists
+
+   :return: Result of the operator call.
+   :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
+.. function:: customdata_face_sets_clear()
+
+   Clear sculpt face set data from the mesh
 
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
@@ -318,7 +354,7 @@ Mesh Operators
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
 
-.. function:: dissolve_edges(*, use_verts=True, angle_threshold=3.14159, use_face_split=False)
+.. function:: dissolve_edges(*, use_verts=True, angle_threshold=3.14159, use_face_split=False, use_preserve_quads=True)
 
    Dissolve edges, merging faces
 
@@ -328,6 +364,8 @@ Mesh Operators
    :type angle_threshold: float
    :param use_face_split: Face Split, Split off face corners to maintain surrounding geometry (optional)
    :type use_face_split: bool
+   :param use_preserve_quads: Preserve Quads, When dissolving the edge between two triangles, don't dissolve vertices (optional)
+   :type use_preserve_quads: bool
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
 
@@ -353,7 +391,7 @@ Mesh Operators
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
 
-.. function:: dissolve_mode(*, use_verts=False, angle_threshold=3.14159, use_face_split=False, use_boundary_tear=False)
+.. function:: dissolve_mode(*, use_verts=False, angle_threshold=3.14159, use_preserve_quads=True, use_face_split=False, use_boundary_tear=False)
 
    Dissolve geometry based on the selection mode
 
@@ -361,6 +399,8 @@ Mesh Operators
    :type use_verts: bool
    :param angle_threshold: Angle Threshold, Remaining vertices which separate edge pairs are preserved if their edge angle exceeds this threshold. (in [0, 3.14159], optional)
    :type angle_threshold: float
+   :param use_preserve_quads: Preserve Quads, When dissolving the edge between two triangles, don't dissolve vertices (optional)
+   :type use_preserve_quads: bool
    :param use_face_split: Face Split, Split off face corners to maintain surrounding geometry (optional)
    :type use_face_split: bool
    :param use_boundary_tear: Tear Boundary, Split off face corners instead of merging faces (optional)
@@ -686,6 +726,26 @@ Mesh Operators
 
    :param sides: Sides, Number of sides in hole required to fill (zero fills all holes) (in [0, 1000], optional)
    :type sides: int
+   :return: Result of the operator call.
+   :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
+
+.. function:: flatten(*, factor=1.0, method='BEST_FIT', lock=(False, False, False))
+
+   Flatten vertices on a best-fitting plane
+
+   :param factor: Factor, Flattening factor (in [0, 1], optional)
+   :type factor: float
+   :param method: Method, Plane on which vertices are flattened (optional)
+
+      - ``BEST_FIT``
+        Best Fit -- Calculate a best fitting plane.
+      - ``NORMAL``
+        Normal -- Derive plane by averaging face normals.
+      - ``VIEW``
+        View -- Flatten on a plane perpendicular to the viewing angle.
+   :type method: Literal['BEST_FIT', 'NORMAL', 'VIEW']
+   :param lock: Lock, Lock editing of the axis (array of 3 items, optional)
+   :type lock: Sequence[bool]
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
 
@@ -1720,6 +1780,17 @@ Mesh Operators
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
 
+.. function:: select_boundary_loop_multi(*, extend=True, delimit_edge_loop=set())
+
+   Select entire boundary loop of each selected boundary edge
+
+   :param extend: Extend, Extend the selection (optional)
+   :type extend: bool
+   :param delimit_edge_loop: Delimit, Delimit edge loop selection (optional)
+   :type delimit_edge_loop: set[Literal[:ref:`rna_enum_mesh_walk_delimit_edge_loop_items`]]
+   :return: Result of the operator call.
+   :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
+
 .. function:: select_by_attribute()
 
    Select elements based on the active boolean attribute
@@ -2084,6 +2155,24 @@ Mesh Operators
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
 
+.. function:: space_edge_loops_evenly(*, factor=1.0, interpolation='CUBIC', lock=(False, False, False))
+
+   Space the vertices in a regular distribution on the loop
+
+   :param factor: Factor, Spacing effect factor (in [0, 1], optional)
+   :type factor: float
+   :param interpolation: Interpolation, Algorithm used for interpolation (optional)
+
+      - ``CUBIC``
+        Cubic -- Natural cubic spline, smooth results.
+      - ``LINEAR``
+        Linear -- Vertices are projected on existing edges.
+   :type interpolation: Literal['CUBIC', 'LINEAR']
+   :param lock: Lock, Lock editing of the axis (array of 3 items, optional)
+   :type lock: Sequence[bool]
+   :return: Result of the operator call.
+   :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
+
 .. function:: spin(*, steps=12, dupli=False, angle=1.5708, use_auto_merge=True, use_normal_flip=False, center=(0.0, 0.0, 0.0), axis=(0.0, 0.0, 0.0))
 
    Extrude selected vertices in a circle around the cursor in indicated viewport
@@ -2166,7 +2255,7 @@ Mesh Operators
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
 
-.. function:: symmetry_snap(*, direction='NEGATIVE_X', threshold=0.05, factor=0.5, use_center=True)
+.. function:: symmetry_snap(*, direction='NEGATIVE_X', threshold=0.05, factor=0.5, use_center=True, use_topology=False)
 
    Snap vertex pairs to their mirrored locations
 
@@ -2178,6 +2267,8 @@ Mesh Operators
    :type factor: float
    :param use_center: Center, Snap middle vertices to the axis center (optional)
    :type use_center: bool
+   :param use_topology: Topology Mirror, Use topology to find mirrored vertices instead of spatial proximity (optional)
+   :type use_topology: bool
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
 

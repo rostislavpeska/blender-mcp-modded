@@ -5,6 +5,7 @@ IMAGE_FH_drop_handler(FileHandler)
 
 base classes --- :class:`bpy_struct`, :class:`FileHandler`
 
+
 .. class:: IMAGE_FH_drop_handler(FileHandler)
 
 

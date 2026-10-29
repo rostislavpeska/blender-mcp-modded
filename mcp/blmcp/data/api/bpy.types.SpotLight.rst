@@ -5,6 +5,7 @@ SpotLight(Light)
 
 base classes --- :class:`bpy_struct`, :class:`ID`, :class:`Light`
 
+
 .. class:: SpotLight(Light)
 
    Directional cone Light
@@ -86,14 +87,6 @@ base classes --- :class:`bpy_struct`, :class:`ID`, :class:`Light`
       Cast a square spot light shape (default False)
 
       :type: bool
-
-   .. method:: inline_shader_nodes()
-
-      Get the inlined shader nodes of this light. This preprocesses the node tree
-      to remove nested groups, repeat zones and more.
-      
-      :return: The inlined shader nodes.
-      :rtype: :class:`bpy.types.InlineShaderNodes`
 
    .. classmethod:: bl_rna_get_subclass(id, default=None, /)
    

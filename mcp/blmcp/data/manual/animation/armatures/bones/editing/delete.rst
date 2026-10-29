@@ -14,7 +14,7 @@ Bones
    :Menu:      :menuselection:`Armature --> Delete --> Bones`
    :Shortcut:  :kbd:`X`
 
-This tool delete selected bones, selected *joints* are ignored.
+This tool deletes selected bones, selected *joints* are ignored.
 
 If you delete a bone in a chain, its child(ren)
 will be automatically re-parented to its own parent, but **not** connected,

@@ -5,6 +5,7 @@ KeyMapItem(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: KeyMapItem(bpy_struct)
 
    Item in a Key Map

@@ -22,6 +22,12 @@ View2D Operators
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
 
+.. function:: ndof()
+
+   Use a 3D mouse device to pan/zoom the view
+
+   :return: Result of the operator call.
+   :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
 .. function:: pan(*, deltax=0, deltay=0)
 
    Pan the view
@@ -142,7 +148,7 @@ View2D Operators
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
 
-.. function:: zoom_in(*, zoomfacx=0.0, zoomfacy=0.0)
+.. function:: zoom_in(*, zoomfacx=0.0375, zoomfacy=0.0375)
 
    Zoom in the view
 
@@ -153,7 +159,7 @@ View2D Operators
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
 
-.. function:: zoom_out(*, zoomfacx=0.0, zoomfacy=0.0)
+.. function:: zoom_out(*, zoomfacx=-0.0375, zoomfacy=-0.0375)
 
    Zoom out the view
 

@@ -5,6 +5,7 @@ GroupNodeViewerPathElem(ViewerPathElem)
 
 base classes --- :class:`bpy_struct`, :class:`ViewerPathElem`
 
+
 .. class:: GroupNodeViewerPathElem(ViewerPathElem)
 
 

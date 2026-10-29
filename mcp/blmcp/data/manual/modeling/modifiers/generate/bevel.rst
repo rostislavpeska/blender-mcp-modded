@@ -177,7 +177,7 @@ Miter Inner/Outer
       Edges meet at a sharp point but in addition, two extra vertices are introduced near the point
       so that the edges and faces at the vertex may be less pinched together than
       what occurs in the *Sharp* case.
-      This pattern does makes no sense for inner miters, so it behaves like *Arc* for them.
+      This pattern makes no sense for inner miters, so it behaves like *Arc* for them.
    :Arc:
       Two vertices are introduced near the meeting point, and a curved arc joins them together.
 

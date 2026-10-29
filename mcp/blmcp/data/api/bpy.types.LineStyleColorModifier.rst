@@ -5,8 +5,18 @@ LineStyleColorModifier(LineStyleModifier)
 
 base classes --- :class:`bpy_struct`, :class:`LineStyleModifier`
 
-subclasses --- 
-:class:`LineStyleColorModifier_AlongStroke`, :class:`LineStyleColorModifier_CreaseAngle`, :class:`LineStyleColorModifier_Curvature_3D`, :class:`LineStyleColorModifier_DistanceFromCamera`, :class:`LineStyleColorModifier_DistanceFromObject`, :class:`LineStyleColorModifier_Material`, :class:`LineStyleColorModifier_Noise`, :class:`LineStyleColorModifier_Tangent`
+.. toctree::
+   :caption: Subclasses
+   :maxdepth: 1
+
+   bpy.types.LineStyleColorModifier_AlongStroke.rst
+   bpy.types.LineStyleColorModifier_CreaseAngle.rst
+   bpy.types.LineStyleColorModifier_Curvature_3D.rst
+   bpy.types.LineStyleColorModifier_DistanceFromCamera.rst
+   bpy.types.LineStyleColorModifier_DistanceFromObject.rst
+   bpy.types.LineStyleColorModifier_Material.rst
+   bpy.types.LineStyleColorModifier_Noise.rst
+   bpy.types.LineStyleColorModifier_Tangent.rst
 
 .. class:: LineStyleColorModifier(LineStyleModifier)
 

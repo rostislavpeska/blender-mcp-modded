@@ -9,7 +9,7 @@ Paint Operators
 
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-.. function:: add_texture_paint_slot(*, type='BASE_COLOR', slot_type='IMAGE', name="Untitled", color=(0.0, 0.0, 0.0, 1.0), width=1024, height=1024, alpha=True, generated_type='BLANK', float=False, domain='POINT', data_type='FLOAT_COLOR')
+.. function:: add_texture_paint_slot(*, type='BASE_COLOR', slot_type='IMAGE', name="Untitled", color=(0.0, 0.0, 0.0, 1.0), width=1024, height=1024, alpha=True, generated_type='BLANK', float=False, tiled=False, domain='POINT', data_type='FLOAT_COLOR')
 
    Add a paint slot
 
@@ -31,6 +31,8 @@ Paint Operators
    :type generated_type: Literal[:ref:`rna_enum_image_generated_type_items`]
    :param float: 32-bit Float, Create image with 32-bit floating-point bit depth (optional)
    :type float: bool
+   :param tiled: Tiled, Create a tiled image (optional)
+   :type tiled: bool
    :param domain: Domain, Type of element that attribute is stored on (optional)
    :type domain: Literal[:ref:`rna_enum_color_attribute_domain_items`]
    :param data_type: Data Type, Type of data stored in attribute (optional)
@@ -594,7 +596,7 @@ Paint Operators
    :type normalize: bool
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `startup/bl_operators/vertexpaint_dirt.py\:179 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/vertexpaint_dirt.py#L179>`__
+   :File: `startup/bl_operators/vertexpaint_dirt.py\:182 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/vertexpaint_dirt.py#L182>`__
 
 
 .. function:: vertex_color_from_weight()
@@ -711,7 +713,7 @@ Paint Operators
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
 .. function:: weight_from_bones(*, type='AUTOMATIC')
 
-   Set the weights of the groups matching the attached armature's selected bones, using the distance between the vertices and the bones
+   Set the weights of the groups matching the attached armature's bones that have "Deform" option enabled, using the distance between the vertices and the bones
 
    :param type: Type, Method to use for assigning weights (optional)
 

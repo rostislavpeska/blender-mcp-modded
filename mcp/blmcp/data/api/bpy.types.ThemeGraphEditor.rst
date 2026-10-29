@@ -5,6 +5,7 @@ ThemeGraphEditor(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: ThemeGraphEditor(bpy_struct)
 
    Theme settings for the graph editor

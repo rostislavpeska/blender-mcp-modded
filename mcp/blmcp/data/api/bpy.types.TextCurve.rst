@@ -5,6 +5,7 @@ TextCurve(Curve)
 
 base classes --- :class:`bpy_struct`, :class:`ID`, :class:`Curve`
 
+
 .. class:: TextCurve(Curve)
 
    Curve data-block used for storing text

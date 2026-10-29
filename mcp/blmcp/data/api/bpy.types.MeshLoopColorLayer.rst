@@ -5,6 +5,7 @@ MeshLoopColorLayer(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: MeshLoopColorLayer(bpy_struct)
 
    Layer of vertex colors in a Mesh data-block

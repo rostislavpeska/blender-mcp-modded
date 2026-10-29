@@ -83,10 +83,10 @@ Scale Envelope Distance
 
    :Mode:      Edit Mode and Pose Mode
    :Menu:      :menuselection:`Armature --> Transform --> Scale Envelope Distance`
-   :Shortcut:  :kbd:`Ctrl-Alt-S`
+   :Shortcut:  :kbd:`Shift-Ctrl-Alt-S`
 
 You can alter the size of the Bone Envelope volume by clicking on the body of the bone you want to alter,
-:kbd:`Ctrl-Alt-S` then drag your mouse left or right and the Bone Envelope volume will alter accordingly.
+:kbd:`Shift-Ctrl-Alt-S` then drag your mouse left or right and the Bone Envelope volume will alter accordingly.
 
 You can also alter the Bone Envelope volume by selecting the Bone you wish to alter and
 then navigate to :menuselection:`Properties --> Bone --> Deform --> Envelope --> Distance`

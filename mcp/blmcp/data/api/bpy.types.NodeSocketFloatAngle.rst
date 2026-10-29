@@ -5,6 +5,7 @@ NodeSocketFloatAngle(NodeSocketStandard)
 
 base classes --- :class:`bpy_struct`, :class:`NodeSocket`, :class:`NodeSocketStandard`
 
+
 .. class:: NodeSocketFloatAngle(NodeSocketStandard)
 
    Floating-point number socket of a node

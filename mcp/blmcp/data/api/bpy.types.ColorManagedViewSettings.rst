@@ -5,6 +5,7 @@ ColorManagedViewSettings(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: ColorManagedViewSettings(bpy_struct)
 
    Color management settings used for displaying images on the display

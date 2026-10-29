@@ -83,7 +83,7 @@ Frames
    Tracks or tracked segments shorter than this number of frames will be removed.
 
 Error
-   Tracks which has reprojection error higher than this value will be removed.
+   Tracks which have reprojection error higher than this value will be removed.
 
 Type
    Several actions can be performed for bad tracks:

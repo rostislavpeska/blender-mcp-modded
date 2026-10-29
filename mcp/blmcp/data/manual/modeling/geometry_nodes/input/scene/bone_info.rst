@@ -1,16 +1,19 @@
 .. index:: Geometry Nodes; Bone Info
 .. _bpy.types.GeometryNodeBoneInfo:
 
-****************
+**************
 Bone Info Node
-****************
+**************
 
 .. figure:: /images/node-types_GeometryNodeBoneInfo.webp
    :align: right
    :alt: Bone Info node.
 
-The *Bone Info* node gets bone transform properties from an armature object. This can be used to control geometry node
-behavior with a rig or implement armature deformation using vertex group attributes.
+The *Bone Info* node retrieves transform information for a bone from an armature object.
+
+This can be used to drive Geometry Nodes with an armature, create
+procedural rigging effects, or implement custom armature deformation using
+vertex group attributes.
 
 .. note::
 
@@ -28,7 +31,10 @@ Armature
    Armature object to get bone poses from.
 
 Bone Name
-   Name of the bone to get the pose transforms from.
+   Name of the bone to evaluate.
+
+   If the specified bone does not exist, a warning is displayed unless the
+   *Exists* output is used.
 
 
 Properties
@@ -56,3 +62,5 @@ Rest Pose
    Original transform of the bone as defined in edit mode.
 Rest Length
    Original length of the bone.
+Exists
+   Whether the specified bone exists in the armature.

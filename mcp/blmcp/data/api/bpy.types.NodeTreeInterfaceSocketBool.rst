@@ -5,6 +5,7 @@ NodeTreeInterfaceSocketBool(NodeTreeInterfaceSocket)
 
 base classes --- :class:`bpy_struct`, :class:`NodeTreeInterfaceItem`, :class:`NodeTreeInterfaceSocket`
 
+
 .. class:: NodeTreeInterfaceSocketBool(NodeTreeInterfaceSocket)
 
    Boolean value socket of a node

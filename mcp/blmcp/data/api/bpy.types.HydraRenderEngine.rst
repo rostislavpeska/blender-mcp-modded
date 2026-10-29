@@ -14,21 +14,19 @@ USD Hydra Based Renderer
 
 base classes --- :class:`bpy_struct`, :class:`RenderEngine`
 
+
 .. class:: HydraRenderEngine(RenderEngine)
 
    Base class from USD Hydra based renderers
 
-   .. method:: get_render_settings(engine_type: str)
+   .. method:: get_render_settings(engine_type)
 
       Provide render settings for ``HdRenderDelegate``.
-
-   .. method:: render(depsgraph)
-
-   .. method:: update(data, depsgraph)
-
-   .. method:: view_draw(context, depsgraph)
-
-   .. method:: view_update(context, depsgraph)
+      
+      :param engine_type: Render mode.
+      :type engine_type: Literal['PREVIEW', 'FINAL', 'VIEWPORT']
+      :return: Mapping of render-delegate setting name to value.
+      :rtype: dict[str, Any]
 
    .. classmethod:: bl_rna_get_subclass(id, default=None, /)
    

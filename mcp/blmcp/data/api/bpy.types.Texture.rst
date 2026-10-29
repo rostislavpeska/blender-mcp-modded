@@ -5,8 +5,21 @@ Texture(ID)
 
 base classes --- :class:`bpy_struct`, :class:`ID`
 
-subclasses --- 
-:class:`BlendTexture`, :class:`CloudsTexture`, :class:`DistortedNoiseTexture`, :class:`ImageTexture`, :class:`MagicTexture`, :class:`MarbleTexture`, :class:`MusgraveTexture`, :class:`NoiseTexture`, :class:`StucciTexture`, :class:`VoronoiTexture`, :class:`WoodTexture`
+.. toctree::
+   :caption: Subclasses
+   :maxdepth: 1
+
+   bpy.types.BlendTexture.rst
+   bpy.types.CloudsTexture.rst
+   bpy.types.DistortedNoiseTexture.rst
+   bpy.types.ImageTexture.rst
+   bpy.types.MagicTexture.rst
+   bpy.types.MarbleTexture.rst
+   bpy.types.MusgraveTexture.rst
+   bpy.types.NoiseTexture.rst
+   bpy.types.StucciTexture.rst
+   bpy.types.VoronoiTexture.rst
+   bpy.types.WoodTexture.rst
 
 .. class:: Texture(ID)
 

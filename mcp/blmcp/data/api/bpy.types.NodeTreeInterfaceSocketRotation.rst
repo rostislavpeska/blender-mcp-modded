@@ -5,6 +5,7 @@ NodeTreeInterfaceSocketRotation(NodeTreeInterfaceSocket)
 
 base classes --- :class:`bpy_struct`, :class:`NodeTreeInterfaceItem`, :class:`NodeTreeInterfaceSocket`
 
+
 .. class:: NodeTreeInterfaceSocketRotation(NodeTreeInterfaceSocket)
 
    Rotation value socket of a node

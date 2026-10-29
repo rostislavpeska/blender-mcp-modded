@@ -13,7 +13,6 @@ Attributes and Properties
 =========================
 
 - Only 14 attributes from Geometry Nodes are supported in a material
-- Only 8 custom object properties are supported in a material
 
 
 Cameras
@@ -67,7 +66,7 @@ Volumetrics
 - Only single scattering is supported.
 - Volumetrics are rendered only for the camera "rays". They don't appear in reflections/refractions and probes.
 - Volumetric shadowing only work in volumetrics. They won't cast shadows onto solid objects in the scene.
-- Volumetric shadowing only work for volumes inside the view frustum.
+- Volumetric shadowing only works for volumes inside the view frustum.
 
 
 .. _eevee-limitations-dof:
@@ -91,7 +90,7 @@ This reduces the complexity of scene scale effects and enables a higher performa
 However, only what is in inside the view can be considered when computing these effects.
 Also, since it only uses one layer of depth, only the front-most pixel distance is known.
 
-These limitations creates a few problems:
+These limitations create a few problems:
 
 - The screen space effects disappear when reaching the screen border.
   This can be partially fixed by using the *overscan* feature.

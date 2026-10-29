@@ -31,7 +31,7 @@ import time
 import traceback
 from collections.abc import Callable
 
-from .mcp_to_blender_server import _encode_response
+from .mcp_to_blender_server import _close_conn, _send_response_and_close
 
 # Total wall-time in seconds allowed for a background task (e.g. rendering) to complete.
 # When exceeded, an error response is sent and the connection is closed.
@@ -75,19 +75,24 @@ class _DeferredClient:
 _deferred_clients: list[_DeferredClient] = []
 
 
-def _send_and_close(dc: _DeferredClient, response: dict[str, object]) -> None:
-    try:
-        dc.conn.sendall(_encode_response(response))
-    except OSError:
-        pass
-    try:
-        dc.conn.close()
-    except OSError:
-        pass
+def _remove_deferred(dc: _DeferredClient) -> None:
+    """
+    Drop a deferred client from the pending list.
+    """
     try:
         _deferred_clients.remove(dc)
     except ValueError:
         pass
+
+
+def _send_and_close(dc: _DeferredClient, response: dict[str, object]) -> None:
+    """
+    Send a final *response* to a deferred client, closing the connection once written.
+    """
+    _remove_deferred(dc)
+    # The connection is non-blocking, a large response (a render for example)
+    # may not be written in full here, in that case the server queues the rest.
+    _send_response_and_close(dc.conn, response)
 
 
 def _is_disconnected(conn: socket.socket) -> bool:
@@ -128,14 +133,8 @@ def poll() -> bool:
     for dc in _deferred_clients[:]:
         # Check for client disconnection.
         if _is_disconnected(dc.conn):
-            try:
-                dc.conn.close()
-            except OSError:
-                pass
-            try:
-                _deferred_clients.remove(dc)
-            except ValueError:
-                pass
+            _remove_deferred(dc)
+            _close_conn(dc.conn)
             did_work = True
             continue
 
@@ -209,8 +208,5 @@ def close_all() -> None:
     Close all deferred client connections without sending responses.
     """
     for dc in _deferred_clients:
-        try:
-            dc.conn.close()
-        except OSError:
-            pass
+        _close_conn(dc.conn)
     _deferred_clients.clear()

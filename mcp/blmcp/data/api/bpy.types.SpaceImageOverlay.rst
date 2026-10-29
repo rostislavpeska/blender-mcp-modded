@@ -5,6 +5,7 @@ SpaceImageOverlay(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: SpaceImageOverlay(bpy_struct)
 
    Settings for display of overlays in the UV/Image editor

@@ -5,6 +5,7 @@ ColorMapping(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: ColorMapping(bpy_struct)
 
    Color mapping settings

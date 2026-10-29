@@ -5,6 +5,7 @@ NodeSocketIntFactor(NodeSocketStandard)
 
 base classes --- :class:`bpy_struct`, :class:`NodeSocket`, :class:`NodeSocketStandard`
 
+
 .. class:: NodeSocketIntFactor(NodeSocketStandard)
 
    Integer number socket of a node

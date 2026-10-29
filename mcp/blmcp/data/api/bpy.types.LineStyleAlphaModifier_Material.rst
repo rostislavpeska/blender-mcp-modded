@@ -5,6 +5,7 @@ LineStyleAlphaModifier_Material(LineStyleAlphaModifier)
 
 base classes --- :class:`bpy_struct`, :class:`LineStyleModifier`, :class:`LineStyleAlphaModifier`
 
+
 .. class:: LineStyleAlphaModifier_Material(LineStyleAlphaModifier)
 
    Change alpha transparency based on a material attribute

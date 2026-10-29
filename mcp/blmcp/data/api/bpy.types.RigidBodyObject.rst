@@ -5,6 +5,7 @@ RigidBodyObject(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: RigidBodyObject(bpy_struct)
 
    Settings for object participating in Rigid Body Simulation

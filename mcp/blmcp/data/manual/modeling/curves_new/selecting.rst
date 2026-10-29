@@ -24,7 +24,7 @@ Selection Modes
    Note, this is only supported for "Hair Curves".
 
 Selection modes limits selection operators to certain curve domains.
-This feature is makes it easy to select whole segments at once, or to give more granular control over editing.
+This feature makes it easy to select whole segments at once, or to give more granular control over editing.
 
 :Control Points:
    Allows selection of individual control points.

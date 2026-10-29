@@ -5,6 +5,7 @@ GreasePencilThickModifierData(Modifier)
 
 base classes --- :class:`bpy_struct`, :class:`Modifier`
 
+
 .. class:: GreasePencilThickModifierData(Modifier)
 
    Adjust stroke thickness

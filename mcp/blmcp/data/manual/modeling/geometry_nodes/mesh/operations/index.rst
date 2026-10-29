@@ -13,6 +13,7 @@ Nodes that only operate on meshes.
    edge_paths_to_selection.rst
    extrude_mesh.rst
    flip_faces.rst
+   mesh_bevel.rst
    mesh_boolean.rst
    mesh_to_curve.rst
    mesh_to_density_grid.rst

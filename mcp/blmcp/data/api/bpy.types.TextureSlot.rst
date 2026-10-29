@@ -5,8 +5,13 @@ TextureSlot(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
-subclasses --- 
-:class:`BrushTextureSlot`, :class:`LineStyleTextureSlot`, :class:`ParticleSettingsTextureSlot`
+.. toctree::
+   :caption: Subclasses
+   :maxdepth: 1
+
+   bpy.types.BrushTextureSlot.rst
+   bpy.types.LineStyleTextureSlot.rst
+   bpy.types.ParticleSettingsTextureSlot.rst
 
 .. class:: TextureSlot(bpy_struct)
 

@@ -5,8 +5,18 @@ Strip(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
-subclasses --- 
-:class:`EffectStrip`, :class:`ImageStrip`, :class:`MaskStrip`, :class:`MetaStrip`, :class:`MovieClipStrip`, :class:`MovieStrip`, :class:`SceneStrip`, :class:`SoundStrip`
+.. toctree::
+   :caption: Subclasses
+   :maxdepth: 1
+
+   bpy.types.EffectStrip.rst
+   bpy.types.ImageStrip.rst
+   bpy.types.MaskStrip.rst
+   bpy.types.MetaStrip.rst
+   bpy.types.MovieClipStrip.rst
+   bpy.types.MovieStrip.rst
+   bpy.types.SceneStrip.rst
+   bpy.types.SoundStrip.rst
 
 .. class:: Strip(bpy_struct)
 
@@ -36,6 +46,12 @@ subclasses ---
 
       :type: Literal[:ref:`rna_enum_strip_color_items`]
 
+   .. data:: connections
+
+      Other strips currently connected to this strip (default None, readonly)
+
+      :type: :class:`bpy_prop_collection`\ [:class:`Strip`]
+
    .. data:: content_duration
 
       Length of the underlying strip source in frames, excluding handles (in [1, 1048574], default 0, readonly)
@@ -54,9 +70,9 @@ subclasses ---
 
       :type: float
 
-   .. data:: duration
+   .. attribute:: duration
 
-      Length of the strip in frames from left handle to right handle (in [-inf, inf], default 0, readonly)
+      Length of the strip in frames from left handle to right handle (in [-inf, inf], default 0)
 
       :type: int
 
@@ -78,7 +94,7 @@ subclasses ---
 
    .. attribute:: frame_final_duration
 
-      The length of the contents of this strip after the handles are applied (in [1, 1048574], default 0)
+      The length of the contents of this strip after the handles are applied (in [-inf, inf], default 0)
 
       .. deprecated:: 5.10 removal planned in version 6.0
 
@@ -212,17 +228,11 @@ subclasses ---
 
       (default ``'IMAGE'``, readonly)
 
-      :type: Literal['IMAGE', 'META', 'SCENE', 'MOVIE', 'MOVIECLIP', 'MASK', 'SOUND', 'CROSS', 'ADD', 'SUBTRACT', 'ALPHA_OVER', 'ALPHA_UNDER', 'GAMMA_CROSS', 'MULTIPLY', 'WIPE', 'GLOW', 'COLOR', 'SPEED', 'MULTICAM', 'ADJUSTMENT', 'GAUSSIAN_BLUR', 'TEXT', 'COLORMIX']
+      :type: Literal['IMAGE', 'META', 'SCENE', 'MOVIE', 'MOVIECLIP', 'MASK', 'SOUND', 'CROSS', 'ADD', 'SUBTRACT', 'ALPHA_OVER', 'ALPHA_UNDER', 'GAMMA_CROSS', 'COMPOSITOR', 'MULTIPLY', 'WIPE', 'GLOW', 'COLOR', 'SPEED', 'MULTICAM', 'ADJUSTMENT', 'GAUSSIAN_BLUR', 'TEXT', 'COLORMIX']
 
    .. attribute:: use_default_fade
 
       Fade effect using the built-in default (usually makes the transition as long as the effect strip) (default False)
-
-      :type: bool
-
-   .. attribute:: use_linear_modifiers
-
-      Calculate modifiers in linear space instead of sequencer's space (default False)
 
       :type: bool
 
@@ -278,7 +288,7 @@ subclasses ---
 
       :param frame: Frame where to split the strip (in [-inf, inf])
       :type frame: int
-      :param split_method: (never None)
+      :param split_method: Split Method, The type of split operation to perform on strips (never None)
       :type split_method: Literal['SOFT', 'HARD']
       :param ignore_connections: Don't propagate split to connected strips (optional)
       :type ignore_connections: bool
@@ -363,6 +373,8 @@ References
    - :class:`AlphaUnderStrip.input_2`
    - :class:`ColorMixStrip.input_1`
    - :class:`ColorMixStrip.input_2`
+   - :class:`CompositorStrip.input_1`
+   - :class:`CompositorStrip.input_2`
    - :class:`CrossStrip.input_1`
    - :class:`CrossStrip.input_2`
    - :class:`GammaCrossStrip.input_1`
@@ -378,6 +390,7 @@ References
    - :class:`SequenceEditor.strips`
    - :class:`SequenceEditor.strips_all`
    - :class:`SpeedControlStrip.input_1`
+   - :class:`Strip.connections`
    - :class:`Strip.move_to_meta`
    - :class:`Strip.parent_meta`
    - :class:`Strip.split`

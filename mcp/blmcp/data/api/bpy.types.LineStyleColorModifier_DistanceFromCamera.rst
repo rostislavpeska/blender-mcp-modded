@@ -5,6 +5,7 @@ LineStyleColorModifier_DistanceFromCamera(LineStyleColorModifier)
 
 base classes --- :class:`bpy_struct`, :class:`LineStyleModifier`, :class:`LineStyleColorModifier`
 
+
 .. class:: LineStyleColorModifier_DistanceFromCamera(LineStyleColorModifier)
 
    Change line color based on the distance from the camera

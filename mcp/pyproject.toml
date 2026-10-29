@@ -4,12 +4,12 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "blender-mcp"
-version = "1.0.0"
+version = "1.0.2"
 description = "MCP server for Blender"
 requires-python = ">=3.10"
 dependencies = [
     "docutils",
-    "mcp[cli]>=1.2.0",
+    "mcp[cli]>=1.2.0,<2",
     "pyyaml",
     "python-dotenv>=1.0",
 ]
@@ -49,6 +49,25 @@ ignore_missing_imports = true
 
 [tool.ruff]
 extend-exclude = ["blmcp/data"]
+
+[tool.ruff.lint]
+ignore = [
+    # Don't suggest f-string.
+    # Why disable? Personal preference.
+    "UP032",
+    # Do not catch blind exception: `Exception`.
+    # Why disable? There are times we *need* to be generic.
+    "BLE001",
+    # Combine `if` statements using `and`.
+    # Why disable? Makes the code more dense and difficult to refator (at times).
+    "SIM102",
+    # Combine `if` branches using logical `or` operator.
+    # Why disable? Code may be grouped in ways that make sense conceptually.
+    "SIM114",
+    # `__slots__` is not sorted.
+    # Why disable? Slots are often grouped logically, matching `__init__`, sometimes using groups.
+    "RUF023",
+]
 
 [tool.pylint.format]
 max-line-length = 120

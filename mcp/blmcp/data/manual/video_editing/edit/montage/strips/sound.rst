@@ -4,9 +4,23 @@
 Sound Strip
 ***********
 
-As well as images and movies the Video Sequencer can also edit audio tracks.
-You can add Waveform Audio format ``WAV``, ``mp3`` and other audio formats files from your drive,
-or from sound encoded within a movie, and mix them using an F-Curve as a volume control.
+A Sound strip plays audio from an external audio file or from an audio stream
+contained within a movie file.
+
+Sound strips reference the original media rather than embedding it in the
+blend-file, allowing changes made in external audio editing software to be
+reflected by simply reloading the file.
+
+Multiple Sound strips can be layered to create a complete soundtrack,
+including dialogue, music, ambience, and sound effects. During playback and
+rendering, overlapping Sound strips are mixed together.
+
+To add a Sound strip, choose :menuselection:`Add --> Sound` and select one or
+more audio files in the File Browser.
+
+If an imported file contains multiple audio streams, Blender creates a
+separate Sound strip for each stream. The strips are automatically synchronized
+to match the timing stored in the source file.
 
 .. figure:: /images/video-editing_sequencer_strips_sound_editing.png
 
@@ -16,17 +30,16 @@ or from sound encoded within a movie, and mix them using an F-Curve as a volume 
 Working with Audio Tracks
 =========================
 
-A Sound strip is just like any other strip in the Video Sequencer. You can select and move it,
-adjust its starting offset using :kbd:`LMB` over the strip handles,
-and :kbd:`K` cut it into pieces.
-A useful example is cutting out the "um's" and dead voice time.
+A Sound strip behaves like any other strip in the Video Sequencer. You can
+select and move it, adjust its starting offset by dragging its handles, and
+split it with :kbd:`K`.
 
-You can have as many Sound strips as you wish and the result will be the mixing of all of them.
-You can give each strip its own name and volume via the Sidebar region.
+Each strip has independent properties such as volume and name, allowing
+dialogue, music, ambience, and sound effects to be mixed separately.
 
-Overlapping strips are automatically mixed down during the rendering process.
-For example, you can have the announcer on channel 5, background music on channel 6,
-and Foley sound effects on channel 7.
+Overlapping Sound strips are automatically mixed together during playback
+and rendering. Unlike image and movie strips, lower channels do not obscure
+higher ones, making the Sequencer a multi-track audio mixer.
 
 .. seealso::
 

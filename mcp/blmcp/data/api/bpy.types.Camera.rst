@@ -5,6 +5,7 @@ Camera(ID)
 
 base classes --- :class:`bpy_struct`, :class:`ID`
 
+
 .. class:: Camera(ID)
 
    Camera data-block for storing camera settings

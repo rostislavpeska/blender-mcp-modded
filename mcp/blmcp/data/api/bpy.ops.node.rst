@@ -21,7 +21,7 @@ Node Operators
    :type offset: Sequence[float]
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `startup/bl_operators/node.py\:729 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/node.py#L729>`__
+   :File: `startup/bl_operators/node.py\:857 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/node.py#L857>`__
 
 
 .. function:: add_collection(*, name="", session_uid=0)
@@ -58,7 +58,7 @@ Node Operators
    :type use_transform: bool
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `startup/bl_operators/node.py\:630 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/node.py#L630>`__
+   :File: `startup/bl_operators/node.py\:730 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/node.py#L730>`__
 
 
 .. function:: add_foreach_geometry_element_zone(*, settings=None, use_transform=False, offset=(150.0, 0.0))
@@ -73,7 +73,7 @@ Node Operators
    :type offset: Sequence[float]
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `startup/bl_operators/node.py\:729 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/node.py#L729>`__
+   :File: `startup/bl_operators/node.py\:857 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/node.py#L857>`__
 
 
 .. function:: add_group(*, name="", session_uid=0, show_datablock_in_node=True)
@@ -102,14 +102,14 @@ Node Operators
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
 
-.. function:: add_group_input_node(*, socket_identifier="", panel_identifier=0)
+.. function:: add_group_input_node(*, only_selected_sockets=True, all_panel_contents=False)
 
    Add a Group Input node with selected sockets to the current node editor
 
-   :param socket_identifier: Socket Identifier, Socket to include in the added group input/output node (optional, never None)
-   :type socket_identifier: str
-   :param panel_identifier: Panel Identifier, Panel from which to add sockets to the added group input/output node (in [-inf, inf], optional)
-   :type panel_identifier: int
+   :param only_selected_sockets: Only Selected Sockets, Include only selected sockets/panels in the added group input node (optional)
+   :type only_selected_sockets: bool
+   :param all_panel_contents: All Panel Contents, Include sockets in all selected panels, even if they have a panel toggle (optional)
+   :type all_panel_contents: bool
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
 
@@ -247,7 +247,7 @@ Node Operators
    :type visible_output: str
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `startup/bl_operators/node.py\:490 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/node.py#L490>`__
+   :File: `startup/bl_operators/node.py\:566 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/node.py#L566>`__
 
 
 .. function:: add_object(*, name="", session_uid=0)
@@ -273,7 +273,7 @@ Node Operators
    :type offset: Sequence[float]
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `startup/bl_operators/node.py\:729 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/node.py#L729>`__
+   :File: `startup/bl_operators/node.py\:857 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/node.py#L857>`__
 
 
 .. function:: add_reroute(*, path=None, cursor=11)
@@ -299,7 +299,20 @@ Node Operators
    :type offset: Sequence[float]
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `startup/bl_operators/node.py\:729 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/node.py#L729>`__
+   :File: `startup/bl_operators/node.py\:857 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/node.py#L857>`__
+
+
+.. function:: add_typed_bundle(*, settings=None, use_transform=False)
+
+   Add a Combine Bundle node with a type input
+
+   :param settings: Settings, Settings to be applied on the newly created node (optional)
+   :type settings: :class:`bpy_prop_collection`\ [:class:`NodeSetting`] | None
+   :param use_transform: Use Transform, Start transform operator after inserting the node (optional)
+   :type use_transform: bool
+   :return: Result of the operator call.
+   :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
+   :File: `startup/bl_operators/node.py\:798 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/node.py#L798>`__
 
 
 .. function:: add_zone(*, settings=None, use_transform=False, offset=(150.0, 0.0), input_node_type="", output_node_type="", add_default_geometry_link=False)
@@ -320,7 +333,7 @@ Node Operators
    :type add_default_geometry_link: bool
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `startup/bl_operators/node.py\:729 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/node.py#L729>`__
+   :File: `startup/bl_operators/node.py\:857 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/node.py#L857>`__
 
 
 .. function:: attach()
@@ -347,21 +360,31 @@ Node Operators
 
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-.. function:: backimage_zoom(*, factor=1.2)
+.. function:: backimage_zoom(*, factor=1.2, use_mouse_pos=True)
 
    Zoom in/out the background image
 
    :param factor: Factor, (in [0, 10], optional)
    :type factor: float
+   :param use_mouse_pos: Use Mouse Position, Zoom to mouse position (optional)
+   :type use_mouse_pos: bool
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
 
-.. function:: bake_node_item_add(*, node_identifier=0)
+.. function:: bake_node_item_add(*, node_identifier=0, show_dialog=False, init_from_active=True, socket_type='FLOAT', item_name="")
 
    Add item below active item
 
    :param node_identifier: Node Identifier, Optional identifier of the node to operate on (in [0, inf], optional)
    :type node_identifier: int
+   :param show_dialog: Show Dialog, Show a dialog to edit the initial properties (optional)
+   :type show_dialog: bool
+   :param init_from_active: Init from Active, Instead of using the provided name or type, copy the state of the active item (optional)
+   :type init_from_active: bool
+   :param socket_type: Socket Type, Type of the new socket item (optional)
+   :type socket_type: Literal[:ref:`rna_enum_node_socket_data_type_items`]
+   :param item_name: Item Name, Name of the new socket item (optional, never None)
+   :type item_name: str
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
 
@@ -385,12 +408,20 @@ Node Operators
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
 
-.. function:: capture_attribute_item_add(*, node_identifier=0)
+.. function:: capture_attribute_item_add(*, node_identifier=0, show_dialog=False, init_from_active=True, socket_type='FLOAT', item_name="")
 
    Add item below active item
 
    :param node_identifier: Node Identifier, Optional identifier of the node to operate on (in [0, inf], optional)
    :type node_identifier: int
+   :param show_dialog: Show Dialog, Show a dialog to edit the initial properties (optional)
+   :type show_dialog: bool
+   :param init_from_active: Init from Active, Instead of using the provided name or type, copy the state of the active item (optional)
+   :type init_from_active: bool
+   :param socket_type: Socket Type, Type of the new socket item (optional)
+   :type socket_type: Literal[:ref:`rna_enum_node_socket_data_type_items`]
+   :param item_name: Item Name, Name of the new socket item (optional, never None)
+   :type item_name: str
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
 
@@ -435,12 +466,20 @@ Node Operators
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
 
-.. function:: closure_input_item_add(*, node_identifier=0)
+.. function:: closure_input_item_add(*, node_identifier=0, show_dialog=False, init_from_active=True, socket_type='FLOAT', item_name="")
 
    Add item below active item
 
    :param node_identifier: Node Identifier, Optional identifier of the node to operate on (in [0, inf], optional)
    :type node_identifier: int
+   :param show_dialog: Show Dialog, Show a dialog to edit the initial properties (optional)
+   :type show_dialog: bool
+   :param init_from_active: Init from Active, Instead of using the provided name or type, copy the state of the active item (optional)
+   :type init_from_active: bool
+   :param socket_type: Socket Type, Type of the new socket item (optional)
+   :type socket_type: Literal[:ref:`rna_enum_node_socket_data_type_items`]
+   :param item_name: Item Name, Name of the new socket item (optional, never None)
+   :type item_name: str
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
 
@@ -464,12 +503,20 @@ Node Operators
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
 
-.. function:: closure_output_item_add(*, node_identifier=0)
+.. function:: closure_output_item_add(*, node_identifier=0, show_dialog=False, init_from_active=True, socket_type='FLOAT', item_name="")
 
    Add item below active item
 
    :param node_identifier: Node Identifier, Optional identifier of the node to operate on (in [0, inf], optional)
    :type node_identifier: int
+   :param show_dialog: Show Dialog, Show a dialog to edit the initial properties (optional)
+   :type show_dialog: bool
+   :param init_from_active: Init from Active, Instead of using the provided name or type, copy the state of the active item (optional)
+   :type init_from_active: bool
+   :param socket_type: Socket Type, Type of the new socket item (optional)
+   :type socket_type: Literal[:ref:`rna_enum_node_socket_data_type_items`]
+   :param item_name: Item Name, Name of the new socket item (optional, never None)
+   :type item_name: str
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
 
@@ -493,20 +540,65 @@ Node Operators
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
 
+.. function:: closure_to_list_item_add(*, node_identifier=0, show_dialog=False, init_from_active=True, socket_type='FLOAT', item_name="")
+
+   Add item below active item
+
+   :param node_identifier: Node Identifier, Optional identifier of the node to operate on (in [0, inf], optional)
+   :type node_identifier: int
+   :param show_dialog: Show Dialog, Show a dialog to edit the initial properties (optional)
+   :type show_dialog: bool
+   :param init_from_active: Init from Active, Instead of using the provided name or type, copy the state of the active item (optional)
+   :type init_from_active: bool
+   :param socket_type: Socket Type, Type of the new socket item (optional)
+   :type socket_type: Literal[:ref:`rna_enum_node_socket_data_type_items`]
+   :param item_name: Item Name, Name of the new socket item (optional, never None)
+   :type item_name: str
+   :return: Result of the operator call.
+   :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
+
+.. function:: closure_to_list_item_move(*, direction='UP', node_identifier=0)
+
+   Move active item
+
+   :param direction: Direction, Move direction (optional)
+   :type direction: Literal['UP', 'DOWN']
+   :param node_identifier: Node Identifier, Optional identifier of the node to operate on (in [0, inf], optional)
+   :type node_identifier: int
+   :return: Result of the operator call.
+   :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
+
+.. function:: closure_to_list_item_remove(*, node_identifier=0)
+
+   Remove active item
+
+   :param node_identifier: Node Identifier, Optional identifier of the node to operate on (in [0, inf], optional)
+   :type node_identifier: int
+   :return: Result of the operator call.
+   :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
+
 .. function:: collapse_hide_unused_toggle()
 
    Toggle collapsed nodes and hide unused sockets
 
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `startup/bl_operators/node.py\:995 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/node.py#L995>`__
+   :File: `startup/bl_operators/node.py\:1123 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/node.py#L1123>`__
 
-.. function:: combine_bundle_item_add(*, node_identifier=0)
+.. function:: combine_bundle_item_add(*, node_identifier=0, show_dialog=False, init_from_active=True, socket_type='FLOAT', item_name="")
 
    Add item below active item
 
    :param node_identifier: Node Identifier, Optional identifier of the node to operate on (in [0, inf], optional)
    :type node_identifier: int
+   :param show_dialog: Show Dialog, Show a dialog to edit the initial properties (optional)
+   :type show_dialog: bool
+   :param init_from_active: Init from Active, Instead of using the provided name or type, copy the state of the active item (optional)
+   :type init_from_active: bool
+   :param socket_type: Socket Type, Type of the new socket item (optional)
+   :type socket_type: Literal[:ref:`rna_enum_node_socket_data_type_items`]
+   :param item_name: Item Name, Name of the new socket item (optional, never None)
+   :type item_name: str
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
 
@@ -663,12 +755,18 @@ Node Operators
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
 
-.. function:: enum_definition_item_add(*, node_identifier=0)
+.. function:: enum_definition_item_add(*, node_identifier=0, show_dialog=False, init_from_active=True, item_name="")
 
    Add item below active item
 
    :param node_identifier: Node Identifier, Optional identifier of the node to operate on (in [0, inf], optional)
    :type node_identifier: int
+   :param show_dialog: Show Dialog, Show a dialog to edit the initial properties (optional)
+   :type show_dialog: bool
+   :param init_from_active: Init from Active, Instead of using the provided name or type, copy the state of the active item (optional)
+   :type init_from_active: bool
+   :param item_name: Item Name, Name of the new socket item (optional, never None)
+   :type item_name: str
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
 
@@ -692,12 +790,20 @@ Node Operators
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
 
-.. function:: evaluate_closure_input_item_add(*, node_identifier=0)
+.. function:: evaluate_closure_input_item_add(*, node_identifier=0, show_dialog=False, init_from_active=True, socket_type='FLOAT', item_name="")
 
    Add item below active item
 
    :param node_identifier: Node Identifier, Optional identifier of the node to operate on (in [0, inf], optional)
    :type node_identifier: int
+   :param show_dialog: Show Dialog, Show a dialog to edit the initial properties (optional)
+   :type show_dialog: bool
+   :param init_from_active: Init from Active, Instead of using the provided name or type, copy the state of the active item (optional)
+   :type init_from_active: bool
+   :param socket_type: Socket Type, Type of the new socket item (optional)
+   :type socket_type: Literal[:ref:`rna_enum_node_socket_data_type_items`]
+   :param item_name: Item Name, Name of the new socket item (optional, never None)
+   :type item_name: str
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
 
@@ -721,12 +827,20 @@ Node Operators
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
 
-.. function:: evaluate_closure_output_item_add(*, node_identifier=0)
+.. function:: evaluate_closure_output_item_add(*, node_identifier=0, show_dialog=False, init_from_active=True, socket_type='FLOAT', item_name="")
 
    Add item below active item
 
    :param node_identifier: Node Identifier, Optional identifier of the node to operate on (in [0, inf], optional)
    :type node_identifier: int
+   :param show_dialog: Show Dialog, Show a dialog to edit the initial properties (optional)
+   :type show_dialog: bool
+   :param init_from_active: Init from Active, Instead of using the provided name or type, copy the state of the active item (optional)
+   :type init_from_active: bool
+   :param socket_type: Socket Type, Type of the new socket item (optional)
+   :type socket_type: Literal[:ref:`rna_enum_node_socket_data_type_items`]
+   :param item_name: Item Name, Name of the new socket item (optional, never None)
+   :type item_name: str
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
 
@@ -750,12 +864,20 @@ Node Operators
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
 
-.. function:: field_to_grid_item_add(*, node_identifier=0)
+.. function:: field_to_grid_item_add(*, node_identifier=0, show_dialog=False, init_from_active=True, socket_type='FLOAT', item_name="")
 
    Add item below active item
 
    :param node_identifier: Node Identifier, Optional identifier of the node to operate on (in [0, inf], optional)
    :type node_identifier: int
+   :param show_dialog: Show Dialog, Show a dialog to edit the initial properties (optional)
+   :type show_dialog: bool
+   :param init_from_active: Init from Active, Instead of using the provided name or type, copy the state of the active item (optional)
+   :type init_from_active: bool
+   :param socket_type: Socket Type, Type of the new socket item (optional)
+   :type socket_type: Literal[:ref:`rna_enum_node_socket_data_type_items`]
+   :param item_name: Item Name, Name of the new socket item (optional, never None)
+   :type item_name: str
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
 
@@ -779,12 +901,20 @@ Node Operators
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
 
-.. function:: field_to_list_item_add(*, node_identifier=0)
+.. function:: field_to_list_item_add(*, node_identifier=0, show_dialog=False, init_from_active=True, socket_type='FLOAT', item_name="")
 
    Add item below active item
 
    :param node_identifier: Node Identifier, Optional identifier of the node to operate on (in [0, inf], optional)
    :type node_identifier: int
+   :param show_dialog: Show Dialog, Show a dialog to edit the initial properties (optional)
+   :type show_dialog: bool
+   :param init_from_active: Init from Active, Instead of using the provided name or type, copy the state of the active item (optional)
+   :type init_from_active: bool
+   :param socket_type: Socket Type, Type of the new socket item (optional)
+   :type socket_type: Literal[:ref:`rna_enum_node_socket_data_type_items`]
+   :param item_name: Item Name, Name of the new socket item (optional, never None)
+   :type item_name: str
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
 
@@ -808,12 +938,20 @@ Node Operators
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
 
-.. function:: file_output_item_add(*, node_identifier=0)
+.. function:: file_output_item_add(*, node_identifier=0, show_dialog=False, init_from_active=True, socket_type='FLOAT', item_name="")
 
    Add item below active item
 
    :param node_identifier: Node Identifier, Optional identifier of the node to operate on (in [0, inf], optional)
    :type node_identifier: int
+   :param show_dialog: Show Dialog, Show a dialog to edit the initial properties (optional)
+   :type show_dialog: bool
+   :param init_from_active: Init from Active, Instead of using the provided name or type, copy the state of the active item (optional)
+   :type init_from_active: bool
+   :param socket_type: Socket Type, Type of the new socket item (optional)
+   :type socket_type: Literal[:ref:`rna_enum_node_socket_data_type_items`]
+   :param item_name: Item Name, Name of the new socket item (optional, never None)
+   :type item_name: str
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
 
@@ -843,12 +981,20 @@ Node Operators
 
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-.. function:: foreach_geometry_element_zone_generation_item_add(*, node_identifier=0)
+.. function:: foreach_geometry_element_zone_generation_item_add(*, node_identifier=0, show_dialog=False, init_from_active=True, socket_type='FLOAT', item_name="")
 
    Add item below active item
 
    :param node_identifier: Node Identifier, Optional identifier of the node to operate on (in [0, inf], optional)
    :type node_identifier: int
+   :param show_dialog: Show Dialog, Show a dialog to edit the initial properties (optional)
+   :type show_dialog: bool
+   :param init_from_active: Init from Active, Instead of using the provided name or type, copy the state of the active item (optional)
+   :type init_from_active: bool
+   :param socket_type: Socket Type, Type of the new socket item (optional)
+   :type socket_type: Literal[:ref:`rna_enum_node_socket_data_type_items`]
+   :param item_name: Item Name, Name of the new socket item (optional, never None)
+   :type item_name: str
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
 
@@ -872,12 +1018,20 @@ Node Operators
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
 
-.. function:: foreach_geometry_element_zone_input_item_add(*, node_identifier=0)
+.. function:: foreach_geometry_element_zone_input_item_add(*, node_identifier=0, show_dialog=False, init_from_active=True, socket_type='FLOAT', item_name="")
 
    Add item below active item
 
    :param node_identifier: Node Identifier, Optional identifier of the node to operate on (in [0, inf], optional)
    :type node_identifier: int
+   :param show_dialog: Show Dialog, Show a dialog to edit the initial properties (optional)
+   :type show_dialog: bool
+   :param init_from_active: Init from Active, Instead of using the provided name or type, copy the state of the active item (optional)
+   :type init_from_active: bool
+   :param socket_type: Socket Type, Type of the new socket item (optional)
+   :type socket_type: Literal[:ref:`rna_enum_node_socket_data_type_items`]
+   :param item_name: Item Name, Name of the new socket item (optional, never None)
+   :type item_name: str
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
 
@@ -901,12 +1055,20 @@ Node Operators
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
 
-.. function:: foreach_geometry_element_zone_main_item_add(*, node_identifier=0)
+.. function:: foreach_geometry_element_zone_main_item_add(*, node_identifier=0, show_dialog=False, init_from_active=True, socket_type='FLOAT', item_name="")
 
    Add item below active item
 
    :param node_identifier: Node Identifier, Optional identifier of the node to operate on (in [0, inf], optional)
    :type node_identifier: int
+   :param show_dialog: Show Dialog, Show a dialog to edit the initial properties (optional)
+   :type show_dialog: bool
+   :param init_from_active: Init from Active, Instead of using the provided name or type, copy the state of the active item (optional)
+   :type init_from_active: bool
+   :param socket_type: Socket Type, Type of the new socket item (optional)
+   :type socket_type: Literal[:ref:`rna_enum_node_socket_data_type_items`]
+   :param item_name: Item Name, Name of the new socket item (optional, never None)
+   :type item_name: str
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
 
@@ -930,12 +1092,20 @@ Node Operators
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
 
-.. function:: format_string_item_add(*, node_identifier=0)
+.. function:: format_string_item_add(*, node_identifier=0, show_dialog=False, init_from_active=True, socket_type='FLOAT', item_name="")
 
    Add item below active item
 
    :param node_identifier: Node Identifier, Optional identifier of the node to operate on (in [0, inf], optional)
    :type node_identifier: int
+   :param show_dialog: Show Dialog, Show a dialog to edit the initial properties (optional)
+   :type show_dialog: bool
+   :param init_from_active: Init from Active, Instead of using the provided name or type, copy the state of the active item (optional)
+   :type init_from_active: bool
+   :param socket_type: Socket Type, Type of the new socket item (optional)
+   :type socket_type: Literal[:ref:`rna_enum_node_socket_data_type_items`]
+   :param item_name: Item Name, Name of the new socket item (optional, never None)
+   :type item_name: str
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
 
@@ -959,12 +1129,20 @@ Node Operators
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
 
-.. function:: geometry_nodes_viewer_item_add(*, node_identifier=0)
+.. function:: geometry_nodes_viewer_item_add(*, node_identifier=0, show_dialog=False, init_from_active=True, socket_type='FLOAT', item_name="")
 
    Add item below active item
 
    :param node_identifier: Node Identifier, Optional identifier of the node to operate on (in [0, inf], optional)
    :type node_identifier: int
+   :param show_dialog: Show Dialog, Show a dialog to edit the initial properties (optional)
+   :type show_dialog: bool
+   :param init_from_active: Init from Active, Instead of using the provided name or type, copy the state of the active item (optional)
+   :type init_from_active: bool
+   :param socket_type: Socket Type, Type of the new socket item (optional)
+   :type socket_type: Literal[:ref:`rna_enum_node_socket_data_type_items`]
+   :param item_name: Item Name, Name of the new socket item (optional, never None)
+   :type item_name: str
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
 
@@ -994,7 +1172,7 @@ Node Operators
 
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `addons_core/io_scene_gltf2/blender/com/gltf2_blender_ui.py\:35 <https://projects.blender.org/blender/blender/src/branch/main/scripts/addons_core/io_scene_gltf2/blender/com/gltf2_blender_ui.py#L35>`__
+   :File: `addons_core/io_scene_gltf2/blender/com/gltf2_blender_ui.py\:34 <https://projects.blender.org/blender/blender/src/branch/main/scripts/addons_core/io_scene_gltf2/blender/com/gltf2_blender_ui.py#L34>`__
 
 .. function:: group_edit(*, exit=False)
 
@@ -1055,10 +1233,25 @@ Node Operators
 
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-.. function:: index_switch_item_add(*, node_identifier=0)
+.. function:: index_switch_item_add(*, node_identifier=0, show_dialog=False, init_from_active=True)
 
-   Add an item to the index switch
+   Add item below active item
 
+   :param node_identifier: Node Identifier, Optional identifier of the node to operate on (in [0, inf], optional)
+   :type node_identifier: int
+   :param show_dialog: Show Dialog, Show a dialog to edit the initial properties (optional)
+   :type show_dialog: bool
+   :param init_from_active: Init from Active, Instead of using the provided name or type, copy the state of the active item (optional)
+   :type init_from_active: bool
+   :return: Result of the operator call.
+   :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
+
+.. function:: index_switch_item_move(*, direction='UP', node_identifier=0)
+
+   Move active item
+
+   :param direction: Direction, Move direction (optional)
+   :type direction: Literal['UP', 'DOWN']
    :param node_identifier: Node Identifier, Optional identifier of the node to operate on (in [0, inf], optional)
    :type node_identifier: int
    :return: Result of the operator call.
@@ -1066,7 +1259,7 @@ Node Operators
 
 .. function:: index_switch_item_remove(*, index=0)
 
-   Remove an item from the index switch
+   Remove active item
 
    :param index: Index, Index to remove (in [0, inf], optional)
    :type index: int
@@ -1085,7 +1278,7 @@ Node Operators
 
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `startup/bl_operators/node.py\:1181 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/node.py#L1181>`__
+   :File: `startup/bl_operators/node.py\:1312 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/node.py#L1312>`__
 
 .. function:: interface_item_make_panel_toggle()
 
@@ -1093,7 +1286,7 @@ Node Operators
 
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `startup/bl_operators/node.py\:1260 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/node.py#L1260>`__
+   :File: `startup/bl_operators/node.py\:1391 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/node.py#L1391>`__
 
 .. function:: interface_item_new(*, item_type='INPUT')
 
@@ -1103,7 +1296,7 @@ Node Operators
    :type item_type: Literal['INPUT', 'OUTPUT', 'PANEL']
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `startup/bl_operators/node.py\:1087 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/node.py#L1087>`__
+   :File: `startup/bl_operators/node.py\:1215 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/node.py#L1215>`__
 
 
 .. function:: interface_item_new_panel_toggle()
@@ -1112,7 +1305,7 @@ Node Operators
 
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `startup/bl_operators/node.py\:1152 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/node.py#L1152>`__
+   :File: `startup/bl_operators/node.py\:1280 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/node.py#L1280>`__
 
 .. function:: interface_item_remove()
 
@@ -1120,7 +1313,7 @@ Node Operators
 
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `startup/bl_operators/node.py\:1200 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/node.py#L1200>`__
+   :File: `startup/bl_operators/node.py\:1331 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/node.py#L1331>`__
 
 .. function:: interface_item_unlink_panel_toggle()
 
@@ -1128,7 +1321,7 @@ Node Operators
 
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `startup/bl_operators/node.py\:1308 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/node.py#L1308>`__
+   :File: `startup/bl_operators/node.py\:1437 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/node.py#L1437>`__
 
 .. function:: join()
 
@@ -1282,7 +1475,7 @@ Node Operators
 
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `startup/bl_operators/geometry_nodes.py\:345 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/geometry_nodes.py#L345>`__
+   :File: `startup/bl_operators/geometry_nodes.py\:325 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/geometry_nodes.py#L325>`__
 
 .. function:: new_geometry_node_group_tool()
 
@@ -1290,7 +1483,7 @@ Node Operators
 
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `startup/bl_operators/geometry_nodes.py\:366 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/geometry_nodes.py#L366>`__
+   :File: `startup/bl_operators/geometry_nodes.py\:351 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/geometry_nodes.py#L351>`__
 
 .. function:: new_geometry_nodes_modifier()
 
@@ -1298,7 +1491,7 @@ Node Operators
 
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `startup/bl_operators/geometry_nodes.py\:322 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/geometry_nodes.py#L322>`__
+   :File: `startup/bl_operators/geometry_nodes.py\:299 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/geometry_nodes.py#L299>`__
 
 .. function:: new_node_tree(*, type='', name="NodeTree")
 
@@ -1362,12 +1555,20 @@ Node Operators
 
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-.. function:: repeat_zone_item_add(*, node_identifier=0)
+.. function:: repeat_zone_item_add(*, node_identifier=0, show_dialog=False, init_from_active=True, socket_type='FLOAT', item_name="")
 
    Add item below active item
 
    :param node_identifier: Node Identifier, Optional identifier of the node to operate on (in [0, inf], optional)
    :type node_identifier: int
+   :param show_dialog: Show Dialog, Show a dialog to edit the initial properties (optional)
+   :type show_dialog: bool
+   :param init_from_active: Init from Active, Instead of using the provided name or type, copy the state of the active item (optional)
+   :type init_from_active: bool
+   :param socket_type: Socket Type, Type of the new socket item (optional)
+   :type socket_type: Literal[:ref:`rna_enum_node_socket_data_type_items`]
+   :param item_name: Item Name, Name of the new socket item (optional, never None)
+   :type item_name: str
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
 
@@ -1397,6 +1598,43 @@ Node Operators
 
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
+.. function:: sample_attribute_items_item_add(*, node_identifier=0, show_dialog=False, init_from_active=True, socket_type='FLOAT', item_name="")
+
+   Add item below active item
+
+   :param node_identifier: Node Identifier, Optional identifier of the node to operate on (in [0, inf], optional)
+   :type node_identifier: int
+   :param show_dialog: Show Dialog, Show a dialog to edit the initial properties (optional)
+   :type show_dialog: bool
+   :param init_from_active: Init from Active, Instead of using the provided name or type, copy the state of the active item (optional)
+   :type init_from_active: bool
+   :param socket_type: Socket Type, Type of the new socket item (optional)
+   :type socket_type: Literal[:ref:`rna_enum_node_socket_data_type_items`]
+   :param item_name: Item Name, Name of the new socket item (optional, never None)
+   :type item_name: str
+   :return: Result of the operator call.
+   :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
+
+.. function:: sample_attribute_items_item_move(*, direction='UP', node_identifier=0)
+
+   Move active item
+
+   :param direction: Direction, Move direction (optional)
+   :type direction: Literal['UP', 'DOWN']
+   :param node_identifier: Node Identifier, Optional identifier of the node to operate on (in [0, inf], optional)
+   :type node_identifier: int
+   :return: Result of the operator call.
+   :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
+
+.. function:: sample_attribute_items_item_remove(*, node_identifier=0)
+
+   Remove active item
+
+   :param node_identifier: Node Identifier, Optional identifier of the node to operate on (in [0, inf], optional)
+   :type node_identifier: int
+   :return: Result of the operator call.
+   :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
+
 .. function:: select(*, extend=False, deselect=False, toggle=False, deselect_all=False, select_passthrough=False, location=(0, 0), socket_select=False, clear_viewer=False)
 
    Select the node under the cursor
@@ -1559,12 +1797,20 @@ Node Operators
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
 
-.. function:: separate_bundle_item_add(*, node_identifier=0)
+.. function:: separate_bundle_item_add(*, node_identifier=0, show_dialog=False, init_from_active=True, socket_type='FLOAT', item_name="")
 
    Add item below active item
 
    :param node_identifier: Node Identifier, Optional identifier of the node to operate on (in [0, inf], optional)
    :type node_identifier: int
+   :param show_dialog: Show Dialog, Show a dialog to edit the initial properties (optional)
+   :type show_dialog: bool
+   :param init_from_active: Init from Active, Instead of using the provided name or type, copy the state of the active item (optional)
+   :type init_from_active: bool
+   :param socket_type: Socket Type, Type of the new socket item (optional)
+   :type socket_type: Literal[:ref:`rna_enum_node_socket_data_type_items`]
+   :param item_name: Item Name, Name of the new socket item (optional, never None)
+   :type item_name: str
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
 
@@ -1594,12 +1840,20 @@ Node Operators
 
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-.. function:: simulation_zone_item_add(*, node_identifier=0)
+.. function:: simulation_zone_item_add(*, node_identifier=0, show_dialog=False, init_from_active=True, socket_type='FLOAT', item_name="")
 
    Add item below active item
 
    :param node_identifier: Node Identifier, Optional identifier of the node to operate on (in [0, inf], optional)
    :type node_identifier: int
+   :param show_dialog: Show Dialog, Show a dialog to edit the initial properties (optional)
+   :type show_dialog: bool
+   :param init_from_active: Init from Active, Instead of using the provided name or type, copy the state of the active item (optional)
+   :type init_from_active: bool
+   :param socket_type: Socket Type, Type of the new socket item (optional)
+   :type socket_type: Literal[:ref:`rna_enum_node_socket_data_type_items`]
+   :param item_name: Item Name, Name of the new socket item (optional, never None)
+   :type item_name: str
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
 
@@ -1640,7 +1894,7 @@ Node Operators
    :type settings: :class:`bpy_prop_collection`\ [:class:`NodeSetting`] | None
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `startup/bl_operators/node.py\:666 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/node.py#L666>`__
+   :File: `startup/bl_operators/node.py\:766 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/node.py#L766>`__
 
 
 .. function:: swap_group_asset(*, asset_library_type='LOCAL', asset_library_identifier="", relative_asset_identifier="")
@@ -1668,7 +1922,18 @@ Node Operators
    :type visible_output: str
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `startup/bl_operators/node.py\:555 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/node.py#L555>`__
+   :File: `startup/bl_operators/node.py\:645 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/node.py#L645>`__
+
+
+.. function:: swap_typed_bundle(*, settings=None)
+
+   Swap existing node with a Combine Bundle node with a type input
+
+   :param settings: Settings, Settings to be applied on the newly created node (optional)
+   :type settings: :class:`bpy_prop_collection`\ [:class:`NodeSetting`] | None
+   :return: Result of the operator call.
+   :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
+   :File: `startup/bl_operators/node.py\:811 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/node.py#L811>`__
 
 
 .. function:: swap_zone(*, settings=None, offset=(150.0, 0.0), input_node_type="", output_node_type="", add_default_geometry_link=False)
@@ -1687,7 +1952,7 @@ Node Operators
    :type add_default_geometry_link: bool
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `startup/bl_operators/node.py\:847 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/node.py#L847>`__
+   :File: `startup/bl_operators/node.py\:975 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/node.py#L975>`__
 
 
 .. function:: test_inlining_shader_nodes()
@@ -1732,7 +1997,7 @@ Node Operators
    :type parent_tree_index: int
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `startup/bl_operators/node.py\:1031 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/node.py#L1031>`__
+   :File: `startup/bl_operators/node.py\:1159 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/node.py#L1159>`__
 
 
 .. function:: view_all()
@@ -1772,7 +2037,7 @@ Node Operators
    :type viewer_index: int
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `startup/bl_operators/node.py\:1422 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/node.py#L1422>`__
+   :File: `startup/bl_operators/node.py\:1551 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/node.py#L1551>`__
 
 
 .. function:: viewer_shortcut_set(*, viewer_index=0)
@@ -1783,6 +2048,6 @@ Node Operators
    :type viewer_index: int
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `startup/bl_operators/node.py\:1362 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/node.py#L1362>`__
+   :File: `startup/bl_operators/node.py\:1491 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/node.py#L1491>`__
 
 

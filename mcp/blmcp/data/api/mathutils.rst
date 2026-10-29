@@ -237,6 +237,111 @@ The :mod:`mathutils` module provides the following classes:
       :type: float
 
 
+   .. details:: Special Methods
+
+      .. method:: __add__(other)
+
+         :param other: The other operand.
+         :type other: Self
+         :rtype: :class:`Color`
+
+      .. method:: __eq__(other)
+
+         :param other: The other operand.
+         :type other: object
+         :rtype: bool
+
+      .. method:: __getitem__(key)
+
+         :param key: Index or key.
+         :type key: int
+         :rtype: float
+
+      .. method:: __hash__()
+
+         :rtype: int
+
+      .. method:: __iadd__(other)
+
+         :param other: The other operand.
+         :type other: Self
+         :rtype: :class:`Color`
+
+      .. method:: __imul__(other)
+
+         :param other: Scalar.
+         :type other: float
+         :rtype: :class:`Color`
+
+      .. method:: __isub__(other)
+
+         :param other: The other operand.
+         :type other: Self
+         :rtype: :class:`Color`
+
+      .. method:: __itruediv__(other)
+
+         :param other: Scalar divisor.
+         :type other: float
+         :rtype: :class:`Color`
+
+      .. method:: __len__()
+
+         :rtype: int
+
+      .. method:: __mul__(other)
+
+         :param other: Scalar.
+         :type other: float
+         :rtype: :class:`Color`
+
+      .. method:: __ne__(other)
+
+         :param other: The other operand.
+         :type other: object
+         :rtype: bool
+
+      .. method:: __neg__()
+
+         :rtype: :class:`Color`
+
+      .. method:: __pos__()
+
+         :rtype: :class:`Color`
+
+      .. method:: __repr__()
+
+         :rtype: str
+
+      .. method:: __rmul__(other)
+
+         :param other: Scalar.
+         :type other: float
+         :rtype: :class:`Color`
+
+      .. method:: __setitem__(key, value)
+
+         :param key: Index or key.
+         :type key: int
+         :param value: Value to assign.
+         :type value: object
+
+      .. method:: __str__()
+
+         :rtype: str
+
+      .. method:: __sub__(other)
+
+         :param other: The other operand.
+         :type other: Self
+         :rtype: :class:`Color`
+
+      .. method:: __truediv__(other)
+
+         :param other: Scalar divisor.
+         :type other: float
+         :rtype: :class:`Color`
+
 
 
 .. class:: Euler(angles=(0.0, 0.0, 0.0), order='XYZ', /)
@@ -381,9 +486,52 @@ The :mod:`mathutils` module provides the following classes:
       :type: float
 
 
+   .. details:: Special Methods
+
+      .. method:: __eq__(other)
+
+         :param other: The other operand.
+         :type other: object
+         :rtype: bool
+
+      .. method:: __getitem__(key)
+
+         :param key: Index or key.
+         :type key: int
+         :rtype: float
+
+      .. method:: __hash__()
+
+         :rtype: int
+
+      .. method:: __len__()
+
+         :rtype: int
+
+      .. method:: __ne__(other)
+
+         :param other: The other operand.
+         :type other: object
+         :rtype: bool
+
+      .. method:: __repr__()
+
+         :rtype: str
+
+      .. method:: __setitem__(key, value)
+
+         :param key: Index or key.
+         :type key: int
+         :param value: Value to assign.
+         :type value: object
+
+      .. method:: __str__()
+
+         :rtype: str
 
 
-.. class:: Matrix(rows=Matrix.Identity(4), /)
+
+.. class:: Matrix(rows=((1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0, 1)), /)
 
    This object gives access to Matrices in Blender, supporting square and rectangular
    matrices from 2x2 up to 4x4.
@@ -448,7 +596,7 @@ The :mod:`mathutils` module provides the following classes:
       :rtype: :class:`Matrix`
 
 
-   .. classmethod:: Rotation(angle, size, axis, /)
+   .. classmethod:: Rotation(angle, size, axis=None, /)
    
       Create a matrix representing a rotation.
    
@@ -456,14 +604,15 @@ The :mod:`mathutils` module provides the following classes:
       :type angle: float
       :param size: The size of the rotation matrix to construct [2, 4].
       :type size: int
-      :param axis: an axis string or a 3D Vector Object
-         (optional when size is 2).
-      :type axis: Literal['X', 'Y', 'Z'] | Sequence[float]
+      :param axis: Axis of rotation: a single-character string ('X', 'Y' or 'Z')
+         or a 3D vector. Required for ``size`` 3 or 4. Must be None (or omitted)
+         when ``size`` is 2 - 2D rotation has no axis.
+      :type axis: Literal['X', 'Y', 'Z'] | Sequence[float] | None
       :return: A new rotation matrix.
       :rtype: :class:`Matrix`
 
 
-   .. classmethod:: Scale(factor, size, axis, /)
+   .. classmethod:: Scale(factor, size, axis=None, /)
    
       Create a matrix representing a scaling.
    
@@ -471,8 +620,9 @@ The :mod:`mathutils` module provides the following classes:
       :type factor: float
       :param size: The size of the scale matrix to construct [2, 4].
       :type size: int
-      :param axis: Direction to influence scale. (optional).
-      :type axis: Sequence[float]
+      :param axis: Direction along which to scale. When None (or omitted),
+         ``factor`` is applied uniformly along all axes.
+      :type axis: Sequence[float] | None
       :return: A new scale matrix.
       :rtype: :class:`Matrix`
 
@@ -822,11 +972,144 @@ The :mod:`mathutils` module provides the following classes:
       :type: :class:`Vector`
 
 
+   .. details:: Special Methods
+
+      .. method:: __add__(other)
+
+         :param other: The other operand.
+         :type other: Self
+         :rtype: :class:`Matrix`
+
+      .. method:: __eq__(other)
+
+         :param other: The other operand.
+         :type other: object
+         :rtype: bool
+
+      .. method:: __getitem__(key)
+
+         :param key: Index or key.
+         :type key: int
+         :rtype: :class:`Vector`
+
+      .. method:: __hash__()
+
+         :rtype: int
+
+      .. method:: __imatmul__(other)
+
+         :param other: The other operand.
+         :type other: Self
+         :rtype: :class:`Matrix`
+
+      .. method:: __imul__(other)
+
+         :param other: The other operand.
+         :type other: :class:`Matrix`
+         :rtype: :class:`Matrix`
+
+      .. method:: __imul__(other)
+         :noindex:
+
+         :param other: The other operand.
+         :type other: float
+         :rtype: :class:`Matrix`
+
+      .. method:: __invert__()
+
+         :rtype: :class:`Matrix`
+
+      .. method:: __len__()
+
+         :rtype: int
+
+      .. method:: __matmul__(other)
+
+         :param other: The other operand.
+         :type other: :class:`Matrix`
+         :rtype: :class:`Matrix`
+
+      .. method:: __matmul__(other)
+         :noindex:
+
+         :param other: The other operand.
+         :type other: :class:`Vector`
+         :rtype: :class:`Vector`
+
+      .. method:: __mul__(other)
+
+         :param other: The other operand.
+         :type other: :class:`Matrix`
+         :rtype: :class:`Matrix`
+
+      .. method:: __mul__(other)
+         :noindex:
+
+         :param other: The other operand.
+         :type other: float
+         :rtype: :class:`Matrix`
+
+      .. method:: __ne__(other)
+
+         :param other: The other operand.
+         :type other: object
+         :rtype: bool
+
+      .. method:: __repr__()
+
+         :rtype: str
+
+      .. method:: __rmul__(other)
+
+         :param other: Scalar.
+         :type other: float
+         :rtype: :class:`Matrix`
+
+      .. method:: __setitem__(key, value)
+
+         :param key: Index or key.
+         :type key: int
+         :param value: Value to assign.
+         :type value: object
+
+      .. method:: __str__()
+
+         :rtype: str
+
+      .. method:: __sub__(other)
+
+         :param other: The other operand.
+         :type other: Self
+         :rtype: :class:`Matrix`
+
 
 
 .. class:: MatrixAccess
 
    An indexable type for accessing matrix rows or columns as :class:`Vector` types.
+
+   .. details:: Special Methods
+
+      .. method:: __getitem__(key)
+
+         :param key: Index or key.
+         :type key: int
+         :rtype: float
+
+      .. method:: __iter__()
+
+         :rtype: :class:`MatrixAccess`
+
+      .. method:: __len__()
+
+         :rtype: int
+
+      .. method:: __setitem__(key, value)
+
+         :param key: Index or key.
+         :type key: int
+         :param value: Value to assign.
+         :type value: object
 
 
 
@@ -1117,6 +1400,120 @@ The :mod:`mathutils` module provides the following classes:
       
       :type: float
 
+
+   .. details:: Special Methods
+
+      .. method:: __add__(other)
+
+         :param other: The other operand.
+         :type other: Self
+         :rtype: :class:`Quaternion`
+
+      .. method:: __eq__(other)
+
+         :param other: The other operand.
+         :type other: object
+         :rtype: bool
+
+      .. method:: __getitem__(key)
+
+         :param key: Index or key.
+         :type key: int
+         :rtype: float
+
+      .. method:: __hash__()
+
+         :rtype: int
+
+      .. method:: __imatmul__(other)
+
+         :param other: The other operand.
+         :type other: Self
+         :rtype: :class:`Quaternion`
+
+      .. method:: __imul__(other)
+
+         :param other: The other operand.
+         :type other: :class:`Quaternion`
+         :rtype: :class:`Quaternion`
+
+      .. method:: __imul__(other)
+         :noindex:
+
+         :param other: The other operand.
+         :type other: float
+         :rtype: :class:`Quaternion`
+
+      .. method:: __len__()
+
+         :rtype: int
+
+      .. method:: __matmul__(other)
+
+         :param other: The other operand.
+         :type other: :class:`Quaternion`
+         :rtype: :class:`Quaternion`
+
+      .. method:: __matmul__(other)
+         :noindex:
+
+         :param other: The other operand.
+         :type other: :class:`Vector`
+         :rtype: :class:`Vector`
+
+      .. method:: __mul__(other)
+
+         :param other: The other operand.
+         :type other: :class:`Quaternion`
+         :rtype: :class:`Quaternion`
+
+      .. method:: __mul__(other)
+         :noindex:
+
+         :param other: The other operand.
+         :type other: float
+         :rtype: :class:`Quaternion`
+
+      .. method:: __ne__(other)
+
+         :param other: The other operand.
+         :type other: object
+         :rtype: bool
+
+      .. method:: __neg__()
+
+         :rtype: :class:`Quaternion`
+
+      .. method:: __pos__()
+
+         :rtype: :class:`Quaternion`
+
+      .. method:: __repr__()
+
+         :rtype: str
+
+      .. method:: __rmul__(other)
+
+         :param other: Scalar.
+         :type other: float
+         :rtype: :class:`Quaternion`
+
+      .. method:: __setitem__(key, value)
+
+         :param key: Index or key.
+         :type key: int
+         :param value: Value to assign.
+         :type value: object
+
+      .. method:: __str__()
+
+         :rtype: str
+
+      .. method:: __sub__(other)
+
+         :param other: The other operand.
+         :type other: Self
+         :rtype: :class:`Quaternion`
 
 
 
@@ -3203,6 +3600,162 @@ The :mod:`mathutils` module provides the following classes:
 
       :type: :class:`Vector`
 
+
+   .. details:: Special Methods
+
+      .. method:: __add__(other)
+
+         :param other: The other operand.
+         :type other: Self
+         :rtype: :class:`Vector`
+
+      .. method:: __eq__(other)
+
+         :param other: The other operand.
+         :type other: object
+         :rtype: bool
+
+      .. method:: __ge__(other)
+
+         :param other: The other operand.
+         :type other: Self
+         :rtype: bool
+
+      .. method:: __getitem__(key)
+
+         :param key: Index or key.
+         :type key: int
+         :rtype: float
+
+      .. method:: __gt__(other)
+
+         :param other: The other operand.
+         :type other: Self
+         :rtype: bool
+
+      .. method:: __hash__()
+
+         :rtype: int
+
+      .. method:: __iadd__(other)
+
+         :param other: The other operand.
+         :type other: Self
+         :rtype: :class:`Vector`
+
+      .. method:: __imul__(other)
+
+         :param other: The other operand.
+         :type other: :class:`Vector`
+         :rtype: :class:`Vector`
+
+      .. method:: __imul__(other)
+         :noindex:
+
+         :param other: The other operand.
+         :type other: float
+         :rtype: :class:`Vector`
+
+      .. method:: __isub__(other)
+
+         :param other: The other operand.
+         :type other: Self
+         :rtype: :class:`Vector`
+
+      .. method:: __itruediv__(other)
+
+         :param other: Scalar divisor.
+         :type other: float
+         :rtype: :class:`Vector`
+
+      .. method:: __le__(other)
+
+         :param other: The other operand.
+         :type other: Self
+         :rtype: bool
+
+      .. method:: __len__()
+
+         :rtype: int
+
+      .. method:: __lt__(other)
+
+         :param other: The other operand.
+         :type other: Self
+         :rtype: bool
+
+      .. method:: __matmul__(other)
+
+         :param other: The other operand.
+         :type other: :class:`Vector`
+         :rtype: float
+
+      .. method:: __matmul__(other)
+         :noindex:
+
+         :param other: The other operand.
+         :type other: :class:`Matrix`
+         :rtype: :class:`Vector`
+
+      .. method:: __mul__(other)
+
+         :param other: The other operand.
+         :type other: :class:`Vector`
+         :rtype: :class:`Vector`
+
+      .. method:: __mul__(other)
+         :noindex:
+
+         :param other: The other operand.
+         :type other: float
+         :rtype: :class:`Vector`
+
+      .. method:: __ne__(other)
+
+         :param other: The other operand.
+         :type other: object
+         :rtype: bool
+
+      .. method:: __neg__()
+
+         :rtype: :class:`Vector`
+
+      .. method:: __pos__()
+
+         :rtype: :class:`Vector`
+
+      .. method:: __repr__()
+
+         :rtype: str
+
+      .. method:: __rmul__(other)
+
+         :param other: Scalar.
+         :type other: float
+         :rtype: :class:`Vector`
+
+      .. method:: __setitem__(key, value)
+
+         :param key: Index or key.
+         :type key: int
+         :param value: Value to assign.
+         :type value: object
+
+      .. method:: __str__()
+
+         :rtype: str
+
+      .. method:: __sub__(other)
+
+         :param other: The other operand.
+         :type other: Self
+         :rtype: :class:`Vector`
+
+      .. method:: __truediv__(other)
+
+         :param other: Scalar divisor.
+         :type other: float
+         :rtype: :class:`Vector`
 
 
 

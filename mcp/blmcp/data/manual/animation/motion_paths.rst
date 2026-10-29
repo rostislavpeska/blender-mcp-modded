@@ -142,7 +142,7 @@ Calculate
       Only available for bones while in Pose Mode.
 
       :Heads: Calculates the path position of the bone's heads.
-      :Tails: Calculates the path position of the bone's heads.
+      :Tails: Calculates the path position of the bone's tails.
 
 .. _bpy.ops.pose.paths_update:
 .. _bpy.ops.object.paths_update:

@@ -11,11 +11,11 @@ Brush
    In the :ref:`Data-Block menu <ui-data-block>` you find predefined Brush presets.
    And you can create your own custom presets as needed.
 
-Radius :kbd:`F`
-   The radius defines the area of influence of the brush.
+Size :kbd:`F`
+   The diameter of the area of influence for the brush.
 
    :bl-icon:`stylus_pressure` (Size Pressure)
-      Adjusts the radius based on the stylus pressure when using a :ref:`Graphics Tablet <hardware-tablet>`.
+      Adjusts the brush size based on the stylus pressure when using a :ref:`Graphics Tablet <hardware-tablet>`.
 
 Strength
    This is the amount of paint to be applied per brush stroke.

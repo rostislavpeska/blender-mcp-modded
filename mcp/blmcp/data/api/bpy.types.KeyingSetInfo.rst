@@ -5,6 +5,7 @@ KeyingSetInfo(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: KeyingSetInfo(bpy_struct)
 
    Callback function defines for builtin Keying Sets
@@ -37,6 +38,7 @@ base class --- :class:`bpy_struct`
 
       Test if Keying Set can be used or not
 
+      :param context: The context
       :type context: :class:`Context` | None
       :rtype: bool
 
@@ -44,16 +46,20 @@ base class --- :class:`bpy_struct`
 
       Call generate() on the structs which have properties to be keyframed
 
+      :param context: The context
       :type context: :class:`Context` | None
+      :param ks: Keying set this iterator runs on
       :type ks: :class:`KeyingSet` | None
 
    .. method:: generate(context, ks, data)
 
       Add Paths to the Keying Set to keyframe the properties of the given data
 
+      :param context: The context
       :type context: :class:`Context` | None
+      :param ks: Keying set to add paths to
       :type ks: :class:`KeyingSet` | None
-      :param data: (never None)
+      :param data: Data to add paths from (never None)
       :type data: :class:`AnyType` | None
 
    .. classmethod:: bl_rna_get_subclass(id, default=None, /)

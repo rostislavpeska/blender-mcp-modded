@@ -5,6 +5,7 @@ SequencerTimelineOverlay(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: SequencerTimelineOverlay(bpy_struct)
 
 
@@ -56,11 +57,18 @@ base class --- :class:`bpy_struct`
 
       :type: bool
 
-   .. attribute:: show_thumbnails
+   .. attribute:: thumbnail_display_style
 
-      Show strip thumbnails (default False)
+      How thumbnails are displayed (default ``'NO_THUMBNAILS'``)
 
-      :type: bool
+      - ``NO_THUMBNAILS``
+        None -- Do not show strip thumbnails.
+      - ``STRIP_ENDS``
+        Strip Ends -- Show thumbnails only at the beginning and end of the strip.
+      - ``CONTINUOUS``
+        Continuous -- Display thumbnails as a filmstrip.
+
+      :type: Literal['NO_THUMBNAILS', 'STRIP_ENDS', 'CONTINUOUS']
 
    .. attribute:: waveform_display_style
 

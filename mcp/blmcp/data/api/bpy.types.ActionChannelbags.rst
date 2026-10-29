@@ -3,7 +3,8 @@ ActionChannelbags(bpy_prop_collection)
 
 .. currentmodule:: bpy.types
 
-base classes --- :class:`bpy_prop`, :class:`bpy_prop_collection`
+base class --- :class:`bpy_prop_collection`
+
 
 .. class:: ActionChannelbags(bpy_prop_collection)
 

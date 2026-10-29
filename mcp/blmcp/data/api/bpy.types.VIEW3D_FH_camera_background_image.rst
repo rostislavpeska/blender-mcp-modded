@@ -5,6 +5,7 @@ VIEW3D_FH_camera_background_image(FileHandler)
 
 base classes --- :class:`bpy_struct`, :class:`FileHandler`
 
+
 .. class:: VIEW3D_FH_camera_background_image(FileHandler)
 
 

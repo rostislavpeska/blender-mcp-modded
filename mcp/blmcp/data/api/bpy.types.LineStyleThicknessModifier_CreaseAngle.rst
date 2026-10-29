@@ -5,6 +5,7 @@ LineStyleThicknessModifier_CreaseAngle(LineStyleThicknessModifier)
 
 base classes --- :class:`bpy_struct`, :class:`LineStyleModifier`, :class:`LineStyleThicknessModifier`
 
+
 .. class:: LineStyleThicknessModifier_CreaseAngle(LineStyleThicknessModifier)
 
    Line thickness based on the angle between two adjacent faces

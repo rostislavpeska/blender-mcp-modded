@@ -5,6 +5,7 @@ LibraryWeakReference(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: LibraryWeakReference(bpy_struct)
 
    Read-only external reference to a linked data-block and its library file

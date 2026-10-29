@@ -1,5 +1,4 @@
 .. index:: Compositor Nodes; Split Toning
-.. _bpy.types.CompositorNodeSplitToning:
 
 *****************
 Split Toning Node
@@ -9,12 +8,16 @@ Split Toning Node
    :align: right
    :alt: Split Toning Node.
 
-The *Split Toning* node applies different color tints to the highlights and shadows of an image.
+.. --- modifier-intro-start ---
+
+*Split Toning* applies different color tints to the highlights and shadows of an image.
 This technique is widely used in photography and color grading to create mood, enhance contrast,
 or stylize an image by giving distinct color tones to bright and dark regions.
 
 For example, warm highlights and cool shadows can evoke a cinematic or nostalgic look,
 while complementary tones can create stylized or dramatic effects.
+
+.. --- modifier-intro-end ---
 
 
 Inputs
@@ -22,6 +25,8 @@ Inputs
 
 Image
    Standard color input image.
+
+.. --- modifier-options-start ---
 
 Highlights
    The color tint applied to the bright areas of the image.
@@ -47,6 +52,8 @@ Balance
 Smoothness
    Adjusts how gradually the image transitions between tinted shadows and highlights.
    Higher values create a smooth, natural blend; lower values make the transition more abrupt.
+
+.. --- modifier-options-end ---
 
 
 Outputs

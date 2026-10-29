@@ -5,6 +5,7 @@ BrushGpencilSettings(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: BrushGpencilSettings(bpy_struct)
 
    Settings for Grease Pencil brush
@@ -51,6 +52,12 @@ base class --- :class:`bpy_struct`
       The shape of the start and end of the stroke (default ``'ROUND'``)
 
       :type: Literal['ROUND', 'FLAT']
+
+   .. attribute:: conversion_threshold
+
+      Threshold distance between points for conversion (in [0, inf], default 0.001)
+
+      :type: float
 
    .. data:: curve_jitter
 
@@ -106,6 +113,12 @@ base class --- :class:`bpy_struct`
 
       :type: :class:`CurveMapping` | None
 
+   .. attribute:: curve_type
+
+      Type of curves (default ``'CATMULL_ROM'``)
+
+      :type: Literal[:ref:`rna_enum_curves_type_items`]
+
    .. attribute:: dilate
 
       Number of pixels to expand or contract fill area (in [-40, 40], default 1)
@@ -139,7 +152,7 @@ base class --- :class:`bpy_struct`
 
    .. attribute:: extend_stroke_factor
 
-      Strokes end extension for closing gaps, use zero to disable (in [0, 10], default 0.0)
+      Strokes end extension for closing gaps, use zero to disable (in [0, inf], default 0.0)
 
       :type: float
 
@@ -184,6 +197,18 @@ base class --- :class:`bpy_struct`
 
       :type: float
 
+   .. attribute:: fill_gap_factor
+
+      The sensitivity of the gap detection. Higher values results in more gaps detected and as such can create smaller fills (in [0, 1], default 0.0)
+
+      :type: float
+
+   .. attribute:: fill_internal_gaps
+
+      Stop at internal gaps (default False)
+
+      :type: bool
+
    .. attribute:: fill_layer_mode
 
       Layers used as boundaries (default ``'VISIBLE'``)
@@ -208,6 +233,17 @@ base class --- :class:`bpy_struct`
       Number of simplify steps (large values reduce fill accuracy) (in [0, 10], default 0)
 
       :type: int
+
+   .. attribute:: fill_solver
+
+      Method used for when filling (default ``'DELAUNAY'``)
+
+      - ``DELAUNAY``
+        Delaunay -- Use the exact geometry to create fills.
+      - ``PIXEL``
+        Pixel -- Use pixel based flooding to create fills.
+
+      :type: Literal['DELAUNAY', 'PIXEL']
 
    .. attribute:: fill_threshold
 
@@ -331,7 +367,7 @@ base class --- :class:`bpy_struct`
 
    .. attribute:: show_lasso
 
-      Do not display fill color while drawing the stroke (default True)
+      Display fill color while drawing the stroke (default True)
 
       :type: bool
 
@@ -556,11 +592,11 @@ base class --- :class:`bpy_struct`
       Defines how vertex color affect to the strokes (default ``'STROKE'``)
 
       - ``STROKE``
-        Stroke -- Vertex Color affects to Stroke only.
+        Stroke -- Painting affects only strokes, not fills.
       - ``FILL``
-        Fill -- Vertex Color affects to Fill only.
+        Fill -- Painting affects only fills, not strokes.
       - ``BOTH``
-        Stroke & Fill -- Vertex Color affects to Stroke and Fill.
+        Both -- Painting affects both strokes and fills.
 
       :type: Literal['STROKE', 'FILL', 'BOTH']
 

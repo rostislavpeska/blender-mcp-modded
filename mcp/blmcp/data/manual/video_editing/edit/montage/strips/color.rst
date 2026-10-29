@@ -4,14 +4,34 @@
 Color Strip
 ***********
 
-This effect generates solid color frames.
-By default, when it is created, the Color strip is 25 frames long, but
-you can extend it by selecting and moving one of the ends.
-Use this strip crossed with your main movie to provide a fade-in or fade-out.
+A Color strip generates a solid color for its entire duration.
+
+Color strips are useful as simple backgrounds, mattes, overlays, title
+backgrounds, or as inputs to effects and transitions. They can also be
+combined with opacity or blend modes to create fade-ins, fade-outs, flashes,
+or color tints.
 
 
 Options
 =======
 
 Color
-   Click on the color field in the Effect panel in the Sidebar region, to pick a different color.
+   Color displayed by the strip.
+
+
+Transform
+=========
+
+Width
+   Width of the generated color image.
+
+   Increasing the width extends the color beyond the scene resolution,
+   while decreasing it creates transparent borders that can be positioned
+   with the strip's transform properties.
+
+Height
+   Height of the generated color image.
+
+   Increasing the height extends the color beyond the scene resolution,
+   while decreasing it creates transparent borders that can be positioned
+   with the strip's transform properties.

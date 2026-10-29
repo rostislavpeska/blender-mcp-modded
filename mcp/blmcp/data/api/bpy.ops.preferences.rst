@@ -106,7 +106,7 @@ Preferences Operators
    :File: `startup/bl_operators/userpref.py\:1000 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/userpref.py#L1000>`__
 
 
-.. function:: asset_library_add(*, directory="", hide_props_region=True, check_existing=False, filter_blender=False, filter_backup=False, filter_image=False, filter_movie=False, filter_python=False, filter_font=False, filter_sound=False, filter_text=False, filter_archive=False, filter_btx=False, filter_alembic=False, filter_usd=False, filter_obj=False, filter_volume=False, filter_folder=True, filter_blenlib=False, filemode=9, display_type='DEFAULT', sort_method='')
+.. function:: asset_library_add(*, directory="", hide_props_region=True, check_existing=False, filter_blender=False, filter_backup=False, filter_image=False, filter_movie=False, filter_python=False, filter_font=False, filter_sound=False, filter_text=False, filter_archive=False, filter_btx=False, filter_alembic=False, filter_usd=False, filter_obj=False, filter_volume=False, filter_folder=True, filter_blenlib=False, filemode=9, display_type='DEFAULT', sort_method='', name="", remote_url="", type='LOCAL')
 
    Add a directory to be used by the Asset Browser as source of assets
 
@@ -163,6 +163,17 @@ Preferences Operators
    :type display_type: Literal['DEFAULT', 'LIST_VERTICAL', 'LIST_HORIZONTAL', 'THUMBNAIL']
    :param sort_method: File sorting mode, (optional)
    :type sort_method: str
+   :param name: Name, Identifier (not necessarily unique) for the asset library (optional, never None)
+   :type name: str
+   :param remote_url: URL, Remote URL to the asset library (optional, never None)
+   :type remote_url: str
+   :param type: Type, The kind of asset library to add (optional)
+
+      - ``REMOTE``
+        Add Remote Asset Library -- Add an asset library referencing a remote repository with support for listing and updating asset libraries.
+      - ``LOCAL``
+        Add Local Asset Library -- Add an asset library managed via the file system without referencing an external repository.
+   :type type: Literal['REMOTE', 'LOCAL']
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
 

@@ -158,11 +158,11 @@ Action Operators
 
       - ``CFRA``
         By Times Over Current Frame -- Flip times of selected keyframes using the current frame as the mirror line.
-      - ``XAXIS``
-        By Values Over Zero Value -- Flip values of selected keyframes (i.e. negative values become positive, and vice versa).
       - ``MARKER``
         By Times Over First Selected Marker -- Flip times of selected keyframes using the first selected marker as the reference point.
-   :type type: Literal['CFRA', 'XAXIS', 'MARKER']
+      - ``XAXIS``
+        By Values Over Zero Value -- Flip values of selected keyframes (i.e. negative values become positive, and vice versa).
+   :type type: Literal['CFRA', 'MARKER', 'XAXIS']
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
 
@@ -242,6 +242,17 @@ Action Operators
    :type mode: Literal['SET', 'ADD', 'SUB']
    :param tweak: Tweak, Operator has been activated using a click-drag event (optional)
    :type tweak: bool
+   :return: Result of the operator call.
+   :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
+
+.. function:: select_by_type(*, extend=True, type='KEYFRAME')
+
+   Select all keyframes of the given type
+
+   :param extend: Extend Selection, Keeps the current selection and adds the given type to it. If disabled, only keys of the type will be selected (optional)
+   :type extend: bool
+   :param type: Type, The type of keyframe to select (optional)
+   :type type: Literal[:ref:`rna_enum_beztriple_keyframe_type_items`]
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
 

@@ -97,6 +97,13 @@ Color spaces for displays and image files.
 :Rec.2100 PQ: For high dynamic range images and video with Rec.2020 wide gamut, up to 10000 nits.
 :Rec.2100 HLG: For high dynamic range images and video with Rec.2020 wide gamut, up to 1000 nits.
 
+Input
+-----
+
+Color spaces to read images that are encoded in the native space of film cameras,
+without conversion in external software.
+
+Includes color spaces for Apple, ARRI, Blackmagic Design, Canon and Sony cameras.
 
 Linear
 ------
@@ -108,6 +115,7 @@ Color spaces commonly used for OpenEXR files.
    that is used by default in compositing, shader and geometry nodes.
 :Linear Rec.709: Linear BT.709 chromaticities with illuminant D65 white point.
 :Linear Rec.2020: Linear BT.2020 with illuminant D65 white point.
+:Linear Adobe RGB: Linear Adobe RGB with illuminant D65 white point.
 :ACEScg:
    An ACES color space that is designed to be used for rendering and compositing.
    It uses the AP1 color primaries, a D60 white point, and a linear transfer function.
@@ -121,17 +129,6 @@ Color spaces commonly used for OpenEXR files.
 :Linear CIE-XYZ E: 1931 CIE XYZ standard with assumed illuminant E white point.
 :Linear CIE-XYZ D65: 1931 CIE XYZ with adapted illuminant D65 white point.
 
-
-Other
------
-
-:Non-Color:
-   Generic data that is not color, will not apply any color transform (e.g. normal maps or displacement maps).
-:Working Space:
-   Uses the :ref:`bpy.types.BlendFileColorspace.working_space`
-   color space defined in the scene's color management settings.
-
-
 Log
 ---
 
@@ -140,9 +137,21 @@ Log
 :AgX Log: Intermediate log color space of AgX view transform.
 :Filmic Log: Intermediate log color space of Filmic view transform.
 
+Utility
+-------
 
-Utilities
----------
+Additional color spaces that images may commonly be stored in.
+
+:Gamma 1.8 Encoded Rec.709: 1.8 gamma-encoded Rec.709 with illuminant D65 white point.
+:Gamma 2.2 Encoded AP1: 2.2 gamma-encoded AP1 with ACES white point.
+:Gamma 2.2 Encoded AdobeRGB: 2.2 gamma-encoded Adobe RGB (1998) with illuminant D65 white point.
+:Gamma 2.2 Encoded Rec.709: 2.2 gamma-encoded Rec.709 with illuminant D65 white point.
+:Gamma 2.4 Encoded Rec.709: 2.4 gamma-encoded Rec.709 with illuminant D65 white point.
+:sRGB Encoded P3-D65: sRGB-encoded P3-D65 with illuminant D65 white point.
+:sRGB Encoded AP1: sRGB-encoded AP1 with ACES white point.
+
+View Inverse
+------------
 
 Color spaces corresponding to view transforms. These color spaces can
 be used for background images that should not be affected by the view
@@ -153,3 +162,12 @@ transform, while everything else in the scene is affected.
 :AgX Base sRGB: AgX view transform
 :Filmic sRGB: Filmic view transform
 :Khronos PBR Neutral sRGB: Khronos PBR Neutral view transform
+
+Other
+-----
+
+:Non-Color:
+   Generic data that is not color, will not apply any color transform (e.g. normal maps or displacement maps).
+:Working Space:
+   Uses the :ref:`bpy.types.BlendFileColorspace.working_space`
+   color space defined in the scene's color management settings.

@@ -4,15 +4,25 @@ Rendering Animations
 ********************
 
 While rendering stills will allow you to view and save the image from the render buffer when
-it is complete, animations are a series of images, or frames,
-and are automatically saved directly out to a drive after being rendered.
+it is complete, animations are a series of images, or frames, and are typically saved directly
+to disk as they are rendered.
+
+By default, Blender automatically saves animation frames using the settings defined in the
+:doc:`Output panel </render/output/properties/output>`, while still renders must be saved manually
+from the render buffer or by using a :doc:`Compositor File Output node </compositing/types/output/file_output>`.
+
+This behavior depends on the :ref:`Output <bpy.types.RenderSettings.save_output>` option in the Output properties.
+When enabled (default), animation renders are written automatically. When disabled, Blender will not save render
+output from the Output panel and instead relies on alternative output methods such as Compositor File Output nodes.
+If no valid output method is available, rendering operations will report errors.
+
 
 After rendering the frames, you may need to edit the clips,
 or first use the Compositor to do green-screen masking, matting, color correction, DOF,
 and so on to the images. That result is then fed to the Sequencer where the strips are cut and
 mixed and a final overlay is done.
 
-Finally you can render out from the Sequencer and compress the frames into a playable movie clip.
+Finally you can render out from the Sequencer and compress the frames into a video file.
 
 
 Workflow
@@ -45,6 +55,9 @@ The Direct Approach, which is highly **not** recommended and not a standard prac
 is where you set your output format to an AVI or MOV format,
 and click *Animation* to render your scene directly out to a movie file.
 Blender creates one file that holds all the frames of your animation.
+This method relies on automatic output saving being enabled. If *Save Output* is disabled,
+the render will fail unless an alternative output method is provided.
+
 You can then use Blender's :doc:`Video Sequencer </editors/video_sequencer/index>`
 to add an audio track to the animation and render out to an MPEG format to complete your movie.
 
@@ -56,7 +69,9 @@ where you set your output format to a still format (such as JPG, PNG or a multi-
 Click *Animation* to render your scene out to a set of images,
 where each image is a frame in the sequence.
 
-Blender creates a file for each frame of the animation.
+Blender creates a file for each frame of the animation when *Save Output* is enabled.
+If it is disabled, frames will only be written if a Compositor File Output node is configured.
+
 You can then use Blender's Compositor to perform any frame manipulation (post-processing).
 You can then use Blender's :doc:`Video Sequencer </editors/video_sequencer/index>` to load that final image sequence,
 add an audio track to the animation, and render out to an MPEG format to complete your movie.
@@ -93,14 +108,14 @@ Frame Sequence Workflow
 #. First prepare your animation.
 #. In the *Format* panel, choose the render size, Pixel Aspect Ratio, and the Range of Frames to use,
    as well as the frame rate, which should already be set.
-#. In the Output panel set up your animation to be rendered out as images,
-   generally using a format that does not compromise any quality.
-#. Choose the output path and file type in the Output panel as well, for example ``//render/my-anim-``.
+#. In the Output panel, configure the output path and file type.
+#. Ensure *Save Output* is enabled if you want Blender to automatically write the rendered frames.
+   If disabled, make sure a :doc:`Compositor File Output node </compositing/types/output/file_output>` is set up.
 #. Confirm the range of your animation (frame Start and End).
 #. Save your blend-file.
 #. Press the *Animation* button and once the animation is finished,
-   use your file manager to navigate to the output folder (``render`` in this example).
-   You will see lots of images that have a sequence number attached to. These are the single frames.
+   use your file manager to navigate to the output folder.
+   You will see the rendered frames if output saving was configured correctly.
 #. In Blender, open the :doc:`Video Sequencer </video_editing/index>`.
 
    .. note::

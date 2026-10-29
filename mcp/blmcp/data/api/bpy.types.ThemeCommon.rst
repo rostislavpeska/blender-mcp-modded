@@ -5,6 +5,7 @@ ThemeCommon(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: ThemeCommon(bpy_struct)
 
    Theme properties shared by different editors

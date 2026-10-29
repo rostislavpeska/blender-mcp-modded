@@ -5,6 +5,7 @@ BoolAttributeValue(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: BoolAttributeValue(bpy_struct)
 
    Bool value in geometry attribute

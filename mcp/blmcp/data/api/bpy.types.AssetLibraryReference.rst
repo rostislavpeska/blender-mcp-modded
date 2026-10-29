@@ -5,6 +5,7 @@ AssetLibraryReference(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: AssetLibraryReference(bpy_struct)
 
    Identifier to refer to the asset library

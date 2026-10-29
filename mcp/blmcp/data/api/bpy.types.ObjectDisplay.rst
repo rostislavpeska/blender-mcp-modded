@@ -5,6 +5,7 @@ ObjectDisplay(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: ObjectDisplay(bpy_struct)
 
    Object display settings for 3D viewport

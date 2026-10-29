@@ -5,6 +5,7 @@ StringAttributeValue(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: StringAttributeValue(bpy_struct)
 
    String value in geometry attribute

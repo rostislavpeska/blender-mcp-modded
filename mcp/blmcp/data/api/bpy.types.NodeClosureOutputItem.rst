@@ -5,6 +5,7 @@ NodeClosureOutputItem(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: NodeClosureOutputItem(bpy_struct)
 
 

@@ -5,6 +5,7 @@ FollowPathConstraint(Constraint)
 
 base classes --- :class:`bpy_struct`, :class:`Constraint`
 
+
 .. class:: FollowPathConstraint(Constraint)
 
    Lock motion to the target path

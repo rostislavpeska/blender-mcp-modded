@@ -93,6 +93,6 @@ Add Weight Data
 .. _bpy.types.ToolSettings.use_gpencil_draw_onback:
 
 Draw on Back
-   When enabled, new strokes are drawn below of all strokes in the layer.
+   When enabled, new strokes are drawn below all strokes in the layer.
    For example when you want to paint with a fill material below line strokes on a character and
    they are on the same layer.

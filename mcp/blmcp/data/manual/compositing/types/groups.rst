@@ -33,6 +33,12 @@ outputting each result right where it's produced (rather than dragging long link
 The output slots can be edited in the *Group* tab of the *Sidebar*.
 
 
+Linked
+======
+
+Lists node groups that are referenced indirectly through other node groups.
+
+
 Node Groups
 ===========
 

@@ -71,7 +71,7 @@ Friction
       Random variation of friction.
 
 
-.. _physics-collision-soft-bodt-cloth:
+.. _physics-collision-soft-body-cloth:
 
 Soft Body and Cloth
 -------------------
@@ -131,7 +131,7 @@ Override Normals
 .. note::
 
    *Soft body* collisions are difficult to get perfect.
-   If one of the objects move too fast, the soft body will penetrate the mesh.
+   If one of the objects moves too fast, the soft body will penetrate the mesh.
    See also the section about :doc:`Soft Bodies </physics/soft_body/index>`.
 
 

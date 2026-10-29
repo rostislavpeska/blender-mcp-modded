@@ -5,6 +5,7 @@ FreestyleSettings(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: FreestyleSettings(bpy_struct)
 
    Freestyle settings for a ViewLayer data-block

@@ -5,6 +5,7 @@ OperatorStrokeElement(PropertyGroup)
 
 base classes --- :class:`bpy_struct`, :class:`PropertyGroup`
 
+
 .. class:: OperatorStrokeElement(PropertyGroup)
 
 

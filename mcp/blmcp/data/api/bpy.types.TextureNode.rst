@@ -5,8 +5,46 @@ TextureNode(NodeInternal)
 
 base classes --- :class:`bpy_struct`, :class:`Node`, :class:`NodeInternal`
 
-subclasses --- 
-:class:`TextureNodeAt`, :class:`TextureNodeBricks`, :class:`TextureNodeChecker`, :class:`TextureNodeCombineColor`, :class:`TextureNodeCompose`, :class:`TextureNodeCoordinates`, :class:`TextureNodeCurveRGB`, :class:`TextureNodeCurveTime`, :class:`TextureNodeDecompose`, :class:`TextureNodeDistance`, :class:`TextureNodeGroup`, :class:`TextureNodeHueSaturation`, :class:`TextureNodeImage`, :class:`TextureNodeInvert`, :class:`TextureNodeMath`, :class:`TextureNodeMixRGB`, :class:`TextureNodeOutput`, :class:`TextureNodeRGBToBW`, :class:`TextureNodeRotate`, :class:`TextureNodeScale`, :class:`TextureNodeSeparateColor`, :class:`TextureNodeTexBlend`, :class:`TextureNodeTexClouds`, :class:`TextureNodeTexDistNoise`, :class:`TextureNodeTexMagic`, :class:`TextureNodeTexMarble`, :class:`TextureNodeTexMusgrave`, :class:`TextureNodeTexNoise`, :class:`TextureNodeTexStucci`, :class:`TextureNodeTexVoronoi`, :class:`TextureNodeTexWood`, :class:`TextureNodeTexture`, :class:`TextureNodeTranslate`, :class:`TextureNodeValToNor`, :class:`TextureNodeValToRGB`, :class:`TextureNodeViewer`
+.. toctree::
+   :caption: Subclasses
+   :maxdepth: 1
+
+   bpy.types.TextureNodeAt.rst
+   bpy.types.TextureNodeBricks.rst
+   bpy.types.TextureNodeChecker.rst
+   bpy.types.TextureNodeCombineColor.rst
+   bpy.types.TextureNodeCompose.rst
+   bpy.types.TextureNodeCoordinates.rst
+   bpy.types.TextureNodeCurveRGB.rst
+   bpy.types.TextureNodeCurveTime.rst
+   bpy.types.TextureNodeDecompose.rst
+   bpy.types.TextureNodeDistance.rst
+   bpy.types.TextureNodeGroup.rst
+   bpy.types.TextureNodeHueSaturation.rst
+   bpy.types.TextureNodeImage.rst
+   bpy.types.TextureNodeInvert.rst
+   bpy.types.TextureNodeMath.rst
+   bpy.types.TextureNodeMixRGB.rst
+   bpy.types.TextureNodeOutput.rst
+   bpy.types.TextureNodeRGBToBW.rst
+   bpy.types.TextureNodeRotate.rst
+   bpy.types.TextureNodeScale.rst
+   bpy.types.TextureNodeSeparateColor.rst
+   bpy.types.TextureNodeTexBlend.rst
+   bpy.types.TextureNodeTexClouds.rst
+   bpy.types.TextureNodeTexDistNoise.rst
+   bpy.types.TextureNodeTexMagic.rst
+   bpy.types.TextureNodeTexMarble.rst
+   bpy.types.TextureNodeTexMusgrave.rst
+   bpy.types.TextureNodeTexNoise.rst
+   bpy.types.TextureNodeTexStucci.rst
+   bpy.types.TextureNodeTexVoronoi.rst
+   bpy.types.TextureNodeTexWood.rst
+   bpy.types.TextureNodeTexture.rst
+   bpy.types.TextureNodeTranslate.rst
+   bpy.types.TextureNodeValToNor.rst
+   bpy.types.TextureNodeValToRGB.rst
+   bpy.types.TextureNodeViewer.rst
 
 .. class:: TextureNode(NodeInternal)
 
@@ -48,6 +86,7 @@ Inherited Properties
    - :class:`Node.label`
    - :class:`Node.inputs`
    - :class:`Node.outputs`
+   - :class:`Node.panel_states`
    - :class:`Node.internal_links`
    - :class:`Node.parent`
    - :class:`Node.warning_propagation`

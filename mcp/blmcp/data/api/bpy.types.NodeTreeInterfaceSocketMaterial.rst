@@ -5,6 +5,7 @@ NodeTreeInterfaceSocketMaterial(NodeTreeInterfaceSocket)
 
 base classes --- :class:`bpy_struct`, :class:`NodeTreeInterfaceItem`, :class:`NodeTreeInterfaceSocket`
 
+
 .. class:: NodeTreeInterfaceSocketMaterial(NodeTreeInterfaceSocket)
 
    Material socket of a node

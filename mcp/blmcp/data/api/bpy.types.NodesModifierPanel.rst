@@ -5,6 +5,7 @@ NodesModifierPanel(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: NodesModifierPanel(bpy_struct)
 
 

@@ -5,6 +5,7 @@ ThemeBoneColorSet(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: ThemeBoneColorSet(bpy_struct)
 
    Theme settings for bone color sets

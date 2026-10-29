@@ -5,6 +5,7 @@ KeyingSet(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: KeyingSet(bpy_struct)
 
    Settings that should be keyframed together

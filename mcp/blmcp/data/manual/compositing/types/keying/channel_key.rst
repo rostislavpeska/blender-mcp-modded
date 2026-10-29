@@ -48,10 +48,10 @@ Limit Method
    :Max:
       Limit by the maximum of the other two channels other than the *Key Channel*.
    :Single:
-      Limit by the maximum of the selected *Limit Channel*.
+      Limit by the selected *Limit Channel*.
 
 Limit Channel
-   The channel to use when computing the maximum, the options are defined by the *Color Space*.
+   The channel to use for the *Single* limit method. The options are defined by the *Color Space*.
 
 
 Outputs

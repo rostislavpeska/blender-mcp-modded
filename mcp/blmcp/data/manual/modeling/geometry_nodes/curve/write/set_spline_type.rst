@@ -28,7 +28,7 @@ Properties
 
 Spline Type
    The type to convert the splines in the selection to.
-   Read the :ref:`Spline Types <curve-spline-types>` page for more details
+   Read the :ref:`Spline Types <curves-spline-types>` page for more details
    on the different spline types.
 
    :Bézier:

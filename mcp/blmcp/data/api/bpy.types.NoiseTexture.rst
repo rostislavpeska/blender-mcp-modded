@@ -5,6 +5,7 @@ NoiseTexture(Texture)
 
 base classes --- :class:`bpy_struct`, :class:`ID`, :class:`Texture`
 
+
 .. class:: NoiseTexture(Texture)
 
    Procedural noise texture

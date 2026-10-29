@@ -1,5 +1,6 @@
 .. index:: Geometry Nodes; Rotation to Quaternion
 .. _bpy.types.FunctionNodeRotationToQuaternion:
+.. --- copy below this line ---
 
 ***************************
 Rotation to Quaternion Node

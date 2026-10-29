@@ -52,7 +52,7 @@ Type
    :Anisotropic: A complex smoothing method that averages the local
       neighborhood of the image in the direction of the flow of the edges,
       thus preserving the edges in the output. Produces painterly-like results
-      and provides multiple turning parameters, while being slower to compute.
+      and provides multiple tuning parameters, while being slower to compute.
 
 Uniformity
    Controls the uniformity of the directions of the edges of the image. Non

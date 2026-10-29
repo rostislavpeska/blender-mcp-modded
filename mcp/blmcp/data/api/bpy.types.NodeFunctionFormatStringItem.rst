@@ -5,6 +5,7 @@ NodeFunctionFormatStringItem(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: NodeFunctionFormatStringItem(bpy_struct)
 
 

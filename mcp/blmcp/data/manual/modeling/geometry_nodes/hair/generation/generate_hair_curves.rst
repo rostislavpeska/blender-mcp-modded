@@ -20,13 +20,18 @@ For cases where curves should interpolate or follow existing guides, use the
 Inputs
 ======
 
+Hair Surface
+   Surface geometry or hair geometry with existing surface attachment for reference.
+
 Surface Input Type
    Determines how the surface data is provided for interpolation.
 
+   :Attached:
+      Use the attached surface of the incoming hair geometry.
+   :Input:
+      Use a geometry input directly connected to the surface mesh.
    :Object:
       Use an object reference to provide the surface.
-   :Geometry:
-      Use a geometry input directly connected to the surface mesh.
 
 Surface
    The surface object used for generation.
@@ -35,7 +40,7 @@ Surface
 Surface UV Map
    The UV map used to determine the root positions of the hair curves on the surface mesh.
 
-Surface Rest Position
+Resting Surface
    When enabled, sets the surface mesh to its rest position before generating the hair curves.
    This ensures consistent attachment locations when deforming the surface later.
 

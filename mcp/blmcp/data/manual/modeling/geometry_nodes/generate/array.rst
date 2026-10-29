@@ -101,11 +101,20 @@ Realize Instances
 Align Rotation :guilabel:`Circle` :guilabel:`Curve`
 ---------------------------------------------------
 
-Forward Axis
-   Axis that defines the facing direction of each instance along the circle.
+Automatically aligns the rotation of instances to follow the direction of the array distribution.
 
-Up Axis
-   Axis used as the vertical reference for instance orientation.
+- For *Circle*, instances are aligned tangentially around the circle while adapting
+  their base orientation to the selected *Central Axis*.
+- For *Curve*, instances are aligned to the curve tangent and orientation,
+  allowing geometry to naturally follow the shape of the curve.
+
+When disabled, all instances keep the original rotation of the input geometry.
+
+Local Rotation X, Y, Z
+   Additional local rotation offsets applied after automatic alignment.
+
+   This is useful for correcting the orientation of geometry when the source object
+   does not initially face the desired forward or up axis.
 
 
 Randomize

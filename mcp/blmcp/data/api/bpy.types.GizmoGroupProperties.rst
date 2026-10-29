@@ -5,6 +5,7 @@ GizmoGroupProperties(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: GizmoGroupProperties(bpy_struct)
 
    Input properties of a Gizmo Group

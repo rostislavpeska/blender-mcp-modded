@@ -5,6 +5,7 @@ DynamicPaintBrushSettings(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: DynamicPaintBrushSettings(bpy_struct)
 
    Brush settings

@@ -56,7 +56,7 @@ Render Operators
 
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `startup/bl_operators/screen_play_rendered_anim.py\:87 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/screen_play_rendered_anim.py#L87>`__
+   :File: `startup/bl_operators/screen_play_rendered_anim.py\:137 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/screen_play_rendered_anim.py#L137>`__
 
 .. function:: preset_add(*, name="", remove_name=False, remove_active=False)
 
@@ -104,6 +104,14 @@ Render Operators
    :type shape: Literal['SHARP', 'SMOOTH', 'MAX', 'LINE', 'ROUND', 'ROOT']
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
+
+.. function:: swap_dimensions()
+
+   Flip X and Y resolutions
+
+   :return: Result of the operator call.
+   :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
+   :File: `startup/bl_operators/render.py\:14 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/render.py#L14>`__
 
 .. function:: view_cancel()
 

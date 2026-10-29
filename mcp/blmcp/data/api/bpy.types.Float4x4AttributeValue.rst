@@ -5,6 +5,7 @@ Float4x4AttributeValue(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: Float4x4AttributeValue(bpy_struct)
 
    Matrix value in geometry attribute

@@ -27,17 +27,17 @@ Properties
 Mode
    The color model to output.
 
-   :RGB: Split the input image into it's three outputs: Red, Green, and Blue color channels.
-   :HSV: Split the input image into it's three outputs: Hue, Saturation, and Value color channels.
-   :HSL: Split the input image into it's three outputs: Hue, Saturation, and Lightness color channels.
+   :RGB: Split the input image into its three outputs: Red, Green, and Blue color channels.
+   :HSV: Split the input image into its three outputs: Hue, Saturation, and Value color channels.
+   :HSL: Split the input image into its three outputs: Hue, Saturation, and Lightness color channels.
    :YCbCrA:
-       Split the input image into it's three outputs:
+       Split the input image into its three outputs:
        Luminance, Chrominance Blue, and Chrominance Red color channels.
 
       Color Space
          ITU 601, ITU 709, JPEG
    :YUV:
-      Split the input image into it's three outputs:
+      Split the input image into its three outputs:
       Luminance, U chrominance, and V chrominance color channels.
 
 
@@ -75,7 +75,7 @@ Increase Luminance
 
 .. figure:: /images/compositing_types_converter_math_multiply.png
 
-   An example of the scaling the Luminance channel.
+   An example of scaling the Luminance channel.
 
 This example has a *Math (Multiply)* node increasing the luminance channel (Y)
 of the image to make it brighter.

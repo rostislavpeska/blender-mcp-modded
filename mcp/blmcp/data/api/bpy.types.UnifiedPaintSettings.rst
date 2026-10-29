@@ -5,6 +5,7 @@ UnifiedPaintSettings(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: UnifiedPaintSettings(bpy_struct)
 
    Overrides for some of the active brush's settings

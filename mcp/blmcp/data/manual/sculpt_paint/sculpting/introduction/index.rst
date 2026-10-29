@@ -5,7 +5,6 @@
 .. toctree::
    :maxdepth: 2
 
-   general.rst
    brush.rst
    gesture_tools.rst
    visibility_masking_face_sets.rst

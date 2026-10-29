@@ -5,6 +5,7 @@ NodeFrame(NodeInternal)
 
 base classes --- :class:`bpy_struct`, :class:`Node`, :class:`NodeInternal`
 
+
 .. class:: NodeFrame(NodeInternal)
 
    Collect related nodes together in a common area. Useful for organization when the re-usability of a node group is not required
@@ -87,6 +88,7 @@ Inherited Properties
    - :class:`Node.label`
    - :class:`Node.inputs`
    - :class:`Node.outputs`
+   - :class:`Node.panel_states`
    - :class:`Node.internal_links`
    - :class:`Node.parent`
    - :class:`Node.warning_propagation`

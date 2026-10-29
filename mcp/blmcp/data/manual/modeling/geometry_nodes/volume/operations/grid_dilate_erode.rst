@@ -51,7 +51,7 @@ Tiles
       Convert active tiles to individual voxels, apply the operation,
       and leave the result fully voxelized.
    :Preserve:
-      Keep tiles unchanged when possible, only voxelizing when necessary.
+      Keep tiles unchanged when possible, only performing voxelization when necessary.
       This option is more memory efficient.
 
 Steps

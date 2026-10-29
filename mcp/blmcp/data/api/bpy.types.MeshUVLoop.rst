@@ -5,6 +5,7 @@ MeshUVLoop(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: MeshUVLoop(bpy_struct)
 
    (Deprecated) Layer of UV coordinates in a Mesh data-block

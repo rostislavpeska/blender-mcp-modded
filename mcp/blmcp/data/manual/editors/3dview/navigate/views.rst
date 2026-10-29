@@ -52,7 +52,7 @@ Options
 Lock Rotation
    Prevents changes to the orientation and perspective of the orthographic side views.
    When enabled, navigation in one view will not rotate or switch the others.
-   Note, enabling this option resets the three views to their default orientations ((Top, Front, and Right).
+   Note, enabling this option resets the three views to their default orientations (Top, Front, and Right).
 
 .. _bpy.types.RegionView3D.show_sync_view:
 

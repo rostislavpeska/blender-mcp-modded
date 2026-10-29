@@ -5,6 +5,7 @@ MeshEdge(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: MeshEdge(bpy_struct)
 
    Edge in a Mesh data-block

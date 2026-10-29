@@ -5,6 +5,7 @@ BlendFileColorspace(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: BlendFileColorspace(bpy_struct)
 
    Information about the color space used for data-blocks in a blend file
@@ -19,7 +20,14 @@ base class --- :class:`bpy_struct`
 
       Color space used for all scene linear colors in this file, and for compositing, shader and geometry nodes processing (readonly)
 
-      :type: Literal['Linear']
+      - ``Linear Rec.709``
+        Linear Rec.709 -- Linear BT.709 with illuminant D65 white point.
+      - ``Linear Rec.2020``
+        Linear Rec.2020 -- Linear BT.2020 with illuminant D65 white point.
+      - ``ACEScg``
+        ACEScg -- Linear AP1 with ACES white point.
+
+      :type: Literal['Linear Rec.709', 'Linear Rec.2020', 'ACEScg']
 
    .. data:: working_space_interop_id
 

@@ -5,6 +5,7 @@ ParticleSystemModifier(Modifier)
 
 base classes --- :class:`bpy_struct`, :class:`Modifier`
 
+
 .. class:: ParticleSystemModifier(Modifier)
 
    Particle system simulation modifier

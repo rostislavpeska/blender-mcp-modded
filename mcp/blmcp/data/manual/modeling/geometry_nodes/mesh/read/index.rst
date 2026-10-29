@@ -6,6 +6,7 @@
 .. toctree::
    :maxdepth: 1
 
+   cluster_by_connected.rst
    edge_angle.rst
    edge_neighbors.rst
    edge_vertices.rst

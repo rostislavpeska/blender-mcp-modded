@@ -5,6 +5,7 @@ Preferences(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: Preferences(bpy_struct)
 
    Global preferences
@@ -32,6 +33,12 @@ base class --- :class:`bpy_struct`
       Preferences that work only for apps (readonly, never None)
 
       :type: :class:`PreferencesApps`
+
+   .. data:: asset_libraries
+
+      Setup for custom and builtin asset libraries (readonly, never None)
+
+      :type: :class:`PreferencesAssetLibraries`
 
    .. data:: autoexec_paths
 

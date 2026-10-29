@@ -5,6 +5,7 @@ LaplacianSmoothModifier(Modifier)
 
 base classes --- :class:`bpy_struct`, :class:`Modifier`
 
+
 .. class:: LaplacianSmoothModifier(Modifier)
 
    Smoothing effect modifier

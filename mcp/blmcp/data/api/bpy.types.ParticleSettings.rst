@@ -5,6 +5,7 @@ ParticleSettings(ID)
 
 base classes --- :class:`bpy_struct`, :class:`ID`
 
+
 .. class:: ParticleSettings(ID)
 
    Particle settings, reusable by multiple particle systems

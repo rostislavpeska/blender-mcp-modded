@@ -76,13 +76,20 @@ Separate Slots
 .. _bpy.ops.anim.replace_action:
 
 Replace Action
-   Shows a pop-up, in which you can choose another action. 
-   The operator then looks at the action on the active object, 
-   and finds all data-blocks that use that action. On all of those it replaces the action 
+   Shows a pop-up, in which you can choose another action.
+   The operator then looks at the action on the active object,
+   and finds all data-blocks that use that action. On all of those it replaces the action
    with the one chosen in the pop-up.
    Note that this does *not* replace the action on NLA strips and action constraints.
    If those should be replaced see :ref:`Remap Users <bpy.ops.outliner.id_operation>`.
 
+.. _bpy.ops.anim.replace_action_new:
+
+Replace with New Action
+   Creates a new Action and replaces all users of the current Action with it.
+   The new Action is a duplicate of the original.
+
+   This operator ignores NLA Strips and Action Constraints.
 
 .. _bpy.ops.anim.slot_channels_move_to_new_action:
 

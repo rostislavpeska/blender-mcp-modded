@@ -5,6 +5,7 @@ FModifierFunctionGenerator(FModifier)
 
 base classes --- :class:`bpy_struct`, :class:`FModifier`
 
+
 .. class:: FModifierFunctionGenerator(FModifier)
 
    Generate values using a built-in function

@@ -96,6 +96,9 @@ Sample Color
 Samples a color from the viewport and assigns it to the active
 :doc:`Paint </sculpt_paint/sculpting/brushes/paint>` brush.
 
+When invoking the operator from a menu (instead of using a shortcut),
+you can click and drag across multiple colors to sample their average.
+
 This allows quickly matching the brush color to existing painted details
 directly on the model.
 

@@ -5,6 +5,7 @@ UnknownType(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: UnknownType(bpy_struct)
 
    Stub RNA type used for pointers to unknown or internal data

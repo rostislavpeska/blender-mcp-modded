@@ -5,6 +5,7 @@ ShaderFxBlur(ShaderFx)
 
 base classes --- :class:`bpy_struct`, :class:`ShaderFx`
 
+
 .. class:: ShaderFxBlur(ShaderFx)
 
    Gaussian Blur effect

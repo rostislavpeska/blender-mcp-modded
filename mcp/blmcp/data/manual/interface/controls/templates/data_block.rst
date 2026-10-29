@@ -19,9 +19,14 @@ Type
    Dragging onto :ref:`ui-data-id` fields is also possible.)
 
    List
-      A list of data-blocks available in the current blend-file, or a link to select an item from.
-      The menu may show a preview besides the items and
-      a search field to search the items in the list by name.
+      Lists the data-blocks available in the current blend-file, or provides a
+      link to select an item from.
+
+      The menu may display preview images, a search field, and state icons to
+      indicate whether a data-block is linked from another blend-file, is a
+      library override, or is marked as an asset. These icons make it easier to
+      distinguish data-blocks with the same name. Collection entries may also
+      display their assigned color tag.
 
       .. note::
 
@@ -110,6 +115,9 @@ Name
    If you type an invalid name, the value will remain unchanged.
 List
    Lets you select the data-block directly.
+
+   Like the Data-Block Menu, entries may display state icons indicating whether
+   a data-block is linked, a library override, or an asset.
 Eyedropper
    In some Data IDs there is an :ref:`ui-eyedropper`
    available through the pipette icon on the right side.

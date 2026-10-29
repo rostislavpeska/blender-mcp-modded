@@ -5,6 +5,7 @@ Float2AttributeValue(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: Float2AttributeValue(bpy_struct)
 
    2D Vector value in geometry attribute

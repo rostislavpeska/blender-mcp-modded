@@ -6,7 +6,7 @@
 Store Bundle Item Node
 **********************
 
-.. figure:: /images/node-types_NodeGetBundleItem.webp
+.. figure:: /images/node-types_NodeStoreBundleItem.webp
    :align: right
    :alt: Store Bundle Item Node
 

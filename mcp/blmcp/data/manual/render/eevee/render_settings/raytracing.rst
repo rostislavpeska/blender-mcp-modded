@@ -38,16 +38,45 @@ Resolution
 Screen Tracing
 ==============
 
-These settings control the behavior of the screen space ray-tracing.
-They are only visible if *Screen-Trace* is the active tracing *Method*.
+These settings control the behavior of screen space ray tracing.
+They are only available when *Screen-Trace* is the active tracing *Method*.
+
+.. _bpy.types.RaytraceEEVEE.screen_trace_quality:
 
 Precision
-   Higher values increase precision of the screen space ray-tracing but lower the maximum trace distance.
-   Increased precision also increases performance cost.
+   Controls the precision of screen space ray tracing.
+
+   Higher values improve intersection accuracy and reduce artifacts,
+   but decrease the maximum tracing distance and increase the
+   performance cost.
+
+.. _bpy.types.RaytraceEEVEE.screen_trace_thickness:
 
 Thickness
-   How thick to consider the pixels of the depth buffer during the tracing.
-   Higher values will stretch the reflections and add flickering. Lower values may make the ray miss surfaces.
+   Controls how much thickness is assumed for surfaces represented by
+   the depth buffer during ray tracing.
+
+   Higher values can reduce missed intersections, but may stretch
+   reflections and increase flickering. Lower values provide more
+   accurate intersections but may cause rays to miss thin surfaces.
+
+.. _bpy.types.RaytraceEEVEE.use_backface_hit:
+.. _bpy.types.RaytraceEEVEE.backface_radiance_scale:
+
+Backface
+   Controls how rays that intersect the back side of visible geometry
+   are handled.
+
+   When enabled, backface intersections are treated as valid hits
+   instead of misses. This can reduce light leaking when using
+   screen-space global illumination.
+
+   Radiance Scale
+      Controls how much of the front-face lighting is reused to
+      approximate indirect lighting on backface hits.
+
+      Lower values reduce the contribution from backface hits, while
+      higher values increase their influence.
 
 
 .. _bpy.types.RaytraceEEVEE.use_denoise:

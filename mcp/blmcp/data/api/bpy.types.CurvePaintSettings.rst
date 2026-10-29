@@ -5,6 +5,7 @@ CurvePaintSettings(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: CurvePaintSettings(bpy_struct)
 
 

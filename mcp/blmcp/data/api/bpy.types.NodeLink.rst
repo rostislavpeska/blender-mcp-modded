@@ -5,6 +5,7 @@ NodeLink(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: NodeLink(bpy_struct)
 
    Link between nodes in a node tree

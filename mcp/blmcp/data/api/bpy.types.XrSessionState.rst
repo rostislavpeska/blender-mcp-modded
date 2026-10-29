@@ -5,6 +5,7 @@ XrSessionState(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: XrSessionState(bpy_struct)
 
    Runtime state information about the VR session
@@ -33,9 +34,9 @@ base class --- :class:`bpy_struct`
 
       :type: :class:`mathutils.Quaternion`
 
-   .. data:: navigation_scale
+   .. attribute:: navigation_scale
 
-      Additional scale multiplier to apply to base scale when determining viewer scale (in [-inf, inf], default 0.0, readonly)
+      Navigation scale multiplier applied when determining viewer scale (in [-inf, inf], default 0.0)
 
       :type: float
 
@@ -56,6 +57,18 @@ base class --- :class:`bpy_struct`
       Last known rotation of the viewer pose (center between the eyes) in world space (array of 4 items, in [-inf, inf], default (0.0, 0.0, 0.0, 0.0), readonly)
 
       :type: :class:`mathutils.Quaternion`
+
+   .. data:: viewer_scale
+
+      Viewer XR scale factor, computed from the navigation scale, view scale session setting, and active scene unit scale (in [-inf, inf], default 0.0, readonly)
+
+      :type: float
+
+   .. data:: viewfinder
+
+      Viewfinder State (readonly)
+
+      :type: :class:`XrViewfinderState` | None
 
    .. classmethod:: is_running(context)
 

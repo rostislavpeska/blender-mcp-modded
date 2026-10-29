@@ -57,10 +57,10 @@ Node Integer Math Items
    Divide and round result toward zero.
 :DIVIDE_FLOOR: Divide Floor.
 
-   Divide and floor result, the largest integer smaller than or equal A.
+   Divide and floor to the largest integer smaller than or equal to the result.
 :DIVIDE_CEIL: Divide Ceiling.
 
-   Divide and ceil result, the smallest integer greater than or equal A.
+   Divide and ceil to the smallest integer greater than or equal to the result.
 
 
 ----

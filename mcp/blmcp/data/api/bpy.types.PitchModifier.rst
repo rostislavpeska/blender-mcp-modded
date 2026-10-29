@@ -5,6 +5,7 @@ PitchModifier(StripModifier)
 
 base classes --- :class:`bpy_struct`, :class:`StripModifier`
 
+
 .. class:: PitchModifier(StripModifier)
 
    Shift Audio Pitch
@@ -88,6 +89,7 @@ Inherited Properties
    - :class:`StripModifier.type`
    - :class:`StripModifier.mute`
    - :class:`StripModifier.enable`
+   - :class:`StripModifier.show_preview`
    - :class:`StripModifier.show_expanded`
    - :class:`StripModifier.input_mask_type`
    - :class:`StripModifier.mask_time`

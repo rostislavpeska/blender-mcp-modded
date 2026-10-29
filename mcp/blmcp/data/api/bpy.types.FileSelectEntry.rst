@@ -5,6 +5,7 @@ FileSelectEntry(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: FileSelectEntry(bpy_struct)
 
    A file viewable in the File Browser

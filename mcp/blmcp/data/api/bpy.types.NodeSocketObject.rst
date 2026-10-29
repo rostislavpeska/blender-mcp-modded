@@ -5,6 +5,7 @@ NodeSocketObject(NodeSocketStandard)
 
 base classes --- :class:`bpy_struct`, :class:`NodeSocket`, :class:`NodeSocketStandard`
 
+
 .. class:: NodeSocketObject(NodeSocketStandard)
 
    Object socket of a node

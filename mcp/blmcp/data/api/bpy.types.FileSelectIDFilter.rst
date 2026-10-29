@@ -5,6 +5,7 @@ FileSelectIDFilter(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: FileSelectIDFilter(bpy_struct)
 
    Which ID types to show/hide, when browsing a library

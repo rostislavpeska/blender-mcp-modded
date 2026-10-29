@@ -5,6 +5,7 @@ LineStyleGeometryModifier_SinusDisplacement(LineStyleGeometryModifier)
 
 base classes --- :class:`bpy_struct`, :class:`LineStyleModifier`, :class:`LineStyleGeometryModifier`
 
+
 .. class:: LineStyleGeometryModifier_SinusDisplacement(LineStyleGeometryModifier)
 
    Add sinus displacement to stroke backbone geometry

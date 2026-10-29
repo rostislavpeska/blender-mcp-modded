@@ -5,6 +5,7 @@ VertexGroupElement(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: VertexGroupElement(bpy_struct)
 
    Weight value of a vertex in a vertex group

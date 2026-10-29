@@ -5,6 +5,7 @@ Particle(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: Particle(bpy_struct)
 
    Particle in a particle system

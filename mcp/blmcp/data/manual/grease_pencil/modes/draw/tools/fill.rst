@@ -9,10 +9,16 @@ Fill Tool
    :Mode:      Draw Mode
    :Tool:      :menuselection:`Toolbar --> Fill`
 
-The Fill tool is used to automatically fill closed strokes areas.
+The Fill tool creates filled Grease Pencil strokes by detecting enclosed
+regions formed by existing strokes.
+
+Depending on the selected *Fill Solver*, the boundary can be computed from
+the stroke geometry or from a pixel-based representation, allowing fills to
+work with both clean line art and more complex drawings.
 
 The Fill tool uses any of the Grease Pencil *Fill* draw mode brushes.
-Activating a brush from an asset shelf or brush selector will also activate this tool for convenience.
+Activating a brush from an asset shelf or brush selector also activates this
+tool for convenience.
 
 
 Tool Settings
@@ -29,113 +35,162 @@ See :ref:`brush-management-utility-operators` for more information.
 Brush Settings
 --------------
 
-You can also configure the brush main settings exposed on the Tool Settings for convenience.
+You can also configure the brush's main settings exposed in the Tool Settings for convenience.
 
 .. _bpy.types.BrushGpencilSettings.fill_direction:
 
 Direction :kbd:`Ctrl`
-   The portion of area to fill.
+   Determines which side of the detected boundary is filled.
 
    :Normal:
-      Fills the area inside the shape under the cursor.
+      Fill the enclosed region under the cursor.
    :Inverted:
-      When clicking outside the drawing, fills all shapes touching the area under the cursor.
+      Fill the region outside the detected boundary. This is useful for
+      filling the background around a drawing.
+
+Size :guilabel:`Delaunay`
+   Maximum distance used to search for an enclosed region around the cursor.
 
 .. _bpy.types.BrushGpencilSettings.fill_factor:
 
-Precision
-   Multiplier for fill boundary accuracy.
-   Higher values are more accurate but slower.
+Precision :guilabel:`Pixel`
+   Controls the accuracy of the pixel-based boundary detection.
+
+   Higher values produce more accurate fills at the cost of increase computation time.
 
 .. _bpy.types.BrushGpencilSettings.dilate:
 
-Dilate/Contract
-   Size in pixels to expand or shrink the fill area from the strokes boundary.
+Dilate/Contract :guilabel:`Pixel`
+   Expand or shrink the detected fill region relative to the boundary strokes.
 
-Thickness
-   The thickness radius of the boundary stroke in pixels.
+Thickness :guilabel:`Pixel`
+   Thickness of the boundary strokes used by the *Pixel* fill solver.
 
 
 Advanced
 ^^^^^^^^
 
+.. _bpy.types.BrushGpencilSettings.fill_solver:
+
+Fill Solver
+   Method used to detect the fill region.
+
+   :Delaunay:
+      Uses the stroke geometry directly to compute enclosed regions.
+      Produces accurate fills that are independent of viewport resolution.
+   :Pixel:
+      Rasterizes the strokes and performs a flood fill.
+      Useful for sketches or drawings where geometric boundaries are less reliable.
+
+Size Unit :guilabel:`Delaunay`
+   Controls how the brush *Size* is measured.
+
+   :View:
+      Measure the brush *Size* in screen space.
+   :Scene:
+      Measure the brush *Size* in scene units.
+
+      The brush size remains constant regardless of the viewport zoom level.
+      The unit system is configured in the :ref:`Scene Units <bpy.types.UnitSettings>`.
+
 .. _bpy.types.BrushGpencilSettings.fill_draw_mode:
 
 Boundary
-   Sets the type of fill boundary limits calculation to perform.
+   Determines which strokes are considered when detecting fill boundaries.
 
-   :All:    Use the thickness of the strokes and the editing lines together.
-   :Strokes: Use only the thickness of the strokes (ignore edit lines).
-   :Edit Lines:   Use only the edit lines (ignore strokes).
+   :All: Use both strokes and fill guide strokes.
+   :Strokes: Use only strokes.
+   :Edit Lines: Use only fill guide strokes.
 
    .. _bpy.types.BrushGpencilSettings.show_fill_boundary:
 
-   Show Lines (eye icon)
-      Toggle show auxiliary lines to see the fill boundary.
+   :bl-icon:`hide_on` / :bl-icon:`hide_off` Show Lines
+      Display the auxiliary lines used to compute the fill boundary.
 
 .. _bpy.types.BrushGpencilSettings.fill_layer_mode:
 
 Layers
-   Determines which :doc:`Layers </grease_pencil/properties/layers>` are used for boundary strokes.
+   Determines which :doc:`Layers </grease_pencil/properties/layers>`
+   contribute to the fill boundary.
 
-   :Visible: Calculates boundaries based on all visible layers.
-   :Active:  Calculates boundaries based on the active layer.
-   :Layer Above: Calculates boundaries based on the layer above the active layer.
-   :Layer Below: Calculates boundaries based on the layer below the active layer.
-   :All Above: Calculates boundaries based on all layers above the active layer.
-   :All Below: Calculates boundaries based on all layers below the active layer.
+   :Visible: Calculate boundaries using all visible layers.
+   :Active: Calculate boundaries using only the active layer.
+   :Layer Above: Calculate boundaries using the layer above the active layer.
+   :Layer Below: Calculate boundaries using the layer below the active layer.
+   :All Above: Calculate boundaries using all layers above the active layer.
+   :All Below: Calculate boundaries using all layers below the active layer.
 
 .. _bpy.types.BrushGpencilSettings.fill_simplify_level:
 
-Simplify
-   Number of simplify steps to apply to the boundary line.
-   Higher values reduce the accuracy of the final filled area.
+Simplify :guilabel:`Pixel`
+   Reduce the complexity of the detected boundary before filling.
+
+   Higher values improve performance but may reduce the accuracy of the filled region.
 
 .. _bpy.types.BrushGpencilSettings.show_fill:
 .. _bpy.types.BrushGpencilSettings.fill_threshold:
 
 Ignore Transparent
-   When enabled, strokes with transparency does not take into account on fill boundary calculations.
+   Ignore strokes whose material opacity falls below the specified threshold
+   when calculating fill boundaries.
 
-   The value slider controls the threshold to consider a material transparent.
+   The slider controls the opacity threshold used to consider a material transparent.
 
 .. _bpy.types.BrushGpencilSettings.use_fill_limit:
 
-Limit to Viewport
-   When enabled, fill only visible areas in the viewport.
+Limit to Viewport :guilabel:`Pixel`
+   Fill only regions visible in the viewport.
 
 .. _bpy.types.BrushGpencilSettings.use_auto_remove_fill_guides:
 
 Auto-Remove Fill Guides
-   When enabled, after creating a fill, automatically remove the fill guide strokes.
+   Automatically remove manually created fill guide strokes after creating a fill.
+
 
 Gap Closure
 """""""""""
 
-Gap closure lines are automatic temporarily lines that help to close gaps on the strokes.
+Gap closure generates temporary helper lines to automatically close small
+gaps between strokes, allowing open regions to be filled.
+
+.. _bpy.types.BrushGpencilSettings.fill_internal_gaps:
+
+Internal Gaps
+   Stop helper lines at internal gaps.
+
+.. _bpy.types.BrushGpencilSettings.fill_gap_factor:
+
+Detection Factor
+   Controls the sensitivity of gap detection.
+
+   Higher values detect more gaps, which can result in smaller fill regions.
 
 .. _bpy.types.BrushGpencilSettings.extend_stroke_factor:
 
-Size
-   Control the Size of the line extension or the circumference to use to calculate the lines that will close the gaps.
+Size :guilabel:`Pixel`
+   Maximum distance used by the selected gap closure method when creating
+   temporary helper lines.
 
 .. _bpy.types.BrushGpencilSettings.fill_extend_mode:
 
-Mode :kbd:`S`
-   Sets the type of Gap closure method to use.
+Mode :kbd:`S` :guilabel:`Pixel`
+   Method used to generate temporary helper lines.
 
-   :Radius: Uses the Radius of circumference of opened nearest points to calculate a line that close the gap.
-   :Extend: Extends the opened strokes to close gaps.
+   :Radius:
+      Connect nearby open stroke endpoints that fall within the specified radius.
+   :Extend:
+      Extend open stroke ends until they intersect another stroke or reach
+      the specified distance.
 
 .. _bpy.types.BrushGpencilSettings.show_fill_extend:
 
-Visual Aids
-   Toggle show closure lines helper.
+Visual Aids :guilabel:`Pixel`
+   Display the temporary helper lines used for gap closure.
 
 .. _bpy.types.BrushGpencilSettings.use_collide_strokes:
 
-Strokes Collision :kbd:`D`
-   Check if extend lines collide with strokes, stopping the extension if a collision is detected.
+Strokes Collision :kbd:`D` :guilabel:`Pixel`
+   Stop extending helper lines when they intersect an existing stroke.
 
 
 Usage

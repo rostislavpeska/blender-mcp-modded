@@ -150,7 +150,7 @@ Interpolation
 
       For more info and a few live demos,
       see `easings.net <https://easings.net>`__ and
-      `Robert Penner's Easing Functions <http://robertpenner.com/easing>`__.
+      `Robert Penner's Easing Functions <https://robertpenner.com/easing>`__.
 
 
    .. rubric:: Dynamic Effects

@@ -5,6 +5,7 @@ PointCloud(ID)
 
 base classes --- :class:`bpy_struct`, :class:`ID`
 
+
 .. class:: PointCloud(ID)
 
    Point cloud data-block

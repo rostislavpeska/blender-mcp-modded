@@ -5,6 +5,7 @@ FloatColorAttributeValue(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: FloatColorAttributeValue(bpy_struct)
 
    Color value in geometry attribute

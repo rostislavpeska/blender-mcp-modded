@@ -21,7 +21,8 @@ from typing import Literal, NamedTuple
 # MCP messages are limited to 1,048,576 bytes (1 MB). The image is base64-encoded
 # which expands data by 4/3. A typical full-resolution PNG screenshot exceeds
 # this, so we downscale iteratively until it fits.
-_IMAGE_SIZE_LIMIT_IN_BYTES = (1_048_576 * 3) // 4
+# Subtract 2048 for 2 KiB headroom for JSON envelope.
+_IMAGE_SIZE_LIMIT_IN_BYTES = ((1_048_576 - 2048) * 3) // 4
 
 # Rarely changes, regenerate with:
 # `list(bpy.types.Area.bl_rna.properties["ui_type"].enum_items.keys())`

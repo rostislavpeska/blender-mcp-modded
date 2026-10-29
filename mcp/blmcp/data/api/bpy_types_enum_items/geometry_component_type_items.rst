@@ -18,3 +18,6 @@ Geometry Component Type Items
 :GREASEPENCIL: Grease Pencil.
 
    Grease Pencil component containing layers and curves data.
+:VOLUME: Volume.
+
+   Volume component containing volume grids.

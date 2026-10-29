@@ -5,6 +5,7 @@ AnimData(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: AnimData(bpy_struct)
 
    Animation data for data-block

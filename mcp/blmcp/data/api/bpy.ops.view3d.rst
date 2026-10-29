@@ -239,6 +239,30 @@ View3D Operators
 
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
+.. function:: ndof_all()
+
+   Pan and rotate the view with the 3D mouse
+
+   :return: Result of the operator call.
+   :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
+.. function:: ndof_orbit()
+
+   Orbit the view using the 3D mouse
+
+   :return: Result of the operator call.
+   :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
+.. function:: ndof_orbit_zoom()
+
+   Orbit and zoom the view using the 3D mouse
+
+   :return: Result of the operator call.
+   :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
+.. function:: ndof_pan()
+
+   Pan the view with the 3D mouse
+
+   :return: Result of the operator call.
+   :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
 .. function:: object_as_camera()
 
    Set the active object as the active camera for this view or scene

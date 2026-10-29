@@ -5,6 +5,7 @@ LightProbeSphere(LightProbe)
 
 base classes --- :class:`bpy_struct`, :class:`ID`, :class:`LightProbe`
 
+
 .. class:: LightProbeSphere(LightProbe)
 
    Light probe that captures precise lighting from all directions at a single point in space

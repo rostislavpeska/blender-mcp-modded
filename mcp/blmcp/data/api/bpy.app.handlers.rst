@@ -248,7 +248,7 @@ Below is an example of a mesh that is altered from a handler:
 
 .. data:: render_stats
 
-   on printing render statistics. Accepts one argument: the render stats (render/saving time plus in background mode frame/used [peak] memory).
+   on printing render statistics. Accepts one argument: the render progress as a string containing current frame, current sample, render time and saving time.
    
    :type: list[Callable[[str], None]]
 

@@ -27,7 +27,7 @@ also possible to reuse a UV map for multiple textures.
 .. _bpy.types.MeshUVLoopLayer.active_render:
 
 :bl-icon:`restrict_render_off`/:bl-icon:`restrict_render_on` Active Render
-   Marks the UV map as the the default one for rendering. The *Active Render* UV map is used for:
+   Marks the UV map as the default one for rendering. The *Active Render* UV map is used for:
 
    - The :ref:`UV Pass <bpy.types.ViewLayer.use_pass_uv>` for compositing
    - The :doc:`/render/shader_nodes/input/texture_coordinate` for material shading.
@@ -89,7 +89,7 @@ Editing
 
 .. reference::
 
-   :Mode:      Object Mode and Edit Mode
+   :Mode:      Object Mode
    :Menu:      :menuselection:`Object --> Transform --> Move/Scale Texture Space`
 
 Click one of these menu items, then move the mouse to adjust the texture space

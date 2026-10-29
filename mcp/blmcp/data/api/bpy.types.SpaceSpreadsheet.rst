@@ -5,6 +5,7 @@ SpaceSpreadsheet(Space)
 
 base classes --- :class:`bpy_struct`, :class:`Space`
 
+
 .. class:: SpaceSpreadsheet(Space)
 
    Spreadsheet space data

@@ -84,7 +84,7 @@ This example is a good starting point to the ``blender_manifest.toml`` that shou
    # website = "https://extensions.blender.org/add-ons/my-example-package/"
 
    # # Optional: tag list defined by Blender and server, see:
-   # # https://docs.blender.org/manual/en/dev/advanced/extensions/tags.html
+   # # https://docs.blender.org/manual/en/latest/advanced/extensions/tags.html
    # tags = ["Animation", "Sequencer"]
 
    blender_version_min = "4.2.0"
@@ -93,7 +93,7 @@ This example is a good starting point to the ``blender_manifest.toml`` that shou
    # blender_version_max = "5.1.0"
 
    # License conforming to https://spdx.org/licenses/ (use "SPDX: prefix)
-   # https://docs.blender.org/manual/en/dev/advanced/extensions/licenses.html
+   # https://docs.blender.org/manual/en/latest/advanced/extensions/licenses.html
    license = [
      "SPDX:GPL-3.0-or-later",
    ]
@@ -108,7 +108,7 @@ This example is a good starting point to the ``blender_manifest.toml`` that shou
    # # Other supported platforms: "windows-arm64", "macos-x64"
 
    # # Optional: bundle 3rd party Python modules.
-   # # https://docs.blender.org/manual/en/dev/advanced/extensions/python_wheels.html
+   # # https://docs.blender.org/manual/en/latest/advanced/extensions/python_wheels.html
    # wheels = [
    #   "./wheels/hexdump-3.3-py3-none-any.whl",
    #   "./wheels/jsmin-3.0.1-py3-none-any.whl",
@@ -122,7 +122,7 @@ This example is a good starting point to the ``blender_manifest.toml`` that shou
    # # * microphone (to capture audio)
    # #
    # # If using network, remember to also check `bpy.app.online_access`
-   # # https://docs.blender.org/manual/en/dev/advanced/extensions/addons.html#internet-access
+   # # https://docs.blender.org/manual/en/latest/advanced/extensions/addons.html#internet-access
    # #
    # # For each permission it is important to also specify the reason why it is required.
    # # Keep this a single short sentence without a period (.) at the end.
@@ -134,7 +134,7 @@ This example is a good starting point to the ``blender_manifest.toml`` that shou
    # clipboard = "Copy and paste bone transforms"
 
    # # Optional: advanced build settings.
-   # # https://docs.blender.org/manual/en/dev/advanced/extensions/command_line_arguments.html#command-line-args-extension-build
+   # # https://docs.blender.org/manual/en/latest/advanced/command_line/extension_arguments.html#command-line-args-extension-build
    # [build]
    # # These are the default build excluded patterns.
    # # You only need to edit them if you want different options.

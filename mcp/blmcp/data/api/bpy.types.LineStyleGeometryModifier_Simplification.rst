@@ -5,6 +5,7 @@ LineStyleGeometryModifier_Simplification(LineStyleGeometryModifier)
 
 base classes --- :class:`bpy_struct`, :class:`LineStyleModifier`, :class:`LineStyleGeometryModifier`
 
+
 .. class:: LineStyleGeometryModifier_Simplification(LineStyleGeometryModifier)
 
    Simplify the stroke set

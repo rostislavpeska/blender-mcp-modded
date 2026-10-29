@@ -5,6 +5,7 @@ TextLine(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: TextLine(bpy_struct)
 
    Line of text in a Text data-block

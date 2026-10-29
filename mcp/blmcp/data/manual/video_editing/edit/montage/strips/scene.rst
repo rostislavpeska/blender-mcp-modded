@@ -51,6 +51,9 @@ Options
 Scene
    A :ref:`ui-data-block` to select or create the scene to render from.
 
+View Layer
+   :ref:`View Layer <bpy.types.ViewLayer>` from the selected scene used for rendering.
+
 Input
    Input type to use for the Scene strip.
 

@@ -8,6 +8,9 @@
 
    math/index.rst
    vector/index.rst
+   matrix/index.rst
+   rotation/index.rst
+   text/index.rst
 
 ----------
 
@@ -22,6 +25,7 @@
 .. toctree::
    :maxdepth: 1
 
+   implicit_conversion.rst
    split.rst
    switch.rst
    index_switch.rst

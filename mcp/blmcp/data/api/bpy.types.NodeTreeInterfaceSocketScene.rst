@@ -5,6 +5,7 @@ NodeTreeInterfaceSocketScene(NodeTreeInterfaceSocket)
 
 base classes --- :class:`bpy_struct`, :class:`NodeTreeInterfaceItem`, :class:`NodeTreeInterfaceSocket`
 
+
 .. class:: NodeTreeInterfaceSocketScene(NodeTreeInterfaceSocket)
 
    Scene socket of a node

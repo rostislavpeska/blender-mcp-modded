@@ -56,6 +56,33 @@ def main(params: Params) -> Result:
     if not os.path.exists(path):
         return Result(status="error", message="File not found: %s" % path, source=src)
 
+    # If the file is a ZIP (e.g. a Sketchfab glTF archive), extract it and import
+    # the inner .glb/.gltf in place so its textures/bin resolve.
+    with open(path, "rb") as _fh:
+        _magic = _fh.read(4)
+    if _magic == b"PK\x03\x04":
+        import zipfile
+        import shutil
+        extract_dir = os.path.join(tempfile.gettempdir(), "mcp_canon_zip")
+        shutil.rmtree(extract_dir, ignore_errors=True)
+        os.makedirs(extract_dir, exist_ok=True)
+        with zipfile.ZipFile(path) as _zf:
+            _zf.extractall(extract_dir)
+        inner = None
+        for pref in (".glb", ".gltf"):
+            for root, _dirs, files in os.walk(extract_dir):
+                for f in files:
+                    if f.lower().endswith(pref):
+                        inner = os.path.join(root, f)
+                        break
+                if inner:
+                    break
+            if inner:
+                break
+        if inner is None:
+            return Result(status="error", message="No .gltf/.glb inside the ZIP archive", source=src)
+        path = inner
+
     if bpy.context.object and bpy.context.object.mode != 'OBJECT':
         bpy.ops.object.mode_set(mode='OBJECT')
 
@@ -86,9 +113,11 @@ def main(params: Params) -> Result:
     if len(meshes) > 1:
         bpy.ops.object.join()
     obj = bpy.context.view_layer.objects.active
-    # Drop leftover import artifacts (e.g. the glTF root empty).
-    for x in new:
-        if x is not obj and x.name in bpy.data.objects and x.type == 'EMPTY' and not x.children:
+    # Drop leftover import artifacts (e.g. the glTF root empty). Re-scan live
+    # objects rather than the pre-join `new` list — joined-away meshes no longer
+    # exist and touching their stale references raises StructRNA-removed.
+    for x in [o for o in bpy.data.objects if o not in before and o is not obj]:
+        if x.type == 'EMPTY' and not x.children:
             bpy.data.objects.remove(x, do_unlink=True)
 
     bpy.ops.object.select_all(action='DESELECT')

@@ -23,7 +23,7 @@ Mask Layers
 
    Mask Layer panel.
 
-Mask layers consists of one or several splines and used to "grouped" operation on splines.
+Mask layers consist of one or several splines and used to "grouped" operation on splines.
 Layers can be used to create complex shapes and to define how the splines interact with each other.
 Splines belonging to the same layer can be animated together, for example by an item
 from motion tracker footage.
@@ -58,6 +58,18 @@ Holes
           :width: 320px
 
           The Holes option example.
+
+
+.. _bpy.ops.mask.move_to_layer:
+
+Move to Layer
+-------------
+
+.. reference::
+
+   :Shortcut:        :kbd:`M`
+
+Moves the active spline to a different layer or creates a new layer.
 
 
 Example

@@ -30,6 +30,7 @@ Shared Enum Items
    space_image_mode_all_items
    space_action_mode_items
    fileselect_params_sort_items
+   asset_access_items
    region_type_items
    region_panel_category_items
    object_modifier_type_items
@@ -61,6 +62,7 @@ Shared Enum Items
    stereo3d_display_items
    stereo3d_anaglyph_type_items
    stereo3d_interlace_type_items
+   exr_codec_items
    color_sets_items
    beztriple_keyframe_type_items
    beztriple_interpolation_mode_items
@@ -82,7 +84,7 @@ Shared Enum Items
    operator_type_flag_items
    operator_return_items
    operator_property_tag_items
-   brush_automasking_flag_items
+   shared_automasking_flag_items
    brush_sculpt_brush_type_items
    brush_vertex_brush_type_items
    brush_weight_brush_type_items
@@ -110,6 +112,7 @@ Shared Enum Items
    rigidbody_object_shape_items
    rigidbody_constraint_type_items
    object_axis_items
+   object_axis_flip_items
    bake_pass_type_items
    bake_pass_filter_type_items
    keymap_propvalue_items
@@ -164,6 +167,7 @@ Shared Enum Items
    context_mode_items
    preference_section_items
    attribute_type_items
+   attrtype_items
    attr_storage_type_items
    color_attribute_type_items
    attribute_type_with_auto_items
@@ -195,6 +199,7 @@ Shared Enum Items
    curve_normal_mode_items
    geometry_nodes_gizmo_color_items
    geometry_nodes_linear_gizmo_draw_style_items
+   asset_import_method_items
    particle_edit_hair_brush_items
    particle_edit_disconnected_hair_brush_items
    keyframe_paste_offset_items

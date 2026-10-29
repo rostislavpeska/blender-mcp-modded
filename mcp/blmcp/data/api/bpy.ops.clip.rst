@@ -142,7 +142,7 @@ Clip Operators
 
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `startup/bl_operators/clip.py\:530 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/clip.py#L530>`__
+   :File: `startup/bl_operators/clip.py\:520 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/clip.py#L520>`__
 
 .. function:: copy_tracks()
 
@@ -533,7 +533,7 @@ Clip Operators
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
 .. function:: rebuild_proxy()
 
-   Rebuild all selected proxies and timecode indices in the background
+   Rebuild all selected proxies in the background
 
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
@@ -765,7 +765,7 @@ Clip Operators
 
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `startup/bl_operators/clip.py\:420 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/clip.py#L420>`__
+   :File: `startup/bl_operators/clip.py\:410 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/clip.py#L410>`__
 
 .. function:: setup_tracking_scene()
 
@@ -773,7 +773,7 @@ Clip Operators
 
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `startup/bl_operators/clip.py\:936 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/clip.py#L936>`__
+   :File: `startup/bl_operators/clip.py\:926 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/clip.py#L926>`__
 
 .. function:: slide_marker(*, offset=(0.0, 0.0))
 
@@ -870,7 +870,7 @@ Clip Operators
 
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `startup/bl_operators/clip.py\:965 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/clip.py#L965>`__
+   :File: `startup/bl_operators/clip.py\:955 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/clip.py#L955>`__
 
 .. function:: track_settings_to_track()
 
@@ -878,7 +878,7 @@ Clip Operators
 
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `startup/bl_operators/clip.py\:1014 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/clip.py#L1014>`__
+   :File: `startup/bl_operators/clip.py\:1004 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/clip.py#L1004>`__
 
 .. function:: track_to_empty()
 
@@ -933,6 +933,12 @@ Clip Operators
 .. function:: view_center_cursor()
 
    Center the view so that the cursor is in the middle of the view
+
+   :return: Result of the operator call.
+   :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
+.. function:: view_ndof()
+
+   Use a 3D mouse device to pan/zoom the view
 
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]

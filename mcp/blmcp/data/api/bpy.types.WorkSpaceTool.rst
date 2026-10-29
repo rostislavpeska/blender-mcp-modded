@@ -5,6 +5,7 @@ WorkSpaceTool(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: WorkSpaceTool(bpy_struct)
 
 

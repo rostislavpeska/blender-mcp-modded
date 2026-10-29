@@ -297,6 +297,16 @@ Base Mesh Type
       :type: :class:`bmesh.types.BMVertSeq`
 
 
+   .. details:: Special Methods
+
+      .. method:: __hash__()
+
+         :rtype: int
+
+      .. method:: __repr__()
+
+         :rtype: str
+
 
 
 Mesh Elements
@@ -483,6 +493,29 @@ Mesh Elements
       
       :type: bool
 
+
+   .. details:: Special Methods
+
+      .. method:: __getitem__(key)
+
+         :param key: Index or key.
+         :type key: int
+         :rtype: float
+
+      .. method:: __hash__()
+
+         :rtype: int
+
+      .. method:: __repr__()
+
+         :rtype: str
+
+      .. method:: __setitem__(key, value)
+
+         :param key: Index or key.
+         :type key: int
+         :param value: Value to assign.
+         :type value: object
 
 
 
@@ -692,6 +725,29 @@ Mesh Elements
       
       :type: :class:`bmesh.types.BMElemSeq`\ [:class:`bmesh.types.BMVert`]
 
+
+   .. details:: Special Methods
+
+      .. method:: __getitem__(key)
+
+         :param key: Index or key.
+         :type key: int
+         :rtype: float
+
+      .. method:: __hash__()
+
+         :rtype: int
+
+      .. method:: __repr__()
+
+         :rtype: str
+
+      .. method:: __setitem__(key, value)
+
+         :param key: Index or key.
+         :type key: int
+         :param value: Value to assign.
+         :type value: object
 
 
 
@@ -942,6 +998,29 @@ Mesh Elements
       :type: :class:`bmesh.types.BMElemSeq`\ [:class:`bmesh.types.BMVert`]
 
 
+   .. details:: Special Methods
+
+      .. method:: __getitem__(key)
+
+         :param key: Index or key.
+         :type key: int
+         :rtype: float
+
+      .. method:: __hash__()
+
+         :rtype: int
+
+      .. method:: __repr__()
+
+         :rtype: str
+
+      .. method:: __setitem__(key, value)
+
+         :param key: Index or key.
+         :type key: int
+         :param value: Value to assign.
+         :type value: object
+
 
 
 .. class:: BMLoop
@@ -1125,6 +1204,29 @@ Mesh Elements
       :type: :class:`bmesh.types.BMVert`
 
 
+   .. details:: Special Methods
+
+      .. method:: __getitem__(key)
+
+         :param key: Index or key.
+         :type key: int
+         :rtype: float
+
+      .. method:: __hash__()
+
+         :rtype: int
+
+      .. method:: __repr__()
+
+         :rtype: str
+
+      .. method:: __setitem__(key, value)
+
+         :param key: Index or key.
+         :type key: int
+         :param value: Value to assign.
+         :type value: object
+
 
 
 Sequence Accessors
@@ -1154,6 +1256,28 @@ Sequence Accessors
          Running this on sequences besides :class:`bmesh.types.BMesh.verts`, :class:`bmesh.types.BMesh.edges`, :class:`bmesh.types.BMesh.faces`
          works but won't result in each element having a valid index, instead its order in the sequence will be set.
 
+
+   .. details:: Special Methods
+
+      .. method:: __contains__(item)
+
+         :param item: Item to test for membership.
+         :type item: object
+         :rtype: bool
+
+      .. method:: __getitem__(key)
+
+         :param key: Index or key.
+         :type key: int
+         :rtype: :class:`BMVert` | :class:`BMEdge` | :class:`BMFace`
+
+      .. method:: __iter__()
+
+         :rtype: :class:`BMElemSeq`
+
+      .. method:: __len__()
+
+         :rtype: int
 
 
 
@@ -1230,6 +1354,28 @@ Sequence Accessors
       
       :type: :class:`bmesh.types.BMLayerAccessVert`
 
+
+   .. details:: Special Methods
+
+      .. method:: __contains__(item)
+
+         :param item: Item to test for membership.
+         :type item: object
+         :rtype: bool
+
+      .. method:: __getitem__(key)
+
+         :param key: Index or key.
+         :type key: int
+         :rtype: :class:`BMVert`
+
+      .. method:: __iter__()
+
+         :rtype: :class:`BMVertSeq`
+
+      .. method:: __len__()
+
+         :rtype: int
 
 
 
@@ -1318,6 +1464,28 @@ Sequence Accessors
       
       :type: :class:`bmesh.types.BMLayerAccessEdge`
 
+
+   .. details:: Special Methods
+
+      .. method:: __contains__(item)
+
+         :param item: Item to test for membership.
+         :type item: object
+         :rtype: bool
+
+      .. method:: __getitem__(key)
+
+         :param key: Index or key.
+         :type key: int
+         :rtype: :class:`BMEdge`
+
+      .. method:: __iter__()
+
+         :rtype: :class:`BMEdgeSeq`
+
+      .. method:: __len__()
+
+         :rtype: int
 
 
 
@@ -1414,6 +1582,28 @@ Sequence Accessors
       :type: :class:`bmesh.types.BMLayerAccessFace`
 
 
+   .. details:: Special Methods
+
+      .. method:: __contains__(item)
+
+         :param item: Item to test for membership.
+         :type item: object
+         :rtype: bool
+
+      .. method:: __getitem__(key)
+
+         :param key: Index or key.
+         :type key: int
+         :rtype: :class:`BMFace`
+
+      .. method:: __iter__()
+
+         :rtype: :class:`BMFaceSeq`
+
+      .. method:: __len__()
+
+         :rtype: int
+
 
 
 .. class:: BMLoopSeq
@@ -1432,6 +1622,16 @@ Sequence Accessors
 
    Internal BMesh type for looping over verts/faces/edges,
    used for iterating over :class:`bmesh.types.BMElemSeq` types.
+
+   .. details:: Special Methods
+
+      .. method:: __iter__()
+
+         :rtype: :class:`BMIter`
+
+      .. method:: __next__()
+
+         :rtype: Any
 
 
 
@@ -1484,10 +1684,42 @@ Selection History
       :type: :class:`bmesh.types.BMVert` | :class:`bmesh.types.BMEdge` | :class:`bmesh.types.BMFace` | None
 
 
+   .. details:: Special Methods
+
+      .. method:: __contains__(item)
+
+         :param item: Item to test for membership.
+         :type item: object
+         :rtype: bool
+
+      .. method:: __getitem__(key)
+
+         :param key: Index or key.
+         :type key: int
+         :rtype: :class:`BMVert` | :class:`BMEdge` | :class:`BMFace`
+
+      .. method:: __iter__()
+
+         :rtype: :class:`BMEditSelSeq`
+
+      .. method:: __len__()
+
+         :rtype: int
+
 
 
 .. class:: BMEditSelIter
 
+
+   .. details:: Special Methods
+
+      .. method:: __iter__()
+
+         :rtype: :class:`BMEditSelIter`
+
+      .. method:: __next__()
+
+         :rtype: Any
 
 
 
@@ -1827,6 +2059,28 @@ Custom-Data Layer Access
       :type: bool
 
 
+   .. details:: Special Methods
+
+      .. method:: __contains__(item)
+
+         :param item: Item to test for membership.
+         :type item: object
+         :rtype: bool
+
+      .. method:: __getitem__(key)
+
+         :param key: Index or key.
+         :type key: int
+         :rtype: :class:`BMLayerItem`
+
+      .. method:: __iter__()
+
+         :rtype: :class:`BMLayerCollection`
+
+      .. method:: __len__()
+
+         :rtype: int
+
 
 
 .. class:: BMLayerItem
@@ -1920,6 +2174,31 @@ Custom-Data Layer Types
       :return: The weights that influence this vertex
       :rtype: list[float]
 
+
+   .. details:: Special Methods
+
+      .. method:: __contains__(item)
+
+         :param item: Item to test for membership.
+         :type item: object
+         :rtype: bool
+
+      .. method:: __getitem__(key)
+
+         :param key: Index or key.
+         :type key: int
+         :rtype: float
+
+      .. method:: __len__()
+
+         :rtype: int
+
+      .. method:: __setitem__(key, value)
+
+         :param key: Index or key.
+         :type key: int
+         :param value: Value to assign.
+         :type value: object
 
 
 

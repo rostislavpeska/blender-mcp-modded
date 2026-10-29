@@ -31,6 +31,9 @@ Background
    When sampling outside the defined region of the grid, this value will be
    returned instead of zero.
 
+Update Inactive
+   Override all values stored for inactive voxels as well.
+
 
 Properties
 ==========

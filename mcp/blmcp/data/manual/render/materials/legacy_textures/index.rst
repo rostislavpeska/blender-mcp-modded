@@ -13,21 +13,9 @@
    introduction.rst
    colors.rst
 
-
-Types
-=====
+-----
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
 
-   types/blend.rst
-   types/clouds.rst
-   types/distorted_noise.rst
-   types/image_movie.rst
-   types/magic.rst
-   types/marble.rst
-   types/musgrave.rst
-   types/noise.rst
-   types/stucci.rst
-   types/voronoi.rst
-   types/wood.rst
+   types/index.rst

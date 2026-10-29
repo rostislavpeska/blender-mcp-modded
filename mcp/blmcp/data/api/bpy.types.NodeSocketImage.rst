@@ -5,6 +5,7 @@ NodeSocketImage(NodeSocketStandard)
 
 base classes --- :class:`bpy_struct`, :class:`NodeSocket`, :class:`NodeSocketStandard`
 
+
 .. class:: NodeSocketImage(NodeSocketStandard)
 
    Image socket of a node

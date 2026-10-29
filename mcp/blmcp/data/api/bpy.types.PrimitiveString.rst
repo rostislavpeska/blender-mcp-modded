@@ -5,6 +5,7 @@ PrimitiveString(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: PrimitiveString(bpy_struct)
 
    RNA wrapped string

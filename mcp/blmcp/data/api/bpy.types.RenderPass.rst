@@ -5,6 +5,7 @@ RenderPass(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: RenderPass(bpy_struct)
 
 
@@ -34,9 +35,9 @@ base class --- :class:`bpy_struct`
 
    .. attribute:: rect
 
-      (in [-inf, inf], default 0.0)
+      (dynamic array, in [-inf, inf], default 0.0)
 
-      :type: float
+      :type: :class:`bpy_prop_array`\ [float]
 
    .. data:: view_id
 

@@ -5,6 +5,7 @@ RemeshModifier(Modifier)
 
 base classes --- :class:`bpy_struct`, :class:`Modifier`
 
+
 .. class:: RemeshModifier(Modifier)
 
    Generate a new surface with regular topology that follows the shape of the input mesh

@@ -5,6 +5,7 @@ StucciTexture(Texture)
 
 base classes --- :class:`bpy_struct`, :class:`ID`, :class:`Texture`
 
+
 .. class:: StucciTexture(Texture)
 
    Procedural noise texture

@@ -16,7 +16,7 @@ the overall fluid motion.
 .. seealso::
 
    Fluid noise is an implementation of `Wavelet Turbulence for Fluid Simulation
-   <http://www.cs.cornell.edu/~tedkim/WTURB/>`__.
+   <https://www.cs.cornell.edu/~tedkim/WTURB/>`__.
 
 Besides enabling parts of the interface, checking *Noise* lets the cache know
 which simulation data to read. If, for example, *Noise* is enabled but

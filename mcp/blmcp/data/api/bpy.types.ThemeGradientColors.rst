@@ -5,6 +5,7 @@ ThemeGradientColors(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: ThemeGradientColors(bpy_struct)
 
    Theme settings for background colors and gradient

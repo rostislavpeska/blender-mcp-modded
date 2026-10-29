@@ -5,8 +5,22 @@ AssetShelf(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
-subclasses --- 
-:class:`IMAGE_AST_brush_paint`, :class:`NODE_AST_compositor`, :class:`VIEW3D_AST_brush_gpencil_paint`, :class:`VIEW3D_AST_brush_gpencil_sculpt`, :class:`VIEW3D_AST_brush_gpencil_vertex`, :class:`VIEW3D_AST_brush_gpencil_weight`, :class:`VIEW3D_AST_brush_sculpt`, :class:`VIEW3D_AST_brush_sculpt_curves`, :class:`VIEW3D_AST_brush_texture_paint`, :class:`VIEW3D_AST_brush_vertex_paint`, :class:`VIEW3D_AST_brush_weight_paint`, :class:`VIEW3D_AST_pose_library`
+.. toctree::
+   :caption: Subclasses
+   :maxdepth: 1
+
+   bpy.types.IMAGE_AST_brush_paint.rst
+   bpy.types.NODE_AST_compositor.rst
+   bpy.types.VIEW3D_AST_brush_gpencil_paint.rst
+   bpy.types.VIEW3D_AST_brush_gpencil_sculpt.rst
+   bpy.types.VIEW3D_AST_brush_gpencil_vertex.rst
+   bpy.types.VIEW3D_AST_brush_gpencil_weight.rst
+   bpy.types.VIEW3D_AST_brush_sculpt.rst
+   bpy.types.VIEW3D_AST_brush_sculpt_curves.rst
+   bpy.types.VIEW3D_AST_brush_texture_paint.rst
+   bpy.types.VIEW3D_AST_brush_vertex_paint.rst
+   bpy.types.VIEW3D_AST_brush_weight_paint.rst
+   bpy.types.VIEW3D_AST_pose_library.rst
 
 .. class:: AssetShelf(bpy_struct)
 
@@ -21,11 +35,13 @@ subclasses ---
       - ``LOCAL``
         Current File -- Show the assets currently available in this Blender session.
       - ``ESSENTIALS``
-        Essentials -- Show the basic building blocks and utilities coming with Blender.
+        Essentials -- Show basic building blocks and utilities coming with Blender.
+      - ``ONLINE_ESSENTIALS``
+        Online Essentials -- Show additional building blocks and utilities available online.
       - ``CUSTOM``
         Custom -- Show assets from the asset libraries configured in the Preferences.
 
-      :type: Literal['ALL', 'LOCAL', 'ESSENTIALS', 'CUSTOM']
+      :type: Literal['ALL', 'LOCAL', 'ESSENTIALS', 'ONLINE_ESSENTIALS', 'CUSTOM']
 
    .. attribute:: bl_activate_operator
 
@@ -304,6 +320,7 @@ subclasses ---
 
       If this method returns a non-null output, the asset shelf will be visible
 
+      :param context: The context
       :type context: :class:`Context` | None
       :rtype: bool
 
@@ -311,6 +328,7 @@ subclasses ---
 
       Determine if an asset should be visible in the asset shelf. If this method returns a non-null output, the asset will be visible.
 
+      :param asset: The asset to test for visibility
       :type asset: :class:`AssetRepresentation` | None
       :rtype: bool
 
@@ -325,8 +343,11 @@ subclasses ---
 
       Draw UI elements into the context menu UI layout displayed on right click
 
+      :param context: The context
       :type context: :class:`Context` | None
+      :param asset: The active asset
       :type asset: :class:`AssetRepresentation` | None
+      :param layout: The layout to draw into
       :type layout: :class:`UILayout` | None
 
    .. classmethod:: bl_rna_get_subclass(id, default=None, /)

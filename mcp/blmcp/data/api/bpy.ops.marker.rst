@@ -132,7 +132,7 @@ Marker Operators
    Select markers on and left/right of the current frame
 
    :param mode: Mode, (optional)
-   :type mode: Literal['LEFT', 'RIGHT']
+   :type mode: Literal['LEFT', 'RIGHT', 'CLICK_SIDE']
    :param extend: Extend Select, (optional)
    :type extend: bool
    :return: Result of the operator call.

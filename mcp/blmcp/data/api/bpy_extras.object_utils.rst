@@ -88,9 +88,12 @@ bpy_extras submodule (bpy_extras.object_utils)
 .. class:: AddObjectHelper
 
 
-   .. method:: align_update_callback(_context)
+   .. method:: align_update_callback(context)
 
       Update callback for the align property, resets rotation for world alignment.
+      
+      :param context: The context.
+      :type context: :class:`bpy.types.Context`
 
    .. classmethod:: poll(context)
 

@@ -5,6 +5,7 @@ SpreadsheetTable(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: SpreadsheetTable(bpy_struct)
 
    Persistent data associated with a table

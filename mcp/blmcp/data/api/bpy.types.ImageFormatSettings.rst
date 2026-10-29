@@ -5,6 +5,7 @@ ImageFormatSettings(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: ImageFormatSettings(bpy_struct)
 
    Settings for image formats
@@ -57,6 +58,12 @@ base class --- :class:`bpy_struct`
 
       :type: :class:`ColorManagedDisplaySettings` | None
 
+   .. attribute:: exr_codec
+
+      Compression codec settings for OpenEXR (default ``'NONE'``)
+
+      :type: Literal[:ref:`rna_enum_exr_codec_items`]
+
    .. attribute:: file_format
 
       File format to save the rendered images as (default ``'PNG'``)
@@ -102,6 +109,12 @@ base class --- :class:`bpy_struct`
    .. attribute:: use_cineon_log
 
       Convert to logarithmic color space (default False)
+
+      :type: bool
+
+   .. attribute:: use_exr_interleave
+
+      Use legacy interleaved storage of views, layers and passes for compatibility with applications that do not support more efficient multi-part OpenEXR files. (default False)
 
       :type: bool
 

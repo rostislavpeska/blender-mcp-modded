@@ -8,14 +8,14 @@ Brush Settings
    :Mode:      Sculpt Mode
    :Panel:     :menuselection:`Sidebar --> Tool --> Brush Settings`
 
-Radius
-   This option controls the radius of the brush, measured in pixels.
+Size
+   This option controls the diameter of the brush, measured in pixels.
    :kbd:`F` allows you to change the brush size interactively by
    dragging the mouse and then :kbd:`LMB` (the texture of the brush should be visible inside the circle).
    Typing a number then enter while using :kbd:`F` allows you to enter the size numerically.
 
    :bl-icon:`stylus_pressure` (Size Pressure)
-      Adjusts the radius based on the stylus pressure when using a :ref:`Graphics Tablet <hardware-tablet>`.
+      Adjusts the brush size based on the stylus pressure when using a :ref:`Graphics Tablet <hardware-tablet>`.
 
 Strength
    Controls how much each application of the brush affects the model.

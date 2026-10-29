@@ -5,6 +5,7 @@ ShaderFxGlow(ShaderFx)
 
 base classes --- :class:`bpy_struct`, :class:`ShaderFx`
 
+
 .. class:: ShaderFxGlow(ShaderFx)
 
    Glow effect

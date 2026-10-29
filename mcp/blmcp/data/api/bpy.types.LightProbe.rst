@@ -5,8 +5,13 @@ LightProbe(ID)
 
 base classes --- :class:`bpy_struct`, :class:`ID`
 
-subclasses --- 
-:class:`LightProbePlane`, :class:`LightProbeSphere`, :class:`LightProbeVolume`
+.. toctree::
+   :caption: Subclasses
+   :maxdepth: 1
+
+   bpy.types.LightProbePlane.rst
+   bpy.types.LightProbeSphere.rst
+   bpy.types.LightProbeVolume.rst
 
 .. class:: LightProbe(ID)
 

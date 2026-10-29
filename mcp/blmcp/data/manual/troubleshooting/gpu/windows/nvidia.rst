@@ -3,7 +3,7 @@
 Troubleshooting Windows -- NVIDIA
 *********************************
 
-.. include:: ../common/introduction.rst
+.. include:: ../_common/introduction.rst
    :start-line: 1
 
 On Windows, drivers are provided by the graphics card manufacturer (NVIDIA). Windows Update automatically installs
@@ -14,7 +14,7 @@ the official drivers.
 
 `Download Latest NVIDIA Drivers <https://www.nvidia.com/Download/index.aspx>`__
 
-.. include:: ../common/laptops.rst
+.. include:: ../_common/laptops.rst
    :start-line: 1
-.. include:: ../common/other.rst
+.. include:: ../_common/other.rst
    :start-line: 1

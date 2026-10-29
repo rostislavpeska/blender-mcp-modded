@@ -5,6 +5,7 @@ NodeTreeInterfaceSocketSound(NodeTreeInterfaceSocket)
 
 base classes --- :class:`bpy_struct`, :class:`NodeTreeInterfaceItem`, :class:`NodeTreeInterfaceSocket`
 
+
 .. class:: NodeTreeInterfaceSocketSound(NodeTreeInterfaceSocket)
 
    Sound socket of a node

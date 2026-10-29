@@ -5,6 +5,12 @@ Font Drawing (blf)
 
 This module provides access to Blender's text drawing functions.
 
+.. toctree::
+   :maxdepth: 1
+   :caption: Submodules
+
+   blf.types.rst
+
 
 Hello World Text Example
 ++++++++++++++++++++++++
@@ -46,7 +52,7 @@ This can be done by binding an image buffer (:mod:`imbuf`) to the font's ID.
    :param display_name: Ignored (formerly a color-space transform name), kept for backwards compatibility.
    :type display_name: str | None
    :return: The BLF ImBuf context manager.
-   :rtype: BLFImBufContext
+   :rtype: :class:`blf.types.BLFImBufContext`
 
 
 .. function:: clipping(fontid, xmin, ymin, xmax, ymax)
@@ -229,19 +235,35 @@ This can be done by binding an image buffer (:mod:`imbuf`) to the font's ID.
 
    Constant value 2
 
+   :type: int
+
 .. data:: MONOCHROME
 
    Constant value 128
+
+   :type: int
+
+.. data:: NO_FALLBACK
+
+   Constant value 524288
+
+   :type: int
 
 .. data:: ROTATION
 
    Constant value 1
 
+   :type: int
+
 .. data:: SHADOW
 
    Constant value 4
 
+   :type: int
+
 .. data:: WORD_WRAP
 
    Constant value 64
+
+   :type: int
 

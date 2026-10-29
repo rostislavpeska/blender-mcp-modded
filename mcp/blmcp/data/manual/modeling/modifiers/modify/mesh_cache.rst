@@ -58,7 +58,7 @@ Interpolation
       frames.
 
 Vertex Group
-   If set, restrict the effect to the only vertices in that vertex group.
+   If set, restrict the effect to only the vertices in that vertex group.
 
    :bl-icon:`arrow_leftright` Invert
       Inverts the influence of the selected vertex group, meaning that the group

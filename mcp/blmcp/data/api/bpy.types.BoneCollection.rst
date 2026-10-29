@@ -5,6 +5,7 @@ BoneCollection(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: BoneCollection(bpy_struct)
 
    Bone collection in an Armature data-block

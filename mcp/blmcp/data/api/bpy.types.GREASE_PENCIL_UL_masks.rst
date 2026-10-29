@@ -5,10 +5,9 @@ GREASE_PENCIL_UL_masks(UIList)
 
 base classes --- :class:`bpy_struct`, :class:`UIList`
 
+
 .. class:: GREASE_PENCIL_UL_masks(UIList)
 
-
-   .. method:: draw_item(_context, layout, _data, item, icon, _active_data, _active_propname, _index)
 
    .. classmethod:: bl_rna_get_subclass(id, default=None, /)
    

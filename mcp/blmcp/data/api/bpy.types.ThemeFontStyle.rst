@@ -5,6 +5,7 @@ ThemeFontStyle(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: ThemeFontStyle(bpy_struct)
 
    Theme settings for Font

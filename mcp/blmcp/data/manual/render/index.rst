@@ -9,11 +9,10 @@
 
 .. toctree::
    :maxdepth: 2
+   :titlesonly:
 
    introduction.rst
-   eevee/index.rst
-   cycles/index.rst
-   workbench/index.rst
+   render_engines.rst
    cameras.rst
    lights/index.rst
    materials/index.rst

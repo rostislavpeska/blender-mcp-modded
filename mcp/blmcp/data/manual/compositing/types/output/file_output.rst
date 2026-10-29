@@ -127,6 +127,11 @@ Output Paths
 Displays the final file path and extension for each input/layer, based on current settings.
 This helps verify that outputs are named and organized correctly.
 
+.. _bpy.types.CompositorNodeOutputFile.use_file_extension:
+
+File Extensions
+   Add the file format extensions to the saved file name (eg: filename + .jpg).
+
 
 Outputs
 =======

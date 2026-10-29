@@ -29,7 +29,7 @@ Brush
 
 .. note::
 
-   In order to save a custom brush in a blend-user, enable *Fake User*.
+   In order to save a custom brush in a blend-file, enable *Fake User*.
 
 
 Brush Types

@@ -18,13 +18,49 @@ ID Property Access (idprop.types)
    .. attribute:: typecode
 
       The type of the data in the array {'f': float (32-bit), 'd': double (64-bit), 'i': int, 'b': bool}. Both 'f' and 'd' use Python's :class:`float` type but differ in storage precision.
+      
+      :type: Literal['f', 'd', 'i', 'b']
 
+
+   .. details:: Special Methods
+
+      .. method:: __getitem__(key)
+
+         :param key: Index or key.
+         :type key: int
+         :rtype: float | int | bool
+
+      .. method:: __getitem__(key)
+         :noindex:
+
+         :param key: Index or key.
+         :type key: slice
+         :rtype: list[float] | list[int] | list[bool]
+
+      .. method:: __len__()
+
+         :rtype: int
+
+      .. method:: __repr__()
+
+         :rtype: str
+
+      .. method:: __setitem__(key, value)
+
+         :param key: Index.
+         :type key: int
+         :param value: Value to assign.
+         :type value: float | int | bool
 
 
 
 .. class:: IDPropertyGroup
 
    A dictionary-like group of ID properties, supporting key access, iteration, and membership testing.
+   
+   .. note::
+   
+      Only supports a maximum of 1024 levels of nesting.
 
    .. method:: clear()
    
@@ -104,7 +140,46 @@ ID Property Access (idprop.types)
    .. attribute:: name
 
       The name of this Group.
+      
+      :type: str
 
+
+   .. details:: Special Methods
+
+      .. method:: __contains__(item)
+
+         :param item: Item to test for membership.
+         :type item: object
+         :rtype: bool
+
+      .. method:: __getitem__(key)
+
+         :param key: Property name.
+         :type key: str
+         :rtype: Any
+
+      .. method:: __hash__()
+
+         :rtype: int
+
+      .. method:: __iter__()
+
+         :rtype: :class:`IDPropertyGroupIterKeys`
+
+      .. method:: __len__()
+
+         :rtype: int
+
+      .. method:: __repr__()
+
+         :rtype: str
+
+      .. method:: __setitem__(key, value)
+
+         :param key: Property name.
+         :type key: str
+         :param value: Value to assign.
+         :type value: Any
 
 
 
@@ -112,11 +187,79 @@ ID Property Access (idprop.types)
 
    Iterator over :class:`IDPropertyGroup` items (key/value pairs).
 
+   .. details:: Special Methods
+
+      .. method:: __eq__(other)
+
+         :param other: The other operand.
+         :type other: object
+         :rtype: bool
+
+      .. method:: __hash__()
+
+         :rtype: int
+
+      .. method:: __iter__()
+
+         :rtype: :class:`IDPropertyGroupIterItems`
+
+      .. method:: __ne__(other)
+
+         :param other: The other operand.
+         :type other: object
+         :rtype: bool
+
+      .. method:: __next__()
+
+         :rtype: tuple[str, Any]
+
+      .. method:: __repr__()
+
+         :rtype: str
+
+      .. method:: __str__()
+
+         :rtype: str
+
 
 
 .. class:: IDPropertyGroupIterKeys
 
    Iterator over :class:`IDPropertyGroup` keys.
+
+   .. details:: Special Methods
+
+      .. method:: __eq__(other)
+
+         :param other: The other operand.
+         :type other: object
+         :rtype: bool
+
+      .. method:: __hash__()
+
+         :rtype: int
+
+      .. method:: __iter__()
+
+         :rtype: :class:`IDPropertyGroupIterKeys`
+
+      .. method:: __ne__(other)
+
+         :param other: The other operand.
+         :type other: object
+         :rtype: bool
+
+      .. method:: __next__()
+
+         :rtype: str
+
+      .. method:: __repr__()
+
+         :rtype: str
+
+      .. method:: __str__()
+
+         :rtype: str
 
 
 
@@ -124,11 +267,85 @@ ID Property Access (idprop.types)
 
    Iterator over :class:`IDPropertyGroup` values.
 
+   .. details:: Special Methods
+
+      .. method:: __eq__(other)
+
+         :param other: The other operand.
+         :type other: object
+         :rtype: bool
+
+      .. method:: __hash__()
+
+         :rtype: int
+
+      .. method:: __iter__()
+
+         :rtype: :class:`IDPropertyGroupIterValues`
+
+      .. method:: __ne__(other)
+
+         :param other: The other operand.
+         :type other: object
+         :rtype: bool
+
+      .. method:: __next__()
+
+         :rtype: Any
+
+      .. method:: __repr__()
+
+         :rtype: str
+
+      .. method:: __str__()
+
+         :rtype: str
+
 
 
 .. class:: IDPropertyGroupViewItems
 
    A view of :class:`IDPropertyGroup` items as key/value pairs (supports ``len()``, ``in``, iteration, and ``reversed()``).
+
+   .. details:: Special Methods
+
+      .. method:: __contains__(item)
+
+         :param item: Item to test for membership.
+         :type item: object
+         :rtype: bool
+
+      .. method:: __eq__(other)
+
+         :param other: The other operand.
+         :type other: object
+         :rtype: bool
+
+      .. method:: __hash__()
+
+         :rtype: int
+
+      .. method:: __iter__()
+
+         :rtype: :class:`IDPropertyGroupIterItems`
+
+      .. method:: __len__()
+
+         :rtype: int
+
+      .. method:: __ne__(other)
+
+         :param other: The other operand.
+         :type other: object
+         :rtype: bool
+
+      .. method:: __repr__()
+
+         :rtype: str
+
+      .. method:: __str__()
+
+         :rtype: str
 
 
 
@@ -136,11 +353,91 @@ ID Property Access (idprop.types)
 
    A view of :class:`IDPropertyGroup` keys (supports ``len()``, ``in``, iteration, and ``reversed()``).
 
+   .. details:: Special Methods
+
+      .. method:: __contains__(item)
+
+         :param item: Item to test for membership.
+         :type item: object
+         :rtype: bool
+
+      .. method:: __eq__(other)
+
+         :param other: The other operand.
+         :type other: object
+         :rtype: bool
+
+      .. method:: __hash__()
+
+         :rtype: int
+
+      .. method:: __iter__()
+
+         :rtype: :class:`IDPropertyGroupIterKeys`
+
+      .. method:: __len__()
+
+         :rtype: int
+
+      .. method:: __ne__(other)
+
+         :param other: The other operand.
+         :type other: object
+         :rtype: bool
+
+      .. method:: __repr__()
+
+         :rtype: str
+
+      .. method:: __str__()
+
+         :rtype: str
+
 
 
 .. class:: IDPropertyGroupViewValues
 
    A view of :class:`IDPropertyGroup` values (supports ``len()``, ``in``, iteration, and ``reversed()``).
+
+   .. details:: Special Methods
+
+      .. method:: __contains__(item)
+
+         :param item: Item to test for membership.
+         :type item: object
+         :rtype: bool
+
+      .. method:: __eq__(other)
+
+         :param other: The other operand.
+         :type other: object
+         :rtype: bool
+
+      .. method:: __hash__()
+
+         :rtype: int
+
+      .. method:: __iter__()
+
+         :rtype: :class:`IDPropertyGroupIterValues`
+
+      .. method:: __len__()
+
+         :rtype: int
+
+      .. method:: __ne__(other)
+
+         :param other: The other operand.
+         :type other: object
+         :rtype: bool
+
+      .. method:: __repr__()
+
+         :rtype: str
+
+      .. method:: __str__()
+
+         :rtype: str
 
 
 

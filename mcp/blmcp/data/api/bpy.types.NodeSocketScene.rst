@@ -5,6 +5,7 @@ NodeSocketScene(NodeSocketStandard)
 
 base classes --- :class:`bpy_struct`, :class:`NodeSocket`, :class:`NodeSocketStandard`
 
+
 .. class:: NodeSocketScene(NodeSocketStandard)
 
    Scene socket of a node

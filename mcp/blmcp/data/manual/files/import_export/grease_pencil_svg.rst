@@ -23,6 +23,11 @@ Resolution
 Scale
    Generated strokes scale.
 
+Scene Unit
+   Apply current scene's unit (as defined by unit scale) to imported data.
+
+Center on Bounds
+   Center the imported SVG on its bounding box.
 
 .. _bpy.ops.wm.grease_pencil_export_svg:
 

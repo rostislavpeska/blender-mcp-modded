@@ -5,6 +5,7 @@ SequenceEditor(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: SequenceEditor(bpy_struct)
 
    Sequence editing data for a Scene data-block

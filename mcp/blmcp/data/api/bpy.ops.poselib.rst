@@ -71,7 +71,7 @@ Poselib Operators
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
    :File: `addons_core/pose_library/operators.py\:116 <https://projects.blender.org/blender/blender/src/branch/main/scripts/addons_core/pose_library/operators.py#L116>`__
 
-.. function:: create_pose_asset(*, pose_name="", asset_library_reference='', catalog_path="")
+.. function:: create_pose_asset(*, pose_name="", asset_library_reference='LOCAL', catalog_path="")
 
    Create a new asset from the selected bones in the scene
 

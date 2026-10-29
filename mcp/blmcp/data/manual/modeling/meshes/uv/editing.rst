@@ -149,13 +149,34 @@ Copy Mirrored UV Coordinates
    :Mode:      Edit Mode
    :Menu:      :menuselection:`UV --> Copy Mirrored UV Coordinates`
 
-Copies UVs from one side of the mirrored mesh to the other.
-Affects only selected vertices (on both sides).
+Copies UV coordinates from one side of a symmetrical mesh to the mirrored side.
 
-Axis Direction
-   Positive/Negative
+The operator searches for mirrored vertices across the chosen mesh axis and copies
+their UV coordinates to the corresponding selected vertices. This is useful when
+working with symmetrical models where UVs only need to be edited on one side.
+
+Only selected vertices are affected.
+
+Mesh Axis
+   Defines the axis used to find mirrored vertices in the mesh.
+
+   :-X to +X: Copy UVs from the negative X side to the positive X side.
+   :-Y to +Y: Copy UVs from the negative Y side to the positive Y side.
+   :-Z to +Z: Copy UVs from the negative Z side to the positive Z side.
+   :+X to -X: Copy UVs from the positive X side to the negative X side.
+   :+Y to -Y: Copy UVs from the positive Y side to the negative Y side.
+   :+Z to -Z: Copy UVs from the positive Z side to the negative Z side.
+
+UV Axis
+   Defines the UV axis used when mirroring UV coordinates.
+
+   :X: Mirror UV coordinates across the horizontal UV axis.
+   :Y: Mirror UV coordinates across the vertical UV axis.
+
 Precision
-   Tolerance for finding vertex duplicates.
+   Tolerance used when searching for mirrored vertex pairs.
+
+   Higher values allow matching vertices that are slightly offset from perfect symmetry.
 
 
 .. _bpy.ops.uv.snap_selected:
@@ -253,17 +274,17 @@ Selection :kbd:`Y`
 
 .. _bpy.ops.uv.rip_move:
 
-UV Rip Move
+Rip Move UV
 ===========
 
 .. reference::
 
    :Editor:    UV Editor
    :Mode:      Edit Mode
-   :Menu:      :menuselection:`UV --> UV Rip Move`
+   :Menu:      :menuselection:`UV --> Rip Move UV`
    :Shortcut:  :kbd:`V`
 
-The *UV Rip Move* operator separates selected UV elements (vertices, edges, or faces) from connected components,
+The *Rip Move UV* operator separates selected UV elements (vertices, edges, or faces) from connected components,
 creating a "rip" in the UV map. After the separation, the selection enters move mode,
 allowing precise control over where and how the UV elements are pulled apart.
 
@@ -282,13 +303,13 @@ without affecting surrounding geometry.
 
 .. note::
 
-   The *UV Rip Move* operator is not compatible with
+   The *Rip Move UV* operator is not compatible with
    :ref:`Sync Selection <bpy.types.ToolSettings.use_uv_select_sync>`.
    To use this tool, make sure Sync Selection is disabled in the UV Editor.
 
 .. seealso::
 
-   - :doc:`UV Rip Tool </modeling/meshes/uv/tools/rip>` -- Modal version of the rip operator.
+   - :doc:`Rip Region Tool </modeling/meshes/uv/tools/rip>` -- Modal version of the rip operator.
    - Mesh editing :ref:`Rip <bpy.ops.mesh.rip_move>` -- Similar functionality for mesh editing in the 3D Viewport.
 
 
@@ -769,7 +790,7 @@ Copy UVs
    :Menu:      :menuselection:`UV --> Copy UVs`
    :Shortcut:  :kbd:`Ctrl-C`
 
-For each selected UV island, the *Copy UVs* tool will copy it's topology and UV coordinates into a temporary clipboard
+For each selected UV island, the *Copy UVs* tool will copy its topology and UV coordinates into a temporary clipboard
 for later use with the *Paste UVs* tool.
 
 .. note::
@@ -817,6 +838,8 @@ Show/Hide Faces
 - Hide Unselected :kbd:`Shift-H`
 
 
+.. _bpy.ops.uv.export_layout:
+
 Export UV Layout
 ================
 
@@ -826,11 +849,66 @@ Export UV Layout
    :Mode:      Edit Mode
    :Menu:      :menuselection:`UV --> Export UV Layout`
 
-If you are using an external application, you need to know where on the mesh you are painting.
+When painting textures in an external application, it is often useful to have
+a reference image showing the UV layout of the mesh.
+The *Export UV Layout* operator saves the current UV map as an image that can
+be used as a guide while painting textures.
 
-.. note::
+The exported image contains lines representing the UV edges within the
+standard UV Editor grid (the ``0-1`` UV space).
+Edges outside this range will not appear in the exported image.
 
-   This is an :doc:`add-on </addons/import_export/mesh_uv_layout>` activated by default.
+By default, only UV faces selected in the *3D Viewport* are exported.
+Selections made only in the UV Editor are ignored.
+
+The exported image can be opened in a painting application and used as a
+transparent overlay while creating textures. Once the texture is finished,
+it can be imported back into Blender and used in a material.
+
+For more information on using images as textures, see
+:doc:`Image Textures </render/materials/legacy_textures/types/image_movie>`.
+
+.. list-table::
+
+   * - .. figure:: /images/addons_import-export_mesh-uv-layout_uv-editor.png
+          :width: 320px
+
+          A UV layout in the UV Editor.
+
+     - .. figure:: /images/addons_import-export_mesh-uv-layout_export.png
+          :width: 320px
+
+          The exported layout used as a guide in a painting application.
+
+
+Properties
+----------
+
+.. figure:: /images/addons_import-export_mesh-uv-layout_export-panel.png
+
+   Export options.
+
+All UVs
+   Export all UVs instead of only the faces selected in the 3D Viewport.
+
+Export Tiles
+   Controls which UV tiles are exported.
+
+   :None: Export only UVs in the [0, 1] range.
+   :UDIM: Export tiles in the UDIM numbering scheme: ``1001 + u_tile + 10*v_tile``.
+   :UVTILE: Export tiles in the UVTILE numbering scheme: ``u(u_tile + 1)_v(v_tile + 1)``.
+
+Modified
+   Export the UVs from the evaluated mesh with modifiers applied.
+
+Format
+   The file format used for the export: ``PNG``, ``EPS``, or ``SVG``.
+
+Size
+   The resolution of the exported image in pixels.
+
+Fill Opacity
+   Sets the opacity of the face fill in the exported image.
 
 
 Proportional Editing

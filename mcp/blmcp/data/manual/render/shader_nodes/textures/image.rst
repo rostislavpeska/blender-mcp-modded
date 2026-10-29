@@ -152,4 +152,4 @@ Examples
 
 .. figure:: /images/render_shader-nodes_textures_image_example.jpg
 
-   Image texture from `GoodTextures.com <https://www.goodtextures.com/>`__.
+   Image texture from `GoodTextures.com <https://goodtextures.com/>`__.

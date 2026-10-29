@@ -5,6 +5,7 @@ Spline(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: Spline(bpy_struct)
 
    Element of a curve, either NURBS, Bézier or Polyline or a character with text objects

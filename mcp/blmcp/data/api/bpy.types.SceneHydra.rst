@@ -5,6 +5,7 @@ SceneHydra(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: SceneHydra(bpy_struct)
 
    Scene Hydra render engine settings

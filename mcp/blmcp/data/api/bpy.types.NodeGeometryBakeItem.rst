@@ -5,12 +5,13 @@ NodeGeometryBakeItem(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: NodeGeometryBakeItem(bpy_struct)
 
 
    .. attribute:: attribute_domain
 
-      Attribute domain where the attribute is stored in the baked data (default ``'POINT'``)
+      Domain where the field is captured if it is not already an attribute-field (default ``'POINT'``)
 
       :type: Literal[:ref:`rna_enum_attribute_domain_items`]
 

@@ -5,6 +5,7 @@ NodeSocketVectorDirection(NodeSocketStandard)
 
 base classes --- :class:`bpy_struct`, :class:`NodeSocket`, :class:`NodeSocketStandard`
 
+
 .. class:: NodeSocketVectorDirection(NodeSocketStandard)
 
    3D vector socket of a node

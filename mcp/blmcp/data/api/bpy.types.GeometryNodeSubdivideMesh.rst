@@ -5,6 +5,7 @@ GeometryNodeSubdivideMesh(GeometryNode)
 
 base classes --- :class:`bpy_struct`, :class:`Node`, :class:`NodeInternal`, :class:`GeometryNode`
 
+
 .. class:: GeometryNodeSubdivideMesh(GeometryNode)
 
    Divide mesh faces into smaller ones without changing the shape or volume, using linear interpolation to place the new vertices
@@ -71,6 +72,7 @@ Inherited Properties
    - :class:`Node.label`
    - :class:`Node.inputs`
    - :class:`Node.outputs`
+   - :class:`Node.panel_states`
    - :class:`Node.internal_links`
    - :class:`Node.parent`
    - :class:`Node.warning_propagation`

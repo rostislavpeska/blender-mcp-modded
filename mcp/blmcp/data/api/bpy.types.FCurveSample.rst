@@ -5,6 +5,7 @@ FCurveSample(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: FCurveSample(bpy_struct)
 
    Sample point for F-Curve

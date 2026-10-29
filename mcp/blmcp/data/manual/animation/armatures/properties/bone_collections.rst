@@ -19,10 +19,10 @@ Bone Collections
 
    The Bone Collections panel in the Armature properties.
 
-This panel contains a Tree View to manage :doc:`Bone Collection </animation/armatures/bones/bone_collections>`
+This panel contains a :ref:`ui-tree-view` to manage :doc:`Bone Collection </animation/armatures/bones/bone_collections>`
 From this panel, Bone Collections can be created, deleted, re-arranged, and more.
 
-Collections can be renamed by double clicking on the name, or right clinking and selecting *Rename*.
+Collections can be renamed by double clicking on the name, or right clicking and selecting *Rename*.
 To nest a collection inside an existing collection, click and drag the name onto another collection's name.
 Child collection can also be made by :kbd:`RMB` and selecting "Add Child Collection".
 

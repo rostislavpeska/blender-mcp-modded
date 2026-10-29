@@ -5,6 +5,7 @@ NODE_AST_compositor(AssetShelf)
 
 base classes --- :class:`bpy_struct`, :class:`AssetShelf`
 
+
 .. class:: NODE_AST_compositor(AssetShelf)
 
 

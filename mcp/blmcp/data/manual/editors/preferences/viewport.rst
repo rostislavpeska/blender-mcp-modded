@@ -115,27 +115,23 @@ Limit Size
 .. _bpy.types.PreferencesSystem.anisotropic_filter:
 
 Anisotropic Filtering
-   Sets the level of anisotropic filtering.
-   This improves the quality of textures that are rendered at the cost of performance.
+   Quality of anisotropic filtering used when sampling textures at oblique viewing angles.
+
+   Higher values improve the sharpness of textures viewed at a grazing angle,
+   such as floors, roads, and other surfaces that extend into the distance.
+   Increasing the setting may have a small impact on performance.
+
+   :Off: Turn off anisotropic filtering.
+   :2×: Use 2 samples for anisotropic filtering.
+   :4×: Use 4 samples for anisotropic filtering.
+   :8×: Use 8 samples for anisotropic filtering.
+   :16×: Use 16 samples for anisotropic filtering.
 
 .. _bpy.types.PreferencesSystem.gl_clip_alpha:
 
 Clip Alpha
    Clip alpha below this threshold in the 3D Viewport.
    Note that, the default is set to a low value to prevent issues on some GPUs.
-
-.. _bpy.types.PreferencesSystem.image_draw_method:
-
-Image Display Method
-   Method to render images; the following options are supported:
-
-   :Automatic:
-      Automatically use *GLSL* which runs on the GPU for performance but falls back to
-      the CPU for large images which might be slow when loaded with the GPU.
-   :2D Texture:
-      Uses CPU for display transform and render images as a 2D texture.
-   :GLSL:
-      Fastest method using GLSL for display transform and render images as a 2D texture.
 
 
 Subdivision
@@ -147,7 +143,7 @@ GPU Subdivision
    Under certain circumstances, the GPU will be used to subdivide a mesh with a
    :doc:`Subdivision Surface modifier </modeling/modifiers/generate/subdivision_surface>`.
    This typically results in increased subdivision performance.
-   
+
 .. note::
 
    When enabled, normals and tangents are interpolated instead of being recomputed after smoothing.

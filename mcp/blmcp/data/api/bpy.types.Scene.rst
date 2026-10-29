@@ -5,6 +5,7 @@ Scene(ID)
 
 base classes --- :class:`bpy_struct`, :class:`ID`
 
+
 .. class:: Scene(ID)
 
    Scene data-block, consisting in objects and defining time and render related settings
@@ -14,6 +15,12 @@ base classes --- :class:`bpy_struct`, :class:`ID`
       Active Movie Clip that can be used by motion tracking constraints or as a camera's background image
 
       :type: :class:`MovieClip` | None
+
+   .. attribute:: allow_preroll
+
+      Allows playing back frames before the playback start frame (default False)
+
+      :type: bool
 
    .. data:: animation_data
 
@@ -215,6 +222,23 @@ base classes --- :class:`bpy_struct`, :class:`ID`
       (default None, readonly)
 
       :type: :class:`SceneObjects`\ [:class:`Object`]
+
+   .. attribute:: playback_loop_mode
+
+      What to do when playback reaches the last frame (default ``'INFINITE'``)
+
+      - ``INFINITE``
+        Infinite -- After the last frame, jump back to the first and keep playing, infinitely.
+      - ``STOP_END_FRAME``
+        Stop at End Frame -- Stop playback at the last frame, without looping.
+      - ``STOP_START_FRAME``
+        Stop at Start Frame -- After the last frame, jump back to the first and stop playback.
+      - ``RESTORE``
+        Restore Frame -- After the last frame, stop at the frame the playback started from.
+      - ``BOUNCE``
+        Bounce -- At the last frame, reverse playback.
+
+      :type: Literal['INFINITE', 'STOP_END_FRAME', 'STOP_START_FRAME', 'RESTORE', 'BOUNCE']
 
    .. data:: render
 
@@ -441,7 +465,7 @@ base classes --- :class:`bpy_struct`, :class:`ID`
 
          ``index``, The face index, -1 when original data isn't available, int
 
-         ``object``, Ray cast object, :class:`Object`
+         ``object``, The original (un-evaluated) object that was hit. Note that ``location``, ``normal``, and ``index`` correspond to the evaluated object's mesh., :class:`Object`
 
          ``matrix``, Matrix, :class:`mathutils.Matrix`
 

@@ -5,6 +5,7 @@ MovieClipScopes(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: MovieClipScopes(bpy_struct)
 
    Scopes for statistical view of a movie clip

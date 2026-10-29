@@ -5,6 +5,7 @@ LineStyleAlphaModifier_DistanceFromCamera(LineStyleAlphaModifier)
 
 base classes --- :class:`bpy_struct`, :class:`LineStyleModifier`, :class:`LineStyleAlphaModifier`
 
+
 .. class:: LineStyleAlphaModifier_DistanceFromCamera(LineStyleAlphaModifier)
 
    Change alpha transparency based on the distance from the camera

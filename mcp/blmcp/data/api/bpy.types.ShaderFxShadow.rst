@@ -5,6 +5,7 @@ ShaderFxShadow(ShaderFx)
 
 base classes --- :class:`bpy_struct`, :class:`ShaderFx`
 
+
 .. class:: ShaderFxShadow(ShaderFx)
 
    Shadow effect

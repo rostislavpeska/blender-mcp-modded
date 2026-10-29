@@ -5,6 +5,7 @@ PaletteColor(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: PaletteColor(bpy_struct)
 
 

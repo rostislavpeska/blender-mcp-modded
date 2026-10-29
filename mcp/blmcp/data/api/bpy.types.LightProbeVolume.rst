@@ -5,6 +5,7 @@ LightProbeVolume(LightProbe)
 
 base classes --- :class:`bpy_struct`, :class:`ID`, :class:`LightProbe`
 
+
 .. class:: LightProbeVolume(LightProbe)
 
    Light probe that captures low frequency lighting inside a volume

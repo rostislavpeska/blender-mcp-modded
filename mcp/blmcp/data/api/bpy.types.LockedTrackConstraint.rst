@@ -5,6 +5,7 @@ LockedTrackConstraint(Constraint)
 
 base classes --- :class:`bpy_struct`, :class:`Constraint`
 
+
 .. class:: LockedTrackConstraint(Constraint)
 
    Point toward the target along the track axis, while locking the other axis

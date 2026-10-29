@@ -5,8 +5,18 @@ Paint(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
-subclasses --- 
-:class:`CurvesSculpt`, :class:`GpPaint`, :class:`GpSculptPaint`, :class:`GpVertexPaint`, :class:`GpWeightPaint`, :class:`ImagePaint`, :class:`Sculpt`, :class:`VertexPaint`
+.. toctree::
+   :caption: Subclasses
+   :maxdepth: 1
+
+   bpy.types.CurvesSculpt.rst
+   bpy.types.GpPaint.rst
+   bpy.types.GpSculptPaint.rst
+   bpy.types.GpVertexPaint.rst
+   bpy.types.GpWeightPaint.rst
+   bpy.types.ImagePaint.rst
+   bpy.types.Sculpt.rst
+   bpy.types.VertexPaint.rst
 
 .. class:: Paint(bpy_struct)
 
@@ -29,17 +39,11 @@ subclasses ---
 
       :type: :class:`CurveMapping`
 
-   .. attribute:: eraser_brush
+   .. data:: mesh_automasking_settings
 
-      Default eraser brush for quickly alternating with the main brush
+      (readonly, never None)
 
-      :type: :class:`Brush` | None
-
-   .. data:: eraser_brush_asset_reference
-
-      A weak reference to the matching brush asset, used e.g. to restore the last used brush on file load (readonly)
-
-      :type: :class:`AssetWeakReference` | None
+      :type: :class:`MeshAutomaskingSettings`
 
    .. attribute:: palette
 

@@ -5,6 +5,7 @@ NodeInternalSocketTemplate(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: NodeInternalSocketTemplate(bpy_struct)
 
    Type and default value of a node socket
@@ -98,6 +99,8 @@ References
    - :class:`CompositorNodeAntiAliasing.output_template`
    - :class:`CompositorNodeBilateralblur.input_template`
    - :class:`CompositorNodeBilateralblur.output_template`
+   - :class:`CompositorNodeBlankImage.input_template`
+   - :class:`CompositorNodeBlankImage.output_template`
    - :class:`CompositorNodeBlur.input_template`
    - :class:`CompositorNodeBlur.output_template`
    - :class:`CompositorNodeBokehBlur.input_template`
@@ -246,6 +249,8 @@ References
    - :class:`CompositorNodeSplit.output_template`
    - :class:`CompositorNodeStabilize.input_template`
    - :class:`CompositorNodeStabilize.output_template`
+   - :class:`CompositorNodeStringToImage.input_template`
+   - :class:`CompositorNodeStringToImage.output_template`
    - :class:`CompositorNodeSwitch.input_template`
    - :class:`CompositorNodeSwitch.output_template`
    - :class:`CompositorNodeSwitchView.input_template`
@@ -302,6 +307,10 @@ References
    - :class:`FunctionNodeInputColor.output_template`
    - :class:`FunctionNodeInputInt.input_template`
    - :class:`FunctionNodeInputInt.output_template`
+   - :class:`FunctionNodeInputIntVector.input_template`
+   - :class:`FunctionNodeInputIntVector.output_template`
+   - :class:`FunctionNodeInputMenu.input_template`
+   - :class:`FunctionNodeInputMenu.output_template`
    - :class:`FunctionNodeInputRotation.input_template`
    - :class:`FunctionNodeInputRotation.output_template`
    - :class:`FunctionNodeInputSpecialCharacters.input_template`
@@ -332,6 +341,8 @@ References
    - :class:`FunctionNodeRandomValue.output_template`
    - :class:`FunctionNodeReplaceString.input_template`
    - :class:`FunctionNodeReplaceString.output_template`
+   - :class:`FunctionNodeReverseString.input_template`
+   - :class:`FunctionNodeReverseString.output_template`
    - :class:`FunctionNodeRotateEuler.input_template`
    - :class:`FunctionNodeRotateEuler.output_template`
    - :class:`FunctionNodeRotateRotation.input_template`
@@ -350,8 +361,12 @@ References
    - :class:`FunctionNodeSeparateMatrix.output_template`
    - :class:`FunctionNodeSeparateTransform.input_template`
    - :class:`FunctionNodeSeparateTransform.output_template`
+   - :class:`FunctionNodeSetStringCase.input_template`
+   - :class:`FunctionNodeSetStringCase.output_template`
    - :class:`FunctionNodeSliceString.input_template`
    - :class:`FunctionNodeSliceString.output_template`
+   - :class:`FunctionNodeSplitString.input_template`
+   - :class:`FunctionNodeSplitString.output_template`
    - :class:`FunctionNodeStringLength.input_template`
    - :class:`FunctionNodeStringLength.output_template`
    - :class:`FunctionNodeStringToValue.input_template`
@@ -362,10 +377,14 @@ References
    - :class:`FunctionNodeTransformPoint.output_template`
    - :class:`FunctionNodeTransposeMatrix.input_template`
    - :class:`FunctionNodeTransposeMatrix.output_template`
+   - :class:`FunctionNodeTrimString.input_template`
+   - :class:`FunctionNodeTrimString.output_template`
    - :class:`FunctionNodeValueToString.input_template`
    - :class:`FunctionNodeValueToString.output_template`
    - :class:`GeometryNodeAccumulateField.input_template`
    - :class:`GeometryNodeAccumulateField.output_template`
+   - :class:`GeometryNodeApplySimulatedData.input_template`
+   - :class:`GeometryNodeApplySimulatedData.output_template`
    - :class:`GeometryNodeAttributeDomainSize.input_template`
    - :class:`GeometryNodeAttributeDomainSize.output_template`
    - :class:`GeometryNodeAttributeStatistic.input_template`
@@ -382,6 +401,14 @@ References
    - :class:`GeometryNodeCameraInfo.output_template`
    - :class:`GeometryNodeCaptureAttribute.input_template`
    - :class:`GeometryNodeCaptureAttribute.output_template`
+   - :class:`GeometryNodeClosureToList.input_template`
+   - :class:`GeometryNodeClosureToList.output_template`
+   - :class:`GeometryNodeClusterByConnected.input_template`
+   - :class:`GeometryNodeClusterByConnected.output_template`
+   - :class:`GeometryNodeClusterByDistance.input_template`
+   - :class:`GeometryNodeClusterByDistance.output_template`
+   - :class:`GeometryNodeCollectionChildren.input_template`
+   - :class:`GeometryNodeCollectionChildren.output_template`
    - :class:`GeometryNodeCollectionInfo.input_template`
    - :class:`GeometryNodeCollectionInfo.output_template`
    - :class:`GeometryNodeConvexHull.input_template`
@@ -474,6 +501,8 @@ References
    - :class:`GeometryNodeFillCurve.output_template`
    - :class:`GeometryNodeFilletCurve.input_template`
    - :class:`GeometryNodeFilletCurve.output_template`
+   - :class:`GeometryNodeFilterList.input_template`
+   - :class:`GeometryNodeFilterList.output_template`
    - :class:`GeometryNodeFlipFaces.input_template`
    - :class:`GeometryNodeFlipFaces.output_template`
    - :class:`GeometryNodeForeachGeometryElementInput.input_template`
@@ -482,8 +511,12 @@ References
    - :class:`GeometryNodeForeachGeometryElementOutput.output_template`
    - :class:`GeometryNodeGeometryToInstance.input_template`
    - :class:`GeometryNodeGeometryToInstance.output_template`
+   - :class:`GeometryNodeGetAttributeNames.input_template`
+   - :class:`GeometryNodeGetAttributeNames.output_template`
    - :class:`GeometryNodeGetGeometryBundle.input_template`
    - :class:`GeometryNodeGetGeometryBundle.output_template`
+   - :class:`GeometryNodeGetGeometryComponent.input_template`
+   - :class:`GeometryNodeGetGeometryComponent.output_template`
    - :class:`GeometryNodeGetNamedGrid.input_template`
    - :class:`GeometryNodeGetNamedGrid.output_template`
    - :class:`GeometryNodeGizmoDial.input_template`
@@ -554,6 +587,8 @@ References
    - :class:`GeometryNodeInputCurveTilt.output_template`
    - :class:`GeometryNodeInputEdgeSmooth.input_template`
    - :class:`GeometryNodeInputEdgeSmooth.output_template`
+   - :class:`GeometryNodeInputFont.input_template`
+   - :class:`GeometryNodeInputFont.output_template`
    - :class:`GeometryNodeInputID.input_template`
    - :class:`GeometryNodeInputID.output_template`
    - :class:`GeometryNodeInputImage.input_template`
@@ -562,6 +597,8 @@ References
    - :class:`GeometryNodeInputIndex.output_template`
    - :class:`GeometryNodeInputInstanceBounds.input_template`
    - :class:`GeometryNodeInputInstanceBounds.output_template`
+   - :class:`GeometryNodeInputInstanceReference.input_template`
+   - :class:`GeometryNodeInputInstanceReference.output_template`
    - :class:`GeometryNodeInputInstanceRotation.input_template`
    - :class:`GeometryNodeInputInstanceRotation.output_template`
    - :class:`GeometryNodeInputInstanceScale.input_template`
@@ -636,6 +673,10 @@ References
    - :class:`GeometryNodeMergeByDistance.output_template`
    - :class:`GeometryNodeMergeLayers.input_template`
    - :class:`GeometryNodeMergeLayers.output_template`
+   - :class:`GeometryNodeMergePoints.input_template`
+   - :class:`GeometryNodeMergePoints.output_template`
+   - :class:`GeometryNodeMeshBevel.input_template`
+   - :class:`GeometryNodeMeshBevel.output_template`
    - :class:`GeometryNodeMeshBoolean.input_template`
    - :class:`GeometryNodeMeshBoolean.output_template`
    - :class:`GeometryNodeMeshCircle.input_template`
@@ -692,6 +733,8 @@ References
    - :class:`GeometryNodeRealizeInstances.output_template`
    - :class:`GeometryNodeRemoveAttribute.input_template`
    - :class:`GeometryNodeRemoveAttribute.output_template`
+   - :class:`GeometryNodeRenameAttribute.input_template`
+   - :class:`GeometryNodeRenameAttribute.output_template`
    - :class:`GeometryNodeRepeatInput.input_template`
    - :class:`GeometryNodeRepeatInput.output_template`
    - :class:`GeometryNodeRepeatOutput.input_template`
@@ -730,6 +773,8 @@ References
    - :class:`GeometryNodeSampleNearest.output_template`
    - :class:`GeometryNodeSampleNearestSurface.input_template`
    - :class:`GeometryNodeSampleNearestSurface.output_template`
+   - :class:`GeometryNodeSampleSoundFrequencies.input_template`
+   - :class:`GeometryNodeSampleSoundFrequencies.output_template`
    - :class:`GeometryNodeSampleUVSurface.input_template`
    - :class:`GeometryNodeSampleUVSurface.output_template`
    - :class:`GeometryNodeScaleElements.input_template`
@@ -774,6 +819,10 @@ References
    - :class:`GeometryNodeSetMaterialIndex.output_template`
    - :class:`GeometryNodeSetMeshNormal.input_template`
    - :class:`GeometryNodeSetMeshNormal.output_template`
+   - :class:`GeometryNodeSetNURBSOrder.input_template`
+   - :class:`GeometryNodeSetNURBSOrder.output_template`
+   - :class:`GeometryNodeSetNURBSWeight.input_template`
+   - :class:`GeometryNodeSetNURBSWeight.output_template`
    - :class:`GeometryNodeSetPointRadius.input_template`
    - :class:`GeometryNodeSetPointRadius.output_template`
    - :class:`GeometryNodeSetPosition.input_template`
@@ -790,6 +839,8 @@ References
    - :class:`GeometryNodeSimulationOutput.output_template`
    - :class:`GeometryNodeSortElements.input_template`
    - :class:`GeometryNodeSortElements.output_template`
+   - :class:`GeometryNodeSortList.input_template`
+   - :class:`GeometryNodeSortList.output_template`
    - :class:`GeometryNodeSplineLength.input_template`
    - :class:`GeometryNodeSplineLength.output_template`
    - :class:`GeometryNodeSplineParameter.input_template`
@@ -814,6 +865,8 @@ References
    - :class:`GeometryNodeSubdivisionSurface.output_template`
    - :class:`GeometryNodeSwitch.input_template`
    - :class:`GeometryNodeSwitch.output_template`
+   - :class:`GeometryNodeTagFilter.input_template`
+   - :class:`GeometryNodeTagFilter.output_template`
    - :class:`GeometryNodeTool3DCursor.input_template`
    - :class:`GeometryNodeTool3DCursor.output_template`
    - :class:`GeometryNodeToolActiveElement.input_template`
@@ -828,6 +881,8 @@ References
    - :class:`GeometryNodeToolSetFaceSet.output_template`
    - :class:`GeometryNodeToolSetSelection.input_template`
    - :class:`GeometryNodeToolSetSelection.output_template`
+   - :class:`GeometryNodeTransferAttributes.input_template`
+   - :class:`GeometryNodeTransferAttributes.output_template`
    - :class:`GeometryNodeTransform.input_template`
    - :class:`GeometryNodeTransform.output_template`
    - :class:`GeometryNodeTranslateInstances.input_template`
@@ -854,6 +909,8 @@ References
    - :class:`GeometryNodeVolumeToMesh.output_template`
    - :class:`GeometryNodeWarning.input_template`
    - :class:`GeometryNodeWarning.output_template`
+   - :class:`GeometryNodeXPBDSolver.input_template`
+   - :class:`GeometryNodeXPBDSolver.output_template`
    - :class:`NodeClosureInput.input_template`
    - :class:`NodeClosureInput.output_template`
    - :class:`NodeClosureOutput.input_template`
@@ -868,12 +925,16 @@ References
    - :class:`NodeFrame.output_template`
    - :class:`NodeGetBundleItem.input_template`
    - :class:`NodeGetBundleItem.output_template`
+   - :class:`NodeGetNestedBundlePaths.input_template`
+   - :class:`NodeGetNestedBundlePaths.output_template`
    - :class:`NodeGroup.input_template`
    - :class:`NodeGroup.output_template`
    - :class:`NodeGroupInput.input_template`
    - :class:`NodeGroupInput.output_template`
    - :class:`NodeGroupOutput.input_template`
    - :class:`NodeGroupOutput.output_template`
+   - :class:`NodeImplicitConversion.input_template`
+   - :class:`NodeImplicitConversion.output_template`
    - :class:`NodeJoinBundle.input_template`
    - :class:`NodeJoinBundle.output_template`
    - :class:`NodeReroute.input_template`

@@ -21,6 +21,12 @@ Screen Operators
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
 
+.. function:: animation_pause()
+
+   Pause animation, stopping at the current frame
+
+   :return: Result of the operator call.
+   :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
 .. function:: animation_play(*, reverse=False, sync=False)
 
    Play animation
@@ -122,6 +128,15 @@ Screen Operators
 
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
+.. function:: edge_merge(*, cursor=(0, 0))
+
+   Merge aligned area edges
+
+   :param cursor: Cursor, (array of 2 items, in [-inf, inf], optional)
+   :type cursor: Sequence[int]
+   :return: Result of the operator call.
+   :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
+
 .. function:: frame_jump(*, end=False)
 
    Jump to first/last frame in frame range

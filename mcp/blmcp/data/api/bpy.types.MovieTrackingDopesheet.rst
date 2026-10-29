@@ -5,6 +5,7 @@ MovieTrackingDopesheet(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: MovieTrackingDopesheet(bpy_struct)
 
    Match-moving dopesheet data

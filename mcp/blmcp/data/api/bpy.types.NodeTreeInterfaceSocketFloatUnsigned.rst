@@ -5,6 +5,7 @@ NodeTreeInterfaceSocketFloatUnsigned(NodeTreeInterfaceSocket)
 
 base classes --- :class:`bpy_struct`, :class:`NodeTreeInterfaceItem`, :class:`NodeTreeInterfaceSocket`
 
+
 .. class:: NodeTreeInterfaceSocketFloatUnsigned(NodeTreeInterfaceSocket)
 
    Floating-point number socket of a node

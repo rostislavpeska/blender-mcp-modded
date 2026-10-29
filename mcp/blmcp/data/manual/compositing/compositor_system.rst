@@ -39,7 +39,7 @@ Vector
   it. It can be treated as a 2D vector with the last two components ignored, for instance, the
   *Vector* input of the :ref:`Displace node <bpy.types.CompositorNodeDisplace>` is treated as a 2D
   vector. It can be treated as a 3D vector with the last component ignored, for instance, the
-  *Vector* input of the :Doc:`Seperate XYZ node </compositing/types/utilities/vector/separate_xyz>` is treated as
+  *Vector* input of the :Doc:`Separate XYZ node </compositing/types/utilities/vector/separate_xyz>` is treated as
   a 3D vector. It can be treated as two consecutive 2D vectors. For instance the *Velocity Pass* as
   expected by the :ref:`Vector Blur node <bpy.types.CompositorNodeVecBlur>` is assumed to have the
   *2D Previous Velocity* in the X and Y components of the vector and the *2D Next Velocity* in the
@@ -75,7 +75,7 @@ conversions are performed:
 +---------+---------+-------------------------------------+
 
 The following example demonstrates implicit conversion between a color type and a float type, since
-the :doc:`Math Node </compositing/types/utilities/math/math>` expect float inputs.
+the :doc:`Math Node </compositing/types/utilities/math/math>` expects float inputs.
 
 .. figure:: /images/compositing_realtime-compositor_compositing-space_data_type_implicit_conversion.png
 
@@ -128,7 +128,7 @@ Images can be transformed using nodes like the :ref:`Transform <bpy.types.Compos
 Operation Domain
 ----------------
 
-:ref:`Compositor Nodes <compositor-nodes>` operate on a specific rectangular area of the compositing
+:doc:`Compositor Nodes </compositing/types/index>` operate on a specific rectangular area of the compositing
 space called the *Operation Domain*. The nodes only consider the area of the input images that
 overlap the operation domain and ignores the rest of the images. If an input image doesn't
 completely overlap the operation domain, the rest of the operation domain for that input will be
@@ -178,7 +178,7 @@ be a zero transparent color, which is convenient for the use case.
 Interpolation
 ^^^^^^^^^^^^^
 
-If an input image to a node is not perfectly aligned with the operation domain of the node or have a
+If an input image to a node is not perfectly aligned with the operation domain of the node or has a
 different size in pixels, the node would typically need to do a process called Interpolation, where
 the input image is read at the exact positions of the pixels of the operation domain. This can be
 done using different interpolation methods, including Nearest-Neighbor, Bilinear, and Bicubic
@@ -269,7 +269,7 @@ the :ref:`Alpha Over node <bpy.types.CompositorNodeAlphaOver>`, the output will 
 
 The :ref:`Alpha Over node <bpy.types.CompositorNodeAlphaOver>` currently does not support changing
 the domain priority for its inputs, so as a workaround,
-one can use a :doc:`Mix node </compositing/types/color/mix_color>` to achieved the desired behavior,
+one can use a :doc:`Mix node </compositing/types/color/mix_color>` to achieve the desired behavior,
 noting that the first *Image* input in the *Mix* node has the highest domain priority,
 as shown in the following figure.
 
@@ -295,3 +295,42 @@ The compositor searches for the active *Group Output* node, if none was found, i
 active *Viewer* node. If none was found, the compositor doesn't run altogether.
 Consequently, note that adding a *Viewer* node will have no effect on the viewport render if there
 is a *Group Output* node, since the priority is given to *Group Output* nodes.
+
+
+.. _compositor-socket-inspection:
+
+Socket Inspection
+=================
+
+.. figure:: /images/compositing_socket-inspection.png
+   :align: center
+
+   Socket Inspection.
+
+Socket inspection displays information about the image contained in a socket
+after the node tree has been evaluated.
+
+Rather than displaying the image itself, the inspection panel summarizes
+properties of the image, making it easier to verify intermediate results and
+debug node trees.
+
+The following information is displayed:
+
+- **Resolution** -- Displays the image resolution. If the image has a display
+  window, both the data window and display window are shown instead.
+- **Transform** -- Displays the image transform. If no transformation has been
+  applied, *Identity* is shown. Otherwise, the translation, rotation, and scale
+  are displayed.
+- **Sampling** -- Displays the interpolation and sampling modes used by the image.
+- **Precision** -- Indicates whether the image is stored using *Full* or *Half*
+  precision.
+
+.. note::
+
+   Socket values are only available after the node tree has been evaluated.
+   Nodes that do not contribute to the final output are generally not evaluated
+   and therefore have no inspection data available.
+
+.. note::
+
+   Pixel sockets are currently not supported.

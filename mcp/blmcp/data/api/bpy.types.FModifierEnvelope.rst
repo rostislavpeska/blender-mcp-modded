@@ -5,6 +5,7 @@ FModifierEnvelope(FModifier)
 
 base classes --- :class:`bpy_struct`, :class:`FModifier`
 
+
 .. class:: FModifierEnvelope(FModifier)
 
    Scale the values of the modified F-Curve

@@ -3,8 +3,657 @@ bpy_struct
 
 .. currentmodule:: bpy.types
 
-subclasses --- 
-:class:`AOV`, :class:`AOVs`, :class:`ActionChannelbag`, :class:`ActionChannelbagFCurves`, :class:`ActionChannelbagGroups`, :class:`ActionChannelbags`, :class:`ActionGroup`, :class:`ActionLayer`, :class:`ActionLayers`, :class:`ActionPoseMarkers`, :class:`ActionSlot`, :class:`ActionSlots`, :class:`ActionStrip`, :class:`ActionStrips`, :class:`Addon`, :class:`AddonPreferences`, :class:`Addons`, :class:`AnimData`, :class:`AnimDataDrivers`, :class:`AnimViz`, :class:`AnimVizMotionPaths`, :class:`AnnotationFrame`, :class:`AnnotationFrames`, :class:`AnnotationLayer`, :class:`AnnotationLayers`, :class:`AnnotationStroke`, :class:`AnnotationStrokePoint`, :class:`AnyType`, :class:`Area`, :class:`AreaSpaces`, :class:`ArmatureBones`, :class:`ArmatureConstraintTargets`, :class:`ArmatureEditBones`, :class:`AssetLibraryCollection`, :class:`AssetLibraryReference`, :class:`AssetMetaData`, :class:`AssetRepresentation`, :class:`AssetShelf`, :class:`AssetTag`, :class:`AssetTags`, :class:`AssetWeakReference`, :class:`Attribute`, :class:`AttributeGroupCurves`, :class:`AttributeGroupGreasePencil`, :class:`AttributeGroupGreasePencilDrawing`, :class:`AttributeGroupMesh`, :class:`AttributeGroupPointCloud`, :class:`BakeSettings`, :class:`BezierSplinePoint`, :class:`BlendData`, :class:`BlendDataActions`, :class:`BlendDataAnnotations`, :class:`BlendDataArmatures`, :class:`BlendDataBrushes`, :class:`BlendDataCacheFiles`, :class:`BlendDataCameras`, :class:`BlendDataCollections`, :class:`BlendDataCurves`, :class:`BlendDataFonts`, :class:`BlendDataGreasePencilsV3`, :class:`BlendDataHairCurves`, :class:`BlendDataImages`, :class:`BlendDataLattices`, :class:`BlendDataLibraries`, :class:`BlendDataLights`, :class:`BlendDataLineStyles`, :class:`BlendDataMasks`, :class:`BlendDataMaterials`, :class:`BlendDataMeshes`, :class:`BlendDataMetaBalls`, :class:`BlendDataMovieClips`, :class:`BlendDataNodeTrees`, :class:`BlendDataObjects`, :class:`BlendDataPaintCurves`, :class:`BlendDataPalettes`, :class:`BlendDataParticles`, :class:`BlendDataPointClouds`, :class:`BlendDataProbes`, :class:`BlendDataScenes`, :class:`BlendDataScreens`, :class:`BlendDataSounds`, :class:`BlendDataSpeakers`, :class:`BlendDataTexts`, :class:`BlendDataTextures`, :class:`BlendDataVolumes`, :class:`BlendDataWindowManagers`, :class:`BlendDataWorkSpaces`, :class:`BlendDataWorlds`, :class:`BlendFileColorspace`, :class:`BlendImportContext`, :class:`BlendImportContextItem`, :class:`BlendImportContextItems`, :class:`BlendImportContextLibraries`, :class:`BlendImportContextLibrary`, :class:`BlenderRNA`, :class:`BoidRule`, :class:`BoidSettings`, :class:`BoidState`, :class:`Bone`, :class:`BoneCollection`, :class:`BoneCollectionMemberships`, :class:`BoneCollections`, :class:`BoneColor`, :class:`BoolAttributeValue`, :class:`BrushCapabilities`, :class:`BrushCapabilitiesImagePaint`, :class:`BrushCapabilitiesSculpt`, :class:`BrushCapabilitiesVertexPaint`, :class:`BrushCapabilitiesWeightPaint`, :class:`BrushCurvesSculptSettings`, :class:`BrushGpencilSettings`, :class:`ByteColorAttributeValue`, :class:`ByteIntAttributeValue`, :class:`CacheFileLayer`, :class:`CacheFileLayers`, :class:`CacheObjectPath`, :class:`CacheObjectPaths`, :class:`CameraBackgroundImage`, :class:`CameraBackgroundImages`, :class:`CameraDOFSettings`, :class:`CameraStereoData`, :class:`ChannelDriverVariables`, :class:`ChildParticle`, :class:`ClothCollisionSettings`, :class:`ClothSettings`, :class:`ClothSolverResult`, :class:`CollectionChild`, :class:`CollectionChildren`, :class:`CollectionExport`, :class:`CollectionExports`, :class:`CollectionLightLinking`, :class:`CollectionObject`, :class:`CollectionObjects`, :class:`CollisionSettings`, :class:`ColorManagedDisplaySettings`, :class:`ColorManagedInputColorspaceSettings`, :class:`ColorManagedSequencerColorspaceSettings`, :class:`ColorManagedViewSettings`, :class:`ColorMapping`, :class:`ColorRamp`, :class:`ColorRampElement`, :class:`ColorRampElements`, :class:`ConsoleLine`, :class:`Constraint`, :class:`ConstraintTarget`, :class:`ConstraintTargetBone`, :class:`Context`, :class:`CryptomatteEntry`, :class:`CurveMap`, :class:`CurveMapPoint`, :class:`CurveMapPoints`, :class:`CurveMapping`, :class:`CurvePaintSettings`, :class:`CurvePoint`, :class:`CurveProfile`, :class:`CurveProfilePoint`, :class:`CurveProfilePoints`, :class:`CurveSlice`, :class:`CurveSplines`, :class:`Depsgraph`, :class:`DepsgraphObjectInstance`, :class:`DepsgraphUpdate`, :class:`DisplaySafeAreas`, :class:`DopeSheet`, :class:`Driver`, :class:`DriverTarget`, :class:`DriverVariable`, :class:`DynamicPaintBrushSettings`, :class:`DynamicPaintCanvasSettings`, :class:`DynamicPaintSurface`, :class:`DynamicPaintSurfaces`, :class:`EQCurveMappingData`, :class:`EditBone`, :class:`EffectorWeights`, :class:`EnumPropertyItem`, :class:`Event`, :class:`FCurve`, :class:`FCurveKeyframePoints`, :class:`FCurveModifiers`, :class:`FCurveSample`, :class:`FFmpegSettings`, :class:`FModifier`, :class:`FModifierEnvelopeControlPoint`, :class:`FModifierEnvelopeControlPoints`, :class:`FieldSettings`, :class:`FileAssetSelectIDFilter`, :class:`FileBrowserFSMenuEntry`, :class:`FileHandler`, :class:`FileSelectEntry`, :class:`FileSelectIDFilter`, :class:`FileSelectParams`, :class:`Float2AttributeValue`, :class:`Float4x4AttributeValue`, :class:`FloatAttributeValue`, :class:`FloatColorAttributeValue`, :class:`FloatVectorAttributeValue`, :class:`FloatVectorValueReadOnly`, :class:`FluidDomainSettings`, :class:`FluidEffectorSettings`, :class:`FluidFlowSettings`, :class:`ForeachGeometryElementGenerationItem`, :class:`ForeachGeometryElementInputItem`, :class:`ForeachGeometryElementMainItem`, :class:`FreestyleLineSet`, :class:`FreestyleModuleSettings`, :class:`FreestyleModules`, :class:`FreestyleSettings`, :class:`Function`, :class:`GPencilInterpolateSettings`, :class:`GPencilSculptGuide`, :class:`GPencilSculptSettings`, :class:`GeometryNodeFieldToGridItem`, :class:`GeometryNodeFieldToGridItems`, :class:`GeometryNodeFieldToListItem`, :class:`GeometryNodeFieldToListItems`, :class:`Gizmo`, :class:`GizmoGroup`, :class:`GizmoGroupProperties`, :class:`GizmoProperties`, :class:`Gizmos`, :class:`GreasePencilDashModifierSegment`, :class:`GreasePencilDrawing`, :class:`GreasePencilFrame`, :class:`GreasePencilFrames`, :class:`GreasePencilLayerMask`, :class:`GreasePencilLayerMasks`, :class:`GreasePencilTimeModifierSegment`, :class:`GreasePencilTreeNode`, :class:`GreasePencilv3LayerGroup`, :class:`GreasePencilv3Layers`, :class:`Header`, :class:`Histogram`, :class:`ID`, :class:`IDMaterials`, :class:`IDOverrideLibrary`, :class:`IDOverrideLibraryProperties`, :class:`IDOverrideLibraryProperty`, :class:`IDOverrideLibraryPropertyOperation`, :class:`IDOverrideLibraryPropertyOperations`, :class:`IDPropertyWrapPtr`, :class:`IKParam`, :class:`ImageFormatSettings`, :class:`ImagePackedFile`, :class:`ImagePreview`, :class:`ImageUser`, :class:`IndexSwitchItem`, :class:`Int2AttributeValue`, :class:`IntAttributeValue`, :class:`KeyConfig`, :class:`KeyConfigPreferences`, :class:`KeyConfigurations`, :class:`KeyMap`, :class:`KeyMapItem`, :class:`KeyMapItems`, :class:`KeyMaps`, :class:`Keyframe`, :class:`KeyingSet`, :class:`KeyingSetInfo`, :class:`KeyingSetPath`, :class:`KeyingSetPaths`, :class:`KeyingSets`, :class:`KeyingSetsAll`, :class:`LatticePoint`, :class:`LayerCollection`, :class:`LayerObjects`, :class:`LayoutPanelState`, :class:`LibraryWeakReference`, :class:`Lightgroup`, :class:`Lightgroups`, :class:`LineStyleAlphaModifiers`, :class:`LineStyleColorModifiers`, :class:`LineStyleGeometryModifiers`, :class:`LineStyleModifier`, :class:`LineStyleTextureSlots`, :class:`LineStyleThicknessModifiers`, :class:`Linesets`, :class:`LoopColors`, :class:`Macro`, :class:`MaskLayer`, :class:`MaskLayers`, :class:`MaskParent`, :class:`MaskSpline`, :class:`MaskSplinePoint`, :class:`MaskSplinePointUW`, :class:`MaskSplinePoints`, :class:`MaskSplines`, :class:`MaterialGPencilStyle`, :class:`MaterialLineArt`, :class:`MaterialSlot`, :class:`Menu`, :class:`MeshEdge`, :class:`MeshEdges`, :class:`MeshLoop`, :class:`MeshLoopColor`, :class:`MeshLoopColorLayer`, :class:`MeshLoopTriangle`, :class:`MeshLoopTriangles`, :class:`MeshLoops`, :class:`MeshNormalValue`, :class:`MeshPolygon`, :class:`MeshPolygons`, :class:`MeshSkinVertex`, :class:`MeshSkinVertexLayer`, :class:`MeshStatVis`, :class:`MeshUVLoop`, :class:`MeshUVLoopLayer`, :class:`MeshVertex`, :class:`MeshVertices`, :class:`MetaBallElements`, :class:`MetaElement`, :class:`Modifier`, :class:`MotionPath`, :class:`MotionPathVert`, :class:`MovieClipProxy`, :class:`MovieClipScopes`, :class:`MovieClipUser`, :class:`MovieReconstructedCamera`, :class:`MovieTracking`, :class:`MovieTrackingCamera`, :class:`MovieTrackingDopesheet`, :class:`MovieTrackingMarker`, :class:`MovieTrackingMarkers`, :class:`MovieTrackingObject`, :class:`MovieTrackingObjectPlaneTracks`, :class:`MovieTrackingObjectTracks`, :class:`MovieTrackingObjects`, :class:`MovieTrackingPlaneMarker`, :class:`MovieTrackingPlaneMarkers`, :class:`MovieTrackingPlaneTrack`, :class:`MovieTrackingPlaneTracks`, :class:`MovieTrackingReconstructedCameras`, :class:`MovieTrackingReconstruction`, :class:`MovieTrackingSettings`, :class:`MovieTrackingStabilization`, :class:`MovieTrackingTrack`, :class:`MovieTrackingTracks`, :class:`NDOFMotionEventData`, :class:`NlaStrip`, :class:`NlaStripFCurves`, :class:`NlaStrips`, :class:`NlaTrack`, :class:`NlaTracks`, :class:`Node`, :class:`NodeClosureInputItem`, :class:`NodeClosureInputItems`, :class:`NodeClosureOutputItem`, :class:`NodeClosureOutputItems`, :class:`NodeCombineBundleItem`, :class:`NodeCombineBundleItems`, :class:`NodeCompositorFileOutputItem`, :class:`NodeCompositorFileOutputItems`, :class:`NodeEnumItem`, :class:`NodeEvaluateClosureInputItem`, :class:`NodeEvaluateClosureInputItems`, :class:`NodeEvaluateClosureOutputItem`, :class:`NodeEvaluateClosureOutputItems`, :class:`NodeFunctionFormatStringItem`, :class:`NodeFunctionFormatStringItems`, :class:`NodeGeometryBakeItem`, :class:`NodeGeometryBakeItems`, :class:`NodeGeometryCaptureAttributeItem`, :class:`NodeGeometryCaptureAttributeItems`, :class:`NodeGeometryForeachGeometryElementGenerationItems`, :class:`NodeGeometryForeachGeometryElementInputItems`, :class:`NodeGeometryForeachGeometryElementMainItems`, :class:`NodeGeometryRepeatOutputItems`, :class:`NodeGeometrySimulationOutputItems`, :class:`NodeGeometryViewerItem`, :class:`NodeGeometryViewerItems`, :class:`NodeIndexSwitchItems`, :class:`NodeInputs`, :class:`NodeInstanceHash`, :class:`NodeInternalSocketTemplate`, :class:`NodeLink`, :class:`NodeLinks`, :class:`NodeMenuSwitchItems`, :class:`NodeOutputs`, :class:`NodeSeparateBundleItem`, :class:`NodeSeparateBundleItems`, :class:`NodeSocket`, :class:`NodeTreeInterface`, :class:`NodeTreeInterfaceItem`, :class:`NodeTreePath`, :class:`Nodes`, :class:`NodesModifierBake`, :class:`NodesModifierBakeDataBlocks`, :class:`NodesModifierBakes`, :class:`NodesModifierDataBlock`, :class:`NodesModifierPanel`, :class:`NodesModifierPanels`, :class:`NodesModifierWarning`, :class:`ObjectBase`, :class:`ObjectConstraints`, :class:`ObjectDisplay`, :class:`ObjectLightLinking`, :class:`ObjectLineArt`, :class:`ObjectModifiers`, :class:`ObjectShaderFx`, :class:`Operator`, :class:`OperatorMacro`, :class:`OperatorOptions`, :class:`OperatorProperties`, :class:`PackedFile`, :class:`Paint`, :class:`PaintModeSettings`, :class:`PaletteColor`, :class:`PaletteColors`, :class:`Panel`, :class:`Particle`, :class:`ParticleBrush`, :class:`ParticleDupliWeight`, :class:`ParticleEdit`, :class:`ParticleHairKey`, :class:`ParticleKey`, :class:`ParticleSettingsTextureSlots`, :class:`ParticleSystem`, :class:`ParticleSystems`, :class:`ParticleTarget`, :class:`PathCompare`, :class:`PathCompareCollection`, :class:`Point`, :class:`PointCache`, :class:`PointCacheItem`, :class:`PointCaches`, :class:`Pose`, :class:`PoseBone`, :class:`PoseBoneConstraints`, :class:`Preferences`, :class:`PreferencesApps`, :class:`PreferencesEdit`, :class:`PreferencesExperimental`, :class:`PreferencesExtensions`, :class:`PreferencesFilePaths`, :class:`PreferencesInput`, :class:`PreferencesKeymap`, :class:`PreferencesSystem`, :class:`PreferencesView`, :class:`PrimitiveBoolean`, :class:`PrimitiveFloat`, :class:`PrimitiveInt`, :class:`PrimitiveString`, :class:`Property`, :class:`PropertyGroup`, :class:`PropertyGroupItem`, :class:`QuaternionAttributeValue`, :class:`RaytraceEEVEE`, :class:`ReadOnlyInteger`, :class:`Region`, :class:`RegionView3D`, :class:`RenderEngine`, :class:`RenderLayer`, :class:`RenderPass`, :class:`RenderPasses`, :class:`RenderResult`, :class:`RenderSettings`, :class:`RenderSlot`, :class:`RenderSlots`, :class:`RenderView`, :class:`RenderViews`, :class:`RepeatItem`, :class:`RetimingKey`, :class:`RetimingKeys`, :class:`RigidBodyConstraint`, :class:`RigidBodyObject`, :class:`RigidBodyWorld`, :class:`SPHFluidSettings`, :class:`SceneDisplay`, :class:`SceneEEVEE`, :class:`SceneGpencil`, :class:`SceneHydra`, :class:`SceneObjects`, :class:`SceneRenderView`, :class:`Scopes`, :class:`ScriptDirectory`, :class:`ScriptDirectoryCollection`, :class:`SequenceEditor`, :class:`SequenceTimelineChannel`, :class:`SequencerCacheOverlay`, :class:`SequencerPreviewOverlay`, :class:`SequencerTimelineOverlay`, :class:`SequencerToolSettings`, :class:`ShaderFx`, :class:`ShapeKey`, :class:`ShapeKeyBezierPoint`, :class:`ShapeKeyCurvePoint`, :class:`ShapeKeyPoint`, :class:`Short2AttributeValue`, :class:`SimulationStateItem`, :class:`SoftBodySettings`, :class:`Space`, :class:`SpaceClipOverlay`, :class:`SpaceDopeSheetOverlay`, :class:`SpaceImageOverlay`, :class:`SpaceNodeEditorPath`, :class:`SpaceNodeOverlay`, :class:`SpaceUVEditor`, :class:`Spline`, :class:`SplineBezierPoints`, :class:`SplinePoint`, :class:`SplinePoints`, :class:`SpreadsheetColumn`, :class:`SpreadsheetColumnID`, :class:`SpreadsheetRowFilter`, :class:`SpreadsheetTable`, :class:`SpreadsheetTableID`, :class:`SpreadsheetTables`, :class:`Stereo3dDisplay`, :class:`Stereo3dFormat`, :class:`StringAttributeValue`, :class:`Strip`, :class:`StripColorBalanceData`, :class:`StripCrop`, :class:`StripElement`, :class:`StripElements`, :class:`StripModifier`, :class:`StripModifiers`, :class:`StripProxy`, :class:`StripTransform`, :class:`StripsMeta`, :class:`StripsTopLevel`, :class:`Struct`, :class:`StudioLight`, :class:`StudioLights`, :class:`TexMapping`, :class:`TexPaintSlot`, :class:`TextBox`, :class:`TextCharacterFormat`, :class:`TextLine`, :class:`TextureSlot`, :class:`Theme`, :class:`ThemeBoneColorSet`, :class:`ThemeClipEditor`, :class:`ThemeCollectionColor`, :class:`ThemeCommon`, :class:`ThemeCommonAnim`, :class:`ThemeCommonCurves`, :class:`ThemeConsole`, :class:`ThemeDopeSheet`, :class:`ThemeFileBrowser`, :class:`ThemeFontStyle`, :class:`ThemeGradientColors`, :class:`ThemeGraphEditor`, :class:`ThemeImageEditor`, :class:`ThemeInfo`, :class:`ThemeNLAEditor`, :class:`ThemeNodeEditor`, :class:`ThemeOutliner`, :class:`ThemePreferences`, :class:`ThemeProperties`, :class:`ThemeRegions`, :class:`ThemeRegionsAssetShelf`, :class:`ThemeRegionsChannels`, :class:`ThemeRegionsScrubbing`, :class:`ThemeRegionsSidebars`, :class:`ThemeSequenceEditor`, :class:`ThemeSpaceGeneric`, :class:`ThemeSpaceGradient`, :class:`ThemeSpreadsheet`, :class:`ThemeStatusBar`, :class:`ThemeStripColor`, :class:`ThemeStyle`, :class:`ThemeTextEditor`, :class:`ThemeTopBar`, :class:`ThemeUserInterface`, :class:`ThemeView3D`, :class:`ThemeWidgetColors`, :class:`ThemeWidgetStateColors`, :class:`TimelineMarker`, :class:`TimelineMarkers`, :class:`Timer`, :class:`ToolSettings`, :class:`TransformOrientation`, :class:`TransformOrientationSlot`, :class:`UDIMTile`, :class:`UDIMTiles`, :class:`UILayout`, :class:`UIList`, :class:`UIPieMenu`, :class:`UIPopover`, :class:`UIPopupMenu`, :class:`UVLoopLayers`, :class:`UVProjector`, :class:`UnifiedPaintSettings`, :class:`UnitSettings`, :class:`UnknownType`, :class:`UserAssetLibrary`, :class:`UserExtensionRepo`, :class:`UserExtensionRepoCollection`, :class:`UserSolidLight`, :class:`UvSculpt`, :class:`VertexGroup`, :class:`VertexGroupElement`, :class:`VertexGroups`, :class:`View2D`, :class:`View3DCursor`, :class:`View3DOverlay`, :class:`View3DShading`, :class:`ViewLayer`, :class:`ViewLayerEEVEE`, :class:`ViewLayers`, :class:`ViewerPath`, :class:`ViewerPathElem`, :class:`VolumeDisplay`, :class:`VolumeGrid`, :class:`VolumeGrids`, :class:`VolumeRender`, :class:`WalkNavigation`, :class:`Window`, :class:`Windows`, :class:`WorkSpaceTool`, :class:`WorldLighting`, :class:`WorldMistSettings`, :class:`XrActionMap`, :class:`XrActionMapBinding`, :class:`XrActionMapBindings`, :class:`XrActionMapItem`, :class:`XrActionMapItems`, :class:`XrActionMaps`, :class:`XrComponentPath`, :class:`XrComponentPaths`, :class:`XrEventData`, :class:`XrNavigation`, :class:`XrSessionSettings`, :class:`XrSessionState`, :class:`XrUserPath`, :class:`XrUserPaths`, :class:`wmOwnerID`, :class:`wmOwnerIDs`, :class:`wmTools`
+.. toctree::
+   :caption: Subclasses
+   :maxdepth: 1
+
+   bpy.types.AOV.rst
+   bpy.types.AOVs.rst
+   bpy.types.ActionChannelbag.rst
+   bpy.types.ActionChannelbagFCurves.rst
+   bpy.types.ActionChannelbagGroups.rst
+   bpy.types.ActionChannelbags.rst
+   bpy.types.ActionGroup.rst
+   bpy.types.ActionLayer.rst
+   bpy.types.ActionLayers.rst
+   bpy.types.ActionPoseMarkers.rst
+   bpy.types.ActionSlot.rst
+   bpy.types.ActionSlots.rst
+   bpy.types.ActionStrip.rst
+   bpy.types.ActionStrips.rst
+   bpy.types.Addon.rst
+   bpy.types.AddonPreferences.rst
+   bpy.types.Addons.rst
+   bpy.types.AnimData.rst
+   bpy.types.AnimDataDrivers.rst
+   bpy.types.AnimViz.rst
+   bpy.types.AnimVizMotionPaths.rst
+   bpy.types.AnnotationFrame.rst
+   bpy.types.AnnotationFrames.rst
+   bpy.types.AnnotationLayer.rst
+   bpy.types.AnnotationLayers.rst
+   bpy.types.AnnotationStroke.rst
+   bpy.types.AnnotationStrokePoint.rst
+   bpy.types.AnnotationStrokePoints.rst
+   bpy.types.AnnotationStrokes.rst
+   bpy.types.AnyType.rst
+   bpy.types.Area.rst
+   bpy.types.AreaSpaces.rst
+   bpy.types.ArmatureBones.rst
+   bpy.types.ArmatureConstraintTargets.rst
+   bpy.types.ArmatureEditBones.rst
+   bpy.types.AssetLibrary.rst
+   bpy.types.AssetLibraryCollection.rst
+   bpy.types.AssetLibraryReference.rst
+   bpy.types.AssetMetaData.rst
+   bpy.types.AssetRepresentation.rst
+   bpy.types.AssetShelf.rst
+   bpy.types.AssetTag.rst
+   bpy.types.AssetTags.rst
+   bpy.types.AssetWeakReference.rst
+   bpy.types.Attribute.rst
+   bpy.types.AttributeGroupCurves.rst
+   bpy.types.AttributeGroupGreasePencil.rst
+   bpy.types.AttributeGroupGreasePencilDrawing.rst
+   bpy.types.AttributeGroupMesh.rst
+   bpy.types.AttributeGroupPointCloud.rst
+   bpy.types.BakeSettings.rst
+   bpy.types.BezierSplinePoint.rst
+   bpy.types.BlendData.rst
+   bpy.types.BlendDataActions.rst
+   bpy.types.BlendDataAnnotations.rst
+   bpy.types.BlendDataArmatures.rst
+   bpy.types.BlendDataBrushes.rst
+   bpy.types.BlendDataCacheFiles.rst
+   bpy.types.BlendDataCameras.rst
+   bpy.types.BlendDataCollections.rst
+   bpy.types.BlendDataCurves.rst
+   bpy.types.BlendDataFonts.rst
+   bpy.types.BlendDataGreasePencilsV3.rst
+   bpy.types.BlendDataHairCurves.rst
+   bpy.types.BlendDataImages.rst
+   bpy.types.BlendDataLattices.rst
+   bpy.types.BlendDataLibraries.rst
+   bpy.types.BlendDataLights.rst
+   bpy.types.BlendDataLineStyles.rst
+   bpy.types.BlendDataMasks.rst
+   bpy.types.BlendDataMaterials.rst
+   bpy.types.BlendDataMeshes.rst
+   bpy.types.BlendDataMetaBalls.rst
+   bpy.types.BlendDataMovieClips.rst
+   bpy.types.BlendDataNodeTrees.rst
+   bpy.types.BlendDataObjects.rst
+   bpy.types.BlendDataPaintCurves.rst
+   bpy.types.BlendDataPalettes.rst
+   bpy.types.BlendDataParticles.rst
+   bpy.types.BlendDataPointClouds.rst
+   bpy.types.BlendDataProbes.rst
+   bpy.types.BlendDataScenes.rst
+   bpy.types.BlendDataScreens.rst
+   bpy.types.BlendDataSounds.rst
+   bpy.types.BlendDataSpeakers.rst
+   bpy.types.BlendDataTexts.rst
+   bpy.types.BlendDataTextures.rst
+   bpy.types.BlendDataVolumes.rst
+   bpy.types.BlendDataWindowManagers.rst
+   bpy.types.BlendDataWorkSpaces.rst
+   bpy.types.BlendDataWorlds.rst
+   bpy.types.BlendFileColorspace.rst
+   bpy.types.BlendImportContext.rst
+   bpy.types.BlendImportContextItem.rst
+   bpy.types.BlendImportContextItems.rst
+   bpy.types.BlendImportContextLibraries.rst
+   bpy.types.BlendImportContextLibrary.rst
+   bpy.types.BlenderRNA.rst
+   bpy.types.BoidRule.rst
+   bpy.types.BoidSettings.rst
+   bpy.types.BoidState.rst
+   bpy.types.Bone.rst
+   bpy.types.BoneCollection.rst
+   bpy.types.BoneCollectionMemberships.rst
+   bpy.types.BoneCollections.rst
+   bpy.types.BoneColor.rst
+   bpy.types.BoolAttributeValue.rst
+   bpy.types.BrushCapabilities.rst
+   bpy.types.BrushCapabilitiesImagePaint.rst
+   bpy.types.BrushCapabilitiesSculpt.rst
+   bpy.types.BrushCapabilitiesVertexPaint.rst
+   bpy.types.BrushCapabilitiesWeightPaint.rst
+   bpy.types.BrushCurvesSculptSettings.rst
+   bpy.types.BrushGpencilSettings.rst
+   bpy.types.ByteColorAttributeValue.rst
+   bpy.types.ByteIntAttributeValue.rst
+   bpy.types.CacheFileLayer.rst
+   bpy.types.CacheFileLayers.rst
+   bpy.types.CacheObjectPath.rst
+   bpy.types.CacheObjectPaths.rst
+   bpy.types.CameraBackgroundImage.rst
+   bpy.types.CameraBackgroundImages.rst
+   bpy.types.CameraDOFSettings.rst
+   bpy.types.CameraStereoData.rst
+   bpy.types.ChannelDriverVariables.rst
+   bpy.types.ChildParticle.rst
+   bpy.types.ClothCollisionSettings.rst
+   bpy.types.ClothSettings.rst
+   bpy.types.ClothSolverResult.rst
+   bpy.types.CollectionChild.rst
+   bpy.types.CollectionChildren.rst
+   bpy.types.CollectionExport.rst
+   bpy.types.CollectionExports.rst
+   bpy.types.CollectionImport.rst
+   bpy.types.CollectionLightLinking.rst
+   bpy.types.CollectionObject.rst
+   bpy.types.CollectionObjects.rst
+   bpy.types.CollisionSettings.rst
+   bpy.types.ColorManagedDisplaySettings.rst
+   bpy.types.ColorManagedInputColorspaceSettings.rst
+   bpy.types.ColorManagedSequencerColorspaceSettings.rst
+   bpy.types.ColorManagedViewSettings.rst
+   bpy.types.ColorMapping.rst
+   bpy.types.ColorRamp.rst
+   bpy.types.ColorRampElement.rst
+   bpy.types.ColorRampElements.rst
+   bpy.types.ConsoleLine.rst
+   bpy.types.Constraint.rst
+   bpy.types.ConstraintTarget.rst
+   bpy.types.ConstraintTargetBone.rst
+   bpy.types.Context.rst
+   bpy.types.CryptomatteEntry.rst
+   bpy.types.CurveMap.rst
+   bpy.types.CurveMapPoint.rst
+   bpy.types.CurveMapPoints.rst
+   bpy.types.CurveMapping.rst
+   bpy.types.CurvePaintSettings.rst
+   bpy.types.CurvePoint.rst
+   bpy.types.CurveProfile.rst
+   bpy.types.CurveProfilePoint.rst
+   bpy.types.CurveProfilePoints.rst
+   bpy.types.CurveSlice.rst
+   bpy.types.CurveSplines.rst
+   bpy.types.Depsgraph.rst
+   bpy.types.DepsgraphObjectInstance.rst
+   bpy.types.DepsgraphUpdate.rst
+   bpy.types.DisplaySafeAreas.rst
+   bpy.types.DopeSheet.rst
+   bpy.types.Driver.rst
+   bpy.types.DriverTarget.rst
+   bpy.types.DriverVariable.rst
+   bpy.types.DynamicPaintBrushSettings.rst
+   bpy.types.DynamicPaintCanvasSettings.rst
+   bpy.types.DynamicPaintSurface.rst
+   bpy.types.DynamicPaintSurfaces.rst
+   bpy.types.EQCurveMappingData.rst
+   bpy.types.EditBone.rst
+   bpy.types.EffectorWeights.rst
+   bpy.types.EnumPropertyItem.rst
+   bpy.types.Event.rst
+   bpy.types.FCurve.rst
+   bpy.types.FCurveKeyframePoints.rst
+   bpy.types.FCurveModifiers.rst
+   bpy.types.FCurveSample.rst
+   bpy.types.FFmpegSettings.rst
+   bpy.types.FModifier.rst
+   bpy.types.FModifierEnvelopeControlPoint.rst
+   bpy.types.FModifierEnvelopeControlPoints.rst
+   bpy.types.FieldSettings.rst
+   bpy.types.FileAssetSelectIDFilter.rst
+   bpy.types.FileBrowserFSMenuEntry.rst
+   bpy.types.FileHandler.rst
+   bpy.types.FileSelectEntry.rst
+   bpy.types.FileSelectIDFilter.rst
+   bpy.types.FileSelectParams.rst
+   bpy.types.Float2AttributeValue.rst
+   bpy.types.Float4AttributeValue.rst
+   bpy.types.Float4x4AttributeValue.rst
+   bpy.types.FloatAttributeValue.rst
+   bpy.types.FloatColorAttributeValue.rst
+   bpy.types.FloatVectorAttributeValue.rst
+   bpy.types.FloatVectorValueReadOnly.rst
+   bpy.types.FluidDomainSettings.rst
+   bpy.types.FluidEffectorSettings.rst
+   bpy.types.FluidFlowSettings.rst
+   bpy.types.ForeachGeometryElementGenerationItem.rst
+   bpy.types.ForeachGeometryElementInputItem.rst
+   bpy.types.ForeachGeometryElementMainItem.rst
+   bpy.types.FreestyleLineSet.rst
+   bpy.types.FreestyleModuleSettings.rst
+   bpy.types.FreestyleModules.rst
+   bpy.types.FreestyleSettings.rst
+   bpy.types.Function.rst
+   bpy.types.GPencilInterpolateSettings.rst
+   bpy.types.GPencilSculptGuide.rst
+   bpy.types.GPencilSculptSettings.rst
+   bpy.types.GeometryNodeClosureToListItem.rst
+   bpy.types.GeometryNodeClosureToListItems.rst
+   bpy.types.GeometryNodeFieldToGridItem.rst
+   bpy.types.GeometryNodeFieldToGridItems.rst
+   bpy.types.GeometryNodeFieldToListItem.rst
+   bpy.types.GeometryNodeFieldToListItems.rst
+   bpy.types.Gizmo.rst
+   bpy.types.GizmoGroup.rst
+   bpy.types.GizmoGroupProperties.rst
+   bpy.types.GizmoProperties.rst
+   bpy.types.Gizmos.rst
+   bpy.types.GreasePencilDashModifierSegment.rst
+   bpy.types.GreasePencilDrawing.rst
+   bpy.types.GreasePencilFrame.rst
+   bpy.types.GreasePencilFrames.rst
+   bpy.types.GreasePencilLayerMask.rst
+   bpy.types.GreasePencilLayerMasks.rst
+   bpy.types.GreasePencilTimeModifierSegment.rst
+   bpy.types.GreasePencilTreeNode.rst
+   bpy.types.GreasePencilv3LayerGroup.rst
+   bpy.types.GreasePencilv3Layers.rst
+   bpy.types.Header.rst
+   bpy.types.Histogram.rst
+   bpy.types.ID.rst
+   bpy.types.IDMaterials.rst
+   bpy.types.IDOverrideLibrary.rst
+   bpy.types.IDOverrideLibraryProperties.rst
+   bpy.types.IDOverrideLibraryProperty.rst
+   bpy.types.IDOverrideLibraryPropertyOperation.rst
+   bpy.types.IDOverrideLibraryPropertyOperations.rst
+   bpy.types.IDPropertyWrapPtr.rst
+   bpy.types.IKParam.rst
+   bpy.types.ImageFormatSettings.rst
+   bpy.types.ImagePackedFile.rst
+   bpy.types.ImagePreview.rst
+   bpy.types.ImageUser.rst
+   bpy.types.IndexSwitchItem.rst
+   bpy.types.Int2AttributeValue.rst
+   bpy.types.IntAttributeValue.rst
+   bpy.types.KeyConfig.rst
+   bpy.types.KeyConfigPreferences.rst
+   bpy.types.KeyConfigurations.rst
+   bpy.types.KeyMap.rst
+   bpy.types.KeyMapItem.rst
+   bpy.types.KeyMapItems.rst
+   bpy.types.KeyMaps.rst
+   bpy.types.Keyframe.rst
+   bpy.types.KeyingSet.rst
+   bpy.types.KeyingSetInfo.rst
+   bpy.types.KeyingSetPath.rst
+   bpy.types.KeyingSetPaths.rst
+   bpy.types.KeyingSets.rst
+   bpy.types.KeyingSetsAll.rst
+   bpy.types.LatticePoint.rst
+   bpy.types.LayerCollection.rst
+   bpy.types.LayerObjects.rst
+   bpy.types.LayoutPanelState.rst
+   bpy.types.LibraryWeakReference.rst
+   bpy.types.Lightgroup.rst
+   bpy.types.Lightgroups.rst
+   bpy.types.LineStyleAlphaModifiers.rst
+   bpy.types.LineStyleColorModifiers.rst
+   bpy.types.LineStyleGeometryModifiers.rst
+   bpy.types.LineStyleModifier.rst
+   bpy.types.LineStyleTextureSlots.rst
+   bpy.types.LineStyleThicknessModifiers.rst
+   bpy.types.Linesets.rst
+   bpy.types.LoopColors.rst
+   bpy.types.Macro.rst
+   bpy.types.MaskLayer.rst
+   bpy.types.MaskLayers.rst
+   bpy.types.MaskParent.rst
+   bpy.types.MaskSpline.rst
+   bpy.types.MaskSplinePoint.rst
+   bpy.types.MaskSplinePointUW.rst
+   bpy.types.MaskSplinePoints.rst
+   bpy.types.MaskSplines.rst
+   bpy.types.MaterialGPencilStyle.rst
+   bpy.types.MaterialLineArt.rst
+   bpy.types.MaterialSlot.rst
+   bpy.types.Menu.rst
+   bpy.types.MeshAutomaskingSettings.rst
+   bpy.types.MeshEdge.rst
+   bpy.types.MeshEdges.rst
+   bpy.types.MeshLoop.rst
+   bpy.types.MeshLoopColor.rst
+   bpy.types.MeshLoopColorLayer.rst
+   bpy.types.MeshLoopTriangle.rst
+   bpy.types.MeshLoopTriangles.rst
+   bpy.types.MeshLoops.rst
+   bpy.types.MeshNormalValue.rst
+   bpy.types.MeshPolygon.rst
+   bpy.types.MeshPolygons.rst
+   bpy.types.MeshSkinVertex.rst
+   bpy.types.MeshSkinVertexLayer.rst
+   bpy.types.MeshStatVis.rst
+   bpy.types.MeshUVLoop.rst
+   bpy.types.MeshUVLoopLayer.rst
+   bpy.types.MeshVertex.rst
+   bpy.types.MeshVertices.rst
+   bpy.types.MetaBallElements.rst
+   bpy.types.MetaElement.rst
+   bpy.types.Modifier.rst
+   bpy.types.MotionPath.rst
+   bpy.types.MotionPathVert.rst
+   bpy.types.MovieClipProxy.rst
+   bpy.types.MovieClipScopes.rst
+   bpy.types.MovieClipUser.rst
+   bpy.types.MovieReconstructedCamera.rst
+   bpy.types.MovieTracking.rst
+   bpy.types.MovieTrackingCamera.rst
+   bpy.types.MovieTrackingDopesheet.rst
+   bpy.types.MovieTrackingMarker.rst
+   bpy.types.MovieTrackingMarkers.rst
+   bpy.types.MovieTrackingObject.rst
+   bpy.types.MovieTrackingObjectPlaneTracks.rst
+   bpy.types.MovieTrackingObjectTracks.rst
+   bpy.types.MovieTrackingObjects.rst
+   bpy.types.MovieTrackingPlaneMarker.rst
+   bpy.types.MovieTrackingPlaneMarkers.rst
+   bpy.types.MovieTrackingPlaneTrack.rst
+   bpy.types.MovieTrackingPlaneTracks.rst
+   bpy.types.MovieTrackingReconstructedCameras.rst
+   bpy.types.MovieTrackingReconstruction.rst
+   bpy.types.MovieTrackingSettings.rst
+   bpy.types.MovieTrackingStabilization.rst
+   bpy.types.MovieTrackingTrack.rst
+   bpy.types.MovieTrackingTracks.rst
+   bpy.types.NDOFMotionEventData.rst
+   bpy.types.NlaStrip.rst
+   bpy.types.NlaStripFCurves.rst
+   bpy.types.NlaStrips.rst
+   bpy.types.NlaTrack.rst
+   bpy.types.NlaTracks.rst
+   bpy.types.Node.rst
+   bpy.types.NodeClosureInputItem.rst
+   bpy.types.NodeClosureInputItems.rst
+   bpy.types.NodeClosureOutputItem.rst
+   bpy.types.NodeClosureOutputItems.rst
+   bpy.types.NodeCombineBundleItem.rst
+   bpy.types.NodeCombineBundleItems.rst
+   bpy.types.NodeCompositorFileOutputItem.rst
+   bpy.types.NodeCompositorFileOutputItems.rst
+   bpy.types.NodeEnumItem.rst
+   bpy.types.NodeEvaluateClosureInputItem.rst
+   bpy.types.NodeEvaluateClosureInputItems.rst
+   bpy.types.NodeEvaluateClosureOutputItem.rst
+   bpy.types.NodeEvaluateClosureOutputItems.rst
+   bpy.types.NodeFunctionFormatStringItem.rst
+   bpy.types.NodeFunctionFormatStringItems.rst
+   bpy.types.NodeGeometryBakeItem.rst
+   bpy.types.NodeGeometryBakeItems.rst
+   bpy.types.NodeGeometryCaptureAttributeItem.rst
+   bpy.types.NodeGeometryCaptureAttributeItems.rst
+   bpy.types.NodeGeometryForeachGeometryElementGenerationItems.rst
+   bpy.types.NodeGeometryForeachGeometryElementInputItems.rst
+   bpy.types.NodeGeometryForeachGeometryElementMainItems.rst
+   bpy.types.NodeGeometryRepeatOutputItems.rst
+   bpy.types.NodeGeometrySimulationOutputItems.rst
+   bpy.types.NodeGeometryViewerItem.rst
+   bpy.types.NodeGeometryViewerItems.rst
+   bpy.types.NodeIndexSwitchItems.rst
+   bpy.types.NodeInputs.rst
+   bpy.types.NodeInternalSocketTemplate.rst
+   bpy.types.NodeLink.rst
+   bpy.types.NodeLinks.rst
+   bpy.types.NodeMenuSwitchItems.rst
+   bpy.types.NodeOutputs.rst
+   bpy.types.NodePanelState.rst
+   bpy.types.NodeRaycastSampleAttributeItem.rst
+   bpy.types.NodeRaycastSampleAttributeItems.rst
+   bpy.types.NodeSeparateBundleItem.rst
+   bpy.types.NodeSeparateBundleItems.rst
+   bpy.types.NodeSocket.rst
+   bpy.types.NodeTreeInterface.rst
+   bpy.types.NodeTreeInterfaceItem.rst
+   bpy.types.NodeTreePath.rst
+   bpy.types.Nodes.rst
+   bpy.types.NodesModifierBake.rst
+   bpy.types.NodesModifierBakeDataBlocks.rst
+   bpy.types.NodesModifierBakes.rst
+   bpy.types.NodesModifierDataBlock.rst
+   bpy.types.NodesModifierPanel.rst
+   bpy.types.NodesModifierPanels.rst
+   bpy.types.NodesModifierProperties.rst
+   bpy.types.NodesModifierPropertiesEmpty.rst
+   bpy.types.NodesModifierWarning.rst
+   bpy.types.ObjectBase.rst
+   bpy.types.ObjectConstraints.rst
+   bpy.types.ObjectDisplay.rst
+   bpy.types.ObjectLightLinking.rst
+   bpy.types.ObjectLineArt.rst
+   bpy.types.ObjectModifiers.rst
+   bpy.types.ObjectShaderFx.rst
+   bpy.types.Operator.rst
+   bpy.types.OperatorMacro.rst
+   bpy.types.OperatorOptions.rst
+   bpy.types.OperatorProperties.rst
+   bpy.types.PackedFile.rst
+   bpy.types.Paint.rst
+   bpy.types.PaintModeSettings.rst
+   bpy.types.PaletteColor.rst
+   bpy.types.PaletteColors.rst
+   bpy.types.Panel.rst
+   bpy.types.Particle.rst
+   bpy.types.ParticleBrush.rst
+   bpy.types.ParticleDupliWeight.rst
+   bpy.types.ParticleEdit.rst
+   bpy.types.ParticleHairKey.rst
+   bpy.types.ParticleKey.rst
+   bpy.types.ParticleSettingsTextureSlots.rst
+   bpy.types.ParticleSystem.rst
+   bpy.types.ParticleSystems.rst
+   bpy.types.ParticleTarget.rst
+   bpy.types.PathCompare.rst
+   bpy.types.PathCompareCollection.rst
+   bpy.types.Point.rst
+   bpy.types.PointCache.rst
+   bpy.types.PointCacheItem.rst
+   bpy.types.PointCaches.rst
+   bpy.types.Pose.rst
+   bpy.types.PoseBone.rst
+   bpy.types.PoseBoneConstraints.rst
+   bpy.types.Preferences.rst
+   bpy.types.PreferencesApps.rst
+   bpy.types.PreferencesAssetLibraries.rst
+   bpy.types.PreferencesEdit.rst
+   bpy.types.PreferencesExperimental.rst
+   bpy.types.PreferencesExtensions.rst
+   bpy.types.PreferencesFilePaths.rst
+   bpy.types.PreferencesInput.rst
+   bpy.types.PreferencesKeymap.rst
+   bpy.types.PreferencesSystem.rst
+   bpy.types.PreferencesView.rst
+   bpy.types.PrimitiveBoolean.rst
+   bpy.types.PrimitiveFloat.rst
+   bpy.types.PrimitiveInt.rst
+   bpy.types.PrimitiveString.rst
+   bpy.types.Property.rst
+   bpy.types.PropertyGroup.rst
+   bpy.types.PropertyGroupItem.rst
+   bpy.types.QuaternionAttributeValue.rst
+   bpy.types.RaytraceEEVEE.rst
+   bpy.types.ReadOnlyInteger.rst
+   bpy.types.Region.rst
+   bpy.types.RegionView3D.rst
+   bpy.types.RenderEngine.rst
+   bpy.types.RenderLayer.rst
+   bpy.types.RenderPass.rst
+   bpy.types.RenderPasses.rst
+   bpy.types.RenderResult.rst
+   bpy.types.RenderSettings.rst
+   bpy.types.RenderSlot.rst
+   bpy.types.RenderSlots.rst
+   bpy.types.RenderView.rst
+   bpy.types.RenderViews.rst
+   bpy.types.RepeatItem.rst
+   bpy.types.Report.rst
+   bpy.types.RetimingKey.rst
+   bpy.types.RetimingKeys.rst
+   bpy.types.RigidBodyConstraint.rst
+   bpy.types.RigidBodyObject.rst
+   bpy.types.RigidBodyWorld.rst
+   bpy.types.SPHFluidSettings.rst
+   bpy.types.SceneDisplay.rst
+   bpy.types.SceneEEVEE.rst
+   bpy.types.SceneGpencil.rst
+   bpy.types.SceneHydra.rst
+   bpy.types.SceneObjects.rst
+   bpy.types.SceneRenderView.rst
+   bpy.types.Scopes.rst
+   bpy.types.ScriptDirectory.rst
+   bpy.types.ScriptDirectoryCollection.rst
+   bpy.types.SequenceEditor.rst
+   bpy.types.SequenceTimelineChannel.rst
+   bpy.types.SequencerCacheOverlay.rst
+   bpy.types.SequencerCompositorModifierProperties.rst
+   bpy.types.SequencerCompositorModifierPropertiesEmpty.rst
+   bpy.types.SequencerPreviewOverlay.rst
+   bpy.types.SequencerTimelineOverlay.rst
+   bpy.types.SequencerToolSettings.rst
+   bpy.types.ShaderFx.rst
+   bpy.types.ShapeKey.rst
+   bpy.types.ShapeKeyBezierPoint.rst
+   bpy.types.ShapeKeyCurvePoint.rst
+   bpy.types.ShapeKeyPoint.rst
+   bpy.types.Short2AttributeValue.rst
+   bpy.types.SimulationStateItem.rst
+   bpy.types.SoftBodySettings.rst
+   bpy.types.Space.rst
+   bpy.types.SpaceClipOverlay.rst
+   bpy.types.SpaceDopeSheetOverlay.rst
+   bpy.types.SpaceImageOverlay.rst
+   bpy.types.SpaceNodeEditorPath.rst
+   bpy.types.SpaceNodeOverlay.rst
+   bpy.types.SpaceUVEditor.rst
+   bpy.types.Spline.rst
+   bpy.types.SplineBezierPoints.rst
+   bpy.types.SplinePoint.rst
+   bpy.types.SplinePoints.rst
+   bpy.types.SpreadsheetColumn.rst
+   bpy.types.SpreadsheetColumnID.rst
+   bpy.types.SpreadsheetRowFilter.rst
+   bpy.types.SpreadsheetTable.rst
+   bpy.types.SpreadsheetTableID.rst
+   bpy.types.SpreadsheetTables.rst
+   bpy.types.Stereo3dDisplay.rst
+   bpy.types.Stereo3dFormat.rst
+   bpy.types.StringAttributeValue.rst
+   bpy.types.Strip.rst
+   bpy.types.StripColorBalanceData.rst
+   bpy.types.StripCrop.rst
+   bpy.types.StripElement.rst
+   bpy.types.StripElements.rst
+   bpy.types.StripModifier.rst
+   bpy.types.StripModifiers.rst
+   bpy.types.StripProxy.rst
+   bpy.types.StripTransform.rst
+   bpy.types.StripsMeta.rst
+   bpy.types.StripsTopLevel.rst
+   bpy.types.Struct.rst
+   bpy.types.StudioLight.rst
+   bpy.types.StudioLights.rst
+   bpy.types.TexMapping.rst
+   bpy.types.TexPaintSlot.rst
+   bpy.types.TextBox.rst
+   bpy.types.TextCharacterFormat.rst
+   bpy.types.TextLine.rst
+   bpy.types.TextboxState.rst
+   bpy.types.TextureSlot.rst
+   bpy.types.Theme.rst
+   bpy.types.ThemeBoneColorSet.rst
+   bpy.types.ThemeClipEditor.rst
+   bpy.types.ThemeCollectionColor.rst
+   bpy.types.ThemeCommon.rst
+   bpy.types.ThemeCommonAnim.rst
+   bpy.types.ThemeCommonCurves.rst
+   bpy.types.ThemeConsole.rst
+   bpy.types.ThemeDopeSheet.rst
+   bpy.types.ThemeFileBrowser.rst
+   bpy.types.ThemeFontStyle.rst
+   bpy.types.ThemeGradientColors.rst
+   bpy.types.ThemeGraphEditor.rst
+   bpy.types.ThemeImageEditor.rst
+   bpy.types.ThemeInfo.rst
+   bpy.types.ThemeNLAEditor.rst
+   bpy.types.ThemeNodeEditor.rst
+   bpy.types.ThemeOutliner.rst
+   bpy.types.ThemePreferences.rst
+   bpy.types.ThemeProperties.rst
+   bpy.types.ThemeRegions.rst
+   bpy.types.ThemeRegionsAssetShelf.rst
+   bpy.types.ThemeRegionsChannels.rst
+   bpy.types.ThemeRegionsScrubbing.rst
+   bpy.types.ThemeRegionsSidebars.rst
+   bpy.types.ThemeSequenceEditor.rst
+   bpy.types.ThemeSpaceGeneric.rst
+   bpy.types.ThemeSpaceGradient.rst
+   bpy.types.ThemeSpreadsheet.rst
+   bpy.types.ThemeStatusBar.rst
+   bpy.types.ThemeStripColor.rst
+   bpy.types.ThemeStyle.rst
+   bpy.types.ThemeTextEditor.rst
+   bpy.types.ThemeTopBar.rst
+   bpy.types.ThemeUserInterface.rst
+   bpy.types.ThemeView3D.rst
+   bpy.types.ThemeWidgetColors.rst
+   bpy.types.ThemeWidgetStateColors.rst
+   bpy.types.TimelineMarker.rst
+   bpy.types.TimelineMarkers.rst
+   bpy.types.Timer.rst
+   bpy.types.ToolSettings.rst
+   bpy.types.TransformOrientation.rst
+   bpy.types.TransformOrientationSlot.rst
+   bpy.types.UDIMTile.rst
+   bpy.types.UDIMTiles.rst
+   bpy.types.UILayout.rst
+   bpy.types.UIList.rst
+   bpy.types.UIPieMenu.rst
+   bpy.types.UIPopover.rst
+   bpy.types.UIPopupMenu.rst
+   bpy.types.UVLoopLayers.rst
+   bpy.types.UVProjector.rst
+   bpy.types.UnifiedPaintSettings.rst
+   bpy.types.UnitSettings.rst
+   bpy.types.UnknownType.rst
+   bpy.types.UserAssetLibrary.rst
+   bpy.types.UserExtensionRepo.rst
+   bpy.types.UserExtensionRepoCollection.rst
+   bpy.types.UserSolidLight.rst
+   bpy.types.UvSculpt.rst
+   bpy.types.VertexGroup.rst
+   bpy.types.VertexGroupElement.rst
+   bpy.types.VertexGroups.rst
+   bpy.types.View2D.rst
+   bpy.types.View3DCursor.rst
+   bpy.types.View3DOverlay.rst
+   bpy.types.View3DShading.rst
+   bpy.types.ViewLayer.rst
+   bpy.types.ViewLayerEEVEE.rst
+   bpy.types.ViewLayers.rst
+   bpy.types.ViewerPath.rst
+   bpy.types.ViewerPathElem.rst
+   bpy.types.VolumeDisplay.rst
+   bpy.types.VolumeGrid.rst
+   bpy.types.VolumeGrids.rst
+   bpy.types.VolumeRender.rst
+   bpy.types.WalkNavigation.rst
+   bpy.types.Window.rst
+   bpy.types.Windows.rst
+   bpy.types.WorkSpaceTool.rst
+   bpy.types.WorldLighting.rst
+   bpy.types.WorldMistSettings.rst
+   bpy.types.XrActionMap.rst
+   bpy.types.XrActionMapBinding.rst
+   bpy.types.XrActionMapBindings.rst
+   bpy.types.XrActionMapItem.rst
+   bpy.types.XrActionMapItems.rst
+   bpy.types.XrActionMaps.rst
+   bpy.types.XrComponentPath.rst
+   bpy.types.XrComponentPaths.rst
+   bpy.types.XrEventData.rst
+   bpy.types.XrNavigation.rst
+   bpy.types.XrSessionSettings.rst
+   bpy.types.XrSessionState.rst
+   bpy.types.XrUserPath.rst
+   bpy.types.XrUserPaths.rst
+   bpy.types.XrViewfinderState.rst
+   bpy.types.wmOwnerID.rst
+   bpy.types.wmOwnerIDs.rst
+   bpy.types.wmTools.rst
 
 .. class:: bpy_struct
 
@@ -172,7 +821,7 @@ subclasses ---
          Limited to: :ref:`bpy_types-custom_properties`.
 
 
-   .. method:: keyframe_delete(data_path, *, index=-1, frame=bpy.context.scene.frame_current, group="")
+   .. method:: keyframe_delete(data_path, *, index=-1, frame=None, group="")
    
       Remove a keyframe from this properties fcurve.
    
@@ -180,15 +829,15 @@ subclasses ---
       :type data_path: str
       :param index: array index of the property to remove a key. Defaults to -1 removing all indices or a single channel if the property is not an array.
       :type index: int
-      :param frame: The frame on which the keyframe is deleted, defaulting to the current frame.
-      :type frame: float
+      :param frame: The frame on which the keyframe is deleted. None (the default) uses ``bpy.context.scene.frame_current``.
+      :type frame: float | None
       :param group: The name of the group the F-Curve should be added to if it doesn't exist yet.
       :type group: str
       :return: Success of keyframe deletion.
       :rtype: bool
 
 
-   .. method:: keyframe_insert(data_path, *, index=-1, frame=bpy.context.scene.frame_current, group="", options=set(), keytype='KEYFRAME')
+   .. method:: keyframe_insert(data_path, *, index=-1, frame=None, group="", options=set(), keytype='KEYFRAME')
    
       Insert a keyframe on the property given, adding fcurves and animation data when necessary.
    
@@ -197,8 +846,8 @@ subclasses ---
       :param index: array index of the property to key.
          Defaults to -1 which will key all indices or a single channel if the property is not an array.
       :type index: int
-      :param frame: The frame on which the keyframe is inserted, defaulting to the current frame.
-      :type frame: float
+      :param frame: The frame on which the keyframe is inserted. None (the default) uses ``bpy.context.scene.frame_current``.
+      :type frame: float | None
       :param group: The name of the group the F-Curve should be added to if it doesn't exist yet.
       :type group: str
       :param options: Optional set of flags:
@@ -363,4 +1012,73 @@ subclasses ---
       
       :type: :class:`bpy.types.ID`
 
+
+   .. details:: Special Methods
+
+      .. method:: __contains__(item)
+
+         :param item: Item to test for membership.
+         :type item: object
+         :rtype: bool
+
+      .. method:: __eq__(other)
+
+         :param other: The other operand.
+         :type other: object
+         :rtype: bool
+
+      .. method:: __ge__(other)
+
+         :param other: The other operand.
+         :type other: Self
+         :rtype: bool
+
+      .. method:: __getitem__(key)
+
+         :param key: Index or key.
+         :type key: int
+         :rtype: float
+
+      .. method:: __gt__(other)
+
+         :param other: The other operand.
+         :type other: Self
+         :rtype: bool
+
+      .. method:: __hash__()
+
+         :rtype: int
+
+      .. method:: __le__(other)
+
+         :param other: The other operand.
+         :type other: Self
+         :rtype: bool
+
+      .. method:: __lt__(other)
+
+         :param other: The other operand.
+         :type other: Self
+         :rtype: bool
+
+      .. method:: __ne__(other)
+
+         :param other: The other operand.
+         :type other: object
+         :rtype: bool
+
+      .. method:: __repr__()
+
+         :rtype: str
+
+      .. method:: __setitem__(key, value)
+
+         :param key: Index or key.
+         :type key: int
+         :param value: Value to assign.
+         :type value: object
+
+      .. method:: __str__()
+
+         :rtype: str
 

@@ -5,6 +5,7 @@ KeyMap(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: KeyMap(bpy_struct)
 
    Input configuration, including keymaps

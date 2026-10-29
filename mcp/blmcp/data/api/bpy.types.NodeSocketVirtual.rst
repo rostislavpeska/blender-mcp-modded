@@ -5,6 +5,7 @@ NodeSocketVirtual(NodeSocketStandard)
 
 base classes --- :class:`bpy_struct`, :class:`NodeSocket`, :class:`NodeSocketStandard`
 
+
 .. class:: NodeSocketVirtual(NodeSocketStandard)
 
    Virtual socket of a node

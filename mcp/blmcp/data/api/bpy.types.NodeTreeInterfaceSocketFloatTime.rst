@@ -5,6 +5,7 @@ NodeTreeInterfaceSocketFloatTime(NodeTreeInterfaceSocket)
 
 base classes --- :class:`bpy_struct`, :class:`NodeTreeInterfaceItem`, :class:`NodeTreeInterfaceSocket`
 
+
 .. class:: NodeTreeInterfaceSocketFloatTime(NodeTreeInterfaceSocket)
 
    Floating-point number socket of a node

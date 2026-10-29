@@ -48,8 +48,10 @@ which are described below.
 .. _bpy.types.SpaceNodeEditor.show_gizmo_active_node:
 
 Active Node
-   Display a context-sensitive gizmo for the currently selected node.
-   This may include transform controls or other visual aids depending on the node type.
+   Display interactive gizmos for the active node, allowing supported
+   properties to be adjusted directly in the Node Editor.
+
+   See :ref:`Node Gizmos <compositor-node-gizmos>` for more information.
 
 
 Asset Shelf

@@ -5,6 +5,7 @@ CompositorNodeBokehBlur(CompositorNode)
 
 base classes --- :class:`bpy_struct`, :class:`Node`, :class:`NodeInternal`, :class:`CompositorNode`
 
+
 .. class:: CompositorNodeBokehBlur(CompositorNode)
 
    Generate a bokeh type blur similar to Defocus. Unlike defocus an in-focus region is defined in the compositor
@@ -71,6 +72,7 @@ Inherited Properties
    - :class:`Node.label`
    - :class:`Node.inputs`
    - :class:`Node.outputs`
+   - :class:`Node.panel_states`
    - :class:`Node.internal_links`
    - :class:`Node.parent`
    - :class:`Node.warning_propagation`

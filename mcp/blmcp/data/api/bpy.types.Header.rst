@@ -5,6 +5,7 @@ Header(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: Header(bpy_struct)
 
    Editor header containing UI elements
@@ -37,23 +38,38 @@ base class --- :class:`bpy_struct`
 
       Draw UI elements into the header UI layout
 
+      :param context: The context
       :type context: :class:`Context` | None
 
    .. classmethod:: append(draw_func)
 
       Append a draw function to this menu,
       takes the same arguments as the menus draw function
+      
+      :param draw_func: Draw function to append.
+      :type draw_func: Callable[[Self, :class:`Context`], None]
 
    .. classmethod:: is_extended()
+
+      Test if any draw function has been added via :meth:`append` or :meth:`prepend`.
+      
+      :return: True when at least one draw function has been added.
+      :rtype: bool
 
    .. classmethod:: prepend(draw_func)
 
       Prepend a draw function to this menu, takes the same arguments as
       the menus draw function
+      
+      :param draw_func: Draw function to prepend.
+      :type draw_func: Callable[[Self, :class:`Context`], None]
 
    .. classmethod:: remove(draw_func)
 
       Remove a draw function that has been added to this menu.
+      
+      :param draw_func: Draw function previously registered via :meth:`append` or :meth:`prepend`.
+      :type draw_func: Callable[[Self, :class:`Context`], None]
 
    .. classmethod:: bl_rna_get_subclass(id, default=None, /)
    

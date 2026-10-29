@@ -5,6 +5,7 @@ WireframeModifier(Modifier)
 
 base classes --- :class:`bpy_struct`, :class:`Modifier`
 
+
 .. class:: WireframeModifier(Modifier)
 
    Wireframe effect modifier

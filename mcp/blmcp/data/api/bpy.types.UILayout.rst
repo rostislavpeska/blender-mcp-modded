@@ -5,6 +5,7 @@ UILayout(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: UILayout(bpy_struct)
 
    User interface layout in a panel or header
@@ -271,7 +272,41 @@ base class --- :class:`bpy_struct`
       :return: Icon identifier (in [0, inf])
       :rtype: int
 
-   .. method:: prop(data, property, *, text="", text_ctxt="", translate=True, icon='NONE', placeholder="", expand=False, slider=False, toggle=-1, icon_only=False, event=False, full_event=False, emboss=True, index=-1, icon_value=0, invert_checkbox=False)
+   .. method:: textbox(data, property, *, initial_visible_lines=3, placeholder="", text_ctxt="", translate=True)
+
+      Exposes an RNA string property in the layout using a text-box widget with multi-line support. Text-box state will be stored in the current context region.
+
+      :param data: Data from which to take property (never None)
+      :type data: :class:`AnyType` | None
+      :param property: Identifier of property in data (never None)
+      :type property: str
+      :param initial_visible_lines: Initial Visible Lines, (in [1, inf], optional)
+      :type initial_visible_lines: int
+      :param placeholder: Hint describing the expected value when empty (optional)
+      :type placeholder: str
+      :param text_ctxt: Override automatic translation context of the given text (optional)
+      :type text_ctxt: str
+      :param translate: Translate the given text, when UI translation is enabled (optional)
+      :type translate: bool
+
+   .. method:: textbox_with_state(data, property, textbox_state, *, placeholder="", text_ctxt="", translate=True)
+
+      Exposes an RNA string property in the layout using a text-box widget with multi-line support
+
+      :param data: Data from which to take property (never None)
+      :type data: :class:`AnyType` | None
+      :param property: Identifier of property in data (never None)
+      :type property: str
+      :param textbox_state: Pointer to a pre-allocated text-box state storage (builtin) (never None)
+      :type textbox_state: :class:`TextboxState` | None
+      :param placeholder: Hint describing the expected value when empty (optional)
+      :type placeholder: str
+      :param text_ctxt: Override automatic translation context of the given text (optional)
+      :type text_ctxt: str
+      :param translate: Translate the given text, when UI translation is enabled (optional)
+      :type translate: bool
+
+   .. method:: prop(data, property, *, text="", text_ctxt="", translate=True, icon='NONE', placeholder="", expand=False, slider=False, toggle=-1, icon_only=False, event=False, full_event=False, emboss=True, index=-1, icon_value=0, invert_checkbox=False, text_align='LEFT')
 
       Item. Exposes an RNA item and places it into the layout.
 
@@ -309,6 +344,8 @@ base class --- :class:`bpy_struct`
       :type icon_value: int
       :param invert_checkbox: Draw checkbox value inverted (optional)
       :type invert_checkbox: bool
+      :param text_align: Text alignment (optional)
+      :type text_align: Literal['LEFT', 'RIGHT']
 
    .. method:: props_enum(data, property)
 
@@ -545,6 +582,23 @@ base class --- :class:`bpy_struct`
       :param icon_value: Icon Value, Override automatic icon of the item (in [0, inf], optional)
       :type icon_value: int
 
+   .. method:: link(*, url="", text="", text_ctxt="", translate=True, icon='NONE', icon_value=0)
+
+      Item. Displays a url that can be clicked in the layout.
+
+      :param url: (optional, never None)
+      :type url: str
+      :param text: Override automatic text of the item (optional)
+      :type text: str
+      :param text_ctxt: Override automatic translation context of the given text (optional)
+      :type text_ctxt: str
+      :param translate: Translate the given text, when UI translation is enabled (optional)
+      :type translate: bool
+      :param icon: Icon, Override automatic icon of the item (optional)
+      :type icon: Literal[:ref:`rna_enum_icon_items`]
+      :param icon_value: Icon Value, Override automatic icon of the item (in [0, inf], optional)
+      :type icon_value: int
+
    .. method:: menu(menu, *, text="", text_ctxt="", translate=True, icon='NONE', icon_value=0)
 
       menu
@@ -698,6 +752,7 @@ base class --- :class:`bpy_struct`
       :type data: :class:`AnyType` | None
       :param property: Identifier of property in data (never None)
       :type property: str
+      :param id_type: Type of ID to display in the search list
       :type id_type: Literal[:ref:`rna_enum_id_type_items`]
 
    .. method:: template_ID_preview(data, property, *, new="", open="", unlink="", rows=0, cols=0, filter='ALL', hide_buttons=False)
@@ -856,6 +911,11 @@ base class --- :class:`bpy_struct`
    .. method:: template_strip_modifiers()
 
       Generates the UI layout for the strip modifier stack
+
+
+   .. method:: template_collection_importer()
+
+      Generates the UI layout for the collection importer
 
 
    .. method:: template_collection_exporters()
@@ -1038,7 +1098,7 @@ base class --- :class:`bpy_struct`
       :param cubic: Cubic saturation for picking values close to white (optional)
       :type cubic: bool
 
-   .. method:: template_palette(data, property, *, color=False)
+   .. method:: template_palette(data, property)
 
       Item. A palette used to pick colors.
 
@@ -1046,14 +1106,14 @@ base class --- :class:`bpy_struct`
       :type data: :class:`AnyType` | None
       :param property: Identifier of property in data (never None)
       :type property: str
-      :param color: Display the colors as colors or values (optional)
-      :type color: bool
 
    .. method:: template_image_layers(image, image_user)
 
       template_image_layers
 
+      :param image: Image data-block to display layers for
       :type image: :class:`Image` | None
+      :param image_user: Image user reading from the image
       :type image_user: :class:`ImageUser` | None
 
    .. method:: template_image(data, property, image_user, *, compact=False, multiview=False)
@@ -1215,16 +1275,22 @@ base class --- :class:`bpy_struct`
 
       template_node_link
 
+      :param ntree: Node tree containing the node
       :type ntree: :class:`NodeTree` | None
+      :param node: Node owning the socket
       :type node: :class:`Node` | None
+      :param socket: Socket to display the link for
       :type socket: :class:`NodeSocket` | None
 
    .. method:: template_node_view(ntree, node, socket)
 
       template_node_view
 
+      :param ntree: Node tree containing the node
       :type ntree: :class:`NodeTree` | None
+      :param node: Node to display
       :type node: :class:`Node` | None
+      :param socket: Socket to display
       :type socket: :class:`NodeSocket` | None
 
    .. method:: template_node_operator_registration_errors(*, idname="")
@@ -1366,6 +1432,7 @@ base class --- :class:`bpy_struct`
 
       Item. A text button to set the active file browser path.
 
+      :param params: File browser parameters whose path is edited
       :type params: :class:`FileSelectParams` | None
 
    .. method:: template_event_from_keymap_item(item, *, text="", text_ctxt="", translate=True)
@@ -1550,6 +1617,7 @@ References
    - :class:`NodeTreeInterfaceSocketFloatFrequency.draw`
    - :class:`NodeTreeInterfaceSocketFloatMass.draw`
    - :class:`NodeTreeInterfaceSocketFloatPercentage.draw`
+   - :class:`NodeTreeInterfaceSocketFloatPixel.draw`
    - :class:`NodeTreeInterfaceSocketFloatTime.draw`
    - :class:`NodeTreeInterfaceSocketFloatTimeAbsolute.draw`
    - :class:`NodeTreeInterfaceSocketFloatUnsigned.draw`
@@ -1559,7 +1627,18 @@ References
    - :class:`NodeTreeInterfaceSocketInt.draw`
    - :class:`NodeTreeInterfaceSocketIntFactor.draw`
    - :class:`NodeTreeInterfaceSocketIntPercentage.draw`
+   - :class:`NodeTreeInterfaceSocketIntPixel.draw`
    - :class:`NodeTreeInterfaceSocketIntUnsigned.draw`
+   - :class:`NodeTreeInterfaceSocketIntVector2D.draw`
+   - :class:`NodeTreeInterfaceSocketIntVector3D.draw`
+   - :class:`NodeTreeInterfaceSocketIntVectorFactor2D.draw`
+   - :class:`NodeTreeInterfaceSocketIntVectorFactor3D.draw`
+   - :class:`NodeTreeInterfaceSocketIntVectorPercentage2D.draw`
+   - :class:`NodeTreeInterfaceSocketIntVectorPercentage3D.draw`
+   - :class:`NodeTreeInterfaceSocketIntVectorPixel2D.draw`
+   - :class:`NodeTreeInterfaceSocketIntVectorPixel3D.draw`
+   - :class:`NodeTreeInterfaceSocketIntVectorUnsigned2D.draw`
+   - :class:`NodeTreeInterfaceSocketIntVectorUnsigned3D.draw`
    - :class:`NodeTreeInterfaceSocketMaterial.draw`
    - :class:`NodeTreeInterfaceSocketMatrix.draw`
    - :class:`NodeTreeInterfaceSocketMenu.draw`
@@ -1587,6 +1666,9 @@ References
    - :class:`NodeTreeInterfaceSocketVectorPercentage.draw`
    - :class:`NodeTreeInterfaceSocketVectorPercentage2D.draw`
    - :class:`NodeTreeInterfaceSocketVectorPercentage4D.draw`
+   - :class:`NodeTreeInterfaceSocketVectorPixel.draw`
+   - :class:`NodeTreeInterfaceSocketVectorPixel2D.draw`
+   - :class:`NodeTreeInterfaceSocketVectorPixel4D.draw`
    - :class:`NodeTreeInterfaceSocketVectorTranslation.draw`
    - :class:`NodeTreeInterfaceSocketVectorTranslation2D.draw`
    - :class:`NodeTreeInterfaceSocketVectorTranslation4D.draw`

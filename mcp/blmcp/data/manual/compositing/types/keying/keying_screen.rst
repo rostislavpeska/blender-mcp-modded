@@ -25,7 +25,7 @@ Properties
 ==========
 
 Movie Clip
-   The selectable clip data-block used as input for the gradient colors.
+   The selectable :ref:`movie clip <bpy.types.MovieClip>` used as input for the gradient colors.
 Tracking Object
    Tracking Object to generate the gradient.
    You will probably want to create new a tracking object
@@ -73,7 +73,7 @@ more shades of green to mask out. But it may also incorrectly mask out more of
 the foreground.
 
 Instead of increasing the range of accepted shades to be masked out,
-the Keying Screen node lets you change what shade of green (or other color) to used
+the Keying Screen node lets you change what shade of green (or other color) to use
 for different parts of the image.
 
 Start in the :doc:`Movie Clip Editor </editors/clip/index>`.

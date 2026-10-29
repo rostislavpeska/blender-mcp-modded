@@ -5,6 +5,7 @@ NodeSocketFloatWavelength(NodeSocketStandard)
 
 base classes --- :class:`bpy_struct`, :class:`NodeSocket`, :class:`NodeSocketStandard`
 
+
 .. class:: NodeSocketFloatWavelength(NodeSocketStandard)
 
    Floating-point number socket of a node

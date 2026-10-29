@@ -5,6 +5,7 @@ NodeSocketString(NodeSocketStandard)
 
 base classes --- :class:`bpy_struct`, :class:`NodeSocket`, :class:`NodeSocketStandard`
 
+
 .. class:: NodeSocketString(NodeSocketStandard)
 
    String socket of a node

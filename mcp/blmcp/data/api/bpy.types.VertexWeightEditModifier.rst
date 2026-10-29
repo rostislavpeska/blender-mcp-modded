@@ -5,6 +5,7 @@ VertexWeightEditModifier(Modifier)
 
 base classes --- :class:`bpy_struct`, :class:`Modifier`
 
+
 .. class:: VertexWeightEditModifier(Modifier)
 
    Edit the weights of vertices in a group

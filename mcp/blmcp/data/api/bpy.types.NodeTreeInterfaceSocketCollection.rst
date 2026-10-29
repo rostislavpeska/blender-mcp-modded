@@ -5,6 +5,7 @@ NodeTreeInterfaceSocketCollection(NodeTreeInterfaceSocket)
 
 base classes --- :class:`bpy_struct`, :class:`NodeTreeInterfaceItem`, :class:`NodeTreeInterfaceSocket`
 
+
 .. class:: NodeTreeInterfaceSocketCollection(NodeTreeInterfaceSocket)
 
    Collection socket of a node

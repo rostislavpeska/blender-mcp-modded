@@ -5,6 +5,7 @@ Keyframe(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: Keyframe(bpy_struct)
 
    Bézier curve point with two handles defining a Keyframe on an F-Curve

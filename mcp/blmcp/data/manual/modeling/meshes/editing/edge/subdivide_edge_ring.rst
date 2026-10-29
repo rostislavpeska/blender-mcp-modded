@@ -17,7 +17,7 @@ Subdivides an edge ring with optional interpolation.
    and are perpendicular to the direction of that row. The row *could* form a closed loop,
    but this doesn't have to be the case: it could also just be a "ribbon" instead of a "ring."
 
-   See also :ref:`modeling-meshes-selecting-edge-rings`.
+   See also :ref:`bpy.ops.mesh.select_edge_ring_multi`.
 
 Options
 =======

@@ -5,6 +5,7 @@ NodeSocketVectorTranslation(NodeSocketStandard)
 
 base classes --- :class:`bpy_struct`, :class:`NodeSocket`, :class:`NodeSocketStandard`
 
+
 .. class:: NodeSocketVectorTranslation(NodeSocketStandard)
 
    3D vector socket of a node

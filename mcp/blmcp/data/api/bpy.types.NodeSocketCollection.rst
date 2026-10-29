@@ -5,6 +5,7 @@ NodeSocketCollection(NodeSocketStandard)
 
 base classes --- :class:`bpy_struct`, :class:`NodeSocket`, :class:`NodeSocketStandard`
 
+
 .. class:: NodeSocketCollection(NodeSocketStandard)
 
    Collection socket of a node

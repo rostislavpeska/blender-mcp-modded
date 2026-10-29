@@ -5,8 +5,12 @@ NodeTreeInterfaceItem(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
-subclasses --- 
-:class:`NodeTreeInterfacePanel`, :class:`NodeTreeInterfaceSocket`
+.. toctree::
+   :caption: Subclasses
+   :maxdepth: 1
+
+   bpy.types.NodeTreeInterfacePanel.rst
+   bpy.types.NodeTreeInterfaceSocket.rst
 
 .. class:: NodeTreeInterfaceItem(bpy_struct)
 

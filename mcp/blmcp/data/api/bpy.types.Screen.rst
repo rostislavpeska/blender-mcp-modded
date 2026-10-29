@@ -5,6 +5,7 @@ Screen(ID)
 
 base classes --- :class:`bpy_struct`, :class:`ID`
 
+
 .. class:: Screen(ID)
 
    Screen data-block, defining the layout of areas in a window

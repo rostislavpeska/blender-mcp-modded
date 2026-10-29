@@ -5,6 +5,7 @@ FModifierStepped(FModifier)
 
 base classes --- :class:`bpy_struct`, :class:`FModifier`
 
+
 .. class:: FModifierStepped(FModifier)
 
    Hold each interpolated value from the F-Curve for several frames without changing the timing

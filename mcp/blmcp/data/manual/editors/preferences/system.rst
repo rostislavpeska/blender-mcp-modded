@@ -152,7 +152,7 @@ Allow Online Access
 Time Out
    The time (in seconds) that online operations may wait before timing out.
 
-   Use the systems default when zero.
+   Use the system's default when zero.
 
 .. _bpy.types.PreferencesSystem.network_connection_limit:
 
@@ -188,7 +188,7 @@ Global Undo
       While disabling this option does save memory,
       it stops the :ref:`bpy.ops.screen.redo_last` panel from functioning,
       also preventing tool options from being changed in some cases.
-      For typical usage, its best to keep this enabled.
+      For typical usage, it's best to keep this enabled.
 
 .. seealso::
 
@@ -248,6 +248,14 @@ Threads / Subprocesses
 
    - This option is not available on macOS and requires using OpenGL backend.
    - Changing this setting requires restarting Blender to take effect.
+
+
+.. _bpy.types.PreferencesSystem.geometry_nodes_stack_limit:
+
+Geometry Nodes Stack Limit
+   Approximate maximum size of the call stack used by :doc:`/modeling/geometry_nodes/index`.
+   For example, this corresponds to the number of allowed nested node groups.
+   Setting this too high can result in crashes caused by running out of stack memory.
 
 
 .. _prefs-system-video-sequencer:

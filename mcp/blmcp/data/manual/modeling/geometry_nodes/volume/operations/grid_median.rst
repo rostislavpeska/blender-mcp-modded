@@ -13,7 +13,7 @@ The *Grid Median* node applies a median (box) filter to a volume grid.
 For each active voxel, the value is replaced with the median value of
 neighboring voxels within a box-shaped region defined by the filter width.
 
-Unlike the :doc:`mean filter </modeling/geometry_nodes/volume/operations/grid_meant>`,
+Unlike the :doc:`mean filter </modeling/geometry_nodes/volume/operations/grid_mean>`,
 the median filter is more effective at preserving
 sharp features and removing isolated noise or outliers.
 It is commonly used to clean up sparse artifacts while maintaining edges

@@ -15,6 +15,7 @@ object, placing it into a view layer, selecting it and making it active.
 
 base classes --- :class:`bpy_struct`, :class:`ID`
 
+
 .. class:: Object(ID)
 
    Object data-block defining an object in a scene
@@ -71,7 +72,7 @@ base classes --- :class:`bpy_struct`, :class:`ID`
 
       Object's bounding box in object-space coordinates, all values are -1.0 when not available (multi-dimensional array of 8 * 3 items, in [-inf, inf], default ((0.0, 0.0, 0.0), (0.0, 0.0, 0.0), (0.0, 0.0, 0.0), (0.0, 0.0, 0.0), (0.0, 0.0, 0.0), (0.0, 0.0, 0.0), (0.0, 0.0, 0.0), (0.0, 0.0, 0.0)), readonly)
 
-      :type: :class:`bpy_prop_array`\ [float]
+      :type: :class:`bpy_prop_array`\ [:class:`bpy_prop_array`\ [float]]
 
    .. data:: collision
 
@@ -426,6 +427,12 @@ base classes --- :class:`bpy_struct`, :class:`ID`
 
       :type: str
 
+   .. attribute:: parent_bone_head_tail_factor
+
+      Position along the length of bone (in [0, 1], default 1.0)
+
+      :type: float
+
    .. attribute:: parent_type
 
       Type of parent relation (default ``'OBJECT'``)
@@ -645,7 +652,7 @@ base classes --- :class:`bpy_struct`, :class:`ID`
 
    .. attribute:: up_axis
 
-      Axis that points in the upward direction (applies to Instance Vertices when Align to Vertex Normal is enabled) (default ``'X'``)
+      Axis that points in the upward direction (applies to Instance Vertices when Align to Vertex Normal is enabled) (default ``'Y'``)
 
       :type: Literal['X', 'Y', 'Z']
 
@@ -742,6 +749,12 @@ base classes --- :class:`bpy_struct`, :class:`ID`
    .. attribute:: visible_glossy
 
       Object visibility to glossy rays (default True)
+
+      :type: bool
+
+   .. attribute:: visible_raycast
+
+      Object visibility to raycast rays. Implicitly false for Blended materials. (default True)
 
       :type: bool
 
@@ -1177,7 +1190,7 @@ base classes --- :class:`bpy_struct`, :class:`ID`
       objects that contain geometry data like meshes and curves but not e.g. cameras.
       
       :return: The evaluated geometry.
-      :rtype: :class:`bpy.types.GeometrySet`
+      :rtype: :class:`GeometrySet`
 
    .. classmethod:: bl_rna_get_subclass(id, default=None, /)
    

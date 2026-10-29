@@ -5,6 +5,7 @@ LineStyleGeometryModifier_2DTransform(LineStyleGeometryModifier)
 
 base classes --- :class:`bpy_struct`, :class:`LineStyleModifier`, :class:`LineStyleGeometryModifier`
 
+
 .. class:: LineStyleGeometryModifier_2DTransform(LineStyleGeometryModifier)
 
    Apply two-dimensional scaling and rotation to stroke backbone geometry

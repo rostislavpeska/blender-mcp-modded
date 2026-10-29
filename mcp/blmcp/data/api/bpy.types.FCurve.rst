@@ -5,6 +5,7 @@ FCurve(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: FCurve(bpy_struct)
 
    F-Curve defining values of a period of time

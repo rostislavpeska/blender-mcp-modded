@@ -5,6 +5,7 @@ GeometryNodeExtrudeMesh(GeometryNode)
 
 base classes --- :class:`bpy_struct`, :class:`Node`, :class:`NodeInternal`, :class:`GeometryNode`
 
+
 .. class:: GeometryNodeExtrudeMesh(GeometryNode)
 
    Generate new vertices, edges, or faces from selected elements and move them based on an offset while keeping them connected by their boundary
@@ -77,6 +78,7 @@ Inherited Properties
    - :class:`Node.label`
    - :class:`Node.inputs`
    - :class:`Node.outputs`
+   - :class:`Node.panel_states`
    - :class:`Node.internal_links`
    - :class:`Node.parent`
    - :class:`Node.warning_propagation`

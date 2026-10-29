@@ -25,7 +25,7 @@ Anisotropy :guilabel:`Cycles Only`
    Higher values give elongated highlights orthogonal to the tangent direction;
    negative values give highlights shaped along the tangent direction.
 
-   This is a phenomenon know as "Anisotropic Reflections" which is often seen in metallic materials.
+   This is a phenomenon known as "Anisotropic Reflections" which is often seen in metallic materials.
 Rotation
    Rotation of the anisotropic tangent direction.
    Value 0.0 equals 0° rotation, 0.25 equals 90° and 1.0 equals 360° = 0°.

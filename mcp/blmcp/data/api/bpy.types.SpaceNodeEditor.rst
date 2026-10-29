@@ -5,6 +5,7 @@ SpaceNodeEditor(Space)
 
 base classes --- :class:`bpy_struct`, :class:`Space`
 
+
 .. class:: SpaceNodeEditor(Space)
 
    Node editor space data

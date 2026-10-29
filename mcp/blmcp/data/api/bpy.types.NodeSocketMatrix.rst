@@ -5,6 +5,7 @@ NodeSocketMatrix(NodeSocketStandard)
 
 base classes --- :class:`bpy_struct`, :class:`NodeSocket`, :class:`NodeSocketStandard`
 
+
 .. class:: NodeSocketMatrix(NodeSocketStandard)
 
    Matrix value socket of a node

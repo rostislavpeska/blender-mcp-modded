@@ -5,6 +5,7 @@ LineStyleColorModifier_DistanceFromObject(LineStyleColorModifier)
 
 base classes --- :class:`bpy_struct`, :class:`LineStyleModifier`, :class:`LineStyleColorModifier`
 
+
 .. class:: LineStyleColorModifier_DistanceFromObject(LineStyleColorModifier)
 
    Change line color based on the distance from an object

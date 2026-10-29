@@ -5,6 +5,7 @@ ThemeRegionsChannels(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: ThemeRegionsChannels(bpy_struct)
 
 

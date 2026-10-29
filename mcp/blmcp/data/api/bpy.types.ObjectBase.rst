@@ -5,6 +5,7 @@ ObjectBase(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: ObjectBase(bpy_struct)
 
    An object instance in a View Layer (currently never exposed in Python API)

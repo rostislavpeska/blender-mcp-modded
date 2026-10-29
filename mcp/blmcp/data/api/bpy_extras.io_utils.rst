@@ -112,7 +112,7 @@ bpy_extras submodule (bpy_extras.io_utils)
    :return: the new filepath.
    :rtype: str
 
-.. function:: path_reference_copy(copy_set, report=<built-in function print>)
+.. function:: path_reference_copy(copy_set, report=print)
 
    Execute copying files of path_reference
    
@@ -150,20 +150,24 @@ bpy_extras submodule (bpy_extras.io_utils)
 .. class:: ExportHelper
 
 
-   .. method:: check(_context)
+   .. method:: check(context)
 
       Validate the filepath and axis conversion settings.
       
+      :param context: The context.
+      :type context: :class:`bpy.types.Context`
       :return: True when a property was updated.
       :rtype: bool
 
-   .. method:: invoke(context, _event)
+   .. method:: invoke(context, event)
 
       Invoke the file selector for exporting, setting a default filepath
       based on the current blend file name.
       
       :param context: The context.
       :type context: :class:`bpy.types.Context`
+      :param event: The window event.
+      :type event: :class:`bpy.types.Event`
       :return: The operator return value.
       :rtype: set[str]
 
@@ -172,19 +176,23 @@ bpy_extras submodule (bpy_extras.io_utils)
 .. class:: ImportHelper
 
 
-   .. method:: check(_context)
+   .. method:: check(context)
 
       Validate axis conversion settings.
       
+      :param context: The context.
+      :type context: :class:`bpy.types.Context`
       :return: True when a property was updated.
       :rtype: bool
 
-   .. method:: invoke(context, _event)
+   .. method:: invoke(context, event)
 
       Invoke the file selector for importing.
       
       :param context: The context.
       :type context: :class:`bpy.types.Context`
+      :param event: The window event.
+      :type event: :class:`bpy.types.Event`
       :return: The operator return value.
       :rtype: set[str]
 

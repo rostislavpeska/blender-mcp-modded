@@ -5,6 +5,7 @@ NodeSocketVectorFactor(NodeSocketStandard)
 
 base classes --- :class:`bpy_struct`, :class:`NodeSocket`, :class:`NodeSocketStandard`
 
+
 .. class:: NodeSocketVectorFactor(NodeSocketStandard)
 
    3D vector socket of a node

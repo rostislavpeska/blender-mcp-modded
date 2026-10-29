@@ -16,7 +16,7 @@ This module provides access to Blender's bmesh data structures.
    bmesh.utils.rst
    bmesh.geometry.rst
 
-.. method:: from_edit_mesh(mesh)
+.. function:: from_edit_mesh(mesh)
 
    Return a BMesh from this mesh, currently the mesh must already be in editmode.
 
@@ -26,7 +26,7 @@ This module provides access to Blender's bmesh data structures.
    :rtype: :class:`bmesh.types.BMesh`
 
 
-.. method:: new(*, use_operators=True)
+.. function:: new(*, use_operators=True)
 
    :param use_operators: Support calling operators in :mod:`bmesh.ops` (uses some extra memory per vert/edge/face).
    :type use_operators: bool
@@ -34,7 +34,7 @@ This module provides access to Blender's bmesh data structures.
    :rtype: :class:`bmesh.types.BMesh`
 
 
-.. method:: update_edit_mesh(mesh, *, loop_triangles=True, destructive=True)
+.. function:: update_edit_mesh(mesh, *, loop_triangles=True, destructive=True)
 
    Update the mesh after changes to the BMesh in editmode,
    optionally recalculating n-gon tessellation.

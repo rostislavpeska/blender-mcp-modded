@@ -5,6 +5,7 @@ ShaderNodeTree(NodeTree)
 
 base classes --- :class:`bpy_struct`, :class:`ID`, :class:`NodeTree`
 
+
 .. class:: ShaderNodeTree(NodeTree)
 
    Node tree consisting of linked nodes used for materials (and other shading data-blocks)

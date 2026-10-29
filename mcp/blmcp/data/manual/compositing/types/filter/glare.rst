@@ -83,7 +83,7 @@ Adjust
 Strength
    Adjusts the overall intensity of the glare effect.
    Values greater than 1 boost the luminance of the glare,
-   while values less than 1 blends the glare with the original image.
+   while values less than 1 blend the glare with the original image.
 
 Saturation
    Modifies the color saturation of the glare effect.

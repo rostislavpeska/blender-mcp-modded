@@ -5,6 +5,7 @@ StudioLight(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: StudioLight(bpy_struct)
 
    Studio light

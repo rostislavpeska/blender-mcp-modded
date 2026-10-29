@@ -5,6 +5,7 @@ LimitScaleConstraint(Constraint)
 
 base classes --- :class:`bpy_struct`, :class:`Constraint`
 
+
 .. class:: LimitScaleConstraint(Constraint)
 
    Limit the scaling of the constrained object

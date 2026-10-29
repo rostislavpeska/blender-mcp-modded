@@ -5,6 +5,7 @@ AnimVizMotionPaths(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: AnimVizMotionPaths(bpy_struct)
 
    Motion Path settings for animation visualization

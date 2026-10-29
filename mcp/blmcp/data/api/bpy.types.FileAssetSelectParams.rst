@@ -5,9 +5,29 @@ FileAssetSelectParams(FileSelectParams)
 
 base classes --- :class:`bpy_struct`, :class:`FileSelectParams`
 
+
 .. class:: FileAssetSelectParams(FileSelectParams)
 
    Settings for the file selection in Asset Browser mode
+
+   .. attribute:: asset_access
+
+      Choose the visibility of online and offline assets (default ``'ALL'``)
+
+      :type: Literal[:ref:`rna_enum_asset_access_items`]
+
+   .. attribute:: asset_catalog_visibility
+
+      Which assets to show based on catalog filter (default ``'ALL'``)
+
+      - ``ALL``
+        All -- Show assets from all catalogs.
+      - ``CATALOG``
+        Catalog -- Show assets from the active catalog only.
+      - ``UNASSIGNED``
+        Unassigned -- Show assets not assigned to any catalog.
+
+      :type: Literal['ALL', 'CATALOG', 'UNASSIGNED']
 
    .. attribute:: asset_library_reference
 
@@ -18,11 +38,13 @@ base classes --- :class:`bpy_struct`, :class:`FileSelectParams`
       - ``LOCAL``
         Current File -- Show the assets currently available in this Blender session.
       - ``ESSENTIALS``
-        Essentials -- Show the basic building blocks and utilities coming with Blender.
+        Essentials -- Show basic building blocks and utilities coming with Blender.
+      - ``ONLINE_ESSENTIALS``
+        Online Essentials -- Show additional building blocks and utilities available online.
       - ``CUSTOM``
         Custom -- Show assets from the asset libraries configured in the Preferences.
 
-      :type: Literal['ALL', 'LOCAL', 'ESSENTIALS', 'CUSTOM']
+      :type: Literal['ALL', 'LOCAL', 'ESSENTIALS', 'ONLINE_ESSENTIALS', 'CUSTOM']
 
    .. attribute:: catalog_id
 
@@ -41,7 +63,7 @@ base classes --- :class:`bpy_struct`, :class:`FileSelectParams`
       Determine how the asset will be imported (default ``'LINK'``)
 
       - ``FOLLOW_PREFS``
-        Follow Preferences -- Use the import method set in the Preferences for this asset library, don't override it for this Asset Browser.
+        Follow Asset or Preferences -- Use the import method set in the Preferences for this asset library, don't override it for this Asset Browser.
       - ``LINK``
         Link -- Import the assets as linked data-block.
       - ``APPEND``

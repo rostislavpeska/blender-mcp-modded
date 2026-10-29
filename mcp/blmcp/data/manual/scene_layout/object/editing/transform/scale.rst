@@ -39,7 +39,7 @@ Options
 =======
 
 Scale X, Y, Z
-   The amount to resize the selection on the respected axis.
+   The amount to resize the selection on the respective axis.
 
 Orientation
    Aligns the transformation axes to a specified orientation constraint.

@@ -5,6 +5,7 @@ NodeSocketMask(NodeSocketStandard)
 
 base classes --- :class:`bpy_struct`, :class:`NodeSocket`, :class:`NodeSocketStandard`
 
+
 .. class:: NodeSocketMask(NodeSocketStandard)
 
    Mask socket of a node

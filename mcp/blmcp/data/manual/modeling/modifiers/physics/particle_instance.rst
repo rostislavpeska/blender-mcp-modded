@@ -9,7 +9,7 @@ When a Particle Instance modifier is added to an object,
 the mesh of this object will be duplicated
 at the location of the particles of the selected particle system from another target object.
 This means that to use this modifier, you must have at least one other object
-that has a :doc:`Particles System </physics/particles/index>` on it.
+that has a :doc:`Particle System </physics/particles/index>` on it.
 
 Because of the correlation in which the Particle Instance modifier is
 influenced by the underlying particle systems on other objects, some of the apparent effects
@@ -101,7 +101,7 @@ Create Along Paths
 ------------------
 
 By default, the instances are placed depending on the particles position in the current frame.
-By enabling *Create Along Paths*, the instance of the modified object follows
+By enabling *Create Along Paths*, the instance of the modified object follows and
 deforms its shape along the particle path (or the hair strand).
 This allows you to select the position along the particles path regardless of the current frame.
 
@@ -141,6 +141,10 @@ Index
    A Color Attribute for values based on the particles index.
 Value
    A Color Attribute for random per-particle values.
+
+.. note::
+
+   Index and Value attributes must be in face corner domain and use byte color data type.
 
 
 Examples

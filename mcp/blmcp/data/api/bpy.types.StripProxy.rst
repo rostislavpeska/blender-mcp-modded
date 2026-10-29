@@ -5,6 +5,7 @@ StripProxy(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: StripProxy(bpy_struct)
 
    Proxy parameters for a sequence strip
@@ -33,12 +34,6 @@ base class --- :class:`bpy_struct`
 
       :type: bool
 
-   .. attribute:: build_record_run
-
-      Build record run time code index (default False)
-
-      :type: bool
-
    .. attribute:: directory
 
       Location to store the proxy files (default "", never None, blend relative ``//`` prefix supported)
@@ -57,22 +52,9 @@ base class --- :class:`bpy_struct`
 
       :type: int
 
-   .. attribute:: timecode
-
-      Method for reading the inputs timecode (default ``'NONE'``)
-
-      - ``NONE``
-        None -- Ignore generated timecodes, seek in movie stream based on calculated timestamp.
-      - ``RECORD_RUN``
-        Record Run -- Seek based on timestamps read from movie stream, giving the best match between scene and movie times.
-      - ``RECORD_RUN_NO_GAPS``
-        Record Run No Gaps -- Effectively convert movie to an image sequence, ignoring incomplete or dropped frames, and changes in frame rate.
-
-      :type: Literal['NONE', 'RECORD_RUN', 'RECORD_RUN_NO_GAPS']
-
    .. attribute:: use_overwrite
 
-      Overwrite existing proxy files when building (default True)
+      Overwrite existing proxy files when building (default False)
 
       :type: bool
 

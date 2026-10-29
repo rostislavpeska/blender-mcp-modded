@@ -87,7 +87,7 @@ For visually distinguishing regular keyframes from different animation events or
 states (extremes, breakdowns, or other in-betweens)
 there is the possibility of applying different colors on them for visualization.
 
-.. figure:: keyframe_types.webp
+.. figure:: /images/animation_keyframes_introduction_types.webp
    :align: right
 
    Left: not selected; Right: selected.

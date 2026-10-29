@@ -20,6 +20,12 @@ Inputs
 
 Image
    Standard color input.
+Frame
+   Frame from which to evaluate the stabilization data.
+
+   By default, this uses the current scene frame, but it can be driven
+   independently when the image is time-remapped, offset in time, or
+   otherwise evaluated at a different frame than the scene.
 Invert
    Invert the stabilization. If the stabilization calculated is to move the movie clip up by 5 units,
    this will move the movie clip down by 5 units.
@@ -52,7 +58,7 @@ Properties
 ==========
 
 Movie Clip
-   The movie clip whose stabilization to use.
+   The :ref:`movie clip <bpy.types.MovieClip>` whose stabilization to use.
 
 
 Outputs

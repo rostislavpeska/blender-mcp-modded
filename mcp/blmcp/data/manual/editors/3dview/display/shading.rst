@@ -73,7 +73,7 @@ Outline
 :bl-icon:`shading_solid` -- Solid
 =================================
 
-This mode utilizes the :doc:`Workbench Render Engine </render/workbench/introduction>` to render the 3D Viewport.
+This mode utilizes the :doc:`Workbench Render Engine </render/workbench/index>` to render the 3D Viewport.
 It shows solid geometry but uses simplified shading and lighting without the use of shader nodes.
 Solid mode is good for modeling and sculpting, and is really useful with the multitude of
 options to emphasize certain geometric features.
@@ -206,14 +206,14 @@ Valley
 :bl-icon:`shading_texture` -- Material Preview
 ==============================================
 
-Render the 3D Viewport with :doc:`EEVEE </render/eevee/introduction>` and an HDRI environment.
+Render the 3D Viewport with :doc:`EEVEE </render/eevee/index>` and an HDRI environment.
 This mode is particularly suited for previewing materials and painting textures.
 You can select different lighting conditions to test your materials.
 
 .. note::
 
    The Material Preview shading mode is not available when the scene's render engine
-   is set to :doc:`Workbench </render/workbench/introduction>`.
+   is set to :doc:`Workbench </render/workbench/index>`.
 
 
 Lighting
@@ -272,4 +272,4 @@ This gives a preview of the final result before compositing, including scene lig
 
 The options are the same as for *Material Preview*, except that
 the *Render Pass* selector will offer different passes if the scene
-uses the :doc:`Cycles </render/cycles/introduction>` render engine.
+uses the :doc:`Cycles </render/cycles/index>` render engine.

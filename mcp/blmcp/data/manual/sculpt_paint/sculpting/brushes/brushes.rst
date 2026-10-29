@@ -169,6 +169,15 @@ Elastic Snake Hook
 
    Similar to Elastic Grab but rotates affected geometry based on the stroke direction.
 
+Scene Project
+   | Brush Type: :doc:`scene_project`
+
+   Projects vertices of the active object onto other visible meshes in the scene.
+
+   This provides more flexible and localized control than the
+   :doc:`Shrinkwrap modifier </modeling/modifiers/deform/shrinkwrap>`,
+   making it useful for manually conforming geometry to a target surface.
+
 Snake Hook
    | Brush Type: :doc:`snake_hook`
    | Shortcut:  :kbd:`K`

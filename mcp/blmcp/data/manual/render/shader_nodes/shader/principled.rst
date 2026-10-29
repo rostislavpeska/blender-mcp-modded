@@ -33,11 +33,31 @@ subsurface also involves light scattering just below the surface. Both diffuse a
 subsurface sit below a specular layer. The transmission component includes both
 specular reflection and refraction.
 
+An optional thin film layer sits on top of metal, transmission and specular component,
+to create iridescent effect.
+
 On top of all base layers there is an optional glossy coat. And finally the sheen layer
 sits on top of all other layers, to add fuzz or dust.
 
 Light emission can also be added. Light emits from below the coat and sheen layers,
 to model for example emissive displays with a coat or dust.
+
+Thin Wall Mode
+----------------
+When the :ref:`Thin Wall <bpy.types.ShaderNodePrincipled.thinWall>` Boolean is enabled,
+the surface is switched to thin-walled mode.
+In this mode the surface is a slab with its layers mirrored around the base,
+and the thickness is assumed to be zero.
+
+.. figure:: /images/render_shader-nodes_principled_thin_layers.svg
+
+.. note::
+   - The :ref:`Subsurface Radius <bpy.types.ShaderNodePrincipled.Subsurface.Radius>`,
+     :ref:`Subsurface Scale <bpy.types.ShaderNodePrincipled.Subsurface.Scale>`
+     and :ref:`Subsurface Method <bpy.types.ShaderNodePrincipled.Subsurface.Method>`
+     inputs are irrelevant in thin-walled mode.
+   - When using thin-walled mode in EEVEE, the :ref:`Thickness <eevee-materials-thickness>`
+     should be set to 0, and the :ref:`Thickness Mode <bpy.types.Material.thickness_mode>` should be set to Slab.
 
 Inputs
 ======
@@ -89,6 +109,26 @@ Alpha
 
       Alpha from 0.0 to 1.0
 
+.. _bpy.types.ShaderNodePrincipled.thinWall:
+
+Thin Wall
+   Switch the surface to thin-walled mode. Useful for modeling thin structures,
+   such as papers, leaves, and window sheets.
+
+   .. list-table::
+      :widths: auto
+      :align: center
+
+      * - .. figure:: /images/render_shader-nodes_shader_principled_thin_subsurface.webp
+             :width: 768px
+
+             Subsurface Weight = 1, Anisotropy from -0.7 to 0.7
+
+        - .. figure:: /images/render_shader-nodes_shader_principled_thin_glass.webp
+             :width: 512px
+
+             Transmission = 1, Thin Wall off and on
+
 Normal
    Controls the normals of the base layers.
 
@@ -112,6 +152,8 @@ Subsurface
 :term:`Subsurface scattering` is used to render materials such as skin, milk and wax.
 Light scatters below the surface to create a soft appearance.
 
+.. _bpy.types.ShaderNodePrincipled.Subsurface.Method:
+
 Method
    Rendering method to simulate :term:`Subsurface scattering`.
 
@@ -131,6 +173,9 @@ Method
       specular transmission with custom :term:`IOR`. This tends to retain
       greater surface detail and color and matches measured skin
       more closely.
+   :Random Walk (Legacy): :guilabel:`Cycles Only`
+      The same as Random Walk, but uses a different mapping from albedo to
+      scattering parameters. Will be deleted in the future.
 
 Weight
    Blend between diffuse surface and subsurface scattering.
@@ -140,6 +185,8 @@ Weight
       :align: center
 
       Weight from 0.0 to 1.0
+
+.. _bpy.types.ShaderNodePrincipled.Subsurface.Radius:
 
 Radius
    Average distance that light scatters below the surface.
@@ -152,6 +199,8 @@ Radius
       :align: center
 
       Radius from white to red
+
+.. _bpy.types.ShaderNodePrincipled.Subsurface.Scale:
 
 Scale
    Scale applied to the radius.
@@ -172,13 +221,14 @@ IOR :guilabel:`Cycles Only`
 
 Anisotropy :guilabel:`Cycles Only`
    Directionality of volume scattering within the subsurface medium. Zero scatters uniformly
-   in all directions, with higher values scattering more strongly forward.
+   in all directions, positive values scatter more in the forward direction, and negative
+   values scatter more backwards.
    For example, skin has been measured to have an anisotropy of 0.8.
 
    .. figure:: /images/render_shader-nodes_shader_principled-subsurface-anisotropy.webp
       :align: center
 
-      Anisotropy from 0.0 to 1.0
+      Anisotropy from -0.9 to 0.9
 
 
 Specular
@@ -221,14 +271,14 @@ Tint
 
       Tint from white to orange
 
-Anisotropic :guilabel:`Cycles Only`
+Anisotropy :guilabel:`Cycles Only`
    Amount of anisotropy for specular reflection. Higher values give elongated highlights along the tangent direction;
    negative values give highlights shaped perpendicular to the tangent direction.
 
    .. figure:: /images/render_shader-nodes_shader_principled-specular-anisotropic.webp
       :align: center
 
-      Anisotropic from 0.0 to 1.0
+      Anisotropy from 0.0 to 1.0
 
 Anisotropic Rotation :guilabel:`Cycles Only`
    Rotates the direction of anisotropy, with 1.0 going full circle.

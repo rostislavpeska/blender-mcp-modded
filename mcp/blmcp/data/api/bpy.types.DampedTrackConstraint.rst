@@ -5,6 +5,7 @@ DampedTrackConstraint(Constraint)
 
 base classes --- :class:`bpy_struct`, :class:`Constraint`
 
+
 .. class:: DampedTrackConstraint(Constraint)
 
    Point toward target by taking the shortest rotation path

@@ -44,11 +44,15 @@ Module References
 .. data:: locale
 
    The actual locale currently in use (will always return an empty string when Blender is built without internationalization support).
+   
+   :type: str
 
 
 .. data:: locales
 
    All locales currently known by Blender (i.e. available as translations).
+   
+   :type: list[str]
 
 
 .. data:: contexts_C_to_py
@@ -60,7 +64,9 @@ Module References
 
    Constant value bpy.app.translations.contexts(default_real=None, default='*', operator_default='Operator', ui_events_keymaps='UI_Events_KeyMaps', plural='Plural', countable='Countable', id_action='Action', id_armature='Armature', no_translation='Do not translate', id_brush='Brush', id_cachefile='CacheFile', id_camera='Camera', id_collection='Collection', id_curves='Curves', id_curve='Curve', id_fs_linestyle='FreestyleLineStyle', id_gpencil='GPencil', id_id='ID', id_image='Image', id_lattice='Lattice', id_library='Library', id_light='Light', id_lightprobe='LightProbe', id_mask='Mask', id_material='Material', id_mesh='Mesh', id_metaball='Metaball', id_movieclip='MovieClip', id_nodetree='NodeTree', id_object='Object', id_paintcurve='PaintCurve', id_palette='Palette', id_particlesettings='ParticleSettings', id_pointcloud='PointCloud', id_scene='Scene', id_screen='Screen', id_sequence='Sequence', id_shapekey='Key', id_simulation='Simulation', id_sound='Sound', id_speaker='Speaker', id_text='Text', id_texture='Texture', id_vfont='VFont', id_volume='Volume', id_windowmanager='WindowManager', id_workspace='WorkSpace', id_world='World', editor_filebrowser='File browser', editor_python_console='Python console', editor_preferences='Preferences', editor_view3d='View3D', amount='Amount', color='Color', constraint='Constraint', modifier='Modifier', navigation='Navigation', render_layer='Render Layer', time='Time', unit='Unit')
 
-.. method:: locale_explode(locale)
+   :type: contexts
+
+.. function:: locale_explode(locale)
 
    Return all components and their combinations of the given ISO locale string.
 
@@ -75,7 +81,7 @@ Module References
    :rtype: tuple[str | None, str | None, str | None, str | None, str | None]
 
 
-.. method:: pgettext(msgid, msgctxt=None)
+.. function:: pgettext(msgid, msgctxt=None)
 
    Try to translate the given msgid (with optional msgctxt).
 
@@ -99,7 +105,7 @@ Module References
    :rtype: str
 
 
-.. method:: pgettext_data(msgid, msgctxt=None)
+.. function:: pgettext_data(msgid, msgctxt=None)
 
    Try to translate the given msgid (with optional msgctxt), if new data name's translation is enabled.
 
@@ -114,7 +120,7 @@ Module References
    :rtype: str
 
 
-.. method:: pgettext_iface(msgid, msgctxt=None)
+.. function:: pgettext_iface(msgid, msgctxt=None)
 
    Try to translate the given msgid (with optional msgctxt), if labels' translation is enabled.
 
@@ -129,7 +135,7 @@ Module References
    :rtype: str
 
 
-.. method:: pgettext_n(msgid, msgctxt=None)
+.. function:: pgettext_n(msgid, msgctxt=None)
 
    Extract the given msgid to translation files. This is a no-op function that will only mark the string to extract, but not perform the actual translation.
 
@@ -144,7 +150,7 @@ Module References
    :rtype: str
 
 
-.. method:: pgettext_rpt(msgid, msgctxt=None)
+.. function:: pgettext_rpt(msgid, msgctxt=None)
 
    Try to translate the given msgid (with optional msgctxt), if reports' translation is enabled.
 
@@ -159,7 +165,7 @@ Module References
    :rtype: str
 
 
-.. method:: pgettext_tip(msgid, msgctxt=None)
+.. function:: pgettext_tip(msgid, msgctxt=None)
 
    Try to translate the given msgid (with optional msgctxt), if tooltips' translation is enabled.
 
@@ -174,7 +180,7 @@ Module References
    :rtype: str
 
 
-.. method:: register(module_name, translations_dict)
+.. function:: register(module_name, translations_dict)
 
    Registers an addon's UI translations.
 
@@ -188,7 +194,7 @@ Module References
    :type translations_dict: dict[str, dict[tuple[str, str], str]]
 
 
-.. method:: unregister(module_name)
+.. function:: unregister(module_name)
 
    Unregisters an addon's UI translations.
 

@@ -5,6 +5,7 @@ CopyLocationConstraint(Constraint)
 
 base classes --- :class:`bpy_struct`, :class:`Constraint`
 
+
 .. class:: CopyLocationConstraint(Constraint)
 
    Copy the location of the target

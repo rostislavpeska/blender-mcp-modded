@@ -233,7 +233,7 @@ Effects
       Paint moves in specific direction specified by Blender force fields,
       gravity and velocity with user-defined influences.
    Shrink
-      Painted area slowly shrinks until disappears completely.
+      Painted area slowly shrinks until it disappears completely.
 
 For spread and drip effects, only "wet paint" is affected, so as the paint dries,
 movement becomes slower until it stops.

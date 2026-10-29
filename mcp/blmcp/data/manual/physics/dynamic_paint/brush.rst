@@ -95,7 +95,7 @@ Negate Volume
 .. rubric:: Object Center
 
 Instead of calculating proximity to the brush object mesh, which can be quite slow in some cases,
-only distance to only center is calculated. This is much faster and often good enough.
+only the distance to the center is calculated. This is much faster and often good enough.
 
 .. figure:: /images/physics_dynamic-paint_brush_source-object-center.png
 
@@ -210,14 +210,14 @@ Wave Type
    Select what effect the brush creates in the wave simulation.
 
    :Depth Change:
-      The brush create waves when the intersection depth with the surface is *changed* on that point.
+      The brush creates waves when the intersection depth with the surface is *changed* on that point.
       If the brush is not moved, it will have no effect.
 
       Using a negative "Factor" with this type can create a nice looking "wake" for moving objects like ships.
    :Obstacle:
       Constantly affects surface whenever intersecting.
       Waves are also reflected off this brush type.
-      However, due the nature of wave simulation algorithm this type creates
+      However, due to the nature of wave simulation algorithm this type creates
       an unnatural "dent" in the surface if the brush is not moved.
    :Force:
       Directly affects the velocity of wave motion.

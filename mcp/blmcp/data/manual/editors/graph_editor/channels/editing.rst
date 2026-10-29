@@ -110,6 +110,7 @@ Changes how the curve behaves before its first keyframe and after its last keyfr
 :Clear Cyclic:
    Remove the above modifier, making the curve non-repeating again.
 
+
 .. _bpy.ops.graph.fmodifier_add:
 
 Add F-Curve Modifier
@@ -122,6 +123,31 @@ Add F-Curve Modifier
 
 Shows a submenu from where you can add a :doc:`modifier </editors/graph_editor/fcurves/modifiers>`
 to the active curve. Settings for these modifiers can be found in :menuselection:`Sidebar --> Modifiers`.
+
+
+.. _bpy.ops.graph.fmodifier_remove:
+
+Delete F-Curve Modifiers
+========================
+
+.. reference::
+
+   :Menu:      :menuselection:`Channel --> Delete F-Curve Modifiers`
+
+Removes modifiers from the selected F-Curves.
+
+Mode
+   Determines which modifiers are removed.
+
+   :Remove All:
+      Removes all modifiers from the selected F-Curves.
+   :Remove First:
+      Removes only the first modifier from each selected F-Curve, regardless of modifier type.
+   :Remove Type:
+      Removes only modifiers matching the selected modifier type from the selected F-Curves.
+
+Type
+   The modifier type to remove when using :guilabel:`Remove Type`.
 
 
 .. _bpy.ops.graph.hide:

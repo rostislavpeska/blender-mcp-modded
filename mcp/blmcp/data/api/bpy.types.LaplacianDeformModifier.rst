@@ -5,6 +5,7 @@ LaplacianDeformModifier(Modifier)
 
 base classes --- :class:`bpy_struct`, :class:`Modifier`
 
+
 .. class:: LaplacianDeformModifier(Modifier)
 
    Mesh deform modifier

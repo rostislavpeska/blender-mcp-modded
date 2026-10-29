@@ -123,7 +123,7 @@ Geometry Randomization
 
 Many nodes don't guarantee the order of elements in which they output things. For example, the order of edges coming
 out of the **Triangulate** node is deterministic but not well defined. The order may change between Blender versions.
-Therefor, if node setups depend on a specific order, they may break when the Blender implementation changes. Changing
+Therefore, if node setups depend on a specific order, they may break when the Blender implementation changes. Changing
 the order can often be necessary in order to fix bugs or improve performance.
 
 "Geometry randomization" can be temporarily enabled to see if a blend-file depends on the indices in unstable ways.

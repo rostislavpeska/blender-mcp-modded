@@ -10,10 +10,10 @@ Shading
 
    :Panel:     :menuselection:`Properties --> Object Properties --> Shading`
 
+.. _render-eevee-object-light-linking-settings:
+
 Light Linking
 -------------
-
-.. _render-eevee-object-light-linking-settings:
 
 Limit light influence to specified objects, with :ref:`Light Linking <bpy.types.Object.light_linking>`.
 
@@ -83,6 +83,16 @@ Camera
 
 Shadow
    Enables the object to cast shadows. The object will not be capture inside the shadow maps.
+
+.. _bpy.types.Object.visible_raycast:
+
+Raycast
+   Controls whether the object can be intersected by ray cast rays during rendering.
+
+   Disabling this option excludes the object from features that rely on ray
+   casting, such as the :doc:`Raycast </render/shader_nodes/input/raycast>` shader node.
+
+   Objects using *Blended* materials are always excluded from ray cast visibility.
 
 
 Light Probes

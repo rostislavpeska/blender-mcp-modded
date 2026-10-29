@@ -5,6 +5,7 @@ BoolAttribute(Attribute)
 
 base classes --- :class:`bpy_struct`, :class:`Attribute`
 
+
 .. class:: BoolAttribute(Attribute)
 
    Geometry attribute that stores booleans

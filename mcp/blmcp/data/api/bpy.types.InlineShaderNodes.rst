@@ -1,6 +1,8 @@
 InlineShaderNodes
 =================
 
+.. currentmodule:: bpy.types
+
 
 Inline Shader Nodes
 +++++++++++++++++++

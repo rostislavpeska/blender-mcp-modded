@@ -5,6 +5,7 @@ LineStyleThicknessModifier_Material(LineStyleThicknessModifier)
 
 base classes --- :class:`bpy_struct`, :class:`LineStyleModifier`, :class:`LineStyleThicknessModifier`
 
+
 .. class:: LineStyleThicknessModifier_Material(LineStyleThicknessModifier)
 
    Change line thickness based on a material attribute

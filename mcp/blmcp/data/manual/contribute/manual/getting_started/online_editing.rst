@@ -90,8 +90,8 @@ Getting Help
 
 If you're unsure about a change, formatting, or workflow, don't hesitate to ask questions:
 
-- Join the `Blender Chat #docs <https://chat.blender.org/#/room/#docs:blender.org>`__ channel.
-- Open an issue at the `documentation project <https://projects.blender.org/blender/documentation>`__
+- Join the `Blender Chat #docs <https://matrix.to/#/#docs:blender.org>`__ channel.
+- Open an issue at the `documentation project <https://projects.blender.org/blender/blender-manual>`__
   for broader discussions or complex questions.
 
 Thank you for helping improve Blender's documentation!

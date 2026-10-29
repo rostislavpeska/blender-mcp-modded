@@ -1,8 +1,8 @@
+.. _bpy.types.Object.light_linking:
+
 *************
 Light Linking
 *************
-
-.. _bpy.types.Object.light_linking:
 
 With light linking, you can set up lights that only illuminate specific objects in the scene.
 Shadow linking additionally gives control over which objects block the light (cast shadows).

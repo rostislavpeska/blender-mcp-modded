@@ -20,7 +20,7 @@ Ptcache Operators
 
 .. function:: bake_all(*, bake=True)
 
-   Bake all physics
+   Bake all physics simulations in the current scene
 
    :param bake: Bake, (optional)
    :type bake: bool

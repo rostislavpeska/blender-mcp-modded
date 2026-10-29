@@ -5,6 +5,7 @@ VertexGroup(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: VertexGroup(bpy_struct)
 
    Group of vertices, used for armature deform and other purposes

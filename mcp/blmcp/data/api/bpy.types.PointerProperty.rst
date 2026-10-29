@@ -5,6 +5,7 @@ PointerProperty(Property)
 
 base classes --- :class:`bpy_struct`, :class:`Property`
 
+
 .. class:: PointerProperty(Property)
 
    RNA pointer property to point to another RNA struct

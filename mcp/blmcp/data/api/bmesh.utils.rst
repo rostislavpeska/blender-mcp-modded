@@ -5,7 +5,7 @@ BMesh Utilities (bmesh.utils)
 
 This module provides bmesh utility functions for splitting, joining, and modifying mesh elements.
 
-.. method:: edge_rotate(edge, ccw=False)
+.. function:: edge_rotate(edge, ccw=False)
 
    Rotate the edge and return the newly created edge.
    If rotating the edge fails, None will be returned.
@@ -18,7 +18,7 @@ This module provides bmesh utility functions for splitting, joining, and modifyi
    :rtype: :class:`bmesh.types.BMEdge` | None
 
 
-.. method:: edge_split(edge, vert, fac)
+.. function:: edge_split(edge, vert, fac)
 
    Split an edge, return the newly created data.
 
@@ -32,7 +32,7 @@ This module provides bmesh utility functions for splitting, joining, and modifyi
    :rtype: tuple[:class:`bmesh.types.BMEdge`, :class:`bmesh.types.BMVert`]
 
 
-.. method:: face_flip(face)
+.. function:: face_flip(face)
 
    Flip the face's direction.
 
@@ -40,7 +40,7 @@ This module provides bmesh utility functions for splitting, joining, and modifyi
    :type face: :class:`bmesh.types.BMFace`
 
 
-.. method:: face_join(faces, remove=True)
+.. function:: face_join(faces, remove=True)
 
    Joins a sequence of faces.
 
@@ -52,7 +52,7 @@ This module provides bmesh utility functions for splitting, joining, and modifyi
    :rtype: :class:`bmesh.types.BMFace` | None
 
 
-.. method:: face_split(face, vert_a, vert_b, *, coords=(), use_exist=True, source=None)
+.. function:: face_split(face, vert_a, vert_b, *, coords=(), use_exist=True, source=None)
 
    Face split with optional intermediate points.
 
@@ -72,7 +72,7 @@ This module provides bmesh utility functions for splitting, joining, and modifyi
    :rtype: tuple[:class:`bmesh.types.BMFace`, :class:`bmesh.types.BMLoop`]
 
 
-.. method:: face_split_edgenet(face, edgenet)
+.. function:: face_split_edgenet(face, edgenet)
 
    Splits a face into any number of regions defined by an edgenet.
 
@@ -88,7 +88,7 @@ This module provides bmesh utility functions for splitting, joining, and modifyi
       Regions defined by edges need to connect to the face, otherwise they're ignored as loose edges.
 
 
-.. method:: face_vert_separate(face, vert)
+.. function:: face_vert_separate(face, vert)
 
    Rip a vertex in a face away and add a new vertex.
 
@@ -104,7 +104,7 @@ This module provides bmesh utility functions for splitting, joining, and modifyi
       This is the same as loop_separate, and has only been added for convenience.
 
 
-.. method:: loop_separate(loop)
+.. function:: loop_separate(loop)
 
    Rip a vertex in a face away and add a new vertex.
 
@@ -114,7 +114,7 @@ This module provides bmesh utility functions for splitting, joining, and modifyi
    :rtype: :class:`bmesh.types.BMVert` | None
 
 
-.. method:: uv_select_check(bm, /, *, sync=True, flush=False, contiguous=False)
+.. function:: uv_select_check(bm, /, *, sync=True, flush=False, contiguous=False)
 
    Check UV selection state for consistency issues.
 
@@ -130,7 +130,7 @@ This module provides bmesh utility functions for splitting, joining, and modifyi
    :rtype: dict[str, int] | None
 
 
-.. method:: vert_collapse_edge(vert, edge)
+.. function:: vert_collapse_edge(vert, edge)
 
    Collapse a vertex into an edge.
 
@@ -142,7 +142,7 @@ This module provides bmesh utility functions for splitting, joining, and modifyi
    :rtype: :class:`bmesh.types.BMEdge`
 
 
-.. method:: vert_collapse_faces(vert, edge, fac, join_faces)
+.. function:: vert_collapse_faces(vert, edge, fac, join_faces)
 
    Collapses a vertex that has only two manifold edges onto a vertex it shares an edge with.
 
@@ -158,7 +158,7 @@ This module provides bmesh utility functions for splitting, joining, and modifyi
    :rtype: :class:`bmesh.types.BMEdge`
 
 
-.. method:: vert_dissolve(vert)
+.. function:: vert_dissolve(vert)
 
    Dissolve this vertex (will be removed).
 
@@ -168,7 +168,7 @@ This module provides bmesh utility functions for splitting, joining, and modifyi
    :rtype: bool
 
 
-.. method:: vert_separate(vert, edges)
+.. function:: vert_separate(vert, edges)
 
    Separate this vertex at every edge.
 
@@ -180,7 +180,7 @@ This module provides bmesh utility functions for splitting, joining, and modifyi
    :rtype: tuple[:class:`bmesh.types.BMVert`, ...]
 
 
-.. method:: vert_splice(vert, vert_target)
+.. function:: vert_splice(vert, vert_target)
 
    Splice vert into vert_target, merging them.
 

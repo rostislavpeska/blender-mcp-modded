@@ -37,6 +37,7 @@ at its creation, all editing in the original image's buffer is 'lost' in its cop
 
 base classes --- :class:`bpy_struct`, :class:`ID`
 
+
 .. class:: Image(ID)
 
    Image data-block referencing an external or packed image
@@ -172,9 +173,9 @@ base classes --- :class:`bpy_struct`, :class:`ID`
 
    .. attribute:: pixels
 
-      Image buffer pixels in floating-point values (in [-inf, inf], default 0.0)
+      Image buffer pixels in floating-point values (dynamic array, in [-inf, inf], default 0.0)
 
-      :type: float
+      :type: :class:`bpy_prop_array`\ [float]
 
    .. data:: render_slots
 
@@ -251,7 +252,10 @@ base classes --- :class:`bpy_struct`, :class:`ID`
 
    .. attribute:: use_half_precision
 
-      Use 16 bits per channel to lower the memory usage during rendering (default True)
+      Use 16 bits per channel to lower the memory usage during rendering.
+      Note: Not supported by Cycles
+      
+      (default True)
 
       :type: bool
 

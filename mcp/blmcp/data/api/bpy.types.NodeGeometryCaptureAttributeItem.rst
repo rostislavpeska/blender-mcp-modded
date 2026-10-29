@@ -5,6 +5,7 @@ NodeGeometryCaptureAttributeItem(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: NodeGeometryCaptureAttributeItem(bpy_struct)
 
 

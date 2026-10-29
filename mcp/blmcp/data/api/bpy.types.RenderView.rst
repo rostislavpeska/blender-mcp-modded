@@ -5,6 +5,7 @@ RenderView(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: RenderView(bpy_struct)
 
 

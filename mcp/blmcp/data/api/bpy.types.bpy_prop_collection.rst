@@ -22,7 +22,16 @@ base classes --- :class:`bpy_prop`
 
    .. method:: foreach_get(attr, seq)
    
-      This is a function to give fast access to attributes within a collection.
+      Fast access to a basic-type attribute within a collection.
+   
+      :param attr: Name of the item attribute to read (for example ``co``, ``normal`` or
+         ``select``). The attribute must be a basic type (bool, int or float).
+   
+         For geometry attribute types, see :attr:`Attribute.data_type`.
+      :type attr: str
+      :param seq: Writable sequence or buffer receiving flattened values.
+         For array attributes, the length must be ``len(collection) * array_length``.
+      :type seq: MutableSequence[bool | int | float] | buffer
 
 
       Only works for 'basic type' properties (bool, int and float)!
@@ -34,7 +43,16 @@ base classes --- :class:`bpy_prop`
 
    .. method:: foreach_set(attr, seq)
    
-      This is a function to give fast access to attributes within a collection.
+      Fast access to a basic-type attribute within a collection.
+   
+      :param attr: Name of the item attribute to write (for example ``co`` or
+         ``select``). The attribute must be a basic type (bool, int or float).
+   
+         For geometry attribute types, see :attr:`Attribute.data_type`.
+      :type attr: str
+      :param seq: Sequence or buffer containing flattened values.
+         For array attributes, the length must be ``len(collection) * array_length``.
+      :type seq: Sequence[bool | int | float] | buffer
 
 
       Only works for 'basic type' properties (bool, int and float)!
@@ -84,4 +102,33 @@ base classes --- :class:`bpy_prop`
       :return: The members of this collection.
       :rtype: list[:class:`bpy.types.bpy_struct` | None]
 
+
+   .. details:: Special Methods
+
+      .. method:: __contains__(item)
+
+         :param item: Item to test for membership.
+         :type item: object
+         :rtype: bool
+
+      .. method:: __getitem__(key)
+
+         :param key: Index or key.
+         :type key: int
+         :rtype: :class:`bpy_struct`
+
+      .. method:: __iter__()
+
+         :rtype: typing.Iterator[:class:`bpy_struct`]
+
+      .. method:: __len__()
+
+         :rtype: int
+
+      .. method:: __setitem__(key, value)
+
+         :param key: Index or key.
+         :type key: int
+         :param value: Value to assign.
+         :type value: object
 

@@ -5,6 +5,7 @@ GreasePencilOpacityModifier(Modifier)
 
 base classes --- :class:`bpy_struct`, :class:`Modifier`
 
+
 .. class:: GreasePencilOpacityModifier(Modifier)
 
 

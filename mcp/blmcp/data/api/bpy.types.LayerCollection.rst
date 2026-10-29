@@ -5,6 +5,7 @@ LayerCollection(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: LayerCollection(bpy_struct)
 
    Layer collection

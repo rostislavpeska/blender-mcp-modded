@@ -5,6 +5,7 @@ BrushCurvesSculptSettings(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: BrushCurvesSculptSettings(bpy_struct)
 
 

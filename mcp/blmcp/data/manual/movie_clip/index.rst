@@ -1,7 +1,5 @@
 .. _bpy.types.SpaceClipEditor:
-.. _bpy.types.MovieClip:
 .. _bpy.ops.clip:
-.. _editors-movieclip-index:
 
 #############################
   Motion Tracking & Masking
@@ -14,6 +12,15 @@ You perform masking and tracking with the Movie Clip Editor.
    The Movie Clip Editor.
 
 See :doc:`/editors/clip/index` for more information on the Movie Clip Editor.
+
+.. toctree::
+   :maxdepth: 2
+
+   movie_clips.rst
+
+
+Workflows
+=========
 
 .. toctree::
    :maxdepth: 2

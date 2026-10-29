@@ -29,7 +29,7 @@ Object
    The name of the armature object used by this modifier.
 
 Vertex Group
-   A vertex group of the object, which weights will be used to determine the influence of this
+   A vertex group of the object, whose weights will be used to determine the influence of this
    modifier's results when mixing it with the results from other *Armature* ones.
 
    Only meaningful when having at least two of these modifiers on the same object,

@@ -23,7 +23,7 @@ When a node is automatically attached, the surrounding nodes
 will be offset to the right or left depending on the :kbd:`T` toggle;
 see :ref:`editors-nodes-usage-auto-offset` for more information.
 
-While dragging nodes, you can press :kbd:`F` to toggle their parent 
+While dragging nodes, you can press :kbd:`F` to toggle their parent
 :doc:`Frame </interface/controls/nodes/types/layout/frame>`:
 
 - If the nodes are inside a frame, they will be detached from it.
@@ -31,7 +31,8 @@ While dragging nodes, you can press :kbd:`F` to toggle their parent
 
 In general, it is recommended to arrange your nodes so that data flows from left to right, top to bottom.
 
-The width of a node can be changed by dragging its left or right border.
+The width of a node can be adjusted by dragging its left or right border.
+When multiple nodes are selected, resizing one node affects all selected nodes.
 
 Rotating (:kbd:`R`) and scaling (:kbd:`S`) only apply when multiple nodes are selected,
 and only affect their positions.
@@ -54,7 +55,7 @@ hold :kbd:`Ctrl` while dragging from an output socket.
 This works for single as well as for multiple outgoing links.
 
 Nodes that have no connections can be inserted on a link
-by just move the node over the link and release when the link is highlighted.
+by just moving the node over the link and release when the link is highlighted.
 
 .. _bpy.ops.node.link_make:
 
@@ -122,23 +123,43 @@ Detach Links :kbd:`Alt-LMB` drag
    and move the nodes to a new location.
 
 
-.. _bpy.ops.node.clipboard_copy:
-.. _bpy.ops.node.clipboard_paste:
-
-Copy/Paste
-==========
+Cut/Copy/Paste
+==============
 
 .. reference::
 
-   :Menu:      :menuselection:`Node --> Copy`, :menuselection:`Node --> Paste`
+   :Menu:      :menuselection:`Node --> Cut`, :menuselection:`Node --> Copy`, :menuselection:`Node --> Paste`
    :Shortcut:  :kbd:`Ctrl-C`, :kbd:`Ctrl-V`
 
-Not only the selected nodes but also the connections between them are copied to the clipboard.
+These operators allow transferring nodes within a node tree,
+between different node trees, or even between Blender instances.
+
+.. _bpy.ops.node.delete_copy_reconnect:
+
+Cut
+   Removes the selected nodes and places them on the clipboard.
+   When possible, links are automatically reconnected to preserve the node flow.
+
+.. _bpy.ops.node.clipboard_copy:
+
+Copy :kbd:`Ctrl-C`
+   Copies the selected nodes to the clipboard, including the connections between them.
+
+.. _bpy.ops.node.clipboard_paste:
+
+Paste :kbd:`Ctrl-V`
+   Inserts the nodes from the clipboard into the node tree.
 
 .. note::
 
-   The pasted node will be placed in the *same* position as when it was copied.
-   Use the same cautions as when duplicating.
+   Pasted nodes are placed at the same coordinates as when they were copied.
+   The same considerations as duplicating nodes apply.
+
+.. tip::
+
+   Nodes can be copied and pasted between Blender instances.
+   This also works across different node editors, provided the node
+   types are supported by the destination editor.
 
 
 .. _bpy.ops.node.duplicate_move:
@@ -197,7 +218,7 @@ Delete with Reconnect
 .. reference::
 
    :Menu:      :menuselection:`Node --> Delete`
-   :Shortcut:  :kbd:`Ctrl-X`
+   :Shortcut:  :kbd:`Ctrl-Delete`
 
 Deletes the selected node(s), then creates new links connecting their former input nodes
 to their former output nodes.

@@ -5,6 +5,7 @@ TimelineMarker(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: TimelineMarker(bpy_struct)
 
    Marker for noting points in the timeline

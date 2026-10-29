@@ -61,7 +61,7 @@ certain type:
    :type owner: Any
 
 
-.. function:: publish_rna(key)
+.. function:: publish_rna(*, key)
 
    :param key: Represents the type of data being subscribed to
 
@@ -76,7 +76,7 @@ certain type:
    In some cases it may be useful to publish changes explicitly using more general keys.
 
 
-.. function:: subscribe_rna(key, owner, args, notify, *, options=set())
+.. function:: subscribe_rna(*, key, owner, args, notify, options=set())
 
    Register a message bus subscription. It will be cleared when another blend file is
    loaded, or can be cleared explicitly via :func:`bpy.msgbus.clear_by_owner`.

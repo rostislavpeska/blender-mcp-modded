@@ -11,7 +11,7 @@ Paint
 Paints on the active color attribute.
 Hold :kbd:`Shift` to blur painted colors instead.
 
-Color attribute's can be managed in the pallette pop-over in the middle of the header.
+Color attribute's can be managed in the palette pop-over in the middle of the header.
 
 .. note::
 

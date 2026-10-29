@@ -5,6 +5,7 @@ VIEW3D_FH_vdb_volume(FileHandler)
 
 base classes --- :class:`bpy_struct`, :class:`FileHandler`
 
+
 .. class:: VIEW3D_FH_vdb_volume(FileHandler)
 
 

@@ -5,6 +5,7 @@ NodeSocketVectorVelocity(NodeSocketStandard)
 
 base classes --- :class:`bpy_struct`, :class:`NodeSocket`, :class:`NodeSocketStandard`
 
+
 .. class:: NodeSocketVectorVelocity(NodeSocketStandard)
 
    3D vector socket of a node

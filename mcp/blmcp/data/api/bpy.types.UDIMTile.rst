@@ -5,6 +5,7 @@ UDIMTile(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: UDIMTile(bpy_struct)
 
    Properties of the UDIM tile

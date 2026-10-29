@@ -5,6 +5,7 @@ FModifierLimits(FModifier)
 
 base classes --- :class:`bpy_struct`, :class:`FModifier`
 
+
 .. class:: FModifierLimits(FModifier)
 
    Limit the time/value ranges of the modified F-Curve

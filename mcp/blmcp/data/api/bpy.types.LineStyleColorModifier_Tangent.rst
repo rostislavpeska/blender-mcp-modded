@@ -5,6 +5,7 @@ LineStyleColorModifier_Tangent(LineStyleColorModifier)
 
 base classes --- :class:`bpy_struct`, :class:`LineStyleModifier`, :class:`LineStyleColorModifier`
 
+
 .. class:: LineStyleColorModifier_Tangent(LineStyleColorModifier)
 
    Change line color based on the direction of a stroke

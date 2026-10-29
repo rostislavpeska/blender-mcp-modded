@@ -49,7 +49,9 @@ bpy_prop
 
    .. attribute:: data
 
-      The data this property is using, *type* :class:`bpy.types.bpy_struct`
+      The data this property is using, (readonly)
+      
+      :type: :class:`bpy.types.bpy_struct`
 
 
    .. attribute:: id_data
@@ -62,5 +64,57 @@ bpy_prop
    .. attribute:: rna_type
 
       The property type for introspection.
+      
+      :type: :class:`bpy.types.Property`
 
+
+   .. details:: Special Methods
+
+      .. method:: __eq__(other)
+
+         :param other: The other operand.
+         :type other: object
+         :rtype: bool
+
+      .. method:: __ge__(other)
+
+         :param other: The other operand.
+         :type other: Self
+         :rtype: bool
+
+      .. method:: __gt__(other)
+
+         :param other: The other operand.
+         :type other: Self
+         :rtype: bool
+
+      .. method:: __hash__()
+
+         :rtype: int
+
+      .. method:: __le__(other)
+
+         :param other: The other operand.
+         :type other: Self
+         :rtype: bool
+
+      .. method:: __lt__(other)
+
+         :param other: The other operand.
+         :type other: Self
+         :rtype: bool
+
+      .. method:: __ne__(other)
+
+         :param other: The other operand.
+         :type other: object
+         :rtype: bool
+
+      .. method:: __repr__()
+
+         :rtype: str
+
+      .. method:: __str__()
+
+         :rtype: str
 

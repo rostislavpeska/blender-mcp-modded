@@ -5,6 +5,7 @@ MotionPathVert(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: MotionPathVert(bpy_struct)
 
    Cached location on path

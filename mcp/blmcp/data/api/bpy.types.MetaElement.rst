@@ -5,6 +5,7 @@ MetaElement(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: MetaElement(bpy_struct)
 
    Blobby element in a metaball data-block

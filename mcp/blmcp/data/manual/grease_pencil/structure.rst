@@ -3,7 +3,7 @@
 Grease Pencil Structure
 ***********************
 
-Grease Pencil object has three main basic components: *points*, *edit lines* and *strokes*.
+A Grease Pencil object has three main basic components: *points*, *edit lines* and *strokes*.
 
 .. figure:: /images/grease-pencil_structure_example.png
 

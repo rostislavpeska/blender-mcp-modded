@@ -117,7 +117,7 @@ Compression :guilabel:`OpenVDB Only`
    :Zip:
       Cache files will be written with ``Zip`` compression. Effective but slower than ``Blosc``.
    :Blosc:
-      Cache files will be written with ``Blosc`` compression. Multithreaded compression,
+      Cache files will be written with ``Blosc`` compression. Multi-threaded compression,
       similar in size and quality to ``Zip`` compression.
    :None:
       Cache files will be written without any compression.

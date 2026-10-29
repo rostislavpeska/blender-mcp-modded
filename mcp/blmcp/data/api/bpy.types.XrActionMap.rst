@@ -5,6 +5,7 @@ XrActionMap(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: XrActionMap(bpy_struct)
 
 

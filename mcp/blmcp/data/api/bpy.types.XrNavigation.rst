@@ -5,6 +5,7 @@ XrNavigation(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: XrNavigation(bpy_struct)
 
    VR navigation settings

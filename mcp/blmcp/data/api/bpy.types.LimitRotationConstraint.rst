@@ -5,6 +5,7 @@ LimitRotationConstraint(Constraint)
 
 base classes --- :class:`bpy_struct`, :class:`Constraint`
 
+
 .. class:: LimitRotationConstraint(Constraint)
 
    Limit the rotation of the constrained object

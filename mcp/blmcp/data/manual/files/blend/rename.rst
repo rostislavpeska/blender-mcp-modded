@@ -72,6 +72,14 @@ Replace
 Case Sensitive
    Search results must exactly match the case of the *Find* text.
 
+.. tip::
+
+   When using regular expressions, capture groups can be referenced in the
+   replacement text using backslash notation (e.g. ``\1``, ``\2``).
+   For example, using ``cube\.(\d+)`` as the *Find* pattern and
+   ``sphere.\1`` as the *Replace* pattern will transform ``cube.001`` into
+   ``sphere.001``.
+
 
 Set Name
 ^^^^^^^^

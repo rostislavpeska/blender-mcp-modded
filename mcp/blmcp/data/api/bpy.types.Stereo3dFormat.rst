@@ -5,6 +5,7 @@ Stereo3dFormat(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: Stereo3dFormat(bpy_struct)
 
    Settings for stereo output

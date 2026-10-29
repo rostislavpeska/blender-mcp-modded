@@ -5,6 +5,7 @@ Itasc(IKParam)
 
 base classes --- :class:`bpy_struct`, :class:`IKParam`
 
+
 .. class:: Itasc(IKParam)
 
    Parameters for the iTaSC IK solver

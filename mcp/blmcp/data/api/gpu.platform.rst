@@ -21,6 +21,14 @@ This module provides access to GPU Platform definitions.
    :rtype: str
 
 
+.. function:: devices_get()
+
+   Get all available GPU devices.
+
+   :return: List of :class:`GPUDevice` objects for each device.
+   :rtype: list
+
+
 .. function:: renderer_get()
 
    Get GPU to be used for rendering.

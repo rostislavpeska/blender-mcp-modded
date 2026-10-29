@@ -14,7 +14,7 @@ The *Viewer* node allows viewing data from inside a geometry node group in both 
 
 Any geometry or attribute connected to the viewer can be visualized in the viewport,
 and its evaluated attribute values can be inspected in the spreadsheet.
-Other data can also be viewed and inspected such as scaler values and grids by showing them in the spreadsheet.
+Other data can also be viewed and inspected such as scalar values and grids by showing them in the spreadsheet.
 
 .. note::
 
@@ -60,12 +60,19 @@ When enabled, the current evaluated value is shown beside the socket input, maki
 to inspect and debug data flow without connecting a Viewer node.
 
 This feature is available for scalar and small data types, such as *Float*, *Integer*, *Boolean*, or *Vector* sockets.
-The displayed value updates interactively as the node tree evaluates or parameters change.
+
+When viewing data-block values, the Viewer node displays the data-block's name along with its
+icon, making it easy to identify the referenced data-block.
+
+For :doc:`Collections </scene_layout/collections/index>`, the assigned
+:ref:`color tag <scene_layout-collections-color-tagging>` is also displayed.
+
+The displayed values update interactively as the node tree evaluates or parameters change.
 
 .. note::
 
    Complex data types such as geometry or grids cannot be previewed this way and must be visualized
-   using the Viewer node or the Spreadsheet editor.
+   using the Viewer node or the Spreadsheet Editor.
 
 
 Attribute Field Visualization

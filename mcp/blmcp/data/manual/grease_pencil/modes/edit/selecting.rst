@@ -103,6 +103,26 @@ Less
    Conversely, the same goes when no points are selected.
 
 
+.. _bpy.ops.grease_pencil.select_by_stroke_type:
+
+By Stroke Type
+==============
+
+.. reference::
+
+   :Mode:      Edit Mode
+   :Menu:      :menuselection:`Select --> By Stroke Type`
+
+Selects curves based on whether they are strokes or fills.
+
+Type
+   :Stroke: Select all stroke curves (outlines).
+   :Fill: Select all fill curves (enclosed filled shapes).
+
+Deselect
+   If enabled, matching curves are deselected instead of selected.
+
+
 .. _bpy.ops.grease_pencil.select_similar:
 
 Select Similar
@@ -129,6 +149,27 @@ Threshold
    How similar the selection must be.
 
 
+.. _bpy.ops.grease_pencil.select_fill:
+
+Select Fill
+===========
+
+.. reference::
+
+   :Mode:      Edit Mode
+   :Menu:      :menuselection:`Select --> Select Fill`
+   :Shortcut:  :kbd:`Ctrl-L`
+
+Selects all curves that belong to the same fill region as the active curve.
+
+Grease Pencil fills can be composed of multiple boundary curves.
+This operator expands the current selection to include all curves
+that define the same enclosed fill area.
+
+This is useful when editing or transforming an entire filled shape,
+ensuring that all boundary strokes are selected together.
+
+
 .. _bpy.ops.grease_pencil.select_linked:
 
 Select Linked
@@ -138,10 +179,17 @@ Select Linked
 
    :Mode:      Edit Mode
    :Menu:      :menuselection:`Select --> Select Linked`
-   :Shortcut:  :kbd:`L`, :kbd:`Ctrl-L`
+   :Shortcut:  :kbd:`L`
 
-:kbd:`L` (or :kbd:`Ctrl-L` for all) will add to the selection the cursor's nearest control point,
-and all the linked ones, i.e. all points belonging to the same stroke.
+Selects the stroke under the cursor along with all connected points belonging to the same stroke.
+
+This is useful for quickly selecting an entire stroke for editing, transforming,
+moving between layers, or applying material changes.
+
+Deselect Linked
+   Removes the linked stroke under the cursor from the selection.
+
+   Shortcut: :kbd:`Shift-L`
 
 
 .. _bpy.ops.grease_pencil.select_ends:

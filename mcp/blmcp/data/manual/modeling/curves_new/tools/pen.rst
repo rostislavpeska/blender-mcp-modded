@@ -57,7 +57,7 @@ Move Entire Point
    Hold :kbd:`LeftAlt` while dragging a handle to move the entire point.
 
 Snap Handle Angle
-   Hold :kbd:`LeftShift` while dragging a handle to limit the movement of the handle to multiples 45 degrees,
+   Hold :kbd:`LeftShift` while dragging a handle to limit the movement of the handle to multiples of 45 degrees,
    so the handle can only be vertical, horizontal or diagonal.
 
 

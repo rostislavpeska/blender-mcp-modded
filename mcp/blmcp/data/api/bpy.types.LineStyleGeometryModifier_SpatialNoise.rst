@@ -5,6 +5,7 @@ LineStyleGeometryModifier_SpatialNoise(LineStyleGeometryModifier)
 
 base classes --- :class:`bpy_struct`, :class:`LineStyleModifier`, :class:`LineStyleGeometryModifier`
 
+
 .. class:: LineStyleGeometryModifier_SpatialNoise(LineStyleGeometryModifier)
 
    Add spatial noise to stroke backbone geometry

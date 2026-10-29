@@ -5,6 +5,7 @@ BrushTextureSlot(TextureSlot)
 
 base classes --- :class:`bpy_struct`, :class:`TextureSlot`
 
+
 .. class:: BrushTextureSlot(TextureSlot)
 
    Texture slot for textures in a Brush data-block

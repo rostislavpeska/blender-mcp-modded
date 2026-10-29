@@ -12,7 +12,8 @@ The *Mesh Plane* operator automates the process of creating a plane,
 sizing it to match the aspect ratio of the selected image, and applying a material with the image as a texture.
 The plane, material, and texture are named based on the image filename.
 
-This tool supports importing single images, multiple images, or image sequences/movie clips:
+This tool supports importing single images, multiple images,
+or image sequences, or :ref:`movie clips <bpy.types.MovieClip>`:
 
 - **Single Image**: Creates one plane with the image applied as a texture.
 - **Multiple Images**: Generates multiple planes, either stacked or spaced apart.
@@ -68,7 +69,7 @@ Render Method
 
    :Dithered:
       Allows for grayscale hashed transparency, and compatible with render passes and raytracing.
-      Also know as deferred rendering.
+      Also known as deferred rendering.
 
       When using *Dithered* render method, the materials are rendered in layers.
       Each layer can only transmit (e.g. refract) light emitted from previous layers.

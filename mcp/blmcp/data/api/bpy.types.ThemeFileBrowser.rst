@@ -5,6 +5,7 @@ ThemeFileBrowser(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: ThemeFileBrowser(bpy_struct)
 
    Theme settings for the File Browser

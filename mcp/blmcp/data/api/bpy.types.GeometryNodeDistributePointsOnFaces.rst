@@ -5,6 +5,7 @@ GeometryNodeDistributePointsOnFaces(GeometryNode)
 
 base classes --- :class:`bpy_struct`, :class:`Node`, :class:`NodeInternal`, :class:`GeometryNode`
 
+
 .. class:: GeometryNodeDistributePointsOnFaces(GeometryNode)
 
    Generate points spread out on the surface of a mesh
@@ -88,6 +89,7 @@ Inherited Properties
    - :class:`Node.label`
    - :class:`Node.inputs`
    - :class:`Node.outputs`
+   - :class:`Node.panel_states`
    - :class:`Node.internal_links`
    - :class:`Node.parent`
    - :class:`Node.warning_propagation`

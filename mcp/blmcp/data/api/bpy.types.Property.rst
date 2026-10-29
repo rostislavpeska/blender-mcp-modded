@@ -5,8 +5,17 @@ Property(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
-subclasses --- 
-:class:`BoolProperty`, :class:`CollectionProperty`, :class:`EnumProperty`, :class:`FloatProperty`, :class:`IntProperty`, :class:`PointerProperty`, :class:`StringProperty`
+.. toctree::
+   :caption: Subclasses
+   :maxdepth: 1
+
+   bpy.types.BoolProperty.rst
+   bpy.types.CollectionProperty.rst
+   bpy.types.EnumProperty.rst
+   bpy.types.FloatProperty.rst
+   bpy.types.IntProperty.rst
+   bpy.types.PointerProperty.rst
+   bpy.types.StringProperty.rst
 
 .. class:: Property(bpy_struct)
 

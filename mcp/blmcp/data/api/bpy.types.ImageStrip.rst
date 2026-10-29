@@ -5,6 +5,7 @@ ImageStrip(Strip)
 
 base classes --- :class:`bpy_struct`, :class:`Strip`
 
+
 .. class:: ImageStrip(Strip)
 
    Sequence strip to load one or more images
@@ -156,7 +157,7 @@ base classes --- :class:`bpy_struct`, :class:`Strip`
 
    .. attribute:: use_proxy
 
-      Use a preview proxy and/or time-code index for this strip (default False)
+      Use a preview proxy for this strip (default False)
 
       :type: bool
 
@@ -222,7 +223,6 @@ Inherited Properties
    - :class:`Strip.frame_offset_end`
    - :class:`Strip.right_handle_offset`
    - :class:`Strip.channel`
-   - :class:`Strip.use_linear_modifiers`
    - :class:`Strip.blend_type`
    - :class:`Strip.blend_alpha`
    - :class:`Strip.effect_fader`
@@ -230,6 +230,7 @@ Inherited Properties
    - :class:`Strip.color_tag`
    - :class:`Strip.modifiers`
    - :class:`Strip.show_retiming_keys`
+   - :class:`Strip.connections`
 
 Inherited Functions
 -------------------

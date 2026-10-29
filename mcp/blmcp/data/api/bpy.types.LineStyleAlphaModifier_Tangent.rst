@@ -5,6 +5,7 @@ LineStyleAlphaModifier_Tangent(LineStyleAlphaModifier)
 
 base classes --- :class:`bpy_struct`, :class:`LineStyleModifier`, :class:`LineStyleAlphaModifier`
 
+
 .. class:: LineStyleAlphaModifier_Tangent(LineStyleAlphaModifier)
 
    Alpha transparency based on the direction of the stroke

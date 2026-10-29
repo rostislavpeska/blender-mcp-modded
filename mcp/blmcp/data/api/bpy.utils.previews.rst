@@ -14,7 +14,7 @@ This allows scripts to generate their own previews, and use them as icons in UI 
 Custom Icon Example
 -------------------
 
-.. literalinclude:: __/__/__/scripts/templates_py/ui_previews_custom_icon.py
+.. literalinclude:: __/__/__/scripts/templates_py/UI/previews_custom_icon.py
 
 .. function:: new()
 
@@ -74,6 +74,12 @@ Custom Icon Example
       :return: The Preview matching given name, or a new empty one.
       :rtype: :class:`bpy.types.ImagePreview`
       :raises KeyError: if ``name`` already exists.
+
+   .. details:: Special Methods
+
+      .. method:: __repr__()
+
+         :rtype: str
 
 
 

@@ -176,13 +176,17 @@ Pan
    Used to pan the audio between speakers in multichannel audio.
    Only mono sources can be panned; if the source file is not mono, enable *Mono* to mix the channels together.
 
-   This value basically represents the angle at
-   which it's played if you multiply the value by 90 degrees.
+   For stereo, output panning ranges from left (-1), to center (0), to right (1).
 
-   For stereo, output panning works from left (-1) to center (0) and finally right (1).
+   However, for surround sound outputs with more than two speakers,
+   the value represents the angle at which it's played if you multiply the value by 90 degrees.
+   0 degrees marks the point directly ahead of the listener.
 
-   To address rear speakers, you can pan to those with higher values,
-   where -2 is back left and 2 is back right.
+   Thus, to address rear speakers, you can pan with higher values. Note that -2 and 2
+   are identical at 180 degrees behind the listener.
+
+   As an example, 5.1 surround sound places its front speakers 30 degrees away,
+   and rear speakers 110 degrees away from vertical (see figure).
 
    .. tip::
 

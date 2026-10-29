@@ -5,6 +5,7 @@ PrimitiveBoolean(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: PrimitiveBoolean(bpy_struct)
 
    RNA wrapped boolean

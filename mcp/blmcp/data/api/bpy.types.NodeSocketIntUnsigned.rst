@@ -5,6 +5,7 @@ NodeSocketIntUnsigned(NodeSocketStandard)
 
 base classes --- :class:`bpy_struct`, :class:`NodeSocket`, :class:`NodeSocketStandard`
 
+
 .. class:: NodeSocketIntUnsigned(NodeSocketStandard)
 
    Integer number socket of a node

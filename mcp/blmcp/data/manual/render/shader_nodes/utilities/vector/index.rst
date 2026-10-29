@@ -19,6 +19,7 @@
    normal.rst
    curves.rst
    radial_tiling.rst
+   vector_math.rst
    vector_rotate.rst
    transform.rst
 

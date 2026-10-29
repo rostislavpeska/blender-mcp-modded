@@ -3,7 +3,8 @@ StripsTopLevel(bpy_prop_collection)
 
 .. currentmodule:: bpy.types
 
-base classes --- :class:`bpy_prop`, :class:`bpy_prop_collection`
+base class --- :class:`bpy_prop_collection`
+
 
 .. class:: StripsTopLevel(bpy_prop_collection)
 
@@ -66,12 +67,12 @@ base classes --- :class:`bpy_prop`, :class:`bpy_prop_collection`
       :type channel: int
       :param frame_start: The start frame for the new strip (in [-1048574, 1048574])
       :type frame_start: int
-      :param fit_method: Image Fit Method, (optional)
+      :param fit_method: Image Fit Method, Mode for fitting the image to the canvas (optional)
       :type fit_method: Literal[:ref:`rna_enum_strip_scale_method_items`]
       :return: New Strip
       :rtype: :class:`Strip`
 
-   .. method:: new_movie(name, filepath, channel, frame_start, *, fit_method='ORIGINAL')
+   .. method:: new_movie(name, filepath, channel, frame_start, *, fit_method='ORIGINAL', stream=0)
 
       Add a new movie strip
 
@@ -83,12 +84,14 @@ base classes --- :class:`bpy_prop`, :class:`bpy_prop_collection`
       :type channel: int
       :param frame_start: The start frame for the new strip (in [-1048574, 1048574])
       :type frame_start: int
-      :param fit_method: Image Fit Method, (optional)
+      :param fit_method: Image Fit Method, Mode for fitting the image to the canvas (optional)
       :type fit_method: Literal[:ref:`rna_enum_strip_scale_method_items`]
+      :param stream: Stream, Stream index for multi-stream files (in [0, 32767], optional)
+      :type stream: int
       :return: New Strip
       :rtype: :class:`Strip`
 
-   .. method:: new_sound(name, filepath, channel, frame_start)
+   .. method:: new_sound(name, filepath, channel, frame_start, *, stream=0)
 
       Add a new sound strip
 
@@ -100,6 +103,8 @@ base classes --- :class:`bpy_prop`, :class:`bpy_prop_collection`
       :type channel: int
       :param frame_start: The start frame for the new strip (in [-1048574, 1048574])
       :type frame_start: int
+      :param stream: Stream, Stream index for multi-stream files (in [0, 32767], optional)
+      :type stream: int
       :return: New Strip
       :rtype: :class:`Strip`
 
@@ -136,6 +141,8 @@ base classes --- :class:`bpy_prop`, :class:`bpy_prop_collection`
            Alpha Under -- Blend alpha below another video.
          - ``GAMMA_CROSS``
            Gamma Crossfade -- Crossfade with color correction.
+         - ``COMPOSITOR``
+           Compositor -- Compositor based effect.
          - ``MULTIPLY``
            Multiply -- Multiply color channels from two videos.
          - ``WIPE``
@@ -156,7 +163,7 @@ base classes --- :class:`bpy_prop`, :class:`bpy_prop_collection`
            Text -- Add a simple text strip.
          - ``COLORMIX``
            Color Mix -- Combine two strips using blend modes.
-      :type type: Literal['CROSS', 'ADD', 'SUBTRACT', 'ALPHA_OVER', 'ALPHA_UNDER', 'GAMMA_CROSS', 'MULTIPLY', 'WIPE', 'GLOW', 'COLOR', 'SPEED', 'MULTICAM', 'ADJUSTMENT', 'GAUSSIAN_BLUR', 'TEXT', 'COLORMIX']
+      :type type: Literal['CROSS', 'ADD', 'SUBTRACT', 'ALPHA_OVER', 'ALPHA_UNDER', 'GAMMA_CROSS', 'COMPOSITOR', 'MULTIPLY', 'WIPE', 'GLOW', 'COLOR', 'SPEED', 'MULTICAM', 'ADJUSTMENT', 'GAUSSIAN_BLUR', 'TEXT', 'COLORMIX']
       :param channel: Channel, The channel for the new strip (in [1, 128])
       :type channel: int
       :param frame_start: The start frame for the new strip (in [-inf, inf])

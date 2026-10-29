@@ -5,6 +5,7 @@ LineStyleGeometryModifier_BackboneStretcher(LineStyleGeometryModifier)
 
 base classes --- :class:`bpy_struct`, :class:`LineStyleModifier`, :class:`LineStyleGeometryModifier`
 
+
 .. class:: LineStyleGeometryModifier_BackboneStretcher(LineStyleGeometryModifier)
 
    Stretch the beginning and the end of stroke backbone

@@ -5,6 +5,7 @@ StripTransform(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: StripTransform(bpy_struct)
 
    Transform parameters for a sequence strip

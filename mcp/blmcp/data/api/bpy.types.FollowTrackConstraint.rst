@@ -5,6 +5,7 @@ FollowTrackConstraint(Constraint)
 
 base classes --- :class:`bpy_struct`, :class:`Constraint`
 
+
 .. class:: FollowTrackConstraint(Constraint)
 
    Lock motion to the target motion track

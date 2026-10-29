@@ -5,6 +5,7 @@ BoneColor(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: BoneColor(bpy_struct)
 
    Theme color or custom color of a bone

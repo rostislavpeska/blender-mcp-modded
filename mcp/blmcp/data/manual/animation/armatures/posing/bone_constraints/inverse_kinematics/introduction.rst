@@ -36,7 +36,7 @@ Armature IK Panel
    :Panel:     :menuselection:`Properties --> Armature --> Inverse Kinematics`
 
 This panel is used to select the IK Solver type for the armature: *Standard* or *iTaSC*.
-Most the time people will use the *Standard* IK solver.
+Most of the time people will use the *Standard* IK solver.
 
 .. figure:: /images/animation_armatures_posing_bone-constraints_inverse-kinematics_introduction_panel.png
 

@@ -5,13 +5,14 @@ PreferencesKeymap(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: PreferencesKeymap(bpy_struct)
 
    Shortcut setup for keyboards and other input devices
 
    .. attribute:: active_keyconfig
 
-      The name of the active key configuration (default "", never None)
+      The name of the active key configuration (default "Blender", never None)
 
       :type: str
 

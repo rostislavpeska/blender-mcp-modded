@@ -5,8 +5,26 @@ Space(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
-subclasses --- 
-:class:`SpaceClipEditor`, :class:`SpaceConsole`, :class:`SpaceDopeSheetEditor`, :class:`SpaceFileBrowser`, :class:`SpaceGraphEditor`, :class:`SpaceImageEditor`, :class:`SpaceInfo`, :class:`SpaceNLA`, :class:`SpaceNodeEditor`, :class:`SpaceOutliner`, :class:`SpacePreferences`, :class:`SpaceProperties`, :class:`SpaceSequenceEditor`, :class:`SpaceSpreadsheet`, :class:`SpaceTextEditor`, :class:`SpaceView3D`
+.. toctree::
+   :caption: Subclasses
+   :maxdepth: 1
+
+   bpy.types.SpaceClipEditor.rst
+   bpy.types.SpaceConsole.rst
+   bpy.types.SpaceDopeSheetEditor.rst
+   bpy.types.SpaceFileBrowser.rst
+   bpy.types.SpaceGraphEditor.rst
+   bpy.types.SpaceImageEditor.rst
+   bpy.types.SpaceInfo.rst
+   bpy.types.SpaceNLA.rst
+   bpy.types.SpaceNodeEditor.rst
+   bpy.types.SpaceOutliner.rst
+   bpy.types.SpacePreferences.rst
+   bpy.types.SpaceProperties.rst
+   bpy.types.SpaceSequenceEditor.rst
+   bpy.types.SpaceSpreadsheet.rst
+   bpy.types.SpaceTextEditor.rst
+   bpy.types.SpaceView3D.rst
 
 .. class:: Space(bpy_struct)
 

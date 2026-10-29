@@ -35,7 +35,7 @@ Only Faces
 Dissolve
 ========
 
-*Dissolving* is different from deleting in that keeps the surface closed
+*Dissolving* is different from deleting in that it keeps the surface closed
 rather than leaving a hole.
 
 
@@ -117,7 +117,16 @@ Angle Threshold
 Face Split
    Split surrounding faces where possible so that only a triangle in their corner is merged instead of
    the whole face. This reduces the size of the final "hole-filling" faces and can make them less uneven.
+Preserve Quads
+   Prevents vertices from being removed if doing so would break the quad structure
+   when dissolving the edge between two triangles.
 
+   Even if *Dissolve Vertices* is enabled, vertices shared by the two triangles
+   are kept so the resulting geometry remains a quad rather than collapsing
+   into a triangle or n-gon.
+
+   This option helps maintain clean quad topology when simplifying meshes or
+   removing unnecessary edges.
 
 .. _bpy.ops.mesh.dissolve_faces:
 

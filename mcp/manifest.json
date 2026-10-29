@@ -1,7 +1,7 @@
 {
   "manifest_version": "0.4",
   "name": "Blender",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Natural language interface with the Python API and documentation",
   "long_description": "Blender MCP offers a natural language interface with Blender's Python API, improving access to documentation, and allowing users to explore and understand complex setups. \n\nAn add-on is required to use the MCP Server, please follow the [instructions](https://lab.blender.org/mcp-server/#addon).",
   "author": {

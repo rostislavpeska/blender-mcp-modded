@@ -284,6 +284,24 @@ Graph Operators
 
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
+.. function:: fmodifier_delete(*, mode='ALL', type='GENERATOR')
+
+   Remove Modifier(s) from the selected F-Curves
+
+   :param mode: Mode, Decide what the operator will remove (optional)
+
+      - ``ALL``
+        Remove All -- Remove all modifiers from the selected F-Curves.
+      - ``FIRST``
+        Remove First -- Only remove the first modifier from each F-Curve regardless of type.
+      - ``TYPE``
+        Remove Type -- Only remove the specified type of F-Curve modifier.
+   :type mode: Literal['ALL', 'FIRST', 'TYPE']
+   :param type: Type, (optional)
+   :type type: Literal[:ref:`rna_enum_fmodifier_type_items`]
+   :return: Result of the operator call.
+   :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
+
 .. function:: fmodifier_paste(*, only_active=False, replace=False)
 
    Add copied F-Modifiers to the selected F-Curves
@@ -388,6 +406,15 @@ Graph Operators
 
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
+.. function:: local_view(*, frame_selected=True)
+
+   Isolate selected F-Curves in Graph Editor view
+
+   :param frame_selected: Frame selected, Zoom current view to draw selected fcurves in visible range (optional)
+   :type frame_selected: bool
+   :return: Result of the operator call.
+   :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
+
 .. function:: match_slope(*, factor=0.0)
 
    Blend selected keys to the slope of neighboring ones
@@ -405,15 +432,15 @@ Graph Operators
 
       - ``CFRA``
         By Times Over Current Frame -- Flip times of selected keyframes using the current frame as the mirror line.
-      - ``VALUE``
-        By Values Over Cursor Value -- Flip values of selected keyframes using the cursor value (Y/Horizontal component) as the mirror line.
-      - ``YAXIS``
-        By Times Over Zero Time -- Flip times of selected keyframes, effectively reversing the order they appear in.
-      - ``XAXIS``
-        By Values Over Zero Value -- Flip values of selected keyframes (i.e. negative values become positive, and vice versa).
       - ``MARKER``
         By Times Over First Selected Marker -- Flip times of selected keyframes using the first selected marker as the reference point.
-   :type type: Literal['CFRA', 'VALUE', 'YAXIS', 'XAXIS', 'MARKER']
+      - ``YAXIS``
+        By Times Over Zero Time -- Flip times of selected keyframes, effectively reversing the order they appear in.
+      - ``VALUE``
+        By Values Over Cursor Value -- Flip values of selected keyframes using the cursor value (Y/Horizontal component) as the mirror line.
+      - ``XAXIS``
+        By Values Over Zero Value -- Flip values of selected keyframes (i.e. negative values become positive, and vice versa).
+   :type type: Literal['CFRA', 'MARKER', 'YAXIS', 'VALUE', 'XAXIS']
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
 
@@ -638,7 +665,7 @@ Graph Operators
    Select keyframes to the left or the right of the current frame
 
    :param mode: Mode, (optional)
-   :type mode: Literal['CHECK', 'LEFT', 'RIGHT']
+   :type mode: Literal['LEFT', 'RIGHT', 'CHECK']
    :param extend: Extend Select, (optional)
    :type extend: bool
    :return: Result of the operator call.

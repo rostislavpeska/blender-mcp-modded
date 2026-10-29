@@ -5,6 +5,7 @@ KeyConfigPreferences(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: KeyConfigPreferences(bpy_struct)
 
 

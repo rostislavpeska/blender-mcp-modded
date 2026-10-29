@@ -427,6 +427,12 @@ Outliner Operators
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
 
+.. function:: liboverride_property_remove()
+
+   Remove the selected library override properties, and reset the relevant data to the linked reference values
+
+   :return: Result of the operator call.
+   :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
 .. function:: liboverride_troubleshoot_operation(*, type='OVERRIDE_LIBRARY_RESYNC_HIERARCHY', selection_set='SELECTED')
 
    Advanced operations over library override to help fix broken hierarchies

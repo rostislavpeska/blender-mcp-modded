@@ -110,6 +110,17 @@ Frame Selected :kbd:`NumpadPeriod`
    Pans and zooms the view to focus on the selected keyframes.
 Frame All :kbd:`Home`
    Pans and zooms the view to show all keyframes.
+
+.. _bpy.ops.graph.local_view:
+
+Local View :kbd:`NumpadSlash`, :kbd:`Slash`
+   Isolates the selected F-Curves in the Graph Editor view.
+
+   While Local View is enabled, only the isolated F-Curves are visible
+   and editable in the Graph Editor.
+
+   Use the operator again to restore the normal view and show all F-Curves.
+
 Frame Scene/Preview Range
    Reset the horizontal view to the current scene frame range,
    taking the preview range into account if it is active.

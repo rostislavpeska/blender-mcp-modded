@@ -5,6 +5,7 @@ ViewLayer(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: ViewLayer(bpy_struct)
 
    View layer
@@ -459,6 +460,7 @@ References
    - :class:`RenderEngine.update_render_passes`
    - :class:`Scene.statistics`
    - :class:`Scene.view_layers`
+   - :class:`SceneStrip.view_layer`
    - :class:`ViewLayers.new`
    - :class:`ViewLayers.remove`
    - :class:`Window.view_layer`

@@ -5,6 +5,7 @@ SimpleDeformModifier(Modifier)
 
 base classes --- :class:`bpy_struct`, :class:`Modifier`
 
+
 .. class:: SimpleDeformModifier(Modifier)
 
    Simple deformation modifier to apply effects such as twisting and bending

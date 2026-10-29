@@ -11,7 +11,7 @@ Transform
    :Mode:      Edit Mode
    :Menu:      :menuselection:`Curves --> Transform`
 
-A curves objects can be edited by transforming the locations of control points.
+A curves object can be edited by transforming the locations of control points.
 
 Move, Rotate, Scale
    Like other elements in Blender, control points can be moved, rotated, or scaled as described in

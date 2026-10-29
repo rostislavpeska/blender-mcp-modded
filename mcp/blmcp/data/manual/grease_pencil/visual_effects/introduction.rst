@@ -11,7 +11,7 @@ Introduction
 Grease Pencil has a special set of viewport real-time visual effects that can be apply to the object.
 
 These effects treat the object as if it was just an image, for that reason they
-have effect on the whole object and cannot limit their influence
+have an effect on the whole object and cannot limit their influence
 on certain parts like layers, materials or vertex group as with modifiers.
 Also unlike modifiers, they can not be applied to the object.
 

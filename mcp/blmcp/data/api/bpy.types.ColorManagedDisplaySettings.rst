@@ -5,6 +5,7 @@ ColorManagedDisplaySettings(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: ColorManagedDisplaySettings(bpy_struct)
 
    Color management specific to display device

@@ -5,13 +5,14 @@ GreasePencilTimeModifier(Modifier)
 
 base classes --- :class:`bpy_struct`, :class:`Modifier`
 
+
 .. class:: GreasePencilTimeModifier(Modifier)
 
    Offset keyframes
 
    .. attribute:: frame_end
 
-      Final frame of the range (in [0, 1048574], default 250)
+      Final frame of the range (in [-1048574, 1048574], default 250)
 
       :type: int
 
@@ -23,7 +24,7 @@ base classes --- :class:`bpy_struct`, :class:`Modifier`
 
    .. attribute:: frame_start
 
-      First frame of the range (in [0, 1048574], default 1)
+      First frame of the range (in [-1048574, 1048574], default 1)
 
       :type: int
 

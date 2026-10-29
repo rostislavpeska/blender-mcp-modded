@@ -5,6 +5,7 @@ Speaker(ID)
 
 base classes --- :class:`bpy_struct`, :class:`ID`
 
+
 .. class:: Speaker(ID)
 
    Speaker data-block for 3D audio speaker objects

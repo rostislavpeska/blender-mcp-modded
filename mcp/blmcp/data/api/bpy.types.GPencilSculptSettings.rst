@@ -5,6 +5,7 @@ GPencilSculptSettings(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: GPencilSculptSettings(bpy_struct)
 
    General properties for Grease Pencil stroke sculpting tools

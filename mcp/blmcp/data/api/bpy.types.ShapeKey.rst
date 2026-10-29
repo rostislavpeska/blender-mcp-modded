@@ -5,6 +5,7 @@ ShapeKey(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: ShapeKey(bpy_struct)
 
    Shape key in a shape keys data-block
@@ -91,22 +92,22 @@ base class --- :class:`bpy_struct`
 
       Compute local space vertices' normals for this shape key
 
-      :return: normals, (in [-1, 1])
-      :rtype: float
+      :return: normals, (dynamic array, in [-1, 1])
+      :rtype: :class:`bpy_prop_array`\ [float]
 
    .. method:: normals_polygon_get()
 
       Compute local space faces' normals for this shape key
 
-      :return: normals, (in [-1, 1])
-      :rtype: float
+      :return: normals, (dynamic array, in [-1, 1])
+      :rtype: :class:`bpy_prop_array`\ [float]
 
    .. method:: normals_split_get()
 
       Compute local space face corners' normals for this shape key
 
-      :return: normals, (in [-1, 1])
-      :rtype: float
+      :return: normals, (dynamic array, in [-1, 1])
+      :rtype: :class:`bpy_prop_array`\ [float]
 
    .. classmethod:: bl_rna_get_subclass(id, default=None, /)
    

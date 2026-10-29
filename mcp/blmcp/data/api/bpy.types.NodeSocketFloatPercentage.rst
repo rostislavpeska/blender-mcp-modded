@@ -5,6 +5,7 @@ NodeSocketFloatPercentage(NodeSocketStandard)
 
 base classes --- :class:`bpy_struct`, :class:`NodeSocket`, :class:`NodeSocketStandard`
 
+
 .. class:: NodeSocketFloatPercentage(NodeSocketStandard)
 
    Floating-point number socket of a node

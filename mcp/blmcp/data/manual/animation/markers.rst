@@ -240,10 +240,14 @@ Invert :kbd:`Ctrl-I`
 
 .. _bpy.ops.marker.select_leftright:
 
-Before Current Frame
-   Selects all Markers to the left of the current frame and the Marker on the current frame if it exists.
-After Current Frame
-   Selects all Markers to the Right of the current frame and the Marker on the current frame if it exists.
+Before Current Frame :kbd:`[`
+   Selects all markers before the current frame, including the marker on the current frame if one exists.
+After Current Frame :kbd:`]`
+   Selects all markers after the current frame, including the marker on the current frame if one exists.
+
+.. tip::
+
+   Markers can also be selected interactively by clicking with :kbd:`Ctrl-LMB` on either side of the playhead.
 
 
 .. _bpy.types.SpaceDopeSheetEditor.show_pose_markers:

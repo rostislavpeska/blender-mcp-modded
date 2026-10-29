@@ -5,6 +5,7 @@ ParticleSettingsTextureSlot(TextureSlot)
 
 base classes --- :class:`bpy_struct`, :class:`TextureSlot`
 
+
 .. class:: ParticleSettingsTextureSlot(TextureSlot)
 
    Texture slot for textures in a Particle Settings data-block

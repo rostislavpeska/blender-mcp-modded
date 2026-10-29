@@ -37,7 +37,7 @@ Parts of the internal operation are similar to the :doc:`/modeling/geometry_node
 
   In order to achieve consistent deformation after the :doc:`/modeling/modifiers/generate/subdivision_surface`,
   the *UV Smooth* option of the modifier should be set to *None*. Otherwise the surface UV map will
-  be subdivided in a way that may invalidate the curve UV attachement points stored in the
+  be subdivided in a way that may invalidate the curve UV attachment points stored in the
   ``surface_uv_coordinate`` attribute.
 
 Inputs

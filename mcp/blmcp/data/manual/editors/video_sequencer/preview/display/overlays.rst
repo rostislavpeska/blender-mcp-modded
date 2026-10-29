@@ -33,6 +33,11 @@ Safe Areas
 
       :ref:`Camera Safe Areas <bpy.types.DisplaySafeAreas>`.
 
+.. _bpy.types.SequencerPreviewOverlay.show_composition_guides:
+
+Guides
+   Display :ref:`composition guides <sequencer-preview-compositions_guides>` over the preview.
+
 .. _bpy.types.SequencerPreviewOverlay.show_metadata:
 
 Metadata

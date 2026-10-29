@@ -5,6 +5,7 @@ GreasePencilLayerGroup(GreasePencilTreeNode)
 
 base classes --- :class:`bpy_struct`, :class:`GreasePencilTreeNode`
 
+
 .. class:: GreasePencilLayerGroup(GreasePencilTreeNode)
 
    Group of Grease Pencil layers

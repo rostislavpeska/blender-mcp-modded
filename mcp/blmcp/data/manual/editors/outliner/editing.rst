@@ -227,7 +227,7 @@ View
 .. _bpy.ops.outliner.show_active:
 
 Show Active :kbd:`Period`
-   Centers the tree view to the active item.
+   Centers the tree to the active item.
 
 .. _bpy.ops.outliner.expanded_toggle:
 

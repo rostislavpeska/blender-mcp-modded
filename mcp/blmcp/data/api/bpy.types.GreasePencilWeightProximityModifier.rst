@@ -5,6 +5,7 @@ GreasePencilWeightProximityModifier(Modifier)
 
 base classes --- :class:`bpy_struct`, :class:`Modifier`
 
+
 .. class:: GreasePencilWeightProximityModifier(Modifier)
 
    Calculate Vertex Weight dynamically

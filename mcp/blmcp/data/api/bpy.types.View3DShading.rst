@@ -5,6 +5,7 @@ View3DShading(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: View3DShading(bpy_struct)
 
    Settings for shading in the 3D viewport

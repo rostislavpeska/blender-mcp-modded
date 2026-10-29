@@ -166,7 +166,7 @@ Alpha
 
 .. _bpy.types.Image.use_half_precision:
 
-Half Float Precision
+Half Float Precision :guilabel:`Workbench` :guilabel:`EEVEE`
    Load the image with a :term:`bit depth` of only 16 bits per channel instead of 32, which saves memory.
 
 .. _bpy.types.Image.use_view_as_render:

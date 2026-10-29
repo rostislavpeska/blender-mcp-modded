@@ -5,6 +5,7 @@ ActionChannelbag(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: ActionChannelbag(bpy_struct)
 
    Collection of animation channels, typically associated with an action slot

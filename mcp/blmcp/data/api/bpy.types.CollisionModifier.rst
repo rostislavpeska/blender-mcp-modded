@@ -5,6 +5,7 @@ CollisionModifier(Modifier)
 
 base classes --- :class:`bpy_struct`, :class:`Modifier`
 
+
 .. class:: CollisionModifier(Modifier)
 
    Collision modifier defining modifier stack position used for collision

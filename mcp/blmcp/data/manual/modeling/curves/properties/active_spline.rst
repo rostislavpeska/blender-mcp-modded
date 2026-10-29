@@ -119,7 +119,7 @@ Endpoint U
 
 Order U
    The order of the NURBS curve determines the area of influence of the control points over the curve.
-   Higher order values means that a single control point has a greater
+   Higher order values mean that a single control point has a greater
    influence over a greater relative proportion of the curve.
    The valid range of *Order* values is 2-6 depending on the number of control points present in the curve.
 

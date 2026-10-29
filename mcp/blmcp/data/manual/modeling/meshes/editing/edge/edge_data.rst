@@ -81,7 +81,7 @@ Mark or unmark the selected edges as being Sharp. This property is used for the 
 - Indicating which edges should be affected by the :doc:`/modeling/modifiers/generate/edge_split`.
 - Indicating which edges should *not* be affected by the :doc:`/modeling/modifiers/normals/smooth_by_angle`
   and the :doc:`/modeling/modifiers/normals/weighted_normal`.
-- Exporting smoothing groups to external file formats (e.g. :doc:`FBX </addons/import_export/scene_fbx>`,
+- Exporting smoothing groups to external file formats (e.g. :doc:`FBX </files/import_export/fbx_legacy>`,
   :doc:`OBJ </files/import_export/obj>`).
 
 Internally, the Sharp state is stored in the ``sharp_edge`` :ref:`attribute <geometry-nodes_builtin-attributes>`.

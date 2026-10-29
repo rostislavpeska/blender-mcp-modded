@@ -5,6 +5,7 @@ ParticleTarget(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: ParticleTarget(bpy_struct)
 
    Target particle system

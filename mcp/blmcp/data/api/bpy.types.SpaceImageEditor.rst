@@ -5,6 +5,7 @@ SpaceImageEditor(Space)
 
 base classes --- :class:`bpy_struct`, :class:`Space`
 
+
 .. class:: SpaceImageEditor(Space)
 
    Image and UV editor space data
@@ -142,6 +143,12 @@ base classes --- :class:`bpy_struct`, :class:`Space`
    .. attribute:: show_gizmo
 
       Show gizmos of all types (default True)
+
+      :type: bool
+
+   .. attribute:: show_gizmo_active_node
+
+      Context sensitive gizmo for the active node (default True)
 
       :type: bool
 

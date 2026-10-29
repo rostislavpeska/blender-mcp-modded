@@ -8,15 +8,18 @@ Chromatic Aberration Node
    :align: right
    :alt: Chromatic Aberration Node.
 
-The *Chromatic Aberration* node simulates the dispersion of light caused by a camera lens,
+.. --- modifier-intro-start ---
+
+*Chromatic Aberration* simulates the dispersion of light caused by a camera lens,
 where different wavelengths (colors) of light are refracted by slightly different amounts.
 This effect produces subtle color fringing near edges or high-contrast transitions
 and can be used for both realistic lens simulation and stylistic distortion effects.
 
 It can also be combined with other post-processing effects such as
-:doc:`Vignette </compositing/types/camera_lens_effects/vignette>` or
-:doc:`Lens Distortion </compositing/types/transform/lens_distortion>`
+:doc:`Vignette <vignette>` or :doc:`Lens Distortion </compositing/types/transform/lens_distortion>`
 to create convincing camera imperfections.
+
+.. --- modifier-intro-end ---
 
 
 Inputs
@@ -24,6 +27,8 @@ Inputs
 
 Image
    Standard color input image.
+
+.. --- modifier-options-start ---
 
 Type
    Defines the method used to generate the chromatic aberration effect.
@@ -64,6 +69,8 @@ Samples :guilabel:`Directional Blur`
 Fit :guilabel:`Lens Dispersion`
    Scales the resulting image to fit entirely within the frame,
    avoiding empty borders caused by radial dispersion.
+
+.. --- modifier-options-end ---
 
 
 Outputs

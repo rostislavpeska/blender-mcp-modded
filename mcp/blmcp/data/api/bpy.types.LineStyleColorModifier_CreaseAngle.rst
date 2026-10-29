@@ -5,6 +5,7 @@ LineStyleColorModifier_CreaseAngle(LineStyleColorModifier)
 
 base classes --- :class:`bpy_struct`, :class:`LineStyleModifier`, :class:`LineStyleColorModifier`
 
+
 .. class:: LineStyleColorModifier_CreaseAngle(LineStyleColorModifier)
 
    Change line color based on the underlying crease angle

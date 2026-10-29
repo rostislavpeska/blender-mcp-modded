@@ -5,6 +5,7 @@ ThemeCommonAnim(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: ThemeCommonAnim(bpy_struct)
 
    Shared animation theme properties

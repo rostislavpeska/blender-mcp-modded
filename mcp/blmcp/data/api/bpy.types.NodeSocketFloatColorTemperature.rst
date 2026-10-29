@@ -5,6 +5,7 @@ NodeSocketFloatColorTemperature(NodeSocketStandard)
 
 base classes --- :class:`bpy_struct`, :class:`NodeSocket`, :class:`NodeSocketStandard`
 
+
 .. class:: NodeSocketFloatColorTemperature(NodeSocketStandard)
 
    Floating-point number socket of a node

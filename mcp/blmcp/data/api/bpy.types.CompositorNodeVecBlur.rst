@@ -5,6 +5,7 @@ CompositorNodeVecBlur(CompositorNode)
 
 base classes --- :class:`bpy_struct`, :class:`Node`, :class:`NodeInternal`, :class:`CompositorNode`
 
+
 .. class:: CompositorNodeVecBlur(CompositorNode)
 
    Uses the vector speed render pass to blur the image pixels in 2D
@@ -71,6 +72,7 @@ Inherited Properties
    - :class:`Node.label`
    - :class:`Node.inputs`
    - :class:`Node.outputs`
+   - :class:`Node.panel_states`
    - :class:`Node.internal_links`
    - :class:`Node.parent`
    - :class:`Node.warning_propagation`

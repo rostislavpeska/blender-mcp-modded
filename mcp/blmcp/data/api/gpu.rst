@@ -18,6 +18,7 @@ Some higher level functions can be found in the :mod:`gpu_extras` module.
    gpu.texture.rst
    gpu.platform.rst
    gpu.capabilities.rst
+   gpu.compute.rst
 
 
 Geometry Batches
@@ -266,4 +267,10 @@ based on current time.
 
 .. literalinclude:: ./examples/gpu.11.py
    :lines: 11-
+
+.. function:: init()
+
+   Initializes the GPU module for background use.
+   If the initialization fails, a SystemError will be raised.
+
 

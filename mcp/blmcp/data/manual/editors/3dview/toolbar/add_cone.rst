@@ -6,7 +6,7 @@ Add Cone
 
 .. reference::
 
-   :Mode:      Object Mode and Edit Mode
+   :Mode:      Object Mode, Edit Mode and Sculpt Mode
    :Tool:      :menuselection:`Toolbar --> Add Cone`
 
 Interactively add a :ref:`cone mesh object <bpy.ops.mesh.primitive_cone_add>`.

@@ -5,6 +5,7 @@ MaterialGPencilStyle(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: MaterialGPencilStyle(bpy_struct)
 
 
@@ -23,19 +24,19 @@ base class --- :class:`bpy_struct`
 
    .. attribute:: alignment_rotation
 
-      Additional rotation applied to dots and square texture of strokes. Only applies in texture shading mode. (in [-1.5708, 1.5708], default 0.0)
+      Additional rotation applied to dots and square texture of strokes (in [-1.5708, 1.5708], default 0.0)
 
       :type: float
 
    .. attribute:: color
 
-      (array of 4 items, in [0, 1], default (0.0, 0.0, 0.0, 0.0))
+      (array of 4 items, in [0, inf], default (0.0, 0.0, 0.0, 0.0))
 
       :type: :class:`bpy_prop_array`\ [float]
 
    .. attribute:: fill_color
 
-      Color for filling region bounded by each stroke (array of 4 items, in [0, 1], default (0.0, 0.0, 0.0, 0.0))
+      Color for filling region bounded by each stroke (array of 4 items, in [0, inf], default (0.0, 0.0, 0.0, 0.0))
 
       :type: :class:`bpy_prop_array`\ [float]
 
@@ -105,7 +106,7 @@ base class --- :class:`bpy_struct`
 
    .. attribute:: mix_color
 
-      Color for mixing with primary filling color (array of 4 items, in [0, 1], default (0.0, 0.0, 0.0, 0.0))
+      Color for mixing with primary filling color (array of 4 items, in [0, inf], default (0.0, 0.0, 0.0, 0.0))
 
       :type: :class:`bpy_prop_array`\ [float]
 
@@ -143,6 +144,79 @@ base class --- :class:`bpy_struct`
    .. attribute:: pixel_size
 
       Texture Pixel Size factor along the stroke (in [1, 5000], default 0.0)
+
+      :type: float
+
+   .. attribute:: placement_count
+
+      Number of dots placed per segment (in [1, inf], default 0)
+
+      :type: int
+
+   .. attribute:: placement_density
+
+      Density of dots along the stroke (in [0, inf], default 10.0)
+
+      :type: float
+
+   .. attribute:: placement_mode
+
+      Defines how Dots or Squares are placed along strokes (default ``'RADIUS'``)
+
+      - ``COUNT``
+        Count -- Place dots evenly along each segment of the stroke.
+      - ``RADIUS``
+        Radius -- Place dots evenly with respect to radius.
+      - ``DENSITY``
+        Density -- Place dots evenly along the length of the stroke.
+
+      :type: Literal['COUNT', 'RADIUS', 'DENSITY']
+
+   .. attribute:: placement_radius_spacing
+
+      Spacing between dots as a percentage of the diameter (in [0, inf], default 100.0)
+
+      :type: float
+
+   .. attribute:: random_hue_factor
+
+      Randomize color hue (in [0, 1], default 0.0)
+
+      :type: float
+
+   .. attribute:: random_noise_scale
+
+      Scale the noise frequency (in [0, inf], default 1.0)
+
+      :type: float
+
+   .. attribute:: random_rotation_factor
+
+      Randomize texture rotation (in [0, 1], default 0.0)
+
+      :type: float
+
+   .. attribute:: random_saturation_factor
+
+      Randomize color saturation (in [0, 1], default 0.0)
+
+      :type: float
+
+   .. attribute:: random_size_factor
+
+      Randomize the size (in [0, 1], default 0.0)
+
+      :type: float
+
+   .. attribute:: random_strength_factor
+
+      Randomize strength (in [0, 1], default 0.0)
+
+      :type: float
+
+   .. attribute:: random_value_factor
+
+      Randomize color value (in [0, 1], default 0.0)
 
       :type: float
 
@@ -214,6 +288,12 @@ base class --- :class:`bpy_struct`
    .. attribute:: use_overlap_strokes
 
       Disable stencil and overlap self intersections with alpha materials (default False)
+
+      :type: bool
+
+   .. attribute:: use_randomization
+
+      Use material randomization (default False)
 
       :type: bool
 

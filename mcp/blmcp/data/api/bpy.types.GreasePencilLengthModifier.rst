@@ -5,6 +5,7 @@ GreasePencilLengthModifier(Modifier)
 
 base classes --- :class:`bpy_struct`, :class:`Modifier`
 
+
 .. class:: GreasePencilLengthModifier(Modifier)
 
    Stretch or shrink strokes

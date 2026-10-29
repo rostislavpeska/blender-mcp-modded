@@ -5,6 +5,7 @@ FFmpegSettings(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: FFmpegSettings(bpy_struct)
 
    FFmpeg related settings for the scene

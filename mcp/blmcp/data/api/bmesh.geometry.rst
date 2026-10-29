@@ -5,7 +5,7 @@ BMesh Geometry Utilities (bmesh.geometry)
 
 This module provides access to bmesh geometry evaluation functions.
 
-.. method:: intersect_face_point(face, point)
+.. function:: intersect_face_point(face, point)
 
    Tests if the projection of a point is inside a face (using the face's normal).
 

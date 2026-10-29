@@ -18,6 +18,7 @@ and pass an output to the *Group Output* node, where it will be passed to the ne
 
 Geometry nodes can modify different types of geometry:
 
+- :doc:`Empties </modeling/empties>`
 - :doc:`Meshes </modeling/meshes/introduction>`
 - :doc:`Curves </modeling/curves/introduction>`
 - :doc:`Point Clouds </modeling/point_cloud/index>`

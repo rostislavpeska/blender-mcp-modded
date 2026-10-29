@@ -5,10 +5,9 @@ SCENE_UL_gltf2_filter_action(UIList)
 
 base classes --- :class:`bpy_struct`, :class:`UIList`
 
+
 .. class:: SCENE_UL_gltf2_filter_action(UIList)
 
-
-   .. method:: draw_item(context, layout, data, item, icon, active_data, active_propname, index)
 
    .. classmethod:: bl_rna_get_subclass(id, default=None, /)
    

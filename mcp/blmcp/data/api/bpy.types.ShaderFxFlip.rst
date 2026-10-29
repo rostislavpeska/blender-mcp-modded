@@ -5,6 +5,7 @@ ShaderFxFlip(ShaderFx)
 
 base classes --- :class:`bpy_struct`, :class:`ShaderFx`
 
+
 .. class:: ShaderFxFlip(ShaderFx)
 
    Flip effect

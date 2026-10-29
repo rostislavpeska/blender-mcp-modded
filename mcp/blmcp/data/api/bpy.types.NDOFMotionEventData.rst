@@ -5,6 +5,7 @@ NDOFMotionEventData(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: NDOFMotionEventData(bpy_struct)
 
    NDOF motion data for window manager events

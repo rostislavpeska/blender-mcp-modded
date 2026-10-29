@@ -5,6 +5,7 @@ GreasePencilTextureModifier(Modifier)
 
 base classes --- :class:`bpy_struct`, :class:`Modifier`
 
+
 .. class:: GreasePencilTextureModifier(Modifier)
 
    Transform stroke texture coordinates Modifier

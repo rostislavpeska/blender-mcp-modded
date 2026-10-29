@@ -5,6 +5,7 @@ CameraBackgroundImage(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: CameraBackgroundImage(bpy_struct)
 
    Image and settings for display in the 3D View background

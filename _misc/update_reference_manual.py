@@ -43,12 +43,19 @@ def main() -> int:
     if os.path.isdir(dst_dir):
         shutil.rmtree(dst_dir)
 
+    # Skip the Sphinx configuration, it's not reference material.
+    exclude_files = {
+        os.path.join(src_dir, "conf.py"),
+    }
+
     count = 0
     for dirpath, _dirnames, filenames in os.walk(src_dir):
         for filename in filenames:
             if not filename.endswith((".rst", ".py")):
                 continue
             src_file = os.path.join(dirpath, filename)
+            if src_file in exclude_files:
+                continue
             rel_path = os.path.relpath(src_file, src_dir)
             dst_file = os.path.join(dst_dir, rel_path)
             os.makedirs(os.path.dirname(dst_file), exist_ok=True)

@@ -905,6 +905,46 @@ class _TestServerMixin:
         self.assertIn("checker failed", data["message"])
 
     # -----------------------------------------------------------------
+    # Large responses.
+
+    def test_large_response_slow_client(self) -> None:
+        """A response larger than the socket send buffer must arrive in full."""
+        if not self._interactive:
+            # Only the timer-based server writes responses without blocking,
+            # the other modes use blocking sockets which never queue.
+            return
+
+        # Comfortably over the kernel send buffer, so the add-on has to
+        # write the response over multiple polls, see `_flush_pending_writes`.
+        size = 8 * 1024 * 1024
+        request = json.dumps({
+            "type": "execute",
+            "code": "result = {{'data': 'x' * {:d}}}".format(size),
+            "strict_json": True,
+        }) + "\0"
+
+        buf = bytearray()
+        with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
+            sock.settimeout(_TIMEOUT_LOCAL_PROC)
+            sock.connect(("localhost", self._port))
+            sock.sendall(request.encode("utf-8"))
+            # Stall before reading so the send buffer fills while the response is written.
+            time.sleep(1.0)
+            while b"\0" not in buf:
+                chunk = sock.recv(65536)
+                if not chunk:
+                    break
+                buf.extend(chunk)
+
+        self.assertIn(
+            b"\0", buf,
+            "Response truncated at {:d} bytes, the null terminator is missing".format(len(buf)),
+        )
+        data = json.loads(buf[:buf.index(b"\0")].decode("utf-8"))
+        self.assertEqual(data["status"], "ok")
+        self.assertEqual(len(data["result"]["data"]), size)
+
+    # -----------------------------------------------------------------
     # Error handling.
 
     def test_execute_blender_code_error(self) -> None:

@@ -54,6 +54,21 @@ Collection Operators
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
 
+.. function:: importer_add(*, name="")
+
+   Add Importer
+
+   :param name: Name, FileHandler idname (optional, never None)
+   :type name: str
+   :return: Result of the operator call.
+   :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
+
+.. function:: importer_remove()
+
+   Remove Importer
+
+   :return: Result of the operator call.
+   :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
 .. function:: objects_add_active(*, collection='')
 
    Add selected objects to one of the collections the active-object is part of. Optionally add to "All Collections" to ensure selected objects are included in the same collections as the active object

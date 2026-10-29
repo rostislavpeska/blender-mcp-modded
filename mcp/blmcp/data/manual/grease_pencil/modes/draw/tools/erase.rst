@@ -29,17 +29,17 @@ See :ref:`brush-management-utility-operators` for more information.
 Brush Settings
 --------------
 
-Radius
-   The radius of the brush in pixels.
+Size
+   The diameter of the brush in pixels.
 
    :kbd:`F` allows you to change the brush size interactively by dragging the pointer or
    by typing a number then confirm.
 
    :bl-icon:`stylus_pressure` (Size Pressure)
-      Adjusts the radius based on the stylus pressure when using a :ref:`Graphics Tablet <hardware-tablet>`.
+      Adjusts the brush size based on the stylus pressure when using a :ref:`Graphics Tablet <hardware-tablet>`.
 
 Strength
-   Control how much will affect the eraser has on the stroke transparency (alpha).
+   Control how much effect the eraser has on the stroke transparency (alpha).
 
    You can change the brush strength interactively by pressing :kbd:`Shift-F`
    in the 3D Viewport and then moving the pointer and then :kbd:`LMB`.

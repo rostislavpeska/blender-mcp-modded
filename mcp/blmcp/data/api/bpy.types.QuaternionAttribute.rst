@@ -5,6 +5,7 @@ QuaternionAttribute(Attribute)
 
 base classes --- :class:`bpy_struct`, :class:`Attribute`
 
+
 .. class:: QuaternionAttribute(Attribute)
 
    Geometry attribute that stores rotation

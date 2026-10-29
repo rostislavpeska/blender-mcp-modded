@@ -117,7 +117,7 @@ Method
 
      Note, this method uses the "Humphrey's Classes" operator as described in the paper:
      `"Improved Laplacian Smoothing of Noisy Surface Meshes"
-     <http://informatikbuero.com/downloads/Improved_Laplacian_Smoothing_of_Noisy_Surface_Meshes.pdf>`__.
+     <https://informatikbuero.com/downloads/Improved_Laplacian_Smoothing_of_Noisy_Surface_Meshes.pdf>`__.
    :Geometry:
      Edges are weighted according to the discrete Laplace operator (cotangent formula) applied to the 3D geometry.
      This tries to bring the relative lengths of edges in UV closer to the relative lengths of edges in 3D,

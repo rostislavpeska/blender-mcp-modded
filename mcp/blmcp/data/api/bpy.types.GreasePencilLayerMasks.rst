@@ -3,7 +3,8 @@ GreasePencilLayerMasks(bpy_prop_collection)
 
 .. currentmodule:: bpy.types
 
-base classes --- :class:`bpy_prop`, :class:`bpy_prop_collection`
+base class --- :class:`bpy_prop_collection`
+
 
 .. class:: GreasePencilLayerMasks(bpy_prop_collection)
 
@@ -14,6 +15,22 @@ base classes --- :class:`bpy_prop`, :class:`bpy_prop_collection`
       Active index in layer mask array (in [0, inf], default 0)
 
       :type: int
+
+   .. method:: add(layer)
+
+      Add an existing layer as a mask to this layer
+
+      :param layer: Layer to add as a mask (never None)
+      :type layer: :class:`GreasePencilLayer` | None
+      :return: The mask entry referencing the layer
+      :rtype: :class:`GreasePencilLayerMask`
+
+   .. method:: remove(mask)
+
+      Remove a mask from the layer
+
+      :param mask: Mask to remove (never None)
+      :type mask: :class:`GreasePencilLayerMask` | None
 
    .. classmethod:: bl_rna_get_subclass(id, default=None, /)
    

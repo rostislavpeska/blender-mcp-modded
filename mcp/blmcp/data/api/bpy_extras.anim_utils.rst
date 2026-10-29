@@ -3,6 +3,53 @@ bpy_extras submodule (bpy_extras.anim_utils)
 
 .. module:: bpy_extras.anim_utils
 
+.. function:: action_get_channelbag_for_slot(action, slot)
+
+   Returns the first channelbag found for the slot.
+   In case there are multiple layers or strips they are iterated until a
+   channelbag for that slot is found. In case no matching channelbag is found, returns None.
+   
+   :param action: Action to search.
+   :type action: :class:`bpy.types.Action` | None
+   :param slot: Slot to look up.
+   :type slot: :class:`bpy.types.ActionSlot` | None
+   :return: The first matching channelbag, or None when not found or when *action* or *slot* is None.
+   :rtype: :class:`bpy.types.ActionChannelbag` | None
+
+.. function:: action_get_first_suitable_slot(action, target_id_type)
+
+   Return the first Slot of the given Action that's suitable for the given ID type.
+   
+   Typically you should not need this function; when an Action is assigned to a
+   data-block, just use the slot that was assigned along with it.
+   
+   :param action: Action to search.
+   :type action: :class:`bpy.types.Action` | None
+   :param target_id_type: ID type identifier the slot must accept (e.g. ``'OBJECT'``).
+   :type target_id_type: str
+   :return: The first suitable slot, or None when none match or when *action* is None.
+   :rtype: :class:`bpy.types.ActionSlot` | None
+
+.. function:: action_ensure_channelbag_for_slot(action, slot)
+
+   Ensure a layer and a keyframe strip exists, then ensure that strip has a channelbag for the slot.
+   
+   :param action: Action to populate.
+   :type action: :class:`bpy.types.Action`
+   :param slot: Slot to ensure a channelbag for.
+   :type slot: :class:`bpy.types.ActionSlot`
+   :return: The channelbag for *slot* in the first keyframe strip.
+   :rtype: :class:`bpy.types.ActionChannelbag`
+
+.. function:: animdata_get_channelbag_for_assigned_slot(anim_data)
+
+   Return the first channelbag used in the given *anim_data* or None if there is no Action + Slot combination defined.
+   
+   :param anim_data: Animation data to inspect.
+   :type anim_data: :class:`bpy.types.AnimData` | None
+   :return: The first channelbag for the assigned slot, or None.
+   :rtype: :class:`bpy.types.ActionChannelbag` | None
+
 .. function:: bake_action(obj, *, action, frames, bake_options)
 
    :param obj: Object to bake.
@@ -188,6 +235,18 @@ bpy_extras submodule (bpy_extras.anim_utils)
 .. class:: BakeOptions
 
    BakeOptions(only_selected: bool, do_pose: bool, do_object: bool, do_visual_keying: bool, do_constraint_clear: bool, do_parents_clear: bool, do_clean: bool, do_location: bool, do_rotation: bool, do_scale: bool, do_bbone: bool, do_custom_props: bool)
+
+   .. details:: Special Methods
+
+      .. method:: __eq__(other)
+
+         :param other: The other operand.
+         :type other: object
+         :rtype: bool
+
+      .. method:: __repr__()
+
+         :rtype: str
 
 
 

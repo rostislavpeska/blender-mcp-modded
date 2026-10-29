@@ -5,8 +5,11 @@ IKParam(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
-subclasses --- 
-:class:`Itasc`
+.. toctree::
+   :caption: Subclasses
+   :maxdepth: 1
+
+   bpy.types.Itasc.rst
 
 .. class:: IKParam(bpy_struct)
 

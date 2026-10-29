@@ -5,6 +5,7 @@ ThemeInfo(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: ThemeInfo(bpy_struct)
 
    Theme settings for Info

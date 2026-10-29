@@ -5,6 +5,7 @@ OperatorOptions(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: OperatorOptions(bpy_struct)
 
    Runtime options

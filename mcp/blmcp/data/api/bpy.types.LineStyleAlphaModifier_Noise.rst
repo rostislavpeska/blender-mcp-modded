@@ -5,6 +5,7 @@ LineStyleAlphaModifier_Noise(LineStyleAlphaModifier)
 
 base classes --- :class:`bpy_struct`, :class:`LineStyleModifier`, :class:`LineStyleAlphaModifier`
 
+
 .. class:: LineStyleAlphaModifier_Noise(LineStyleAlphaModifier)
 
    Alpha transparency based on random noise

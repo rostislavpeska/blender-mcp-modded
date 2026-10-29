@@ -5,6 +5,7 @@ LineStyleThicknessModifier_AlongStroke(LineStyleThicknessModifier)
 
 base classes --- :class:`bpy_struct`, :class:`LineStyleModifier`, :class:`LineStyleThicknessModifier`
 
+
 .. class:: LineStyleThicknessModifier_AlongStroke(LineStyleThicknessModifier)
 
    Change line thickness along stroke

@@ -5,6 +5,7 @@ CurveMapPoint(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: CurveMapPoint(bpy_struct)
 
    Point of a curve used for a curve mapping

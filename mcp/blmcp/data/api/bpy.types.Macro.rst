@@ -20,6 +20,7 @@ It demonstrates:
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: Macro(bpy_struct)
 
    Storage of a macro operator being executed, or registered after execution

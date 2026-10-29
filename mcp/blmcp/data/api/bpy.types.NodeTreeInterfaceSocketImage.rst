@@ -5,6 +5,7 @@ NodeTreeInterfaceSocketImage(NodeTreeInterfaceSocket)
 
 base classes --- :class:`bpy_struct`, :class:`NodeTreeInterfaceItem`, :class:`NodeTreeInterfaceSocket`
 
+
 .. class:: NodeTreeInterfaceSocketImage(NodeTreeInterfaceSocket)
 
    Image socket of a node

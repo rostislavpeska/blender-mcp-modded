@@ -5,6 +5,7 @@ PoseBone(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: PoseBone(bpy_struct)
 
    Channel defining pose data for a bone in a Pose
@@ -559,10 +560,18 @@ base class --- :class:`bpy_struct`
 
       The same as 'bone in other_bone.parent_recursive'
       but saved generating a list.
+      
+      :param parent_test: Bone to search for among this bone's ancestors.
+      :type parent_test: Self
+      :return: 1-based depth of *parent_test* in the parent chain, or 0 if not found.
+      :rtype: int
 
    .. method:: translate(vec)
 
       Utility function to add *vec* to the head and tail of this bone.
+      
+      :param vec: Translation vector.
+      :type vec: :class:`mathutils.Vector`
 
    .. classmethod:: bl_rna_get_subclass(id, default=None, /)
    

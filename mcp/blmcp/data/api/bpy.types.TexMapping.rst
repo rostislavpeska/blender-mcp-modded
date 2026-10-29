@@ -5,6 +5,7 @@ TexMapping(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: TexMapping(bpy_struct)
 
    Texture coordinate mapping settings

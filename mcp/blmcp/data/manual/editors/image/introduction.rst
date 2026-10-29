@@ -82,7 +82,7 @@ Image Pin
 Show Sequencer Scene
    This toggle is only visible on the Render Result if a :doc:`Sequencer Scene </video_editing/sequencer_scene>`
    exists, and it differs from the active scene in the window. After rendering, its state is chosen automatically from
-   the render type. 
+   the render type.
 
 Slot
    The render slot to view (and render to). You can create new renders without
@@ -110,6 +110,15 @@ Viewport Gizmos
    Navigate
       Enable/disable the gizmos used to pan or zoom the 2D viewport.
       See :ref:`Navigation Gizmos <editors-image-navigate-gizmos>` for more information.
+
+.. _bpy.types.SpaceImageEditor.show_gizmo_active_node:
+
+Active Node
+   Display interactive gizmos for the active compositing node, allowing
+   supported node properties to be adjusted directly in the Image Editor.
+
+   Available only for the built-in *Viewer Node* image. See
+   :ref:`Node Gizmos <compositor-node-gizmos>` for more information.
 
 .. _bpy.types.SpaceImageEditor.display_channels:
 

@@ -43,7 +43,7 @@ Object Collisions
 If the cloth object needs to be deflected by some other object. To deflect a cloth,
 the object must be enabled as an object that collides with the cloth object.
 To enable objects to collide with cloth objects enable
-:ref:`collision physics <physics-collision-soft-bodt-cloth>`
+:ref:`collision physics <physics-collision-soft-body-cloth>`
 for the collider object (not on the cloth object).
 
 .. note::

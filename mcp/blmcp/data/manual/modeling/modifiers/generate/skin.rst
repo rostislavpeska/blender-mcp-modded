@@ -68,7 +68,7 @@ Add Skin Data
    This modifier uses a :ref:`custom set of data <modeling-modifiers-generate-skin-data>` in the mesh,
    that is generated automatically when you add the modifier the first time.
 
-   However, you may remove that data, or loose it some way or the other. That operator will generate it again.
+   However, you may remove that data, or lose it some way or the other. That operator will generate it again.
 
 Mark/Clear Loose
    By default, a branch vertex (vertex with three or more connected edges)

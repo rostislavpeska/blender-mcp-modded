@@ -5,6 +5,7 @@ PreferencesEdit(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: PreferencesEdit(bpy_struct)
 
    Settings for interacting with Blender data
@@ -71,7 +72,7 @@ base class --- :class:`bpy_struct`
 
    .. attribute:: keyframe_new_handle_type
 
-      Handle type for handles of new keyframes (default ``'AUTO_CLAMPED'``)
+      Handle type for handles of new keyframes (default ``'FREE'``)
 
       :type: Literal[:ref:`rna_enum_keyframe_handle_type_items`]
 
@@ -317,7 +318,7 @@ base class --- :class:`bpy_struct`
 
    .. attribute:: use_keyframe_insert_available
 
-      Insert Keyframes only for properties that are already animated (default False)
+      Insert Keyframes only for properties that are already animated (default True)
 
       :type: bool
 

@@ -5,6 +5,7 @@ ForeachGeometryElementMainItem(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: ForeachGeometryElementMainItem(bpy_struct)
 
 

@@ -5,6 +5,7 @@ GPencilSculptGuide(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: GPencilSculptGuide(bpy_struct)
 
    Guides for drawing

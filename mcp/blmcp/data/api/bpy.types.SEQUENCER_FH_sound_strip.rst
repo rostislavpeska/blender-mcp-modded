@@ -5,6 +5,7 @@ SEQUENCER_FH_sound_strip(FileHandler)
 
 base classes --- :class:`bpy_struct`, :class:`FileHandler`
 
+
 .. class:: SEQUENCER_FH_sound_strip(FileHandler)
 
 

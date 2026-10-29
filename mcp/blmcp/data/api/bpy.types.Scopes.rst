@@ -5,6 +5,7 @@ Scopes(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: Scopes(bpy_struct)
 
    Scopes for statistical view of an image

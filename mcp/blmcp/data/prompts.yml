@@ -9,6 +9,13 @@ initial_instructions: |
   NEVER assume missing values - inspect the scene first.
   Do not destructively modify objects without confirmation.
 
+  # Which Blender
+
+  Several Blender instances can run at once, each with its own port. When a tool
+  says that several are running or that the one in use is gone, call
+  `list_blender_instances` and choose with `select_blender_instance`; never
+  assume the instance that answers is the one the user means.
+
   # Seeing the Scene First
 
   When you start working with a populated scene and need to understand its

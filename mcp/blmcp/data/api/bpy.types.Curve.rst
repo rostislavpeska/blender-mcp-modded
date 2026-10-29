@@ -5,8 +5,12 @@ Curve(ID)
 
 base classes --- :class:`bpy_struct`, :class:`ID`
 
-subclasses --- 
-:class:`SurfaceCurve`, :class:`TextCurve`
+.. toctree::
+   :caption: Subclasses
+   :maxdepth: 1
+
+   bpy.types.SurfaceCurve.rst
+   bpy.types.TextCurve.rst
 
 .. class:: Curve(ID)
 

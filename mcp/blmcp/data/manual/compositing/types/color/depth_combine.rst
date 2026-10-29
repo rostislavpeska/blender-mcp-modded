@@ -42,7 +42,7 @@ Result
    Whichever depth value is less decides which image pixel is used.
    See :term:`Z-buffer`.
 Depth
-   The combined depth, which allows to thread multiple Depth Combine nodes together.
+   The combined depth, which allows you to thread multiple Depth Combine nodes together.
 
 
 Examples

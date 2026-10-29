@@ -5,6 +5,7 @@ ParticleBrush(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: ParticleBrush(bpy_struct)
 
    Particle editing brush

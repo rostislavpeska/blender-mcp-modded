@@ -9,7 +9,7 @@ Trim Tool
    :Mode:      Draw Mode
    :Tool:      :menuselection:`Toolbar --> Trim`
 
-The Trim tool delete points in between intersecting strokes.
+The Trim tool deletes points in between intersecting strokes.
 
 
 Tool Settings

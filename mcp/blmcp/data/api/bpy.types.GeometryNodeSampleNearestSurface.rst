@@ -5,6 +5,7 @@ GeometryNodeSampleNearestSurface(GeometryNode)
 
 base classes --- :class:`bpy_struct`, :class:`Node`, :class:`NodeInternal`, :class:`GeometryNode`
 
+
 .. class:: GeometryNodeSampleNearestSurface(GeometryNode)
 
    Calculate the interpolated value of a mesh attribute on the closest point of its surface
@@ -77,6 +78,7 @@ Inherited Properties
    - :class:`Node.label`
    - :class:`Node.inputs`
    - :class:`Node.outputs`
+   - :class:`Node.panel_states`
    - :class:`Node.internal_links`
    - :class:`Node.parent`
    - :class:`Node.warning_propagation`

@@ -10,38 +10,138 @@ Snap
    :Menu:      :menuselection:`Object/Object type --> Snap`
    :Shortcut:  :kbd:`Shift-S`
 
-The *Snap* menu (also available from the 3D header in both *Object Mode* and *Edit Mode*
-:menuselection:`Object --> Snap` and :menuselection:`Mesh --> Snap`).
-This menu provides a number of options to move the cursor or your selection to a defined point
-(the cursor, selection or the grid).
+The *Snap* menu provides tools for moving the selection or the
+:doc:`3D Cursor </editors/3dview/3d_cursor>` to precise positions.
+
+These operations are commonly used to align objects, place the cursor
+for transformations, or position elements relative to the grid or other objects.
+
+
+.. _bpy.ops.view3d.snap_selected_to_grid:
 
 Selection to Grid
-   Snaps the currently selected object(s) to the nearest grid point.
+=================
+
+.. reference::
+
+   :Mode:      Object, Edit, and Pose Mode
+   :Menu:      :menuselection:`Object/Object type --> Snap --> Selection to Grid`
+
+Snaps the selected elements to the nearest grid point.
+
+In *Object Mode*, each selected object origin is moved to the closest grid
+intersection. In *Edit Mode*, the selected vertices, edges, or faces are moved
+to the nearest grid location.
+
+This is useful for quickly aligning objects or geometry to the grid.
+
+
+.. _bpy.ops.view3d.snap_selected_to_cursor:
+
 Selection to Cursor
-   Moves each one of the currently selected object(s) to the cursor location.
-   Optionally, the selection can be rotated to match the cursor.
+===================
+
+.. reference::
+
+   :Menu:      :menuselection:`Object/Object type --> Snap --> Selection to Cursor`
+
+Moves the selected elements to the location of the :doc:`3D Cursor </editors/3dview/3d_cursor>`.
+
+Optionally, the selection can also be rotated to match the cursor's
+orientation.
+
+
 Selection to Cursor (Offset)
-   Places the selection at the position of the 3D cursor.
-   If there are multiple objects selected, they are not moved individually at the cursor position;
-   instead, they are centered around the 3D cursor, maintaining their relative distances.
+============================
+
+.. reference::
+
+   :Menu:      :menuselection:`Object/Object type --> Snap --> Selection to Cursor (Offset)`
+
+Moves the selection so that its center aligns with the 3D Cursor,
+while preserving the relative positions between selected elements.
+
+Unlike *Selection to Cursor*, the selected objects are not stacked
+directly on the cursor. Instead, the entire selection is offset so that
+its center is placed at the cursor location.
+
+
+.. _bpy.ops.view3d.snap_selected_to_active:
+
 Selection to Active
-   Moves the selection to the origin of the active object.
+===================
+
+.. reference::
+
+   :Menu:      :menuselection:`Object/Object type --> Snap --> Selection to Active`
+
+Moves the selected elements to the origin of the :term:`Active` object.
+
+The active object itself is not moved. All other selected objects
+are aligned to its origin.
+
+
+.. _bpy.ops.view3d.snap_cursor_to_selected:
 
 Cursor to Selected
-   Places the cursor to the center of the current selection, unless see below.
-Cursor to World Origin
-   Places the cursor to the origin of the world (location 0, 0, 0).
-Cursor to Grid
-   Places the cursor to the nearest grid point.
-Cursor to Active
-   Places the cursor to the origin of the *active* (last selected) object.
+==================
 
-The *Cursor to Selected* option is also affected by the current :ref:`pivot-point-index`. For example:
+.. reference::
+
+   :Menu:      :menuselection:`Object/Object type --> Snap --> Cursor to Selected`
+
+Places the :doc:`3D Cursor </editors/3dview/3d_cursor>` at the center of the current selection.
+
+The exact location depends on the current :ref:`pivot-point-index`.
+
+For example:
 
 - With the *Bounding Box Center* pivot point active,
-  the *Cursor to Selected* option will snap the 3D cursor to
-  the center of the bounding box surrounding the objects' origins.
-- When the *Median Point* pivot point is selected,
-  *Cursor to Selected* will snap the 3D cursor to
-  the :doc:`median </editors/3dview/controls/pivot_point/median_point>` of the object
-  origins.
+  *Cursor to Selected* places the cursor at the center of the
+  bounding box surrounding the selected objects' origins.
+
+- With the *Median Point* pivot point active,
+  *Cursor to Selected* places the cursor at the
+  :doc:`median </editors/3dview/controls/pivot_point/median_point>`
+  of the selected object origins.
+
+
+.. _bpy.ops.view3d.snap_cursor_to_center:
+
+Cursor to World Origin
+======================
+
+.. reference::
+
+   :Menu:      :menuselection:`Object/Object type --> Snap --> Cursor to World Origin`
+
+Moves the 3D Cursor to the world origin at coordinates ``(0, 0, 0)``.
+
+.. seealso::
+
+   :ref:`cursor-center-and-frame` which moves the 3D Cursor to the world origin and reframes the 3D Viewport.
+
+
+.. _bpy.ops.view3d.snap_cursor_to_grid:
+
+Cursor to Grid
+==============
+
+.. reference::
+
+   :Menu:      :menuselection:`Object/Object type --> Snap --> Cursor to Grid`
+
+Moves the 3D Cursor to the nearest grid overlay point.
+
+
+.. _bpy.ops.view3d.snap_cursor_to_active:
+
+Cursor to Active
+================
+
+.. reference::
+
+   :Menu:      :menuselection:`Object/Object type --> Snap --> Cursor to Active`
+
+Places the 3D Cursor at the origin of the :term:`Active` object`
+(the last selected object).

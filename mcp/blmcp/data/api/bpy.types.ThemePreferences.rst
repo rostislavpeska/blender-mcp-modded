@@ -5,6 +5,7 @@ ThemePreferences(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: ThemePreferences(bpy_struct)
 
    Theme settings for the Blender Preferences

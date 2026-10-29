@@ -5,6 +5,7 @@ ByteIntAttribute(Attribute)
 
 base classes --- :class:`bpy_struct`, :class:`Attribute`
 
+
 .. class:: ByteIntAttribute(Attribute)
 
    Geometry attribute that stores 8-bit integers

@@ -5,6 +5,7 @@ DepsgraphUpdate(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: DepsgraphUpdate(bpy_struct)
 
    Information about ID that was updated

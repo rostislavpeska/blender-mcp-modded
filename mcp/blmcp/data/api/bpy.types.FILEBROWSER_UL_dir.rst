@@ -5,10 +5,9 @@ FILEBROWSER_UL_dir(UIList)
 
 base classes --- :class:`bpy_struct`, :class:`UIList`
 
+
 .. class:: FILEBROWSER_UL_dir(UIList)
 
-
-   .. method:: draw_item(_context, layout, _data, item, icon, _active_data, _active_propname, _index)
 
    .. classmethod:: bl_rna_get_subclass(id, default=None, /)
    

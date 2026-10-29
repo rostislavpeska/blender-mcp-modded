@@ -5,6 +5,7 @@ NlaStrip(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: NlaStrip(bpy_struct)
 
    A container referencing an existing Action

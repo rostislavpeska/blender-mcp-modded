@@ -5,6 +5,7 @@ CollectionObject(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: CollectionObject(bpy_struct)
 
    Object of a collection with its collection related settings

@@ -5,6 +5,7 @@ CameraSolverConstraint(Constraint)
 
 base classes --- :class:`bpy_struct`, :class:`Constraint`
 
+
 .. class:: CameraSolverConstraint(Constraint)
 
    Lock motion to the reconstructed camera movement

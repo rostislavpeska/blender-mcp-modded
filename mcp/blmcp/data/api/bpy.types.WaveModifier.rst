@@ -5,6 +5,7 @@ WaveModifier(Modifier)
 
 base classes --- :class:`bpy_struct`, :class:`Modifier`
 
+
 .. class:: WaveModifier(Modifier)
 
    Wave effect modifier

@@ -3,6 +3,25 @@ Asset Operators
 
 .. module:: bpy.ops.asset
 
+.. function:: asset_download(*, asset_library_type='LOCAL', asset_library_identifier="", relative_asset_identifier="")
+
+   Make the asset available without internet access
+
+   :param asset_library_type: Asset Library Type, (optional)
+   :type asset_library_type: Literal[:ref:`rna_enum_asset_library_type_items`]
+   :param asset_library_identifier: Asset Library Identifier, (optional, never None)
+   :type asset_library_identifier: str
+   :param relative_asset_identifier: Relative Asset Identifier, (optional, never None)
+   :type relative_asset_identifier: str
+   :return: Result of the operator call.
+   :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
+
+.. function:: assets_download()
+
+   Download the selected asset(s)
+
+   :return: Result of the operator call.
+   :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
 .. function:: assign_action()
 
    Set this pose Action as active Action on the active Object
@@ -10,6 +29,14 @@ Asset Operators
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
    :File: `addons_core/pose_library/operators.py\:103 <https://projects.blender.org/blender/blender/src/branch/main/scripts/addons_core/pose_library/operators.py#L103>`__
+
+.. function:: browse_containing_blend_file()
+
+   Open the system's file browser with the blend file that contains the active asset
+
+   :return: Result of the operator call.
+   :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
+   :File: `startup/bl_operators/assets.py\:183 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/assets.py#L183>`__
 
 .. function:: bundle_install(*, asset_library_reference='', filepath="", hide_props_region=True, check_existing=True, filter_blender=True, filter_backup=False, filter_image=False, filter_movie=False, filter_python=False, filter_font=False, filter_sound=False, filter_text=False, filter_archive=False, filter_btx=False, filter_alembic=False, filter_usd=False, filter_obj=False, filter_volume=False, filter_folder=True, filter_blenlib=False, filemode=8, display_type='DEFAULT', sort_method='')
 
@@ -133,9 +160,20 @@ Asset Operators
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
 
-.. function:: library_refresh()
+.. function:: library_refresh(*, use_remote_listing=False, use_shift_for_remote_listing=False)
 
    Reread assets and asset catalogs from the asset library on disk
+
+   :param use_remote_listing: Remote Listing, Re-download the asset listing of a remote library. Only supported when the active asset library is remote or has a remote component (the Essentials library) (optional)
+   :type use_remote_listing: bool
+   :param use_shift_for_remote_listing: Use Shift for Remote Listing, When this operator is invoked and the Shift key is pressed, download the remote asset library listing (optional)
+   :type use_shift_for_remote_listing: bool
+   :return: Result of the operator call.
+   :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
+
+.. function:: library_reload_listing()
+
+   Re-download the asset listing of a remote library. Only supported when the active asset library is remote or has a remote component (the Essentials library)
 
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
@@ -157,7 +195,7 @@ Asset Operators
 
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `startup/bl_operators/assets.py\:103 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/assets.py#L103>`__
+   :File: `startup/bl_operators/assets.py\:111 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/assets.py#L111>`__
 
 .. function:: screenshot_preview(*, p1=(0, 0), p2=(0, 0), force_square=True)
 

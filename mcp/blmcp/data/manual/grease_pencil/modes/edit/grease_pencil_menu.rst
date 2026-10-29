@@ -63,7 +63,6 @@ The *Mirror* tool is also available, behaving exactly the same as with
 .. _bpy.ops.grease_pencil.snap_to_grid:
 .. _bpy.ops.grease_pencil.snap_to_cursor:
 .. _bpy.ops.grease_pencil.snap_cursor_to_selected:
-.. _bpy.ops.view3d.snap_cursor_to_center:
 
 Snap
 ====
@@ -224,7 +223,7 @@ Hide Inactive Layers
    :Menu:      :menuselection:`Grease Pencil --> Show/Hide --> Hide Active Layer`
    :Shortcut:  :kbd:`Shift-H`
 
-Hides the all Grease Pencil :doc:`layers </grease_pencil/properties/layers>` except the active layer.
+Hides all Grease Pencil :doc:`layers </grease_pencil/properties/layers>` except the active layer.
 
 
 .. _bpy.ops.grease_pencil.separate:
@@ -413,23 +412,46 @@ Delete
 
 Opens a pop-up menu with operators to remove geometry from the Grease Pencil object.
 
-Frames
-   Deletes all the strokes at the current frame and in the current layer/channel.
-
 
 .. _bpy.ops.grease_pencil.delete:
 
-Delete
-------
+Strokes
+-------
 
 .. reference::
 
    :Mode:      Edit Mode
-   :Menu:      :menuselection:`Grease Pencil --> Delete --> Delete`
+   :Menu:      :menuselection:`Grease Pencil --> Delete --> Strokes`
 
 Deletes the selected points.
-When only one point remains, there is no more visible stroke,
-and when all points are deleted, the stroke itself is deleted.
+
+If deleting points leaves only a single point in a stroke,
+the stroke will no longer be visible.
+If all points of a stroke are removed, the entire stroke is deleted.
+
+
+Only Strokes
+------------
+
+.. reference::
+
+   :Mode:      Edit Mode
+   :Menu:      :menuselection:`Grease Pencil --> Delete --> Only Strokes`
+
+Deletes only the stroke (outline) component of the selected curves,
+preserving any associated fill geometry.
+
+
+Only Fills
+----------
+
+.. reference::
+
+   :Mode:      Edit Mode
+   :Menu:      :menuselection:`Grease Pencil --> Delete --> Only Fills`
+
+Deletes only the fill component of the selected curves,
+leaving the stroke (outline) intact.
 
 
 .. _bpy.ops.grease_pencil.dissolve:

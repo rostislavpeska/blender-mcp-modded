@@ -5,6 +5,7 @@ CollectionExport(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: CollectionExport(bpy_struct)
 
 

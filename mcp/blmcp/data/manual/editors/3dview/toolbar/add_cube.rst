@@ -6,7 +6,7 @@ Add Cube
 
 .. reference::
 
-   :Mode:      Object Mode and Edit Mode
+   :Mode:      Object Mode, Edit Mode, and Scupt Mode
    :Tool:      :menuselection:`Toolbar --> Add Cube`
 
 Interactively add a :ref:`cube mesh object <bpy.ops.mesh.primitive_cube_add>`.

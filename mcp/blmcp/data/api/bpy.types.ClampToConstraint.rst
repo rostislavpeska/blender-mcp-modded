@@ -5,6 +5,7 @@ ClampToConstraint(Constraint)
 
 base classes --- :class:`bpy_struct`, :class:`Constraint`
 
+
 .. class:: ClampToConstraint(Constraint)
 
    Constrain an object's location to the nearest point along the target path

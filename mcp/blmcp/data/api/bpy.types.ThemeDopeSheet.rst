@@ -5,6 +5,7 @@ ThemeDopeSheet(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: ThemeDopeSheet(bpy_struct)
 
    Theme settings for the Dope Sheet

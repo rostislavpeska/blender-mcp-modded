@@ -5,6 +5,7 @@ PreferencesExperimental(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: PreferencesExperimental(bpy_struct)
 
    Experimental features
@@ -39,6 +40,12 @@ base class --- :class:`bpy_struct`
 
       :type: bool
 
+   .. attribute:: use_collection_importer
+
+      Enables a file importer to be configured on a Collection (default False)
+
+      :type: bool
+
    .. attribute:: use_cycles_debug
 
       Enable Cycles debugging options for developers (default False)
@@ -63,18 +70,6 @@ base class --- :class:`bpy_struct`
 
       :type: bool
 
-   .. attribute:: use_geometry_bundle
-
-      Support storing custom bundles in a geometry in Geometry Nodes (default False)
-
-      :type: bool
-
-   .. attribute:: use_geometry_nodes_lists
-
-      Enable new list types and nodes (default False)
-
-      :type: bool
-
    .. attribute:: use_new_curves_tools
 
       Enable additional features for the new curves data block (default False)
@@ -90,6 +85,12 @@ base class --- :class:`bpy_struct`
    .. attribute:: use_recompute_usercount_on_save_debug
 
       Recompute all ID user-counts before saving to a blend-file. Allows to work around invalid user-count handling in code that may lead to loss of data due to wrongly detected unused data-blocks (default False)
+
+      :type: bool
+
+   .. data:: use_remote_asset_libraries
+
+      Enable asset libraries served over HTTP/HTTPS (default False, readonly)
 
       :type: bool
 

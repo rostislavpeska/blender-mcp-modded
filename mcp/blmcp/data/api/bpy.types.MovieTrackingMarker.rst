@@ -5,6 +5,7 @@ MovieTrackingMarker(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: MovieTrackingMarker(bpy_struct)
 
    Match-moving marker data for tracking
@@ -37,13 +38,13 @@ base class --- :class:`bpy_struct`
 
       Pattern area bounding box in normalized coordinates (multi-dimensional array of 2 * 2 items, in [-inf, inf], default ((0.0, 0.0), (0.0, 0.0)), readonly)
 
-      :type: :class:`bpy_prop_array`\ [float]
+      :type: :class:`bpy_prop_array`\ [:class:`bpy_prop_array`\ [float]]
 
    .. attribute:: pattern_corners
 
       Array of coordinates which represents pattern's corners in normalized coordinates relative to marker position (multi-dimensional array of 4 * 2 items, in [-inf, inf], default ((0.0, 0.0), (0.0, 0.0), (0.0, 0.0), (0.0, 0.0)))
 
-      :type: :class:`bpy_prop_array`\ [float]
+      :type: :class:`bpy_prop_array`\ [:class:`bpy_prop_array`\ [float]]
 
    .. attribute:: search_max
 

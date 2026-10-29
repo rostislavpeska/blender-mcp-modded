@@ -5,6 +5,7 @@ ColorStrip(EffectStrip)
 
 base classes --- :class:`bpy_struct`, :class:`Strip`, :class:`EffectStrip`
 
+
 .. class:: ColorStrip(EffectStrip)
 
    Sequence strip creating an image filled with a single color
@@ -15,9 +16,21 @@ base classes --- :class:`bpy_struct`, :class:`Strip`, :class:`EffectStrip`
 
       :type: :class:`mathutils.Color`
 
+   .. attribute:: height
+
+      Height of the color strip in pixels (in [1, inf], default 0)
+
+      :type: int
+
    .. data:: input_count
 
       (in [0, inf], default 0, readonly)
+
+      :type: int
+
+   .. attribute:: width
+
+      Width of the color strip in pixels (in [1, inf], default 0)
 
       :type: int
 
@@ -71,7 +84,6 @@ Inherited Properties
    - :class:`Strip.frame_offset_end`
    - :class:`Strip.right_handle_offset`
    - :class:`Strip.channel`
-   - :class:`Strip.use_linear_modifiers`
    - :class:`Strip.blend_type`
    - :class:`Strip.blend_alpha`
    - :class:`Strip.effect_fader`
@@ -79,6 +91,7 @@ Inherited Properties
    - :class:`Strip.color_tag`
    - :class:`Strip.modifiers`
    - :class:`Strip.show_retiming_keys`
+   - :class:`Strip.connections`
    - :class:`EffectStrip.use_deinterlace`
    - :class:`EffectStrip.alpha_mode`
    - :class:`EffectStrip.use_flip_x`

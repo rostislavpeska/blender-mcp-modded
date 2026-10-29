@@ -5,6 +5,7 @@ ParticleEdit(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: ParticleEdit(bpy_struct)
 
    Properties of particle editing mode

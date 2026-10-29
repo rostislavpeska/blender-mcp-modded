@@ -11,12 +11,14 @@ The *Video Editing* app template provides a ready-to-use setup for a complete vi
 
    The default Video Editing app template.
 
+
 Overview
 ========
 
 This template streamlines the workflow for editing video, image, and audio sources together in a single timeline.
 Each piece of media is represented as its own strip in the Sequencer, where clips can be arranged, trimmed,
 and combined with effects to produce a polished final video.
+
 
 Features
 ========
@@ -35,6 +37,7 @@ Features
 - **Properties Editor:**
   Simplified to display only essential tabs: *Render*, *Output*, *Scene*, and *Strip Modifiers*.
 
+
 Default Settings
 ================
 
@@ -42,6 +45,7 @@ Default Settings
 - The **Edit** scene is set as both the current scene and the active Sequencer scene.
 - Resolution defaults to **1920 × 1080 HD** at **24 FPS**, suitable for most video work.
 - The output format is preset for video rendering, allowing quick exports.
+
 
 Usage
 =====

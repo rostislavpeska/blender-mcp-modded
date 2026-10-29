@@ -5,6 +5,7 @@ LineStyleAlphaModifier_AlongStroke(LineStyleAlphaModifier)
 
 base classes --- :class:`bpy_struct`, :class:`LineStyleModifier`, :class:`LineStyleAlphaModifier`
 
+
 .. class:: LineStyleAlphaModifier_AlongStroke(LineStyleAlphaModifier)
 
    Change alpha transparency along stroke

@@ -48,8 +48,20 @@ the :class:`ImportHelper.invoke_popup` method can be used to show a dialog lever
 
 base class --- :class:`bpy_struct`
 
-subclasses --- 
-:class:`IMAGE_FH_drop_handler`, :class:`IO_FH_gltf2`, :class:`IO_FH_svg_as_curves`, :class:`NODE_FH_image_node`, :class:`SEQUENCER_FH_image_strip`, :class:`SEQUENCER_FH_movie_strip`, :class:`SEQUENCER_FH_sound_strip`, :class:`VIEW3D_FH_camera_background_image`, :class:`VIEW3D_FH_empty_image`, :class:`VIEW3D_FH_vdb_volume`
+.. toctree::
+   :caption: Subclasses
+   :maxdepth: 1
+
+   bpy.types.IMAGE_FH_drop_handler.rst
+   bpy.types.IO_FH_gltf2.rst
+   bpy.types.IO_FH_svg_as_curves.rst
+   bpy.types.NODE_FH_image_node.rst
+   bpy.types.SEQUENCER_FH_image_strip.rst
+   bpy.types.SEQUENCER_FH_movie_strip.rst
+   bpy.types.SEQUENCER_FH_sound_strip.rst
+   bpy.types.VIEW3D_FH_camera_background_image.rst
+   bpy.types.VIEW3D_FH_empty_image.rst
+   bpy.types.VIEW3D_FH_vdb_volume.rst
 
 .. class:: FileHandler(bpy_struct)
 
@@ -92,6 +104,7 @@ subclasses ---
 
       If this method returns True, can be used to handle the drop of a drag-and-drop action
 
+      :param context: The context
       :type context: :class:`Context` | None
       :rtype: bool
 

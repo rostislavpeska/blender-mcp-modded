@@ -5,6 +5,7 @@ NodeTreeInterfaceSocketFloatAngle(NodeTreeInterfaceSocket)
 
 base classes --- :class:`bpy_struct`, :class:`NodeTreeInterfaceItem`, :class:`NodeTreeInterfaceSocket`
 
+
 .. class:: NodeTreeInterfaceSocketFloatAngle(NodeTreeInterfaceSocket)
 
    Floating-point number socket of a node

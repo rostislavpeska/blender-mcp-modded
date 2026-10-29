@@ -5,6 +5,7 @@ NodeSocketFloatDistance(NodeSocketStandard)
 
 base classes --- :class:`bpy_struct`, :class:`NodeSocket`, :class:`NodeSocketStandard`
 
+
 .. class:: NodeSocketFloatDistance(NodeSocketStandard)
 
    Floating-point number socket of a node

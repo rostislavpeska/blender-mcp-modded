@@ -5,6 +5,7 @@ ThemeRegionsSidebars(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: ThemeRegionsSidebars(bpy_struct)
 
 

@@ -5,6 +5,7 @@ Window(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: Window(bpy_struct)
 
    Open window
@@ -163,6 +164,28 @@ base class --- :class:`bpy_struct`
       :type default: type | None
       :return: The class or default when not found.
       :rtype: type
+
+
+   .. method:: screenshot(*, region=None, use_alpha=False)
+   
+      Capture the windows pixel data.
+   
+      :param region: The region to capture, or ``None`` to capture all.
+         Each int pair represents a pixel coordinate (the end value is not inclusive, matching Python slicing): ((min_x, min_y), (max_x, max_y))
+      :type region: tuple[tuple[int, int], tuple[int, int]] | None
+      :param use_alpha: When false the alpha channel is fully opaque. Otherwise alpha values from the window's frame-buffer are returned as-is.
+      :type use_alpha: bool
+      :return: A read-only :class:`memoryview` of shape ``(height, width, 4)`` and format ``'B'``, viewing the captured RGBA pixels (rows ordered from bottom to top).
+      :rtype: memoryview
+
+
+      **Save 3D Viewport to a PNG**
+
+      Capture the 3D viewport's main region from the current window
+      and write it to a PNG file using :mod:`imbuf`.
+
+      .. literalinclude:: ./examples/bpy.types.Window.screenshot.0.py
+         :lines: 8-
 
 
 Inherited Properties

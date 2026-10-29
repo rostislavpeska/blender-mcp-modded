@@ -5,6 +5,7 @@ NodeSocketVectorAcceleration2D(NodeSocketStandard)
 
 base classes --- :class:`bpy_struct`, :class:`NodeSocket`, :class:`NodeSocketStandard`
 
+
 .. class:: NodeSocketVectorAcceleration2D(NodeSocketStandard)
 
    3D vector socket of a node

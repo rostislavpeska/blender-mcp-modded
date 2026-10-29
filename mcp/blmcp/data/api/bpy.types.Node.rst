@@ -5,8 +5,12 @@ Node(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
-subclasses --- 
-:class:`NodeCustomGroup`, :class:`NodeInternal`
+.. toctree::
+   :caption: Subclasses
+   :maxdepth: 1
+
+   bpy.types.NodeCustomGroup.rst
+   bpy.types.NodeInternal.rst
 
 .. class:: Node(bpy_struct)
 
@@ -20,19 +24,19 @@ subclasses ---
 
    .. attribute:: bl_height_default
 
-      (in [0, inf], default 0.0)
+      Default height of the node when it is created (mostly unused, see Height) (in [0, inf], default 0.0)
 
       :type: float
 
    .. attribute:: bl_height_max
 
-      (in [0, inf], default 0.0)
+      When changing the node's size, it can have at most this height (mostly unused, see Height) (in [0, inf], default 0.0)
 
       :type: float
 
    .. attribute:: bl_height_min
 
-      (in [0, inf], default 0.0)
+      When changing the node's size, it has at least this height (mostly unused, see Height) (in [0, inf], default 0.0)
 
       :type: float
 
@@ -62,19 +66,19 @@ subclasses ---
 
    .. attribute:: bl_width_default
 
-      (in [0, inf], default 0.0)
+      Default width of the node when it is created (in [0, inf], default 0.0)
 
       :type: float
 
    .. attribute:: bl_width_max
 
-      (in [0, inf], default 0.0)
+      When changing the node's size, it can have at most this width (in [0, inf], default 0.0)
 
       :type: float
 
    .. attribute:: bl_width_min
 
-      (in [0, inf], default 0.0)
+      When changing the node's size, it has at least this width (in [0, inf], default 0.0)
 
       :type: float
 
@@ -127,19 +131,19 @@ subclasses ---
 
    .. data:: dimensions
 
-      Absolute bounding box dimensions of the node (array of 2 items, in [-inf, inf], default (0.0, 0.0), readonly)
+      Absolute bounding box dimensions of the node after it was displayed (array of 2 items, in [-inf, inf], default (0.0, 0.0), readonly)
 
       :type: :class:`mathutils.Vector`
 
    .. attribute:: height
 
-      Height of the node (in [-inf, inf], default 0.0)
+      Height of the node. This property holds true data only under certain circumstances, e.g. for a Frame node after the node graph was displayed. For most types of nodes, the displayed height is based on the node's contents and not reflected in this property. (in [-inf, inf], default 0.0)
 
       :type: float
 
    .. attribute:: hide
 
-      (default False)
+      Node collapsed state (default False)
 
       :type: bool
 
@@ -191,9 +195,15 @@ subclasses ---
 
       :type: :class:`NodeOutputs`\ [:class:`NodeSocket`]
 
+   .. data:: panel_states
+
+      Expansion state of each panel in the node (default None, readonly)
+
+      :type: :class:`bpy_prop_collection`\ [:class:`NodePanelState`]
+
    .. attribute:: parent
 
-      Parent this node is attached to
+      Parent this node is attached to, e.g. a Frame node
 
       :type: :class:`Node` | None
 
@@ -205,7 +215,7 @@ subclasses ---
 
    .. attribute:: show_options
 
-      (default False)
+      Whether the node options are visible, e.g. the selected data-block of a node group node (default False)
 
       :type: bool
 
@@ -474,6 +484,8 @@ References
    - :class:`NodeTreeInterfaceSocketFloatMass.init_socket`
    - :class:`NodeTreeInterfaceSocketFloatPercentage.from_socket`
    - :class:`NodeTreeInterfaceSocketFloatPercentage.init_socket`
+   - :class:`NodeTreeInterfaceSocketFloatPixel.from_socket`
+   - :class:`NodeTreeInterfaceSocketFloatPixel.init_socket`
    - :class:`NodeTreeInterfaceSocketFloatTime.from_socket`
    - :class:`NodeTreeInterfaceSocketFloatTime.init_socket`
    - :class:`NodeTreeInterfaceSocketFloatTimeAbsolute.from_socket`
@@ -492,8 +504,30 @@ References
    - :class:`NodeTreeInterfaceSocketIntFactor.init_socket`
    - :class:`NodeTreeInterfaceSocketIntPercentage.from_socket`
    - :class:`NodeTreeInterfaceSocketIntPercentage.init_socket`
+   - :class:`NodeTreeInterfaceSocketIntPixel.from_socket`
+   - :class:`NodeTreeInterfaceSocketIntPixel.init_socket`
    - :class:`NodeTreeInterfaceSocketIntUnsigned.from_socket`
    - :class:`NodeTreeInterfaceSocketIntUnsigned.init_socket`
+   - :class:`NodeTreeInterfaceSocketIntVector2D.from_socket`
+   - :class:`NodeTreeInterfaceSocketIntVector2D.init_socket`
+   - :class:`NodeTreeInterfaceSocketIntVector3D.from_socket`
+   - :class:`NodeTreeInterfaceSocketIntVector3D.init_socket`
+   - :class:`NodeTreeInterfaceSocketIntVectorFactor2D.from_socket`
+   - :class:`NodeTreeInterfaceSocketIntVectorFactor2D.init_socket`
+   - :class:`NodeTreeInterfaceSocketIntVectorFactor3D.from_socket`
+   - :class:`NodeTreeInterfaceSocketIntVectorFactor3D.init_socket`
+   - :class:`NodeTreeInterfaceSocketIntVectorPercentage2D.from_socket`
+   - :class:`NodeTreeInterfaceSocketIntVectorPercentage2D.init_socket`
+   - :class:`NodeTreeInterfaceSocketIntVectorPercentage3D.from_socket`
+   - :class:`NodeTreeInterfaceSocketIntVectorPercentage3D.init_socket`
+   - :class:`NodeTreeInterfaceSocketIntVectorPixel2D.from_socket`
+   - :class:`NodeTreeInterfaceSocketIntVectorPixel2D.init_socket`
+   - :class:`NodeTreeInterfaceSocketIntVectorPixel3D.from_socket`
+   - :class:`NodeTreeInterfaceSocketIntVectorPixel3D.init_socket`
+   - :class:`NodeTreeInterfaceSocketIntVectorUnsigned2D.from_socket`
+   - :class:`NodeTreeInterfaceSocketIntVectorUnsigned2D.init_socket`
+   - :class:`NodeTreeInterfaceSocketIntVectorUnsigned3D.from_socket`
+   - :class:`NodeTreeInterfaceSocketIntVectorUnsigned3D.init_socket`
    - :class:`NodeTreeInterfaceSocketMaterial.from_socket`
    - :class:`NodeTreeInterfaceSocketMaterial.init_socket`
    - :class:`NodeTreeInterfaceSocketMatrix.from_socket`
@@ -548,6 +582,12 @@ References
    - :class:`NodeTreeInterfaceSocketVectorPercentage2D.init_socket`
    - :class:`NodeTreeInterfaceSocketVectorPercentage4D.from_socket`
    - :class:`NodeTreeInterfaceSocketVectorPercentage4D.init_socket`
+   - :class:`NodeTreeInterfaceSocketVectorPixel.from_socket`
+   - :class:`NodeTreeInterfaceSocketVectorPixel.init_socket`
+   - :class:`NodeTreeInterfaceSocketVectorPixel2D.from_socket`
+   - :class:`NodeTreeInterfaceSocketVectorPixel2D.init_socket`
+   - :class:`NodeTreeInterfaceSocketVectorPixel4D.from_socket`
+   - :class:`NodeTreeInterfaceSocketVectorPixel4D.init_socket`
    - :class:`NodeTreeInterfaceSocketVectorTranslation.from_socket`
    - :class:`NodeTreeInterfaceSocketVectorTranslation.init_socket`
    - :class:`NodeTreeInterfaceSocketVectorTranslation2D.from_socket`

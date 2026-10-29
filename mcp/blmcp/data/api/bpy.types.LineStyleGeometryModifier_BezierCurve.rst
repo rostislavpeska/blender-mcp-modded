@@ -5,6 +5,7 @@ LineStyleGeometryModifier_BezierCurve(LineStyleGeometryModifier)
 
 base classes --- :class:`bpy_struct`, :class:`LineStyleModifier`, :class:`LineStyleGeometryModifier`
 
+
 .. class:: LineStyleGeometryModifier_BezierCurve(LineStyleGeometryModifier)
 
    Replace stroke backbone geometry by a Bézier curve approximation of the original backbone geometry

@@ -5,6 +5,7 @@ Context(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: Context(bpy_struct)
 
    Current windowmanager and data context
@@ -665,7 +666,7 @@ base class --- :class:`bpy_struct`
       :param coerce: optional argument, when True, the property will be converted into its Python representation.
       :type coerce: bool
       :return: Property value or property object.
-      :rtype: Any | :class:`bpy.types.bpy_prop`
+      :rtype: Any | :class:`bpy_prop`
 
    .. classmethod:: bl_rna_get_subclass(id, default=None, /)
    
@@ -706,7 +707,7 @@ base class --- :class:`bpy_struct`
       :type region: :class:`bpy.types.Region` | None
       :param keywords: Additional keywords override context members.
       :return: The context manager.
-      :rtype: ContextTempOverride
+      :rtype: :class:`bpy.types.ContextTempOverride`
 
 
       Overriding the context can be used to temporarily activate another ``window`` / ``area`` & ``region``,
@@ -856,6 +857,7 @@ References
    - :class:`NodeTreeInterfaceSocketFloatFrequency.draw`
    - :class:`NodeTreeInterfaceSocketFloatMass.draw`
    - :class:`NodeTreeInterfaceSocketFloatPercentage.draw`
+   - :class:`NodeTreeInterfaceSocketFloatPixel.draw`
    - :class:`NodeTreeInterfaceSocketFloatTime.draw`
    - :class:`NodeTreeInterfaceSocketFloatTimeAbsolute.draw`
    - :class:`NodeTreeInterfaceSocketFloatUnsigned.draw`
@@ -865,7 +867,18 @@ References
    - :class:`NodeTreeInterfaceSocketInt.draw`
    - :class:`NodeTreeInterfaceSocketIntFactor.draw`
    - :class:`NodeTreeInterfaceSocketIntPercentage.draw`
+   - :class:`NodeTreeInterfaceSocketIntPixel.draw`
    - :class:`NodeTreeInterfaceSocketIntUnsigned.draw`
+   - :class:`NodeTreeInterfaceSocketIntVector2D.draw`
+   - :class:`NodeTreeInterfaceSocketIntVector3D.draw`
+   - :class:`NodeTreeInterfaceSocketIntVectorFactor2D.draw`
+   - :class:`NodeTreeInterfaceSocketIntVectorFactor3D.draw`
+   - :class:`NodeTreeInterfaceSocketIntVectorPercentage2D.draw`
+   - :class:`NodeTreeInterfaceSocketIntVectorPercentage3D.draw`
+   - :class:`NodeTreeInterfaceSocketIntVectorPixel2D.draw`
+   - :class:`NodeTreeInterfaceSocketIntVectorPixel3D.draw`
+   - :class:`NodeTreeInterfaceSocketIntVectorUnsigned2D.draw`
+   - :class:`NodeTreeInterfaceSocketIntVectorUnsigned3D.draw`
    - :class:`NodeTreeInterfaceSocketMaterial.draw`
    - :class:`NodeTreeInterfaceSocketMatrix.draw`
    - :class:`NodeTreeInterfaceSocketMenu.draw`
@@ -893,6 +906,9 @@ References
    - :class:`NodeTreeInterfaceSocketVectorPercentage.draw`
    - :class:`NodeTreeInterfaceSocketVectorPercentage2D.draw`
    - :class:`NodeTreeInterfaceSocketVectorPercentage4D.draw`
+   - :class:`NodeTreeInterfaceSocketVectorPixel.draw`
+   - :class:`NodeTreeInterfaceSocketVectorPixel2D.draw`
+   - :class:`NodeTreeInterfaceSocketVectorPixel4D.draw`
    - :class:`NodeTreeInterfaceSocketVectorTranslation.draw`
    - :class:`NodeTreeInterfaceSocketVectorTranslation2D.draw`
    - :class:`NodeTreeInterfaceSocketVectorTranslation4D.draw`

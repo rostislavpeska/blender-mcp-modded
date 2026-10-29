@@ -5,6 +5,7 @@ OperatorProperties(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: OperatorProperties(bpy_struct)
 
    Input properties of an operator

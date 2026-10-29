@@ -5,6 +5,7 @@ NodeTreeInterfaceSocketShader(NodeTreeInterfaceSocket)
 
 base classes --- :class:`bpy_struct`, :class:`NodeTreeInterfaceItem`, :class:`NodeTreeInterfaceSocket`
 
+
 .. class:: NodeTreeInterfaceSocketShader(NodeTreeInterfaceSocket)
 
    Shader socket of a node

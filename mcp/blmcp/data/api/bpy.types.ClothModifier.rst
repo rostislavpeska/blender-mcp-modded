@@ -5,6 +5,7 @@ ClothModifier(Modifier)
 
 base classes --- :class:`bpy_struct`, :class:`Modifier`
 
+
 .. class:: ClothModifier(Modifier)
 
    Cloth simulation modifier

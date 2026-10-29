@@ -5,6 +5,7 @@ ParticleHairKey(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: ParticleHairKey(bpy_struct)
 
    Particle key for hair particle system

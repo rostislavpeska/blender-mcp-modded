@@ -5,6 +5,7 @@ SceneEEVEE(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: SceneEEVEE(bpy_struct)
 
    Scene display settings for 3D viewport
@@ -121,15 +122,9 @@ base class --- :class:`bpy_struct`
 
       :type: int
 
-   .. attribute:: fast_gi_thickness_far
-
-      Angular thickness of the surfaces when computing fast GI and ambient occlusion. Reduces energy loss and missing occlusion of far geometry. (in [0.0174533, 3.14159], default 0.785398)
-
-      :type: float
-
    .. attribute:: fast_gi_thickness_near
 
-      Geometric thickness of the surfaces when computing fast GI and ambient occlusion. Reduces light leaking and missing contact occlusion. (in [0, 100000], default 0.25)
+      Geometric thickness of the surfaces when computing fast GI and ambient occlusion. Reduces light leaking and missing contact occlusion. (in [0, 100000], default 0.1)
 
       :type: float
 
@@ -220,7 +215,7 @@ base class --- :class:`bpy_struct`
 
       Size of the shadow pool, a bigger pool size allows for more shadows in the scene but might not fit into GPU memory (default ``'512'``)
 
-      :type: Literal['16', '32', '64', '128', '256', '512', '1024']
+      :type: Literal['16', '32', '64', '128', '256', '512', '1024', '1536', '2048']
 
    .. attribute:: shadow_ray_count
 

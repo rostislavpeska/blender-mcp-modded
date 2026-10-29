@@ -5,6 +5,7 @@ IDOverrideLibraryProperty(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: IDOverrideLibraryProperty(bpy_struct)
 
    Description of an overridden property

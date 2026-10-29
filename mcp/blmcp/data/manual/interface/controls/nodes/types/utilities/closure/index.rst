@@ -31,6 +31,14 @@ used. This allows procedural systems to remain flexible while exposing clear, cu
 Closures can be thought of as function parameters for node groups.
 They let users define operations that can be executed in a controlled environment defined by the parent node tree.
 
+.. note::
+
+   Recursive closures are limited by the geometry nodes stack limit to prevent
+   excessive recursion depth and stack overflows.
+
+   The stack limit can be adjusted in the user preferences:
+   :ref:`bpy.types.PreferencesSystem.geometry_nodes_stack_limit`
+
 
 Nodes
 =====

@@ -5,6 +5,7 @@ GreasePencilOffsetModifier(Modifier)
 
 base classes --- :class:`bpy_struct`, :class:`Modifier`
 
+
 .. class:: GreasePencilOffsetModifier(Modifier)
 
 

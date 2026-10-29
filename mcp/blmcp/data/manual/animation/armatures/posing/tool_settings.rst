@@ -19,7 +19,9 @@ Auto IK
 Automatic IK is a tool for quick posing, when enabled, translating a bone will activate
 inverse kinematics and rotate the parent bone, and the parent's parent, and so on, to
 follow the selected bone. The IK chain can only extend from a child to a parent bone
-if the child is *connected* to it.
+if the child is *connected* to it. If the root bone of the connected chain is selected,
+the IK will instead extend through the selected bone's *children*, allowing movement of
+the selected bone while the child at the tip of the connected chain is pinned in place.
 
 While moving bones, the length of the chain (the number of affected bones)
 can be increased or decreased using keyboard hotkeys.

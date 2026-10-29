@@ -5,6 +5,7 @@ TextureNodeTree(NodeTree)
 
 base classes --- :class:`bpy_struct`, :class:`ID`, :class:`NodeTree`
 
+
 .. class:: TextureNodeTree(NodeTree)
 
    Node tree consisting of linked nodes used for textures

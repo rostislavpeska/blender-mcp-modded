@@ -31,7 +31,8 @@ Store ``(keymap, keymap_item)`` tuples for safe cleanup, as multiple add-ons may
 .. literalinclude:: ./examples/bpy.types.KeyMaps.1.py
    :lines: 27-
 
-base classes --- :class:`bpy_prop`, :class:`bpy_prop_collection`
+base class --- :class:`bpy_prop_collection`
+
 
 .. class:: KeyMaps(bpy_prop_collection)
 

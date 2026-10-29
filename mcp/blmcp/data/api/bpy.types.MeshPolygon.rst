@@ -5,6 +5,7 @@ MeshPolygon(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: MeshPolygon(bpy_struct)
 
    Polygon in a Mesh data-block

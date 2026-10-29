@@ -94,10 +94,28 @@ Include
          However, some blending modes in Grease Pencil can modify the chromaticity of the alpha channel.
          In these cases, compositing the *Grease Pencil* pass separately can produce different results.
 
+   .. _bpy.types.CyclesRenderLayerSettings.denoising_store_passes:
+
    Denoising Data :guilabel:`Cycles`
-      Includes *Denoising Albedo*, *Denoising Normal*, and the combined image
-      before denoising. Can be used with the :doc:`/compositing/types/filter/denoise`
-      as a replacement for :ref:`automatic denoising <render-cycles-settings-viewport-denoising>`.
+      Includes auxiliary passes used for denoising, along with the combined image before denoising.
+      These passes can be used with the :doc:`/compositing/types/filter/denoise`
+      as an alternative to :ref:`automatic denoising <render-cycles-settings-viewport-denoising>`.
+
+      - *Noisy Image* -- The combined render result before any denoising is applied.
+      - *Denoising Albedo* -- The diffuse base color of surfaces without lighting or shading.
+      - *Denoising Specular Albedo* -- The specular base color,
+        representing reflective surface color without lighting.
+      - *Denoising Normal* -- Surface normals used to preserve edges and fine detail during denoising.
+      - *Denoising Roughness* -- Surface roughness values used to improve denoising of glossy reflections.
+      - *Denoising Depth* -- Distance from the camera, used to help preserve depth-based detail.
+
+      These passes provide additional information to the denoiser,
+      resulting in higher-quality output compared to using the noisy image alone.
+
+      .. note::
+
+         These passes increase memory usage and render time.
+         Enable them only when denoising in the Compositor is required.
 
 Indexes
    .. _bpy.types.ViewLayer.use_pass_object_index:

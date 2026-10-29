@@ -5,6 +5,7 @@ NormalEditModifier(Modifier)
 
 base classes --- :class:`bpy_struct`, :class:`Modifier`
 
+
 .. class:: NormalEditModifier(Modifier)
 
    Modifier affecting/generating custom normals

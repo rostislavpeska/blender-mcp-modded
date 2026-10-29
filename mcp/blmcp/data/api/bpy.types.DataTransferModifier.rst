@@ -5,6 +5,7 @@ DataTransferModifier(Modifier)
 
 base classes --- :class:`bpy_struct`, :class:`Modifier`
 
+
 .. class:: DataTransferModifier(Modifier)
 
    Modifier transferring some data from a source mesh

@@ -38,7 +38,7 @@ Background Scene
 .. _bpy.types.Scene.active_clip:
 
 Active Clip
-   Selects a :doc:`Movie Clip </movie_clip/index>` that can be used by
+   Selects a :ref:`Movie Clip <bpy.types.MovieClip>` that can be used by
    :doc:`/animation/constraints/motion_tracking/index` or a camera's :ref:`bpy.types.CameraBackgroundImage`.
 
 

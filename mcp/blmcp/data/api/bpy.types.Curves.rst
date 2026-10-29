@@ -5,6 +5,7 @@ Curves(ID)
 
 base classes --- :class:`bpy_struct`, :class:`ID`
 
+
 .. class:: Curves(ID)
 
    Hair data-block for hair curves

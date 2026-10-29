@@ -9,6 +9,9 @@ Image Type All Items
 :JPEG: JPEG (.jpg).
 
    Output image in JPEG format.
+:OPEN_EXR: OpenEXR (.exr).
+
+   Output image in OpenEXR format.
 :PNG: PNG (.png).
 
    Output image in PNG format.
@@ -34,3 +37,6 @@ Image Type All Items
 :TIFF: TIFF (.tif).
 
    Output image in TIFF format.
+:OPEN_EXR_MULTILAYER: OpenEXR MultiLayer (.exr).
+
+   Output image in multilayer OpenEXR format.

@@ -53,7 +53,7 @@ the material's animation in the same action by having a different slot for each.
 In this example there is one slot for an object and one slot for a material, but
 you can have as many slots as you like for as many objects, materials, lights,
 etc. as you like. If you're baking down a simulation of 100 bouncing balls, you
-could store that animation in single action with 100 slots.
+could store that animation in a single action with 100 slots.
 
 .. figure:: /images/animation_actions_slots_diagram_many_objects.svg
 
@@ -133,7 +133,7 @@ actions contain. Each F-Curve contains keyframes that define how a property
    F-Curves for three different properties.
 
 Blender's animation editors (such as the dopesheet, graph editor, etc.) have a
-**channel list** on their left side that display animated properties. For
+**channel list** on their left side that displays animated properties. For
 actions, these channels correspond to the F-Curves that animate those
 properties.
 

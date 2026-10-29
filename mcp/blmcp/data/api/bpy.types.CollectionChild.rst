@@ -5,6 +5,7 @@ CollectionChild(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: CollectionChild(bpy_struct)
 
    Child collection with its collection related settings

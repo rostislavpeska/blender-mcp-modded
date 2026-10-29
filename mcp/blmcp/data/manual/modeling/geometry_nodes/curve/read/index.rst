@@ -12,6 +12,8 @@
    curve_tilt.rst
    endpoint_selection.rst
    handle_type_selection.rst
+   nurbs_order.rst
+   nurbs_weight.rst
    is_spline_cyclic.rst
    spline_length.rst
    spline_parameter.rst

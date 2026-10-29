@@ -1,5 +1,6 @@
 .. index:: Geometry Nodes; Matrix Determinant
 .. _bpy.types.FunctionNodeMatrixDeterminant:
+.. --- copy below this line ---
 
 ***********************
 Matrix Determinant Node

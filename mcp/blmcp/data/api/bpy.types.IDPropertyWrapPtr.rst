@@ -5,6 +5,7 @@ IDPropertyWrapPtr(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: IDPropertyWrapPtr(bpy_struct)
 
 

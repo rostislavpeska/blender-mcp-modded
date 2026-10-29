@@ -5,6 +5,7 @@ ScriptDirectory(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: ScriptDirectory(bpy_struct)
 
 

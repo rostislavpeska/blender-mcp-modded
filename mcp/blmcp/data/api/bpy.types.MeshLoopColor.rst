@@ -5,6 +5,7 @@ MeshLoopColor(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: MeshLoopColor(bpy_struct)
 
    Vertex loop colors in a Mesh

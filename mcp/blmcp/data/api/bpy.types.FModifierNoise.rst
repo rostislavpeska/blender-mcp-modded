@@ -5,6 +5,7 @@ FModifierNoise(FModifier)
 
 base classes --- :class:`bpy_struct`, :class:`FModifier`
 
+
 .. class:: FModifierNoise(FModifier)
 
    Give randomness to the modified F-Curve

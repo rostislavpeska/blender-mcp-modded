@@ -39,7 +39,7 @@ This also allows sub-frame interpolation for motion blur.
 Clock
 =====
 
-The simulation is tied to the animation system, with support for sub-steps.
+The simulation is tied to the animation system.
 It will only be evaluated while the animation frame changes, and is cached like
 the existing physics simulations in Blender.
 
@@ -48,7 +48,6 @@ Properties
 ==========
 
 In the Node Editor the inputs can be renamed, shuffled and removed.
-This is also the place where sub-steps can be defined for a simulation.
 
 
 Inputs
@@ -61,7 +60,7 @@ Geometry
 
 Delta Time
    The time in seconds between frames.
-   Essentially this the inverse of the render :ref:`Frame Rate <bpy.types.RenderSettings.fps>`.
+   Essentially this is the inverse of the render :ref:`Frame Rate <bpy.types.RenderSettings.fps>`.
 
    This delta is used to drive the simulation by connecting it node setups that depend on a rate.
    This will keep the simulation playback consistent when the frame rate changes.
@@ -77,7 +76,7 @@ Baking
 ======
 
 The simulation is automatically cached during playback.
-The valid cache can be seen as a strong yellow line in the timeline editor.
+The valid cache can be seen as a strong purple line in the timeline editor.
 This allows for animators to quickly inspect all the previous frames of a simulation.
 
 .. figure:: /images/modeling_geometry-nodes_simulation_baking_timeline.png

@@ -5,6 +5,7 @@ BlendTexture(Texture)
 
 base classes --- :class:`bpy_struct`, :class:`ID`, :class:`Texture`
 
+
 .. class:: BlendTexture(Texture)
 
    Procedural color blending texture

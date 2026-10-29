@@ -97,7 +97,7 @@ Wm Operators
    :type actions: :class:`bpy_prop_collection`\ [:class:`BatchRenameAction`] | None
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `startup/bl_operators/wm.py\:3283 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/wm.py#L3283>`__
+   :File: `startup/bl_operators/wm.py\:3315 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/wm.py#L3315>`__
 
 
 .. function:: blend_strings_utf8_validate()
@@ -248,7 +248,7 @@ Wm Operators
    :type initial_x: int
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `startup/bl_operators/wm.py\:1014 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/wm.py#L1014>`__
+   :File: `startup/bl_operators/wm.py\:1023 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/wm.py#L1023>`__
 
 
 .. function:: context_pie_enum(*, data_path="")
@@ -430,7 +430,7 @@ Wm Operators
    :type doc_id: str
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `startup/bl_operators/wm.py\:1361 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/wm.py#L1361>`__
+   :File: `startup/bl_operators/wm.py\:1379 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/wm.py#L1379>`__
 
 
 .. function:: doc_view_manual(*, doc_id="")
@@ -441,7 +441,7 @@ Wm Operators
    :type doc_id: str
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `startup/bl_operators/wm.py\:1334 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/wm.py#L1334>`__
+   :File: `startup/bl_operators/wm.py\:1352 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/wm.py#L1352>`__
 
 
 .. function:: doc_view_manual_ui_context()
@@ -458,7 +458,7 @@ Wm Operators
    :type filepath: str
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `startup/bl_operators/wm.py\:3658 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/wm.py#L3658>`__
+   :File: `startup/bl_operators/wm.py\:3690 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/wm.py#L3690>`__
 
 
 .. function:: drop_import_file(*, directory="", files=None)
@@ -594,7 +594,7 @@ Wm Operators
    :type remove_active: bool
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `startup/bl_operators/presets.py\:711 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/presets.py#L711>`__
+   :File: `startup/bl_operators/presets.py\:754 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/presets.py#L754>`__
 
 
 .. function:: keyconfig_preset_add(*, name="", remove_name=False, remove_active=False)
@@ -851,6 +851,275 @@ Wm Operators
 
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
+.. function:: obj_export(*, filepath="", check_existing=True, filter_blender=False, filter_backup=False, filter_image=False, filter_movie=False, filter_python=False, filter_font=False, filter_sound=False, filter_text=False, filter_archive=False, filter_btx=False, filter_alembic=False, filter_usd=False, filter_obj=False, filter_volume=False, filter_folder=True, filter_blenlib=False, filemode=8, display_type='DEFAULT', sort_method='', export_animation=False, start_frame=-2147483648, end_frame=2147483647, forward_axis='NEGATIVE_Z', up_axis='Y', global_scale=1.0, apply_modifiers=True, apply_transform=True, export_eval_mode='DAG_EVAL_VIEWPORT', export_selected_objects=False, export_uv=True, export_normals=True, export_colors=False, export_materials=True, export_pbr_extensions=False, path_mode='AUTO', export_triangulated_mesh=False, export_curves_as_nurbs=False, export_object_groups=False, export_material_groups=False, export_vertex_groups=False, export_smooth_groups=False, smooth_group_bitflags=False, filter_glob="*.obj;*.mtl", collection="")
+
+   Save the scene to a Wavefront OBJ file
+
+   :param filepath: File Path, Path to file (optional, never None)
+   :type filepath: str
+   :param check_existing: Check Existing, Check and warn on overwriting existing files (optional)
+   :type check_existing: bool
+   :param filter_blender: Filter .blend files, (optional)
+   :type filter_blender: bool
+   :param filter_backup: Filter backup .blend files, (optional)
+   :type filter_backup: bool
+   :param filter_image: Filter image files, (optional)
+   :type filter_image: bool
+   :param filter_movie: Filter movie files, (optional)
+   :type filter_movie: bool
+   :param filter_python: Filter Python files, (optional)
+   :type filter_python: bool
+   :param filter_font: Filter font files, (optional)
+   :type filter_font: bool
+   :param filter_sound: Filter sound files, (optional)
+   :type filter_sound: bool
+   :param filter_text: Filter text files, (optional)
+   :type filter_text: bool
+   :param filter_archive: Filter archive files, (optional)
+   :type filter_archive: bool
+   :param filter_btx: Filter btx files, (optional)
+   :type filter_btx: bool
+   :param filter_alembic: Filter Alembic files, (optional)
+   :type filter_alembic: bool
+   :param filter_usd: Filter USD files, (optional)
+   :type filter_usd: bool
+   :param filter_obj: Filter OBJ files, (optional)
+   :type filter_obj: bool
+   :param filter_volume: Filter OpenVDB volume files, (optional)
+   :type filter_volume: bool
+   :param filter_folder: Filter folders, (optional)
+   :type filter_folder: bool
+   :param filter_blenlib: Filter Blender IDs, (optional)
+   :type filter_blenlib: bool
+   :param filemode: File Browser Mode, The setting for the file browser mode to load a .blend file, a library or a special file (in [1, 9], optional)
+   :type filemode: int
+   :param display_type: Display Type, (optional)
+
+      - ``DEFAULT``
+        Default -- Automatically determine display type for files.
+      - ``LIST_VERTICAL``
+        Short List -- Display files as short list.
+      - ``LIST_HORIZONTAL``
+        Long List -- Display files as a detailed list.
+      - ``THUMBNAIL``
+        Thumbnails -- Display files as thumbnails.
+   :type display_type: Literal['DEFAULT', 'LIST_VERTICAL', 'LIST_HORIZONTAL', 'THUMBNAIL']
+   :param sort_method: File sorting mode, (optional)
+   :type sort_method: str
+   :param export_animation: Export Animation, Export multiple frames instead of the current frame only (optional)
+   :type export_animation: bool
+   :param start_frame: Start Frame, The first frame to be exported (in [-inf, inf], optional)
+   :type start_frame: int
+   :param end_frame: End Frame, The last frame to be exported (in [-inf, inf], optional)
+   :type end_frame: int
+   :param forward_axis: Forward Axis, (optional)
+
+      - ``X``
+        X -- Positive X axis.
+      - ``Y``
+        Y -- Positive Y axis.
+      - ``Z``
+        Z -- Positive Z axis.
+      - ``NEGATIVE_X``
+        -X -- Negative X axis.
+      - ``NEGATIVE_Y``
+        -Y -- Negative Y axis.
+      - ``NEGATIVE_Z``
+        -Z -- Negative Z axis.
+   :type forward_axis: Literal['X', 'Y', 'Z', 'NEGATIVE_X', 'NEGATIVE_Y', 'NEGATIVE_Z']
+   :param up_axis: Up Axis, (optional)
+
+      - ``X``
+        X -- Positive X axis.
+      - ``Y``
+        Y -- Positive Y axis.
+      - ``Z``
+        Z -- Positive Z axis.
+      - ``NEGATIVE_X``
+        -X -- Negative X axis.
+      - ``NEGATIVE_Y``
+        -Y -- Negative Y axis.
+      - ``NEGATIVE_Z``
+        -Z -- Negative Z axis.
+   :type up_axis: Literal['X', 'Y', 'Z', 'NEGATIVE_X', 'NEGATIVE_Y', 'NEGATIVE_Z']
+   :param global_scale: Scale, Value by which to enlarge or shrink the objects with respect to the world's origin (in [0.0001, 10000], optional)
+   :type global_scale: float
+   :param apply_modifiers: Apply Modifiers, Apply modifiers to exported meshes (optional)
+   :type apply_modifiers: bool
+   :param apply_transform: Apply Transform, Apply object transforms to exported vertices (optional)
+   :type apply_transform: bool
+   :param export_eval_mode: Object Properties, Determines properties like object visibility, modifiers etc., where they differ for Render and Viewport (optional)
+
+      - ``DAG_EVAL_RENDER``
+        Render -- Export objects as they appear in render.
+      - ``DAG_EVAL_VIEWPORT``
+        Viewport -- Export objects as they appear in the viewport.
+   :type export_eval_mode: Literal['DAG_EVAL_RENDER', 'DAG_EVAL_VIEWPORT']
+   :param export_selected_objects: Export Selected Objects, Export only selected objects instead of all supported objects (optional)
+   :type export_selected_objects: bool
+   :param export_uv: Export UVs, (optional)
+   :type export_uv: bool
+   :param export_normals: Export Normals, Export per-face normals if the face is flat-shaded, per-face-corner normals if smooth-shaded (optional)
+   :type export_normals: bool
+   :param export_colors: Export Colors, Export per-vertex colors (optional)
+   :type export_colors: bool
+   :param export_materials: Export Materials, Export MTL library. There must be a Principled-BSDF node for image textures to be exported to the MTL file (optional)
+   :type export_materials: bool
+   :param export_pbr_extensions: Export Materials with PBR Extensions, Export MTL library using PBR extensions (roughness, metallic, sheen, coat, anisotropy, transmission) (optional)
+   :type export_pbr_extensions: bool
+   :param path_mode: Path Mode, Method used to reference paths (optional)
+
+      - ``AUTO``
+        Auto -- Use relative paths with subdirectories only.
+      - ``ABSOLUTE``
+        Absolute -- Always write absolute paths.
+      - ``RELATIVE``
+        Relative -- Write relative paths where possible.
+      - ``MATCH``
+        Match -- Match absolute/relative setting with input path.
+      - ``STRIP``
+        Strip -- Write filename only.
+      - ``COPY``
+        Copy -- Copy the file to the destination path.
+   :type path_mode: Literal['AUTO', 'ABSOLUTE', 'RELATIVE', 'MATCH', 'STRIP', 'COPY']
+   :param export_triangulated_mesh: Export Triangulated Mesh, All ngons with four or more vertices will be triangulated. Meshes in the scene will not be affected. Behaves like Triangulate Modifier with ngon-method: "Beauty", quad-method: "Shortest Diagonal", min vertices: 4 (optional)
+   :type export_triangulated_mesh: bool
+   :param export_curves_as_nurbs: Export Curves as NURBS, Export curves in parametric form instead of exporting as mesh (optional)
+   :type export_curves_as_nurbs: bool
+   :param export_object_groups: Export Object Groups, Append mesh name to object name, separated by a '_' (optional)
+   :type export_object_groups: bool
+   :param export_material_groups: Export Material Groups, Generate an OBJ group for each part of a geometry using a different material (optional)
+   :type export_material_groups: bool
+   :param export_vertex_groups: Export Vertex Groups, Export the name of the vertex group of a face. It is approximated by choosing the vertex group with the most members among the vertices of a face (optional)
+   :type export_vertex_groups: bool
+   :param export_smooth_groups: Export Smooth Groups, Generate smooth groups identifiers for each group of smooth faces, as unique integer values by default (optional)
+   :type export_smooth_groups: bool
+   :param smooth_group_bitflags: Bitflags Smooth Groups, If exporting smoothgroups, generate 'bitflags' values for the groups, instead of unique integer values. The same bitflag value can be re-used for different groups of smooth faces, as long as they have no common sharp edges or vertices (optional)
+   :type smooth_group_bitflags: bool
+   :param filter_glob: Extension Filter, (optional, never None)
+   :type filter_glob: str
+   :param collection: Collection, (optional, never None)
+   :type collection: str
+   :return: Result of the operator call.
+   :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
+
+.. function:: obj_import(*, filepath="", directory="", files=None, check_existing=False, filter_blender=False, filter_backup=False, filter_image=False, filter_movie=False, filter_python=False, filter_font=False, filter_sound=False, filter_text=False, filter_archive=False, filter_btx=False, filter_alembic=False, filter_usd=False, filter_obj=False, filter_volume=False, filter_folder=True, filter_blenlib=False, filemode=8, display_type='DEFAULT', sort_method='', global_scale=1.0, clamp_size=0.0, forward_axis='NEGATIVE_Z', up_axis='Y', use_split_objects=True, use_split_groups=False, import_vertex_groups=False, validate_meshes=True, close_spline_loops=True, collection_separator="", mtl_name_collision_mode='MAKE_UNIQUE', filter_glob="*.obj;*.mtl")
+
+   Load a Wavefront OBJ scene
+
+   :param filepath: File Path, Path to file (optional, never None)
+   :type filepath: str
+   :param directory: Directory, Directory of the file (optional, never None)
+   :type directory: str
+   :param files: Files, (optional)
+   :type files: :class:`bpy_prop_collection`\ [:class:`OperatorFileListElement`] | None
+   :param check_existing: Check Existing, Check and warn on overwriting existing files (optional)
+   :type check_existing: bool
+   :param filter_blender: Filter .blend files, (optional)
+   :type filter_blender: bool
+   :param filter_backup: Filter backup .blend files, (optional)
+   :type filter_backup: bool
+   :param filter_image: Filter image files, (optional)
+   :type filter_image: bool
+   :param filter_movie: Filter movie files, (optional)
+   :type filter_movie: bool
+   :param filter_python: Filter Python files, (optional)
+   :type filter_python: bool
+   :param filter_font: Filter font files, (optional)
+   :type filter_font: bool
+   :param filter_sound: Filter sound files, (optional)
+   :type filter_sound: bool
+   :param filter_text: Filter text files, (optional)
+   :type filter_text: bool
+   :param filter_archive: Filter archive files, (optional)
+   :type filter_archive: bool
+   :param filter_btx: Filter btx files, (optional)
+   :type filter_btx: bool
+   :param filter_alembic: Filter Alembic files, (optional)
+   :type filter_alembic: bool
+   :param filter_usd: Filter USD files, (optional)
+   :type filter_usd: bool
+   :param filter_obj: Filter OBJ files, (optional)
+   :type filter_obj: bool
+   :param filter_volume: Filter OpenVDB volume files, (optional)
+   :type filter_volume: bool
+   :param filter_folder: Filter folders, (optional)
+   :type filter_folder: bool
+   :param filter_blenlib: Filter Blender IDs, (optional)
+   :type filter_blenlib: bool
+   :param filemode: File Browser Mode, The setting for the file browser mode to load a .blend file, a library or a special file (in [1, 9], optional)
+   :type filemode: int
+   :param display_type: Display Type, (optional)
+
+      - ``DEFAULT``
+        Default -- Automatically determine display type for files.
+      - ``LIST_VERTICAL``
+        Short List -- Display files as short list.
+      - ``LIST_HORIZONTAL``
+        Long List -- Display files as a detailed list.
+      - ``THUMBNAIL``
+        Thumbnails -- Display files as thumbnails.
+   :type display_type: Literal['DEFAULT', 'LIST_VERTICAL', 'LIST_HORIZONTAL', 'THUMBNAIL']
+   :param sort_method: File sorting mode, (optional)
+   :type sort_method: str
+   :param global_scale: Scale, Value by which to enlarge or shrink the objects with respect to the world's origin (in [0.0001, 10000], optional)
+   :type global_scale: float
+   :param clamp_size: Clamp Bounding Box, Resize the objects to keep bounding box under this value. Value 0 disables clamping (in [0, 1000], optional)
+   :type clamp_size: float
+   :param forward_axis: Forward Axis, (optional)
+
+      - ``X``
+        X -- Positive X axis.
+      - ``Y``
+        Y -- Positive Y axis.
+      - ``Z``
+        Z -- Positive Z axis.
+      - ``NEGATIVE_X``
+        -X -- Negative X axis.
+      - ``NEGATIVE_Y``
+        -Y -- Negative Y axis.
+      - ``NEGATIVE_Z``
+        -Z -- Negative Z axis.
+   :type forward_axis: Literal['X', 'Y', 'Z', 'NEGATIVE_X', 'NEGATIVE_Y', 'NEGATIVE_Z']
+   :param up_axis: Up Axis, (optional)
+
+      - ``X``
+        X -- Positive X axis.
+      - ``Y``
+        Y -- Positive Y axis.
+      - ``Z``
+        Z -- Positive Z axis.
+      - ``NEGATIVE_X``
+        -X -- Negative X axis.
+      - ``NEGATIVE_Y``
+        -Y -- Negative Y axis.
+      - ``NEGATIVE_Z``
+        -Z -- Negative Z axis.
+   :type up_axis: Literal['X', 'Y', 'Z', 'NEGATIVE_X', 'NEGATIVE_Y', 'NEGATIVE_Z']
+   :param use_split_objects: Split By Object, Import each OBJ 'o' as a separate object (optional)
+   :type use_split_objects: bool
+   :param use_split_groups: Split By Group, Import each OBJ 'g' as a separate object (optional)
+   :type use_split_groups: bool
+   :param import_vertex_groups: Vertex Groups, Import OBJ groups as vertex groups (optional)
+   :type import_vertex_groups: bool
+   :param validate_meshes: Validate Meshes, Ensure the data is valid (when disabled, data may be imported which causes crashes displaying or editing) (optional)
+   :type validate_meshes: bool
+   :param close_spline_loops: Detect Cyclic Curves, Join curve endpoints if overlapping control points are detected (if disabled, no curves will be cyclic) (optional)
+   :type close_spline_loops: bool
+   :param collection_separator: Path Separator, Character used to separate objects name into hierarchical structure (optional, never None)
+   :type collection_separator: str
+   :param mtl_name_collision_mode: Material Name Collision, How to handle naming collisions when importing materials (optional)
+
+      - ``MAKE_UNIQUE``
+        Make Unique -- Create new materials with unique names for each OBJ file.
+      - ``REFERENCE_EXISTING``
+        Reference Existing -- Use existing materials with same name instead of creating new ones.
+   :type mtl_name_collision_mode: Literal['MAKE_UNIQUE', 'REFERENCE_EXISTING']
+   :param filter_glob: Extension Filter, (optional, never None)
+   :type filter_glob: str
+   :return: Result of the operator call.
+   :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
+
 .. function:: open_mainfile(*, filepath="", hide_props_region=True, check_existing=False, filter_blender=True, filter_backup=False, filter_image=False, filter_movie=False, filter_python=False, filter_font=False, filter_sound=False, filter_text=False, filter_archive=False, filter_btx=False, filter_alembic=False, filter_usd=False, filter_obj=False, filter_volume=False, filter_folder=True, filter_blenlib=False, filemode=8, display_type='DEFAULT', sort_method='', load_ui=True, use_scripts=False, display_file_selector=True, state=0)
 
    Open a Blender file
@@ -925,7 +1194,7 @@ Wm Operators
 
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `startup/bl_operators/wm.py\:2257 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/wm.py#L2257>`__
+   :File: `startup/bl_operators/wm.py\:2289 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/wm.py#L2289>`__
 
 .. function:: operator_defaults()
 
@@ -973,7 +1242,7 @@ Wm Operators
    :type properties: :class:`bpy_prop_collection`\ [:class:`OperatorFileListElement`] | None
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `startup/bl_operators/presets.py\:924 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/presets.py#L924>`__
+   :File: `startup/bl_operators/presets.py\:967 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/presets.py#L967>`__
 
 
 .. function:: owner_disable(*, owner_id="")
@@ -984,7 +1253,7 @@ Wm Operators
    :type owner_id: str
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `startup/bl_operators/wm.py\:2305 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/wm.py#L2305>`__
+   :File: `startup/bl_operators/wm.py\:2337 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/wm.py#L2337>`__
 
 
 .. function:: owner_enable(*, owner_id="")
@@ -995,7 +1264,7 @@ Wm Operators
    :type owner_id: str
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `startup/bl_operators/wm.py\:2290 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/wm.py#L2290>`__
+   :File: `startup/bl_operators/wm.py\:2322 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/wm.py#L2322>`__
 
 
 .. function:: path_open(*, filepath="")
@@ -1006,7 +1275,7 @@ Wm Operators
    :type filepath: str
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `startup/bl_operators/wm.py\:1167 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/wm.py#L1167>`__
+   :File: `startup/bl_operators/wm.py\:1185 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/wm.py#L1185>`__
 
 
 .. function:: previews_batch_clear(*, files=None, directory="", filter_blender=True, filter_folder=True, use_scenes=True, use_collections=True, use_objects=True, use_intern_data=True, use_trusted=False, use_backups=True)
@@ -1113,7 +1382,7 @@ Wm Operators
    :type data_path: str
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `startup/bl_operators/wm.py\:2139 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/wm.py#L2139>`__
+   :File: `startup/bl_operators/wm.py\:2171 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/wm.py#L2171>`__
 
 
 .. function:: properties_context_change(*, context="")
@@ -1124,7 +1393,7 @@ Wm Operators
    :type context: str
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `startup/bl_operators/wm.py\:2182 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/wm.py#L2182>`__
+   :File: `startup/bl_operators/wm.py\:2214 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/wm.py#L2214>`__
 
 
 .. function:: properties_edit(*, data_path="", property_name="", property_type='FLOAT', is_overridable_library=False, description="", use_soft_limits=False, array_length=3, default_int=(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), min_int=-10000, max_int=10000, soft_min_int=-10000, soft_max_int=10000, step_int=1, default_bool=(False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False), default_float=(0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0), min_float=-10000.0, max_float=-10000.0, soft_min_float=-10000.0, soft_max_float=-10000.0, precision=3, step_float=0.1, subtype='', default_string="", id_type='OBJECT', eval_string="")
@@ -1202,7 +1471,7 @@ Wm Operators
    :type eval_string: str
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `startup/bl_operators/wm.py\:1872 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/wm.py#L1872>`__
+   :File: `startup/bl_operators/wm.py\:1904 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/wm.py#L1904>`__
 
 
 .. function:: properties_edit_value(*, data_path="", property_name="", eval_string="")
@@ -1217,7 +1486,7 @@ Wm Operators
    :type eval_string: str
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `startup/bl_operators/wm.py\:2096 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/wm.py#L2096>`__
+   :File: `startup/bl_operators/wm.py\:2128 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/wm.py#L2128>`__
 
 
 .. function:: properties_remove(*, data_path="", property_name="")
@@ -1230,7 +1499,7 @@ Wm Operators
    :type property_name: str
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `startup/bl_operators/wm.py\:2196 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/wm.py#L2196>`__
+   :File: `startup/bl_operators/wm.py\:2228 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/wm.py#L2228>`__
 
 
 .. function:: quit_blender()
@@ -1433,7 +1702,7 @@ Wm Operators
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
 
-.. function:: save_as_mainfile(*, filepath="", hide_props_region=True, check_existing=True, filter_blender=True, filter_backup=False, filter_image=False, filter_movie=False, filter_python=False, filter_font=False, filter_sound=False, filter_text=False, filter_archive=False, filter_btx=False, filter_alembic=False, filter_usd=False, filter_obj=False, filter_volume=False, filter_folder=True, filter_blenlib=False, filemode=8, display_type='DEFAULT', sort_method='', compress=False, relative_remap=True, copy=False)
+.. function:: save_as_mainfile(*, filepath="", hide_props_region=True, check_existing=True, filter_blender=True, filter_backup=False, filter_image=False, filter_movie=False, filter_python=False, filter_font=False, filter_sound=False, filter_text=False, filter_archive=False, filter_btx=False, filter_alembic=False, filter_usd=False, filter_obj=False, filter_volume=False, filter_folder=True, filter_blenlib=False, filemode=8, display_type='DEFAULT', sort_method='', compress=False, relative_remap=True, copy=False, show_save_modified_images_dialog=False)
 
    Save the current file in the desired location
 
@@ -1496,16 +1765,24 @@ Wm Operators
    :type relative_remap: bool
    :param copy: Save Copy, Save a copy of the actual working state but does not make saved file active (optional)
    :type copy: bool
+   :param show_save_modified_images_dialog: Show Save Modified Images Dialog, Show a popup dialog to save modified images before saving the blend file (optional)
+   :type show_save_modified_images_dialog: bool
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
 
+.. function:: save_auto_save()
+
+   Create an autosave in the temp directory for the current file
+
+   :return: Result of the operator call.
+   :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
 .. function:: save_homefile()
 
    Make the current file the default startup file
 
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-.. function:: save_mainfile(*, filepath="", hide_props_region=True, check_existing=True, filter_blender=True, filter_backup=False, filter_image=False, filter_movie=False, filter_python=False, filter_font=False, filter_sound=False, filter_text=False, filter_archive=False, filter_btx=False, filter_alembic=False, filter_usd=False, filter_obj=False, filter_volume=False, filter_folder=True, filter_blenlib=False, filemode=8, display_type='DEFAULT', sort_method='', compress=False, relative_remap=False, exit=False, incremental=False)
+.. function:: save_mainfile(*, filepath="", hide_props_region=True, check_existing=True, filter_blender=True, filter_backup=False, filter_image=False, filter_movie=False, filter_python=False, filter_font=False, filter_sound=False, filter_text=False, filter_archive=False, filter_btx=False, filter_alembic=False, filter_usd=False, filter_obj=False, filter_volume=False, filter_folder=True, filter_blenlib=False, filemode=8, display_type='DEFAULT', sort_method='', compress=False, relative_remap=False, exit=False, incremental=False, show_save_modified_images_dialog=False)
 
    Save the current Blender file
 
@@ -1570,6 +1847,8 @@ Wm Operators
    :type exit: bool
    :param incremental: Incremental, Save the current Blender file with a numerically incremented name that does not overwrite any existing files (optional)
    :type incremental: bool
+   :param show_save_modified_images_dialog: Show Save Modified Images Dialog, Show a popup dialog to save modified images before saving the blend file (optional)
+   :type show_save_modified_images_dialog: bool
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
 
@@ -1650,7 +1929,7 @@ Wm Operators
    :type filepath: str
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `startup/bl_operators/wm.py\:2225 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/wm.py#L2225>`__
+   :File: `startup/bl_operators/wm.py\:2257 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/wm.py#L2257>`__
 
 
 .. function:: tool_set_by_brush_type(*, brush_type="", space_type='EMPTY')
@@ -1663,7 +1942,7 @@ Wm Operators
    :type space_type: Literal['EMPTY', 'VIEW_3D', 'IMAGE_EDITOR', 'NODE_EDITOR', 'SEQUENCE_EDITOR', 'CLIP_EDITOR', 'DOPESHEET_EDITOR', 'GRAPH_EDITOR', 'NLA_EDITOR', 'TEXT_EDITOR', 'CONSOLE', 'INFO', 'TOPBAR', 'STATUSBAR', 'OUTLINER', 'PROPERTIES', 'FILE_BROWSER', 'SPREADSHEET', 'PREFERENCES']
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `startup/bl_operators/wm.py\:2439 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/wm.py#L2439>`__
+   :File: `startup/bl_operators/wm.py\:2471 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/wm.py#L2471>`__
 
 
 .. function:: tool_set_by_id(*, name="", cycle=False, as_fallback=False, space_type='EMPTY')
@@ -1680,7 +1959,7 @@ Wm Operators
    :type space_type: Literal['EMPTY', 'VIEW_3D', 'IMAGE_EDITOR', 'NODE_EDITOR', 'SEQUENCE_EDITOR', 'CLIP_EDITOR', 'DOPESHEET_EDITOR', 'GRAPH_EDITOR', 'NLA_EDITOR', 'TEXT_EDITOR', 'CONSOLE', 'INFO', 'TOPBAR', 'STATUSBAR', 'OUTLINER', 'PROPERTIES', 'FILE_BROWSER', 'SPREADSHEET', 'PREFERENCES']
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `startup/bl_operators/wm.py\:2348 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/wm.py#L2348>`__
+   :File: `startup/bl_operators/wm.py\:2380 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/wm.py#L2380>`__
 
 
 .. function:: tool_set_by_index(*, index=0, cycle=False, expand=True, as_fallback=False, space_type='EMPTY')
@@ -1699,7 +1978,7 @@ Wm Operators
    :type space_type: Literal['EMPTY', 'VIEW_3D', 'IMAGE_EDITOR', 'NODE_EDITOR', 'SEQUENCE_EDITOR', 'CLIP_EDITOR', 'DOPESHEET_EDITOR', 'GRAPH_EDITOR', 'NLA_EDITOR', 'TEXT_EDITOR', 'CONSOLE', 'INFO', 'TOPBAR', 'STATUSBAR', 'OUTLINER', 'PROPERTIES', 'FILE_BROWSER', 'SPREADSHEET', 'PREFERENCES']
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `startup/bl_operators/wm.py\:2398 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/wm.py#L2398>`__
+   :File: `startup/bl_operators/wm.py\:2430 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/wm.py#L2430>`__
 
 
 .. function:: toolbar()
@@ -1708,7 +1987,7 @@ Wm Operators
 
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `startup/bl_operators/wm.py\:2506 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/wm.py#L2506>`__
+   :File: `startup/bl_operators/wm.py\:2538 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/wm.py#L2538>`__
 
 .. function:: toolbar_fallback_pie()
 
@@ -1716,7 +1995,7 @@ Wm Operators
 
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `startup/bl_operators/wm.py\:2530 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/wm.py#L2530>`__
+   :File: `startup/bl_operators/wm.py\:2562 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/wm.py#L2562>`__
 
 .. function:: toolbar_prompt()
 
@@ -1724,7 +2003,7 @@ Wm Operators
 
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `startup/bl_operators/wm.py\:2630 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/wm.py#L2630>`__
+   :File: `startup/bl_operators/wm.py\:2662 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/wm.py#L2662>`__
 
 .. function:: url_open(*, url="")
 
@@ -1734,7 +2013,7 @@ Wm Operators
    :type url: str
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `startup/bl_operators/wm.py\:1074 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/wm.py#L1074>`__
+   :File: `startup/bl_operators/wm.py\:1085 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/wm.py#L1085>`__
 
 
 .. function:: url_open_preset(*, type='')
@@ -1745,7 +2024,7 @@ Wm Operators
    :type type: str
    :return: Result of the operator call.
    :rtype: set[Literal[:ref:`rna_enum_operator_return_items`]]
-   :File: `startup/bl_operators/wm.py\:1144 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/wm.py#L1144>`__
+   :File: `startup/bl_operators/wm.py\:1168 <https://projects.blender.org/blender/blender/src/branch/main/scripts/startup/bl_operators/wm.py#L1168>`__
 
 
 .. function:: window_close()

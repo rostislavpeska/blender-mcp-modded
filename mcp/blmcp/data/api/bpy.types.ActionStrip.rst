@@ -5,8 +5,11 @@ ActionStrip(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
-subclasses --- 
-:class:`ActionKeyframeStrip`
+.. toctree::
+   :caption: Subclasses
+   :maxdepth: 1
+
+   bpy.types.ActionKeyframeStrip.rst
 
 .. class:: ActionStrip(bpy_struct)
 

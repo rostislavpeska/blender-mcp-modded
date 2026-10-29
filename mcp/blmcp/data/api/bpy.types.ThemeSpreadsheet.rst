@@ -5,6 +5,7 @@ ThemeSpreadsheet(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: ThemeSpreadsheet(bpy_struct)
 
    Theme settings for the Spreadsheet

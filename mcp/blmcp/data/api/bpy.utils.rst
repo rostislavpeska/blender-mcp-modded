@@ -123,18 +123,22 @@ not associated with blenders internal data.
    :type handle: Any
 
 
-.. function:: resource_path(type, *, major=bpy.app.version[0], minor=bpy.app.version[1])
+.. function:: resource_path(type, *, major=None, minor=None)
 
    Return the base path for storing system files.
 
    :param type: The resource type.
-   :type type: Literal['USER', 'LOCAL', 'SYSTEM']
-   :param major: major version, defaults to current.
-   :type major: int
-   :param minor: minor version, defaults to current.
-   :type minor: int
+   :type type: Literal['USER', 'LOCAL', 'SYSTEM', 'SYSTEM_LIBS']
+   :param major: Major version. None (the default) uses ``bpy.app.version[0]``.
+   :type major: int | None
+   :param minor: Minor version. None (the default) uses ``bpy.app.version[1]``.
+   :type minor: int | None
    :return: the resource path (not necessarily existing).
    :rtype: str
+
+   .. note::
+
+      ``SYSTEM_LIBS`` mirrors ``SYSTEM`` but resolves to the directory for architecture-dependent libraries (typically under ``/usr/lib/...`` rather than ``/usr/share/...``). It is an empty string on builds without a separate library directory, such as portable builds and the Python module.
 
 
 .. function:: unregister_class(cls)

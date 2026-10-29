@@ -5,6 +5,7 @@ NodeTreeInterfacePanel(NodeTreeInterfaceItem)
 
 base classes --- :class:`bpy_struct`, :class:`NodeTreeInterfaceItem`
 
+
 .. class:: NodeTreeInterfacePanel(NodeTreeInterfaceItem)
 
    Declaration of a node panel
@@ -20,6 +21,12 @@ base classes --- :class:`bpy_struct`, :class:`NodeTreeInterfaceItem`
       Panel description (default "", never None)
 
       :type: str
+
+   .. data:: identifier
+
+      Unique identifier for this panel within this node tree (in [-inf, inf], default 0, readonly)
+
+      :type: int
 
    .. data:: interface_items
 

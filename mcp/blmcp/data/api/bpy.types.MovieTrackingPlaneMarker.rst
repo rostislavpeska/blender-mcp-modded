@@ -5,6 +5,7 @@ MovieTrackingPlaneMarker(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: MovieTrackingPlaneMarker(bpy_struct)
 
    Match-moving plane marker data for tracking
@@ -13,7 +14,7 @@ base class --- :class:`bpy_struct`
 
       Array of coordinates which represents UI rectangle corners in frame normalized coordinates (multi-dimensional array of 4 * 2 items, in [-inf, inf], default ((0.0, 0.0), (0.0, 0.0), (0.0, 0.0), (0.0, 0.0)))
 
-      :type: :class:`bpy_prop_array`\ [float]
+      :type: :class:`bpy_prop_array`\ [:class:`bpy_prop_array`\ [float]]
 
    .. attribute:: frame
 

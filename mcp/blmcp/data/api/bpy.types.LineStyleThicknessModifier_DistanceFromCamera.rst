@@ -5,6 +5,7 @@ LineStyleThicknessModifier_DistanceFromCamera(LineStyleThicknessModifier)
 
 base classes --- :class:`bpy_struct`, :class:`LineStyleModifier`, :class:`LineStyleThicknessModifier`
 
+
 .. class:: LineStyleThicknessModifier_DistanceFromCamera(LineStyleThicknessModifier)
 
    Change line thickness based on the distance from the camera

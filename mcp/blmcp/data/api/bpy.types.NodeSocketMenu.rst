@@ -5,6 +5,7 @@ NodeSocketMenu(NodeSocketStandard)
 
 base classes --- :class:`bpy_struct`, :class:`NodeSocket`, :class:`NodeSocketStandard`
 
+
 .. class:: NodeSocketMenu(NodeSocketStandard)
 
    Menu socket of a node

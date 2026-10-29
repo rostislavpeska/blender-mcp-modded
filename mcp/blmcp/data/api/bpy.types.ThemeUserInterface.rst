@@ -5,6 +5,7 @@ ThemeUserInterface(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: ThemeUserInterface(bpy_struct)
 
    Theme settings for user interface elements
@@ -150,6 +151,12 @@ base class --- :class:`bpy_struct`
    .. attribute:: icon_shading
 
       (array of 4 items, in [0, 1], default (0.0, 0.0, 0.0, 0.0))
+
+      :type: :class:`bpy_prop_array`\ [float]
+
+   .. attribute:: link
+
+      Color of link widgets (array of 4 items, in [0, 1], default (0.0, 0.0, 0.0, 0.0))
 
       :type: :class:`bpy_prop_array`\ [float]
 

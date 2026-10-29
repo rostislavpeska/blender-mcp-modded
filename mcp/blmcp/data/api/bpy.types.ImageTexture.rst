@@ -5,6 +5,7 @@ ImageTexture(Texture)
 
 base classes --- :class:`bpy_struct`, :class:`ID`, :class:`Texture`
 
+
 .. class:: ImageTexture(Texture)
 
 

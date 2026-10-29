@@ -5,6 +5,7 @@ OperatorFileListElement(PropertyGroup)
 
 base classes --- :class:`bpy_struct`, :class:`PropertyGroup`
 
+
 .. class:: OperatorFileListElement(PropertyGroup)
 
 

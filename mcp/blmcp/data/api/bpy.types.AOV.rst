@@ -5,6 +5,7 @@ AOV(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: AOV(bpy_struct)
 
 

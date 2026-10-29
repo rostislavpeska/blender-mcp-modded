@@ -5,6 +5,7 @@ SpreadsheetTableIDGeometry(SpreadsheetTableID)
 
 base classes --- :class:`bpy_struct`, :class:`SpreadsheetTableID`
 
+
 .. class:: SpreadsheetTableIDGeometry(SpreadsheetTableID)
 
 

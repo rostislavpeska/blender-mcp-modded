@@ -55,7 +55,7 @@ Smooth Type
       by better preserving the shape of the original form.
 
 Vertex Group
-   If set, restrict the effect to the only vertices in that vertex group.
+   If set, restrict the effect to only the vertices in that vertex group.
    This allows for selective, real-time smoothing, by painting vertex weights.
 
 Only Smooth

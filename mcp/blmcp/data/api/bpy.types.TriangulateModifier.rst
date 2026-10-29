@@ -5,6 +5,7 @@ TriangulateModifier(Modifier)
 
 base classes --- :class:`bpy_struct`, :class:`Modifier`
 
+
 .. class:: TriangulateModifier(Modifier)
 
    Triangulate Mesh

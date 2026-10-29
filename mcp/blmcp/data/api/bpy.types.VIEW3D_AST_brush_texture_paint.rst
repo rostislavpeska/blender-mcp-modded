@@ -5,16 +5,53 @@ VIEW3D_AST_brush_texture_paint(AssetShelf)
 
 base classes --- :class:`bpy_struct`, :class:`AssetShelf`
 
+
 .. class:: VIEW3D_AST_brush_texture_paint(AssetShelf)
 
 
    .. classmethod:: brush_type_poll(context, asset)
 
+      Test if *asset* is compatible with the active tool's brush type.
+      
+      :param context: The context.
+      :type context: :class:`bpy.types.Context`
+      :param asset: Brush asset to test.
+      :type asset: :class:`bpy.types.AssetRepresentation`
+      :return: True when the asset's brush type matches the active tool.
+      :rtype: bool
+
    .. staticmethod:: draw_popup_selector(layout, context, brush, show_name=True)
+
+      Draw a brush asset-shelf popover into *layout* for the active paint mode.
+      
+      :param layout: Layout to draw into.
+      :type layout: :class:`bpy.types.UILayout`
+      :param context: The context.
+      :type context: :class:`bpy.types.Context`
+      :param brush: Brush whose preview/name is shown on the button.
+      :type brush: :class:`bpy.types.Brush` | None
+      :param show_name: Display the brush name next to the preview.
+      :type show_name: bool
 
    .. staticmethod:: get_shelf_name_from_context(context)
 
+      Look up the brush asset-shelf identifier for the current paint mode.
+      
+      :param context: The context.
+      :type context: :class:`bpy.types.Context`
+      :return: The asset-shelf ``bl_idname``, or ``None`` when no paint mode is active.
+      :rtype: str | None
+
    .. classmethod:: has_tool_with_brush_type(context, brush_type)
+
+      Test if any tool active in the current space matches *brush_type*.
+      
+      :param context: The context.
+      :type context: :class:`bpy.types.Context`
+      :param brush_type: Brush type identifier to match against tool brush types.
+      :type brush_type: int
+      :return: True when a registered tool uses this brush type.
+      :rtype: bool
 
    .. classmethod:: bl_rna_get_subclass(id, default=None, /)
    

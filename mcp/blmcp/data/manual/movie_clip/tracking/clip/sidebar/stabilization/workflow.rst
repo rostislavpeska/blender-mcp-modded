@@ -60,8 +60,8 @@ Resist that deception, it rarely works out well.
   This helps to set a fast shutter speed plus a small aperture.
   Better lighting and good exposure also help to reduce the impact of compression artifacts.
   If you can, also select a codec with less data reduction, better color space, etc.
-  Inevitably, we're loosing some quality through the interpolation necessary for stabilization.
-  Plus we're loosing some quality due to color space conversion.
+  Inevitably, we're losing some quality through the interpolation necessary for stabilization.
+  Plus we're losing some quality due to color space conversion.
 
 
 Elaborate Movements

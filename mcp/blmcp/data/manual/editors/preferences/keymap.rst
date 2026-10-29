@@ -85,10 +85,35 @@ These preferences only apply to the *Blender* keymap.
 Select with Mouse Button
    Controls which mouse button is used to select items.
 
+   While left-click select is the default as it is consistent with most other software,
+   right-click select has workflow advantages in certain scenarios.
+
    :Left:
       :kbd:`LMB` selects items while :kbd:`RMB` opens the context menu.
+
+      Pros:
+         - Familiar behavior for users coming from other applications.
+         - Context menu access matches common industry standards.
+         - Easier transition from other 3D and design software.
+
+      Cons:
+         - Selection and transformation both use the primary mouse button,
+           which can increase accidental movement when clicking near gizmos.
+         - The 3D Cursor requires a modifier (e.g., :kbd:`Shift-RMB`) to place.
+
    :Right:
       :kbd:`RMB` selects items while :kbd:`LMB` places the :doc:`/editors/3dview/3d_cursor`.
+
+      Pros:
+         - Separates selection from transformation actions,
+           reducing accidental edits during modeling.
+         - Quick and direct 3D Cursor placement with :kbd:`LMB`.
+         - Historically optimized for precision modeling workflows.
+
+      Cons:
+         - Less familiar to new users.
+         - Context menu requires an alternate shortcut,
+           depending on configuration.
 
 .. _keymap-blender_default-spacebar_action:
 

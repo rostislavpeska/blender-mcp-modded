@@ -134,11 +134,11 @@ Rotation Mode
 
    :Euler:
       Coordinate axes are aligned to the :term:`Euler` axis,
-      allowing you to see the discreet XYZ axis underlying the Euler rotation,
+      allowing you to see the discrete XYZ axis underlying the Euler rotation,
       as well as possible :term:`Gimbal Lock`.
    :Axis Angle:
       The X, Y, and Z coordinates define a point relative to the object origin.
-      This point and the origin define an axis around the W value defines the rotation.
+      This point and the origin define an axis around which the W value defines the rotation.
    :Quaternion:
       X, Y, Z and W correspond to the :term:`Quaternion` components.
 
@@ -155,7 +155,7 @@ If a collection contains objects, there is a circle to the left of its name.
 Local Collections
    Allows setting collection visibility per viewport rather than globally.
 
-Hide in Viewport (eye icon)
+:bl-icon:`hide_off` / :bl-icon:`hide_on` Hide in Viewport
    Shows or hides the collection.
 
 You can also "isolate" a collection by clicking its name. This will show the collection

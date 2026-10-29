@@ -118,8 +118,24 @@ In these cases, it's possible to use ``np.ravel`` to pass the data as a flat arr
 
 base class --- :class:`bpy_struct`
 
-subclasses --- 
-:class:`BoolAttribute`, :class:`ByteColorAttribute`, :class:`ByteIntAttribute`, :class:`Float2Attribute`, :class:`Float4x4Attribute`, :class:`FloatAttribute`, :class:`FloatColorAttribute`, :class:`FloatVectorAttribute`, :class:`Int2Attribute`, :class:`IntAttribute`, :class:`QuaternionAttribute`, :class:`Short2Attribute`, :class:`StringAttribute`
+.. toctree::
+   :caption: Subclasses
+   :maxdepth: 1
+
+   bpy.types.BoolAttribute.rst
+   bpy.types.ByteColorAttribute.rst
+   bpy.types.ByteIntAttribute.rst
+   bpy.types.Float2Attribute.rst
+   bpy.types.Float4Attribute.rst
+   bpy.types.Float4x4Attribute.rst
+   bpy.types.FloatAttribute.rst
+   bpy.types.FloatColorAttribute.rst
+   bpy.types.FloatVectorAttribute.rst
+   bpy.types.Int2Attribute.rst
+   bpy.types.IntAttribute.rst
+   bpy.types.QuaternionAttribute.rst
+   bpy.types.Short2Attribute.rst
+   bpy.types.StringAttribute.rst
 
 .. class:: Attribute(bpy_struct)
 

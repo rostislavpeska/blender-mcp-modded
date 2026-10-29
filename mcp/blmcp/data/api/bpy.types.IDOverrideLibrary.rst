@@ -5,6 +5,7 @@ IDOverrideLibrary(bpy_struct)
 
 base class --- :class:`bpy_struct`
 
+
 .. class:: IDOverrideLibrary(bpy_struct)
 
    Struct gathering all data needed by overridden linked IDs

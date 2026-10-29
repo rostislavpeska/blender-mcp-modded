@@ -5,6 +5,7 @@ MaintainVolumeConstraint(Constraint)
 
 base classes --- :class:`bpy_struct`, :class:`Constraint`
 
+
 .. class:: MaintainVolumeConstraint(Constraint)
 
    Maintain a constant volume along a single scaling axis

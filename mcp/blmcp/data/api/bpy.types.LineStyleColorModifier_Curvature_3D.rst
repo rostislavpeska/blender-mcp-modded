@@ -5,6 +5,7 @@ LineStyleColorModifier_Curvature_3D(LineStyleColorModifier)
 
 base classes --- :class:`bpy_struct`, :class:`LineStyleModifier`, :class:`LineStyleColorModifier`
 
+
 .. class:: LineStyleColorModifier_Curvature_3D(LineStyleColorModifier)
 
    Change line color based on the radial curvature of 3D mesh surfaces
