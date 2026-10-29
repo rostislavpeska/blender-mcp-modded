@@ -7,3 +7,4 @@
 docutils
 mcp[cli]>=1.2.0,<2
 pyyaml
+python-dotenv>=1.0
